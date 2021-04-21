@@ -1,4 +1,16 @@
-{;; Currently, we support either "Markdown" or "Org".
+{
+ 
+ :journal-basis "daily" 
+
+ :project {
+           ;; Selected public notes can be published to https://logseq.com/your-project-or-your-username.
+           :name "Bryan Jenks"
+           :alias "TallGuyJenks"
+           ;; your twitter handle
+           :twitter "tallguyjenks"
+           ;; description supports both hiccup and html
+           :description ""}
+ ;; Currently, we support either "Markdown" or "Org".
  ;; This can overwrite your global preference so that
  ;; maybe your personal preferred format is Org but you'd
  ;; need to use Markdown for some projects.
@@ -10,8 +22,8 @@
  :preferred-workflow :now
 
  ;; Git settings
- :git-pull-secs 60
- :git-push-secs 10
+ :git-pull-secs 1800
+ :git-push-secs 3600
  :git-auto-push true
 
  ;; The app will ignore those directories or files.
