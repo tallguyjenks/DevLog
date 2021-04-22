@@ -19,7 +19,7 @@
  ;; Preferred workflow style. 
  ;; Value is either ":now" for NOW/LATER style,
  ;; or ":todo" for TODO/DOING style.
- :preferred-workflow :now
+ :preferred-workflow :todo
 
  ;; Git settings
  :git-pull-secs 1800
