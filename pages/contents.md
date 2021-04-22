@@ -5,4 +5,3 @@
 #### 3. You can also put many different things, depending on your personal workflow.
 ## [[Queries]]
 ##
-ing on your personal workflow.
