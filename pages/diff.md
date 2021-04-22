@@ -10,6 +10,6 @@ diff --color=always --minimal --side-by-side file1 file2
 ### `file1` is the first arg and so it is on the left
 ### `file2` therefore is on the right
 ### 
-#+BEGIN_SRC 
-git push
-#+END_SRC
+#+BEGIN_EXPORT latex
+\pi
+#+END_EXPORT
