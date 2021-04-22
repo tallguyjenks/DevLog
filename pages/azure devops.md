@@ -1,5 +1,6 @@
 ---
 title: Azure DevOps
+alias: DevOps
 ---
 
 ## TODO import DevOps Notes
