@@ -4,12 +4,12 @@
 
  :project {
            ;; Selected public notes can be published to https://logseq.com/your-project-or-your-username.
-           :name "Bryan-Jenks"
+           :name "Bryan Jenks"
            :alias "TallGuyJenks"
            ;; your twitter handle
            :twitter "tallguyjenks"
            ;; description supports both hiccup and html
-           :description ""}
+           :description "Neurons imitating silicon and lightning."}
  ;; Currently, we support either "Markdown" or "Org".
  ;; This can overwrite your global preference so that
  ;; maybe your personal preferred format is Org but you'd
