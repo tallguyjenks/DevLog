@@ -4,5 +4,3 @@
 #### 2. pinning/bookmarking favorites p
 #### 3. You can also put many different things, depending on your personal workflow.
 ## [[Queries]]
-## {{embed [[2021-04-23]] }}
-##
