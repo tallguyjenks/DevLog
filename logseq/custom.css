@@ -1,3 +1,4 @@
+/*
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 :root {
@@ -170,7 +171,7 @@ h1.title {
   color: var(--red);
 }
 
-/* Priority tag styling */
+
 .priority {
   color: var(--ls-tag-text-color);
   opacity: 1 !important;
@@ -206,20 +207,6 @@ a.tooltip-priority {
 .cp__right-sidebar .sidebar-item {
     border-top-color: var(--dark-background);
 }
-
-
-
-/*
-
-    Name:       Dracula for CodeMirror
-    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
-    Adapted by:    Sly Bouhafs
-
-
-    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
-    Adapted for logseq
-
-*/
 
 .CodeMirror {
   font-family: "Fira Code", "Nerd Font", monospace;
@@ -330,4 +317,4 @@ a.tooltip-priority {
 
 #right-sidebar pre.CodeMirror-line {
   background: transparent;
-}
+}*/
