@@ -222,7 +222,7 @@ a.tooltip-priority {
 */
 
 .CodeMirror {
-  font-family: "FiraCode Nerd Font", "Fire Code", monospace;
+  font-family: "Fira Code", "Nerd Font", monospace;
   line-height: 1.2;
   background: var(--background);
 }
