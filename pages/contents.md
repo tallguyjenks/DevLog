@@ -1,6 +1,6 @@
 ## **Meta:**
 ### [[Queries]]
-### [[templates]]
+### [[Templates]]
 ### [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
 ## **Tags:**
 ### #language
@@ -13,8 +13,8 @@
 ## [[Queries]]
 ## [[Queries]]
 ##
-## [[templates]]
-## [[templates]]
+## [[Templates]]
+## [[Templates]]
 ##
 ## #language
 ## #language
@@ -30,8 +30,8 @@ tents**?
 ## [[Queries]]
 ## [[Queries]]
 ##
-## [[templates]]
-## [[templates]]
+## [[Templates]]
+## [[Templates]]
 ##
 ## #language
 ## #language

@@ -1,5 +1,5 @@
 ---
-title: templates
+title: Templates
 ---
 
 ## **Language**
