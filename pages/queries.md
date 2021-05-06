@@ -10,3 +10,5 @@ title: Queries
 ## **Waiting Tasks** {{query (todo waiting)}}
 ## **Waiting Tasks** {{query (todo waiting)}}
 ##
+## **Templates** {{query (property template) }}
+##
