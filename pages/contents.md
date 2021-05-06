@@ -1,7 +1,7 @@
 ## **Meta:**
-## [[Queries]]
-## [[templates]]
-## [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
+### [[Queries]]
+### [[templates]]
+### [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
 ## **Tags:**
 ### #language
 #### #library
