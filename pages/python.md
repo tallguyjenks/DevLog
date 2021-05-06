@@ -3,5 +3,5 @@ title: Python
 tags: language
 ---
 
-## ^^Modules^^
+## ^^Libraries^^
 ##
