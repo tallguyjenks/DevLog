@@ -1,5 +1,6 @@
 ## **Meta:** [[Queries]] [[templates]]
-## **Tags:** #language #library
+## **Tags:**
+## #language #library
 ##
 ]], you can use it for:
 #### 1. table of content/index/MOC
