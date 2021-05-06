@@ -17,3 +17,5 @@ title: Queries
 ## {{query (tag language)}}
 ## {{query (language)}}
 ## {{query (property language)}}
+## {{query (python language)}}
+## {{query (Python language)}}
