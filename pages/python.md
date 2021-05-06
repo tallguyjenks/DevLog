@@ -7,6 +7,7 @@ tags: language
 :PROPERTIES:
 :template: Programming Language
 :END:
+### ^^Resources^^
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
