@@ -1,6 +1,6 @@
 ---
 title: SQL
+tags: language
 ---
 
-## #language 
 ##
