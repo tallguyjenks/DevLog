@@ -1,5 +1,6 @@
 ---
 title: pyinstaller
+tags: library
 ---
 
 ##
