@@ -18,3 +18,22 @@ tags: language
 ## ^^Projects^^
 ##
 ## ^^Syntax^^
+##
+## ^^Syntax^^
+:PROPERTIES:
+:template: Programming Language
+:END:
+###
+### ^^Syntax^^
+:PROPERTIES:
+:template: Programming Language
+:END:
+#### ^^Syntax^^
+:PROPERTIES:
+:template: Programming Language
+:END:
+### ^^Syntax^^
+:PROPERTIES:
+:template: Programming Language
+:END:
+### ^^Syntax^^
