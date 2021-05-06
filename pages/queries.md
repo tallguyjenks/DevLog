@@ -12,3 +12,8 @@ title: Queries
 ##
 ## **Templates** {{query (property template) }}
 ##
+## {{query (todo waiting)}}
+## {{query (tag waiting)}}
+## {{query (tag language)}}
+## {{query (language)}}
+## {{query (property language)}}
