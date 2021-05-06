@@ -4,6 +4,7 @@ tags: language
 ---
 
 ## ^^Syntax^^
-## ^^Data Types^^
+## ^^Data Types & Structs^^
+## ^^Flow Control^^
 ## ^^^^
 ## ^^Libraries^^
