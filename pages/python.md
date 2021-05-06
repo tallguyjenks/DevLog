@@ -11,3 +11,7 @@ tags: language
 ## ^^Tips, Tricks, & Hacks^^
 ## ^^Libraries^^
 ## ^^Projects^^
+## ^^Syntax^^
+:PROPERTIES:
+:template: Programming Language
+:END:
