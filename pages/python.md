@@ -36,4 +36,3 @@ tags: language
 :PROPERTIES:
 :template: Programming Language
 :END:
-### ^^Syntax^^
