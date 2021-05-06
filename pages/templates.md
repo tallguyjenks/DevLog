@@ -2,10 +2,7 @@
 title: Templates
 ---
 
-## **Language**
-:PROPERTIES:
-:template: Programming Language
-:END:
+## **Language** :END:
 #### ^^Resources^^
 #### ^^Syntax^^
 #### ^^Data Types & Structs^^
