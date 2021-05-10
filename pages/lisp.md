@@ -38,7 +38,8 @@ ros use sbcl
 ##### 
 ```lisp
 (setf foo "hello world")
-
+(pprint foo)
+;; hello world
 ```
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
