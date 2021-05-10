@@ -41,7 +41,10 @@ ros use sbcl
 (pprint foo)
 ;; hello world
 ```
-#####
+##### 
+```lisp
+(pprint (string-upcase foo))
+```
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
