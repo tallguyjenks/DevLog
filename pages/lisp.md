@@ -29,6 +29,11 @@ ros use sbcl
 ### ^^Syntax^^
 #### One of the hallmarks of lisp is that the data resembles the code.
 #### Parens. Parens everywhere.
+##### 
+```lisp
+(+ 1 2)
+;; 3
+```
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
