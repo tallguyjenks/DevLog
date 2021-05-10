@@ -49,13 +49,14 @@ ros use sbcl
 ```
 ### ^^Data Types & Structs^^
 #### Type checking
-##### 
+#####
 ```lisp
 (typep foo 'string)
 ;; NIL
 (typep foo 'integer)
 ;; T
 ```
+##### The `'` is just short hand
 ### ^^Flow Control^^
 ### ^^Functions^^
 #### Using functions
