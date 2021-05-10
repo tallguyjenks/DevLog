@@ -62,6 +62,8 @@ ros use sbcl
 ```lisp
 (quote (+ 1 2))
 ;; (+ 1 2)
+'(+ 1 2)
+;; (+ 1 2)
 ```
 ### ^^Flow Control^^
 ### ^^Functions^^
