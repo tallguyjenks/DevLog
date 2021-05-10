@@ -48,7 +48,14 @@ ros use sbcl
 ;; HELLO WORLD
 ```
 ### ^^Data Types & Structs^^
-####
+#### Type checking
+##### 
+```lisp
+(typep foo 'string)
+;; NIL
+(typep foo 'integer)
+;; T
+```
 ### ^^Flow Control^^
 ### ^^Functions^^
 #### Using functions
