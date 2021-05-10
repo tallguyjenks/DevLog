@@ -3,6 +3,7 @@ title: Lisp
 ---
 
 ## **Language**
+### ^^Setup^^
 ### ^^Resources^^
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
