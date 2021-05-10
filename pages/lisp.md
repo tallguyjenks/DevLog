@@ -27,7 +27,8 @@ ros use sbcl
 #### https://opensource.com/article/21/5/learn-lisp
 #### https://learnxinyminutes.com/docs/common-lisp/
 ### ^^Syntax^^
-#### ONe of the hallmarks
+#### One of the hallmarks of lisp is that the data resembles the code.
+#### Parens. Parens everywhere.
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
