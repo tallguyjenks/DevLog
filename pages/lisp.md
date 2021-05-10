@@ -27,7 +27,7 @@ ros use sbcl
 #### https://opensource.com/article/21/5/learn-lisp
 #### https://learnxinyminutes.com/docs/common-lisp/
 ### ^^Syntax^^
-#### l
+####
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
