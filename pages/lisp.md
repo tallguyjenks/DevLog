@@ -28,6 +28,7 @@ ros use sbcl
 #### https://learnxinyminutes.com/docs/common-lisp/
 ### ^^Syntax^^
 #### One of the hallmarks of lisp is that the data resembles the code.
+#### Lisp is dynamically typed
 #### Parens. Parens everywhere.
 #####
 ```lisp
