@@ -37,6 +37,13 @@ ros use sbcl
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
+#### Using functions
+##### pretty print function:
+######
+```lisp
+(pprint "hello world")
+```
+######
 ### ^^File Handling^^
 ### ^^Tips, Tricks, & Hacks^^
 ### ^^Libraries^^
