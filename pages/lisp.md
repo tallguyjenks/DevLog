@@ -4,9 +4,16 @@ title: Lisp
 
 ## **Language**
 ### ^^Setup^^
-#### - `ailisp.strict-paredit`
-- `ailisp.commonlisp-vscode`
-- `mattn.lisp`
+#### VS Code Extensions
+#### `ailisp.strict-paredit`
+#### `ailisp.commonlisp-vscode`
+##### `mattn.lisp`
+##### `ailisp.commonlisp-vscode`
+##### `ailisp.strict-paredit`
+#### `ailisp.commonlisp-vscode`
+##### `mattn.lisp`
+#### MacOS Boostrap
+#####
 ### ^^Resources^^
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
