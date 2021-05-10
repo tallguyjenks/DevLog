@@ -13,7 +13,10 @@ title: Lisp
 #### `ailisp.commonlisp-vscode`
 ##### `mattn.lisp`
 #### MacOS Boostrap
-#####
+##### 
+```bash
+
+```
 ### ^^Resources^^
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
