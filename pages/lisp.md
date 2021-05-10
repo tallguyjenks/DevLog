@@ -56,7 +56,7 @@ ros use sbcl
 (typep foo 'integer)
 ;; T
 ```
-##### The `'` is just short hand
+##### The `'` is just short hand for: `(typep foo (quote string))`
 ### ^^Flow Control^^
 ### ^^Functions^^
 #### Using functions
