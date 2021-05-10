@@ -24,6 +24,8 @@ ros install sbcl
 ros use sbcl
 ```
 ### ^^Resources^^
+#### https://opensource.com/article/21/5/learn-lisp
+#### https://learnxinyminutes.com/docs/common-lisp/
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
