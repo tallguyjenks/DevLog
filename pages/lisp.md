@@ -57,7 +57,12 @@ ros use sbcl
 ;; T
 ```
 ##### The `'` is just short hand for: `(typep foo (quote string))`
-###### the ``
+###### the `quote` escapes the data to be literal text like:
+####### 
+```lisp
+(quote (+ 1 2))
+;; (+ 1 2)
+```
 ### ^^Flow Control^^
 ### ^^Functions^^
 #### Using functions
