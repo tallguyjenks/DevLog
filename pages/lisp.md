@@ -57,6 +57,7 @@ ros use sbcl
 ;; T
 ```
 ##### The `'` is just short hand for: `(typep foo (quote string))`
+###### the ``
 ### ^^Flow Control^^
 ### ^^Functions^^
 #### Using functions
