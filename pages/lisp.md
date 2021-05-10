@@ -44,6 +44,7 @@ ros use sbcl
 ##### 
 ```lisp
 (pprint (string-upcase foo))
+;; HE
 ```
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
