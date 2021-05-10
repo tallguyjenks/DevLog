@@ -43,7 +43,11 @@ ros use sbcl
 ```lisp
 (pprint "hello world")
 ```
-######
+#### Create Functions
+##### 
+```lisp
+(defun myPrinter (s) (pprint s))
+```
 ### ^^File Handling^^
 ### ^^Tips, Tricks, & Hacks^^
 ### ^^Libraries^^
