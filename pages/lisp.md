@@ -35,12 +35,13 @@ ros use sbcl
 ;; 3
 ```
 #### Variables
-##### 
+#####
 ```lisp
 (setf foo "hello world")
 (pprint foo)
 ;; hello world
 ```
+#####
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
