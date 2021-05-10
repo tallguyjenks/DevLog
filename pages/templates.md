@@ -6,10 +6,12 @@ title: Templates
 :PROPERTIES:
 :template: Programming Language
 :END:
+#### ^^Setup^^
 #### ^^Resources^^
 #### ^^Syntax^^
 #### ^^Data Types & Structs^^
-#### ^^Flow Control^^
+#### ^^Flow Control
+#### ^^
 #### ^^Functions^^
 #### ^^File Handling^^
 #### ^^Tips, Tricks, & Hacks^^
