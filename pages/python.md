@@ -19,7 +19,7 @@ tags: language
 ### ^^Flow Control^^
 ### ^^Functions^^
 ### ^^File Handling^^
-### ^^Tips, Tricks,
+### ^^Tips, Tricks, & Hacks^^
 ## **Language**
 ##### ^^Setup^^
 ##### ^^Resources^^
