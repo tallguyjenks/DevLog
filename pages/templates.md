@@ -10,10 +10,10 @@ title: Templates
 #### ^^Resources^^
 #### ^^Syntax^^
 #### ^^Data Types & Structs^^
-#### ^^Flow Control
-#### ^^
+#### ^^Flow Control^^
 #### ^^Functions^^
 #### ^^File Handling^^
 #### ^^Tips, Tricks, & Hacks^^
 #### ^^Libraries^^
 #### ^^Projects^^
+#### ^^Tools^^
