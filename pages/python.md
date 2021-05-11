@@ -14,5 +14,6 @@ tags: language
 ### ^^File Handling^^
 ### ^^Tips, Tricks, & Hacks^^
 ### ^^Libraries^^
+#### [[pyinstaller]]
 ### ^^Projects^^
 #
