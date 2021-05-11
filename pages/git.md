@@ -58,7 +58,7 @@ compdef g=git
 #### Aliased as `mup` for _"Master Up"_
 #### The `!` is running it as a shell command as git aliases can only run 1 command. So this way we're still chaining commands
 ### BARE Repos
-#### `git clone --bare <url>`
+#### `git clone --bare <url>` or `git init --bare`
 ## ^^Troubleshooting^^
 ### Removing a file from git history from [this SO article](https://stackoverflow.com/questions/307828/how-do-you-fix-a-bad-merge-and-replay-your-good-commits-onto-a-fixed-merge/15729420#15729420)
 ## ^^General Info^^
