@@ -7,7 +7,6 @@ tags: language
 #### ^^Setup^^
 ### ^^Resources^^
 #### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
-####
 ### ^^Tools^^
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
