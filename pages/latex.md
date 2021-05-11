@@ -1,5 +1,6 @@
 ---
 title: LaTeX
+tags: language
 ---
 
 ##
