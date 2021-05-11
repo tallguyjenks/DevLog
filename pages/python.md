@@ -5,7 +5,8 @@ tags: language
 
 ## **Language**
 ### ^^Resources^^
-#### Comprehensive Chearsheet
+#### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
+####
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
