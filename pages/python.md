@@ -10,7 +10,7 @@ tags: language
 ### ^^Projects^^
 ### ^^Tools^^
 #### [[Jupyter]]
-##### [[Kite]]
+#### [[Kite]]
 ### ^^Libraries^^
 #### [[pyinstaller]]
 ### ^^Syntax^^
