@@ -9,6 +9,7 @@ tags: language
 #### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 ### ^^Projects^^
 ### ^^Tools^^
+#### [[Jupyter]]
 ### ^^Libraries^^
 #### [[pyinstaller]]
 ### ^^Syntax^^
@@ -20,8 +21,8 @@ tags: language
 ### ^^Libraries^^
 ### ^^Proje
 ^^
-#### [[Jupyter]]
-#### [[Kite]]
+#### [[Jup
+e]]
 ##
 ## **Language**
 #### ^^Resources^^
