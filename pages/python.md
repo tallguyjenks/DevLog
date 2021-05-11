@@ -15,6 +15,8 @@ tags: language
 ### ^^Tips, Tricks, & Hacks^^
 ### ^^Libraries^^
 #### [[pyinstaller]]
-####
 ### ^^Projects^^
-#
+### ^^Tools^^
+#### [[Jupyter]]
+#### [[Kite]]
+####
