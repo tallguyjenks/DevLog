@@ -8,6 +8,7 @@ tags: language
 ### ^^Resources^^
 #### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 ### ^^Tools^^
+### ^^Libraries^^
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
@@ -23,7 +24,6 @@ tags: language
 ##
 ## **Language**
 #### ^^Resources^^
-#### ^^Libraries^^
 #### ^^Projects^^
 #### ^^Syntax^^
 #### ^^Data Types & Structs^^
