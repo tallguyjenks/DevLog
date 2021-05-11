@@ -19,5 +19,16 @@ tags: language
 ### ^^Flow Control^^
 ### ^^Functions^^
 ### ^^File Handling^^
-### ^^Tips, Tricks
-### ^^Libra
+### ^^Tips, Tricks,
+## **Language**
+##### ^^Setup^^
+##### ^^Resources^^
+##### ^^Tools^^
+##### ^^Libraries^^
+##### ^^Projects^^
+##### ^^Syntax^^
+##### ^^Data Types & Structs^^
+##### ^^Flow Control^^
+##### ^^Functions^^
+##### ^^File Handling^^
+##### ^^Tips, Tricks, & Hacks^^
