@@ -7,11 +7,25 @@ tags: tools
 ### [Official Git Docs command shorthand](https://git-scm.com/docs)
 ### [GREAT graphical walkthrough tool for learning git](https://learngitbranching.js.org/)
 ## ^^Commands^^
-### Pretty Log Output (_PLOG_)
-#### 
+### `git log`
+#### Pretty Log Output (_PLOG_)
+#####
 ```bash
 git config --global  alias.plog "log --graph --format='%Cgreen%h %Cred%aN%Cblue%d%Creset %s %C(yellow)(%cr)%Creset'"
 ```
+### `Git Stash`
+#### 
+```bash
+git stash push 
+```
+##### like an array method this will create a _Box_ and put all your changes inside of it and shove that _box_ in the corner of the room and give you a clean working tree.
+##### The _box_ is now portable and you can switch to another branch and open the _box_ there and take out all of the changes.
+####
+```bash
+git stash pop
+```
+##### This opens the _box_ and applies all those stashed changes to the current working tree.
+##### This is very useful for the situations where maybe you made a bunch of changes and you forgot to make a new branch and you're still on `master`/`main` and you want to move all those changes to the actual feature branch.
 ## ^^Configuration^^
 ### Great bash config for using git from [this thoughtbot article](https://thoughtbot.com/upcase/videos/git-customizing)
 #### 
