@@ -35,6 +35,7 @@ compdef g=git
 ## ^^Troubleshooting^^
 ### Removing a file from git history from [this SO article](https://stackoverflow.com/questions/307828/how-do-you-fix-a-bad-merge-and-replay-your-good-commits-onto-a-fixed-merge/15729420#15729420)
 ## ^^General Info^^
+### [[2021-04-27]]
 ### The `git checkout` command was replaced by `git switch` in git v2.23 as `git checkout` was apparently too overloaded.
 ### **Rebasing:** essentially takes a set of commits, "copies" them, and plops them down somewhere else.
 #### if you have 2 parallel branches and you rebase 1 onto the other it essentially looks for their common origin point (commit), takes the "base" of that branch and places the base at the end and right on top of branch you're Rebasing.
