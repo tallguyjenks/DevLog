@@ -26,6 +26,16 @@ git stash pop
 ```
 ##### This opens the _box_ and applies all those stashed changes to the current working tree.
 ##### This is very useful for the situations where maybe you made a bunch of changes and you forgot to make a new branch and you're still on `master`/`main` and you want to move all those changes to the actual feature branch.
+### `git worktree`
+#### 
+```bash
+git worktree add master
+```
+##### Create a bare repo and start making new worktrees
+###### This means that a copy of the repo files is made for each worktree at the source commit that the bare repo was made from
+###### Worktrees make it easier to open multiple repo branches at once under a unified workspace for easy switching of work between multiple features
+###### Doesn't lend itself to easy updating.
+####### The bare repo doesn't `git pull` itself but the worktrees after creation can use `git pull` but this is not ideal. The bare repo is basically frozen at a single commit for all new worktrees made.
 ## ^^Configuration^^
 ### Great bash config for using git from [this thoughtbot article](https://thoughtbot.com/upcase/videos/git-customizing)
 #### 
