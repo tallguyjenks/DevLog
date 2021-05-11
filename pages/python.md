@@ -9,12 +9,13 @@ tags: language
 #### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 ### ^^Tools^^
 ### ^^Libraries^^
+#### [[pyinstaller]]
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
 ### ^^File Handling^^
-### ^^Tips, Tricks### [[pyinstaller]]
+### ^^Tips, Tricks
 ### ^^Libraries^^
 ### ^^Projects^^
 ### ^^Tools^^
