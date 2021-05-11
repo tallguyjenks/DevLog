@@ -31,7 +31,7 @@ git stash pop
 ```bash
 git worktree add master
 ```
-##### Create a bare repo and start making new worktrees
+##### Create a bare repo and start making new worktrees ((609ad591-5d2d-4a35-bfea-bc8a279b8ec6))
 ###### This means that a copy of the repo files is made for each worktree at the source commit that the bare repo was made from
 ###### Worktrees make it easier to open multiple repo branches at once under a unified workspace for easy switching of work between multiple features
 ###### Doesn't lend itself to easy updating.
@@ -58,6 +58,9 @@ compdef g=git
 #### Aliased as `mup` for _"Master Up"_
 #### The `!` is running it as a shell command as git aliases can only run 1 command. So this way we're still chaining commands
 ### BARE Repos
+:PROPERTIES:
+:id: 609ad591-5d2d-4a35-bfea-bc8a279b8ec6
+:END:
 #### `git clone --bare <url>` or `git init --bare`
 ## ^^Troubleshooting^^
 ### Removing a file from git history from [this SO article](https://stackoverflow.com/questions/307828/how-do-you-fix-a-bad-merge-and-replay-your-good-commits-onto-a-fixed-merge/15729420#15729420)
