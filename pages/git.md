@@ -31,7 +31,7 @@ git stash pop
 ```bash
 git worktree add master
 ```
-##### Create a bare repo and start making new worktrees
+##### Create a bare repo  and start making new worktrees
 ###### This means that a copy of the repo files is made for each worktree at the source commit that the bare repo was made from
 ###### Worktrees make it easier to open multiple repo branches at once under a unified workspace for easy switching of work between multiple features
 ###### Doesn't lend itself to easy updating.
