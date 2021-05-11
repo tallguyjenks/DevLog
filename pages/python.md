@@ -14,9 +14,8 @@ tags: language
 ### ^^Flow Control^^
 ### ^^Functions^^
 ### ^^File Handling^^
-### ^^Tips, Tricks, & Hacks^^
+### ^^Tips, Tricks### [[pyinstaller]]
 ### ^^Libraries^^
-#### [[pyinstaller]]
 ### ^^Projects^^
 ### ^^Tools^^
 #### [[Jupyter]]
