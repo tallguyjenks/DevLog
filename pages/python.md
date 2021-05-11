@@ -20,15 +20,3 @@ tags: language
 ### ^^Functions^^
 ### ^^File Handling^^
 ### ^^Tips, Tricks, & Hacks^^
-## **Language**
-##### ^^Setup^^
-##### ^^Resources^^
-##### ^^Tools^^
-##### ^^Libraries^^
-##### ^^Projects^^
-##### ^^Syntax^^
-##### ^^Data Types & Structs^^
-##### ^^Flow Control^^
-##### ^^Functions^^
-##### ^^File Handling^^
-##### ^^Tips, Tricks, & Hacks^^
