@@ -3,7 +3,7 @@ title: Python
 tags: language
 ---
 
-## **Language**
+## ^^**Language**^^
 #### ^^Setup^^
 ### ^^Resources^^
 #### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
