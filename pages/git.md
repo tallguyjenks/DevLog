@@ -4,7 +4,8 @@ tags: tools
 ---
 
 ## ^^Resources^^
-### https://git-scm.com/docs
+### [Official Git Docs command shorthand](https://git-scm.com/docs)
+### [GREAT graphical walkthrough tool](https://learngitbranching.js.org/) for learning git
 ## ^^Commands^^
 ### Pretty Log Output (_PLOG_)
 #### 
