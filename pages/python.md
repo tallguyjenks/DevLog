@@ -10,6 +10,7 @@ tags: language
 ### ^^Projects^^
 ### ^^Tools^^
 #### [[Jupyter]]
+##### [[Kite]]
 ### ^^Libraries^^
 #### [[pyinstaller]]
 ### ^^Syntax^^
@@ -22,9 +23,7 @@ tags: language
 ### ^^Proje
 ^^
 #### [[Jup
-e]]
-##
-## **Language**
+anguage**
 #### ^^Resources^^
 #### ^^Projects^^
 #### ^^Syntax^^
