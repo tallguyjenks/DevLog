@@ -13,7 +13,7 @@ tags: tools
 ```bash
 git config --global  alias.plog "log --graph --format='%Cgreen%h %Cred%aN%Cblue%d%Creset %s %C(yellow)(%cr)%Creset'"
 ```
-### `Git Stash`
+### `git stash`
 #### 
 ```bash
 git stash push 
