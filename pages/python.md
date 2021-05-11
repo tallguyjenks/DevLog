@@ -4,6 +4,7 @@ tags: language
 ---
 
 ## **Language**
+#### ^^Setup^^
 ### ^^Resources^^
 #### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 ####
@@ -21,7 +22,6 @@ tags: language
 #### [[Kite]]
 ##
 ## **Language**
-#### ^^Setup^^
 #### ^^Resources^^
 #### ^^Tools^^
 #### ^^Libraries^^
