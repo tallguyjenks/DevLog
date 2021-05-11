@@ -19,16 +19,5 @@ tags: language
 ### ^^Functions^^
 ### ^^File Handling^^
 ### ^^Tips, Tricks
-### ^^Libraries^^
-### ^^Proje
-^^
-#### [[Jup
-anguage**
-#### ^^Resources^^
-#### ^^Projects^^
-#### ^^Syntax^^
-#### ^^Data Types & Structs^^
-#### ^^Flow Control^^
-#### ^^Functions^^
-#### ^^File Handling^^
-#### ^^Tips, Tricks, & Hacks^^
+### ^^Libra
+an
