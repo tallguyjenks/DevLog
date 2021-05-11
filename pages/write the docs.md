@@ -1,5 +1,6 @@
 ---
 title: Write The Docs
+tags: documentation
 ---
 
 ## https://www.writethedocs.org/
