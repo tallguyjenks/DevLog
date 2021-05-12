@@ -28,7 +28,10 @@ tags: language
 :PROPERTIES:
 :todo: 1620835782488
 :END:
-#####
+##### TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
+:PROPERTIES:
+:todo: 1620835794488
+:END:
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
