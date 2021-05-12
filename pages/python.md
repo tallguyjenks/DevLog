@@ -12,6 +12,7 @@ tags: language
 ### ^^Tools^^
 #### [[Jupyter]]
 #### [[Kite]]
+#### **Dependency Management**
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]]
 #### **Benchmarking:** [[clockpy]]
