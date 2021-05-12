@@ -17,7 +17,8 @@ tags: language
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]]
 #### **Benchmarking:** [[clockpy]]
-#### **Unit Testing** [[unittest]]
+#### **Unit Testing:** [[unittest]]
+#### **Logging:**
 ### ^^Syntax^^
 #### **Decorators**
 ##### TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
