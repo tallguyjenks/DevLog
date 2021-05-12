@@ -13,7 +13,7 @@ tags: language
 #### [[Jupyter]]
 #### [[Kite]]
 ### ^^Libraries^^
-#### [[pyinstaller]]
+#### **Utils:** [[pyinstaller]]
 #### **Benchmarking:** [[clockpy]]
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
