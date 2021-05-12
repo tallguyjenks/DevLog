@@ -14,7 +14,7 @@ tags: language
 #### [[Kite]]
 ### ^^Libraries^^
 #### [[pyinstaller]]
-#### [[clockpy]]
+#### **Benchmarking:** [[clockpy]]
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
