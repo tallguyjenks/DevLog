@@ -12,7 +12,7 @@ tags: language
 ### ^^Tools^^
 #### [[Jupyter]]
 #### [[Kite]]
-#### **Dependency Management** [[Python Poetry]]
+#### **Dependency Management** [[Python Poetry]] [[pydeps]]
 ####
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]]
