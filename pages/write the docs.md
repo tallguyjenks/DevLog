@@ -7,5 +7,6 @@ tags: documentation
 :PROPERTIES:
 :todo: 1620623425307
 :END:
-### https://www.writethedocs.org/guide/writing/style-guides/
-##
+### [Style Guides](https://www.writethedocs.org/guide/writing/style-guides/)
+### [CLI]
+###
