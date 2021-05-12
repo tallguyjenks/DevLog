@@ -17,6 +17,7 @@ tags: language
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]]
 #### **Benchmarking:** [[clockpy]]
+#### **Unit Testing** [[unittest]]
 ### ^^Syntax^^
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
