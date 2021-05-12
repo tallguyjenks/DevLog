@@ -24,6 +24,10 @@ tags: language
 :PROPERTIES:
 :todo: 1620835767488
 :END:
+##### TODO [Decorators 201](https://sureshdsk.dev/python-decorators-201)
+:PROPERTIES:
+:todo: 1620835782488
+:END:
 #####
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
