@@ -19,6 +19,12 @@ tags: language
 #### **Benchmarking:** [[clockpy]]
 #### **Unit Testing** [[unittest]]
 ### ^^Syntax^^
+#### **Decorators**
+##### TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
+:PROPERTIES:
+:todo: 1620835767488
+:END:
+#####
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
