@@ -35,6 +35,10 @@ tags: language
 #### **Logging:** [[logging]]
 ### ^^Syntax^^
 #### **Conventions**
+##### TODO check PEP for style conventions
+:PROPERTIES:
+:todo: 1620898933798
+:END:
 ##### Use uppercase initials for class names, lowercase for all others.
 ###### function names all in lowercase
 ###### `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
