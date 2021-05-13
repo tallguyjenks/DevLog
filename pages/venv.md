@@ -17,7 +17,8 @@ tags: library
 ##### activates it
 #### `which python`
 ##### confirms usage by
-### and in the venv if you run `pip list` it will show you all the installed packages (only pip and setup tools) installed packages will now be stored here
+#### `pip list`
+##### and in the venv if you run  it will show you all the installed packages (only pip and setup tools) installed packages will now be stored here
 ### To get a list of the packages to send for reproducable analysis run:
 ### `pip freeze`
 ### and the output can go to _requirements.txt_
