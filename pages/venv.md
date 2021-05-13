@@ -13,8 +13,8 @@ tags: library
 ##### make a new project in a virtual environment
 ### `python3 -m venv projects/env_name`
 #### Makes multiple environments for different projects but all in a single overarching directory
-### then activate it:
 ### `source project_env/bin/activate`
+#### then activate it
 ### confirm usage by
 ### `which python`
 ### and in the venv if you run `pip list` it will show you all the installed packages (only pip and setup tools) installed packages will now be stored here
