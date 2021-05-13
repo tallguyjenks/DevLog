@@ -5,8 +5,8 @@ tags: library
 
 ## **Python Virtual Environments**
 ### **What are they**
-### a place to install packages that are specific to a certain project
-#### also like [[packrat]] for [[R]] where you want to use a specific older version of a package in a snapshot
+#### a place to install packages that are specific to a certain project
+##### also like [[packrat]] for [[R]] where you want to use a specific older version of a package in a snapshot
 ### A good module to use for this is the venv module
 ### to make a new project in a virtual environment use this command:
 ### `python3 -m venv project_env`
