@@ -75,7 +75,7 @@ tags: language
 ### - activate virtual environment `source project_env/bin/activate`
 ### - confirm usage: `which python`
 ### - install necessary packages
-### - snap shot of requirements for reproduce-ability with `pip freeze  requirements.txt`
-### - to import requirements from elsewhere `pip install -r requrirements.txt`
+#### snap shot of requirements for reproduce-ability with `pip freeze  requirements.txt`
+#### to import requirements from elsewhere `pip install -r requrirements.txt`
 ### Ending
 #### deactivate virtual environment `deactivate`
