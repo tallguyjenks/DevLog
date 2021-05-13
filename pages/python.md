@@ -9,7 +9,10 @@ tags: language
 #### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 #### [article on logging for a python app](https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540)
 #### [thomas-cokelaer python notes](https://thomas-cokelaer.info/tutorials/python/index.html)
-#### [perceptilabs](https://www.perceptilabs.com/papers)
+#### TODO [perceptilabs](https://www.perceptilabs.com/papers)
+:PROPERTIES:
+:todo: 1620885568483
+:END:
 ### ^^Projects^^
 ### ^^Tools^^
 #### [[Jupyter]]
