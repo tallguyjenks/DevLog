@@ -42,7 +42,7 @@ tags: language
 ##### Name a private identifier with a leading underscore ( `_username`)
 ##### Name a strongly private identifier with two leading underscores (`__password`)
 ##### Special identifiers in Python end with two leading underscores.
-###### _A.K.A. Dunder methods ()_
+###### _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 #### **Decorators**
 ##### TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 :PROPERTIES:
