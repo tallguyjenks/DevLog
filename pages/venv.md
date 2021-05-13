@@ -11,12 +11,12 @@ tags: library
 #### A good module to use for this is the [[venv]] module
 #### `python3 -m venv project_env`
 ##### make a new project in a virtual environment
-### `python3 -m venv projects/env_name`
-#### Makes multiple environments for different projects but all in a single overarching directory
-### `source project_env/bin/activate`
-#### then activate it
-### confirm usage by
-### `which python`
+#### `python3 -m venv projects/env_name`
+##### Makes multiple environments for different projects but all in a single overarching directory
+#### `source project_env/bin/activate`
+##### activates it
+#### `which python`
+##### confirms usage by
 ### and in the venv if you run `pip list` it will show you all the installed packages (only pip and setup tools) installed packages will now be stored here
 ### To get a list of the packages to send for reproducable analysis run:
 ### `pip freeze`
