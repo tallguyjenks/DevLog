@@ -8,6 +8,7 @@ tags: language
 ### ^^Resources^^
 #### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 #### [article on logging for a python app](https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540)
+#### https://thomas-cokelaer
 ### ^^Projects^^
 ### ^^Tools^^
 #### [[Jupyter]]
