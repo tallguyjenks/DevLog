@@ -41,7 +41,7 @@ Never commit your venv's to source control, put them in gitignore
 #### `python3 -m venv venv --system-site-packages`
 ##### Create a venv with access to the system global packages for python from within a virtual environment
 ##### the difference is that now you copied your system packages to the venv but new installs will only go into the venv until you remove it
-#### to see packages that are only installed in the venv and not the system you can run:
 #### `pip list --local`
+##### to see packages that are only installed in the venv and not the system you can run:
 #### same logic for
 #### `pip freeze --local`
