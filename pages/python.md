@@ -70,13 +70,18 @@ tags: language
 ### ^^File Handling^^
 ### ^^Tips, Tricks, & Hacks^^
 ## **Workflow**
-### Starting
-#### create virtual environment `python3 -m venv projects/env_name`
-#### activate virtual environment `source project_env/bin/activate`
-#### confirm usage: `which python`
+### _Starting_
+#### `python3 -m venv projects/env_name`
+##### create virtual environment
+#### `source project_env/bin/activate`
+##### activate virtual environment
+#### `which python`
+##### confirm usage
 #### install necessary packages
-#### snap shot of requirements for reproduce-ability with `pip freeze  requirements.txt`
+#### `pip freeze  requirements.txt`
+##### snap shot of requirements for reproduce-ability with
 #### `pip install -r requrirements.txt`
 ##### to import requirements from elsewhere
-### Ending
-#### deactivate virtual environment `deactivate`
+### _Ending_
+#### `deactivate`
+##### deactivate virtual environment
