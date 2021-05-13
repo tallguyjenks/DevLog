@@ -37,6 +37,7 @@ tags: language
 #### **Benchmarking:** [[clockpy]]
 #### **Unit Testing:** [[unittest]]
 #### **Logging:** [[logging]]
+#### **Virtual Environment:** [[venv]]
 ### ^^Syntax^^
 #### **Conventions**
 ##### TODO check PEP for style conventions
