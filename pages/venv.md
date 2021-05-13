@@ -3,18 +3,12 @@ title: venv
 tags: library
 ---
 
-##
-## # Python Virtual Environments
-
-
-a place to install packages that are specific to a certain project
-- also like packrat for R where you want to use a specific older version of a package in a snapshot
-
-A good module to use for this is the venv module
-
-to make a new project in a virtual environment use this command:
-
-`python3 -m venv project_env`
+## **Python Virtual Environments**
+## a place to install packages that are specific to a certain project
+### also like packrat for R where you want to use a specific older version of a package in a snapshot
+## A good module to use for this is the venv module
+## to make a new project in a virtual environment use this command:
+## `python3 -m venv project_env`
 
 to make multiple environments for different projects but all in a single overarching directory, then just run `python3 -m venv projects/env_name`
 
