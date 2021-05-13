@@ -3,7 +3,7 @@ title: Jupyter
 tags: tools
 ---
 ## Themes
-### To get a custom theme (gruvboxdark) onto my jupyter notebook i used the tool [jupyter-themes](https://github.com/dunovank/jupyter-themes)
+### To get a custom theme (_gruvboxdark_) onto my jupyter notebook i used the tool [jupyter-themes](https://github.com/dunovank/jupyter-themes)
 ### Then the command i ran was `jt -t gruvboxd -f fira -fs 115`
 ### [SO answer about theming notebooks](https://stackoverflow.com/questions/46510192/change-the-theme-in-jupyter-notebook#46561480)
 ## Line Magics
