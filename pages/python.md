@@ -39,9 +39,10 @@ tags: language
 ###### function names all in lowercase
 ###### `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
 ####### `user1.first_name` > `user1.firstName`
-##### Name a private identifier with a leading underscore ( _username)
-##### Name a strongly private identifier with two leading underscores ( __password)
+##### Name a private identifier with a leading underscore ( `_username`)
+##### Name a strongly private identifier with two leading underscores (`__password`)
 ##### Special identifiers in Python end with two leading underscores.
+###### _A.K.A. Dunder methods ()_
 #### **Decorators**
 ##### TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 :PROPERTIES:
