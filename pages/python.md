@@ -76,6 +76,7 @@ tags: language
 #### confirm usage: `which python`
 #### install necessary packages
 #### snap shot of requirements for reproduce-ability with `pip freeze  requirements.txt`
-#### to import requirements from elsewhere `pip install -r requrirements.txt`
+#### `pip install -r requrirements.txt`
+##### to import requirements from elsewhere
 ### Ending
 #### deactivate virtual environment `deactivate`
