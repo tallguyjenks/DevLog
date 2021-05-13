@@ -4,8 +4,10 @@ tags: language
 ---
 ## **Language**
 ## ^^Setup^^
-## ^^Resources^^
+## ^^Resources
+## ^^
 ## ^^Tools^^
+### [[Markdown Lint]]
 ## ^^Libraries^^
 ## ^^Projects^^
 ## ^^Syntax^^
