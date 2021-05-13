@@ -35,7 +35,12 @@ tags: language
 #### **Logging:** [[logging]]
 ### ^^Syntax^^
 #### **Conventions**
-#####
+##### Use uppercase initials for class names, lowercase for all others.
+	+ function names all in lowercase
+	+ class.object.field names should not be capitalized, and if multiple words used, then separate with underscores: 'user1.first_name > user1.firstName'
+2. Name a private identifier with a leading underscore ( _username)
+3. Name a strongly private identifier with two leading underscores ( __password)
+4. Special identifiers in Python end with two leading underscores.
 #### **Decorators**
 ##### TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 :PROPERTIES:
