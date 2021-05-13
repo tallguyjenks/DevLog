@@ -6,9 +6,18 @@ tags: language
 ## **Language**
 #### ^^Setup^^
 ### ^^Resources^^
-#### [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
-#### [article on logging for a python app](https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540)
-#### [thomas-cokelaer python notes](https://thomas-cokelaer.info/tutorials/python/index.html)
+#### TODO [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
+:PROPERTIES:
+:todo: 1620885582093
+:END:
+#### TODO [article on logging for a python app](https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540)
+:PROPERTIES:
+:todo: 1620885579117
+:END:
+#### TODO [thomas-cokelaer python notes](https://thomas-cokelaer.info/tutorials/python/index.html)
+:PROPERTIES:
+:todo: 1620885575348
+:END:
 #### TODO [perceptilabs](https://www.perceptilabs.com/papers)
 :PROPERTIES:
 :todo: 1620885568483
