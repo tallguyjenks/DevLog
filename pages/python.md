@@ -71,10 +71,10 @@ tags: language
 ### ^^Tips, Tricks, & Hacks^^
 ## **Workflow**
 ### Starting
-### - create virtual environment^[[[Python Virtual Environments]]] `python3 -m venv projects/env_name`
-### - activate virtual environment `source project_env/bin/activate`
-### - confirm usage: `which python`
-### - install necessary packages
+#### create virtual environment^[[[Python Virtual Environments]]] `python3 -m venv projects/env_name`
+#### activate virtual environment `source project_env/bin/activate`
+#### confirm usage: `which python`
+#### install necessary packages
 #### snap shot of requirements for reproduce-ability with `pip freeze  requirements.txt`
 #### to import requirements from elsewhere `pip install -r requrirements.txt`
 ### Ending
