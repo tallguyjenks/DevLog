@@ -29,9 +29,13 @@ tags: library
 ### 
 #+BEGIN_TIP
 You can put your virtual environment into the project folder but you dont want to put your project files into the venv as the venv is just the place where execution is taking place, your working files should be in your project directory.
+
+the venv's are meant to be disposable and easy to throw away so no project files in them.
 #+END_TIP
-### the venv's are meant to be disposable and easy to throw away so no project files in them.
-### also never commit your venv's to source control, put them in gitignore
+### 
+#+BEGIN_WARNING
+Never commit your venv's to source control, put them in gitignore
+#+END_WARNING
 ### but what you would commit to source control is the _requirements.txt_ doc
 ### to create a venv with access to the system global packages for python from within a virtual environment run:
 ### `python3 -m venv venv --system-site-packages`
