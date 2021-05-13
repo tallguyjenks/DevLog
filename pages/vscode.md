@@ -1,5 +1,6 @@
 ---
 title: VSCode
+tags: tools
 ---
 
 ## ^^Extensions^^
