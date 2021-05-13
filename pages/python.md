@@ -22,10 +22,11 @@ tags: language
 :PROPERTIES:
 :todo: 1620885575348
 :END:
-#### TODO [perceptilabs](https://www.perceptilabs.com/papers)
+#### TODO [perceptilabs](
 :PROPERTIES:
 :todo: 1620885568483
 :END:
+#### https://www.perceptilabs.com/papers)
 ### ^^Projects^^
 ### ^^Tools^^
 #### [[Jupyter]]
