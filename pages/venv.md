@@ -25,7 +25,7 @@ tags: library
 #### `deactivate`
 ##### to deactivate the venv
 #### `pip install -r requrirements.txt`
-##### To take a new virtual environment and install a list of requirements that we exported above, run:
+##### To take a new virtual environment and install a list of requirements that we exported above
 ### You can put your virtual environment into the project folder but you dont want to put your project files into the venv as the venv is just the place where execution is taking place, your working files should be in your project directory.
 ### the venv's are meant to be disposable and easy to throw away so no project files in them.
 ### also never commit your venv's to source control, put them in gitignore
