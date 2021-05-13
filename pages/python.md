@@ -34,6 +34,8 @@ tags: language
 #### **Unit Testing:** [[unittest]]
 #### **Logging:** [[logging]]
 ### ^^Syntax^^
+#### **Conventions**
+#####
 #### **Decorators**
 ##### TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 :PROPERTIES:
