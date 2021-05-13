@@ -19,8 +19,8 @@ tags: library
 ##### confirms usage by
 #### `pip list`
 ##### in the venv if you this command it will show you all the installed packages (only pip and setup tools) installed packages will now be stored here
-### To get a list of the packages to send for reproducable analysis run:
-### `pip freeze`
+#### `pip freeze`
+##### Gets a list of the packages to send for reproducible analysis
 ### and the output can go to _requirements.txt_
 ### to deactivate the venv then run the `deactivate` command
 ### To take a new virtual environment and install a list of requirements that we exported above, run:
