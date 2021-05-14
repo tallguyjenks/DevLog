@@ -40,7 +40,8 @@ tags: language
 #### **Virtual Environment:** [[venv]]
 #### **tkinter:** [[tkinter]], [[tkcalendar]]
 #### **Data Science:**
-##### **Data Manipulation:**
+##### **Data Manipulation:** [[pandas]]
+##### **Data Visualization**
 ### ^^Syntax^^
 #### **Conventions**
 ##### TODO check PEP for style conventions
