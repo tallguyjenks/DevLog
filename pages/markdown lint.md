@@ -14,7 +14,8 @@ title: Markdown Lint
 :todo: 1620936919438
 :done: 1620952997952
 :END:
-### DOING [sample config file here](https://github.com/github/super-linter/blob/master/TEMPLATES/.markdown-lint.yml) 
+### DONE [sample config file here](https://github.com/github/super-linter/blob/master/TEMPLATES/.markdown-lint.yml) 
 :PROPERTIES:
 :doing: 1620938492618
+:done: 1620953001011
 :END:
