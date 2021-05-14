@@ -3,11 +3,11 @@ title: Markdown Lint
 ---
 
 ## [Repo](https://github.com/DavidAnson/markdownlint#optionsconfig)
-### TODO [List of Rules/Aliases](https://github.com/DavidAnson/markdownlint#rules--aliases) 
+### DONE [List of Rules/Aliases](https://github.com/DavidAnson/markdownlint#rules--aliases) 
 :PROPERTIES:
 :doing: 1620953050195
 :todo: 1620953052946
-:done: 1620953051050
+:done: 1620953053682
 :END:
 ### DONE [configuration](https://github.com/DavidAnson/markdownlint#configuration)
 :PROPERTIES:
