@@ -33,7 +33,7 @@ tags: language
 #### **Dependency Management** [[Python Poetry]] [[pydeps]]
 ####
 ### ^^Libraries^^
-#### **Utils:** [[pyinstaller]]
+#### **Utils:** [[pyinstaller]], [[os]]
 #### **Benchmarking:** [[clockpy]]
 #### **Unit Testing:** [[unittest]]
 #### **Logging:** [[logging]]
