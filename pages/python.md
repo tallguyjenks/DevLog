@@ -39,6 +39,9 @@ tags: language
 #### **Logging:** [[logging]]
 #### **Virtual Environment:** [[venv]]
 #### **tkinter:** [[tkinter]], [[tkcalendar]]
+#### **Data Science:**
+##### 
+****
 ### ^^Syntax^^
 #### **Conventions**
 ##### TODO check PEP for style conventions
