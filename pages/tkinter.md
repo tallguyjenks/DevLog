@@ -1,0 +1,6 @@
+---
+title: tkinter
+---
+
+## [[tkinter.ttk]]
+###
