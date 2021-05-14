@@ -38,7 +38,7 @@ tags: language
 #### **Unit Testing:** [[unittest]]
 #### **Logging:** [[logging]]
 #### **Virtual Environment:** [[venv]]
-#### **tkinter**
+#### **tkinter:** [[tkinter]]
 ### ^^Syntax^^
 #### **Conventions**
 ##### TODO check PEP for style conventions
