@@ -41,7 +41,7 @@ tags: language
 #### **tkinter:** [[tkinter]], [[tkcalendar]]
 #### **Data Science:**
 ##### **Data Manipulation:** [[pandas]]
-##### **Data Visualization**
+##### **Data Visualization:** [[matplotlib]]
 ### ^^Syntax^^
 #### **Conventions**
 ##### TODO check PEP for style conventions
