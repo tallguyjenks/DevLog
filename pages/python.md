@@ -38,7 +38,8 @@ tags: language
 #### **Unit Testing:** [[unittest]]
 #### **Logging:** [[logging]]
 #### **Virtual Environment:** [[venv]]
-#### **tkinter:** [[tkinter]], [[tkcalendar]]
+#### **GUI Apps:**
+##### **tkinter:** [[tkinter]], [[tkcalendar]]
 #### **Data Science:**
 ##### **Data Manipulation:** [[pandas]], [[datetime]]
 ##### **Data Visualization:** [[matplotlib]]
