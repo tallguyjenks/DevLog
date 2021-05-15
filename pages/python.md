@@ -38,6 +38,8 @@ tags: language
 #### **Unit Testing:** [[unittest]]
 #### **Logging:** [[logging]]
 #### **Virtual Environment:** [[venv]]
+#### **File System:**
+##### **File System Monitoring:** [[watchdog]]
 #### **GUI Apps:**
 ##### **tkinter:** [[tkinter]], [[tkcalendar]]
 #### **Data Science:**
