@@ -77,6 +77,18 @@ tags: language
 ### ^^Functions^^
 ### ^^File Handling^^
 ####
+```python
+employee_file = open("employees.txt","r") # Filename, Mode (r:read a:append w:write)
+print(employee_file.readable()) # returns T/F if we can read the file
+print(employee_file.readline()) # reads the first line of the file
+print(employee_file.readline()) # reads the next line (second) in the file
+print(employee_file.readline()[2]) # reads the (third) in the file
+
+
+# always close open files
+employee_file.close()
+```
+####
 ### ^^Tips, Tricks, & Hacks^^
 ## 
 ---
