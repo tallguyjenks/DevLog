@@ -137,8 +137,6 @@ print(user.last_name)
 print(user.birthday)
 print(user.age())
 ```
-### ```python
-import datetime
 ### ^^File Handling^^
 #### 
 ```python
