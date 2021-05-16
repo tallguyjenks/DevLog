@@ -37,7 +37,9 @@
   --ls-border-radius-low: 3px;
   --ls-border-radius-medium: 6px;
 }
-
+#file-logseq {
+  width: 100% !important;
+}
 .dark-theme,
 html[data-theme="dark"] {
   --ls-primary-background-color: var(--background);
