@@ -38,7 +38,7 @@
   --ls-border-radius-medium: 6px;
 }
 .max-w-7xl {
-    max-width: 200%;
+    max-width: 120rem;
 }
 .dark-theme,
 html[data-theme="dark"] {
