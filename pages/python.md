@@ -79,42 +79,6 @@ tags: language
 ####```python
 import datetime
 
-# class names should start with a capital letter
-class User:
-    """
-    This is a doc string for this python class,
-    if you call help(User) this is what will appear
-    it will also show you other useful and relevant information
-    but it must be encapsulated within 3 sets of double quotes"""
-
-    # init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
-    # self is a reference to the newly created object instance
-    def __init__(self, full_name, birthday):
-        self.name = full_name # getter/setter
-        self.birthday = birthday
-
-    # extract first and last names
-    name_pieces = full_name.split(" ")
-    self.first_name = name_pieces[0]
-    self.last_name = name_pieces[-1]
-
-    def age(self):
-        """Return the age of the user in years"""
-        today = datetime.date(2001, 5, 12)
-        yyyy = int(self.birthday[0:4])
-        mm = int(self.birthday[4:6])
-        dd = int(self.birthday[6:8])
-        dob = datetime.date(yyyy, mm, dd) # date of birth
-        age_in_days = (today - dob).days
-        age_in_years = age_in_days / 365
-        return int(age_in_years)
-
-user1 = new User("john legend", 20191120)
-user1.name # result: "john legend"
-user1.first_name # result: "john"
-user1.last_name # result: "legend"
-user1.birthday # result: 20191120
-``
 ####
 ```python
 class User1:
