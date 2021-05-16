@@ -75,6 +75,7 @@ tags: language
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 ### ^^Functions^^
+### ^^Object Oriented Programming^^
 ### ^^File Handling^^
 #### 
 ```python
