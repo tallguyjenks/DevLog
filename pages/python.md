@@ -89,6 +89,35 @@ print(employee_file.readline()[2]) # reads the (third) in the file
 employee_file.close()
 ```
 ### ^^Tips, Tricks, & Hacks^^
+#### **Multi-Variable Assignment**
+#####
+```python
+x = 0
+y = 0
+
+# can be:
+x, y = 0, 0
+```
+#### **Kwargs**
+#####
+```python
+# Python 3.5+ allows passing multiple sets
+# of keyword arguments ("kwargs") to a
+# function within a single call, using
+# the "**" syntax:
+
+def process_data(a, b, c, d):
+   print(a, b, c, d)
+
+x = {'a': 1, 'b': 2}
+y = {'c': 3, 'd': 4}
+
+process_data(**x, **y)
+# >>> 1 2 3 4
+
+process_data(**x, c=23, d=42)
+# >>> 1 2 23 42
+```
 ####
 ## 
 ---
