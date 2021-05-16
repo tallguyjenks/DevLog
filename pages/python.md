@@ -76,13 +76,13 @@ tags: language
 ### ^^Flow Control^^
 ### ^^Functions^^
 ### ^^Object Oriented Programming^^
-####
-```python
+####```python
 import datetime
 
 # class names should start with a capital letter
 class User:
-    """This is a doc string for this python class,
+    """
+    This is a doc string for this python class,
     if you call help(User) this is what will appear
     it will also show you other useful and relevant information
     but it must be encapsulated within 3 sets of double quotes"""
@@ -114,8 +114,7 @@ user1.name # result: "john legend"
 user1.first_name # result: "john"
 user1.last_name # result: "legend"
 user1.birthday # result: 20191120
-
-```
+``
 ####
 ```python
 class User1:
@@ -174,7 +173,8 @@ print(user.last_name)
 print(user.birthday)
 print(user.age())
 ```
-####
+### ```python
+import datetime
 ### ^^File Handling^^
 #### 
 ```python
