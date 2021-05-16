@@ -119,7 +119,7 @@ process_data(**x, c=23, d=42)
 # >>> 1 2 23 42
 ```
 #### **Default Parameters**
-#####
+##### 
 ```python
 # In Python 3 you can use a bare "*" asterisk
 # in function parameter lists to force the
