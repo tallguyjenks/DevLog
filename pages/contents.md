@@ -43,7 +43,7 @@
 .custom-query { margin-top: 0; }
 .custom-query .opacity-70 { opacity: 1; }
 </style>
-##
+## 
 #+BEGIN_QUERY
 {:title "Recent"
  :query [:find (pull ?p [*])
