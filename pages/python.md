@@ -34,6 +34,7 @@ tags: language
 ####
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
+#### **Documentation:** [[pydoc]]
 #### **Benchmarking:** [[clockpy]]
 #### **Unit Testing:** [[unittest]]
 #### **Logging:** [[logging]]
