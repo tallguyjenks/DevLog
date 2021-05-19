@@ -59,7 +59,7 @@ a.tag[data-ref="star" i] {
 }
 /* IDEA */
 a.tag[data-ref="idea" i]::before {
-    content: "💡️";
+    content: "💡";
     visibility: visible;
     border-radius: 2px;
     padding: 2px;
