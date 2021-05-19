@@ -4,6 +4,7 @@
 ### [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
 ## **Tags:**
 ### **Emoji tags**
+#### #star
 ####
 ### #language
 ### #library
