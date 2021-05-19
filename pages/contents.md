@@ -2,7 +2,7 @@
 ### [[Queries]]
 ### [[Templates]]
 ### [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
-###
+### 
 <style onload="Function(this.innerHTML.slice(2, this.innerHTML.length - 2))()">/*
 import("https://cdn.jsdelivr.net/gh/71/logseq-snippets@main/script-block.js")
 */</style>
