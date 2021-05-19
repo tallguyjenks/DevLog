@@ -1,8 +1,7 @@
 ---
 title: pydoc
-tags: library
+tags: library,documentation
 ---
-
 ## [Socratica Video](https://www.youtube.com/watch?v=URBSvqib0xw&ab_channel=Socratica)
 ## using the [[pydoc]] module you can review #documentation
 ## This command ( `python -m pydoc <++>` ) searches for the following:
