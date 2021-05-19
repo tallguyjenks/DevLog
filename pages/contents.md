@@ -3,6 +3,8 @@
 ### [[Templates]]
 ### [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
 ## **Tags:**
+### **Emoji tags**
+####
 ### #language
 ### #library
 ### #tools
