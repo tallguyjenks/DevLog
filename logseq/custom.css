@@ -37,9 +37,42 @@
   --ls-border-radius-low: 3px;
   --ls-border-radius-medium: 6px;
 }
+/* Stretches content for visibility */
 .cp__sidebar-main-content {
     max-width: 1400px !important;
 }
+/* Custom Tag emoji's */
+/* STAR */
+a.tag[data-ref="star" i]::before {
+    content: "⭐️";
+    visibility: visible;
+    border-radius: 2px;
+    padding: 2px;
+    background: var(--blue);
+    box-shadow: 0 0 4px var(--blue);
+}
+
+a.tag[data-ref="star" i] {
+    visibility: hidden;
+    width: 24px;
+    white-space: nowrap;
+}
+/* IDEA */
+a.tag[data-ref="idea" i]::before {
+    content: "💡️";
+    visibility: visible;
+    border-radius: 2px;
+    padding: 2px;
+    background: var(--blue);
+    box-shadow: 0 0 4px var(--blue-hover);
+}
+
+a.tag[data-ref="idea" i] {
+    visibility: hidden;
+    width: 24px;
+    white-space: nowrap;
+}
+
 .dark-theme,
 html[data-theme="dark"] {
   --ls-primary-background-color: var(--background);
