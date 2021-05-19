@@ -44,7 +44,7 @@
 /* Custom Tag emoji's */
 /* STAR */
 a.tag[data-ref="star" i]::before {
-    content: "⭐️";
+    content: "⭐";
     visibility: visible;
     border-radius: 2px;
     padding: 2px;
