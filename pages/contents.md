@@ -7,7 +7,6 @@
 <style onload="Function(this.innerHTML.slice(2, this.innerHTML.length - 2))()">/*
 import("https://cdn.jsdelivr.net/gh/71/logseq-snippets@main/script-block.js")
 */</style>
-####
 #### @@html: <script-block state='{"count":0}'><!-- return html`<button onclick=${() => save({ count: this.count + 1 })}>${this.count ?? 0}`; --></script-block>@@
 ## **Tags:**
 ### #language
