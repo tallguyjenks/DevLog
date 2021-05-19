@@ -5,7 +5,7 @@
 ## **Tags:**
 ### **Emoji tags**
 #### #star
-####
+#### #idea
 ### #language
 ### #library
 ### #tools
