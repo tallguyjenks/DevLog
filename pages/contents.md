@@ -10,7 +10,3 @@
 ### #language
 ### #library
 ### #tools
-## **Queries:**
-###
-###
-###
