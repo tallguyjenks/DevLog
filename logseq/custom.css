@@ -74,7 +74,7 @@ a.tag[data-ref="idea" i] {
 }
 /* Documentation */
 a.tag[data-ref="documentation" i]::before {
-    content: "ooks";
+    content: "📚";
     visibility: visible;
     border-radius: 2px;
     padding: 2px;
