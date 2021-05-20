@@ -4,9 +4,9 @@
 ### [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
 ## **Tags:**
 ### **Emoji tags**
-#### #star
-#### #idea
-#### #documentation
+#### #star | Stars
+#### #idea | Ideas
+#### #documentation | Documentation
 ### #language
 ### #library
 ### #tools
