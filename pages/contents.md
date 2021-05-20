@@ -7,6 +7,4 @@
 #### #star | Stars
 #### #idea | Ideas
 #### #documentation | Documentation
-### #language
-### #library
-### #tools
+### #language | #library
