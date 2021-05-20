@@ -30,7 +30,7 @@
          [?pages :page/properties ?properties]
          [(get ?properties :tags) ?dates]
          [?tags :tag/name ?tag]
-         [(contains? #{"language"} ?tag)]
+         [(contains? #{"documentation"} ?tag)]
      ]
 }
 #+END_QUERY
