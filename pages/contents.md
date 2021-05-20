@@ -6,10 +6,10 @@
 ### **Emoji tags**
 #### #star
 #### #idea
+#### #documentation
 ### #language
 ### #library
 ### #tools
-### #documentation
 ## @@html: <div style="display:none">@@
 #+BEGIN_QUERY
 {:title "Recent"
