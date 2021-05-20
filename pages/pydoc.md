@@ -18,7 +18,7 @@ tags: library,documentation
 #### Start an HTTP server on an arbitrary unused port and open a Web browser to interactively browse documentation. This option can be used in combination with -n and/or - p
 ### `pydoc -n <hostname>`
 #### Start an HTTP server with the given hostname (default: localhost).
-### `pydoc -p <port>` #star
+### `pydoc -p <port>` #star #documentation
 #### Start an HTTP server on the given port on the local machine. Port number 0 can be used to get an arbitrary unused port.
 ### `pydoc -b`
 #### Start an HTTP server on an arbitrary unused port and open a Web browser to interactively browse documentation. This option can be used in combination with -n and/or - p•
