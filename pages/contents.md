@@ -22,16 +22,16 @@
      ]
 }
 #+END_QUERY
-###
+### 
 #+BEGIN_QUERY
 {:title "Languages"
- :query [:find (pull ?pages [*])
-     :where
-     [?pages :page/properties ?properties]
-     [(get ?properties :tags) ?dates]
-     [?tags :tag/name ?tag]
-     [(contains? #{"language"} ?tag)]
- ]
+     :query [:find (pull ?pages [*])
+         :where
+         [?pages :page/properties ?properties]
+         [(get ?properties :tags) ?dates]
+         [?tags :tag/name ?tag]
+         [(contains? #{"language"} ?tag)]
+     ]
 }
 #+END_QUERY
 ###
