@@ -197,7 +197,7 @@ for key, value in my_dictionary.items():
 	print(key, "=", value)
 ```
 ##### _List_
-###### 
+### 
 ```python
 # basically an array as you understand them
 
