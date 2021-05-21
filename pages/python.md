@@ -91,6 +91,7 @@ for letter in "giraffe academy":
     print(letter)
 
 friends = ["Jim", "Suzy", "Kevin"]
+
 for name in friends:
     print(name)
 
