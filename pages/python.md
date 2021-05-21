@@ -116,6 +116,7 @@ except ValueError:
 # Divided By Zero
 ```
 ### ^^Functions^^
+#### **Map Filter Reduce**
 #### 
 ```python
 import math
