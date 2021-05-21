@@ -44,7 +44,7 @@ tags: language
 #### **GUI Apps:**
 ##### **tkinter:** [[tkinter]], [[tkcalendar]]
 #### **Data Science:**
-##### **Data Manipulation:** [[pandas]], [[datetime]]
+##### **Data Manipulation:** [[pandas]], [[datetime]], [[tablib]]
 ##### **Data Visualization:** [[matplotlib]]
 ### ^^Syntax^^
 #### **Conventions**
