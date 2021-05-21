@@ -276,59 +276,9 @@ countries = ["", "Argentina", "", "Brazil", "Chile", "", "Columbia", "", "Ecuado
 print(list(filter(None, countries)))
 # dont use reduce, just use an explicit for loop
 ```
-## FILTER
-##
 ### ^^Object Oriented Programming^^#### ```python
 import datetime
-), ("London", 22), ("Beijing", 32)]
-
-c_to_f = lambda data: (data[0], (9/5)*data[1] + 32)
-
-print(list(map(c_to_f, temps)))
-
-### map(<function>, <list, tuple, or other iterable object>)
-list(map(area, radii))
-print(list(map(area, radii)))
-
-##### map(<function>, <list, tuple, or other iterable object>)
-list(map(area, radii))
-print(list(map(area, radii)))
-
-##### Celcius to Farenheit with map and lambda
-temps = [("Berlin",29), ("Cairo", 36), ("Buenos Aires", 19), ("Los Angelas", 26), ("Tokyo", 27), ("New York", 28), ("London", 22), ("Beijing", 32)]
-
-c_to_f = lambda data: (data[0], (9/5)*data[1] + 32)
-
-print(list(map(c_to_f, temps)))
-
-# FILTER
-import statistics
-
-data = [1.3, 2.7, 0.8, 4.1, 4.3, -0.1]
-avg = statistics.mean(data)
-print(avg)
-print(list(filter(lambda x: x > avg, data)))
-
-# Remove Missing Data
-countries = ["", "Argentina", "", "Brazil", "Chile", "", "Columbia", "", "Ecuador", "", "", "Venezuela"]
-
-print(list(filter(None, countries)))
-
-# dont use reduce, just use an explicit for loop
-```
-```
-### ^^Object Oriented Programming^^
-####
-```python
-import datetime
-# class names should start with a capital letter
-class User:
-    """This is a doc string for this python class,
-    if you call help(User) this is what will appear
-    it will also show you other useful and relevant information
-    but it must be encapsulated within 3 sets of double quotes"""
-
-    # init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
+# init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
     # self is a reference to the newly created object instance
     def __init__(self, full_name, birthday):
         self.name = full_name # getter/setter
