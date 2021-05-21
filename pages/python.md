@@ -275,10 +275,8 @@ print(list(filter(lambda x: x > avg, data)))
 countries = ["", "Argentina", "", "Brazil", "Chile", "", "Columbia", "", "Ecuador", "", "", "Venezuela"]
 
 print(list(filter(None, countries)))
-
-## dont use reduce, just use an explicit for loop
-### ^^Object Oriented Programming^^
-####
+dont use reduce, just use an explicit for loop
+## ^^Object Oriented Programming^^###
 ```python
 import datetime
 ), ("London", 22), ("Beijing", 32)]
