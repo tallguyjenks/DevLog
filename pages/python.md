@@ -74,6 +74,10 @@ tags: language
 :todo: 1620835794488
 :END:
 ### ^^Data Types & Structs^^
+#### **Data Types**
+##### _Strings_
+##### _Nubmers_
+##### _Booleans_
 ### ^^Flow Control^^
 #### **Loops**
 ##### _While Loop_
