@@ -8,7 +8,7 @@ tags: library
 ###
 ## **Example:**
 ### 
-```py
+```python
 #!/usr/bin/python3
 
 from prettytable import PrettyTable
