@@ -254,14 +254,7 @@ for r in radii:
 
 print(areas)
 ```
-# ```python
-import math
-
-def area(r):
-    """Area of a circle with radius 'r'."""
-    return math.pi * (r**2)
-
-radii = [2, 5, 7.1, 0.3, 10]
+# radii = [2, 5, 7.1, 0.3, 10]
 # map(<function>, <list, tuple, or other iterable object>)
 list(map(area, radii))
 print(list(map(area, radii)))
