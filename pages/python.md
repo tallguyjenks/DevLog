@@ -276,9 +276,12 @@ countries = ["", "Argentina", "", "Brazil", "Chile", "", "Columbia", "", "Ecuado
 
 print(list(filter(None, countries)))
 
-
-# dont use reduce, just use an explicit for loop
-s Aires", 19), ("Los Angelas", 26), ("Tokyo", 27), ("New York", 28), ("London", 22), ("Beijing", 32)]
+## dont use reduce, just use an explicit for loop
+### ^^Object Oriented Programming^^
+####
+```python
+import datetime
+), ("London", 22), ("Beijing", 32)]
 
 c_to_f = lambda data: (data[0], (9/5)*data[1] + 32)
 
