@@ -276,9 +276,10 @@ countries = ["", "Argentina", "", "Brazil", "Chile", "", "Columbia", "", "Ecuado
 print(list(filter(None, countries)))
 # dont use reduce, just use an explicit for loop
 ```
-### ^^Object Oriented Programming^^#### ```python
+### ^^Object Oriented Programming^^
+#### ```python
 import datetime
-# init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
+#### init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
     # self is a reference to the newly created object instance
     def __init__(self, full_name, birthday):
         self.name = full_name # getter/setter
@@ -311,7 +312,6 @@ user1.birthday # result: 20191120
 ```python
 class User1:
     pass
-
 # Conventions: Class names Proper case
 # Method names lower case snake case
 # variables lower case
