@@ -115,7 +115,6 @@ except ValueError:
 # integer division or modulo by zero
 # Divided By Zero
 ```
-####
 ### ^^Functions^^
 #### 
 ```python
