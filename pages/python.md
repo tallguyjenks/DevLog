@@ -77,13 +77,15 @@ tags: language
 ### ^^Flow Control^^
 #### **Loops**
 ##### _While Loop_
-###### 
+######
 ```python
 i = 1
 while i <= 10:
     print(i)
     i+=1
 ```
+##### _For Loop_
+######
 ### ^^Functions^^
 #### 
 ```python
