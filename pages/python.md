@@ -36,8 +36,8 @@ tags: language
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
 ##### **Virtual Environment:** [[venv]]
+##### **Benchmarking:** [[clockpy]]
 #### **Documentation:** [[pydoc]]
-#### **Benchmarking:** [[clockpy]]
 #### **Unit Testing:** [[unittest]]
 #### **File System:**
 ##### **File System Monitoring:** [[watchdog]]
