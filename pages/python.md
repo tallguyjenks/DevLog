@@ -75,6 +75,8 @@ tags: language
 :END:
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
+#### **Loops**
+#####
 ### ^^Functions^^
 #### 
 ```python
