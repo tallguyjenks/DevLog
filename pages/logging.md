@@ -14,7 +14,7 @@ tags: library
 ### Error
 ### Critical
 ## The level of the logger:
-## 
+### 
 | Level    | Numberic Value |
 | -        | -              |
 | NOTSET   | 0              |
