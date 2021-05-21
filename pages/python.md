@@ -228,7 +228,6 @@ except ValueError:
 # enter a number: 1
 # integer division or modulo by zero
 # Divided By Zero
-```
 ### ^^Functions^^
 #### **Functions**
 ##### 
@@ -247,7 +246,6 @@ def area(r):
     return math.pi * (r**2)
 
 radii = [2, 5, 7.1, 0.3, 10]
-
 # Method 1: Direct Method
 areas = []
 for r in radii:
