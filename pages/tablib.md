@@ -8,6 +8,9 @@ tags: library
 Tablib: format-agnostic tabular dataset library
 #+END_QUOTE
 ## **LINKS**
+:PROPERTIES:
+:id: 60a76a4b-921c-4924-9833-b9c9ee41f81c
+:END:
 ### https://github.com/jazzband/tablib
 ### http://docs.python-tablib.org/en/master/
 ##
