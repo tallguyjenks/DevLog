@@ -118,8 +118,8 @@ print(a.imag) # view the imaginary part of the number
 ###### 
 ```python
 True & False # these ARE the operators
-true & false # These are not correct
-TRUE & FALSE # These are not correct
+true & false # These are NOT the operators
+TRUE & FALSE # These are NOT the operators
 
 bool(" ") # True
 bool("") # False
