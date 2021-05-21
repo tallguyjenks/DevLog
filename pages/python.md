@@ -67,9 +67,10 @@ tags: language
 :PROPERTIES:
 :todo: 1620835767488
 :END:
-##### TODO [Decorators 201](https://sureshdsk.dev/python-decorators-201)
+##### DONE [Decorators 201](https://sureshdsk.dev/python-decorators-201)
 :PROPERTIES:
 :todo: 1620835782488
+:done: 1621632285760
 :END:
 ##### TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
 :PROPERTIES:
