@@ -152,7 +152,12 @@ a.intersection(c) # = 3, 5, 7
 2 in b # result is True
 9 not in a # Result is False 9 IS in the set of odd numbers
 ```
-##### _Frozen Set_
+###### _Frozen Set_
+####### 
+```python
+# less methods than sets
+# immutable
+```
 ##### _List_
 ##### _Tuple_
 ##### _Dictionary_
