@@ -4,6 +4,11 @@ tags: library
 ---
 
 ##
+#+BEGIN_QUOTE
+Tabular Data Sets
+#+END_QUOTE
+## https://github.com/jazzband/tablib
+##
 ```python
 data = tablib.Dataset(headers=['First Name', 'Last Name', 'Age'])
 for i in [('Kenneth', 'Reitz', 22), ('Bessie', 'Monke', 21)]:
@@ -25,4 +30,3 @@ data.export('df')
 # 0    Kenneth     Reitz   22
 # 1     Bessie     Monke   21
 ```
-##
