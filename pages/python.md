@@ -259,7 +259,39 @@ print(areas)
 list(map(area, radii))
 print(list(map(area, radii)))
 
-# Celcius to Farenheit with map and lambda
+## Celcius to Farenheit with map and lambda
+temps = [("Berlin",29), ("Cairo", 36), ("Buenos Aires", 19), ("Los Angelas", 26), ("Tokyo", 27), ("New York", 28), ("London", 22), ("Beijing", 32)]
+
+c_to_f = lambda data: (data[0], (9/5)*data[1] + 32)
+
+print(list(map(c_to_f, temps)))
+
+## map(<function>, <list, tuple, or other iterable object>)
+list(map(area, radii))
+print(list(map(area, radii)))
+
+## radii = [2, 5, 7.1, 0.3, 10]
+# map(<function>, <list, tuple, or other iterable object>)
+list(map(area, radii))
+print(list(map(area, radii)))
+
+### Celcius to Farenheit with map and lambda
+temps = [("Berlin",29), ("Cairo", 36), ("Buenos Aires", 19), ("Los Angelas", 26), ("Tokyo", 27), ("New York", 28), ("London", 22), ("Beijing", 32)]
+
+c_to_f = lambda data: (data[0], (9/5)*data[1] + 32)
+
+print(list(map(c_to_f, temps)))
+
+### map(<function>, <list, tuple, or other iterable object>)
+list(map(area, radii))
+print(list(map(area, radii)))
+
+#### radii = [2, 5, 7.1, 0.3, 10]
+#### map(<function>, <list, tuple, or other iterable object>)
+list(map(area, radii))
+print(list(map(area, radii)))
+
+#### Celcius to Farenheit with map and lambda
 temps = [("Berlin",29), ("Cairo", 36), ("Buenos Aires", 19), ("Los Angelas", 26), ("Tokyo", 27), ("New York", 28), ("London", 22), ("Beijing", 32)]
 
 c_to_f = lambda data: (data[0], (9/5)*data[1] + 32)
