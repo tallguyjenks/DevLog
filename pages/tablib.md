@@ -3,13 +3,12 @@ title: tablib
 tags: library
 ---
 
-##
+## 
 #+BEGIN_QUOTE
-Tabular Data Sets
+Tablib: format-agnostic tabular dataset library
 #+END_QUOTE
 ## **LINKS**
 ### https://github.com/jazzband/tablib
-###
 ##
 ```python
 data = tablib.Dataset(headers=['First Name', 'Last Name', 'Age'])
