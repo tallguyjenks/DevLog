@@ -237,7 +237,8 @@ def pow(p):
     return p*p
 ```
 #### **Map Filter Reduce**
-##### ```python
+##### 
+```python
 import math
 
 def area(r):
@@ -252,6 +253,7 @@ for r in radii:
     areas.append(a)
 
 print(areas)
+```
 # ```python
 import math
 
