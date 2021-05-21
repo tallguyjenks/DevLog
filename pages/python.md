@@ -99,7 +99,7 @@ for index in range(10):
     print(index) # prints 1-9 not including 10 so always increment upwards by 1
 ```
 #### **Exception Handling**
-#####
+##### 
 ```python
 try:
     number = int(input("enter a number: "))
