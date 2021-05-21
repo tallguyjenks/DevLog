@@ -28,9 +28,8 @@ print(today.day)
 tomorrow = timedelta(1)
 print("Tomorrow is: ", today + tomorrow)
 ```
-
-formatting a date that is dropped into a template literal:
-
+### formatting a date that is dropped into a template literal:
+### 
 ```python
 import datetime
 
