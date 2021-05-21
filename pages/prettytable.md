@@ -4,6 +4,7 @@ tags: library
 ---
 
 ## **LINKS**
+### https://pypi.org/project/prettytable/
 ###
 ##
 ## 
