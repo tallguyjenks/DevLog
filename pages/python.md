@@ -117,8 +117,7 @@ print(a.imag) # view the imaginary part of the number
 ##### _Booleans_
 ###### 
 ```python
-True & False # these are the operators
-
+True & False # these ARE the operators
 true & false # These are not correct
 TRUE & FALSE # These are not correct
 
