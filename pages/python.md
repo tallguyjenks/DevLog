@@ -159,7 +159,7 @@ a.intersection(c) # = 3, 5, 7
 # immutable
 ```
 ##### _Dictionary_
-###### _Tuple_
+##### _Tuple_
 ###### 
 ```python
 # can be created just by assigning values encapsulated in parens
