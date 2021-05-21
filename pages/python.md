@@ -280,11 +280,11 @@ print(list(filter(None, countries)))
 
 # dont use reduce, just use an explicit for loop
 ```
+```
 ### ^^Object Oriented Programming^^
 ####
 ```python
 import datetime
-
 # class names should start with a capital letter
 class User:
     """This is a doc string for this python class,
