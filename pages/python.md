@@ -37,7 +37,7 @@ tags: language
 ##### **Logging:** [[logging]]
 ##### **Virtual Environment:** [[venv]]
 ##### **Benchmarking:** [[clockpy]]
-##### **Error Handling:**
+##### **Error Handling:** [[pretty-errors]]
 #### **Documentation:** [[pydoc]], [[prettytable]]
 #### **Unit Testing:** [[unittest]]
 #### **File System:**
