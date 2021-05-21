@@ -307,9 +307,9 @@ user1.name # result: "john legend"
 user1.first_name # result: "john"
 user1.last_name # result: "legend"
 user1.birthday # result: 20191120
-
 ```
-#### ```python
+#### 
+```python
 class User1:
     pass
 # Conventions: Class names Proper case
@@ -326,7 +326,6 @@ user2 = User1()
 user2.first_name = "Frank"
 user2.last_name = "Poole"
 user2.favorite_book = "2001: A Space Odessey"
-
 # CLASS BENEFITS:
 ## Methods
 ## Initialization
