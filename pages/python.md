@@ -76,8 +76,8 @@ tags: language
 ### ^^Data Types & Structs^^
 ### ^^Flow Control^^
 #### **Loops**
-##### While Loop
-#####
+##### _While Loop_
+##### 
 ```python
 i = 1
 while i <= 10:
