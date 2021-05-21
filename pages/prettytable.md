@@ -6,6 +6,7 @@ tags: library
 ## **LINKS**
 ### https://pypi.org/project/prettytable/
 ### https://zetcode.com/python/prettytable/
+### https://github.com/adamlamers/prettytable
 ## **Example:**
 ### 
 ```python
