@@ -158,7 +158,6 @@ a.intersection(c) # = 3, 5, 7
 # less methods than sets
 # immutable
 ```
-##### _Dictionary_
 ##### _Tuple_
 ###### 
 ```python
@@ -179,6 +178,7 @@ print(age)
 print(country)
 print(knows_python)
 ```
+##### _Dictionary_
 
 ##### 
 ```python
