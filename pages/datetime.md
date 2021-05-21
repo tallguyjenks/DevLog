@@ -14,7 +14,7 @@ python will handle dates from january 1st 1 to december 31st 9999
 ### Datetime
 ## **Timedelta**
 ### use this class to add days to a date:
-###
+#### 
 ```python
 from datetime import date, timedelta
 
@@ -29,7 +29,7 @@ tomorrow = timedelta(1)
 print("Tomorrow is: ", today + tomorrow)
 ```
 ### formatting a date that is dropped into a template literal:
-###
+#### 
 ```python
 import datetime
 
