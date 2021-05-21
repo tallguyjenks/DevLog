@@ -158,7 +158,7 @@ a.intersection(c) # = 3, 5, 7
 # less methods than sets
 # immutable
 ```
-##### _Tuple_
+##### _Dictionary_
 ###### 
 ```python
 # can be created just by assigning values encapsulated in parens
@@ -178,33 +178,8 @@ print(age)
 print(country)
 print(knows_python)
 ```
-##### _List_
-##### _Dictionary_
-### ^^Flow Control^^
-#### **Loops**
-##### _While Loop_
-######
-```python
-i = 1
-while i <= 10:
-    print(i)
-    i+=1
-```
-##### _For Loop_
-######
-```python
-for letter in "giraffe academy":
-    print(letter)
+##### _Tuple_
 
-friends = ["Jim", "Suzy", "Kevin"]
-
-for name in friends:
-    print(name)
-
-for index in range(10):
-    print(index) # prints 1-9 not including 10 so always increment upwards by 1
-```
-#### **Exception Handling**
 ##### 
 ```python
 try:
