@@ -1,7 +1,7 @@
 ---
 title: pretty-errors
+tags: library
 ---
 
-## 
-****
-## https://github.com/onelivesleft/PrettyErrors
+## **LINKS**
+### https://github.com/onelivesleft/PrettyErrors
