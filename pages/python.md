@@ -237,23 +237,21 @@ def pow(p):
     return p*p
 ```
 #### **Map Filter Reduce**
-##### 
-```python
+##### ```python
 import math
 
 def area(r):
     """Area of a circle with radius 'r'."""
     return math.pi * (r**2)
 
-radii = [2, 5, 7.1, 0.3, 10]
-# Method 1: Direct Method
+radii = [2, 5, 7.1, 0.3, 10] Method 1: Direct Method
 areas = []
 for r in radii:
     a = area(r)
     areas.append(a)
 
 print(areas)
-```
+radii = [2, 5, 7.1, 0.3, 10]
 # radii = [2, 5, 7.1, 0.3, 10]
 # map(<function>, <list, tuple, or other iterable object>)
 list(map(area, radii))
@@ -286,7 +284,6 @@ print(list(map(c_to_f, temps)))
 list(map(area, radii))
 print(list(map(area, radii)))
 
-##### radii = [2, 5, 7.1, 0.3, 10]
 ##### map(<function>, <list, tuple, or other iterable object>)
 list(map(area, radii))
 print(list(map(area, radii)))
