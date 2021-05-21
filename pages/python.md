@@ -119,11 +119,9 @@ except ValueError:
 #### **Functions**
 ##### 
 ```python
-import math
-
-def area(r):
-    """Area of a circle with radius 'r'."""
-    return math.pi * (r**2)
+def pow(p):
+    """Calculate the power"""
+    return p*p
 ```
 #### **Map Filter Reduce**
 ##### 
