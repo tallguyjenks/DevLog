@@ -197,8 +197,7 @@ for key, value in my_dictionary.items():
 	print(key, "=", value)
 ```
 ##### _List_
-### 
-```python
+### ```python
 # basically an array as you understand them
 
 a = [1, 2, 3, 4, 5]
@@ -214,7 +213,7 @@ a[2:5] # this slices out a smaller list. the starting index number element is in
 b = ['a', 'b', 'c']
 a + b # = [1, 2, 3, 4, 5, 17, 19, 'a', 'b', 'c']
 # adding lists together causes concatenation
-```
+
 try:
     number = int(input("enter a number: "))
     print(number/0) #divide by zero
