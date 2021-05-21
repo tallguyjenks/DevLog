@@ -227,6 +227,7 @@ except ValueError:
 # enter a number: 1
 # integer division or modulo by zero
 # Divided By Zero
+##
 ### ^^Functions^^
 #### **Functions**
 ##### 
