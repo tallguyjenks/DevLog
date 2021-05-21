@@ -277,9 +277,10 @@ print(list(filter(None, countries)))
 # dont use reduce, just use an explicit for loop
 ```
 ### ^^Object Oriented Programming^^
-#### ```python
+#### 
+```python
 import datetime
-#### init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
+# init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
     # self is a reference to the newly created object instance
     def __init__(self, full_name, birthday):
         self.name = full_name # getter/setter
