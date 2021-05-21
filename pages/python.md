@@ -159,6 +159,7 @@ a.intersection(c) # = 3, 5, 7
 # immutable
 ```
 ##### _Dictionary_
+###### _Tuple_
 ###### 
 ```python
 # can be created just by assigning values encapsulated in parens
@@ -178,7 +179,6 @@ print(age)
 print(country)
 print(knows_python)
 ```
-##### _Tuple_
 
 ##### 
 ```python
