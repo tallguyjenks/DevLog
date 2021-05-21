@@ -115,7 +115,18 @@ print(a.real) # view the real part of the number
 print(a.imag) # view the imaginary part of the number
 ```
 ##### _Booleans_
-######
+###### 
+```python
+True & False # these are the operators
+
+true & false # These are not correct
+TRUE & FALSE # These are not correct
+
+bool(" ") # True
+bool("") # False
+bool(1) # True
+bool(0) # False
+```
 ### ^^Flow Control^^
 #### **Loops**
 ##### _While Loop_
