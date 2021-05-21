@@ -29,7 +29,7 @@ tomorrow = timedelta(1)
 print("Tomorrow is: ", today + tomorrow)
 ```
 ### formatting a date that is dropped into a template literal:
-### 
+###
 ```python
 import datetime
 
@@ -49,5 +49,4 @@ print(today.strftime("%A, %B %d, %Y"))
 message = "Today is: {:%A, %B %d, %Y}."
 print(message.format(today))
 ```
-
-time delta can also be used to DATEDIFF
+### time delta can also be used to DATEDIFF
