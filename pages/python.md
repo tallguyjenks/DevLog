@@ -309,8 +309,7 @@ user1.last_name # result: "legend"
 user1.birthday # result: 20191120
 
 ```
-#### 
-```python
+#### ```python
 class User1:
     pass
 # Conventions: Class names Proper case
