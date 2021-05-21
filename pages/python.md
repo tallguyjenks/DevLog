@@ -38,7 +38,7 @@ tags: language
 ##### **Virtual Environment:** [[venv]]
 ##### **Benchmarking:** [[clockpy]]
 ##### **Error Handling:**
-#### **Documentation:** [[pydoc]]
+#### **Documentation:** [[pydoc]], [[prettytable]]
 #### **Unit Testing:** [[unittest]]
 #### **File System:**
 ##### **File System Monitoring:** [[watchdog]]
