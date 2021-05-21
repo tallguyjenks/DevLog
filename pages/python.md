@@ -129,7 +129,9 @@ bool(0)   # False
 #### **Data Strcutures**
 ##### _Set_
 ##### _Frozen Set_
-#####
+##### _List_
+##### _Tuple_
+##### _Dictionary_
 ### ^^Flow Control^^
 #### **Loops**
 ##### _While Loop_
