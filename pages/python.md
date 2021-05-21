@@ -222,12 +222,12 @@ except ZeroDivisionError as err:
     print("Divided By Zero")
 except ValueError:
     print("invalid input")
-# OUTPUT:
-# ./test.py
-# enter a number: 1
-# integer division or modulo by zero
-# Divided By Zero
-##
+ OUTPUT:
+./test.py
+enter a number: 1
+integer division or modulo by zero
+Divided By Zero
+```
 ### ^^Functions^^
 #### **Functions**
 ##### 
