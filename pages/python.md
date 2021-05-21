@@ -161,7 +161,7 @@ a.intersection(c) # = 3, 5, 7
 ##### _Tuple_
 ###### 
 ```python
-# can be created just by assining values encapsulated in parens
+# can be created just by assigning values encapsulated in parens
 # or for a single value leaving a trailing comma
 
 a = (1, 2, 3, 4)
