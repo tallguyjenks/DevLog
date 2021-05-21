@@ -10,7 +10,6 @@ Tablib: format-agnostic tabular dataset library
 ## **LINKS**
 ### https://github.com/jazzband/tablib
 ### http://docs.python-tablib.org/en/master/
-###
 ##
 ```python
 data = tablib.Dataset(headers=['First Name', 'Last Name', 'Age'])
