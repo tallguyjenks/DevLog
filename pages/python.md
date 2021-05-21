@@ -304,8 +304,8 @@ countries = ["", "Argentina", "", "Brazil", "Chile", "", "Columbia", "", "Ecuado
 print(list(filter(None, countries)))
 # dont use reduce, just use an explicit for loop
 ```
-#### ^^Object Oriented Programming^^
-##### 
+### ^^Object Oriented Programming^^
+#### 
 ```python
 import datetime
 # init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
@@ -336,7 +336,7 @@ user1.first_name # result: "john"
 user1.last_name # result: "legend"
 user1.birthday # result: 20191120
 ```
-##### 
+#### 
 ```python
 class User1:
     pass
@@ -392,8 +392,8 @@ print(user.last_name)
 print(user.birthday)
 print(user.age())
 ```
-#### ^^File Handling^^
-##### 
+### ^^File Handling^^
+#### 
 ```python
 employee_file = open("employees.txt","r") # Filename, Mode (r:read a:append w:write)
 print(employee_file.readable()) # returns T/F if we can read the file
@@ -405,9 +405,9 @@ print(employee_file.readline()[2]) # reads the (third) in the file
 # always close open files
 employee_file.close()
 ```
-#### ^^Tips, Tricks, & Hacks^^
-##### **Multi-Variable Assignment**
-######
+### ^^Tips, Tricks, & Hacks^^
+#### **Multi-Variable Assignment**
+#####
 ```python
 x = 0
 y = 0
@@ -415,8 +415,8 @@ y = 0
 # can be:
 x, y = 0, 0
 ```
-##### **Kwargs**
-######
+#### **Kwargs**
+#####
 ```python
 # Python 3.5+ allows passing multiple sets
 # of keyword arguments ("kwargs") to a
@@ -435,8 +435,8 @@ process_data(**x, **y)
 process_data(**x, c=23, d=42)
 # >>> 1 2 23 42
 ```
-##### **Default Parameters**
-###### 
+#### **Default Parameters**
+##### 
 ```python
 # In Python 3 you can use a bare "*" asterisk
 # in function parameter lists to force the
