@@ -23,10 +23,10 @@ title: youtube-dl
 ### Formatting filenames of downloaded playlist:
 ####
 ### Download just thumbnails
-	- ![[#^bcf19b]]
+####
 ### Download transcripts
-	- ![[#^13369b]]
-	- Combine with [THIS](https://gist.github.com/glasslion/b2fcad16bc8a9630dbd7a945ab5ebf5e) to clean the output to `.txt`
+####
+#### Combine with [THIS](https://gist.github.com/glasslion/b2fcad16bc8a9630dbd7a945ab5ebf5e) to clean the output to `.txt`
 
 
 ```bash
