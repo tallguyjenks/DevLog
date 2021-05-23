@@ -37,7 +37,7 @@ tags: language
 ###### `brainfit.vscode-importmagic` Fix missing module imports
 ###### _AI Code Completion_
 ####### ❌️ `kiteco.kite` Kite
-#######
+####### ✅️ `tabnine.tabnine-vscode` TabNine
 ##### _Documentation_
 ###### `njpwerner.autodocstring` Auto Generatre Doc Strings
 ##### _Formatting_
