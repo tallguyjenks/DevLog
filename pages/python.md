@@ -32,7 +32,7 @@ tags: language
 #### [[Kite]]
 #### **Dependency Management** [[Python Poetry]] [[pydeps]]
 #### [[VSCode]] Extensions
-#####
+##### `ms-pyright.pyright` for static type checking
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
