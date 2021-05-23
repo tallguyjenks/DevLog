@@ -36,7 +36,8 @@ tags: language
 ###### `ms-python.python` Python language support
 ##### _Documentation_
 ###### `njpwerner.autodocstring` Auto Generatre Doc Strings
-##### `kevinrose.vsc-python-indent` Correct Indentation
+##### _Formatting_
+###### `kevinrose.vsc-python-indent` Correct Indentation
 ##### _Debugging_
 ###### `dongli.python-preview` Preview execution stack
 ##### _Unit Testing_
