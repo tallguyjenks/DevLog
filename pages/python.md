@@ -35,7 +35,8 @@ tags: language
 ##### `ms-pyright.pyright` for static type checking
 ##### `ms-python.python` Python language support
 ##### `njpwerner.autodocstring` Auto Generatre Doc Strings
-##### `kevinrose.vsc-python-indent` Correct Inentation
+##### `kevinrose.vsc-python-indent` Correct Indentation
+##### `dongli.python-preview` Preview execution stack
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
