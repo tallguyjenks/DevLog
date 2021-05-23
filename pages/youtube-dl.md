@@ -21,22 +21,18 @@ title: youtube-dl
 - `--skip-download` will skip the download of the actual video but with other options might do something like still download the thumbnails
 ## Code
 ### Formatting filenames of downloaded playlist:
-####
-### Download just thumbnails
-####
-### Download transcripts
-####
-#### Combine with [THIS](https://gist.github.com/glasslion/b2fcad16bc8a9630dbd7a945ab5ebf5e) to clean the output to `.txt`
-
-
+#### 
 ```bash
 youtube-dl --format mp4 -o "%(upload_date)s %(title)s by %(uploader)s.%(ext)s" <URL>
 ```
-
+### Download just thumbnails
+#### 
 ```bash
 youtube-dl --write-thumbnail --skip-download <URL>
 ```
-
+### Download transcripts
+#### 
 ```bash
 youtube-dl --sub-lang en --write-auto-sub --sub-format vtt --skip-download <URL>
 ```
+#### Combine with [THIS](https://gist.github.com/glasslion/b2fcad16bc8a9630dbd7a945ab5ebf5e) to clean the output to `.txt`
