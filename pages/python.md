@@ -32,8 +32,10 @@ tags: language
 #### [[Kite]]
 #### **Dependency Management** [[Python Poetry]] [[pydeps]]
 #### [[VSCode]] Extensions
-##### `ms-python.python` Python language support
-##### `njpwerner.autodocstring` Auto Generatre Doc Strings
+##### _General_
+###### `ms-python.python` Python language support
+##### _Documentation_
+###### `njpwerner.autodocstring` Auto Generatre Doc Strings
 ##### `kevinrose.vsc-python-indent` Correct Indentation
 ##### _Debugging_
 ###### `dongli.python-preview` Preview execution stack
