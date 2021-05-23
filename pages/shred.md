@@ -3,10 +3,9 @@ title: shred
 ---
 
 ## Shred command on linux
-## - Privacy
-- File Confidentiality
-
-Overwrite and optionally delete file
+## Privacy
+## File Confidentiality
+## Overwrite and optionally delete file
 
 `shred -v --iterations=30 -u [file]` 
 
