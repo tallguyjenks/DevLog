@@ -34,6 +34,7 @@ tags: language
 #### [[VSCode]] Extensions
 ##### _General_
 ###### `ms-python.python` Python language support
+###### `brainfit.vscode-importmagic` Fix missing module imports
 ##### _Documentation_
 ###### `njpwerner.autodocstring` Auto Generatre Doc Strings
 ##### _Formatting_
