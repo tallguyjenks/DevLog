@@ -3,6 +3,17 @@ title: pywebio
 ---
 
 ## `pip install -U pywebio`
+## **Input Output Functions**
+### 
+|Function name|Description| 
+|input|Text input| 
+|textarea|Multi-line text input| 
+|select|Drop-down selection| 
+|checkbox|Checkbox| 
+|radio|Radio| 
+|actions|Actions selection| 
+|file_upload|File uploading| 
+|input_group|Input group|
 ## 
 ```python
 #!/usr/bin/env python
