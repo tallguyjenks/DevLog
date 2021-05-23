@@ -33,6 +33,8 @@ tags: language
 #### **Dependency Management** [[Python Poetry]] [[pydeps]]
 #### [[VSCode]] Extensions
 ##### `ms-pyright.pyright` for static type checking
+##### `ms-python.python` Python language support
+#####
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
