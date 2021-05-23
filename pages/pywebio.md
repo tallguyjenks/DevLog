@@ -58,6 +58,17 @@ data = input_group(
     ],
 )
 
+# Output functions
 
+put_text("The output in a table:")
+
+put_table(
+    [
+        ["Name", data["name"]],
+        ["Age", data["age"]],
+        ["Continent", data["continent"]],
+        ["Agreement", data["agreement"]],
+    ]
+)
 ```
 ##
