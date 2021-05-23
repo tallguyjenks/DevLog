@@ -54,9 +54,12 @@ tags: language
 ##### **Benchmarking:** [[clockpy]]
 ##### **Error Handling:** [[pretty-errors]]
 #### **Documentation:** [[pydoc]], [[prettytable]]
-#### **Unit Testing:** [[unittest]]
-#### **File System:**
-##### **File System Monitoring:** [[watchdog]]
+#### **GUI Apps:**
+##### **Desktop**
+###### **tkinter:** [[tkinter]], [[tkcalendar]]
+##### **Web Apps**
+######
+*File System Monitoring:** [[watchdog]]
 #### **GUI Apps:**
 ##### **tkinter:** [[tkinter]], [[tkcalendar]]
 #### **Data Science:**
