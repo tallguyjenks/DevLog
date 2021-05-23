@@ -16,7 +16,7 @@ title: youtube-dl
 - `-f140` Downloads the highest quality mp4 files with no errors
 - `--write-thumbnail` will download the thumbnail(s) of the video(s)
 - `--skip-download` will skip the download of the actual video but with other options might do something like still download the thumbnails
-### Code
+## Code
 
 - Formatting filenames of downloaded playlist:
 	- ![[#^5850b0]]
