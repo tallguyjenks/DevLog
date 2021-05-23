@@ -31,7 +31,8 @@ tags: language
 #### [[Jupyter]]
 #### [[Kite]]
 #### **Dependency Management** [[Python Poetry]] [[pydeps]]
-####
+#### [[VSCode]] Extensions
+#####
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
