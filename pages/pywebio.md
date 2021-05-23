@@ -14,9 +14,9 @@ title: pywebio
 |actions|Actions selection| 
 |file_upload|File uploading| 
 |input_group|Input group|
+## Basic Input Functions
 ## 
 ```python
-
 # Text Input
 name = input('What is your Name?', type=TEXT)
 # Number Input
