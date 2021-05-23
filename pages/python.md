@@ -39,6 +39,7 @@ tags: language
 ####### [Comparisons here](https://medium.com/swlh/kite-vs-tabnine-which-ai-code-autocomplete-should-you-choose-eb6eba85c3a6)
 ######## ❌️ `kiteco.kite` Kite
 ######## ✅️ `tabnine.tabnine-vscode` TabNine
+######
 ##### _Documentation_
 ###### `njpwerner.autodocstring` Auto Generatre Doc Strings
 ##### _Formatting_
