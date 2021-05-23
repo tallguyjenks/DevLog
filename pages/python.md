@@ -36,6 +36,7 @@ tags: language
 ###### `ms-python.python` Python language support
 ###### `brainfit.vscode-importmagic` Fix missing module imports
 ###### _AI Code Completion_
+####### ❌️ `kiteco.kite` Kite
 #######
 ##### _Documentation_
 ###### `njpwerner.autodocstring` Auto Generatre Doc Strings
