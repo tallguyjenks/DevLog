@@ -37,6 +37,8 @@ tags: language
 ##### `njpwerner.autodocstring` Auto Generatre Doc Strings
 ##### `kevinrose.vsc-python-indent` Correct Indentation
 ##### `dongli.python-preview` Preview execution stack
+##### `littlefoxteam.vscode-python-test-adapter` Python Test explorer
+#####
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
