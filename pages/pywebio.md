@@ -14,19 +14,21 @@ title: pywebio
 |actions|Actions selection| 
 |file_upload|File uploading| 
 |input_group|Input group|
-##
 ## 
 ```python
-#!/usr/bin/env python
 
 # Text Input
 name = input('What is your Name?', type=TEXT)
 # Number Input
-#name = input('How old are you?', type=TEXT)
+name = input('How old are you?', type=TEXT)
 # Single choice
-#answer = radio("Which Continent?", options=['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America'])
+answer = radio("Which Continent?", options=['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America'])
 # Checkbox
-#agree = checkbox("User Term", options=['I agree to terms and conditions'])
+agree = checkbox("User Term", options=['I agree to terms and conditions'])
+```
+## 
+```python
+#!/usr/bin/env python
 
 from pywebio.input import *
 from pywebio.output import *
