@@ -14,8 +14,8 @@ title: pywebio
 |actions|Actions selection| 
 |file_upload|File uploading| 
 |input_group|Input group|
-## Basic Input Functions
-## 
+## **Basic Input Functions**
+###
 ```python
 # Text Input
 name = input('What is your Name?', type=TEXT)
@@ -26,7 +26,8 @@ answer = radio("Which Continent?", options=['Africa', 'Asia', 'Australia', 'Euro
 # Checkbox
 agree = checkbox("User Term", options=['I agree to terms and conditions'])
 ```
-## 
+## **Input Groups**
+### 
 ```python
 #!/usr/bin/env python
 
