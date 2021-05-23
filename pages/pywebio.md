@@ -15,12 +15,12 @@ title: pywebio
 |file_upload|File uploading| 
 |input_group|Input group|
 ##
-##
+## 
 ```python
 #!/usr/bin/env python
 
 # Text Input
-#name = input('What is your Name?', type=TEXT)
+name = input('What is your Name?', type=TEXT)
 # Number Input
 #name = input('How old are you?', type=TEXT)
 # Single choice
