@@ -35,6 +35,8 @@ tags: language
 ##### _General_
 ###### `ms-python.python` Python language support
 ###### `brainfit.vscode-importmagic` Fix missing module imports
+###### _AI Code Completion_
+#######
 ##### _Documentation_
 ###### `njpwerner.autodocstring` Auto Generatre Doc Strings
 ##### _Formatting_
