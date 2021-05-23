@@ -4,7 +4,7 @@ title: pywebio
 
 ## `pip install -U pywebio`
 ## **Input Output Functions**
-###
+### https://pywebio.readthedocs.io/en/latest/output.html#functions-list
 ### 
 |Function name|Description| 
 |input|Text input| 
