@@ -15,24 +15,18 @@ title: pywebio
 |file_upload|File uploading| 
 |input_group|Input group|
 ##
-## 
+##
 ```python
 #!/usr/bin/env python
 
-#import pywebio
-#
-## Text Input
+# Text Input
 #name = input('What is your Name?', type=TEXT)
-#
-## Number Input
+# Number Input
 #name = input('How old are you?', type=TEXT)
-#
-## Single choice
+# Single choice
 #answer = radio("Which Continent?", options=['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America'])
-#
-## Checkbox
+# Checkbox
 #agree = checkbox("User Term", options=['I agree to terms and conditions'])
-
 
 from pywebio.input import *
 from pywebio.output import *
@@ -59,6 +53,5 @@ data = input_group(
         ),
     ],
 )
-
-
 ```
+##
