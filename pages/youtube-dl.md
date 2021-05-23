@@ -3,12 +3,8 @@ title: youtube-dl
 ---
 
 ## can be used to download videos from webpages with minimal arguments if i go to any directory and run:
-
-youtube-dl www.exampleURL.com
-
-it will download the YouTube video.
-
-plenty of other options available in the man pages
+### `youtube-dl www.exampleURL.com`
+## it will download the YouTube video. plenty of other options available in the man pages
 ## DOWNLOAD CAPABILITIES
 
 - Single video URL
