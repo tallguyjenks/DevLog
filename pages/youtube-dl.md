@@ -32,8 +32,7 @@ title: youtube-dl
 Tags: 
 
 Reference:
-<https://ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/>
-Related:
+https://ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
 
 
 ---
