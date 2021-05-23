@@ -38,7 +38,7 @@ tags: language
 ##### `kevinrose.vsc-python-indent` Correct Indentation
 ##### `dongli.python-preview` Preview execution stack
 ##### `littlefoxteam.vscode-python-test-adapter` Python Test explorer
-#####
+##### `njqdev.vscode-python-typehint` Data type hint
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
