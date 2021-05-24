@@ -8,4 +8,7 @@
 #### #star | Star
 #### #idea | Idea
 #### #documentation | Documentation
-##
+## **TOP OF MIND**
+### [[Python]]
+### [[VSCode]]
+### [[Azure DevOps]]
