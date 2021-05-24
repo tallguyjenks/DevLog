@@ -66,13 +66,11 @@ tags: language
 ##### **File System Monitoring:** [[watchdog]]
 ##### **File Manipulation:**
 ###### **PDF's** [[PyPDF2]]
-]
 #### **GUI Apps:**
 ##### **Desktop**
 ###### **tkinter:** [[tkinter]], [[tkcalendar]]
 ##### **Web Apps**
 ###### [[pywebio]]
-*File System Monitoring:** [[watchdog]]
 #### **GUI Apps:**
 ##### **tkinter:** [[tkinter]], [[tkcalendar]]
 #### **Data Science:**
