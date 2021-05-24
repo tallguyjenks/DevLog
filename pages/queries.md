@@ -21,7 +21,7 @@ title: Queries
      :query [:find (pull ?pages [*])
          :where
          [?pages :page/properties ?properties]
-         [(get ?properties :tags) ?dates]
+         [(get ?properties :tags) ?tags]
          [?tags :tag/name ?tag]
          [(contains? #{"language"} ?tag)]
      ]
