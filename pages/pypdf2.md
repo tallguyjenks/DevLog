@@ -3,6 +3,7 @@ title: PyPDF2
 tags: library
 ---
 
+## Use this to combine
 ## 
 ```python
 import PyPDF2, os
