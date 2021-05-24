@@ -62,7 +62,9 @@ tags: language
 ##### **Virtual Environment:** [[venv]]
 ##### **Benchmarking:** [[clockpy]]
 ##### **Error Handling:** [[pretty-errors]]
-##
+#### **Documentation:** [[pydoc]], [[prettytable]]
+#### **Unit Testing:** [[unittest]]
+#### **File System:**
 ##### **File System Monitoring:** [[watchdog]]
 ##### **File Manipulation:**
 ###### **PDF's** [[PyPDF2]]
@@ -71,44 +73,44 @@ tags: language
 ###### **tkinter:** [[tkinter]], [[tkcalendar]]
 ##### **Web Apps**
 ###### [[pywebio]]
-#### **GUI Apps:**
-##### **tkinter:** [[tkinter]], [[tkcalendar]]
-#### **Data Science:**
-##### **Data Manipulation:** [[pandas]], [[datetime]], [[tablib]]
-##### **Data Visualization:** [[matplotlib]]
-##### **Data Management:** [[CSV]], [[JSON]]
-### ^^Syntax^^
-#### **Conventions**
-##### TODO check PEP for style conventions
+##### **GUI Apps:**
+###### **tkinter:** [[tkinter]], [[tkcalendar]]
+##### **Data Science:**
+###### **Data Manipulation:** [[pandas]], [[datetime]], [[tablib]]
+###### **Data Visualization:** [[matplotlib]]
+###### **Data Management:** [[CSV]], [[JSON]]
+##### ^^Syntax^^
+###### **Conventions**
+####### TODO check PEP for style conventions
 :PROPERTIES:
 :todo: 1620898933798
 :END:
-##### Use uppercase initials for class names, lowercase for all others.
-###### function names all in lowercase
-###### `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
-####### `user1.first_name` > `user1.firstName`
-##### Name a private identifier with a leading underscore ( `_username`)
-##### Name a strongly private identifier with two leading underscores (`__password`)
-##### Special identifiers in Python end with two leading underscores.
-###### _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
-#### **Decorators**
-##### TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
+####### Use uppercase initials for class names, lowercase for all others.
+######## function names all in lowercase
+######## `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
+######### `user1.first_name` > `user1.firstName`
+####### Name a private identifier with a leading underscore ( `_username`)
+####### Name a strongly private identifier with two leading underscores (`__password`)
+####### Special identifiers in Python end with two leading underscores.
+######## _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
+###### **Decorators**
+####### TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 :PROPERTIES:
 :todo: 1620835767488
 :END:
-##### DONE [Decorators 201](https://sureshdsk.dev/python-decorators-201)
+####### DONE [Decorators 201](https://sureshdsk.dev/python-decorators-201)
 :PROPERTIES:
 :todo: 1620835782488
 :done: 1621632285760
 :END:
-##### TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
+####### TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
 :PROPERTIES:
 :todo: 1620835794488
 :END:
-### ^^Data Types & Structs^^
-#### **Data Types**
-##### _Strings_
-###### 
+##### ^^Data Types & Structs^^
+###### **Data Types**
+####### _Strings_
+######## 
 ```python
 # This is an ordinary string
 print("This is a string")
@@ -129,8 +131,8 @@ print(f"I just printed {x} pages to the printer {printer}")
 # or for less elegence
 print("I just printed" + x + "pages to the printer" + printer)
 ```
-##### _Nubmers_
-###### 
+####### _Nubmers_
+######## 
 ```python
 # Integer whole numbers
 a = 496
@@ -146,8 +148,8 @@ print(type(a)) # complex
 print(a.real) # view the real part of the number
 print(a.imag) # view the imaginary part of the number
 ```
-##### _Booleans_
-######
+####### _Booleans_
+########
 ```python
 True & False # these ARE the operators
 true & false # These are NOT the operators
@@ -158,9 +160,9 @@ bool("")  # False
 bool(1)   # True
 bool(0)   # False
 ```
-#### **Data Strcutures**
-##### _Set_
-###### 
+###### **Data Strcutures**
+####### _Set_
+######## 
 ```python
 # a set is like a hashtable, the order is not important and they are not ordered like an array
 # sets cannot contain duplicate values
@@ -184,14 +186,14 @@ a.intersection(c) # = 3, 5, 7
 2 in b # result is True
 9 not in a # Result is False 9 IS in the set of odd numbers
 ```
-###### _Frozen Set_
-####### 
+######## _Frozen Set_
+######### 
 ```python
 # less methods than sets
 # immutable
 ```
-##### _Tuple_
-###### 
+####### _Tuple_
+######## 
 ```python
 # can be created just by assigning values encapsulated in parens
 # or for a single value leaving a trailing comma
@@ -210,8 +212,8 @@ print(age)
 print(country)
 print(knows_python)
 ```
-##### _Dictionary_
-###### 
+####### _Dictionary_
+######## 
 ```python
 # key value pairs, basically an object in javascript
 my_dictionary = {"key":"my_key", "value":666}
@@ -226,8 +228,8 @@ dict(message="test", language="english")
 for key, value in my_dictionary.items():
 	print(key, "=", value)
 ```
-##### _List_
-######
+####### _List_
+########
 ```python
 # basically an array as you understand them
 
@@ -245,18 +247,18 @@ b = ['a', 'b', 'c']
 a + b # = [1, 2, 3, 4, 5, 17, 19, 'a', 'b', 'c']
 # adding lists together causes concatenation
 ```
-### ^^Flow Control^^
-##### **Loops**
-###### _While Loop_
-#######
+##### ^^Flow Control^^
+####### **Loops**
+######## _While Loop_
+#########
 ```python
 i = 1
 while i <= 10:
     print(i)
     i+=1
 ```
-###### _For Loop_
-#######
+######## _For Loop_
+#########
 ```python
 for letter in "giraffe academy":
     print(letter)
@@ -269,8 +271,8 @@ for name in friends:
 for index in range(10):
     print(index) # prints 1-9 not including 10 so always increment upwards by 1
 ```
-##### **Exception Handling**
-###### 
+####### **Exception Handling**
+######## 
 ```python
 try:
     number = int(input("enter a number: "))
@@ -286,16 +288,16 @@ except ValueError:
 # integer division or modulo by zero
 # Divided By Zero
 ```
-### ^^Functions^^
-#### **Functions**
-##### 
+##### ^^Functions^^
+###### **Functions**
+####### 
 ```python
 def pow(p):
     """Calculate the power"""
     return p*p
 ```
-#### **Map Filter Reduce**
-##### 
+###### **Map Filter Reduce**
+####### 
 ```python
 import math
 
@@ -334,8 +336,8 @@ countries = ["", "Argentina", "", "Brazil", "Chile", "", "Columbia", "", "Ecuado
 print(list(filter(None, countries)))
 # dont use reduce, just use an explicit for loop
 ```
-### ^^Object Oriented Programming^^
-#### 
+##### ^^Object Oriented Programming^^
+###### 
 ```python
 import datetime
 # init/initializer is basically a constructor, this code runs first every time a new instance of this class is created
@@ -366,7 +368,7 @@ user1.first_name # result: "john"
 user1.last_name # result: "legend"
 user1.birthday # result: 20191120
 ```
-#### 
+###### 
 ```python
 class User1:
     pass
@@ -422,8 +424,8 @@ print(user.last_name)
 print(user.birthday)
 print(user.age())
 ```
-### ^^File Handling^^
-#### 
+##### ^^File Handling^^
+###### 
 ```python
 employee_file = open("employees.txt","r") # Filename, Mode (r:read a:append w:write)
 print(employee_file.readable()) # returns T/F if we can read the file
@@ -435,9 +437,9 @@ print(employee_file.readline()[2]) # reads the (third) in the file
 # always close open files
 employee_file.close()
 ```
-### ^^Tips, Tricks, & Hacks^^
-#### **Multi-Variable Assignment**
-#####
+##### ^^Tips, Tricks, & Hacks^^
+###### **Multi-Variable Assignment**
+#######
 ```python
 x = 0
 y = 0
@@ -445,8 +447,8 @@ y = 0
 # can be:
 x, y = 0, 0
 ```
-#### **Kwargs**
-#####
+###### **Kwargs**
+#######
 ```python
 # Python 3.5+ allows passing multiple sets
 # of keyword arguments ("kwargs") to a
@@ -465,8 +467,8 @@ process_data(**x, **y)
 process_data(**x, c=23, d=42)
 # >>> 1 2 23 42
 ```
-#### **Default Parameters**
-##### 
+###### **Default Parameters**
+####### 
 ```python
 # In Python 3 you can use a bare "*" asterisk
 # in function parameter lists to force the
