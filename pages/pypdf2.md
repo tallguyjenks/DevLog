@@ -3,7 +3,7 @@ title: PyPDF2
 tags: library
 ---
 
-## Use this to combine
+## Use this to append all PDF's in the given directory into 1
 ## 
 ```python
 import PyPDF2, os
