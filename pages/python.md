@@ -56,6 +56,7 @@ tags: language
 ###### `njqdev.vscode-python-typehint` Data type hint
 ##### _Jupyter Notebooks_
 ###### `jithurjacob.nbpreviewer`
+###### `ms-toolsai.jupyter`
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
