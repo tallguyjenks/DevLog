@@ -36,6 +36,7 @@ tags: language
 ###### `ms-python.python` Python language support
 ###### `ms-python.vscode-pylance` Python language support
 ###### `brainfit.vscode-importmagic` Fix missing module imports
+###### `formulahendry.code-runner` Code runner to run the language for output and not just python code
 ###### _AI Code Completion_
 ####### [Comparisons here](https://medium.com/swlh/kite-vs-tabnine-which-ai-code-autocomplete-should-you-choose-eb6eba85c3a6)
 ######## ❌️ `kiteco.kite` Kite
