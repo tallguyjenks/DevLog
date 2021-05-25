@@ -54,7 +54,6 @@ tags: language
 ##### _App Dev_
 ###### ❌️ `nikolapaunovic.tkinter-snippets` [[tkinter]] snippets
 ###### `njqdev.vscode-python-typehint` Data type hint
-##### `ms-pyright.pyright` for static type checking
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
