@@ -49,7 +49,7 @@ tags: language
 ##### _Unit Testing_
 ###### `littlefoxteam.vscode-python-test-adapter` Python Test explorer
 ##### _Static Typing_
-##### `njqdev.vscode-python-typehint` Data type hint
+###### `njqdev.vscode-python-typehint` Data type hint
 ###### `ms-pyright.pyright` for static type checking
 ##### _App Dev_
 ###### ❌️ `nikolapaunovic.tkinter-snippets` [[tkinter]] snippets
