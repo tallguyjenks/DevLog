@@ -34,6 +34,7 @@ tags: language
 #### [[VSCode]] Extensions
 ##### _General_
 ###### `ms-python.python` Python language support
+###### `ms-python.vscode-pylance` Python language support
 ###### `brainfit.vscode-importmagic` Fix missing module imports
 ###### _AI Code Completion_
 ####### [Comparisons here](https://medium.com/swlh/kite-vs-tabnine-which-ai-code-autocomplete-should-you-choose-eb6eba85c3a6)
