@@ -54,6 +54,8 @@ tags: language
 ##### _App Dev_
 ###### ❌️ `nikolapaunovic.tkinter-snippets` [[tkinter]] snippets
 ###### `njqdev.vscode-python-typehint` Data type hint
+##### _Jupyter Notebooks_
+######
 ### ^^Libraries^^
 #### **Utils:** [[pyinstaller]], [[os]]
 ##### **Logging:** [[logging]]
