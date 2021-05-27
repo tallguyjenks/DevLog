@@ -71,7 +71,7 @@ tags: language
 ##### **File System Monitoring:** [[watchdog]]
 ##### **File Manipulation:**
 ###### **PDF's** [[PyPDF2]]
-######
+###### **YAML** [[PyYaml]]
 #### **GUI Apps:**
 ##### **Desktop**
 ###### **tkinter:** [[tkinter]], [[tkcalendar]]
