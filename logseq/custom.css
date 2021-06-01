@@ -375,3 +375,7 @@ a.tooltip-priority {
 .cm-s-solarized.cm-s-dark.CodeMirror ::selection {
     background: var(--lighter-background); 
 }
+.cm-s-solarized.cm-s-dark .CodeMirror-linenumber {
+    color: var(--foreground);
+    text-shadow: var(--dark-background) 0 -1px !important;
+}
