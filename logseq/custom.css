@@ -155,7 +155,7 @@ body {
   letter-spacing: var(--ls-font-letter-spacing);
   line-height: var(--ls-font-line-height);
   font-size: var(--ls-page-text-size);
-  background-color: var(--dark-background) !important;
+  background-color: var(--dark-background);
 }
 
 i {
@@ -250,11 +250,11 @@ a.tooltip-priority {
 }
 
 .cp__right-sidebar-inner {
-  background-color: var(--darker-background);
+  background-color: var(--dark-background);
 }
 
 .cp__right-sidebar .sidebar-item {
-    border-top-color: var(--darker-background);
+    border-top-color: var(--dark-background);
 }
 
 .CodeMirror {
