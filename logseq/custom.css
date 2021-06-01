@@ -155,7 +155,7 @@ body {
   letter-spacing: var(--ls-font-letter-spacing);
   line-height: var(--ls-font-line-height);
   font-size: var(--ls-page-text-size);
-  background-color: #282a36;
+  background-color: var(--background);
 }
 
 i {
