@@ -379,10 +379,10 @@ a.tooltip-priority {
 .cm-s-solarized.cm-s-dark .CodeMirror-linenumber {
     color: var(--foreground);
     text-shadow: var(--lighter-background) 0 -1px ;
-    background-color: var(--background) !important;
+    background-color: var(--lighter-background) !important;
 }
 .CodeMirror-gutter, .CodeMirror-gutters {
     color: var(--foreground);
-    text-shadow: var(--background) 0 -1px ;
-    background-color: var(--background) !important;
+    text-shadow: var(--lighter-background) 0 -1px ;
+    background-color: var(--lighter-background) !important;
 }
