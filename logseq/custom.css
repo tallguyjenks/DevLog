@@ -369,7 +369,7 @@ a.tooltip-priority {
 }
 .cm-s-solarized.cm-s-dark {
 	color: var(--foreground);
-    background-color: var(--dark-background);
+    background-color: var(--dark-background) !important;
     text-shadow: var(--darker-background) 0 1px;
 }
 .cm-s-solarized.cm-s-dark.CodeMirror ::selection {
