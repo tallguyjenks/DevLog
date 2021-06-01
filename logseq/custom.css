@@ -254,7 +254,7 @@ a.tooltip-priority {
 }
 
 .cp__right-sidebar .sidebar-item {
-    border-top-color: var(--darker-background) !important;
+    border-top-color: var(--darker-background);
 }
 
 .CodeMirror {
@@ -369,19 +369,19 @@ a.tooltip-priority {
 }
 .cm-s-solarized.cm-s-dark {
 	color: var(--foreground);
-    background-color: var(--darker-background) !important;
-    text-shadow: var(--darker-background) 0 1px;
+    background-color: var(--background) !important;
+    text-shadow: var(--background) 0 1px;
 }
 .cm-s-solarized.cm-s-dark.CodeMirror ::selection {
     background: rgba(255, 255, 255, 0.1) !important;
 }
 .cm-s-solarized.cm-s-dark .CodeMirror-linenumber {
     color: var(--foreground);
-    text-shadow: var(--darker-background) 0 -1px ;
-    background-color: var(--dark-background) !important;
+    text-shadow: var(--background) 0 -1px ;
+    background-color: var(--background) !important;
 }
 .CodeMirror-gutter, .CodeMirror-gutters {
     color: var(--foreground);
-    text-shadow: var(--darker-background) 0 -1px ;
-    background-color: var(--dark-background) !important;
+    text-shadow: var(--background) 0 -1px ;
+    background-color: var(--background) !important;
 }
