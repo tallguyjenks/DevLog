@@ -88,4 +88,5 @@
  :ui/show-brackets? true
  :date-formatter "yyyy-MM-dd"
  :all-pages-public? true
+ :markdown/version 2
  }

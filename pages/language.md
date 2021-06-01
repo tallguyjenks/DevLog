@@ -2,5 +2,5 @@
 title: language
 ---
 
-## Programming | Markup | Typesetting | Coding
-## Languages
+- Programming | Markup | Typesetting | Coding
+- Languages

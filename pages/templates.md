@@ -2,19 +2,17 @@
 title: Templates
 ---
 
-## **Language**
-:PROPERTIES:
-:template: Programming Language
-:END:
-#### ^^Setup^^
-#### ^^Resources^^
-#### ^^Tools^^
-#### ^^Libraries^^
-#### ^^Projects^^
-#### ^^Syntax^^
-#### ^^Data Types & Structs^^
-#### ^^Flow Control^^
-#### ^^Functions^^
-#### ^^Object Oriented Programming^^
-#### ^^File Handling^^
-#### ^^Tips, Tricks, & Hacks^^
+- **Language**
+  template:: Programming Language
+		- ^^Setup^^
+		- ^^Resources^^
+		- ^^Tools^^
+		- ^^Libraries^^
+		- ^^Projects^^
+		- ^^Syntax^^
+		- ^^Data Types & Structs^^
+		- ^^Flow Control^^
+		- ^^Functions^^
+		- ^^Object Oriented Programming^^
+		- ^^File Handling^^
+		- ^^Tips, Tricks, & Hacks^^

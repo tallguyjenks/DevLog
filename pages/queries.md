@@ -2,22 +2,22 @@
 title: Queries
 ---
 
-## **On going Tasks** {{query (todo todo now later doing)}}
-## **Waiting Tasks** {{query (todo waiting)}}
-## **Templates** {{query (property template) }}
-## 
-#+BEGIN_QUERY
-{:title "Documentation Inline Tags"
+- **On going Tasks** {{query (todo todo now later doing)}}
+- **Waiting Tasks** {{query (todo waiting)}}
+- **Templates** {{query (property template) }}
+-
+  #+BEGIN_QUERY
+  {:title "Documentation Inline Tags"
      :query [:find (pull ?b [*])
          :where
          [?b :block/ref-pages ?p]
          [?p :page/name "documentation"]
      ]
-}
-#+END_QUERY
-## 
-#+BEGIN_QUERY
-{:title "Languages"
+  }
+  #+END_QUERY
+-
+  #+BEGIN_QUERY
+  {:title "Languages"
      :query [:find (pull ?pages [*])
          :where
          [?pages :page/properties ?properties]
@@ -25,6 +25,6 @@ title: Queries
          [?tags :tag/name ?tag]
          [(contains? #{"language"} ?tag)]
      ]
-}
-#+END_QUERY
-##
+  }
+  #+END_QUERY
+-

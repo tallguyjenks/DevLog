@@ -3,5 +3,5 @@ title: VSCode
 tags: tools
 ---
 
-## ^^Extensions^^
-### [[Markdown Lint]]
+- ^^Extensions^^
+	- [[Markdown Lint]]
