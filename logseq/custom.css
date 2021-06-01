@@ -250,7 +250,7 @@ a.tooltip-priority {
 }
 
 .cp__right-sidebar-inner {
-  background-color: var(--background);
+  background-color: var(--dark-background);
 }
 
 .cp__right-sidebar .sidebar-item {
