@@ -254,7 +254,7 @@ a.tooltip-priority {
 }
 
 .cp__right-sidebar .sidebar-item {
-    border-top-color: var(--dark-background);
+    border-top-color: var(--darker-background);
 }
 
 .CodeMirror {
