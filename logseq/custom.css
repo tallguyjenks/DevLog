@@ -38,9 +38,9 @@
   --ls-border-radius-medium: 6px;
 }
 /* Stretches content for visibility */
-.cp__sidebar-main-content {
+/*.cp__sidebar-main-content {
     max-width: 1400px !important;
-}
+}*/
 /* Custom Tag emoji's */
 /* STAR */
 a.tag[data-ref="star" i]::before {
