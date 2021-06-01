@@ -38,9 +38,9 @@
   --ls-border-radius-medium: 6px;
 }
 /* Stretches content for visibility */
-/*.cp__sidebar-main-content {
+.cp__sidebar-main-content {
     max-width: 1400px !important;
-}*/
+}
 /* Custom Tag emoji's */
 /* STAR */
 a.tag[data-ref="star" i]::before {
@@ -155,7 +155,7 @@ body {
   letter-spacing: var(--ls-font-letter-spacing);
   line-height: var(--ls-font-line-height);
   font-size: var(--ls-page-text-size);
-  background-color: #282a36;
+  background-color: red;
 }
 
 i {
