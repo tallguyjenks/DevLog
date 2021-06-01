@@ -12,3 +12,12 @@
 	- [[Python]]
 	- [[VSCode]]
 	- [[Azure DevOps]]
+- TODO [[YAML]] [[Python]] [[PyYaml]]
+  todo:: 1622157746337
+	-
+	  ```python
+	  	  import yaml
+	  	  with open("example.yaml") as fp:
+	  	      data = fp.read()
+	  	  parsed = yaml.safe_load_all(data)  # parsed is a generator
+	  	  ```
