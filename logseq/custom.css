@@ -249,7 +249,7 @@ a.tooltip-priority {
   opacity: 0.8;
 }
 
-.cp__right-sidebar-inner {
+.cp__right-sidebar-inner, .cp__right-sidebar-topbar {
   background-color: var(--darker-background);
 }
 
