@@ -380,3 +380,8 @@ a.tooltip-priority {
     text-shadow: var(--darker-background) 0 -1px ;
     background-color: var(--darker-background) !important;
 }
+.CodeMirror pre.CodeMirror-line, .CodeMirror-gutter, .CodeMirror-gutters, .CodeMirror-linenumber, .CodeMirror-scroll, .CodeMirror-sizer {
+    color: var(--foreground);
+    text-shadow: var(--darker-background) 0 -1px ;
+    background-color: var(--darker-background) !important; 
+}
