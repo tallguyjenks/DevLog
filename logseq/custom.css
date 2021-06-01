@@ -383,5 +383,5 @@ a.tooltip-priority {
 .CodeMirror-gutter, .CodeMirror-gutters {
     color: var(--foreground);
     text-shadow: var(--darker-background) 0 -1px ;
-    background-color: var(--darker-background) !important;
+    background-color: var(--dark-background) !important;
 }
