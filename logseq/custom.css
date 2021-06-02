@@ -206,6 +206,10 @@ mark {
   color: var(--cyan-hover);
 }
 
+#left-container {
+  background-color: var(--dark-background);
+}
+
 h1.title,
 .ls-block h1,
 .ls-block h2,
