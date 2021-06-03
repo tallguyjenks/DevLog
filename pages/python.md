@@ -13,8 +13,6 @@ filters: {}
 	- ^^Resources^^
 		- [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 		  todo:: 1620885582093
-		- TODO [article on logging for a python app](https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540)
-		  todo:: 1620885579117
 		- TODO [thomas-cokelaer python notes](https://thomas-cokelaer.info/tutorials/python/index.html)
 		  todo:: 1620885575348
 		- TODO [perceptilabs](https://www.perceptilabs.com/papers)
