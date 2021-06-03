@@ -255,8 +255,8 @@ a.tooltip-priority {
 }
 
 .cp__right-sidebar .sidebar-item {
-    border-top-color: var(--darker-background);
- 	background-color: var(--darker-background);
+    border-top-color: var(--light-background);
+ 	background-color: var(--light-background);
 }
 
 .CodeMirror {
