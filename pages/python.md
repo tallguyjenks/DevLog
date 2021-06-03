@@ -52,50 +52,51 @@ filters: {}
 			- `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
 			- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 	- ^^Libraries^^
-	- **Dependency Management** [[Python Poetry]] [[pydeps]]
-	- **Utils:** [[pyinstaller]], [[os]]
-		- **Logging:** [[logging]]
-		- **Virtual Environment:** [[venv]]
-		- **Benchmarking:** [[clockpy]]
-		- **Error Handling:** [[pretty-errors]]
-	- **Documentation:** [[pydoc]], [[prettytable]]
-	- **Unit Testing:** [[unittest]]
-	- **File System:**
-		- **File System Monitoring:** [[watchdog]]
-		- **File Manipulation:**
-			- **PDF's** [[PyPDF2]]
-			- **YAML** [[PyYaml]]
-	- **GUI Apps:**
-		- **Desktop**
-			- **tkinter:** [[tkinter]], [[tkcalendar]]
-		- **Web Apps**
-			- [[pywebio]]
+	  collapsed:: true
+		- **Dependency Management** [[Python Poetry]] [[pydeps]]
+		- **Utils:** [[pyinstaller]], [[os]]
+			- **Logging:** [[logging]]
+			- **Virtual Environment:** [[venv]]
+			- **Benchmarking:** [[clockpy]]
+			- **Error Handling:** [[pretty-errors]]
+		- **Documentation:** [[pydoc]], [[prettytable]]
+		- **Unit Testing:** [[unittest]]
+		- **File System:**
+			- **File System Monitoring:** [[watchdog]]
+			- **File Manipulation:**
+				- **PDF's** [[PyPDF2]]
+				- **YAML** [[PyYaml]]
 		- **GUI Apps:**
-			- **tkinter:** [[tkinter]], [[tkcalendar]]
-		- **Data Science:**
-			- **Data Manipulation:** [[pandas]], [[datetime]], [[tablib]]
-			- **Data Visualization:** [[matplotlib]]
-			- **Data Management:** [[CSV]], [[JSON]]
-		- ^^Syntax^^
-			- **Conventions**
-				- TODO check PEP for style conventions
-				  todo:: 1620898933798
-				- Use uppercase initials for class names, lowercase for all others.
-					- function names all in lowercase
-					- `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
-						- `user1.first_name` > `user1.firstName`
-				- Name a private identifier with a leading underscore ( `_username`)
-				- Name a strongly private identifier with two leading underscores (`__password`)
-				- Special identifiers in Python end with two leading underscores.
-					- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
-			- **Decorators**
-				- TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
-				  todo:: 1620835767488
-				- DONE [Decorators 201](https://sureshdsk.dev/python-decorators-201)
-				  todo:: 1620835782488
-				  done:: 1621632285760
-				- TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
-				  todo:: 1620835794488
+			- **Desktop**
+				- **tkinter:** [[tkinter]], [[tkcalendar]]
+			- **Web Apps**
+				- [[pywebio]]
+			- **GUI Apps:**
+				- **tkinter:** [[tkinter]], [[tkcalendar]]
+			- **Data Science:**
+				- **Data Manipulation:** [[pandas]], [[datetime]], [[tablib]]
+				- **Data Visualization:** [[matplotlib]]
+				- **Data Management:** [[CSV]], [[JSON]]
+	- ^^Syntax^^
+		- **Conventions**
+			- TODO check PEP for style conventions
+			  todo:: 1620898933798
+			- Use uppercase initials for class names, lowercase for all others.
+				- function names all in lowercase
+				- `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
+					- `user1.first_name` > `user1.firstName`
+			- Name a private identifier with a leading underscore ( `_username`)
+			- Name a strongly private identifier with two leading underscores (`__password`)
+			- Special identifiers in Python end with two leading underscores.
+				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
+		- **Decorators**
+			- TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
+			  todo:: 1620835767488
+			- DONE [Decorators 201](https://sureshdsk.dev/python-decorators-201)
+			  todo:: 1620835782488
+			  done:: 1621632285760
+			- TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
+			  todo:: 1620835794488
 		- ^^Data Types & Structs^^
 			- **Data Types**
 				- _Strings_
