@@ -90,18 +90,20 @@ filters: {}
 			- Special identifiers in Python end with two leading underscores.
 				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- **Decorators**
-			- ```python 
+			-
+			  ```python 
 			  def hello_decorator(func):
 			    def wrapper(*args, **kwargs):
 			        result = func(*args, **kwargs)
 			        return result
-			    return wrapper
-			- @hello_decorator
+			    return wrapper 
+			  @hello_decorator
 			  def add(a, b):
-			    return a + b
-			- if __name__ == '__main__':
+			    return a + b 
+			  if __name__ == '__main__':
 			    output = add(2, 2)
 			    print(output)
+			  ```
 			- [Python Decorators in 15 Minutes](https://youtu.be/r7Dtus7N4pI) #star
 			  done:: 1622747738306
 			- TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
