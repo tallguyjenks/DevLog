@@ -91,7 +91,7 @@ filters: {}
 				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- **Decorators**
 			-
-			  ```python 
+			  ```python
 			  def hello_decorator(func):
 			    def wrapper(*args, **kwargs):
 			        result = func(*args, **kwargs)
