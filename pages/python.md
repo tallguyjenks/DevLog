@@ -13,8 +13,6 @@ filters: {}
 	- ^^Resources^^
 		- [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 		  todo:: 1620885582093
-		- TODO [perceptilabs](https://www.perceptilabs.com/papers)
-		  todo:: 1620885568483
 	- ^^Projects^^
 	- ^^Tools^^
 	  collapsed:: true
