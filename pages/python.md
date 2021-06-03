@@ -240,6 +240,7 @@ filters: {}
 					  						  # adding lists together causes concatenation
 					  						  ```
 		- ^^Flow Control^^
+		  collapsed:: true
 			- **Loops**
 				- _While Loop_
 					-
@@ -328,6 +329,11 @@ filters: {}
 				  					  print(list(filter(None, countries)))
 				  					  # dont use reduce, just use an explicit for loop
 				  					  ```
+			- **The __main__ Function**
+				-
+				  ```python
+				  
+				  ```
 		- ^^Object Oriented Programming^^
 			-
 			  ```python
