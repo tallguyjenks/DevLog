@@ -1,6 +1,7 @@
 ---
 title: Python
 tags: language
+filters: {\"2021-05-11\" true, \"2021-05-13\" true, \"2021-05-06\" true, \"2021-05-27\" true, \"2021-05-14\" true, \"2021-05-21\" true, \"2021-05-19\" true}
 ---
 
 -
