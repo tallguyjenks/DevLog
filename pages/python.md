@@ -91,6 +91,7 @@ filters: {}
 				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- **Decorators**
 			-
+			  collapsed:: true
 			  ```python
 			  def hello_decorator(func):
 			    def wrapper(*args, **kwargs):
