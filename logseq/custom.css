@@ -295,13 +295,12 @@ a.tooltip-priority {
 
 .cm-s-default .CodeMirror-line {
   box-shadow: none;
-  background: var(--darker-background)!important;
 }
 
 .cm-s-default .CodeMirror-line::selection,
 .cm-s-default .CodeMirror-line > span::selection,
 .cm-s-default .CodeMirror-line > span > span::selection {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: var(--darker-background);
 }
 .cm-s-default .CodeMirror-line::-moz-selection,
 .cm-s-default .CodeMirror-line > span::-moz-selection,
