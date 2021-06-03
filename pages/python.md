@@ -53,7 +53,6 @@ filters: {}
 				- `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 	- ^^Libraries^^
-	  collapsed:: true
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]]
 			- **Logging:** [[logging]]
