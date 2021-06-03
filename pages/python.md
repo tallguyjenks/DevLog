@@ -59,7 +59,7 @@ filters: {}
 			- **Virtual Environment:** [[venv]]
 			- **Benchmarking:** [[clockpy]]
 			- **Error Handling:** [[pretty-errors]]
-		- **Documentation:** [[pydoc]], [[prettytable]]
+		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]]
 		- **Unit Testing:** [[unittest]]
 		- **File System:**
 			- **File System Monitoring:** [[watchdog]]
