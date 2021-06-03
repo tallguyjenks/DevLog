@@ -99,6 +99,7 @@ filters: {}
 			- TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
 			  todo:: 1620835794488
 		- ^^Data Types & Structs^^
+		  collapsed:: true
 			- **Data Types**
 				- _Strings_
 					-
