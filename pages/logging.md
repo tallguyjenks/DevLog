@@ -5,6 +5,7 @@ tags: library
 
 - [article on logging for a python app](https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540)
   todo:: 1620836232073
+- [Official Docs](https://docs.python.org/3/library/logging.html#)
 - 5 types of Logs
 	- Debug
 	- Info
