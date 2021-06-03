@@ -290,7 +290,7 @@ a.tooltip-priority {
   color: var(--comment);
 }
 .cm-s-default .CodeMirror-selected {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--darker-background)!important;
 }
 
 .cm-s-default .CodeMirror-line {
