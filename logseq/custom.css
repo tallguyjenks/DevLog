@@ -267,7 +267,7 @@ a.tooltip-priority {
 
 .cm-s-default.CodeMirror,
 .cm-s-default .CodeMirror-gutters {
-  background-color: var(--darker-background);
+  background-color: var(--darker-background)!important;
   color: var(--white) !important;
   border: none;
 }
