@@ -300,7 +300,7 @@ a.tooltip-priority {
 .cm-s-default .CodeMirror-line::selection,
 .cm-s-default .CodeMirror-line > span::selection,
 .cm-s-default .CodeMirror-line > span > span::selection {
-  background: var(--darker-background);
+  background: var(--darker-background)!important;
 }
 .cm-s-default .CodeMirror-line::-moz-selection,
 .cm-s-default .CodeMirror-line > span::-moz-selection,
