@@ -23,7 +23,6 @@ filters: {}
 	- ^^Tools^^
 		- [[Jupyter]]
 		- [[Kite]]
-	- **Dependency Management** [[Python Poetry]] [[pydeps]]
 	- [[VSCode]] Extensions
 		- _General_
 			- `ms-python.python` Python language support
@@ -53,6 +52,7 @@ filters: {}
 			- `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
 			- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 	- ^^Libraries^^
+	- **Dependency Management** [[Python Poetry]] [[pydeps]]
 	- **Utils:** [[pyinstaller]], [[os]]
 		- **Logging:** [[logging]]
 		- **Virtual Environment:** [[venv]]
