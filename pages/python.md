@@ -91,6 +91,9 @@ filters: {}
 				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- **Decorators**
 			-
+			  ```python
+			  
+			  ```
 			- [Python Decorators in 15 Minutes](https://youtu.be/r7Dtus7N4pI) #star
 			  done:: 1622747738306
 			- TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
