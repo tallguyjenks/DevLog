@@ -116,8 +116,9 @@ filters: {}
 			  done:: 1621632285760
 			  todo:: 1622738195818
 				- To get the correct doc strings and indicate that wrapping has occurred on the given function we can use the [[functools]] module with the `wraps` function
-			- TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
+			- [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
 			  todo:: 1620835794488
+				- Useful with using
 		- ^^Data Types & Structs^^
 		  collapsed:: true
 			- **Data Types**
