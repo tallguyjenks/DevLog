@@ -14,7 +14,6 @@ filters: {}
 		- [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 		  todo:: 1620885582093
 		- [PEP's](https://www.python.org/dev/peps/)
-		-
 	- ^^Projects^^
 	- ^^Tools^^
 	  collapsed:: true
@@ -77,8 +76,6 @@ filters: {}
 		- **Databases:** [[sqlite3]]
 	- ^^Syntax^^
 		- **Conventions**
-			- TODO check PEP for style conventions
-			  todo:: 1620898933798
 			- Use uppercase initials for class names, lowercase for all others.
 				- function names all in lowercase
 				- `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
