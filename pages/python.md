@@ -52,7 +52,7 @@ filters: {}
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 	- ^^Libraries^^
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
-		- **Utils:** [[pyinstaller]], [[os]], [[glob]]
+		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]]
 			- **Logging:** [[logging]]
 			- **Virtual Environment:** [[venv]]
 			- **Benchmarking:** [[clockpy]]
