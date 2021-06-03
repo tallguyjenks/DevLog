@@ -300,6 +300,7 @@ filters: {}
 				  				  ## Divided By Zero
 				  				  ```
 		- ^^Functions^^
+		  collapsed:: true
 			- **Functions**
 				-
 				  ```python
@@ -493,6 +494,7 @@ filters: {}
 			  			  			  				  employee_file.close()
 			  			  			  				  ```
 		- ^^Tips, Tricks, & Hacks^^
+		  collapsed:: true
 			- **Multi-Variable Assignment**
 				-
 				  ```python
@@ -571,3 +573,7 @@ filters: {}
 	- _Ending_
 		- `deactivate`
 			- deactivate virtual environment
+-
+  ---
+- **Machine Learning**
+	- [perceptilabs](https://www.perceptilabs.com/papers)
