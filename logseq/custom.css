@@ -90,8 +90,8 @@ a.tag[data-ref="documentation" i] {
 
 .dark-theme,
 html[data-theme="dark"] {
-  /*--ls-primary-background-color: var(--background);*/
-  --ls-primary-background-color: var(--dark-background);
+  --ls-primary-background-color: var(--background);
+  /*--ls-primary-background-color: var(--dark-background);*/
   --ls-secondary-background-color: var(--dark-background);
   --ls-tertiary-background-color: var(--light-background);
   --ls-quaternary-background-color: var(--light-background);
