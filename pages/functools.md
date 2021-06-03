@@ -4,12 +4,12 @@
   
   def hello_decorator(func):
     """Simple decorator function""" 
-  @wraps(func)
+    @wraps(func)
     def wrapper(*args, **kwargs):
         """Simple decorator wrapper function"""
         result = func(*args, **kwargs)
         return result 
-  return wrapper 
+    return wrapper 
   @hello_decorator
   def add(a, b):
     """Simple function that returns sum of two numbers"""
