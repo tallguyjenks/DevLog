@@ -75,6 +75,7 @@ filters: {}
 			- **Data Manipulation:** [[pandas]], [[datetime]], [[tablib]]
 			- **Data Visualization:** [[matplotlib]]
 			- **Data Management:** [[CSV]], [[JSON]]
+		-
 	- ^^Syntax^^
 		- **Conventions**
 			- TODO check PEP for style conventions
