@@ -335,6 +335,7 @@ filters: {}
 				  
 				  ```
 		- ^^Object Oriented Programming^^
+		  collapsed:: true
 			-
 			  ```python
 			  				  import datetime
@@ -423,6 +424,7 @@ filters: {}
 			  				  print(user.age())
 			  				  ```
 		- ^^File Handling^^
+		  collapsed:: true
 			-
 			  ```python
 			  				  employee_file = open("employees.txt","r") # Filename, Mode (r:read a:append w:write)
@@ -436,6 +438,7 @@ filters: {}
 			  				  employee_file.close()
 			  				  ```
 		- ^^Tips, Tricks, & Hacks^^
+		  collapsed:: true
 			- **Multi-Variable Assignment**
 				-
 				  ```python
