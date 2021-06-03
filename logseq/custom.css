@@ -277,7 +277,7 @@ a.tooltip-priority {
 }
 
 .cm-s-default.CodeMirror {
-  border: 5px solid var(--light-background);
+  border: 5px solid var(--background);
 }
 
 .cm-s-default .CodeMirror-gutters {
