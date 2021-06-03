@@ -96,10 +96,12 @@ filters: {}
 			    def wrapper(*args, **kwargs):
 			        result = func(*args, **kwargs)
 			        return result
-			    return wrapper 
+			    return wrapper
+			  
 			  @hello_decorator
 			  def add(a, b):
 			    return a + b 
+			  
 			  if __name__ == '__main__':
 			    output = add(2, 2)
 			    print(output)
