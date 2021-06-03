@@ -250,9 +250,9 @@ a.tooltip-priority {
   opacity: 0.8;
 }
 
-.cp__right-sidebar-inner, .cp__right-sidebar-topbar, .cp__header, .cp__sidebar-main-layout {
+/*.cp__right-sidebar-inner, .cp__right-sidebar-topbar, .cp__header, .cp__sidebar-main-layout {
   background-color: var(--background);
-}
+}*/
 
 .cp__right-sidebar .sidebar-item {
     border-top-color: var(--light-background);
