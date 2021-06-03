@@ -112,9 +112,10 @@ filters: {}
 			  done:: 1622747738306
 			- [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 			  todo:: 1620835767488
-			- TODO [Decorators 201](https://sureshdsk.dev/python-decorators-201)
-			  todo:: 1622738195818
+			- [Decorators 201](https://sureshdsk.dev/python-decorators-201)
 			  done:: 1621632285760
+			  todo:: 1622738195818
+				- To get the correct doc strings and indicate that wrapping has occurred on the given function we can use the [[functools]] module
 			- TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
 			  todo:: 1620835794488
 		- ^^Data Types & Structs^^
