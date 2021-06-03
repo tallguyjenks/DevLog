@@ -277,7 +277,7 @@ a.tooltip-priority {
 }
 
 .cm-s-default.CodeMirror {
-  border: 5px solid var(--background);
+  border: 5px solid var(--light-background);
 }
 
 .cm-s-default .CodeMirror-gutters {
@@ -371,7 +371,7 @@ a.tooltip-priority {
 }
 .cm-s-solarized.cm-s-dark {
 	color: var(--foreground);
-    background-color: var(--background) !important;
+    background-color: var(--dark-background) !important;
     text-shadow: var(--background) 0 1px;
 }
 .cm-s-solarized.cm-s-dark.CodeMirror ::selection {
