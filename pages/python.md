@@ -59,6 +59,7 @@ filters: {}
 			- **Error Handling:** [[pretty-errors]]
 		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]]
 		- **Unit Testing:** [[unittest]]
+		- **String Manipulation:** [[re]]
 		- **File System:**
 			- **File System Monitoring:** [[watchdog]]
 			- **File Manipulation:**
