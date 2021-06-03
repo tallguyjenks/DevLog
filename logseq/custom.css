@@ -295,7 +295,7 @@ a.tooltip-priority {
 
 .cm-s-default .CodeMirror-line {
   box-shadow: none;
-  background: var(--darker-background);
+  background: var(--darker-background)!important;
 }
 
 .cm-s-default .CodeMirror-line::selection,
