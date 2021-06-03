@@ -371,6 +371,14 @@ filters: {}
 				  if __name__ == "__main__":
 				    useful_function()
 				  ```
+			- **Working with global scope variables from within functions**
+				-
+				  ```python
+				  i = 0
+				  def increment():
+				      global i
+				      i += 1
+				  ```
 		- ^^Object Oriented Programming^^
 		  collapsed:: true
 			-
