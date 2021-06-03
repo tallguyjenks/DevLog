@@ -3,7 +3,7 @@ title: logging
 tags: library
 ---
 
-- TODO https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540
+- [article on logging for a python app](https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540)
   todo:: 1620836232073
 - 5 types of Logs
 	- Debug
@@ -23,19 +23,19 @@ tags: library
 	  | CRITICAL | 50             |
 -
   ```python
-  import logging
-  
-  dir(logging)
-  # items in all caps are constants
-  # capitalized items are classes
-  # lowercase are methods
-  
-  # create an configure logger
-  logging.basicConfig(filename = "~/py.log")
-  logger = logging.getLogger()
-  
-  # Test the logger
-  logger.info("our first message.")
-  print(logger.level) # Defaulted 30 so info and below is not shown
-  ```
+    import logging
+    
+    dir(logging)
+    # items in all caps are constants
+    # capitalized items are classes
+    # lowercase are methods
+    
+    # create an configure logger
+    logging.basicConfig(filename = "~/py.log")
+    logger = logging.getLogger()
+    
+    # Test the logger
+    logger.info("our first message.")
+    print(logger.level) # Defaulted 30 so info and below is not shown
+    ```
 -
