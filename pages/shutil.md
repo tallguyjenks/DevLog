@@ -9,7 +9,7 @@ tags: library
 -
   ```python
   import shutil
-  shutil.move("server.log", "server.log.backup")
-  shutil.move("image.png", "/home/user/")
-  shutil.copy() to copy a file:
+  shutil.move("server.log", "server.log.backup") # Rename
+  shutil.move("image.png", "/home/user/") # Move
+  shutil.copy() #to copy a file:
   ```
