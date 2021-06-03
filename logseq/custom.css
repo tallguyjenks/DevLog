@@ -281,7 +281,7 @@ a.tooltip-priority {
 }
 
 .cm-s-default .CodeMirror-gutters {
-  color: var(--darker-background);
+  color: var(--background);
 }
 .cm-s-default .CodeMirror-cursor {
   border-left: solid thin var(--white);
@@ -295,6 +295,7 @@ a.tooltip-priority {
 
 .cm-s-default .CodeMirror-line {
   box-shadow: none;
+  background: var(--darker-background);
 }
 
 .cm-s-default .CodeMirror-line::selection,
