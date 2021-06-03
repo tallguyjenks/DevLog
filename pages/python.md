@@ -93,8 +93,8 @@ filters: {}
 		- **Decorators**
 			- TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 			  todo:: 1620835767488
-			- DONE [Decorators 201](https://sureshdsk.dev/python-decorators-201)
-			  todo:: 1620835782488
+			- TODO [Decorators 201](https://sureshdsk.dev/python-decorators-201)
+			  todo:: 1622738195818
 			  done:: 1621632285760
 			- TODO [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
 			  todo:: 1620835794488
