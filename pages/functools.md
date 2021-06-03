@@ -1,4 +1,5 @@
 ---
+title: functools
 tags: library
 ---
 
