@@ -392,7 +392,6 @@ filters: {}
 				  				  ```
 			-
 		- ^^Object Oriented Programming^^
-		  collapsed:: true
 			-
 			  ```python
 			  			  			  				  import datetime
@@ -425,8 +424,8 @@ filters: {}
 			  			  			  				  user1.birthday # result: 20191120
 			  			  			  				  ```
 			-
+			  ```python
 			  id:: 60b90661-e3e8-4270-b67a-93236682ad98
-			  			  			  ```python
 			  			  			  				  class User1:
 			  			  			  				      pass
 			  			  			  				  # Conventions: Class names Proper case
@@ -481,6 +480,7 @@ filters: {}
 			  			  			  				  print(user.birthday)
 			  			  			  				  print(user.age())
 			  			  			  				  ```
+			-
 		- ^^File Handling^^
 		  collapsed:: true
 			-
