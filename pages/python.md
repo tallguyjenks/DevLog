@@ -328,7 +328,7 @@ filters: {}
 				  				  					  print(list(filter(None, countries)))
 				  				  					  # dont use reduce, just use an explicit for loop
 				  				  					  ```
-			- **The __main__ Function**
+			- **The \_\_main\_\_ Function**
 				-
 				  ```python
 				  import time
