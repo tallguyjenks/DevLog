@@ -281,7 +281,7 @@ a.tooltip-priority {
 }
 
 .cm-s-default .CodeMirror-gutters {
-  color: var(--background);
+  color: var(--darker-background);
 }
 .cm-s-default .CodeMirror-cursor {
   border-left: solid thin var(--white);
