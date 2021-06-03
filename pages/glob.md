@@ -1,3 +1,8 @@
+---
+title: glob
+tags: library
+---
+
 -
   > glob contains the [[os]], [[sys]], and [[re]] modules.
 -
