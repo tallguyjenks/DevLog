@@ -85,7 +85,7 @@ filters: {}
 			- Name a strongly private identifier with two leading underscores (`__password`)
 			- Special identifiers in Python end with two leading underscores.
 				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
-		- **Decorators**
+		- ^^Decorators^^
 		  collapsed:: true
 			-
 			  collapsed:: true
@@ -258,6 +258,7 @@ filters: {}
 					  					  					  						  # adding lists together causes concatenation
 					  					  					  						  ```
 		- ^^Flow Control^^
+		  collapsed:: true
 			- **Loops**
 				- _While Loop_
 					-
