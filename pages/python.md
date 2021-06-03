@@ -13,6 +13,8 @@ filters: {}
 	- ^^Resources^^
 		- [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 		  todo:: 1620885582093
+		- [PEP's](https://www.python.org/dev/peps/)
+		-
 	- ^^Projects^^
 	- ^^Tools^^
 	  collapsed:: true
