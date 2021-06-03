@@ -21,8 +21,8 @@ filters: {}
 	  todo:: 1620885568483
 	- ^^Projects^^
 	- ^^Tools^^
-	- [[Jupyter]]
-	- [[Kite]]
+		- [[Jupyter]]
+		- [[Kite]]
 	- **Dependency Management** [[Python Poetry]] [[pydeps]]
 	- [[VSCode]] Extensions
 		- _General_
