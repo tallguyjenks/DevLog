@@ -1,3 +1,8 @@
+---
+title: sqlite3
+tags: library
+---
+
 -
   ```python
   import sqlite3
