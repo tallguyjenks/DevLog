@@ -90,7 +90,7 @@ filters: {}
 			- Special identifiers in Python end with two leading underscores.
 				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- **Decorators**
-			- DONE [Python Decorators in 15 Minutes](https://youtu.be/r7Dtus7N4pI) #star
+			- [Python Decorators in 15 Minutes](https://youtu.be/r7Dtus7N4pI) #star
 			  done:: 1622747738306
 			- TODO [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 			  todo:: 1620835767488
