@@ -262,7 +262,7 @@ a.tooltip-priority {
 .CodeMirror {
   font-family: "Fira Code", "Nerd Font", monospace;
   line-height: 1.2;
-  background: var(--background);
+  background: var(--darker-background);
 }
 
 .cm-s-default.CodeMirror,
