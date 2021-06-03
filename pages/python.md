@@ -48,6 +48,7 @@ filters: {}
 				- `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 	- ^^Libraries^^
+	  collapsed:: true
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]]
 			- **Logging:** [[logging]]
@@ -75,6 +76,7 @@ filters: {}
 			- **Data Management:** [[CSV]], [[JSON]]
 		- **Databases:** [[sqlite3]]
 	- ^^Syntax^^
+	  collapsed:: true
 		- **Conventions**
 			- Use uppercase initials for class names, lowercase for all others.
 				- function names all in lowercase
