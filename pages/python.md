@@ -118,7 +118,7 @@ filters: {}
 				- To get the correct doc strings and indicate that wrapping has occurred on the given function we can use the [[functools]] module with the `wraps` function
 			- [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
 			  todo:: 1620835794488
-				- Useful with using [Classes](#60b90661-e3e8-4270-b67a-93236682ad98)
+				- Useful with using Classes so the extra param passing boiler plate can be avoided
 		- ^^Data Types & Structs^^
 		  collapsed:: true
 			- **Data Types**
