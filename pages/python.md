@@ -495,7 +495,6 @@ filters: {}
 			  			  			  			  				  employee_file.close()
 			  			  			  			  				  ```
 		- ^^Tips, Tricks, & Hacks^^
-		  collapsed:: true
 			- **Multi-Variable Assignment**
 				-
 				  ```python
