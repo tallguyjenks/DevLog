@@ -504,6 +504,11 @@ filters: {}
 				  				  				  				  					  # can be:
 				  				  				  				  					  x, y = 0, 0
 				  				  				  				  					  ```
+			- **Swap Variable Values**
+				-
+				  ```python
+				  x, y = 1, 0 
+				  ```
 			- **Kwargs**
 				-
 				  ```python
