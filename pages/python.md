@@ -507,7 +507,8 @@ filters: {}
 			- **Swap Variable Values**
 				-
 				  ```python
-				  x, y = 1, 0 
+				  x, y = 1, 0
+				  
 				  ```
 			- **Kwargs**
 				-
