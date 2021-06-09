@@ -24,8 +24,6 @@ tags: library
 	                                      usage='%(prog)s [options] path',
 	                                      description='List the content of a folder')
 	  
-	  
-	  
 	  my_parser.version = '1.0'
 	  my_parser.add_argument('-a',
 	                         action='store',
@@ -49,6 +47,11 @@ tags: library
 	                         action='store',
 	                         type=int,
 	                         choices=range(1, 5))
+	  
+	  my_group = my_parser.add_mutually_exclusive_group(required=True)
+	  
+	  my_group.add_argument('-v', '--verbose', action='store_true')
+	  my_group.add_argument('-s', '--silent', action='store_true')
 	  
 	  # Add the arguments
 	  my_parser.add_argument('Path',
