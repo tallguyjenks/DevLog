@@ -29,6 +29,6 @@ tags: library
 			  ```
 		- Run tests with `pytest --verbose` or configure auto process to do that
 			- pytest is looking for files and functions whose names begin with `test_*`
-			- You can run singular unit tests with the following syntax: ``
+			- You can run singular unit tests with the following syntax: `pytest `
 -
 -
