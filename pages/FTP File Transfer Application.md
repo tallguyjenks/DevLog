@@ -70,4 +70,9 @@ tags: project
 	          progress.update(len(bytes_read))
 	  s.close()
 	  ```
--
+- Tips:
+- You can extend this code by adding more features to meet your own needs. These are only a few of them:
+  Enable the server to receive multiple files from multiple clients at the same time using threads.
+  Compress the file before sending it.
+  Encrypt the file before sending it to ensure no one intercepting it will read it.
+  To make sure we sent the files properly, use secure hashing algorithms. It will check the checksums of both files — the original sender file and the received file.
