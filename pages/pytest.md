@@ -6,7 +6,7 @@ tags: library
 - **References:**
 	- https://testdriven.io/blog/testing-python/
 	- [Calm Code pytest](https://calmcode.io/pytest/introduction.html)
-		-
+		- [Sample Repo for this project](https://github.com/koaning/blackjack/)
 		- `blackjack.py`
 		  collapsed:: true
 			-
