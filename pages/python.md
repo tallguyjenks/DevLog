@@ -17,7 +17,7 @@ filters: {}
 		- [Dev Docs](https://devdocs.io/python~3.9/)
 		- [Google's Dependency Management service](https://deps.dev/) **COMING SOON**
 	- ^^Projects^^
-		-
+		- [[FTP File Transfer Application]]
 	- ^^Tools^^
 	  collapsed:: true
 		- [[Jupyter]]
