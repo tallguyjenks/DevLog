@@ -97,7 +97,7 @@ tags: library
 						      assert card_score(cards) == score
 						  ```
 			- To be able to work on the package in developer mode you'll need to run;
-				- python setup.py develop
-				  And from here you can safely run pytest again.
-			- pytest
+				- `python setup.py develop`
+			- And from here you can safely run pytest again.
+			- `pytest --verbose`
 -
