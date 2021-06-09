@@ -587,7 +587,7 @@ filters: {}
 			- to import requirements from elsewhere
 	- _Architecture_
 		- setup the [[black]] config file pre-commit hook
-			- Pre-Commit Hooks with
+			- [Pre-Commit](https://pre-commit.com/) Hooks
 	- _Ending_
 		- `deactivate`
 			- deactivate virtual environment
