@@ -74,7 +74,7 @@
  ;; E.g. [["js" "Javascript"]]
  :commands
  [
-  ["py" "```python\n\n```\n##"],
+  ["py" "```python\n\n```"],
   ["code" "```\n\n```"],
   ["pytodo" "TODO [[Python]] "],
   ["pydone" "DONE [[Python]] "],
@@ -91,8 +91,7 @@
  ;; Rose is red, violet's blue. Life's ordered: Org assists you.
  :macros
  {
-  "poem" "Rose is $1, violet's $2. Life's ordered: Org assists you.",
-  "mdlink" "[$1]($2)"
+  "poem" "Rose is $1, violet's $2. Life's ordered: Org assists you."
  }
  :ui/show-brackets? true
  :date-formatter "yyyy-MM-dd"
