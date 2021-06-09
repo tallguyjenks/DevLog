@@ -25,7 +25,7 @@ tags: library
 	                                      description='List the content of a folder')
 	  
 	  my_parser.version = '1.0'
-	  my_parser.add_argument('-a', action='store')
+	  my_parser.add_argument('-a', action='store', )
 	  my_parser.add_argument('-b', action='store_const', const=42)
 	  my_parser.add_argument('-c', action='store_true')
 	  my_parser.add_argument('-d', action='store_false')
@@ -34,7 +34,7 @@ tags: library
 	  my_parser.add_argument('-g', action='count')
 	  my_parser.add_argument('-i', action='help')
 	  my_parser.add_argument('-j', action='version')
-	  my_parser.add_argument('-k', action='version')
+	  my_parser.add_argument('-k', action='store', type=int, choices=range(1, 5))
 	  
 	  # Add the arguments
 	  my_parser.add_argument('Path',
