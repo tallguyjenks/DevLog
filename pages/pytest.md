@@ -27,6 +27,6 @@ tags: library
 			  def test_simple_usecase():
 			      card_score("JK") == 20
 			  ```
-		-
+		- Run tests with `pytest test_blackjack.py` or configure auto process to do that
 -
 -
