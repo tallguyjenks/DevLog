@@ -28,15 +28,6 @@
  ;; The app will ignore those directories or files.
  ;; E.g. "/archived" "/test.md"
  :hidden []
-
- :starred 
- [
-  "TODO",
-  "DOING",
-  "DONE",
-  "LATER",
-  "NOW"
- ]
  
  ;; When creating the new journal page, the app will use your template content here.
  ;; Example for Markdown users: "## [[Work]]\n###\n## [[Family]]\n###\n
