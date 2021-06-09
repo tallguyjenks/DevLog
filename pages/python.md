@@ -59,7 +59,7 @@ filters: {}
 			- **Benchmarking:** [[clockpy]]
 			- **Error Handling:** [[pretty-errors]]
 		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]]
-		- **Unit Testing:** 💙 [[pytest]] [[unittest]]
+		- **Unit Testing:** 💙[[pytest]] [[unittest]]
 		- **String Manipulation:** [[re]]
 		- **Email:** [[smtplib]]
 		- **File System:**
