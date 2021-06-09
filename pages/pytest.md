@@ -29,6 +29,9 @@ tags: library
 			  ```
 			- A more robust way to stay [[DRY]] is to use: ((60be8411-7d36-4c4f-8f0f-56c733eb3294)) from [[pytest]]
 				-
+				  ```python
+				  
+				  ```
 		- Run tests with `pytest --verbose` or configure auto process to do that
 			- pytest is looking for files and functions whose names begin with `test_*`
 			- You can run singular unit tests with the following syntax:
