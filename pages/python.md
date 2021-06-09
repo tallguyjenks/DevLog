@@ -60,6 +60,7 @@ filters: {}
 		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]]
 		- **Unit Testing:** [[unittest]]
 		- **String Manipulation:** [[re]]
+		- **Email**
 		- **File System:**
 			- **File System Monitoring:** [[watchdog]]
 			- **File Manipulation:**
