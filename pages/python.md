@@ -94,7 +94,6 @@ filters: {}
 			- Special identifiers in Python end with two leading underscores.
 				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- ^^Decorators^^
-		  collapsed:: true
 			-
 			  collapsed:: true
 			  			  			  			  			  ```python
