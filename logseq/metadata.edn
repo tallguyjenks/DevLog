@@ -1,1 +1,10 @@
-{}
+{ 
+ :starred 
+  [
+   "TODO"
+   "DOING"
+   "DONE"
+   "LATER"
+   "NOW"
+  ]
+ }
