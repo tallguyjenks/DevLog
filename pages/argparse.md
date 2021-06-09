@@ -20,8 +20,9 @@ tags: library
 	  import os
 	  import sys
 	  
-	  # Create the parser
-	  my_parser = argparse.ArgumentParser(description='List the content of a folder')
+	  my_parser = argparse.ArgumentParser(prog='myls',
+	                                      usage='%(prog)s [options] path',
+	                                      description='List the content of a folder')
 	  
 	  # Add the arguments
 	  my_parser.add_argument('Path',
