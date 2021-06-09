@@ -64,6 +64,8 @@ filters: {}
 			- **File Manipulation:**
 				- **PDF's** [[PyPDF2]]
 				- **YAML** [[PyYaml]]
+		- **CLI Apps:**
+			- **Management:**
 		- **GUI Apps:**
 			- **Desktop**
 				- **tkinter:** [[tkinter]], [[tkcalendar]]
