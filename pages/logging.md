@@ -33,7 +33,7 @@ tags: library
       logger.info("our first message.")
       print(logger.level) # Defaulted 30 so info and below is not shown
       ```
-- From [Calm Code Rich Logging](https://calmcode.io/logging/rich.html)
+- From [Calm Code Rich Logging](https://calmcode.io/logging/rich.html) only for the stream handler not the file handler
 	-
 	  ```python
 	  import logging
