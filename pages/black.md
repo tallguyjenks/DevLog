@@ -4,3 +4,7 @@ tags: tools
 ---
 
 	- `.pre-commit-config.yaml`
+		-
+		  ```yml
+		  
+		  ```
