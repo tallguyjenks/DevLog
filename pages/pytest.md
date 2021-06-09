@@ -55,6 +55,7 @@ tags: library
 				  pytest --verbose test_blackjack.py::test_Simple_case4
 				  ```
 		- [[pytest]] in a package
+		  collapsed:: true
 			-
 			  ```
 			  ├── blackjack
@@ -101,5 +102,5 @@ tags: library
 				- `python setup.py develop`
 			- And from here you can safely run pytest again.
 			- `pytest --verbose`
-	-
+		-
 -
