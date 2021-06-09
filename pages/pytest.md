@@ -96,5 +96,5 @@ tags: library
 						  def test_simple_usecase(cards, score):
 						      assert card_score(cards) == score
 						  ```
-				-
+			-
 -
