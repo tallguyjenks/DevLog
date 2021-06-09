@@ -7,10 +7,14 @@ tags: library
 - Wrap an itterable in the function for an aesthetic progress bar:
 	-
 	  ```python
-	  import time
+	  import this
 	  import tqdm
-	  for i in tqdm.tqdm(range(100)):
-	      time.sleep(0.1)
+	  
+	  for i in tqdm.tqdm(range(100), desc=" first loop"):
+	      time.sleep(0.02)
+	  
+	  for i in tqdm.tqdm(range(100), desc=" second loop"):
+	      time.sleep(0.02)
 	  
 	  print("done!")
 	  ```
