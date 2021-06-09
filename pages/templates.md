@@ -19,3 +19,7 @@ title: Templates
 - **YAML**
   template:: yaml
 	-
+	  ---
+	  title: 
+	  tags: 
+	  ---
