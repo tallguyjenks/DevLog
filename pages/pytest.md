@@ -102,5 +102,5 @@ tags: library
 				- `python setup.py develop`
 			- And from here you can safely run pytest again.
 			- `pytest --verbose`
-		-
+		- `pytest-cov` for code coverage testing
 -
