@@ -29,7 +29,11 @@
  ;; E.g. "/archived" "/test.md"
  :hidden []
 
- 
+ :starred 
+ [
+ 	 
+  
+ ]
  
  ;; When creating the new journal page, the app will use your template content here.
  ;; Example for Markdown users: "## [[Work]]\n###\n## [[Family]]\n###\n
