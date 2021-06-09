@@ -3,7 +3,7 @@ title: argparse
 tags: library
 ---
 
-- The Python argparse library:
+- The Python [[argparse]] library:
 	- Allows the use of positional arguments
 	- Allows the customization of the prefix chars
 	- Supports variable numbers of parameters for a single option
