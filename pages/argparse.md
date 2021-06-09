@@ -34,6 +34,7 @@ tags: library
 	  my_parser.add_argument('-g', action='count')
 	  my_parser.add_argument('-i', action='help')
 	  my_parser.add_argument('-j', action='version')
+	  my_parser.add_argument('-k', action='version')
 	  
 	  # Add the arguments
 	  my_parser.add_argument('Path',
