@@ -76,9 +76,9 @@
  [
   ["py" "```python\n\n```"],
   ["code" "```\n\n```"],
-  ["pytodo" "TODO [[Python]]"],
-  ["pydone" "DONE [[Python]]"],
-  ["link" "[]()"],
+  ["pytodo" "TODO [[Python]] "],
+  ["pydone" "DONE [[Python]] "],
+  ["link" "[]() "],
  ]
 
  ;; Macros replace texts and will make you more productive.
