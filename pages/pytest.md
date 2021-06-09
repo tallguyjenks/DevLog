@@ -103,4 +103,7 @@ tags: library
 			- And from here you can safely run pytest again.
 			- `pytest --verbose`
 		- `pytest-cov` for code coverage testing
+			- `python -m pip install pytest-cov`
+			- [[HTML]] output: `pytest --cov blackjack --cov-report html`
+			-
 -
