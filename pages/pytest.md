@@ -31,7 +31,7 @@ tags: library
 			- pytest is looking for files and functions whose names begin with `test_*`
 			- You can run singular unit tests with the following syntax:
 				-
-				  ```python
+				  ```
 				  pytest --verbose test_blackjack.py::test_Simple_case4
 				  ```
 -
