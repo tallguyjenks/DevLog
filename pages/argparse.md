@@ -29,11 +29,17 @@ tags: library
 	                         action='store',
 	                         choices=['head', 'tail'],
 	                         help='set the user choice to head or tail')
-	  my_parser.add_argument('-b', action='store_const', const=42)
+	  my_parser.add_argument('-b',
+	                         action='store_const',
+	                         const=42,
+	                         type=int)
 	  my_parser.add_argument('-c', action='store_true')
 	  my_parser.add_argument('-d', action='store_false')
 	  my_parser.add_argument('-e', action='append')
-	  my_parser.add_argument('-f', action='append_const', const=42)
+	  my_parser.add_argument('-f',
+	                         action='append_const',
+	                         const=42,
+	                         type=int)
 	  my_parser.add_argument('-g', action='count')
 	  my_parser.add_argument('-i', action='help')
 	  my_parser.add_argument('-j', action='version')
