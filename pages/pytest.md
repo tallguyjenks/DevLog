@@ -85,6 +85,7 @@ tags: library
 						      return score if score <= 21 else 0
 						  ```
 				- **tests**
+					- `__init__.py` should be empty
 					- `test_blackjack.py`
 						-
 						  ```python
