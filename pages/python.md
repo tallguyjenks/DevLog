@@ -50,7 +50,7 @@ filters: {}
 			- _Jupyter Notebooks_
 				- `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
-		-
+		- [[black]] Code formatter
 	- ^^Libraries^^
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
