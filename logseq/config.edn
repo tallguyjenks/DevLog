@@ -31,9 +31,11 @@
 
  :starred 
  [
- 	"TODO",
-  
-  
+  "TODO"
+  "DOING"
+  "DONE"
+  "LATER"
+  "NOW"
  ]
  
  ;; When creating the new journal page, the app will use your template content here.
