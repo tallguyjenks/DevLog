@@ -302,6 +302,7 @@ filters: {}
 				  				  				  				  				  ## Divided By Zero
 				  				  				  				  				  ```
 		- ^^Functions^^
+		  collapsed:: true
 			- **Functions**
 				-
 				  ```python
@@ -391,6 +392,7 @@ filters: {}
 				  				  				  				  				  ```
 			-
 		- ^^Object Oriented Programming^^
+		  collapsed:: true
 			-
 			  ```python
 			  			  			  			  			  			  				  import datetime
@@ -495,6 +497,7 @@ filters: {}
 			  			  			  			  			  			  				  employee_file.close()
 			  			  			  			  			  			  				  ```
 		- ^^Tips, Tricks, & Hacks^^
+		  collapsed:: true
 			- **Multi-Variable Assignment**
 				-
 				  ```python
