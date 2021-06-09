@@ -89,10 +89,9 @@
  ;; becomes
  ;; Rose is red, violet's blue. Life's ordered: Org assists you.
  :macros
- [
- 	{"poem" "Rose is $1, violet's $2. Life's ordered: Org assists you."},
- 	{"mdlink" "[$1]($2)"}
- ]
+ 	{"poem" "Rose is $1, violet's $2. Life's ordered: Org assists you.",
+ 	"mdlink" "[$1]($2)"}
+
  :ui/show-brackets? true
  :date-formatter "yyyy-MM-dd"
  :all-pages-public? true
