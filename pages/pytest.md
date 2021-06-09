@@ -14,10 +14,10 @@ tags: library
 			      faces = [c for c in cards if c in "JQK"]
 			      n_aces = sum([1 for c in cards if c == "A"])
 			      score = sum([int(i) for i in numbers]) + len(faces) * 10
-			      while (score + n_aces * 11) > 21:
-			          score += 1
+			      while n_aces > 0:
+			          score += 1 if score + 11 > 21 else 11
 			          n_aces -= 1
-			      return score if score < 21 else 0
+			      return score if score <= 21 else 0
 			  ```
 		- `test_blackjack.py`
 			-
