@@ -25,7 +25,9 @@ tags: library
 	                                      description='List the content of a folder')
 	  
 	  my_parser.version = '1.0'
-	  my_parser.add_argument('-a', action='store', choices=['head', 'tail'],
+	  my_parser.add_argument('-a',
+	  action='store',
+	  choices=['head', 'tail'],
 	  help='set the user choice to head or tail')
 	  my_parser.add_argument('-b', action='store_const', const=42)
 	  my_parser.add_argument('-c', action='store_true')
