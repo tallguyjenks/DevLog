@@ -586,7 +586,8 @@ filters: {}
 			- snap shot of requirements for reproduce-ability with
 		- `pip install -r requrirements.txt`
 			- to import requirements from elsewhere
-		- __
+	- _Architecture_
+		- setup the [[black]] config file pre-commit hook
 	- _Ending_
 		- `deactivate`
 			- deactivate virtual environment
