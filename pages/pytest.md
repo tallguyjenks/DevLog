@@ -22,10 +22,21 @@ tags: library
 		- `test_blackjack.py`
 			-
 			  ```python
+			  import pytest
+			  
 			  from blackjack import card_score
 			  
-			  def test_simple_usecase():
+			  def test_simple_usecase1():
 			      card_score("JK") == 20
+			  
+			  def test_simple_usecase2():
+			      card_score("JKQ") == 0
+			  
+			  def test_simple_usecase3():
+			      card_score("KA") == 21
+			  
+			  def test_simple_usecase4():
+			      card_score("AA") == 12
 			  ```
 			- A more robust way to stay [[DRY]] is to use: ((60be8411-7d36-4c4f-8f0f-56c733eb3294)) from [[pytest]]
 				-
