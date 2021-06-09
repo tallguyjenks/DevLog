@@ -67,7 +67,7 @@ tags: library
 			  ```
 				- **blackjack**
 					- `__init__.py` should be empty
-					- `common.py`
+					- `common.py` (user preference on naming, example said "common utilities")
 						-
 						  ```python
 						  def card_score(cards):
