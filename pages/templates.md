@@ -16,5 +16,6 @@ title: Templates
 	- ^^Object Oriented Programming^^
 	- ^^File Handling^^
 	- ^^Tips, Tricks, & Hacks^^
--
+- **YAML**
   template:: yaml
+	-
