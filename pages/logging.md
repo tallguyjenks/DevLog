@@ -65,4 +65,5 @@ tags: library
 	  logger.addHandler(file_handler)
 	  ```
 	- To have aesthetic logging output easily:
-		-
+		- ![2021_06_09_image.png](https://cdn.logseq.com/%2F07ac90d5-a8a5-495c-84ae-a5c969228e38d13e2a19-7a0a-4592-aea0-166c20d3a19b2021_06_09_image.png?Expires=4776870175&Signature=N3sdSRBmibgIw6KwOZlWePVQEthzjrXjT473BDlm1SX5Biq36AdmgAb3zlsF710m0tzUr3XSaytk0e71loUxqoetAxOoKpJUlfzZ2QjrhnCZihwP-2t05tQZ4A1ybgzIUzrVKYNuM7zNHlvJTUz0WhFQTpqA8tNXuEBQFRaq9JQuGtRvG390XrpPaMmpDSdw9NjZcaM4ekKczEo5zJG~FGAjbh5fXsBv5AQbKmM5IfMfVj5AkOKnf0WvM~j7SlnCV6UMLMKzrpsHPmNNZKBxdRW8a7fPpRpCJ2VaT8TqHqdqhSBahwgV72w1W0A8CqHOUkLVDPZxlk0tEKp7Al7nFg__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA)
+-
