@@ -7,6 +7,7 @@ tags: library
 	- https://testdriven.io/blog/testing-python/
 	- [Calm Code pytest](https://calmcode.io/pytest/introduction.html)
 		- `blackjack.py`
+		  collapsed:: true
 			-
 			  ```python
 			  def card_score(cards):
@@ -20,6 +21,7 @@ tags: library
 			      return score if score <= 21 else 0
 			  ```
 		- `test_blackjack.py`
+		  collapsed:: true
 			-
 			  ```python
 			  import pytest
@@ -52,5 +54,5 @@ tags: library
 				  ```
 				  pytest --verbose test_blackjack.py::test_Simple_case4
 				  ```
--
+		-
 -
