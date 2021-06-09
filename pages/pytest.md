@@ -5,7 +5,7 @@ tags: library
 
 - **References:**
 	- https://testdriven.io/blog/testing-python/
-	- https://calmcode.io/pytest/introduction.html
+	- [Calm Code pytest](https://calmcode.io/pytest/introduction.html)
 -
 -
 -
