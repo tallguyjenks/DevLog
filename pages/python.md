@@ -66,7 +66,7 @@ filters: {}
 				- **YAML** [[PyYaml]]
 		- **CLI Apps:**
 			- **Management:** [[argparse]]
-			-
+			- **Visuals:**
 		- **GUI Apps:**
 			- **Desktop**
 				- **tkinter:** [[tkinter]], [[tkcalendar]]
