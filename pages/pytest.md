@@ -22,8 +22,11 @@ tags: library
 		- `test_blackjack.py`
 			-
 			  ```python
+			  from blackjack import card_score
 			  
+			  def test_simple_usecase():
+			      card_score("JK") == 20
 			  ```
--
+		-
 -
 -
