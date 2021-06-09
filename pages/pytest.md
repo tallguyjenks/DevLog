@@ -54,5 +54,16 @@ tags: library
 				  ```
 				  pytest --verbose test_blackjack.py::test_Simple_case4
 				  ```
-		-
+		- [[pytest]] in a package
+			-
+			  ```
+			  ├── blackjack
+			  │   ├── __init__.py
+			  │   └── common.py
+			  ├── setup.py
+			  └── tests
+			      ├── __init__.py
+			      └── test_blackjack.py
+			  ```
+			-
 -
