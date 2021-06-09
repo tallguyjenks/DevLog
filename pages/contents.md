@@ -3,7 +3,7 @@
 	- [[Templates]]
 	- [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
 - **Tags:**
-	- #language | #library | #tools |
+	- #language | #library | #tools | #project
 	- **Emoji tags**
 		- #star | Star
 		- #idea | Idea
