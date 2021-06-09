@@ -27,7 +27,8 @@ tags: library
 			  def test_simple_usecase():
 			      card_score("JK") == 20
 			  ```
-			- A more robust way to stay DRY
+			- A more robust way to stay [[DRY]] is to use: ((60be8411-7d36-4c4f-8f0f-56c733eb3294)) from [[pytest]]
+				-
 		- Run tests with `pytest --verbose` or configure auto process to do that
 			- pytest is looking for files and functions whose names begin with `test_*`
 			- You can run singular unit tests with the following syntax:
