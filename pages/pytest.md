@@ -65,6 +65,7 @@ tags: library
 			      ├── __init__.py
 			      └── test_blackjack.py
 			  ```
-				- `__init__.py` should be empty
-				-
+				- **blackjack**
+					- `__init__.py` should be empty
+					- `common.py`
 -
