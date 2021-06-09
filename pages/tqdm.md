@@ -3,7 +3,7 @@ title: tqdm
 tags: library
 ---
 
-- [GitHub Repo](https://github.com/tqdm/tqdm) | [Docs](https://tqdm.github.io/)
+- [GitHub Repo](https://github.com/tqdm/tqdm) | [Docs](https://tqdm.github.io/) |
 - Wrap an itterable in the function for an aesthetic progress bar:
 	-
 	  ```python
