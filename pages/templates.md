@@ -17,9 +17,8 @@ title: Templates
 	- ^^File Handling^^
 	- ^^Tips, Tricks, & Hacks^^
 -
-  template:: yaml
-	-
-	  ---
-	  title: 
-	  tags: 
-	  ---
+  template:: yaml 
+  ---
+  title: 
+  tags: 
+  ---
