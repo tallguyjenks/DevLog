@@ -31,10 +31,10 @@
 
  :starred 
  [
-  "TODO"
-  "DOING"
-  "DONE"
-  "LATER"
+  "TODO",
+  "DOING",
+  "DONE",
+  "LATER",
   "NOW"
  ]
  
