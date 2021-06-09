@@ -74,10 +74,12 @@
  ;; E.g. [["js" "Javascript"]]
  :commands
  [
-  ["py" "```python\n\n```"],
+  ["py" "```python\n\n```\n##"],
   ["code" "```\n\n```"],
   ["pytodo" "TODO [[Python]] "],
   ["pydone" "DONE [[Python]] "],
+  ["pylater" "LATER [[Python]] "],
+  ["pynow" "NOW [[Python]] "],
  ]
 
  ;; Macros replace texts and will make you more productive.
