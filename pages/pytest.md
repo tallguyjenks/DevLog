@@ -27,6 +27,7 @@ tags: library
 			  def test_simple_usecase():
 			      card_score("JK") == 20
 			  ```
+			- A more robust way to stay DRY
 		- Run tests with `pytest --verbose` or configure auto process to do that
 			- pytest is looking for files and functions whose names begin with `test_*`
 			- You can run singular unit tests with the following syntax:
