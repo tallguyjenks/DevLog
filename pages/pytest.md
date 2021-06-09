@@ -71,10 +71,10 @@ tags: library
 						-
 						  ```python
 						  def card_score(cards):
-						      if not isinstance(cards, str):
-						          raise ValueError("The input for `card_score` needs to be a string.")
 						      if len(cards) < 2:
 						          raise ValueError("The `card_score` function requires at least 2 cards.")
+						      if not isinstance(cards, str):
+						          raise ValueError("The input for `card_score` needs to be a string.")
 						      numbers = [c for c in cards if c in "23456789"]
 						      faces = [c for c in cards if c in "JQK"]
 						      n_aces = sum([1 for c in cards if c == "A"])
