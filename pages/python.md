@@ -20,7 +20,6 @@ filters: {}
 		- [[FTP File Transfer Application]]
 		- [[Make a Discord Bot]]
 	- ^^Tools^^
-	  collapsed:: true
 		- [[Jupyter]]
 		- [[Kite]]
 		- [[VSCode]] Extensions
@@ -51,6 +50,7 @@ filters: {}
 			- _Jupyter Notebooks_
 				- `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
+		-
 	- ^^Libraries^^
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
