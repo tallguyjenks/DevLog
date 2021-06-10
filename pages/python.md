@@ -631,3 +631,6 @@ filters: {}
 			  ```
 		- Upload package to PyPi (Python Package Index)
 			-
+			  ```
+			  python -m pip install twine wheel
+			  ```
