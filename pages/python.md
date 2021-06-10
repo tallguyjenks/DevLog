@@ -87,7 +87,6 @@ filters: {}
 			- **Data Management:** [[CSV]], [[JSON]]
 		- **Databases:** [[sqlite3]]
 	- ^^Syntax^^
-	  collapsed:: true
 		- ^^Conventions^^
 		  collapsed:: true
 			- Use uppercase initials for class names, lowercase for all others.
@@ -100,6 +99,7 @@ filters: {}
 				- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- ^^Decorators^^
 		  id:: 60be8411-7d36-4c4f-8f0f-56c733eb3294
+		  collapsed:: true
 			-
 			  collapsed:: true
 			  			  			  			  			  ```python
@@ -574,6 +574,8 @@ filters: {}
 					  					  					  					  					  #> _ = 2
 					  					  					  					  					  #> z = 3
 					  					  					  					  					  ```
+		- ^^Dunders^^
+			-
 	- ^^PEP's^^
 		-
 -
