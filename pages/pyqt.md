@@ -6,6 +6,7 @@ tags: library
 - Create GUI apps
 - **Resources:**
 	- [Real Python Article](https://realpython.com/qt-designer-python/)
+	- [Tutorials Point Course](https://www.tutorialspoint.com/pyqt/pyqt_qpixmap_class.htm)
 	-
 - Using a GUI designer to spit out code for you to use:
 	- {{embed ((60be8411-e645-4f47-bcc5-98ede67aeaed)) }}
