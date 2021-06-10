@@ -610,4 +610,4 @@ filters: {}
 	- ^^Workflow^^
 		- Setup Git Repo and clone
 		- {{embed ((60be8411-e645-4f47-bcc5-98ede67aeaed)) }}
-		-
+		- Make directory and `*.py` file for your project name
