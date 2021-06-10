@@ -607,4 +607,5 @@ filters: {}
 	- ^^Resources^^
 		- [Calm Code Setup](https://calmcode.io/setup/introduction.html)
 	- ^^Workflow^^
+		- Setup Git Repo and clone
 		-
