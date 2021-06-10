@@ -55,14 +55,13 @@ filters: {}
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 		- [[black]] Code formatter
 	- ^^Libraries^^
-	  collapsed:: true
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
 			- **Virtual Environment:** [[venv]]
 			- **Benchmarking:** [[clockpy]]
 			- **Error Handling:** [[pretty-errors]]
-		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]]
+		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]],
 		- **Unit Testing:** 💙[[pytest]] [[unittest]]
 		- **String Manipulation:** [[re]]
 		- **Email:** [[smtplib]]
