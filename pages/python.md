@@ -629,4 +629,4 @@ filters: {}
 			  %load_ext autoreload
 			  %autoreload 2
 			  ```
-			-
+		- Upload package to PyPi
