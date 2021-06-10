@@ -636,4 +636,5 @@ filters: {}
 			  
 			  ```
 	- ^^Documentation^^
-		- Create Documentation automatically. [Example config file](https://github.com/koaning/clumper/blob/main/mkdocs.yml) |
+		- Create Documentation automatically. [Example config file](https://github.com/koaning/clumper/blob/main/mkdocs.yml) | [Explanation](https://calmcode.io/docs/mkdocs.yml.html)
+		-
