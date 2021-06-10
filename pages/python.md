@@ -309,6 +309,11 @@ filters: {}
 				  				  				  				  				  ## integer division or modulo by zero
 				  				  				  				  				  ## Divided By Zero
 				  				  				  				  				  ```
+			- **Ternary Operator**
+				-
+				  ```python
+				  
+				  ```
 		- ^^Functions^^
 		  collapsed:: true
 			- **Functions**
@@ -504,7 +509,6 @@ filters: {}
 			  			  			  			  			  			  				  employee_file.close()
 			  			  			  			  			  			  				  ```
 		- ^^Tips, Tricks, & Hacks^^
-		  collapsed:: true
 			- **Multi-Variable Assignment**
 				-
 				  ```python
