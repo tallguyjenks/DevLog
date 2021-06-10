@@ -110,6 +110,16 @@ tags: library
 		- This allows you to repeat yourself less and have a single location that feeds data into the testing suite instead of making the data for each test individually.
 		-
 		  ```python
+		  from clumper import Clumper
+		  import pytest
 		  
+		  
+		  @pytest.fixture(scope="module")
+		  def base_clumper():
+		      data = [
+		          {"data": [i for _ in range(2)], "i": i, "c": c}
+		          for i, c in enumerate("abcdefghijklmnopqrstuvwxyz")
+		      ]
+		      return Clumper(data)
 		  ```
 		-
