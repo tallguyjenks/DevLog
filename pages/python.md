@@ -617,4 +617,4 @@ filters: {}
 			- In that directory add an `__init__.py` file
 		- in the root set up a `setup.py` file
 			- This file lets the local files be installed by pip as a proper package
-		- Live iteration through [[Jupyter]]
+		- Live iteration through [[Jupyter]] lab
