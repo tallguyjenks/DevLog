@@ -619,6 +619,11 @@ filters: {}
 			- This file lets the local files be installed by pip as a proper package
 		- Live iteration through [[Jupyter]] lab with magics:
 			-
+			  ```bash
+			  python -m pip install jupyterlab
+			  python -m jupyter lab
+			  ```
+			-
 			  ```
 			  %load_ext autoreload
 			  %autoreload 2
