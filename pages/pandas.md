@@ -116,6 +116,7 @@ tags: library
 	      
 	      ```
 - **Pandas Pipe**
+  collapsed:: true
 	-
 	  ```python
 	  import pandas as pd
@@ -155,4 +156,4 @@ tags: library
 		          return result
 		      return wrapper
 		  ```
-	-
+-
