@@ -579,6 +579,7 @@ filters: {}
 -
   ---
 - **Workflow**
+  id:: 60be8411-e645-4f47-bcc5-98ede67aeaed
 	- _Starting_
 		- `python3 -m venv projects/env_name`
 			- create virtual environment
@@ -608,4 +609,5 @@ filters: {}
 		- [Calm Code Setup](https://calmcode.io/setup/introduction.html)
 	- ^^Workflow^^
 		- Setup Git Repo and clone
+		- {{embed ((60be8411-e645-4f47-bcc5-98ede67aeaed)) }}
 		-
