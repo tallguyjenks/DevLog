@@ -14,5 +14,10 @@ tags: library
 - Quick [[venv]] setup workflow with the designer:
 	-
 	  ```powershell
-	  
+	  pip install venv
+	  python -m venv my_virtual_env
+	  cd my_virtual_env
+	  & scripts\activate.ps1
+	  pip install pyqt5 pyqt5-tools pyqt-builder
+	  pyqt5-tools.exe designer
 	  ```
