@@ -15,6 +15,7 @@ tags: library
 			- Makes multiple environments for different projects but all in a single overarching directory
 		- `source project_env/bin/activate`
 			- activates it
+			- if on windows in power shell its `& project_env/scripts/activate.ps1`
 		- `which python`
 			- confirms usage by
 		- `pip list`
