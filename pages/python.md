@@ -323,6 +323,8 @@ filters: {}
 				  reputation = 20
 				  name = "admin" if reputation > 25 else "visitor"
 				  print(name)
+				  #>>> admin
+				  #>>> visitor
 				  ```
 		- ^^Functions^^
 		  collapsed:: true
