@@ -404,6 +404,7 @@ filters: {}
 				  				  				  				  				  ```
 			-
 		- ^^Object Oriented Programming^^
+		  collapsed:: true
 			-
 			  ```python
 			  			  			  			  			  			  				  import datetime
