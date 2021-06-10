@@ -8,7 +8,6 @@ tags: library
 	- [Calm Code pytest](https://calmcode.io/pytest/introduction.html)
 		- [Sample Repo for this project](https://github.com/koaning/blackjack/)
 		- `blackjack.py`
-		  collapsed:: true
 			-
 			  ```python
 			  def card_score(cards):
@@ -22,7 +21,6 @@ tags: library
 			      return score if score <= 21 else 0
 			  ```
 		- `test_blackjack.py`
-		  collapsed:: true
 			-
 			  ```python
 			  import pytest
@@ -106,4 +104,5 @@ tags: library
 		- `pytest-cov` for code coverage testing
 			- `python -m pip install pytest-cov`
 			- [[HTML]] output: `pytest --cov blackjack --cov-report html`
-	-
+	- [Calm Code Conftest](https://calmcode.io/test/conftest.html)
+		- For greater code reusability and provide data to the testing suite, you can use conftest in the
