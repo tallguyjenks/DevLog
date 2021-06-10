@@ -139,4 +139,5 @@ tags: library
 	  
 	  df.pipe(set_dtypes).pipe(remove_outliers)
 	  ```
-	-
+	- Can use logging decorators with [[functools]] to log data changes:
+		-
