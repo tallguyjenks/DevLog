@@ -11,15 +11,18 @@ filters: {}
 - **Language**
 	- ^^Setup^^
 	- ^^Resources^^
+	  collapsed:: true
 		- [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)
 		  todo:: 1620885582093
 		- [[PEP's]] - [PEP's](https://www.python.org/dev/peps/)
 		- [Dev Docs](https://devdocs.io/python~3.9/)
 		- [Google's Dependency Management service](https://deps.dev/) **COMING SOON**
 	- ^^Projects^^
+	  collapsed:: true
 		- [[FTP File Transfer Application]]
 		- [[Make a Discord Bot]]
 	- ^^Tools^^
+	  collapsed:: true
 		- [[Jupyter]]
 		- [[Kite]]
 		- [[VSCode]] Extensions
@@ -52,6 +55,7 @@ filters: {}
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 		- [[black]] Code formatter
 	- ^^Libraries^^
+	  collapsed:: true
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
@@ -83,6 +87,7 @@ filters: {}
 			- **Data Management:** [[CSV]], [[JSON]]
 		- **Databases:** [[sqlite3]]
 	- ^^Syntax^^
+	  collapsed:: true
 		- ^^Conventions^^
 		  collapsed:: true
 			- Use uppercase initials for class names, lowercase for all others.
