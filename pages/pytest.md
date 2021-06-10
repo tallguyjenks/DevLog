@@ -122,4 +122,14 @@ tags: library
 		      ]
 		      return Clumper(data)
 		  ```
-		-
+		- So that tests like this:
+			-
+			  ```python
+			  
+			  ```
+		- can become like:
+			-
+			  ```python
+			  
+			  ```
+	-
