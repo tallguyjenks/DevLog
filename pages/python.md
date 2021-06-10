@@ -605,4 +605,5 @@ filters: {}
   ---
 - **Package Development**
 	- ^^Resources^^
-		-
+		- [Calm Code Setup](https://calmcode.io/setup/introduction.html)
+			-
