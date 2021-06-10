@@ -61,7 +61,7 @@ filters: {}
 			- **Virtual Environment:** [[venv]]
 			- **Benchmarking:** [[clockpy]]
 			- **Error Handling:** [[pretty-errors]]
-		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]],
+		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]], [[mkdocs]]
 		- **Unit Testing:** 💙[[pytest]] [[unittest]]
 		- **String Manipulation:** [[re]]
 		- **Email:** [[smtplib]]
