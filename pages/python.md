@@ -55,7 +55,6 @@ filters: {}
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 		- [[black]] Code formatter
 	- ^^Libraries^^
-	  collapsed:: true
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
