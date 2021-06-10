@@ -18,7 +18,6 @@ filters: {}
 		- [Dev Docs](https://devdocs.io/python~3.9/)
 		- [Google's Dependency Management service](https://deps.dev/) **COMING SOON**
 	- ^^Projects^^
-	  collapsed:: true
 		- [[FTP File Transfer Application]]
 		- [[Make a Discord Bot]]
 	- ^^Tools^^
