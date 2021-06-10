@@ -141,3 +141,7 @@ tags: library
 	  ```
 	- Can use logging decorators with [[functools]] to log data changes:
 		-
+		  ```python
+		  
+		  ```
+		-
