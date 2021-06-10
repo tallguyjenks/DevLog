@@ -20,6 +20,8 @@ filters: {}
 	- ^^Projects^^
 		- [[FTP File Transfer Application]]
 		- [[Make a Discord Bot]]
+		- [Turn your Python Script into a 'Real' Program with Docker](https://python.plainenglish.io/turn-your-python-script-into-a-real-program-with-docker-c200e15d5265)
+		-
 	- ^^Tools^^
 	  collapsed:: true
 		- [[Jupyter]]
