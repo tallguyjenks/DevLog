@@ -107,3 +107,5 @@ tags: library
 			- [[HTML]] output: `pytest --cov blackjack --cov-report html`
 	- [Calm Code Conftest](https://calmcode.io/test/conftest.html)
 		- For greater code reusability and provide data to the testing suite, you can use `conftest.py` in the `tests` directory
+		- This allows you to repeat yourself less and have a single location that feeds data into the testing suite instead of making the data for each test individually.
+		-
