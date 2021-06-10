@@ -114,3 +114,7 @@ tags: library
 	      ```
 - **Pandas Pipe**
 	-
+	  ```python
+	  
+	  ```
+	-
