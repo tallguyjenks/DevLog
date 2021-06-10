@@ -125,11 +125,21 @@ tags: library
 		- So that tests like this:
 			-
 			  ```python
-			  
+			  def test_headtail_size():
+			      data = [{'i': i} for i in range(10)]
+			      c = Clumper(data)
+			      assert len(c.head(10)) == 10
+			      assert len(c.tail(10)) == 10
+			      assert len(c.head(5)) == 5
+			      assert len(c.tail(5)) == 5
 			  ```
 		- can become like:
 			-
 			  ```python
-			  
+			  def test_headtail_size(base_clumper):
+			      assert len(base_clumper.head(10)) == 10
+			      assert len(base_clumper.tail(10)) == 10
+			      assert len(base_clumper.head(5)) == 5
+			      assert len(base_clumper.tail(5)) == 5
 			  ```
 	-
