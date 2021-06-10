@@ -78,8 +78,6 @@ filters: {}
 				- **tkinter:** [[tkinter]], [[tkcalendar]]
 			- **Web Apps**
 				- [[pywebio]]
-			- **GUI Apps:**
-				- **tkinter:** [[tkinter]], [[tkcalendar]]
 		- **Data Science:**
 			- **Data Manipulation:** [[pandas]], [[datetime]], [[tablib]]
 			- **Data Visualization:** [[matplotlib]]
