@@ -269,7 +269,6 @@ filters: {}
 					  					  					  					  					  					  						  # adding lists together causes concatenation
 					  					  					  					  					  					  						  ```
 		- ^^Flow Control^^
-		  collapsed:: true
 			- **Loops**
 				- _While Loop_
 					-
