@@ -636,4 +636,4 @@ filters: {}
 			  
 			  ```
 	- ^^Documentation^^
-		- Create Documentation automatically.
+		- Create Documentation automatically. [Example config file](https://github.com/koaning/clumper/blob/main/mkdocs.yml) |
