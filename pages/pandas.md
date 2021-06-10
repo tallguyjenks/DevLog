@@ -142,6 +142,17 @@ tags: library
 	- Can use logging decorators with [[functools]] to log data changes:
 		-
 		  ```python
+		  from functools import wraps
+		  import datetime as dt
 		  
+		  def log_step(func):
+		      @wraps(func)
+		      def wrapper(*args, **kwargs):
+		          tic = dt.datetime.now()
+		          result = func(*args, **kwargs)
+		          time_taken = str(dt.datetime.now() - tic)
+		          print(f"just ran step {func.__name__} shape={result.shape} took {time_taken}s")
+		          return result
+		      return wrapper
 		  ```
-		-
+	-
