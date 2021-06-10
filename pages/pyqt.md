@@ -8,6 +8,6 @@ tags: library
 	- {{embed ((60be8411-e645-4f47-bcc5-98ede67aeaed)) }}
 	-
 	  ```python
-	  
+	  pip install PyQt5 PyQt-builder 
 	  ```
 	-
