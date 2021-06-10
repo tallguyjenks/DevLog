@@ -137,3 +137,5 @@ tags: library
 	  df.pipe(set_dtypes).pipe(remove_outliers)
 	  ```
 	-
+- DONE [[Python]] [[pandas]] [Calm Code Pandas Pipe](https://calmcode.io/pandas-pipe/pipe.html)
+  done:: 1623346783569
