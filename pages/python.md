@@ -75,7 +75,7 @@ filters: {}
 			- **Visuals:** [[tqdm]]
 		- **GUI Apps:**
 			- **Desktop**
-				- **tkinter:** [[tkinter]], [[tkcalendar]]
+				- **tkinter:** [[tkinter]], [[tkcalendar]], [[pyqt]]
 			- **Web Apps**
 				- [[pywebio]]
 		- **Data Science:**
