@@ -74,6 +74,7 @@ filters: {}
 				- **PDF's** [[PyPDF2]]
 				- **YAML** [[PyYaml]]
 		- **CLI Apps:**
+			- **Resources:** [this list](https://github.com/vinta/awesome-python#command-line-interface-development)
 			- **Management:** [[argparse]]
 			- **Visuals:** [[tqdm]]
 		- **GUI Apps:**
