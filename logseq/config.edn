@@ -80,6 +80,7 @@
   ["pydone" "DONE [[Python]] "],
   ["pylater" "LATER [[Python]] "],
   ["pynow" "NOW [[Python]] "],
+  ["macro" "{{{hl }}}"],
  ]
 
  ;; Macros replace texts and will make you more productive.
