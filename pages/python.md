@@ -640,9 +640,9 @@ filters: {}
 			- _Union Operator for Type Hints_
 				-
 				  ```python
-				  
+				  def addx: int | float, 
 				  ```
-			- ()
+			- (())()
 -
   ---
 - **Workflow**
