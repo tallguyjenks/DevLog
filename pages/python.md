@@ -600,6 +600,7 @@ filters: {}
 	- ^^Version Changes^^
 		- **3.10**
 			- _Structural Pattern Matching_
+			  collapsed:: true
 				- From:
 					-
 					  ```python
@@ -623,9 +624,18 @@ filters: {}
 					      case _: 
 					          return "Go away"
 					  ```
+				- Add Additional Conditions on matches with `if`
 					-
 					  ```python
 					  
+					  def get_car_price(make, is_turbocharged): 
+					      match make: 
+					          case "Subaru" if is_turbocharged: 
+					              return 10000 
+					          case "Toyota" if not is_turbocharged: 
+					              return 7500 
+					          case _: 
+					              return 2300
 					  ```
 			-
 -
