@@ -40,7 +40,7 @@
  ;; the "NEXT" query asks the future tasks.
  :default-queries
  {:journals
-  [{:title "🔨 NOW"
+  [{:title "🔨 DOING"
     :query [:find (pull ?h [*])
             :in $ ?start ?today
             :where
