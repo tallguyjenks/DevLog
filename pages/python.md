@@ -642,7 +642,7 @@ filters: {}
 				  ```python
 				  def add(x: int | float, y: int | float)
 				  ```
-			- (())(())
+			-
 -
   ---
 - **Workflow**
