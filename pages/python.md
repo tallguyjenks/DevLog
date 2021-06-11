@@ -58,7 +58,6 @@ filters: {}
 		- [[black]] Code formatter
 		- [[Python Poetry]]
 	- ^^Libraries^^
-	  collapsed:: true
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
