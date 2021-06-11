@@ -14,5 +14,5 @@ tags: tools
 -
   4. Add dependencies `poetry add pandas`
 - deactivate venv `exit`
-- publish to PyPi `poetry publish`
+- [publish to PyPi](poetry new poetry-demo) `poetry publish`
 -
