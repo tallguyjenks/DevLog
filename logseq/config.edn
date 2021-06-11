@@ -99,6 +99,6 @@
  :markdown/version 2
  
  :default-home {;;:page "Python"
-               :sidebar ["Contents" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]}
+               :sidebar ["Contents", "Recent", "TODO", "DOING", "DONE", "Page graph", "Help"]}
  
  }
