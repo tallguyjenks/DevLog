@@ -14,7 +14,7 @@ tags: tools
 -
   4. Add dependencies `poetry add pandas`
 -
-  5. Build the source and wheel archives
+  5. Build the source and wheel archives `poetry build`
 - deactivate venv `exit`
 - [publish to PyPi](https://python-poetry.org/docs/libraries/#publishing-to-pypi) `poetry publish`
 -
