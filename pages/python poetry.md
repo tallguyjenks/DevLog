@@ -3,9 +3,6 @@ title: Python Poetry
 tags: tools
 ---
 
-- DONE [[Python]] https://python.plainenglish.io/start-managing-your-dependencies-using-poetry-in-python-b2f1e227fcf7
-  todo:: 1620835281994
-  done:: 1623440773502
 - **Using Poetry**
 	-
 	  1. [Installation](https://python-poetry.org/docs/#windows-powershell-install-instructions)
