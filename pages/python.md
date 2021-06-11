@@ -637,7 +637,12 @@ filters: {}
 					          case _: 
 					              return 2300
 					  ```
-			-
+			- _Union Operator for Type Hints_
+				-
+				  ```python
+				  
+				  ```
+			- ()
 -
   ---
 - **Workflow**
