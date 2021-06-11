@@ -8,6 +8,7 @@ tags: tools
 - **Using Poetry**
 	-
 	  1. [Installation](https://python-poetry.org/docs/#windows-powershell-install-instructions)
+		-
 	-
 	  2. Usage `poetry new poetry-demo`
 	-
