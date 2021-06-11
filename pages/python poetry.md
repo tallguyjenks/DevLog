@@ -8,7 +8,7 @@ tags: tools
 - **Using Poetry**
 	-
 	  1. [Installation](https://python-poetry.org/docs/#windows-powershell-install-instructions)
-		-
+		- 1.1 Configuration: `poetry completions bash > /etc/bash_completion.d/poetry.bash-completion`
 	-
 	  2. Usage `poetry new poetry-demo`
 	-
