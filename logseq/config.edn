@@ -98,7 +98,7 @@
  :all-pages-public? true
  :markdown/version 2
  
- :default-home {:page "Python"
+ :default-home {;;:page "Python"
                :sidebar ["Contents" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]}
  
  }
