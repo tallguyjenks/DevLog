@@ -13,6 +13,8 @@ tags: tools
   3. Activate venv in the project `poetry shell`
 -
   4. Add dependencies `poetry add pandas`
+-
+  5. Build the source and wheel archives
 - deactivate venv `exit`
 - [publish to PyPi](https://python-poetry.org/docs/libraries/#publishing-to-pypi) `poetry publish`
 -
