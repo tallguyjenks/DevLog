@@ -656,7 +656,7 @@ filters: {}
 			-
 -
   ---
-- **Workflow**
+- **Old Workflow**
   id:: 60be8411-e645-4f47-bcc5-98ede67aeaed
 	- _Starting_
 		- `python3 -m venv projects/env_name`
