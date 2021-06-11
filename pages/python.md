@@ -18,6 +18,7 @@ filters: {}
 		- [Dev Docs](https://devdocs.io/python~3.9/)
 		- [Google's Dependency Management service](https://deps.dev/) **COMING SOON**
 	- ^^Projects^^
+	  collapsed:: true
 		- [[FTP File Transfer Application]]
 		- [[Make a Discord Bot]]
 		- [Turn your Python Script into a 'Real' Program with Docker](https://python.plainenglish.io/turn-your-python-script-into-a-real-program-with-docker-c200e15d5265)
@@ -57,6 +58,7 @@ filters: {}
 		- [[black]] Code formatter
 		- [[Python Poetry]]
 	- ^^Libraries^^
+	  collapsed:: true
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
@@ -524,6 +526,7 @@ filters: {}
 			  			  			  			  			  			  				  employee_file.close()
 			  			  			  			  			  			  				  ```
 		- ^^Tips, Tricks, & Hacks^^
+		  collapsed:: true
 			- **Multi-Variable Assignment**
 				-
 				  ```python
@@ -590,6 +593,7 @@ filters: {}
 					  					  					  					  					  #> z = 3
 					  					  					  					  					  ```
 		- ^^Dunders^^
+		  collapsed:: true
 			- `__init__.py`
 				- Determines what happens when the directory it's in is imported as a package
 	- ^^PEP's^^
