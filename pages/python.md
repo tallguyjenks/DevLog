@@ -615,7 +615,13 @@ filters: {}
 				- To:
 					-
 					  ```python
-					  
+					  match name: 
+					      case "Misha" | "John": 
+					          return f"Hello {name}" 
+					      case "Michelle": 
+					          return "Long time no see, Michelle" 
+					      case _: 
+					          return "Go away"
 					  ```
 			-
 -
