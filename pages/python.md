@@ -597,6 +597,8 @@ filters: {}
 				- Determines what happens when the directory it's in is imported as a package
 	- ^^PEP's^^
 		- {{embed [[PEP's]] }}
+	- ^^Version Changes^^
+		- **3.10**
 -
   ---
 - **Workflow**
