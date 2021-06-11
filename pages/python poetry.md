@@ -10,3 +10,5 @@ tags: tools
 -
   2. Usage `poetry new poetry-demo`
 -
+  3. Activate venv in the project `poetry shell`
+-
