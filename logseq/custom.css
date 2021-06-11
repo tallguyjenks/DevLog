@@ -391,14 +391,6 @@ a.tooltip-priority {
   word-wrap: break-word !important;
   white-space: pre-wrap !important;
 }
-  "hlr" "<mark class='red'>$1</mark>"
-  "hlo" "<mark class='Orange'>$1</mark>"
-  "hly" "<mark class='yellow'>$1</mark>"
-  "hlg" "<mark class='green'>$1</mark>"
-  "hlb" "<mark class='blue'>$1</mark>"
-  "hlp" "<mark class='purple'>$1</mark>"
-  "hlk" "<mark class='pink'>$1</mark>"
-
 mark.red {background-color: var(--red);}
 mark.orange {background-color: var(--orange);}
 mark.yellow {background-color: var(--yellow);}
