@@ -596,7 +596,7 @@ filters: {}
 			- `__init__.py`
 				- Determines what happens when the directory it's in is imported as a package
 	- ^^PEP's^^
-		-
+		- {{embed [[PEP's]] }}
 -
   ---
 - **Workflow**
