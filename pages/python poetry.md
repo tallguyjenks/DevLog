@@ -21,8 +21,8 @@ tags: tools
 	  6. deactivate venv `exit`
 	-
 	  7. [publish to PyPi](https://python-poetry.org/docs/libraries/#publishing-to-pypi) `poetry publish`
+	- get latest versions of all dependencies `poetry update` or list which to update `poetry update pandas`
 -
   ---
 - Opening a poetry project and installing them `poetry install`
-- get latest versions of all dependencies `poetry update` or list which to update `poetry update pandas`
 -
