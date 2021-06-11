@@ -14,3 +14,4 @@ tags: tools
 -
   4. Add dependencies `poetry add pandas`
 - deactivate venv `exit`
+-
