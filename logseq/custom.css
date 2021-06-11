@@ -400,3 +400,10 @@ a.tooltip-priority {
   "hlk" "<mark class='pink'>$1</mark>"
 
 mark.red {background-color: var(--red);}
+mark.orange {background-color: var(--orange);}
+mark.yellow {background-color: var(--yellow);}
+mark.green {background-color: var(--green);}
+mark.cyan {background-color: var(--cyan);}
+mark.blue {background-color: var(--blue);}
+mark.purple {background-color: var(--purple);}
+mark.pink {background-color: var(--pink);}
