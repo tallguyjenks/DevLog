@@ -16,3 +16,5 @@ tags: tools
 - deactivate venv `exit`
 - [publish to PyPi](https://python-poetry.org/docs/libraries/#publishing-to-pypi) `poetry publish`
 -
+- Opening a poetry project and installing them `poetry install`
+-
