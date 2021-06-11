@@ -23,7 +23,6 @@ filters: {}
 		- [Turn your Python Script into a 'Real' Program with Docker](https://python.plainenglish.io/turn-your-python-script-into-a-real-program-with-docker-c200e15d5265)
 			- [Project Repo](https://github.com/adamcyber1/mypythondocker)
 	- ^^Tools^^
-	  collapsed:: true
 		- [[Jupyter]]
 		- [[Kite]]
 		- [[VSCode]] Extensions
@@ -55,6 +54,7 @@ filters: {}
 				- `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
 				- `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
 		- [[black]] Code formatter
+		- [[Python Poetry]]
 	- ^^Libraries^^
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
