@@ -76,7 +76,7 @@ filters: {}
 		- **CLI Apps:**
 			- **Resources:** [this list](https://github.com/vinta/awesome-python#command-line-interface-development)
 			- **Management:** [[argparse]]
-			- **Visuals:** [[tqdm]]
+			- **Visuals:** [[tqdm]], [[alive-progress]]
 		- **GUI Apps:**
 			- **Desktop**
 				- **tkinter:** [[tkinter]], [[tkcalendar]], [[pyqt]]
