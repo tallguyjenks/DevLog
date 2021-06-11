@@ -79,7 +79,7 @@ filters: {}
 			- **Visuals:** [[tqdm]], [[alive-progress]]
 		- **GUI Apps:**
 			- **Desktop**
-				- **tkinter:** [[tkinter]], [[tkcalendar]], [[pyqt]]
+				- **tkinter:** [[tkinter]], [[tkcalendar]], [[pyqt]], [[PySimpleGUI]]
 			- **Web Apps**
 				- [[pywebio]]
 		- **Data Science:**

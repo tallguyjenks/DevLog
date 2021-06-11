@@ -1,0 +1,6 @@
+---
+title: PySimpleGUI
+tags: library
+---
+
+-
