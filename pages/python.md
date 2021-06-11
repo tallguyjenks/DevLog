@@ -600,7 +600,6 @@ filters: {}
 	- ^^Version Changes^^
 		- **3.10**
 			- _Structural Pattern Matching_
-			  collapsed:: true
 				- From:
 					-
 					  ```python
