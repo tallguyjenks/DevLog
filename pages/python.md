@@ -599,6 +599,24 @@ filters: {}
 		- {{embed [[PEP's]] }}
 	- ^^Version Changes^^
 		- **3.10**
+			- _Structural Pattern Matching_
+				- From:
+					-
+					  ```python
+					  name = input() 
+					  match name: 
+					      case "Misha": 
+					          return "Hello Misha" 
+					      case "John": 
+					          return "Hello John" 
+					      case _: 
+					          return "Go away"
+					  ```
+				- To:
+					-
+					  ```python
+					  
+					  ```
 			-
 -
   ---
