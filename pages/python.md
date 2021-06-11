@@ -640,7 +640,8 @@ filters: {}
 			- _Union Operator for Type Hints_
 				-
 				  ```python
-				  def add(x: int | float, y: int | float)
+				  def add(x: int | float, y: int | float):
+				    return x + y
 				  ```
 			-
 -
