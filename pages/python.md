@@ -132,7 +132,7 @@ filters: {}
 			  todo:: 1620835794488
 				- Useful with using Classes so the extra param passing boiler plate can be avoided
 		- ^^Data Types & Structs^^
-		  collapsed:: true
+		  collapsed:: false
 			- **Data Types**
 				- _Strings_
 					-
