@@ -87,7 +87,7 @@ filters: {}
 			- **Data Visualization:** [[matplotlib]]
 			- **Data Management:** [[CSV]], [[JSON]]
 		- **Databases:** [[sqlite3]]
-		- **Parallelization:** [[ray]]
+		- **Parallelization:** [[ray]], [[asyncio]]
 	- ^^Syntax^^
 		- ^^Conventions^^
 		  collapsed:: true
