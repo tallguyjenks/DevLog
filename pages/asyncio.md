@@ -12,6 +12,9 @@ tags: library
 	  
 	  async def main():
 	    print('Bryan')
-	    
+	   
+	  asyncio.run(main())
+	  #>>> Bryan
+	  #>>> [Finished in 0.3s]
 	  ```
 	-
