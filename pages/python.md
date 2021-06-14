@@ -90,7 +90,7 @@ filters: {}
 		- **Parallelization:** [[ray]], [[asyncio]]
 	- ^^Syntax^^
 		- ^^Conventions^^
-		  collapsed:: true
+		  collapsed:: false
 			- Use uppercase initials for class names, lowercase for all others.
 				- function names all in lowercase
 				- `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
