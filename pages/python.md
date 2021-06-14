@@ -156,7 +156,7 @@ filters: {}
 					  					  					  					  					  					  						  # or for less elegence
 					  					  					  					  					  					  						  print("I just printed" + x + "pages to the printer" + printer)
 					  					  					  					  					  					  						  ```
-					-
+					- [Python 3's f-Strings: An Improved String Formatting Syntax (Guide)](https://realpython.com/python-f-strings/)
 				- _Nubmers_
 					-
 					  ```python
