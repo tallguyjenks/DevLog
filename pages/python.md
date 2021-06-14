@@ -596,8 +596,10 @@ filters: {}
 			- `__init__.py`
 				- Determines what happens when the directory it's in is imported as a package
 	- ^^PEP's^^
+	  collapsed:: true
 		- {{embed [[PEP's]] }}
 	- ^^Version Changes^^
+	  collapsed:: true
 		- **3.10**
 			- _Structural Pattern Matching_
 				- From:
