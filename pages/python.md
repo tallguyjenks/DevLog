@@ -423,7 +423,7 @@ filters: {}
 				  				  				  				  				  ```
 			-
 		- ^^Object Oriented Programming^^
-		  collapsed:: true
+		  collapsed:: false
 			-
 			  ```python
 			  			  			  			  			  			  				  import datetime
