@@ -8,6 +8,10 @@ tags: library
 - **Example:**
 	-
 	  ```python
+	  import asyncio
 	  
+	  async def main():
+	    print('Bryan')
+	    
 	  ```
-	- ()()
+	-
