@@ -95,13 +95,6 @@ filters: {}
 				- function names all in lowercase
 				- `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
 					- `user1.first_name` > `user1.firstName`
-			- **Underscore Names**
-			  collapsed:: true
-				- [What's the meaning of underscores (_ & __) in Python variable names?](https://youtu.be/ALZmCy2u0jQ)
-					- Name a private identifier with a leading underscore ( `_username`)
-					- Name a strongly private identifier with two leading underscores (`__password`)
-					- Special identifiers in Python end with two leading underscores.
-						- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- ^^Decorators^^
 		  id:: 60be8411-7d36-4c4f-8f0f-56c733eb3294
 		  collapsed:: true
@@ -515,6 +508,13 @@ filters: {}
 			  print(user.age())
 			  ```
 			- [Operator Overloading](https://www.programiz.com/python-programming/operator-overloading)
+			- **Underscore Names**
+			  collapsed:: false
+				- [What's the meaning of underscores (_ & __) in Python variable names?](https://youtu.be/ALZmCy2u0jQ)
+					- Name a private identifier with a leading underscore ( `_username`)
+					- Name a strongly private identifier with two leading underscores (`__password`)
+					- Special identifiers in Python end with two leading underscores.
+						- _A.K.A. Dunder methods (double under-score)_ `__MAIN__`
 		- ^^File Handling^^
 		  collapsed:: true
 			-
