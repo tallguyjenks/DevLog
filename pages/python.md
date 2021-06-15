@@ -62,7 +62,7 @@ filters: {}
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
-			- **Virtual Environment:** [[venv]], [[virtualenv]]
+			- **Virtual Environment:** [[venv]], 💙[[virtualenv]]
 			- **Benchmarking:** [[clockpy]]
 			- **Error Handling:** [[pretty-errors]]
 		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]], [[mkdocs]]
