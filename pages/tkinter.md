@@ -3,5 +3,5 @@ title: tkinter
 tags: library
 ---
 
-- [[tkinter.ttk]]
-	-
+- **Related:** [[tkinter.ttk]]
+- **Resources:**
