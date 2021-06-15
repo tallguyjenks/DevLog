@@ -58,11 +58,11 @@ filters: {}
 		- [[black]] Code formatter
 		- [[Python Poetry]]
 	- ^^Libraries^^
-	  collapsed:: true
+	  collapsed:: false
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
-			- **Virtual Environment:** [[venv]]
+			- **Virtual Environment:** [[venv]], [[virtualenv]]
 			- **Benchmarking:** [[clockpy]]
 			- **Error Handling:** [[pretty-errors]]
 		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]], [[mkdocs]]
