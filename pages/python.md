@@ -99,7 +99,7 @@ filters: {}
 					- `user1.first_name` > `user1.firstName`
 		- ^^Decorators^^
 		  id:: 60be8411-7d36-4c4f-8f0f-56c733eb3294
-		  collapsed:: true
+		  collapsed:: false
 			-
 			  collapsed:: true
 			  			  			  			  			  ```python
