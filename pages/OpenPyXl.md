@@ -5,7 +5,7 @@ tags: library
 
 -
   PROPERTIES:: tag
-- /
+- TODO [#B] [[Python]] do the thing
 - **Resources:**
 	- [Automate Excel With Python - Python Excel Tutorial (OpenPyXL)](https://youtu.be/7YS6YDQKFh0)
 - **Example:**
