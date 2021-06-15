@@ -3,7 +3,6 @@ title: Queries
 ---
 
 - **On going Tasks** {{query (todo todo now later doing)}}
-- **Templates** {{query (property template) }}
 -
   #+BEGIN_QUERY
   {:title "Documentation Inline Tags"
