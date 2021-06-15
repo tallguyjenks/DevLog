@@ -90,16 +90,16 @@ filters: {}
 		- **Databases:** [[sqlite3]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 	- ^^Syntax^^
-	  collapsed:: false
+	  collapsed:: true
 		- ^^Conventions^^
-		  collapsed:: false
+		  collapsed:: true
 			- Use uppercase initials for class names, lowercase for all others.
 				- function names all in lowercase
 				- `class.object.field` names should not be capitalized, and if multiple words used, then separate with underscores:
 					- `user1.first_name` > `user1.firstName`
 		- ^^Decorators^^
 		  id:: 60be8411-7d36-4c4f-8f0f-56c733eb3294
-		  collapsed:: false
+		  collapsed:: true
 			-
 			  collapsed:: true
 			  			  			  			  			  ```python
@@ -421,7 +421,7 @@ filters: {}
 				  				  				  				  				  ```
 			-
 		- ^^Object Oriented Programming^^
-		  collapsed:: false
+		  collapsed:: true
 			-
 			  ```python
 			  			  			  			  			  			  				  import datetime
@@ -599,6 +599,7 @@ filters: {}
 					  					  					  					  					  #> z = 3
 					  					  					  					  					  ```
 		- ^^Dunders^^
+		  collapsed:: true
 			- `__init__.py`
 				- Determines what happens when the directory it's in is imported as a package
 	- ^^PEP's^^
