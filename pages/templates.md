@@ -4,6 +4,7 @@ title: Templates
 
 - **Language**
   template:: Programming Language
+  collapsed:: true
 	- ^^Setup^^
 	- ^^Resources^^
 	- ^^Tools^^
@@ -17,7 +18,8 @@ title: Templates
 	- ^^File Handling^^
 	- ^^Tips, Tricks, & Hacks^^
 -
-  template:: yaml 
+  collapsed:: false
+    template:: yaml 
   ---
   title: 
   tags: 
