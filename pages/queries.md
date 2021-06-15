@@ -13,5 +13,3 @@ title: Queries
      ]
   }
   #+END_QUERY
--
--
