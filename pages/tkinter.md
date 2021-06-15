@@ -4,4 +4,5 @@ tags: library
 ---
 
 - **Related:** [[tkinter.ttk]]
-- **Resources:**
+- **Resources:** [TKinter Designer](https://github.com/ParthJadhav/Tkinter-Designer)
+-
