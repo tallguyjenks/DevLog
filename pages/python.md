@@ -667,6 +667,7 @@ filters: {}
   ---
 - **Old Workflow**
   id:: 60be8411-e645-4f47-bcc5-98ede67aeaed
+  collapsed:: true
 	- _Starting_
 		- `python3 -m venv projects/env_name`
 			- create virtual environment
@@ -688,10 +689,12 @@ filters: {}
 -
   ---
 - **Machine Learning**
+  collapsed:: true
 	- [perceptilabs](https://www.perceptilabs.com/papers)
 -
   ---
 - **Package Development**
+  collapsed:: true
 	- ^^Resources^^
 		- [Calm Code Setup](https://calmcode.io/setup/introduction.html)
 	- ^^Workflow^^
