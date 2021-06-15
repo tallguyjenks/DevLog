@@ -58,6 +58,7 @@ filters: {}
 		- [[black]] Code formatter
 		- [[Python Poetry]]
 	- ^^Libraries^^
+	  collapsed:: true
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
@@ -89,6 +90,7 @@ filters: {}
 		- **Databases:** [[sqlite3]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 	- ^^Syntax^^
+	  collapsed:: true
 		- ^^Conventions^^
 		  collapsed:: false
 			- Use uppercase initials for class names, lowercase for all others.
