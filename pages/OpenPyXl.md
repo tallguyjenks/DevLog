@@ -5,7 +5,9 @@ tags: library
 
 -
   PROPERTIES:: tag
-- TODO [#B] [[Python]] do the thing
+- DOING [#B] [[Python]] do the thing
+  doing:: 1623792704398
+  todo:: 1623792703914
 - **Resources:**
 	- [Automate Excel With Python - Python Excel Tutorial (OpenPyXL)](https://youtu.be/7YS6YDQKFh0)
 - **Example:**
