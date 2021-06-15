@@ -3,6 +3,8 @@ title: OpenPyXl
 tags: library
 ---
 
+-
+  PROPERTIES:: tag
 - **Resources:**
 	- [Automate Excel With Python - Python Excel Tutorial (OpenPyXL)](https://youtu.be/7YS6YDQKFh0)
 - **Example:**
