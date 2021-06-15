@@ -6,6 +6,7 @@ tags: library
 - **Resources:**
 	- [Automate Excel With Python - Python Excel Tutorial (OpenPyXL)](https://youtu.be/7YS6YDQKFh0)
 - **Example:**
+  collapsed:: true
 	-
 	  ```python
 	  from openpyxl import Workbook, load_workbook
