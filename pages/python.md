@@ -554,6 +554,7 @@ filters: {}
 				  				  				  
 				  				  				  ```
 			- **Kwargs**
+			  collapsed:: true
 				-
 				  ```python
 				  				  				  				  				  				  					  # Python 3.5+ allows passing multiple sets
@@ -574,6 +575,7 @@ filters: {}
 				  				  				  				  				  				  					  # >>> 1 2 23 42
 				  				  				  				  				  				  					  ```
 			- **Default Parameters**
+			  collapsed:: true
 				-
 				  ```python
 				  				  				  # In Python 3 you can use a bare "*" asterisk
@@ -603,6 +605,7 @@ filters: {}
 					  					  					  					  					  #> _ = 2
 					  					  					  					  					  #> z = 3
 					  					  					  					  					  ```
+			- Named Tuples
 		- ^^Dunders^^
 		  collapsed:: true
 			- `__init__.py`
