@@ -8,7 +8,7 @@
 		- [[flake8]] with a `.flake8` file
 		- [[isort]] with a `.isort.cfg` file
 			-
-			  ```
+			  ```ini
 			  
 			  ```
 	- setup repo branch policies and settings
