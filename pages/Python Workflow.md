@@ -4,7 +4,11 @@
 	- add [[gitattributes]] file
 	- Add config files for terminal/[[VSCode]]/Extensions
 	- Setup Linting CI/CD with the `github super linter`
-		- Super linter
+		- Super linter file
+			-
+			  ```yaml
+			  
+			  ```
 		- [[black]] with a `.python-black` config file
 		- [[flake8]] with a `.flake8` file
 			-
