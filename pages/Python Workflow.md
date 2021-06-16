@@ -17,8 +17,27 @@
 			- make pre-commit file
 				-
 				  ```yaml
-				  
+				  repos:
+				    -   repo: https://github.com/asottile/seed-isort-config
+				        rev: v1.9.3
+				        hooks:
+				        - id: seed-isort-config
+				    -   repo: https://github.com/pre-commit/mirrors-isort
+				        rev: v4.3.21
+				        hooks:
+				        - id: isort
+				    - repo: https://github.com/psf/black
+				      rev: 21.6b0
+				      hooks:
+				      - id: black
+				        language_version: python3
+				        description: "Black: The uncompromising Python code formatter"
+				    -   repo: https://gitlab.com/pycqa/flake8
+				        rev: 3.9.2
+				        hooks:
+				        - id: flake8
 				  ```
+		-
 -
 - **Old Workflow**
 	- _Starting_
