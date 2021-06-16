@@ -5,6 +5,7 @@
 	- Add config files for terminal/[[VSCode]]/Extensions
 	- Setup Linting CI/CD with the `github super linter`
 		- Super linter file
+		  collapsed:: true
 			-
 			  ```yaml
 			  # https://aka.ms/yaml
@@ -58,6 +59,7 @@
 			  ```
 		- [[black]] with a `.python-black` config file
 		- [[flake8]] with a `.flake8` file
+		  collapsed:: true
 			-
 			  ```
 			  [flake8]
@@ -67,6 +69,7 @@
 			  ignore = E203, E266, E501, W503, F403, F401
 			  ```
 		- [[isort]] with a `.isort.cfg` file
+		  collapsed:: true
 			-
 			  ```
 			  [settings]
@@ -84,6 +87,7 @@
 			- `poetry run pre-commit install`
 			- `poetry run pre-commit autoupdate`
 			- make pre-commit file
+			  collapsed:: true
 				-
 				  ```yaml
 				  repos:
