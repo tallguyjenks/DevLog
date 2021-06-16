@@ -4,6 +4,7 @@ tags: library
 ---
 
 - [Potential Azure Pipeline to run doc build](https://github.com/psf/black/blob/main/.github/workflows/doc.yml)
+  collapsed:: true
 	-
 	  ```yaml
 	  name: Documentation Build
@@ -40,4 +41,4 @@ tags: library
 	        - name: Build documentation
 	          run: sphinx-build -a -b html -W --keep-going docs/ docs/_build
 	  ```
-	-
+-
