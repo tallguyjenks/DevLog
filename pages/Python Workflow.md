@@ -8,7 +8,11 @@
 		- [[flake8]] with a `.flake8` file
 			-
 			  ```
-			  
+			  [flake8]
+			  max-line-length = 88
+			  max-complexity = 18
+			  select = B,C,E,F,W,T4,B9
+			  ignore = E203, E266, E501, W503, F403, F401
 			  ```
 		- [[isort]] with a `.isort.cfg` file
 			-
