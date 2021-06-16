@@ -11,7 +11,7 @@
 	- [[Python Poetry]] setup
 		- `poetry new <PROJECT>` or `poetry init`
 		- `poetry shell`
-		- `poetry add pre-commit`
+		- `poetry add black flake8 isort pre-commit`
 		- setup pre-commit hooks for formatting
 			- `poetry run pre-commit install`
 			- `poetry run pre-commit autoupdate`
