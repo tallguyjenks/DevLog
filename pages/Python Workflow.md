@@ -11,7 +11,7 @@
 		- `poetry new <PROJECT>` or `poetry init`
 		- `poetry shell`
 		- `poetry add pre-commit`
-	- setup pre-commit hooks for formatting
+		- setup pre-commit hooks for formatting
 		- `poetry run pre-commit install`
 -
 - **Old Workflow**
