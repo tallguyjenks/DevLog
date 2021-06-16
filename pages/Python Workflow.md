@@ -2,7 +2,10 @@
 	- Make a new Git Repo
 	- [[VSCode]] [[gitignore]] extension to add Python gitignore
 	- Add config files for terminal/[[VSCode]]/Extensions
-	- Setup Linting CI/CD with the `github super linter` and [[black]] with a `.python-black` config file
+	- Setup Linting CI/CD with the `github super linter`
+		- [[black]] with a `.python-black` config file
+		- [[flake8]] with a `.flake8` file
+		- [[isort]] with a `.isort.cfg` file
 	- setup repo branch policies and settings
 	-
 -
