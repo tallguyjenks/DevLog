@@ -6,6 +6,10 @@
 	- Setup Linting CI/CD with the `github super linter`
 		- [[black]] with a `.python-black` config file
 		- [[flake8]] with a `.flake8` file
+			-
+			  ```
+			  
+			  ```
 		- [[isort]] with a `.isort.cfg` file
 			-
 			  ```
