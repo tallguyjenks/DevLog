@@ -8,8 +8,12 @@
 		- [[flake8]] with a `.flake8` file
 		- [[isort]] with a `.isort.cfg` file
 			-
-			  ```ini
-			  
+			  ```
+			  [settings]
+			  line_length = 88
+			  multi_line_output = 3
+			  include_trailing_comma = True
+			  known_third_party = 
 			  ```
 	- setup repo branch policies and settings
 	- [[Python Poetry]] setup
