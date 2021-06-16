@@ -1,6 +1,5 @@
 # **Workflow**
 doing:: 1623883837845
-	-
 	- Make a new Git Repo
 	- [[VSCode]] [[gitignore]] extension to add Python gitignore
 	- add [[gitattributes]] file
@@ -115,3 +114,4 @@ doing:: 1623883837845
 			- `poetry run pre-commit run`
 		-
 -
+- DOING This workflow doc
