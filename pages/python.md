@@ -605,67 +605,7 @@ filters: {}
 					  					  					  					  					  #> _ = 2
 					  					  					  					  					  #> z = 3
 					  					  					  					  					  ```
-			- Named Tuples
-				- ```python
-				  from collections import namedtuple
-				  
-				  Coordinate = namedtuple("Coordinate", "longitude latitude")
-				  location = Coordinate(90, 37.5)
-				  print("location:", location)
-# accessing attributes with dot notation
-print(location.longitude, location.latitude)
-# Output:
-# location: Coordinate(longitude=90, latitude=37.5)
-# (90, 37.5)
-```
-- For ... Else
-- ```python
-#case 1
-for letter in 'foo':
-  print(letter)
-else:
-  print("All letters have been printed")
-
-#case 2
-for letter in 'foo':
-  print(letter)
-  if letter == 'o':
-      break
-else:
-  print("Letters have been printed")
-  
-# Output:
-# case 1
-# f
-# o
-# o
-# All letters have been printed
-# case 2
-# f
-# o
-```
-			- enums with the [[enum]] module
-				- ```python
-				  from enum import Enum
-				  Season = Enum('Season', 'winter summer spring autumn')
-				  print(Season.summer.name)
-				  print(Season.summer.value)
-				  
-				  #using class
-				  class Season(Enum):
-				  winter = 1
-				  summer = 2
-				  spring = 3
-				  autumn = 4
-				  print(Season.winter.name)
-				  print(Season.winter.value)
-# Output:
-# summer
-# 2
-# winter
-# 1
-```
-				-
+			-
 		- ^^Dunders^^
 		  collapsed:: true
 			- `__init__.py`
@@ -739,7 +679,7 @@ else:
 -
   ---
 - **Package Development**
-  collapsed:: false
+  collapsed:: true
 	- ^^Resources^^
 		- [Calm Code Setup](https://calmcode.io/setup/introduction.html)
 	- ^^Workflow^^
