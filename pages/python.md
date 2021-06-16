@@ -63,6 +63,7 @@ filters: {}
 	- ^^Libraries^^
 	  collapsed:: false
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
+		- **Linting & Style Checking:** [[black]], [[flake8]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
 			- **Logging:** [[logging]]
 			- **Virtual Environment:** [[venv]], 💙[[virtualenv]]
