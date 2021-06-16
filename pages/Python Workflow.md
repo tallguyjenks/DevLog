@@ -13,7 +13,12 @@
 		- `poetry add pre-commit`
 		- setup pre-commit hooks for formatting
 			- `poetry run pre-commit install`
-			-
+			- `poetry run pre-commit autoupdate`
+			- make pre-commit file
+				-
+				  ```yaml
+				  
+				  ```
 -
 - **Old Workflow**
 	- _Starting_
