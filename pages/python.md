@@ -8,7 +8,10 @@ filters: {}
   > Python is the most powerful language you can still read.
   > \
   > \- Paul Dubois
+- **Workflow:**
+	-
 - **Language**
+  collapsed:: true
 	- ^^Setup^^
 	- ^^Resources^^
 	  collapsed:: true
