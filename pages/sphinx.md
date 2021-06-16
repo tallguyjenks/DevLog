@@ -3,7 +3,7 @@ title: sphinx
 tags: library
 ---
 
-- Potential Azure Pipeline to run doc build
+- [Potential Azure Pipeline to run doc build](https://github.com/psf/black/blob/main/.github/workflows/doc.yml)
 	-
 	  ```yaml
 	  name: Documentation Build
