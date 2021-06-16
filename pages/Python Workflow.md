@@ -1,6 +1,7 @@
 # **Workflow**
 	- Make a new Git Repo
 	- [[VSCode]] [[gitignore]] extension to add Python gitignore
+	- add gitattributes file
 	- Add config files for terminal/[[VSCode]]/Extensions
 	- Setup Linting CI/CD with the `github super linter`
 		- [[black]] with a `.python-black` config file
