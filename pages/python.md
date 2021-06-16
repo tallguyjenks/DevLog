@@ -11,7 +11,7 @@ filters: {}
 - **Workflow:**
 	- [[Python Workflow]]
 - **Language**
-  collapsed:: true
+  collapsed:: false
 	- ^^Setup^^
 	- ^^Resources^^
 	  collapsed:: true
@@ -669,7 +669,7 @@ filters: {}
 -
   ---
 - **Machine Learning**
-  collapsed:: true
+  collapsed:: false
 	- [perceptilabs](https://www.perceptilabs.com/papers)
 -
   ---
