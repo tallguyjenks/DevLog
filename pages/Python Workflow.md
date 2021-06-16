@@ -7,7 +7,8 @@
 		- [[flake8]] with a `.flake8` file
 		- [[isort]] with a `.isort.cfg` file
 	- setup repo branch policies and settings
-	-
+	- setup pre-commit hooks for formatting
+		-
 -
 - **Old Workflow**
 	- _Starting_
