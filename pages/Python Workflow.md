@@ -1,4 +1,4 @@
-# **Workflow**
+# TODO **Workflow**
 	- Make a new Git Repo
 	- [[VSCode]] [[gitignore]] extension to add Python gitignore
 	- add [[gitattributes]] file
@@ -113,22 +113,3 @@
 			- `poetry run pre-commit run`
 		-
 -
-- **Old Workflow**
-	- _Starting_
-		- `python3 -m venv projects/env_name`
-			- create virtual environment
-		- `source project_env/bin/activate`
-			- activate virtual environment
-		- `which python`
-			- confirm usage
-		- install necessary packages
-		- `pip freeze  requirements.txt`
-			- snap shot of requirements for reproduce-ability with
-		- `pip install -r requrirements.txt`
-			- to import requirements from elsewhere
-	- _Architecture_
-		- setup the [[black]] config file pre-commit hook
-			- [Pre-Commit](https://pre-commit.com/) Hooks
-	- _Ending_
-		- `deactivate`
-			- deactivate virtual environment
