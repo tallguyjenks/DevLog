@@ -9,7 +9,7 @@ filters: {}
   > \
   > \- Paul Dubois
 - **Workflow:**
-	-
+	- [[Python Workflow]]
 - **Language**
   collapsed:: true
 	- ^^Setup^^
@@ -670,7 +670,7 @@ filters: {}
   ---
 - **Old Workflow**
   id:: 60be8411-e645-4f47-bcc5-98ede67aeaed
-  collapsed:: true
+  collapsed:: false
 	- _Starting_
 		- `python3 -m venv projects/env_name`
 			- create virtual environment
