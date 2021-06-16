@@ -9,6 +9,7 @@
 	- setup repo branch policies and settings
 	- [[Python Poetry]] setup
 		- `poetry new <PROJECT>` or `poetry init`
+		- `poetry add pre-commit`
 	- setup pre-commit hooks for formatting
 		-
 -
