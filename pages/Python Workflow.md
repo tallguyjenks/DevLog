@@ -84,9 +84,6 @@
 		- `poetry shell`
 		- `poetry add black flake8 isort pre-commit`
 		- setup pre-commit hooks for formatting
-			- `poetry run pre-commit install`
-			- `poetry run pre-commit autoupdate`
-			- `poetry run pre-commit run`
 			- make pre-commit file
 			  collapsed:: true
 				-
@@ -111,6 +108,9 @@
 				        hooks:
 				        - id: flake8
 				  ```
+			- `poetry run pre-commit install`
+			- `poetry run pre-commit autoupdate`
+			- `poetry run pre-commit run`
 		-
 -
 - **Old Workflow**
