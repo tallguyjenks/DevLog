@@ -93,7 +93,7 @@ filters: {}
 		- **Databases:** [[sqlite3]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 	- ^^Syntax^^
-	  collapsed:: true
+	  collapsed:: false
 		- ^^Conventions^^
 		  collapsed:: true
 			- Use uppercase initials for class names, lowercase for all others.
@@ -535,8 +535,9 @@ filters: {}
 			  			  			  			  			  			  				  employee_file.close()
 			  			  			  			  			  			  				  ```
 		- ^^Tips, Tricks, & Hacks^^
-		  collapsed:: true
+		  collapsed:: false
 			- **Multi-Variable Assignment**
+			  collapsed:: true
 				-
 				  ```python
 				  				  				  				  				  				  					  x = 0
@@ -546,6 +547,7 @@ filters: {}
 				  				  				  				  				  				  					  x, y = 0, 0
 				  				  				  				  				  				  					  ```
 			- **Swap Variable Values**
+			  collapsed:: true
 				-
 				  ```python
 				  				  				  x, y = 1, 0
