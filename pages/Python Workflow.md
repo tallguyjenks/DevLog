@@ -1,4 +1,6 @@
+doing:: 1623883837845
 # TODO **Workflow**
+
 	- Make a new Git Repo
 	- [[VSCode]] [[gitignore]] extension to add Python gitignore
 	- add [[gitattributes]] file
