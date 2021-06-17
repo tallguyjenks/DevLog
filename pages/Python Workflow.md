@@ -112,8 +112,10 @@ doing:: 1623883837845
 			- `poetry run pre-commit install`
 			- `poetry run pre-commit autoupdate`
 			- `poetry run pre-commit run`
+	-
+	  ---
+	-
 	- build your distribution: `poetry build`
--
 	- publish your distribution: `poetry publish`
 -
 - TODO [[sphinx]] & [[Restructured Text]]
