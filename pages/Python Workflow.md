@@ -82,7 +82,7 @@ doing:: 1623883837845
 	- setup repo branch policies and settings
 	- [[Python Poetry]] setup
 		- `poetry new <PROJECT>` or `poetry init`
-		- `poetry shell`
+		- Spin up virtual environment `poetry shell`
 		- `poetry add black flake8 isort pre-commit`
 		- setup pre-commit hooks for formatting
 			- make `.pre-commit-config.yaml` file
@@ -112,7 +112,7 @@ doing:: 1623883837845
 			- `poetry run pre-commit install`
 			- `poetry run pre-commit autoupdate`
 			- `poetry run pre-commit run`
-	- Spin up virtual environment `poetry env use`
+	-
 -
 - TODO [[sphinx]] & [[Restructured Text]]
   todo:: 1623883988912
