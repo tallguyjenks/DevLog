@@ -114,7 +114,7 @@ doing:: 1623883837845
 			- `poetry run pre-commit run`
 	-
 	  ---
-	-
+	- More on Packaging
 	- build your distribution: `poetry build`
 	- publish your distribution: `poetry publish`
 -
