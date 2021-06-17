@@ -103,7 +103,7 @@ a.tag[data-ref="[A]" i] {
     white-space: nowrap;
 }
 
-
+#test > div > a
 
 .dark-theme,
 html[data-theme="dark"] {
