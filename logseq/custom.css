@@ -88,6 +88,9 @@ a.tag[data-ref="documentation" i] {
     white-space: nowrap;
 }
 
+
+
+
 .dark-theme,
 html[data-theme="dark"] {
   --ls-primary-background-color: var(--background);
