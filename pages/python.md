@@ -94,7 +94,7 @@ filters: {}
 		- **Databases:** [[sqlite3]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 	- ^^Syntax^^
-	  collapsed:: false
+	  collapsed:: true
 		- ^^Conventions^^
 		  collapsed:: true
 			- Use uppercase initials for class names, lowercase for all others.
