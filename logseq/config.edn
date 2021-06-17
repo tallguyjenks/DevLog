@@ -106,6 +106,6 @@
  :markdown/version 2
  
 ;; :default-home {:page "Python"}
-:sidebar ["Contents" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
+:sidebar ["Favorites" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
  
  }
