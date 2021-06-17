@@ -119,7 +119,8 @@ doing:: 1623883837845
 		- publish your distribution: `poetry publish`
 	-
 	  ---
-	-
+	- **Opening someone elses poetry project**
+		- install dependencies `poetry install`
 -
 - TODO [[sphinx]] & [[Restructured Text]]
   todo:: 1623883988912
