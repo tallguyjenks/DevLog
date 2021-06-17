@@ -77,9 +77,7 @@
   ["py" "```python\n\n```"],
   ["code" "```\n\n```"],
   ["pytodo" "TODO [[Python]] "],
-  ["pydone" "DONE [[Python]] "],
-  ["pylater" "LATER [[Python]] "],
-  ["pynow" "NOW [[Python]] "],
+  ["pydoing" "DOING [[Python]] "],
   ["hl" "{{{hl }}}"],
  ]
 
