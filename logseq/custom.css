@@ -103,7 +103,7 @@ a.tag[data-ref="A" i] {
     white-space: nowrap;
 }
 
-a[href="#/pages/A"]:not([rel=""])
+a[href="#/page/A"]:not([rel=""])
 {
     color: red !important;
 }
