@@ -12,7 +12,7 @@ tags: tools
 	-
 	  3. Activate venv in the project `poetry shell`
 	-
-	  4. Add dependencies `poetry add pandas`
+	  4. Add dependencies `poetry add pandas` add developer dependencies with `poetry add --dev pytest`
 		- 4.1 get latest versions of all dependencies `poetry update` or list which to update `poetry update pandas`
 	-
 	  5. Build the source and wheel archives `poetry build`
