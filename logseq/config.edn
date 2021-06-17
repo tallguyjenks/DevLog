@@ -75,7 +75,7 @@
  :commands
  [
   ["py" "```python\n\n```"],
-  ["code" "```\n\n```"],
+  ["code" "```\n\n```\n"],
   ["pytodo" "TODO [[Python]] "],
   ["pydoing" "DOING [[Python]] "],
   ["hl" "{{{hl }}}"],
