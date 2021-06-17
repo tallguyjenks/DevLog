@@ -25,3 +25,5 @@ tags: tools
 - Opening a poetry project and installing them `poetry install`
 - update poetry `poetry self update`
 -
+  ---
+- poetry help pages easy to access `poetry help <command>`
