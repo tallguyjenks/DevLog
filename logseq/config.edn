@@ -78,7 +78,7 @@
   ["code" "```\n\n```"],
   ["pytodo" "TODO [[Python]] "],
   ["pydoing" "DOING [[Python]] "],
-  ["hl" "{{{hl }}}"],
+  ["hl" "{{{hl }}}"]
  ]
 
  ;; Macros replace texts and will make you more productive.
