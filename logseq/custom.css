@@ -88,14 +88,10 @@ a.tag[data-ref="documentation" i] {
     white-space: nowrap;
 }
 /* Priority Tags */
-a[href="#/page/A" i] {
-    display: none !important;
-    width: 24px;
-    white-space: nowrap;
-}
 
-a[href="#/page/A" i]::before {
-	content: "🔴️" !important;
+
+a[href="#/page/A" i]::content {
+	content: "🔴️";
     visibility: visible;
     border-radius: 20px;
     padding: 1px;
