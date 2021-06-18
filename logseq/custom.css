@@ -87,24 +87,6 @@ a.tag[data-ref="documentation" i] {
     width: 24px;
     white-space: nowrap;
 }
-/* Priority Tags */
-.data-tooltipped .priority {
-  display: none !important;
-}
-
-.data-tooltipped:after {
-	content: "🔴️" !important;
-	position: absolute;
-    visibility: visible;
-    border-radius: 20px;
-    padding: 1px;
-    padding-bottom: 0px;
-    background: transparent;
-    box-shadow: 0 0 4px var(--red);
-
-}
-
-
 
 .dark-theme,
 html[data-theme="dark"] {
