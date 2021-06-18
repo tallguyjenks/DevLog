@@ -99,7 +99,7 @@ a[href="#/page/A" i]::before {
 }
 
 a[href="#/page/A" i]::content {
-    display: none;
+    display: none !important;
     width: 24px;
     white-space: nowrap;
 }
