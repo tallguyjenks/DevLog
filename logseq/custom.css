@@ -101,7 +101,7 @@ a[href="#/page/A" i]::before {
 
 }
 
-a[href="#/page/A" i] {
+a[href="#/page/A" i]::content {
     visibility: hidden;
     width: 24px;
     white-space: nowrap;
