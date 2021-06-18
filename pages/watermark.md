@@ -10,6 +10,7 @@ tags: library
 		  ```python
 		  pip install watermark
 		  %load_ext watermark
-		  
+		  %watermark?
+		  %watermark --machine --python --packages black,flake8,isort
 		  ```
 		-
