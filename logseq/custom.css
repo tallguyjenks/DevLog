@@ -88,7 +88,12 @@ a.tag[data-ref="documentation" i] {
     white-space: nowrap;
 }
 /* Priority Tags */
-
+a[href="#/page/A" i] {
+	font-size: 0;
+    text-indent: -9999px;
+    width: 24px;
+    white-space: nowrap;
+}
 
 a[href="#/page/A" i]::content {
 	content: "🔴️";
