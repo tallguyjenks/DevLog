@@ -243,13 +243,13 @@ h1.title {
 .priority {
   color: var(--ls-tag-text-color);
   opacity: 1;
-   clip-path: inset(100%);
-   clip: rect(1px, 1px, 1px, 1px);
-   height: 1px;
-   overflow: hidden;
-   position: absolute;
-   white-space: nowrap;
-   width: 1px;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .priority:hover,
