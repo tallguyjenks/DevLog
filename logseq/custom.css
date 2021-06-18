@@ -103,7 +103,7 @@ a.tag[data-ref="A" i] {
     white-space: nowrap;
 }
 
-a.a[href="#/page/A"]
+a[href="#/page/A"]
 {
     color: red !important;
 }
