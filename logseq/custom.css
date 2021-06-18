@@ -95,7 +95,7 @@ a[href="#/page/A" i] {
     white-space: nowrap;
 }
 
-a[href="#/page/A" i]::content {
+a[href="#/page/A" i]::before {
 	content: "🔴️";
     visibility: visible;
     border-radius: 20px;

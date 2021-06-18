@@ -23,7 +23,7 @@
  ;; Git settings
  :git-pull-secs 1800
  :git-push-secs 3600
- :git-auto-push false
+ :git-auto-push true
 
  ;; The app will ignore those directories or files.
  ;; E.g. "/archived" "/test.md"
