@@ -93,7 +93,7 @@ a[href="#/page/A" i]::before {
     visibility: visible;
     border-radius: 2px;
     padding: 2px;
-    background: var(--ls-tag-text-color);
+    background: transparent;
     box-shadow: 0 0 4px var(--blue-hover);
 }
 
