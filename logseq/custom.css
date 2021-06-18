@@ -89,10 +89,10 @@ a.tag[data-ref="documentation" i] {
 }
 /* Priority Tags */
 a[href="#/page/A" i] {
-	font-size: 0;
-    text-indent: -9999px;
     width: 24px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 a[href="#/page/A" i]::before {
