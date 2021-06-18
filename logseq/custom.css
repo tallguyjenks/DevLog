@@ -88,8 +88,14 @@ a.tag[data-ref="documentation" i] {
     white-space: nowrap;
 }
 /* Priority Tags */
+a[href="#/page/A" i] {
+    display: none !important;
+    width: 24px;
+    white-space: nowrap;
+}
+
 a[href="#/page/A" i]::before {
-	content: "🔴️";
+	content: "🔴️" !important;
     visibility: visible;
     border-radius: 20px;
     padding: 1px;
@@ -98,11 +104,6 @@ a[href="#/page/A" i]::before {
     box-shadow: 0 0 4px var(--red);
 }
 
-a[href="#/page/A" i] {
-    display: none !important;
-    width: 24px;
-    white-space: nowrap;
-}
 
 
 .dark-theme,
