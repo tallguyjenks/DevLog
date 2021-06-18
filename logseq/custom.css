@@ -92,8 +92,9 @@ div.data-tooltipped a.priority {
   display: none !important;
 }
 
-div.data-tooltipped::after {
+div.data-tooltipped:after {
 	content: "🔴️" !important;
+	position: absolute;
     visibility: visible;
     border-radius: 20px;
     padding: 1px;
