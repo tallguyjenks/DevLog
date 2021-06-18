@@ -5,6 +5,7 @@ tags: tools
 
 - [Calm Code](https://calmcode.io/black/introduction.html)
 - `.pre-commit-config.yaml`
+  collapsed:: true
 	-
 	  collapsed:: false
 	  ```yml
@@ -42,4 +43,4 @@ tags: tools
 	        -   id: requirements-txt-fixer
 	  
 	  ```
-	- This will run Black before every commit
+	- This will run all of the hooks before every commit ensuring code quality
