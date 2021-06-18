@@ -6,6 +6,7 @@ tags: tools
 - [Calm Code](https://calmcode.io/black/introduction.html)
 - `.pre-commit-config.yaml`
 	-
+	  collapsed:: false
 	  ```yml
 	  repos:
 	    -   repo: https://github.com/asottile/seed-isort-config
