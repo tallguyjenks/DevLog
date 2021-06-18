@@ -88,11 +88,11 @@ a.tag[data-ref="documentation" i] {
     white-space: nowrap;
 }
 /* Priority Tags */
-div.data-tooltipped a.priority {
+.data-tooltipped .priority {
   display: none !important;
 }
 
-div.data-tooltipped:after {
+.data-tooltipped:after {
 	content: "🔴️" !important;
 	position: absolute;
     visibility: visible;
