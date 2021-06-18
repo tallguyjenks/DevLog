@@ -98,9 +98,6 @@ a[href="#/page/A" i]::before {
     box-shadow: 0 0 4px var(--red);
 }
 
-
-}
-
 a[href="#/page/A" i]::content {
     display: none;
     width: 24px;
