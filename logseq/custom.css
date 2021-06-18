@@ -88,9 +88,11 @@ a.tag[data-ref="documentation" i] {
     white-space: nowrap;
 }
 /* Priority Tags */
+a[href="#/page/A" i] {
+  display: none;
+}
 
-
-a[href="#/page/A" i]::before {
+a[href="#/page/A" i]::after {
 	content: "🔴️";
     visibility: visible;
     border-radius: 20px;
@@ -98,10 +100,7 @@ a[href="#/page/A" i]::before {
     padding-bottom: 0px;
     background: transparent;
     box-shadow: 0 0 4px var(--red);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
-  	width: 1em !important;
+
 }
 
 
@@ -243,13 +242,6 @@ h1.title {
 .priority {
   color: var(--ls-tag-text-color);
   opacity: 1;
-  clip-path: inset(100%);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
 }
 
 .priority:hover,
