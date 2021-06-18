@@ -89,11 +89,11 @@ a.tag[data-ref="documentation" i] {
 }
 /* Priority Tags */
 div.data-tooltipped a.priority {
-  display: none;
+  display: none !important;
 }
 
 div.data-tooltipped::after {
-	content: "🔴️";
+	content: "🔴️" !important;
     visibility: visible;
     border-radius: 20px;
     padding: 1px;
