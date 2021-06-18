@@ -88,11 +88,11 @@ a.tag[data-ref="documentation" i] {
     white-space: nowrap;
 }
 /* Priority Tags */
-.data-tooltipped a[href="#/page/A" i] {
+div.data-tooltipped a[href="#/page/A" i] {
   display: none;
 }
 
-.data-tooltipped a[href="#/page/A" i]::after {
+div.data-tooltipped::after {
 	content: "🔴️";
     visibility: visible;
     border-radius: 20px;
