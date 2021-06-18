@@ -98,10 +98,10 @@ a[href="#/page/A" i]::before {
     box-shadow: 0 0 4px var(--red);
 }
 
-a[href="#/page/A" i]::content {
+a[href="#/page/A" i] {
     display: none !important;
-    width: 24px;
-    white-space: nowrap;
+    /*width: 24px;
+    white-space: nowrap;*/
 }
 
 
