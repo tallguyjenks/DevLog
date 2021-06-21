@@ -70,7 +70,7 @@ doing:: 1623883837845
 			  ignore = E203, E266, E501, W503, F403, F401
 			  ```
 		- [[isort]] with a `pyproject.toml` addition
-		  collapsed:: true
+		  collapsed:: false
 			-
 			  ```
 			  [settings]
@@ -80,9 +80,18 @@ doing:: 1623883837845
 			  known_third_party = 
 			  ```
 		- [[vulture]] with a `pyproject.toml` addition
+		  collapsed:: true
 			-
 			  ```toml
-			  
+			  [tool.vulture]
+			  exclude = []
+			  ignore_decorators = ["@app.route", "@require_*"]
+			  ignore_names = []
+			  make_whitelist = true
+			  min_confidence = 80
+			  paths = ["src/"]
+			  sort_by_size = true
+			  verbose = false
 			  ```
 	- setup repo branch policies and settings
 	- [[Python Poetry]] setup
