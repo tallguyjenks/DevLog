@@ -12,4 +12,5 @@ title: VBA
 - [Auto Macro](https://www.automateexcel.com/vba-code-generator#shortcuts)
 - [Cpearson](http://www.cpearson.com/Excel/Topic.aspx)
 - Rubber Duck IDE
+	- [Rubber Duck GitHub](https://github.com/rubberduck-vba/Rubberduck/wiki#toc)
 	-
