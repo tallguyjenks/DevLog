@@ -72,7 +72,7 @@ doing:: 1623883837845
 		- [[isort]] with a `pyproject.toml` addition
 		  collapsed:: false
 			-
-			  ```
+			  ```toml
 			  [settings]
 			  line_length = 88
 			  multi_line_output = 3
