@@ -86,7 +86,7 @@ doing:: 1623883837845
 		- `poetry add --dev black flake8 isort pre-commit`
 		- setup pre-commit hooks for formatting
 			- make `.pre-commit-config.yaml` file
-			  collapsed:: true
+			  collapsed:: false
 				-
 				  ```yaml
 				  repos:
