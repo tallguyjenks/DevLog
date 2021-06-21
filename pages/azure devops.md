@@ -1,6 +1,6 @@
 ---
 title: Azure DevOps
-tags: tool
+tags: tools
 ---
 
 -
