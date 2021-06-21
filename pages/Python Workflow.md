@@ -69,7 +69,7 @@ doing:: 1623883837845
 			  select = B,C,E,F,W,T4,B9
 			  ignore = E203, E266, E501, W503, F403, F401
 			  ```
-		- [[isort]] with a `.isort.cfg` file
+		- [[isort]] with a `pyproject.toml` addition
 		  collapsed:: true
 			-
 			  ```
