@@ -15,6 +15,7 @@ tags: language
 		- [R Graph Gallery](https://www.r-graph-gallery.com/)
 		- [knitr Options](https://yihui.org/knitr/options/)
 		- [Pimp my Rmd](https://holtzy.github.io/Pimp-my-rmd/)
+	- ^^Package Development^^
 		-
 	- ^^Tools^^
 	- ^^Libraries^^
