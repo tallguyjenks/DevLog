@@ -65,6 +65,8 @@ filters: {}
 		- [[Python Poetry]]
 	- ^^Libraries^^
 	  collapsed:: false
+		- ^^Build Tools^^
+			- [Pants](https://www.pantsbuild.org/docs)
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Linting & Style Checking:** [[black]], [[flake8]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
