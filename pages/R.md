@@ -12,6 +12,7 @@ tags: language
 		- [HexSticker Maker](https://connect.thinkr.fr/hexmake/)
 		- [Control HTML Code Folding](https://stackoverflow.com/questions/37755037/how-to-add-code-folding-to-output-chunks-in-rmarkdown-html-documents)
 		- [R Seek](https://rseek.org/)
+		- [R Graph Gallery](https://www.r-graph-gallery.com/)
 		-
 	- ^^Tools^^
 	- ^^Libraries^^
