@@ -8,4 +8,5 @@ title: VBA
 - [MSDN official Docs](https://docs.microsoft.com/en-us/office/vba/api/overview/excel)
 - [Analyst Cave](https://analystcave.com/excel-vba-tutorial/)
 - [Automate Excel](https://www.automateexcel.com/learn-vba-tutorial/)
+- [Excel Automation](https://www.rondebruin.nl/win/s1/outlook/mail.htm)
 -
