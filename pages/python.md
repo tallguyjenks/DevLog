@@ -14,7 +14,7 @@ filters: {}
   collapsed:: false
   ---
 - **Language**
-  collapsed:: true
+  collapsed:: false
 	- ^^Setup^^
 	- ^^Resources^^
 	  collapsed:: true
