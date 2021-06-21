@@ -14,4 +14,5 @@ title: VBA
 - Rubber Duck IDE
 	- [Rubber Duck GitHub](https://github.com/rubberduck-vba/Rubberduck/)
 	- [Rubber Duck Website](https://rubberduckvba.com/)
+- [Learn Excel Macro](http://learnexcelmacro.com/wp/download/)
 -
