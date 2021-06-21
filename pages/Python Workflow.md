@@ -227,7 +227,7 @@ doing:: 1623883837845
 		      │    └───mypackage.py
 		      └───app.py
 		  ```
-	- Set up auto documentation
+	- Set up auto documentation with
 	-
 	  ---
 	- **More on Packaging**
@@ -240,3 +240,4 @@ doing:: 1623883837845
 -
 - TODO [[sphinx]] & [[Restructured Text]]
   todo:: 1623883988912
+  id:: 60d0d859-27e7-4325-93e3-c3a05e115e93
