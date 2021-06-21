@@ -60,7 +60,7 @@ doing:: 1623883837845
 			  ```
 		- [[black]] with a `pyproject.toml` addition
 		- [[flake8]] with a `.flake8` file
-		  collapsed:: true
+		  collapsed:: false
 			-
 			  ```
 			  [flake8]
