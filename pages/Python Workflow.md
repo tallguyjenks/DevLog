@@ -211,7 +211,21 @@ doing:: 1623883837845
 	- Set up logging and this directory structure to start:
 		-
 		  ```
-		  
+		  .
+		  ├───.github
+		  │   ├───ISSUE_TEMPLATE
+		  │   ├───linters
+		  │   └───workflows
+		  ├───doc
+		  └───src
+		      ├───logger
+		      │	├───__init__.py
+		      │   └───logger.py
+		      ├───logs
+		      ├───mypackage
+		      │ 	├───__init__.py
+		      │    └───mypackage.py
+		      └───app.py
 		  ```
 	-
 	  ---
