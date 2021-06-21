@@ -227,6 +227,7 @@ doing:: 1623883837845
 		      │    └───mypackage.py
 		      └───app.py
 		  ```
+	- Set up unit testing framework with [[pytest]]
 	- TODO Set up auto documentation with [[sphinx]] & [[Restructured Text]]
 	  todo:: 1624314068734
 	-
