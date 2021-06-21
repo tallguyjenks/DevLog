@@ -60,14 +60,26 @@ doing:: 1623883837845
 			  ```
 		- [[black]] with a `pyproject.toml` addition
 		- [[flake8]] with a `.flake8` file
-		  collapsed:: false
+		  collapsed:: true
 			-
 			  ```
 			  [flake8]
 			  max-line-length = 88
 			  max-complexity = 18
+			  exclude =
+			      .git,
+			      __pycache__,
+			      build,
+			      dist
 			  select = B,C,E,F,W,T4,B9
-			  ignore = E203, E266, E501, W503, F403, F401
+			  ignore =
+			      E203, # E203: whitespace before ‘:’
+			      E266, # E266: too many leading ‘#’ for block comment
+			      E501, # E501: line too long (82 > 79 characters)
+			      W503, # W503: line break before binary operator
+			      F401, # F401: module imported but unused
+			      F403  # F403: ‘from module import *’ used; unable to detect undefined names
+			  
 			  ```
 		- [[isort]] with a `pyproject.toml` addition
 		  collapsed:: true
