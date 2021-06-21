@@ -10,6 +10,7 @@ tags: language
 	- ^^Resources^^
 		- [Ten random useful things in R that you might not know about](https://towardsdatascience.com/ten-random-useful-things-in-r-that-you-might-not-know-about-54b2044a3868)
 		- [HexSticker Maker](https://connect.thinkr.fr/hexmake/)
+		- [Control HTML Code Folding](https://stackoverflow.com/questions/37755037/how-to-add-code-folding-to-output-chunks-in-rmarkdown-html-documents)
 		-
 	- ^^Tools^^
 	- ^^Libraries^^
