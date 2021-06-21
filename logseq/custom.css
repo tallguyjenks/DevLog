@@ -72,6 +72,21 @@ a.tag[data-ref="idea" i] {
     width: 24px;
     white-space: nowrap;
 }
+/* TODO */
+a.tag[data-ref="TODO" i]::before {
+    content: "✔";
+    visibility: visible;
+    border-radius: 2px;
+    padding: 2px;
+    background: var(--blue);
+    box-shadow: 0 0 4px var(--blue-hover);
+}
+
+a.tag[data-ref="TODO" i] {
+    visibility: hidden;
+    width: 24px;
+    white-space: nowrap;
+}
 /* Documentation */
 a.tag[data-ref="documentation" i]::before {
     content: "📝";
