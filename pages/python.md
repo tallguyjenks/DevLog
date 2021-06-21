@@ -84,7 +84,7 @@ filters: {}
 		- **CLI Apps:**
 			- **Resources:** [this list](https://github.com/vinta/awesome-python#command-line-interface-development)
 			- **Management:** [[click]], [[argparse]]
-			- **Quality Of Life:**
+			- **Quality Of Life:** [[prompt_toolkit]]
 			- **Visuals:** [[tqdm]], [[alive-progress]], [[npyscreen]]
 			- **TUI Apps:** [[textual]], [[blessed]]
 		- **GUI Apps:**
