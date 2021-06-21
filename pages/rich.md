@@ -1,7 +1,7 @@
+---
+collapsed:: : : false
+title: rich
+tags: library
+---
+
 -
-  collapsed:: false
-  ---
-  title: 
-  tags: 
-  ---
-	-
