@@ -11,7 +11,7 @@ filters: {}
 - **Workflow:**
 	- [[Python Workflow]]
 - **Language**
-  collapsed:: false
+  collapsed:: true
 	- ^^Setup^^
 	- ^^Resources^^
 	  collapsed:: true
