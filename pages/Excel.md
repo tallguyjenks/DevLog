@@ -4,4 +4,5 @@ title: Excel
 tags: tools
 ---
 
-- Related
+- Related: [[VBA]]
+-
