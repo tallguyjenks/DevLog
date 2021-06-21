@@ -747,7 +747,7 @@ filters: {}
 -
   ---
 - **Security:**
-  collapsed:: true
+  collapsed:: false
 	- [10 common security gotchas in Python and how to avoid them](https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03)
 -
   ---
