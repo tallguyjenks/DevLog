@@ -13,11 +13,6 @@ filters: {}
 -
   collapsed:: false
   ---
-- **Security:**
-  collapsed:: true
-	- [10 common security gotchas in Python and how to avoid them](https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03)
--
-  ---
 - **Language**
   collapsed:: true
 	- ^^Setup^^
@@ -749,6 +744,11 @@ filters: {}
 - **Machine Learning**
   collapsed:: true
 	- [perceptilabs](https://www.perceptilabs.com/papers)
+-
+  ---
+- **Security:**
+  collapsed:: true
+	- [10 common security gotchas in Python and how to avoid them](https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03)
 -
   ---
 - **Package Development**
