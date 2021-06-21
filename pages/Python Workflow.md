@@ -90,24 +90,70 @@ doing:: 1623883837845
 				-
 				  ```yaml
 				  repos:
-				    -   repo: https://github.com/asottile/seed-isort-config
-				        rev: v1.9.3
-				        hooks:
-				        - id: seed-isort-config
-				    -   repo: https://github.com/pre-commit/mirrors-isort
-				        rev: v4.3.21
-				        hooks:
-				        - id: isort
+				    - repo: https://github.com/asottile/seed-isort-config
+				      rev: v2.2.0
+				      hooks:
+				      - id: seed-isort-config
+				    - repo: https://github.com/pre-commit/mirrors-isort
+				      rev: v5.8.0
+				      hooks:
+				      - id: isort
 				    - repo: https://github.com/psf/black
 				      rev: 21.6b0
 				      hooks:
 				      - id: black
 				        language_version: python3
 				        description: "Black: The uncompromising Python code formatter"
-				    -   repo: https://gitlab.com/pycqa/flake8
-				        rev: 3.9.2
-				        hooks:
-				        - id: flake8
+				    - repo: https://gitlab.com/pycqa/flake8
+				      rev: 3.9.2
+				      hooks:
+				      - id: flake8
+				    - repo: https://github.com/jendrikseipp/vulture
+				      rev: 'v2.3'
+				      hooks:
+				      - id: vulture
+				    - repo: https://github.com/pre-commit/pre-commit-hooks
+				      rev: v4.0.1
+				      hooks:
+				      - id: trailing-whitespace
+				        log_file: src/logs/hooks.log
+				      - id: end-of-file-fixer
+				        log_file: src/logs/hooks.log
+				      - id: check-docstring-first
+				        log_file: src/logs/hooks.log
+				      - id: requirements-txt-fixer
+				        log_file: src/logs/hooks.log
+				      - id: check-added-large-files
+				        log_file: src/logs/hooks.log
+				      - id: check-json
+				        log_file: src/logs/hooks.log
+				        exclude: .vscode/settings.json
+				      - id: check-yaml
+				        log_file: src/logs/hooks.log
+				      - id: check-toml
+				        log_file: src/logs/hooks.log
+				      - id: check-xml
+				        log_file: src/logs/hooks.log
+				      - id: debug-statements
+				        log_file: src/logs/hooks.log
+				      - id: name-tests-test
+				        log_file: src/logs/hooks.log
+				      - id: check-shebang-scripts-are-executable
+				        log_file: src/logs/hooks.log
+				      - id: check-merge-conflict
+				        log_file: src/logs/hooks.log
+				      - id: check-symlinks
+				        log_file: src/logs/hooks.log
+				      - id: destroyed-symlinks
+				        log_file: src/logs/hooks.log
+				      - id: debug-statements
+				        log_file: src/logs/hooks.log
+				      - id: detect-private-key
+				        log_file: src/logs/hooks.log
+				      - id: no-commit-to-branch
+				        log_file: src/logs/hooks.log
+				        args: [--branch, prod]
+				  
 				  ```
 			- `poetry run pre-commit install`
 			- `poetry run pre-commit autoupdate`
