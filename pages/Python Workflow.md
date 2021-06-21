@@ -208,7 +208,8 @@ doing:: 1623883837845
 			- `poetry run pre-commit install`
 			- `poetry run pre-commit autoupdate`
 			- `poetry run pre-commit run` (to test that it works)
-	-
+	- Set up logging and this directory structure to start:
+		-
 	-
 	  ---
 	- **More on Packaging**
