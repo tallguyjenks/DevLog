@@ -10,4 +10,5 @@ title: VBA
 - [Automate Excel](https://www.automateexcel.com/learn-vba-tutorial/)
 - [Excel Automation](https://www.rondebruin.nl/win/s1/outlook/mail.htm)
 - [Auto Macro](https://www.automateexcel.com/vba-code-generator#shortcuts)
+- [Cpearson](http://www.cpearson.com/Excel/Topic.aspx)
 -
