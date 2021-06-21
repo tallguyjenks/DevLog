@@ -227,7 +227,7 @@ doing:: 1623883837845
 		      │    └───mypackage.py
 		      └───app.py
 		  ```
-	- Set up auto documentation with
+	- Set up auto documentation with [[sphinx]] & [[Restructured Text]] #TODO
 	-
 	  ---
 	- **More on Packaging**
@@ -238,6 +238,3 @@ doing:: 1623883837845
 	- **Opening someone elses poetry project**
 		- install dependencies `poetry install`
 -
-- TODO [[sphinx]] & [[Restructured Text]]
-  todo:: 1623883988912
-  id:: 60d0d859-27e7-4325-93e3-c3a05e115e93
