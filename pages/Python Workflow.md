@@ -132,7 +132,7 @@ doing:: 1623883837845
 	- [[Python Poetry]] setup
 		- `poetry new <PROJECT>` or `poetry init`
 		- Spin up virtual environment `poetry shell`
-		- `poetry add --dev black flake8 isort pre-commit`
+		- `poetry add --dev black flake8 isort vulture pre-commit`
 		- setup pre-commit hooks for formatting
 			- make `.pre-commit-config.yaml` file
 			  collapsed:: true
