@@ -58,7 +58,7 @@ doing:: 1623883837845
 			  #       -v $(System.DefaultWorkingDirectory):/tmp/lint github/super-linter #...# Volume to attach to
 			        displayName: 'Run GitHub Super-Linter' #.................................# Name of this step in the job
 			  ```
-		- [[black]] with a `.python-black` config file
+		- [[black]] with a `pyproject.toml` addition
 		- [[flake8]] with a `.flake8` file
 		  collapsed:: true
 			-
@@ -79,7 +79,7 @@ doing:: 1623883837845
 			  include_trailing_comma = True
 			  known_third_party = 
 			  ```
-		- [[vulture]] with
+		- [[vulture]] with a `pyproject.toml` addition
 	- setup repo branch policies and settings
 	- [[Python Poetry]] setup
 		- `poetry new <PROJECT>` or `poetry init`
