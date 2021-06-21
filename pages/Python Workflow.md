@@ -70,14 +70,15 @@ doing:: 1623883837845
 			  ignore = E203, E266, E501, W503, F403, F401
 			  ```
 		- [[isort]] with a `pyproject.toml` addition
-		  collapsed:: false
+		  collapsed:: true
 			-
 			  ```toml
-			  [settings]
+			  [tool.isort]
 			  line_length = 88
 			  multi_line_output = 3
-			  include_trailing_comma = True
-			  known_third_party = 
+			  include_trailing_comma = true
+			  skip_glob = []
+			  known_third_party = []
 			  ```
 		- [[vulture]] with a `pyproject.toml` addition
 		  collapsed:: true
