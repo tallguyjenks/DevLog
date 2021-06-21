@@ -227,7 +227,7 @@ doing:: 1623883837845
 		      │    └───mypackage.py
 		      └───app.py
 		  ```
-	-
+	- Set up auto documentation
 	-
 	  ---
 	- **More on Packaging**
