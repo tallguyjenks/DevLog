@@ -6,7 +6,7 @@ doing:: 1623883837845
 	- Add config files for terminal/[[VSCode]]/Extensions
 	- Setup Linting CI/CD with the `github super linter`
 		- Super linter file
-		  collapsed:: false
+		  collapsed:: true
 			-
 			  ```yaml
 			  # https://aka.ms/yaml
