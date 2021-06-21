@@ -6,6 +6,7 @@ tags: tools
 - ^^Resources^^
 	- [Official Git Docs command shorthand](https://git-scm.com/docs)
 	- [GREAT graphical walkthrough tool for learning git](https://learngitbranching.js.org/)
+	- [Git Alias Tips](https://www.atlassian.com/blog/git/advanced-git-aliases)
 - ^^Commands^^
 	- `git log`
 		- Pretty Log Output (_PLOG_)
