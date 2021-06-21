@@ -79,6 +79,7 @@ doing:: 1623883837845
 			  include_trailing_comma = True
 			  known_third_party = 
 			  ```
+		-
 	- setup repo branch policies and settings
 	- [[Python Poetry]] setup
 		- `poetry new <PROJECT>` or `poetry init`
