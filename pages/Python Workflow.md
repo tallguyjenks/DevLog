@@ -6,7 +6,7 @@ doing:: 1623883837845
 	- Add config files for terminal/[[VSCode]]/Extensions
 	- Setup Linting CI/CD with the `github super linter`
 		- Super linter file
-		  collapsed:: true
+		  collapsed:: false
 			-
 			  ```yaml
 			  # https://aka.ms/yaml
@@ -59,9 +59,27 @@ doing:: 1623883837845
 			        displayName: 'Run GitHub Super-Linter' #.................................# Name of this step in the job
 			  ```
 		- [[black]] with a `pyproject.toml` addition
+		  collapsed:: true
 			-
 			  ```toml
-			  
+			  [tool.black]
+			  line-length = 88
+			  include = '\.pyi?
+			  exclude = '''
+			  /(
+			      \.git
+			    | \.hg
+			    | \.mypy_cache
+			    | \.tox
+			    | \.venv
+			    | _build
+			    | buck-out
+			    | build
+			    | dist
+			    | docs
+			    | notes
+			  )/
+			  '''
 			  ```
 		- [[flake8]] with a `.flake8` file
 		  collapsed:: true
