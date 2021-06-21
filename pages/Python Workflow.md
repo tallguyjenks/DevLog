@@ -59,6 +59,10 @@ doing:: 1623883837845
 			        displayName: 'Run GitHub Super-Linter' #.................................# Name of this step in the job
 			  ```
 		- [[black]] with a `pyproject.toml` addition
+			-
+			  ```toml
+			  
+			  ```
 		- [[flake8]] with a `.flake8` file
 		  collapsed:: true
 			-
