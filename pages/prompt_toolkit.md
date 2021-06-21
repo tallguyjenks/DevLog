@@ -1,5 +1,5 @@
 ---
-collapsed:: false
+collapsed:: : false
 title: prompt_toolkit
 tags: library
 ---
