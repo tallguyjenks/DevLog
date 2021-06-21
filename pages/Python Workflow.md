@@ -228,11 +228,6 @@ doing:: 1623883837845
 		      └───app.py
 		  ```
 			- Logger:
-				-
-				  ```python
-				  
-				  ```
-				-
 	-
 	  ---
 	- **More on Packaging**
