@@ -83,7 +83,7 @@ filters: {}
 				- **YAML** [[PyYaml]]
 		- **CLI Apps:**
 			- **Resources:** [this list](https://github.com/vinta/awesome-python#command-line-interface-development)
-			- **Management:** [[argparse]]
+			- **Management:** [[click]], [[argparse]]
 			- **Visuals:** [[tqdm]], [[alive-progress]], [[npyscreen]]
 			- **TUI Apps:** [[textual]], [[blessed]]
 		- **GUI Apps:**
