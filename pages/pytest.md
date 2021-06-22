@@ -142,4 +142,6 @@ tags: library
 			      assert len(base_clumper.head(5)) == 5
 			      assert len(base_clumper.tail(5)) == 5
 			  ```
+	- [[Python]] [[pytest]] [[Azure Pipelines]] to [build test suite with an artifact report](https://pypi.org/project/pytest-azurepipelines/) with [some helpful docs](https://medium.com/@anthonypjshaw/azure-pipelines-with-python-by-example-aa65f4070634)
+	  todo:: 1624390596115
 	-
