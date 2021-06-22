@@ -110,10 +110,10 @@ tags: library
 		- This allows you to repeat yourself less and have a single location that feeds data into the testing suite instead of making the data for each test individually.
 		-
 		  ```python
-		  from clumper import Clumper
+		  from clumper import Clumper # our custom module
 		  import pytest
-		  
-		  
+		  		  
+		  		  
 		  @pytest.fixture(scope="module")
 		  def base_clumper():
 		      data = [
