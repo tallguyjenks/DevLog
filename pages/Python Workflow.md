@@ -228,6 +228,8 @@ doing:: 1623883837845
 		      └───app.py
 		  ```
 	- Set up unit testing framework with [[pytest]]
+		- `pytest-cov --cov <SRC DIR> --cov-report html`
+			- This tests the coverage of the entire source code directory and writes an intricate [[HTML]] report for viewing test results
 	- TODO Set up auto documentation with [[sphinx]] & [[Restructured Text]]
 	  todo:: 1624314068734
 	-
