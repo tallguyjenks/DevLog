@@ -8,7 +8,7 @@ tags: library
 	- [Calm Code pytest](https://calmcode.io/pytest/introduction.html)
 		- [Sample Repo for this project](https://github.com/koaning/blackjack/)
 		- `blackjack.py`
-		  collapsed:: true
+		  collapsed:: false
 			-
 			  ```python
 			  def card_score(cards):
@@ -22,7 +22,7 @@ tags: library
 			      return score if score <= 21 else 0
 			  ```
 		- `test_blackjack.py`
-		  collapsed:: true
+		  collapsed:: false
 			-
 			  ```python
 			  import pytest
