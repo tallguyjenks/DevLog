@@ -132,7 +132,7 @@ doing:: 1623883837845
 	- [[Python Poetry]] setup
 		- `poetry new <PROJECT>` or `poetry init`
 		- Spin up virtual environment `poetry shell`
-		- `poetry add --dev pre-commit pytest`
+		- `poetry add --dev pre-commit pytest pytest-cov`
 		- setup pre-commit hooks for formatting
 			- make `.pre-commit-config.yaml` file
 			  collapsed:: true
