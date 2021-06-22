@@ -12,4 +12,3 @@ title: PEP's
   |[PEP 282](https://www.python.org/dev/peps/pep-0282/)| Logging System |
   | [PEP 484](https://www.python.org/dev/peps/pep-0484/)| Type Hints |
 -
--
