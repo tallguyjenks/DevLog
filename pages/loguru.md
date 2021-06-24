@@ -26,6 +26,6 @@ tags: library
 - Additionally handlers and criteria once this are filtered through this:
 	-
 	  ```python
-	  
+	  logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO")
 	  ```
 -
