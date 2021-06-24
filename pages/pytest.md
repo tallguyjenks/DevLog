@@ -144,4 +144,5 @@ tags: library
 			  ```
 	- [[Python]] [[pytest]] [[Azure Pipelines]] to [build test suite with an artifact report](https://pypi.org/project/pytest-azurepipelines/) with [some helpful docs](https://medium.com/@anthonypjshaw/azure-pipelines-with-python-by-example-aa65f4070634)
 	  todo:: 1624390596115
-	- [pytest-duration-insights](https://calmcode.io/labs/pytest-duration-insights.html)
+	- [pytest-duration-insights](https://calmcode.io/labs/pytest-duration-insights.html) for test treemap dashboarding
+	-
