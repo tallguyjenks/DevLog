@@ -100,6 +100,7 @@ filters: {}
 			- **Data Management:** [[CSV]], [[JSON]]
 		- **Databases:** [[sqlite3]]
 		- **Parallelization:** [[ray]], [[asyncio]]
+		- **URL Manipulation:** [[yarl]]
 	- ^^Syntax^^
 	  collapsed:: true
 		- ^^Conventions^^
