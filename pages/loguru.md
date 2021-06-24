@@ -13,9 +13,9 @@ tags: library
 	  logger.debug("That's it, beautiful and simple logging!")
 	  
 	  ```
-- want to add a log file as well as sending to stdout?
+- want to add a log file as well as sending to stdout? simply pass the path
 	-
 	  ```python
-	  
+	  logger.add("app.log")
 	  ```
 	-
