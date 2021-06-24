@@ -224,7 +224,7 @@ doing:: 1623883837845
 		      ├───logs
 		      ├───mypackage
 		      │ 	├───__init__.py
-		      │    └───mypackage.py
+		      │   └───mypackage.py
 		      └───app.py
 		  ```
 	- Set up unit testing framework with [[pytest]]
