@@ -21,6 +21,6 @@ tags: library
 	- you can also use variable components:
 		-
 		  ```python
-		  
+		  logger.add("file_{time}.log")
 		  ```
-		-
+-
