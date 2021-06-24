@@ -23,4 +23,9 @@ tags: library
 		  ```python
 		  logger.add("file_{time}.log")
 		  ```
+- Additionally handlers and criteria once this are filtered through this:
+	-
+	  ```python
+	  
+	  ```
 -
