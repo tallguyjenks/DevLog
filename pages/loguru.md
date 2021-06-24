@@ -41,4 +41,14 @@ tags: library
 	  ```python
 	  logger.add("out.log", backtrace=True, diagnose=True)
 	  ```
+- Add custom fields and bind them to values you desire and want to compute
+	-
+	  ```python
+	  logger.add("file.log", format="{extra[ip]} {extra[user]} {message}")
+	  context_logger = logger.bind(ip="192.168.0.1", user="someone")
+	  context_logger.info("Contextualize your logger easily")
+	  context_logger.bind(user="someone_else").info("Inline binding of extra attribute")
+	  context_logger.info("Use kwargs to add context during formatting: {user}", user="anybody")
+	  
+	  ```
 -
