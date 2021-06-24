@@ -70,7 +70,7 @@ filters: {}
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Linting & Style Checking:** [[black]], [[flake8]]
 		- **Utils:** [[pyinstaller]], [[os]], [[glob]], [[sys]], [[shutil]], [[socket]]
-			- **Logging:** [[logging]]
+			- **Logging:** [[logging]], [[rich]].logging, [[loguru]]
 			- **Virtual Environment:** [[venv]], 💙[[virtualenv]]
 			- **Benchmarking:** [[clockpy]]
 			- **Error Handling:** [[pretty-errors]]
