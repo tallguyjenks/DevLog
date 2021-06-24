@@ -39,6 +39,6 @@ tags: library
 - back tracing and diagnosis of errors can also be added to a log file with a few additional kwargs:
 	-
 	  ```python
-	  
+	  logger.add("out.log", backtrace=True, diagnose=True)
 	  ```
 -
