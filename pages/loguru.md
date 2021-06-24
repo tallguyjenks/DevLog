@@ -36,4 +36,9 @@ tags: library
 	      # An error? It's caught anyway!
 	      return 1 / (x + y + z)
 	  ```
+- back tracing and diagnosis of errors can also be added to a log file with a few additional kwargs:
+	-
+	  ```python
+	  
+	  ```
 -
