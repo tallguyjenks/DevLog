@@ -101,7 +101,7 @@ filters: {}
 		- **Databases:** [[sqlite3]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 		- **URL Manipulation:** [[yarl]]
-		- **API Requests:**
+		- **API Requests:** [[requests]]
 	- ^^Syntax^^
 	  collapsed:: true
 		- ^^Conventions^^
