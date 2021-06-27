@@ -95,12 +95,13 @@ filters: {}
 			- **Web Apps**
 				- [[pywebio]]
 		- **Data Science:**
-			- **Data Manipulation:** [[pandas]], [[pandasgui]], [[datetime]], [[tablib]], [[OpenPyXl]]
+			- **Data Manipulation:** [[pandas]], [[pandasgui]], [[pandasql]] [[datetime]], [[tablib]], [[OpenPyXl]]
 			- **Data Visualization:** [[matplotlib]]
 			- **Data Management:** [[CSV]], [[JSON]]
 		- **Databases:** [[sqlite3]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 		- **URL Manipulation:** [[yarl]]
+		- **API Requests:** [[requests]]
 	- ^^Syntax^^
 	  collapsed:: true
 		- ^^Conventions^^
