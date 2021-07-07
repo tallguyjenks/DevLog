@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-
+ 
 :root {
   --background: #282828;
   --light-background: #3c3836;
@@ -391,6 +391,10 @@ a.tooltip-priority {
   word-wrap: break-word !important;
   white-space: pre-wrap !important;
 }
+
+/************************* 
+ * Highlight tags
+ *************************/
 mark.red {background-color: var(--red);}
 mark.orange {background-color: var(--orange);}
 mark.yellow {background-color: var(--yellow);}
@@ -399,3 +403,158 @@ mark.cyan {background-color: var(--cyan);}
 mark.blue {background-color: var(--blue);}
 mark.purple {background-color: var(--purple);}
 mark.pink {background-color: var(--pink);}
+
+
+/************************* 
+ * Editing block threading
+ *************************/
+.ls-block > div > div.items-center {
+  position: relative;
+}
+
+div.items-center::before,
+div.items-center::after,
+.ls-block::before,
+.ls-block::after,
+.block-content-wrapper::before {
+  pointer-events: none;
+}
+
+.ls-block > div > div.items-center::before {
+  content: "";
+  height: 100%;
+  left: -2px;
+  right: 6px;
+  top: calc(-50% + 1px);
+  position: absolute;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-bottom-left-radius: 10px;
+}
+
+.blocks-container > .ls-block > div > div.items-center::before,
+.blocks-container > .ls-block:focus-within > div > div.items-center::after,
+.blocks-container > .block-children:focus-within > .ls-block::before {
+  display: none;
+}
+
+.ls-block:focus-within > div > div.items-center::before {
+  border-color: var(--yellow);
+}
+
+.ls-block > div > div.items-center::after {
+  content: "";
+  height: calc(100% - 10px);
+  top: -50%;
+  left: -2px;
+  position: absolute;
+  border-left: 2px solid transparent;
+}
+
+.ls-block:focus-within > div > div.items-center::after {
+  border-color: var(--yellow);
+}
+
+.block-children > .ls-block::before {
+  content: "";
+  top: -10px;
+  bottom: 0;
+  border-left: 2px solid transparent;
+  left: -2px;
+  position: absolute;
+}
+
+.block-children:focus-within > .ls-block:not(:focus-within)::before {
+  border-color: var(--yellow);
+}
+
+.block-children:focus-within > .ls-block:focus-within ~ .ls-block::before {
+  border-color: transparent;
+}
+
+.ls-block > div > .block-content-wrapper {
+  position: relative;
+}
+
+.ls-block > div > .block-content-wrapper::before {
+  content: "";
+  top: 1em;
+  bottom: 0;
+  left: -17px;
+  position: absolute;
+  border-left: 2px solid transparent;
+}
+
+.ls-block[haschild=true]:focus-within > div > .block-content-wrapper::before {
+  border-color: var(--cyan);
+}
+
+.doc-mode div.items-center::before,
+.doc-mode div.items-center::after,
+.doc-mode .ls-block::before,
+.doc-mode .ls-block::after {
+  display: none;
+}
+
+
+/************************* 
+ * Priority items
+ *************************/
+
+a[priority],
+a.priority {
+  font-size: 0px;
+  /* Hide text */
+}
+
+a[priority]::before {
+  font-size: var(--ls-page-text-size);
+}
+
+a[priority=A]::before,
+a.priority[href="#/page/A" i]:before {
+  content: "🔴️";
+  visibility: visible;
+}
+
+a[priority=B]::before,
+a.priority[href="#/page/B" i]:before {
+  content: "🟡️";
+  visibility: visible;
+}
+
+a[priority=C]::before,
+a.priority[href="#/page/C" i]:before {
+  content: "🟢️";
+  visibility: visible;
+}
+
+a.priority[href="#/page/A" i],
+[href="#/page/B" i],
+[href="#/page/C" i] {
+  visibility: hidden;
+  width: 1.5em;
+  height: 1.5em;
+  white-space: nowrap;
+  text-shadow: var(--ct-tag-shadow);
+  position: relative;
+}
+
+a[priority]::before,
+a.priority::before {
+  border-radius: 50%;
+  color: var(--blue);
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 650;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  width: 38px;
+  margin-left: -3px;
+}
+
+a.tooltip-priority:first-of-type::before {
+  margin-left: 0.3em;
+  margin-top: 0.5em;
+}

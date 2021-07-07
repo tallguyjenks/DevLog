@@ -1,6 +1,6 @@
 {
  :journal-basis "daily" 
-
+ 
  :project {
            ;; Selected public notes can be published to https://logseq.com/your-project-or-your-username.
            :name "Bryan Jenks"
@@ -105,8 +105,9 @@
  :all-pages-public? true
  :markdown/version 2
  
-;; :default-home {:page "Python"}
-:sidebar ["Favorites" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
+ ;; :default-home {:page "Python"}
+ :sidebar ["Favorites" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
  :feature/enable-journals? true
+ :shortcuts {:editor/move-block-up "shift+alt+up", :editor/move-block-down "shift+alt+down", :go/journals "meta+t", :date-picker/prev-day "left", :go/search-in-page "shift+meta+f", :go/search "meta+f"}
  
  }
