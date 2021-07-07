@@ -19,7 +19,9 @@
  ;; Value is either ":now" for NOW/LATER style,
  ;; or ":todo" for TODO/DOING style.
  :preferred-workflow :todo
-
+ :date-formatter "yyyy-MM-dd"
+ :all-pages-public? true
+ 
  ;; Git settings
  :git-pull-secs 1800
  :git-push-secs 3600
@@ -33,7 +35,7 @@
  ;; Example for Markdown users: "## [[Work]]\n###\n## [[Family]]\n###\n
  ;; Example for Org mode users: "** [[Work]]\n***\n** [[Family]]\n***\n
  :default-templates
- {:journals "public:: true\n\n"}
+ {:journals "public:: true"}
 
  ;; The app will show those queries in today's journal page,
  ;; the "NOW" query asks the tasks which need to be finished "now",
@@ -101,8 +103,6 @@
   "hlk" "<mark class='pink'>$1</mark>"
  }
  :ui/show-brackets? true
- :date-formatter "yyyy-MM-dd"
- :all-pages-public? true
  :markdown/version 2
  
  ;; :default-home {:page "Python"}
