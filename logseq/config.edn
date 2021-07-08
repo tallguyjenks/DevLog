@@ -9,11 +9,12 @@
            :twitter "tallguyjenks"
            ;; description supports both hiccup and html
            :description "Neurons imitating silicon and lightning."}
+ :all-pages-public? true,
  ;; Currently, we support either "Markdown" or "Org".
  ;; This can overwrite your global preference so that
  ;; maybe your personal preferred format is Org but you'd
  ;; need to use Markdown for some projects.
- ;; :preferred-format ""
+ :preferred-format "Markdown"
  
  ;; Preferred workflow style. 
  ;; Value is either ":now" for NOW/LATER style,
@@ -102,7 +103,7 @@
  }
  :ui/show-brackets? true
  :date-formatter "yyyy-MM-dd"
- :all-pages-public? true
+
  :markdown/version 2
  
  ;; :default-home {:page "Python"}
