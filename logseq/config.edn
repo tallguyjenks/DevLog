@@ -35,7 +35,7 @@
  ;; Example for Markdown users: "## [[Work]]\n###\n## [[Family]]\n###\n
  ;; Example for Org mode users: "** [[Work]]\n***\n** [[Family]]\n***\n
  :default-templates
- {:journals "public:: true"}
+ {:journals ""}
 
  ;; The app will show those queries in today's journal page,
  ;; the "NOW" query asks the tasks which need to be finished "now",
@@ -108,6 +108,6 @@
  ;; :default-home {:page "Python"}
  :sidebar ["Favorites" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
  :feature/enable-journals? true
- :shortcuts {:editor/move-block-up "shift+alt+up", :editor/move-block-down "shift+alt+down", :go/journals "meta+t", :date-picker/prev-day "left", :go/search-in-page "shift+meta+f", :go/search "meta+f"}
+ :shortcuts {:editor/move-block-up "alt+up", :editor/move-block-down "alt+down", :go/journals ["ctrl+t", "cmd+t"], :date-picker/prev-day "left", :go/search-in-page "ctrl+f", :go/search "ctrl+o"}
  
  }
