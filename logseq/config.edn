@@ -16,7 +16,7 @@
  ;; need to use Markdown for some projects.
  :preferred-format "Markdown"
 
- ;; Preferred workflow style.
+ ;; Preferred workflow style. 
  ;; Value is either ":now" for NOW/LATER style,
  ;; or ":todo" for TODO/DOING style.
  :preferred-workflow :todo
