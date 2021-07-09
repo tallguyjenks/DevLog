@@ -1,5 +1,5 @@
 {
- :journal-basis "daily" 
+ :journal-basis "daily"
  
  :project {
            ;; Selected public notes can be published to https://logseq.com/your-project-or-your-username.
@@ -9,19 +9,20 @@
            :twitter "tallguyjenks"
            ;; description supports both hiccup and html
            :description "Neurons imitating silicon and lightning."}
+ :all-pages-public? true,
  ;; Currently, we support either "Markdown" or "Org".
  ;; This can overwrite your global preference so that
  ;; maybe your personal preferred format is Org but you'd
  ;; need to use Markdown for some projects.
- ;; :preferred-format ""
- 
+ :preferred-format "Markdown"
+
  ;; Preferred workflow style. 
  ;; Value is either ":now" for NOW/LATER style,
  ;; or ":todo" for TODO/DOING style.
  :preferred-workflow :todo
  :date-formatter "yyyy-MM-dd"
  :all-pages-public? true
- 
+
  ;; Git settings
  :git-pull-secs 1800
  :git-push-secs 3600
@@ -30,7 +31,7 @@
  ;; The app will ignore those directories or files.
  ;; E.g. "/archived" "/test.md"
  :hidden []
- 
+
  ;; When creating the new journal page, the app will use your template content here.
  ;; Example for Markdown users: "## [[Work]]\n###\n## [[Family]]\n###\n
  ;; Example for Org mode users: "** [[Work]]\n***\n** [[Family]]\n***\n
@@ -104,10 +105,10 @@
  }
  :ui/show-brackets? true
  :markdown/version 2
- 
+
  ;; :default-home {:page "Python"}
  :sidebar ["Favorites" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
  :feature/enable-journals? true
  :shortcuts {:editor/move-block-up "alt+up", :editor/move-block-down "alt+down", :go/journals ["ctrl+t", "cmd+t"], :date-picker/prev-day "left", :go/search-in-page "ctrl+f", :go/search "ctrl+o"}
- 
+
  }

@@ -1,18 +1,18 @@
 - **Meta:**
-  - [[Queries]]
-  - [[Templates]]
-  - [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
-    - **Priority:**
-    - [#A] A
-    - [#B] B
-    - [#C] C
+	- [[Queries]]
+	- [[Templates]]
+	- [[TODO]] | [[DOING]] | [[DONE]] | [[NOW]] | [[LATER]]
+		- **Priority:**
+		- [#A] A
+		- [#B] B
+		- [#C] C
 - **Tags:**
-  - #language | #library | #tools | #project
-  - **Emoji tags**
-    - #star | Star
-    - #idea | Idea
-    - #documentation | Documentation
+	- #language | #library | #tools | #project
+	- **Emoji tags**
+		- #star | Star
+		- #idea | Idea
+		- #documentation | Documentation
 - **TOP OF MIND**
-  - [[Python]]
-  - [[VSCode]]
-  - [[Azure DevOps]]
+	- [[Python]]
+	- [[VSCode]]
+	- [[Azure DevOps]]
