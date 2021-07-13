@@ -77,7 +77,7 @@ filters: {}
 		- **Documentation:** [[pydoc]], [[prettytable]], [[functools]], [[mkdocs]]
 		- **Unit Testing:** 💙[[pytest]] [[unittest]]
 		- **String Manipulation:** [[re]], [[parse]]
-		- **Email:** [[smtplib]]
+		- **Email:** [[smtplib]], [[email]]
 		- **File System:**
 			- **File System Monitoring:** [[watchdog]]
 			- **File Manipulation:**
