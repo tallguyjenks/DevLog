@@ -78,6 +78,8 @@
  :commands
  [
   ["py" "```python\n\n```"],
+  ["sql" "```sql\n\n```"],
+  ["bash" "```bash\n\n```"],
   ["code" "```\n\n```"],
   ["pytodo" "TODO [[Python]] "],
   ["pydoing" "DOING [[Python]] "],
