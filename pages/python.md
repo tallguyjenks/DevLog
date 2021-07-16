@@ -98,7 +98,7 @@ filters: {}
 			- **Data Manipulation:** [[pandas]], [[pandasgui]], [[pandasql]] [[datetime]], [[tablib]], [[OpenPyXl]]
 			- **Data Visualization:** [[matplotlib]]
 			- **Data Management:** [[CSV]], [[JSON]]
-		- **Databases:** [[sqlite3]]
+		- **Databases:** [[sqlite3]], [[sql alchemy]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 		- **URL Manipulation:** [[yarl]]
 		- **API Requests:** [[requests]]
