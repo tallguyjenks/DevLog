@@ -19,9 +19,8 @@ title: Templates
 	- ^^Tips, Tricks, & Hacks^^
 -
   collapsed:: false
-    template:: yaml 
+  template:: yaml 
   ---
-  title: 
   tags: 
   ---
 	-
