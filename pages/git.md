@@ -7,6 +7,9 @@ tags: tools
 	- [Official Git Docs command shorthand](https://git-scm.com/docs)
 	- [GREAT graphical walkthrough tool for learning git](https://learngitbranching.js.org/)
 	- [Git Alias Tips](https://www.atlassian.com/blog/git/advanced-git-aliases)
+	- [.gitignore Templates](https://github.com/github/gitignore)
+	- [Git Cheatsheet](https://ndpsoftware.com/git-cheatsheet.html)
+	- [Git Book](https://git-scm.com/docs)
 - ^^Commands^^
 	- `git log`
 		- Pretty Log Output (_PLOG_)
@@ -36,6 +39,7 @@ tags: tools
 				- This means that a copy of the repo files is made for each worktree at the source commit that the bare repo was made from
 				- Worktrees make it easier to open multiple repo branches at once under a unified workspace for easy switching of work between multiple features
 				- Doesn't lend itself to easy updating.
+				  collapsed:: true
 					- The bare repo doesn't `git pull` itself but the worktrees after creation can use `git pull` but this is not ideal. The bare repo is basically frozen at a single commit for all new worktrees made.
 - ^^Configuration^^
 	- Great bash config for using git from [this thoughtbot article](https://thoughtbot.com/upcase/videos/git-customizing)
@@ -96,3 +100,62 @@ tags: tools
 				- _62_ for the commits since that tag
 				- _g07f34f4_ is the hash being described (your current one that hasn't been committed yet)
 		- ![2021_04_27_image.png](https://cdn.logseq.com/%2F07ac90d5-a8a5-495c-84ae-a5c969228e38150b5d0a-c5e6-401b-b6ee-39fb4031aabe2021_04_27_image.png?Expires=4773160079&Signature=E6p6WMlzNrJ7yVeIR0bADUCYsOUg2QaJAYBnlyHNxG7fAK2XqQete8ZYAQ9yf7rxztozxD8Ya2DDk9GsITJuMpDHRvSaQePFgNkGYhAeflkD-ZDqntqPVNWsyD-TkxdX5Z1WfAhGcR1L6ixWbwAXnOgGa1YRFeqsyCwJOdBSWJfGHbJAJMmAgjQyS4~1-NI7K2ZXX-WYu-hg0GoN4QZ2BiNt4JdrWUN2~flky49CNhFNdZplz1eBLSr~m19CTHNIX3x8kPjHNMO0qzRXaTz6ersk5I2vPpzwcqT8MXoI77suIXgH9nsdFEu4fkxUu5Ac2nEeg8CbcOe91C18Hdi7oQ__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA){:height 256, :width 543}
+# Obsidian notes
+	- ## Working With Repositories
+	- ### Making a Repository
+	- #### Start Repository from existing directory then push to GitHub
+	  
+	  ```bash
+	  git init
+	  git add .
+	  git commit -m 'message'
+	  git remote add origin <url.git>
+	  git push -u origin master
+	  ```
+	- ##### Set Global Configs
+	  
+	  ```bash
+	  git config --global user.name "John Doe"
+	  git config --global user.email johndoe@example.com
+	  ```
+	- ### Going Back in Time
+	- #### Open a cloned repository from a particular commit
+	- [SO](https://stackoverflow.com/questions/3555107/git-clone-particular-version-of-remote-repository)
+	  
+	  ```bash
+	  git clone [remote_address_here] my_repo
+	  cd my_repo
+	  git reset --hard [ENTER HERE THE COMMIT HASH YOU WANT]
+	  ```
+	- ### Branching
+	- #### Making work-trees
+	- [ThePrimeagen](https://youtu.be/2uEqYw-N8uE)
+	  
+	  ```bash
+	  git clone --bare <repo url.git> <name of the folder to create>
+	  # ex:
+	  git clone --bare git@github.com:tallguyjenks/CV.git CV
+	  
+	  
+	  # makes a bare repo of my resume
+	  # there's nothing in it, none of the files from the repo just git stuff
+	  # THEN
+	  
+	  git worktree add master
+	  git worktree add test
+	  git worktree add feature
+	  
+	  # it takes the current commit at the HEAD of the repo (git pull at you're at the most recent) and this way # you're working with 3 folders basically 3 branches of the same repo but simultaneously. NO SWITCHING BACK & AND FORTH 🤯️🤯️🤯️
+	  ```
+	- ## Git Stash
+	- ### Saving and moving changes
+	  
+	  ```bash
+	  # say you're on master, and you have changes to docs and you're about to make a commit, but you realize "oh crap, I'm still on master, I needed to put this on a feature branch!" 
+	  # you can run 
+	  git stash push 
+	  # to basically package up all those uncommitted changes into a "box" and shove it into a corner returning to a master branch that is a mirror of remote master (CLEAN!) 
+	  # then make your branch, switch to it and run 
+	  git stash pop 
+	  # to grab your changes and put them onto the current working branch. 
+	  ```
