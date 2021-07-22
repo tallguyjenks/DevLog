@@ -79,6 +79,7 @@
  [
   ["py" "```python\n\n```"],
   ["sql" "```sql\n\n```"],
+  ["c++" "```c++\n\n```"],
   ["bash" "```bash\n\n```"],
   ["code" "```\n\n```"],
   ["pytodo" "TODO [[Python]] "],
@@ -109,7 +110,7 @@
  :markdown/version 2
 
  ;; :default-home {:page "Python"}
- :sidebar ["Favorites" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
+ ;; :sidebar ["Favorites" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
  :feature/enable-journals? true
  :shortcuts {:editor/move-block-up "alt+up", :editor/move-block-down "alt+down", :go/journals ["ctrl+t", "cmd+t"], :date-picker/prev-day "left", :go/search-in-page "ctrl+f", :go/search "ctrl+o"}
  :graph/settings {:orphan-pages? true}

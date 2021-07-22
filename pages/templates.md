@@ -24,3 +24,14 @@ title: Templates
   tags: 
   ---
 	-
+-
+  ```c++
+  
+  ```
+  template:: c++
+-
+  ```python
+  
+  ```
+  template:: python
+-
