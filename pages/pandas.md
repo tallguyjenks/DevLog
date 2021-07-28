@@ -7,7 +7,6 @@ tags: library
   done:: 1623346783569
 	- [Calm Code Pandas Pipe](https://calmcode.io/pandas-pipe/pipe.html)
 - **Examples**
-  collapsed:: true
 	-
 	  ```python
 	      # Libs
@@ -116,7 +115,6 @@ tags: library
 	      
 	      ```
 - **Pandas Pipe**
-  collapsed:: true
 	-
 	  ```python
 	  import pandas as pd
