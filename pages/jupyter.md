@@ -12,4 +12,12 @@ tags: tools
 	- You can access them like `%ls` `%cp` `%rm` etc. if `Automagic` is turned on then you can run cells with straight up bash in them too. Command flags and everything.
 - **Inline Charts**
 	- To display an inline chart you need line magic . The one in question is `%matplotlib inline` that will allow you to display charts inline in the notebook
--
+- ^^Jupyter Lab^^
+	- **Installation**
+		- pip install jupyterlab
+	- **Extensions**
+		- pip install jupyterlab-git
+		- pip install jupyterlab-pullrequests
+		- pip install jupyterlab_github
+		- pip install jupyterlab_vim
+		- pip install jupyter_contrib_nbextensions
