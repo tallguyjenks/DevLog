@@ -9,7 +9,7 @@ aliases:
 ---
 
 | Data Type         | Range                                                                                                                                                                        | Storage                   |
-|:----------------- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------- |
+|:-----------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------- |
 | `varchar(x)`      | string of `x` number of bytes "variable character"                                                                                                                           | Variable                  |
 | `nvarchar(x)`     | string of `x` number of bytes "non-variable character"                                                                                                                       | User Defined              |
 | `char(x)`         | string of `x` number of bytes of characters. Unlike `varchar` if you only use 1/50 chars, the other 49 will be taken up with spaces                                          | User Defined                          |
@@ -28,7 +28,7 @@ Tags:
 
 Reference:
 - [MS Docs](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver15)
-Related:
+  Related:
 - [[C++ Variables and Datatypes]]
 - [[C++ Data Type Conversion]]
 - [[Python Data Types]]
