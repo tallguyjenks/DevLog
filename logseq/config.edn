@@ -114,4 +114,5 @@
  :feature/enable-journals? true
  :shortcuts {:editor/move-block-up "alt+up", :editor/move-block-down "alt+down", :go/journals ["ctrl+t", "cmd+t"], :date-picker/prev-day "left", :go/search-in-page "ctrl+f", :go/search "ctrl+o"}
  :graph/settings {:orphan-pages? true}
+ :feature/enable-block-timestamps? true
  }
