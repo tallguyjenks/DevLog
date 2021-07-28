@@ -103,7 +103,6 @@ filters: {}
 		- **URL Manipulation:** [[yarl]]
 		- **API Requests:** [[requests]]
 	- ^^Syntax^^
-	  collapsed:: true
 		- ^^Conventions^^
 		  collapsed:: true
 			- Use uppercase initials for class names, lowercase for all others.
@@ -143,8 +142,8 @@ filters: {}
 			  todo:: 1620835794488
 				- Useful with using Classes so the extra param passing boiler plate can be avoided
 		- ^^Data Types & Structs^^
-		  collapsed:: true
 			- **Data Types**
+			  id:: 6100ca2b-21a1-4fbe-babf-ada8c983a200
 				- _Strings_
 					-
 					  ```python
@@ -285,7 +284,6 @@ filters: {}
 					  					  					  					  					  					  						  # adding lists together causes concatenation
 					  					  					  					  					  					  						  ```
 		- ^^Flow Control^^
-		  collapsed:: true
 			- **Loops**
 				- _While Loop_
 					-
@@ -606,6 +604,7 @@ filters: {}
 				  				  				  'Hello'
 				  				  				  ```
 			- **The \_ in Python**
+			  collapsed:: true
 				- The `_` in python can hold the last value in an interactive shell session but can be used like the unnamed register in [[VIM]] and you can use it to avoid issues when unpacking tuples or just throwing something away:
 					-
 					  ```python
@@ -616,6 +615,7 @@ filters: {}
 					  					  					  					  					  #> z = 3
 					  					  					  					  					  ```
 			- **Named Tuples**
+			  collapsed:: true
 				-
 				  ```python
 				  from collections import namedtuple
@@ -630,6 +630,7 @@ filters: {}
 				  # (90, 37.5) 
 				  ```
 			- **For ... Else**
+			  collapsed:: true
 				-
 				  ```python
 				  #case 1
@@ -657,6 +658,7 @@ filters: {}
 				  # o
 				  ```
 			- **enums with the [[enum]] module**
+			  collapsed:: true
 				-
 				  ```python
 				  from enum import Enum
