@@ -29,7 +29,6 @@
 			  ```
 			- This script will take a file as an input argument and then any lines it finds the text `**Q**` on it will extract into a list of questions in a new file called `questions_<input file name>` and also report in the CLI how many questions were extracted
 	- ^^Syntax^^
-	  collapsed:: true
 		- ^^Variables^^
 		  collapsed:: true
 			- Variables in bash are assigned with a single `=`
@@ -850,7 +849,6 @@
 			- # Documentation
 				- [SO answer](https://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script)
 	- ^^Tips, Tricks, & Hacks^^
-	  collapsed:: true
 		- `printf`
 		  collapsed:: true
 			- # The printf Builtin
@@ -876,7 +874,6 @@
 			  
 			  [parsing file globs with ls](https://mywiki.wooledge.org/ParsingLs)
 		- `Colorized Output In Bash`
-		  collapsed:: true
 			- Using ANSI escape codes you can make your terminal display colored output
 			  
 			  | Color        | Code         | Color        | Code         |
