@@ -874,6 +874,7 @@
 			  
 			  [parsing file globs with ls](https://mywiki.wooledge.org/ParsingLs)
 		- `Colorized Output In Bash`
+		  collapsed:: true
 			- Using ANSI escape codes you can make your terminal display colored output
 			  
 			  | Color        | Code         | Color        | Code         |
@@ -929,4 +930,5 @@
 			  ```
 			- # Documentation
 				- [SO Article](https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash#21128172)
-		-
+		- `CDPATH`
+			- CDPATH is an environmental variable that makes it so that when using the `cd` command it will list items in your current directory
