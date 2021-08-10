@@ -95,8 +95,8 @@ filters: {}
 			- **Web Apps**
 				- [[pywebio]]
 		- **Data Science:**
-			- **Data Manipulation:** [[pandas]], [[pandasgui]], [[pandasql]] [[datetime]], [[tablib]], [[OpenPyXl]]
-			- **Data Visualization:** [[matplotlib]]
+			- **Data Manipulation:** [[pandas]], [[pandasgui]], [[pandasql]] [[datetime]], [[tablib]], [[OpenPyXl]], [[mito]]
+			- **Data Visualization:** [[matplotlib]], [[lux]]
 			- **Data Management:** [[CSV]], [[JSON]]
 		- **Databases:** [[sqlite3]], [[sql alchemy]]
 		- **Parallelization:** [[ray]], [[asyncio]]
