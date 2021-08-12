@@ -66,6 +66,7 @@ filters: {}
 	- ^^Libraries^^
 	  collapsed:: false
 		- ^^Build Tools^^
+		  collapsed:: true
 			- [Pants](https://www.pantsbuild.org/docs)
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Linting & Style Checking:** [[black]], [[flake8]]
