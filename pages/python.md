@@ -97,13 +97,15 @@ filters: {}
 				- [[pywebio]]
 		- **Data Science:**
 			- **Data Manipulation:** [[pandas]], [[pandasgui]], [[pandasql]] [[datetime]], [[tablib]], [[OpenPyXl]], [[mito]]
-			- **Data Visualization:** [[matplotlib]], [[lux]]
+			- **Data Visualization:** [[matplotlib]], [[lux]], [[holoviz]], [[panel]], [[hvplot]]
 			- **Data Management:** [[CSV]], [[JSON]]
+			- **Data Pipelines:** [[prefect]]
 		- **Databases:** [[sqlite3]], [[sql alchemy]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 		- **URL Manipulation:** [[yarl]]
 		- **API Requests:** [[requests]]
 		- **Machine Leaning:** [[sklearn]]
+		- **Password Managment:** [[getpass]]
 	- ^^Syntax^^
 		- ^^Conventions^^
 		  collapsed:: true
