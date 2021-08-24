@@ -66,6 +66,7 @@ filters: {}
 	- ^^Libraries^^
 	  collapsed:: false
 		- ^^Build Tools^^
+		  collapsed:: true
 			- [Pants](https://www.pantsbuild.org/docs)
 		- **Dependency Management** [[Python Poetry]] [[pydeps]]
 		- **Linting & Style Checking:** [[black]], [[flake8]]
@@ -95,13 +96,16 @@ filters: {}
 			- **Web Apps**
 				- [[pywebio]]
 		- **Data Science:**
-			- **Data Manipulation:** [[pandas]], [[pandasgui]], [[pandasql]] [[datetime]], [[tablib]], [[OpenPyXl]]
-			- **Data Visualization:** [[matplotlib]]
+			- **Data Manipulation:** [[pandas]], [[pandasgui]], [[pandasql]] [[datetime]], [[tablib]], [[OpenPyXl]], [[mito]]
+			- **Data Visualization:** [[matplotlib]], [[lux]], [[holoviz]], [[panel]], [[hvplot]]
 			- **Data Management:** [[CSV]], [[JSON]]
+			- **Data Pipelines:** [[prefect]]
 		- **Databases:** [[sqlite3]], [[sql alchemy]]
 		- **Parallelization:** [[ray]], [[asyncio]]
 		- **URL Manipulation:** [[yarl]]
 		- **API Requests:** [[requests]]
+		- **Machine Leaning:** [[sklearn]]
+		- **Password Managment:** [[getpass]]
 	- ^^Syntax^^
 		- ^^Conventions^^
 		  collapsed:: true
@@ -142,6 +146,7 @@ filters: {}
 			  todo:: 1620835794488
 				- Useful with using Classes so the extra param passing boiler plate can be avoided
 		- ^^Data Types & Structs^^
+		  collapsed:: true
 			- **Data Types**
 			  id:: 6100ca2b-21a1-4fbe-babf-ada8c983a200
 				- _Strings_
@@ -284,7 +289,9 @@ filters: {}
 					  					  					  					  					  					  						  # adding lists together causes concatenation
 					  					  					  					  					  					  						  ```
 		- ^^Flow Control^^
+		  collapsed:: true
 			- **Loops**
+			  collapsed:: true
 				- _While Loop_
 					-
 					  ```python
@@ -308,6 +315,7 @@ filters: {}
 					  					  					  					  					  					  							      print(index) # prints 1-9 not including 10 so always increment upwards by 1
 					  					  					  					  					  					  							  ```
 			- **Exception Handling**
+			  collapsed:: true
 				-
 				  ```python
 				  				  				  				  				  try:
@@ -325,6 +333,7 @@ filters: {}
 				  				  				  				  				  ## Divided By Zero
 				  				  				  				  				  ```
 			- **Ternary Operator**
+			  collapsed:: true
 				-
 				  ```python
 				  #You'll typically see:
@@ -340,6 +349,21 @@ filters: {}
 				  print(name)
 				  #>>> admin
 				  #>>> visitor
+				  ```
+			- **Case Statement**
+			  collapsed:: true
+				- Python 3.10 added Match Case statements
+				-
+				  ```python
+				  x = "hello" 
+				  
+				  match x:
+				  	case "hello":
+				      	print("hello")
+				    	case "hi":
+				     		print("hi")
+				    	case _:
+				      	print("default case")
 				  ```
 		- ^^Functions^^
 		  collapsed:: true
@@ -681,6 +705,113 @@ filters: {}
 				  # winter
 				  # 1
 				  ```
+			- **Replace len() with enumerate()**
+			  collapsed:: true
+				- Before:
+					-
+					  ```python
+					  # Define a collection, such as list:
+					  names = ['Nik', 'Jane', 'Katie', 'Jim', 'Luke']
+					  
+					  # Using the range(len(collection)) method, you'd write:
+					  for i in range(len(names)):
+					      print(i, names[i])
+					  
+					  # Using enumerate, you can define this by writing:
+					  for idx, name in enumerate(names):
+					      print(idx, name)
+					      
+					  # Both ways of doing this return:
+					  # 0 Nik
+					  # 1 Jane
+					  # 2 Katie
+					  # 3 Jim
+					  # 4 Luke
+					  ```
+				- After:
+					-
+					  ```python
+					  # Define a collection, such as list:
+					  names = ['Nik', 'Jane', 'Katie', 'Jim', 'Luke']
+					  
+					  # Using enumerate, you can define this by writing:
+					  for idx, name in enumerate(names, start=1):
+					      print(idx, name)
+					      
+					  # This returns:
+					  # 1 Nik
+					  # 2 Jane
+					  # 3 Katie
+					  # 4 Jim
+					  # 5 Luke
+					  ```
+			- **Stop Using Square Brackets To Get Dictionary Items — Use .get()**
+			  collapsed:: true
+				- Before:
+					-
+					  ```python
+					  nik = {
+					    'age':32,
+					    'gender':'male',
+					    'employed':True,
+					  }
+					  
+					  print(nik['location'])
+					  
+					  # Returns:
+					  # KeyError: 'location'
+					  ```
+				- After:
+					-
+					  ```python
+					  nik = {
+					    'age':32,
+					    'gender':'male',
+					    'employed':True,
+					  }
+					  
+					  print(nik.get('location'))
+					  
+					  # Returns:
+					  # None
+					  ```
+			- **Simplify Iterating Over Multiple Lists With Zip()**
+			  collapsed:: true
+				- Before:
+					-
+					  ```python
+					  
+					  names = ['Nik', 'Jane', 'Melissa', 'Doug']
+					  ages = [32, 28, 37, 53]
+					  gender = ['Male', 'Female', 'Female', 'Male']
+					  
+					  # Old boring way:
+					  for_looped = []
+					  for i in range(len(names)):
+					      for_looped.append((names[i], ages[i], gender[i]))
+					  
+					  print(for_looped)
+					  
+					  # Returns:
+					  # [('Nik', 32, 'Male'), ('Jane', 28, 'Female'), ('Melissa', 37, 'Female'), ('Doug', 53, 'Male')]
+					  ```
+				- After:
+					-
+					  ```python
+					  
+					  names = ['Nik', 'Jane', 'Melissa', 'Doug']
+					  ages = [32, 28, 37, 53]
+					  gender = ['Male', 'Female', 'Female', 'Male']
+					  
+					  # Zipping through lists with zip()
+					  zipped = zip(names, ages, gender)
+					  zipped_list = list(zipped)
+					  
+					  print(zipped_list)
+					  
+					  # Returns:
+					  # [('Nik', 32, 'Male'), ('Jane', 28, 'Female'), ('Melissa', 37, 'Female'), ('Doug', 53, 'Male')]
+					  ```
 		- ^^Dunders^^
 		  collapsed:: true
 			- `__init__.py`
@@ -749,8 +880,14 @@ filters: {}
 -
   ---
 - **Machine Learning**
-  collapsed:: true
 	- [perceptilabs](https://www.perceptilabs.com/papers)
+	- Model Building Steps:
+		-
+		  1. _Define_: What type of model will it be? A decision tree? Some other type of model? Some other parameters of the model type are specified too.
+		  2. _Fit_: Capture patterns from provided data. This is the heart of modeling.
+		  3. _Predict_: Just what it sounds like
+		  4. _Evaluate_: Determine how accurate the model's predictions are.
+	-
 -
   ---
 - **Security:**
@@ -792,3 +929,6 @@ filters: {}
 		- Create Documentation automatically. [Example config file](https://github.com/koaning/clumper/blob/main/mkdocs.yml) | [Explanation](https://calmcode.io/docs/mkdocs.yml.html)
 		  id:: 60c243a4-c18d-4110-9912-ea846f2a342e
 		- also [[sphinx]] and [[Restructured Text]]
+- **Python & [[Docker]]**
+	- [scaffoldy](https://scaffoldy.io/) service to make the generation of docker template files easier
+-

@@ -9,37 +9,40 @@ tags: library
 - **Examples**
 	-
 	  ```python
-	      # Libs
-	      import pandas as pd
-	      
-	      # Instead of using CSV module this can make a dataframe out of your csv file
-	      df = pd.read_csv('data.csv')
-	      
-	      # Preview of our data
-	      df.head(10)
-	      
-	      # Preview of our data
-	      df.tail(10)
-	      
-	      # Get the shape of the data frame (Rows, Columns)
-	      # Attribute not a method so no parens needed
-	      df.shape
-	      
-	      # Get info about the data frame fields
-	      # This is a method so parens are needed
-	      # Object types are usually strings
-	      df.info()
-	      
-	      # makes is so the printed dataframe above with the `df` call cell displays 85 total columns
-	      pd.set_option('display.max_columns',85)
-	      # makes is so the printed dataframe above with the `df` call cell displays 85 total rows
-	      pd.set_option('display.max_rows',85)
-	      
-	      # Load csv schema
-	      schema_df = pd.read_csv('data_schema.csv')
-	      
-	      schema_df
-	      ```
+	  # Libs
+	  import pandas as pd
+	  	      
+	  # Instead of using CSV module this can make a dataframe out of your csv file
+	  df = pd.read_csv('data.csv')
+	  
+	  # kind of like the skimr function in R to describe the dataset with common statistics
+	  df.describe()
+	  	      
+	  # Preview of our data
+	  df.head(10)
+	  	      
+	  # Preview of our data
+	  df.tail(10)
+	  	      
+	  # Get the shape of the data frame (Rows, Columns)
+	  # Attribute not a method so no parens needed
+	  df.shape
+	  	      
+	  # Get info about the data frame fields
+	  # This is a method so parens are needed
+	  # Object types are usually strings
+	  df.info()
+	  	      
+	  # makes is so the printed dataframe above with the `df` call cell displays 85 total columns
+	  pd.set_option('display.max_columns',85)
+	  # makes is so the printed dataframe above with the `df` call cell displays 85 total rows
+	  pd.set_option('display.max_rows',85)
+	  	      
+	  # Load csv schema
+	  schema_df = pd.read_csv('data_schema.csv')
+	  	      
+	  schema_df
+	  ```
 	-
 	  ```python
 	      #!/usr/bin/env python

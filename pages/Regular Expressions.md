@@ -1,5 +1,6 @@
 ---
 title: regular expressions
+alias: Regex
 tags: language
 ---
 
