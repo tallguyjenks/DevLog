@@ -82,7 +82,7 @@ filters: {}
 		- **File System:**
 			- **File System Monitoring:** [[watchdog]]
 			- **File Manipulation:**
-				- **PDF's** [[PyPDF2]]
+				- **PDF's** [[PyPDF2]], [[borb]]
 				- **YAML** [[PyYaml]]
 		- **CLI Apps:**
 			- **Resources:** [this list](https://github.com/vinta/awesome-python#command-line-interface-development)
@@ -101,7 +101,7 @@ filters: {}
 			- **Data Management:** [[CSV]], [[JSON]]
 			- **Data Pipelines:** [[prefect]]
 		- **Databases:** [[sqlite3]], [[sql alchemy]]
-		- **Parallelization:** [[ray]], [[asyncio]]
+		- **Parallelization:** [[ray]], [[asyncio]], [[multiprocessing]]
 		- **URL Manipulation:** [[yarl]]
 		- **API Requests:** [[requests]]
 		- **Machine Leaning:** [[sklearn]]

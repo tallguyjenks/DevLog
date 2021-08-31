@@ -6,7 +6,9 @@ tags: library
 - **Resources**
   done:: 1623346783569
 	- [Calm Code Pandas Pipe](https://calmcode.io/pandas-pipe/pipe.html)
+	- [25 Pandas Functions You Didn’t Know Existed | P(Guarantee) = 0.8](https://towardsdatascience.com/25-pandas-functions-you-didnt-know-existed-p-guarantee-0-8-1a05dcaad5d0)
 - **Examples**
+  collapsed:: true
 	-
 	  ```python
 	  # Libs
@@ -118,6 +120,7 @@ tags: library
 	      
 	      ```
 - **Pandas Pipe**
+  collapsed:: true
 	-
 	  ```python
 	  import pandas as pd
