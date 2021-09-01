@@ -3,7 +3,6 @@
 - **Language**
 	- ^^Setup^^
 	- ^^Resources^^
-	  collapsed:: true
 		- [BashGuide](https://mywiki.wooledge.org/BashGuide)
 		- [bash cheat sheet](https://mywiki.wooledge.org/BashSheet)
 		- [pure bash bible](https://github.com/dylanaraps/pure-bash-bible)
@@ -436,7 +435,8 @@
 				- # Documentation
 					- [SO Answer](https://stackoverflow.com/questions/16623835/remove-a-fixed-prefix-suffix-from-a-string-in-bash#16623897)
 					- [puse bash bible](https://github.com/dylanaraps/pure-bash-bible)
-					- <iframe width="560" height="315" src="https://www.youtube.com/embed/QXineadwG4E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					-
+					  <iframe width="560" height="315" src="https://www.youtube.com/embed/QXineadwG4E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			- # Text Replacement In Bash
 			  collapsed:: true
 				- Bash tip: instead of spawning an instance of `sed`, you can do text replacement in "pure" Bash like `status="${status//,/}"`. Breaking that down:
@@ -807,14 +807,16 @@
 				  { ls .; ls ..; } | grep file-name
 				  ```
 				- Or you may want to execute multiple commands after a || operator:
-				- ```bash
+				-
+				  ```bash
 				  rm file || { echo "Removal failed, aborting."; exit 1; }
 				  ```
-				  - It is also used for [[Bash Functions|function]] bodies. Technically, this can also be used for loop bodies though this is undocumented, not portable and we normally prefer `do ...; done` for this):
-				  - ```bash
-				  for digit in 1 9 7; { echo "$digit"; }       # non-portable, undocumented, unsupported
-				  - for digit in 1 9 7; do echo "$digit"; done   # preferred
-				  ```
+					- It is also used for [[Bash Functions|function]] bodies. Technically, this can also be used for loop bodies though this is undocumented, not portable and we normally prefer `do ...; done` for this):
+					-
+					  ```bash
+					  				  for digit in 1 9 7; { echo "$digit"; }       # non-portable, undocumented, unsupported
+					  				  - for digit in 1 9 7; do echo "$digit"; done   # preferred
+					  				  ```
 				- **\*Note**: You need a `;` before the closing `}` (or it must be on a new line).
 				- Command Lists are similar but not identical to [[Bash Command Substitution]]
 				- # Command Substitution
