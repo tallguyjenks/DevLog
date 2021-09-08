@@ -4,6 +4,7 @@ tags: library
 ---
 
 - https://devdocs.io/python~3.9/library/sqlite3
+- #star https://sqlitebrowser.org/
 -
   ```python
     import sqlite3
