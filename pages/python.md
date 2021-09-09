@@ -146,7 +146,6 @@ filters: {}
 			  todo:: 1620835794488
 				- Useful with using Classes so the extra param passing boiler plate can be avoided
 		- ^^Data Types & Structs^^
-		  collapsed:: true
 			- **Data Types**
 			  id:: 6100ca2b-21a1-4fbe-babf-ada8c983a200
 				- _Strings_
@@ -172,6 +171,34 @@ filters: {}
 					  					  					  					  					  					  						  print("I just printed" + x + "pages to the printer" + printer)
 					  					  					  					  					  					  						  ```
 					- [Python 3's f-Strings: An Improved String Formatting Syntax (Guide)](https://realpython.com/python-f-strings/)
+					- F String format specifications
+						-
+						  ```python
+						  from datetime import datetime
+						  today = datetime.today()
+						  print(f"Today is {today}")
+						  # Today is 2021-07-31 18:20:48.956829
+						  print(f"Today is {today:%B %d, %Y}")
+						  # Today is July 31, 2021
+						  print(f"Today is {today:%m-%d-%Y}")
+						  # Today is 07-31-2021
+						  
+						  print(f"Today is {datetime.today()}")
+						  # Today is 2021-07-31 18:20:48.956829
+						  
+						  pi = 3.1415926
+						  print(f'Pi is approximately equal to {pi:.2f}')
+						  # Pi is approximately equal to 3.14
+						  
+						  id = 1  # need to print a 3-digit number
+						  print(f"The id is {id:03d}")
+						  # The id is 001
+						  
+						  N = 1000000000  # need to add separator
+						  print(f'His networth is ${N:,d}')
+						  # His networth is $1,000,000,000
+						  ```
+						-
 				- _Nubmers_
 					-
 					  ```python
