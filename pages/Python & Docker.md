@@ -1,0 +1,1 @@
+- [scaffoldy](https://scaffoldy.io/) service to make the generation of [[Docker]] template files easier
