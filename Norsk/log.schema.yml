@@ -1,0 +1,21 @@
+version: 1
+schemas:
+  - id: log
+    parent: root
+    children:
+      - pattern: daily
+        children:
+          - pattern: "[0-2][0-9][0-9][0-9]"
+            # template: 
+            #   id: templates.log.annually
+            #   type: note
+            children:
+              - pattern: "[0-1][0-9]"
+                # template: 
+                #   id: templates.log.monthly
+                #   type: note
+                children:
+                  - pattern: "[0-3][0-9]"
+                    # template: 
+                    #   id: templates.log.daily
+                    #   type: note
