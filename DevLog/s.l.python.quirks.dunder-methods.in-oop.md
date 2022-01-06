@@ -2,7 +2,7 @@
 id: IjoeEZ3xLGRYsHElELD4H
 title: In Oop
 desc: ''
-updated: 1641422175660
+updated: 1641496601571
 created: 1641421830492
 ---
 
@@ -10,38 +10,38 @@ created: 1641421830492
 
 > items can have their operations, `__add__` == `( + )` have their operations of arithmatic assignments `__iadd__` == `( += )` and If one of those methods does not support the operation with the supplied arguments, it should return `NotImplemented` == `__radd__`.
 
-- `__add__` -- `( + )` [[s.l.python.quirks.dunder-methods.in-oop.__add__]]
-- `__sub__` -- `( - )`
-- `__mul__` -- `( * )`
-- `__matmul__` -- `( @ )`
-- `__truediv__` -- `( \ )`
-- `__floordiv__` -- `( \\ )`
-- `__mod__` -- `( % )`
-- `__divmod__` -- `divmod()`
-- `__pow__` -- `( ** )`
-- `__lshift__` -- `( << )`
-- `__rshift__` -- `( >> )`
-- `__and__` -- `( & )`
-- `__xor__` -- `( ^ )`
-- `__or__` -- `( | )`
-- `__lt__` -- `( < )`
-- `__le__` -- `( <= )`
-- `__eq__` -- `( == )`
-- `__ne__` -- `( != )`
-- `__gt__` -- `( > )`
-- `__ge__` -- `( >= )`
-- `__neg__` -- `( - )`
-- `__pos__` -- `( + )`
-- `__abs__` -- `abs()`
-- `__invert__` -- `( ~ )`
-- `__complex__` -- `complex()`
-- `__int__` -- `int()`
-- `__float__` -- `float()`
+- `__add__` == `( + )` [[s.l.python.quirks.dunder-methods.in-oop.__add__]]
+- `__sub__` == `( - )`
+- `__mul__` == `( * )`
+- `__matmul__` == `( @ )`
+- `__truediv__` == `( \ )`
+- `__floordiv__` == `( \\ )`
+- `__mod__` == `( % )`
+- `__divmod__` == `divmod()`
+- `__pow__` == `( ** )`
+- `__lshift__` == `( << )`
+- `__rshift__` == `( >> )`
+- `__and__` == `( & )`
+- `__xor__` == `( ^ )`
+- `__or__` == `( | )`
+- `__lt__` == `( < )`
+- `__le__` == `( <= )`
+- `__eq__` == `( == )`
+- `__ne__` == `( != )`
+- `__gt__` == `( > )`
+- `__ge__` == `( >= )`
+- `__neg__` == `( - )`
+- `__pos__` == `( + )`
+- `__abs__` == `abs()`
+- `__invert__` == `( ~ )`
+- `__complex__` == `complex()`
+- `__int__` == `int()`
+- `__float__` == `float()`
 - `__index__` [https://docs.python.org/3/reference/datamodel.html#object.\_\_index\_\_](https://docs.python.org/3/reference/datamodel.html#object.__index__)
-- `__round__` -- `round()`
-- `__trunc__` -- `math.trunc()`
-- `__floor__` -- `math.floor()`
-- `__ceil__` -- `math.ceil()`
+- `__round__` == `round()`
+- `__trunc__` == `math.trunc()`
+- `__floor__` == `math.floor()`
+- `__ceil__` == `math.ceil()`
 - [[s.l.python.quirks.dunder-methods.in-oop.dictionary-dunders]]
   - `__setitem__` When assigning values in a dictionary
   - `__getitem__` Executed when we run the `dict['key']` type of operation
