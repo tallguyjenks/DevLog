@@ -6,5 +6,10 @@
             "type": "shell",
             "command": "cd \"${workspaceFolder}\" && lsd -lA *.md | awk '{print $7,$10,$NF}' | grep \"$(date +\"%b %Y\")\" | awk '{print \"[[\"$NF\"]]\"}'"
         },
+        {
+            "label": "Sync",
+            "type": "shell",
+            "command": "cd '${workspaceFolder}'; git add -A ; git commit -m 'Sync \"$(date -format 'yyyy.MM.dd.HH.mm.ss')\"';git push"
+        },
     ]
 }
