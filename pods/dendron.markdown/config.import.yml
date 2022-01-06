@@ -1,0 +1,34 @@
+# description: Where to import from
+# type: string
+# required: true
+src: "/Users/bryanjenks/OneDrive/Documents/70-79_Projects/73_Obsidian_Related/001.73.01_Petrichor/Petrichor/DevLog/Inbox/"
+
+
+# description: name of vault to import into
+# type: string
+# required: true
+vaultName: DevLog
+
+# description: whether to concatenate everything into one note
+# type: boolean
+# concatenate: TODO
+
+# description: frontmatter to add to each note
+# type: object
+# frontmatter: TODO
+
+# description: use the file name as the id
+# type: boolean
+# fnameAsId: TODO
+
+# description: If concatenate is set, name of destination path
+# type: string
+# destName: TODO
+
+# description: Don't add uuid to assets
+# type: boolean
+# noAddUUID: TODO
+
+# description: If you have an index file per directory, merge that file with the directory note
+# type: string
+# indexName: TODO
