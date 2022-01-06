@@ -1,3 +1,0 @@
-- [[vimwiki]]
-- [[ultisnips]]
--

@@ -1,8 +1,0 @@
-- **Meta:**
-	- [[Queries]]
-	- [[Templates]]
-- **TOP OF MIND**
-	- [[Python]]
-	- [[VSCode]]
-	- [[Azure DevOps]]
-	- [[Microsoft Orchestrator]]

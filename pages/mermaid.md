@@ -1,6 +1,0 @@
----
-title: Mermaid
-tags: library
----
-
--
