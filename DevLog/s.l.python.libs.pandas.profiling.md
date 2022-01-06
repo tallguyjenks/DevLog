@@ -1,6 +1,6 @@
 ---
 id: MNDCwq42qIOgdeEX1bbBR
-title: Profili
+title: Profiling
 desc: ''
 updated: 1641426210038
 created: 1641426210038

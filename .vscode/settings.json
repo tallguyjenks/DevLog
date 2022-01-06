@@ -11,7 +11,24 @@
     "editor.tabCompletion": "on",
     "editor.fontFamily": "Inconsolata, Menlo, Monaco, 'Courier New', monospace",
     "workbench.colorCustomizations": {
-        "editor.foldBackground": "#f6f7d6"
+        "editor.foldBackground": "#f6f7d6",
+        "activityBar.activeBackground": "#87b189",
+        "activityBar.activeBorder": "#ececf2",
+        "activityBar.background": "#87b189",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#ececf2",
+        "activityBarBadge.foreground": "#15202b",
+        "sash.hoverBorder": "#87b189",
+        "statusBar.background": "#689d6a",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#537f54",
+        "statusBarItem.remoteBackground": "#689d6a",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#689d6a",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#689d6a99",
+        "titleBar.inactiveForeground": "#15202b99"
     },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
