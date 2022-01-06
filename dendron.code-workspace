@@ -19,7 +19,26 @@
         "editor.suggest.showSnippets": true,
         "editor.tabCompletion": "on",
         "pdf-preview.default.scrollMode": "horizontal",
-        "pdf-preview.default.sidebar": true
+        "pdf-preview.default.sidebar": true,
+        "workbench.colorCustomizations": {
+            "activityBar.activeBackground": "#87b189",
+            "activityBar.activeBorder": "#ececf2",
+            "activityBar.background": "#87b189",
+            "activityBar.foreground": "#15202b",
+            "activityBar.inactiveForeground": "#15202b99",
+            "activityBarBadge.background": "#ececf2",
+            "activityBarBadge.foreground": "#15202b",
+            "sash.hoverBorder": "#87b189",
+            "statusBar.background": "#689d6a",
+            "statusBar.foreground": "#15202b",
+            "statusBarItem.hoverBackground": "#537f54",
+            "statusBarItem.remoteBackground": "#689d6a",
+            "statusBarItem.remoteForeground": "#15202b",
+            "titleBar.activeBackground": "#689d6a",
+            "titleBar.activeForeground": "#15202b",
+            "titleBar.inactiveBackground": "#689d6a99",
+            "titleBar.inactiveForeground": "#15202b99"
+        }
     },
     "extensions": {
         "recommendations": [
@@ -27,13 +46,13 @@
             "dendron.dendron-markdown-shortcuts",
             "redhat.vscode-yaml",
             "tomoki1207.pdf"
-        ],
-        "unwantedRecommendations": [
             "dendron.dendron-markdown-links",
             "dendron.dendron-markdown-notes",
             "shd101wyy.markdown-preview-enhanced",
             "kortina.vscode-markdown-notes",
             "mushan.vscode-paste-image"
+        ],
+        "unwantedRecommendations": [
         ]
     }
 }
