@@ -10,7 +10,7 @@ isDir: false
 
 - `URL:` <https://youtu.be/QORvB-_mbZ0>
 - `Channel/Host:` Tech With Tim
-- `Reference:` [[Typing|s.l.python.stage.libraries.typing]]
+- `Reference:` [[Typing|s.l.python.libs.typing]]
 - `Publish Date:` 2021.09.29
 - `Reviewed Date:` [[log.daily.2021.12.15]]
 

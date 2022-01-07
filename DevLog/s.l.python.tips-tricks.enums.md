@@ -2,11 +2,11 @@
 id: DewmHeHevtFkVlzDgMpRw
 title: Enums
 desc: ''
-updated: 1641423099513
+updated: 1641522216087
 created: 1641423091668
 ---
 
-## enums with the [[s.l.python.stage.libraries.enum]] module
+## enums with the [[s.l.python.libs.enum]] module
 
 ```python
 from enum import Enum

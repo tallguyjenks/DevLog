@@ -38,7 +38,7 @@ isDir: false
     - _Jupyter Notebooks_
       - `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
       - `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
-  - [[s.l.python.stage.libraries.black]] Code formatter
+  - [[s.l.python.libs.black]] Code formatter
   - [[s.l.python.build.poetry]]
   - ==Build Tools==
     - [Pants](https://www.pantsbuild.org/docs)

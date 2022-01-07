@@ -29,11 +29,11 @@ if __name__ == '__main__':
 - [Python Decorators in 15 Minutes](https://youtu.be/r7Dtus7N4pI) \| [Calm Code Decorators](https://calmcode.io/decorators/introduction.html) #💻️/⭐ 
 - [Decorators 101](https://sureshdsk.dev/python-decorators-101)
 - [Decorators 201](https://sureshdsk.dev/python-decorators-201)
-  - To get the correct doc strings and indicate that wrapping has occurred on the given function we can use the [[s.l.python.stage.libraries.functools]] module with the `wraps` function
+  - To get the correct doc strings and indicate that wrapping has occurred on the given function we can use the [[s.l.python.libs.functools]] module with the `wraps` function
 - [Decorators with params](https://sureshdsk.dev/python-decorators-with-parameters)
   - Useful with using Classes so the extra param passing boiler plate can be avoided
 - [3 Essential Decorators in Python You Need To Know](https://betterprogramming.pub/3-essential-decorators-in-python-you-need-to-know-654650bd5c36)
-- Can use logging decorators with [[s.l.python.stage.libraries.functools]] to log data changes:
+- Can use logging decorators with [[s.l.python.libs.functools]] to log data changes:
 
 ```python
 from functools import wraps

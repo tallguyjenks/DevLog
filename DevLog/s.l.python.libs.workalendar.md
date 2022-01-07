@@ -64,7 +64,7 @@ df.assign(holiday=lambda d: d['date'].isin(pd_holidays)).loc[lambda d: d['holida
 ---
 
 - Tags: 
-  - [[datetime|s.l.python.stage.libraries.datetime]]
+  - [[datetime|s.l.python.libs.datetime]]
   - [[time series|time-series]]
 - Reference:
   - <https://calmcode.io/shorts/workalendar.py.html>
