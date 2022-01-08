@@ -27,6 +27,7 @@ aliases:
 - TODO [heimdall](https://github.com/linuxserver/Heimdall) (the dashboard for all your services)
 - TODO [guacamole](https://guacamole.apache.org/) for SSH'ing into your services easier [example](https://youtu.be/E3aVxNtxFsU)
 - TODO [truenas](https://www.truenas.com/)
+- TODO use GNS3 to map my home network (learn more about GNS3)
 
 ---
 
