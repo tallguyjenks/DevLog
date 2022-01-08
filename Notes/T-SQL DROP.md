@@ -4,6 +4,8 @@ publish: true
 aliases:
   - 
 cssclass: 
+created: 2022-01-07 1720
+updated: 2022-01-07 1720
 ---
 
 # [[T-SQL DROP]]

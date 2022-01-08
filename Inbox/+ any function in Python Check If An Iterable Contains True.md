@@ -6,6 +6,8 @@ aliases:
 cssclass: 
 type: video
 status: 🟥️
+created: 2022-01-07 1720
+updated: 2022-01-07 1720
 ---
 
 - `Title:` [[+ any function in Python Check If An Iterable Contains True]]

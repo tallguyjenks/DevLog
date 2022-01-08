@@ -7,7 +7,7 @@ cssclass:
 type: article
 status: 🟥️
 created: 2022-01-07 1719
-updated: 2022-01-07 1719
+updated: 2022-01-07 1720
 ---
 
 - `Title:` [[( Python behind the scenes 13 the GIL and its effects on Python multithreading]]

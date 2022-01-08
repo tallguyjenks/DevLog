@@ -5,7 +5,7 @@ aliases:
   - Array.Prototype.includes
 cssclass: null
 created: 2022-01-07 1719
-updated: 2022-01-07 1719
+updated: 2022-01-07 1720
 ---
 
 # [[JavaScript Array.Prototype.includes]]
