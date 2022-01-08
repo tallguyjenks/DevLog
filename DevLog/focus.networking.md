@@ -2,7 +2,7 @@
 id: Ga7bXwoDLwwapP05NOYbQ
 title: Networking
 desc: ''
-updated: 2022-01-08 1201
+updated: 2022-01-08 1233
 created: 2021-11-15 1320
 publish: true
 aliases:
@@ -28,6 +28,8 @@ aliases:
 - TODO [guacamole](https://guacamole.apache.org/) for SSH'ing into your services easier [example](https://youtu.be/E3aVxNtxFsU)
 - TODO [truenas](https://www.truenas.com/)
 - TODO use [[s.apps.gns3]] to map my home network (learn more about [[s.apps.gns3]])
+- TODO mac and port security:
+  - ![mac and port security](/assets/images/2022-01-08-12-31-23.png)
 
 ---
 
