@@ -2,7 +2,7 @@
 id: Ga7bXwoDLwwapP05NOYbQ
 title: Networking
 desc: ''
-updated: 2022-01-08 1243
+updated: 2022-01-08 1252
 created: 2021-11-15 1320
 publish: true
 aliases:
@@ -14,7 +14,6 @@ aliases:
 
 ---
 
-- TODO [Visualize Your Network with GNS3](https://www.gns3.com/)
 - TODO [Observium SNMP](https://observium.org/)
 - TODO [Wireshark](https://www.wireshark.org/)
 - TODO Nextclound
@@ -28,6 +27,8 @@ aliases:
 - TODO [guacamole](https://guacamole.apache.org/) for SSH'ing into your services easier [example](https://youtu.be/E3aVxNtxFsU)
 - TODO [truenas](https://www.truenas.com/)
 - TODO use [[s.apps.gns3]] to map my home network (learn more about [[s.apps.gns3]])
+  - TODO [Visualize Your Network with GNS3](https://www.gns3.com/)
+- Self hosted bitwarden
 - TODO mac and port security:
   - ![mac and port security](/assets/images/2022-01-08-12-31-23.png)
 - TODO guest network for people visiting the house to keep them off the main network
