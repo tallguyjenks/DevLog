@@ -4,6 +4,8 @@ publish: true
 aliases:
   - null
 cssclass: null
+created: 2022-01-07 1710
+updated: 2022-01-07 1710
 ---
 
 # [[PowerShell]]
