@@ -53,6 +53,7 @@ aliases:
     - heimdall service?
     - VLAN's for various utility purposes
       - `"...it is common practice to isolate server-to-server traffic from client-server traffic and to isolate administration/management traffic (channels used for inbound management of appliances and servers). Another standard configuration option is to create a "null" VLAN that is non-routable to the rest of the network. This VLAN is used for any physical ports that do not have authorized connected equipment."`
+      - ![vlans](assets/images/2022-01-07-20-19-15.png)
 - Useful Resources
   - [Wolfgangs channel - what he's running on his home server](https://youtu.be/f5jNJDaztqk)
   - [affordable gear?](https://www.pcliquidations.com/p48428-amd-radeon-r5-340x?r=160164167166161&utm_source=bing&utm_medium=cpc&utm_campaign=CPCS_PCLiq-Shopping&utm_term=4581046488142443&utm_content=Products#)
