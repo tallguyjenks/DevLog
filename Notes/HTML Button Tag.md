@@ -5,7 +5,7 @@ aliases:
   - ⟨button⟩
 cssclass: 
 created: 2022-01-07 1709
-updated: 2022-01-07 1709
+updated: 2022-01-07 1710
 ---
 
 # [[HTML Button Tag]]
