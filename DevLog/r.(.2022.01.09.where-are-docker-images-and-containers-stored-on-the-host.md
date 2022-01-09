@@ -2,7 +2,7 @@
 id: tpNxcm0kvp2QeB3NKyPRN
 title: Where Are Docker Images and Containers Stored on the Host
 desc: ''
-updated: 1641760725689
+updated: 1641761385415
 created: 1641760553297
 ---
 
@@ -18,3 +18,9 @@ created: 1641760553297
 - **Windows:** `C:\ProgramData\DockerDesktop`
 - **macOS:** `~/Library/Containers/com.docker.docker/Data/vms/0/`
 
+## Notes
+
+- [[s.containers.docker.cmd.image.ls]]
+- [[s.containers.docker.cmd.image.prune]]
+- [[s.containers.docker.cmd.inspect]]
+- [[s.containers.docker.tips-and-tricks.modify-container-filesystem]]
