@@ -1,6 +1,6 @@
 ---
 id: d42LXsLe05kaIDNLoIvsB
-title: While Loops
+title: While
 desc: ''
 updated: 1641414277168
 created: 1641105063940

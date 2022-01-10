@@ -2,7 +2,7 @@
 id: oUORTLZY9iyvRxNN6F4eu
 title: Chaining
 desc: ''
-updated: 1641412852683
+updated: 1641597850997
 created: 1641412852683
 ---
 
@@ -20,7 +20,7 @@ AS
 My_Second_CTE
 AS
 (
-	SELET Age, Counts, Average(Counts)
+	SELECT Age, Counts, Average(Counts)
 	FROM My_Table
 	ORDER BY Age
 	GROUP BY Age, Counts
