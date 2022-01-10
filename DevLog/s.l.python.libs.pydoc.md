@@ -9,12 +9,12 @@ isDir: false
 ---
 
 - [Socratica Video](https://www.youtube.com/watch?v=URBSvqib0xw&ab_channel=Socratica)
-- using the [[s.l.python.stage.libraries.pydoc]] module you can review documentation
+- using the [[s.l.python.libs.pydoc]] module you can review documentation
 - This command ( `python -m pydoc <++>` ) searches for the following:
   - modules ( `math` )
   - classes ( `tuple` )
   - functions ( `pow` )
-- [[s.l.python.stage.libraries.pydoc]] commands:
+- [[s.l.python.libs.pydoc]] commands:
   - `pydoc -b`
     - Start an HTTP server with the given hostname (default: localhost).
     - Start an HTTP server on the given port on the local machine. Port number 0 can be used to get an arbitrary unused port.

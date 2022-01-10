@@ -2,7 +2,7 @@
 id: Ga7bXwoDLwwapP05NOYbQ
 title: Networking
 desc: ''
-updated: 2022-01-01 2239
+updated: 2022-01-08 1252
 created: 2021-11-15 1320
 publish: true
 aliases:
@@ -14,7 +14,6 @@ aliases:
 
 ---
 
-- TODO [Visualize Your Network with GNS3](https://www.gns3.com/)
 - TODO [Observium SNMP](https://observium.org/)
 - TODO [Wireshark](https://www.wireshark.org/)
 - TODO Nextclound
@@ -27,11 +26,18 @@ aliases:
 - TODO [heimdall](https://github.com/linuxserver/Heimdall) (the dashboard for all your services)
 - TODO [guacamole](https://guacamole.apache.org/) for SSH'ing into your services easier [example](https://youtu.be/E3aVxNtxFsU)
 - TODO [truenas](https://www.truenas.com/)
+- TODO use [[s.apps.gns3]] to map my home network (learn more about [[s.apps.gns3]])
+  - TODO [Visualize Your Network with GNS3](https://www.gns3.com/)
+- Self hosted bitwarden
+- TODO mac and port security:
+  - ![mac and port security](/assets/images/2022-01-08-12-31-23.png)
+- TODO guest network for people visiting the house to keep them off the main network
+  - ![guest network](/assets/images/2022-01-08-12-42-25.png)
 
 ---
 
 - Patch Panel
-  - [[+ 2021-11-15 What is a Patch Panel Do You Need One]]
+  - [[r.+.2021.11.15.what-is-a-patch-panel-do-you-need-one]]
 - Server
   - [ ] [Projects to Build](https://youtu.be/SVQmzaSabEQ)
     - fire wall (pfsense)
@@ -51,20 +57,10 @@ aliases:
     - ansible IAC infrastructure as code
     - [grafana loki for logging](https://youtu.be/h_GGd7HfKQ8)
     - heimdall service?
-- [Cat6 Cabling](https://youtu.be/NWhoJp8UQpo)
-  - UTP - Unshielded Twisted Pair
-  - RJ45 - The jack Tip of the cable
-  - 8 wires, 4 pairs of 2 twisted wires
-  - 2 standards for cable T-568A & T-568B
-    - B is more widely used, and both ends must be the same standard
-- IP addressing conventions
-  - 1st Network IP Address --> Default Gateway i.e. Router
-  - Try to use IP Addresses in sequential order
-  - Try to separate servers from clients
-    - Like `197.156.4.10` to `197.154.4.19` for servers
-    - and `197.156.4.200` to `197.156.4.254` for clients
-  - Document these things for future tech's
-- [[Domain Name System|DNS]]
+    - VLAN's for various utility purposes
+      - `"...it is common practice to isolate server-to-server traffic from client-server traffic and to isolate administration/management traffic (channels used for inbound management of appliances and servers). Another standard configuration option is to create a "null" VLAN that is non-routable to the rest of the network. This VLAN is used for any physical ports that do not have authorized connected equipment."`
+      - ![vlans](assets/images/2022-01-07-20-19-15.png)
+      - ![vlans2](assets/images/2022-01-07-20-22-44.png)
 - Useful Resources
   - [Wolfgangs channel - what he's running on his home server](https://youtu.be/f5jNJDaztqk)
   - [affordable gear?](https://www.pcliquidations.com/p48428-amd-radeon-r5-340x?r=160164167166161&utm_source=bing&utm_medium=cpc&utm_campaign=CPCS_PCLiq-Shopping&utm_term=4581046488142443&utm_content=Products#)

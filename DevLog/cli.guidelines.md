@@ -14,7 +14,7 @@ isDir: false
     - Java: picocli
     - Node: oclif
     - PHP: console
-    - Python: [[click|s.l.python.stage.libraries.click]], Typer, [[argparse|s.l.python.libs.argparse]]
+    - Python: [[click|s.l.python.libs.click]], Typer, [[argparse|s.l.python.libs.argparse]]
     - Ruby: TTY
     - Rust: clap, structopt
     - Swift: swift-argument-parser

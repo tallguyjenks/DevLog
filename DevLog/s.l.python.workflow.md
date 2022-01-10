@@ -91,7 +91,7 @@ exclude = '''
 '''
 ```
 
-- [[s.l.python.stage.libraries.flake8]] with a `.flake8` file
+- [[s.l.python.libs.flake8]] with a `.flake8` file
 
 ```
 [flake8]
@@ -113,7 +113,7 @@ F403  # F403: ‘from module import *’ used; unable to detect undefined names
 
 ```
 
-- [[s.l.python.stage.libraries.isort]] with a `pyproject.toml` addition
+- [[s.l.python.libs.isort]] with a `pyproject.toml` addition
 
 ```toml
 [tool.isort]
@@ -124,7 +124,7 @@ skip_glob = []
 known_third_party = []
 ```
 
-- [[s.l.python.stage.libraries.venv.vulture]] with a `pyproject.toml` addition
+- [[s.l.python.libs.venv.vulture]] with a `pyproject.toml` addition
 
 ```toml
 [tool.vulture]
@@ -237,10 +237,10 @@ repos:
   └───app.py
 ```
 
-- Set up unit testing framework with [[s.l.python.stage.libraries.pytest]]
+- Set up unit testing framework with [[s.l.python.libs.pytest]]
   - `pytest-cov --cov <SRC DIR> --cov-report html`
     - This tests the coverage of the entire source code directory and writes an intricate [[s.m.html]] report for viewing test results
-- [ ] Set up auto documentation with [[s.l.python.stage.libraries.sphinx]] & [[s.m.restructured-text]]
+- [ ] Set up auto documentation with [[s.l.python.libs.sphinx]] & [[s.m.restructured-text]]
 - **More on Packaging**
   - build your distribution: `poetry build`
   - publish your distribution: `poetry publish`
