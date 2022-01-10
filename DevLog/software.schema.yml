@@ -15,6 +15,35 @@ schemas:
         title: 'Other'
       - pattern: q
         title: 'Query'
+        children:
+          - pattern: '*'
+            # namespace: true
+            children:
+              - pattern: build
+              - pattern: data-t
+                title: 'Data Types'
+              - pattern: data-s
+                title: 'Data Structures'
+              - pattern: doc
+              - pattern: files
+              - pattern: flow
+              - pattern: funcs
+              - pattern: libs
+              - pattern: mem-mgmt
+              - pattern: oop
+              - pattern: pkg
+              - pattern: proj
+              - pattern: quirks
+              - pattern: releases
+              - pattern: resources
+              - pattern: run
+              - pattern: sec
+              - pattern: setup
+              - pattern: test
+              - pattern: tips-tricks
+              - pattern: tools
+              - pattern: vars
+              - pattern: workflow
       - pattern: l
         title: language
         # namespace: true
