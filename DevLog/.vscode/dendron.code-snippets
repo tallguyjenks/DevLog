@@ -1,20 +1,35 @@
 {
-    "todo": {
-        "prefix": "to",
+    // TASK MANAGEMENT
+    "BSJ - todo": {
+        "prefix": ["to","todo","task"],
         "scope": "markdown,yaml",
-        "body": "- [ ] ",
-        "description": "render todo box"
+        "body": "- TODO ",
+        "description": "TODO List Item"
     },
-    "date": {
-        "prefix": "date",
+    // TEMPORAL
+    "BSJ - date": {
+        "prefix": ["date","today"],
         "scope": "markdown,yaml",
         "body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
         "description": "today's date"
     },
-    "time": {
-        "prefix": "time",
+    "BSJ - now": {
+        "prefix": "now",
         "scope": "markdown,yaml",
         "body": "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE",
-        "description": "time"
-    }
+        "description": "current Date time"
+    },
+    // CODE FENCE LANGUAGES
+    "BSJ - Bash Code Fence": {
+        "prefix": "bash",
+        "scope": "markdown",
+        "body": "```bash\n$1\n```\n\n$0",
+        "description": "Bash Code Fence"
+    },
+    "BSJ - SQL Code Fence": {
+        "prefix": "sql",
+        "scope": "markdown",
+        "body": "```sql\n$1\n```\n\n$0",
+        "description": "SQL Code Fence"
+    },
 }
