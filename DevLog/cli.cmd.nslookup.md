@@ -2,7 +2,7 @@
 id: HPvfeFCeGrY5emhbsnnFe
 title: Nslookup
 desc: ''
-updated: 1641887997833
+updated: 1641888080524
 created: 1641887787958
 ---
 
@@ -41,10 +41,18 @@ Resolve-DnsName host -NoHostsFile
 Resolve-DnsName host -DnsOnly
 ```
 
-### Resolve 
+### Resolve host using only the DNS server 
 
 ```powershell
+-Server IPofDNSserver
+```
 
+## Additional
+
+It is also possible to search DNS for records other than [[focus.networking.protocol.dns.resource-records.a]] or [[focus.networking.protocol.dns.resource-records.aaaa]] records. For example, to show only Mail Exchange records in a specific domain, use the cmdlet:
+
+```powershell
+Resolve-DnsName domain-Type MX
 ```
 
 
