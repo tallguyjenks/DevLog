@@ -2,7 +2,7 @@
 id: ZY9xGm3S0iWLppHhTLrNr
 title: Fqdn
 desc: ''
-updated: 1641885568346
+updated: 1641885800410
 created: 1641884262261
 ---
 
@@ -41,4 +41,6 @@ ipconfig /all
 
 ### Linux
 
-
+```bash
+hostname -fqdn
+```
