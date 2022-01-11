@@ -2,14 +2,14 @@
 id: rgVKkCmI2usx38ILmkCm0
 title: Run and View
 desc: ''
-updated: 1641425885266
+updated: 1641931131827
 created: 1641425885266
 ---
 
 ## Create and Run in Venv or on server port
 
 ```bash
-poetry init && 
+poetry init &&
 poetry shell &&
 poetry add fastapi[all]
 ```
@@ -21,7 +21,7 @@ After Code is setup and ready to run:
 # changes when the file is saved are hot loaded into the running API service
 # on the port where the API is listening
 
-# assumes there is a python package 
+# assumes there is a python package
 # . My_Repo_Name
 # ├─── app/
 # │    ├─── __init__.py

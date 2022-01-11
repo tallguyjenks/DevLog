@@ -38,4 +38,10 @@
         "body": "```python\n$1\n```\n\n$0",
         "description": "Python Code Fence"
     },
+    "BSJ - Markdown Code Fence": {
+        "prefix": "markdown",
+        "scope": "markdown",
+        "body": "```markdown\n$1\n```\n\n$0",
+        "description": "Markdown Code Fence"
+    },
 }

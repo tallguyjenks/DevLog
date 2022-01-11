@@ -2,7 +2,7 @@
 id: F2YOggmJYq70PtDEl7SPE
 title: Python API Development Comprehensive Course for Beginners
 desc: ''
-updated: 1641270835005
+updated: 1641939403448
 created: 1641168992651
 stub: false
 isDir: false
@@ -11,7 +11,6 @@ isDir: false
 - `URL:` <https://youtu.be/0sOvCWFmrtA>
 - `Channel/Host:` FreeCodeCamp
 - `Publish Date:` 2021.11.01
-- `Reviewed Date:` 
 
 ---
 
@@ -25,7 +24,7 @@ isDir: false
 
 ![alt](assets/images/Pasted_image_20211221144047.png)
 
-- Convention is that the end point uses plurals: 
+- Convention is that the end point uses plurals:
   - user --> users
   - post --> posts
 
@@ -33,3 +32,4 @@ isDir: false
 
 ## Documentation
 
+<https://github.com/Sanjeev-Thiyagarajan/fastapi-course>

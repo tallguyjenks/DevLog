@@ -1,11 +1,9 @@
 ---
 id: rRPeLK9U5TFIFTV8S9yay
-title: Header Files
+title: Header File
 desc: ''
-updated: 1641373455831
+updated: 1641924888173
 created: 1641373455831
 ---
-
-### Header files
 
 ![[s.l.cpp.preprocessor-directives]]
