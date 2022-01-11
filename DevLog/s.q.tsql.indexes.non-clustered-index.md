@@ -34,7 +34,7 @@ EXECUTE sp_helpindex student
 
 The above query will return this result:
 
-![alt](assets/images/Pasted image 20211201134834.png)
+![alt](assets/images/Pasted_image_20211201134834.png)
 
 ```sql
 USE schooldb
@@ -60,7 +60,7 @@ USE schooldb
 SELECT * FROM student
 ```
 
-![alt](assets/images/Pasted image 20211201134934.png)
+![alt](assets/images/Pasted_image_20211201134934.png)
 
 ```sql
 use schooldb
@@ -71,4 +71,4 @@ ON student(name ASC)
 
 > The above script creates a non-clustered index on the “name” column of the student table. The index sorts by name in ascending order. As we said earlier, the table data and index will be stored in different places. The table records will be sorted by a clustered index if there is one. The index will be sorted according to its definition and will be stored separately from the table.
 
-![alt](assets/images/Pasted image 20211201135410.png)
+![alt](assets/images/Pasted_image_20211201135410.png)

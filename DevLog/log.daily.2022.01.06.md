@@ -14,7 +14,7 @@ isDir: false
 - [[r.(.the-power-of-the-plugin-architecture-in-python]]
 - [[r.(.5-python-use-cases-that-only-a-few-programmers-know]]
 - for fixed width files:
-  - ![alt](assets/images/Pasted image 20211229095411.png)
+  - ![alt](assets/images/Pasted_image_20211229095411.png)
 
 #### Notes
 

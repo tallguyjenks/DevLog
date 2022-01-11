@@ -8,6 +8,6 @@ created: 1641426553633
 
 ## Remove suffix
 
-![alt](assets/images/Pasted image 20211224112647.png)
+![alt](assets/images/Pasted_image_20211224112647.png)
 
 ---

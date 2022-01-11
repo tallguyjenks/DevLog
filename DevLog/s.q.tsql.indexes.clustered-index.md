@@ -30,7 +30,7 @@ EXECUTE sp_helpindex student
 
 The above query will return this result:
 
-![alt](assets/images/Pasted image 20211201134834.png)
+![alt](assets/images/Pasted_image_20211201134834.png)
 
 ```sql
 USE schooldb
@@ -56,7 +56,7 @@ USE schooldb
 SELECT * FROM student
 ```
 
-![alt](assets/images/Pasted image 20211201134934.png)
+![alt](assets/images/Pasted_image_20211201134934.png)
 
 Creating a new Clustered index:
 

@@ -2,13 +2,17 @@
 id: NKjHuVsskgVkr4KZpzt8o
 title: DNS
 desc: ''
-updated: 1641886084032
+updated: 1641886616617
 created: 1641885863529
 ---
 
 `D`omain `N`ame `S`ystem
 
 ![dns](/assets/images/2022-01-10-23-27-55.png)
+
+Common public DNS servers
+
+![alt](/assets/images/Pasted_image_20211222203708.png)
 
 Runs on port [[focus.networking.port.53]]
 

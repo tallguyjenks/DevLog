@@ -16,9 +16,9 @@ isDir: false
 ---
 
 - A customer management system receives requests.
-- ![alt](assets/images/Pasted image 20211130095653.png)
+- ![alt](assets/images/Pasted_image_20211130095653.png)
 - Each request type is a Python dictionary and all 4 are handled uniquely
-  - ![alt](assets/images/Pasted image 20211130095905.png)
+  - ![alt](assets/images/Pasted_image_20211130095905.png)
 
 ```python
 request1 = {

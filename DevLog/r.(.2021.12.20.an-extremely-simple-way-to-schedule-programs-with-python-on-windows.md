@@ -52,13 +52,13 @@ while True:
   - Run all jobs now, regardless of their scheduling
 - Schedule a python script on windows with a 3 file setup
   - A bat file which can be executed (directly or via shortcut) automatically by windows in the startup folder
-    - ![alt](assets/images/Pasted image 20211220105600.png)
+    - ![alt](assets/images/Pasted_image_20211220105600.png)
     - Ensure this runs even after an automatic or scheduled restart by placing the script or a shortcut to it in the startup directory which can be found by running:
       - `shell:startup` in the menu that pops up when you press <kbd>ctrl</kbd>+ <kbd>R</kbd>
   - a manager powershell script to perform any setup steps like activating a conda environment and then running the scheduler
-    - ![alt](assets/images/Pasted image 20211220105611.png)
+    - ![alt](assets/images/Pasted_image_20211220105611.png)
   - a scheduler python script that runs a python function or command line script via a package like `subprocess`
-    - ![alt](assets/images/Pasted image 20211220105625.png)
+    - ![alt](assets/images/Pasted_image_20211220105625.png)
 
 ## When Does this NOT Work
 

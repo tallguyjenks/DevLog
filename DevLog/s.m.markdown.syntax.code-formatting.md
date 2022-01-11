@@ -44,7 +44,7 @@ code fence
 
 and to keep showing more levels of backtick sandwiches just keep increasing the amount of backticks, the code for the above image is:
 
-![alt](assets/images/Pasted image 20201207031806.png)
+![alt](assets/images/Pasted_image_20201207031806.png)
 
 ## RMarkdown
 

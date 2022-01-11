@@ -12,11 +12,11 @@ isDir: false
   - `pip install pyarrow`
 - video format of this article <https://youtu.be/gFd4I1oXG8E>
 
-![alt](assets/images/Pasted image 20211101091818.png)
+![alt](assets/images/Pasted_image_20211101091818.png)
 
-![alt](assets/images/Pasted image 20211101091826.png)
+![alt](assets/images/Pasted_image_20211101091826.png)
 
-![alt](assets/images/Pasted image 20211101091836.png)
+![alt](assets/images/Pasted_image_20211101091836.png)
 
 ```python
 # Create a dummy dataset:

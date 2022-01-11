@@ -59,5 +59,5 @@ class Cat(Animal):
 
 ```
 
-![alt](assets/images/Pasted image 20211105215356.png)
+![alt](assets/images/Pasted_image_20211105215356.png)
 

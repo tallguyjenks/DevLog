@@ -8,10 +8,10 @@ stub: false
 isDir: false
 ---
 
-- ![alt](assets/images/Pasted image 20211014090651.png)
-- ![alt](assets/images/Pasted image 20211014090656.png)
-- ![alt](assets/images/Pasted image 20211014090705.png)
-- ![alt](assets/images/Pasted image 20211014090712.png)
+- ![alt](assets/images/Pasted_image_20211014090651.png)
+- ![alt](assets/images/Pasted_image_20211014090656.png)
+- ![alt](assets/images/Pasted_image_20211014090705.png)
+- ![alt](assets/images/Pasted_image_20211014090712.png)
 
 ---
 

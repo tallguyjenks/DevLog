@@ -24,7 +24,7 @@ if __name__ == '__main__':
 	print(output)
 ```
 
-![alt](assets/images/Pasted image 20210916111645.png)
+![alt](assets/images/Pasted_image_20210916111645.png)
 
 - [Python Decorators in 15 Minutes](https://youtu.be/r7Dtus7N4pI) \| [Calm Code Decorators](https://calmcode.io/decorators/introduction.html) #💻️/⭐ 
 - [Decorators 101](https://sureshdsk.dev/python-decorators-101)

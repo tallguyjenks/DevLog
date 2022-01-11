@@ -23,7 +23,7 @@ isDir: false
 
 ## CRUD Operation
 
-![alt](assets/images/Pasted image 20211221144047.png)
+![alt](assets/images/Pasted_image_20211221144047.png)
 
 - Convention is that the end point uses plurals: 
   - user --> users

@@ -27,7 +27,7 @@ df = pd.DataFrame.from_dict(
 mitosheet.sheet(df)
 ```
 
-![alt](assets/images/Pasted image 20211129113658.png)
+![alt](assets/images/Pasted_image_20211129113658.png)
 
 - Related:
   - [[pandas|import.software.language.python.library.pandas]]

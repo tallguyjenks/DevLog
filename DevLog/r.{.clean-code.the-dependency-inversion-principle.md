@@ -23,7 +23,7 @@ isDir: false
 > However, you could solve this by creating a third abstraction that takes the info as input and passes it to the others.
 > This is basically what an API is also, used for.
 
-![alt](assets/images/Pasted image 20211110092721.png)
+![alt](assets/images/Pasted_image_20211110092721.png)
 
 ---
 

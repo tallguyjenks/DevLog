@@ -27,7 +27,7 @@ class Calendar:
         return self.weekday > 4
 ```
 
-![alt](assets/images/Pasted image 20211213151355.png)
+![alt](assets/images/Pasted_image_20211213151355.png)
 
 We want to decouple the `is_weekend` and `is_leap_year` from the calendar class instance because they relate to any date not just that class instance.
 
@@ -62,4 +62,4 @@ Ok, the changes are:
 
 Usage:
 
-![alt](assets/images/Pasted image 20211213151513.png)
+![alt](assets/images/Pasted_image_20211213151513.png)

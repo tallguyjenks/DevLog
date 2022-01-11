@@ -13,8 +13,8 @@ created: 1641266597798
   - Use Rufus to burn the ISO to a USB
   - This makes a bootable disk for bootstrapping the system
   - Settings as of 2021-10-25
-    - ![Alt](assets/images/Pasted image 20211025015639.png)
-    - ![Alt](assets/images/Pasted image 20211025015715.png)
+    - ![Alt](assets/images/Pasted_image_20211025015639.png)
+    - ![Alt](assets/images/Pasted_image_20211025015715.png)
 - insert USB into machine
 - [Helpful installation guide](https://wiki.archlinux.org/title/Installation_guide)
 - in the computer setup menu change the boot order to boot from the USB as first priority
