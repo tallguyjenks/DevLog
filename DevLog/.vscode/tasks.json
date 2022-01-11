@@ -11,5 +11,15 @@
             "type": "shell",
             "command": "cd \"${workspaceFolder}\" && lsd -lA *.md | awk '{print $7,$8,$10,$NF}' | grep \"$(date +\"%b %d %Y\")\" | awk '{print \"[[\"$NF\"]]\"}'"
         },
+        {
+            "label": "Sync - Win",
+            "type": "shell",
+            "command": "cd '${workspaceFolder}'; git pull; git add -A ; git commit -m \"$(date -format 'yyyy.MM.dd.HH.mm.ss')\";git push -q"
+        },
+        {
+            "label": "Sync - Nix",
+            "type": "shell",
+            "command": "cd '${workspaceFolder}'; git pull; git add -A ; git commit -m \"$(date +\"%Y.%m.%d.%H.%M.%s\")\";git push -q"
+        },
     ]
 }
