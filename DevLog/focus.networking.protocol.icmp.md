@@ -1,9 +1,9 @@
 ---
 id: EqhIUuIdHjxFBImH9kAyJ
-title: Internet Control Message Protocol
+title: ICMP
 desc: ''
-updated: 1641880022096
+updated: 1641881167045
 created: 1641879998575
 ---
 
-
+in essence it is the [[cli.cmd.ping]] command
