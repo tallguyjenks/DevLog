@@ -43,16 +43,16 @@
     "extensions": {
         "recommendations": [
             "dendron.dendron-paste-image",
-            "dendron.dendron-markdown-shortcuts",
             "redhat.vscode-yaml",
             "tomoki1207.pdf",
+        ],
+        "unwantedRecommendations": [
             "dendron.dendron-markdown-links",
+            "dendron.dendron-markdown-shortcuts",
             "dendron.dendron-markdown-notes",
             "shd101wyy.markdown-preview-enhanced",
             "kortina.vscode-markdown-notes",
             "mushan.vscode-paste-image"
-        ],
-        "unwantedRecommendations": [
         ]
     }
 }
