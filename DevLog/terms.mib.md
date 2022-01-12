@@ -1,8 +1,8 @@
 ---
 id: 60YXTiYFDIYQK0nLC2ZEN
-title: Mib
+title: MIB
 desc: ''
-updated: 1641952677740
+updated: 1641952968816
 created: 1641952597116
 ---
 
