@@ -1,41 +1,8 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "alt+p",
-        "command": "dendron.showPreview"
-    },
-    {
-        "key": "cmd+g",
-        "command": "-editor.action.nextMatchFindAction",
-        "when": "editorFocus"
-    },
-    {
-        "key": "cmd+g",
-        "command": "-workbench.action.terminal.findNext",
-        "when": "terminalFindFocused && terminalProcessSupported || terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "cmd+g",
-        "command": "dendron.showNoteGraph"
-    },
-    {
-        "key": "alt+cmd+b",
-        "command": "gitlens.toggleFileBlame",
-        "when": "editorTextFocus && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /blameable/"
-    },
-    {
-        "key": "alt+b",
-        "command": "-gitlens.toggleFileBlame",
-        "when": "editorTextFocus && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /blameable/"
-    },
-    {
         "key": "alt+b",
         "command": "bookmarks.toggle",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "opt+cmd+k",
-        "command": "-bookmarks.toggle",
         "when": "editorTextFocus"
     },
     {
@@ -62,3 +29,4 @@
         "command": "dendron.renameNote",
         "when": "editorTextFocus && editorLangId == 'markdown'"
     }
+]
