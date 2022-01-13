@@ -2,12 +2,8 @@
 id: Ga7bXwoDLwwapP05NOYbQ
 title: Networking
 desc: ''
-updated: 2022-01-08 1252
+updated: 2022-01-12 2239
 created: 2021-11-15 1320
-publish: true
-aliases:
-  - Home Lab
-  - Network
 ---
 
 ## Resources
