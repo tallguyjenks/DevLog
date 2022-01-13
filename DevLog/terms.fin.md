@@ -8,4 +8,4 @@ created: 1641873289448
 
 `Fin`ish
 
-Concludes the 4 step handshake to a graceful exit to a [[focus.networking.protocol.tcp]] connection
+Concludes the 4 step handshake to a graceful exit to a [[n.protocol.tcp]] connection

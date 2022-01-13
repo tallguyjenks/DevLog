@@ -14,7 +14,7 @@ isDir: false
 -  [[s.l.python]] [[s.l.python.build.poetry]] [Using Poetry to manage Python projects][4]
   -  [Poetry: "dependency management and packaging made easy"][5]
   -  [How to use Poetry to Manage Python Dependencies and Publish Packages][6]
-- [[focus.azure.devops]] [[focus.azure.pipelines]] 
+- [[s.apps.azure.devops]] [[s.apps.azure.pipelines]] 
   - [add pipeline status badge][7]
   - [add board status badge][8]
   - [more status badge article info][9]

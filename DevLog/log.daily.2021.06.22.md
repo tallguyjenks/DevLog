@@ -8,7 +8,7 @@ stub: false
 isDir: false
 ---
 
--  [[s.l.python]] [[s.l.python.libs.pytest]] [[focus.azure.pipelines]] to [build test suite with an artifact report][1] with [some helpful docs][2]
+-  [[s.l.python]] [[s.l.python.libs.pytest]] [[s.apps.azure.pipelines]] to [build test suite with an artifact report][1] with [some helpful docs][2]
 
 
 [1]: https://pypi.org/project/pytest-azurepipelines/

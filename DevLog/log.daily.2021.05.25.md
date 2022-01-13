@@ -8,7 +8,7 @@ stub: false
 isDir: false
 ---
 
-- [[focus.azure.devops]] Extension for [Automatic Release Notes](https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-XplatGenerateReleaseNotes&ssr=false#overview)
+- [[s.apps.azure.devops]] Extension for [Automatic Release Notes](https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-XplatGenerateReleaseNotes&ssr=false#overview)
 - [[s.q.tsql]] [[s.q.tsql.tools.redgate]] [Version Control Demo With Git](https://youtu.be/mNXipSFbV0s)
   - [[s.apps.vscode]] `https://github.com/microsoft/codetour` Code Tours to walk users through a code base
   - [[s.l.bash]] `printenv` prints out all current environmental variables

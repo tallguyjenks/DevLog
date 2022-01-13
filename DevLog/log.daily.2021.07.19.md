@@ -8,7 +8,7 @@ stub: false
 isDir: false
 ---
 
--[[focus.azure.devops]] [[s.l.python]] [[s.l.python.libs.requests]] rest [[terms.api]] [Azure DevOps Services REST API Reference][1]
+-[[s.apps.azure.devops]] [[s.l.python]] [[s.l.python.libs.requests]] rest [[terms.api]] [Azure DevOps Services REST API Reference][1]
   - [Work item tracking][2]
 
 

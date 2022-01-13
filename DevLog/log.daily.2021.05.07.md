@@ -22,5 +22,5 @@ isDir: false
   -  [[s.l.powershell]] Block comment syntax for power shell starts with `<#`
       -  [[s.q.tsql]] Great resource for SQL Server knowledge <https://www.mssqltips.com/sql-server-categories/>
     	- ssis Visual Programming of etl's into SQL Server
-- [[focus.azure.devops]] Bulk Insert of new work items like todoist [Bulk Insert](https://docs.microsoft.com/en-us/azure/devops/boards/queries/import-work-items-from-csv?view=azure-devops)
+- [[s.apps.azure.devops]] Bulk Insert of new work items like todoist [Bulk Insert](https://docs.microsoft.com/en-us/azure/devops/boards/queries/import-work-items-from-csv?view=azure-devops)
 

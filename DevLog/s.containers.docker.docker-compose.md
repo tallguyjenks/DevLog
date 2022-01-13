@@ -44,5 +44,5 @@ volumes:
 
 - having 2 files for a **dev** and a **prod** environment
 - no using `--reload` in production code because the code shouldn't be changing
-- port [[focus.networking.port.80]] on local host so that you can view in web browser
+- port [[n.port.80]] on local host so that you can view in web browser
 - on linux the `environment:` values can use linux variable accessors `${DATABASE_HOSTNAME}`

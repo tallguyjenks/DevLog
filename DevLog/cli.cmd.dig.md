@@ -8,7 +8,7 @@ created: 1641886371031
 
 `D`omain `I`nternet `G`roper
 
-Useful with [[focus.networking.protocol.dns]]
+Useful with [[n.protocol.dns]]
 
 ## Usage
 

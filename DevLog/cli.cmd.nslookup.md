@@ -9,7 +9,7 @@ created: 1641887787958
 
 ## Details
 
-In a Windows environment, you can troubleshoot [[focus.networking.protocol.dns]] with the `nslookup` command, either interactively or from the command prompt.
+In a Windows environment, you can troubleshoot [[n.protocol.dns]] with the `nslookup` command, either interactively or from the command prompt.
 
 ```powershell
 nslookup -Option Host Server
@@ -49,7 +49,7 @@ Resolve-DnsName host -DnsOnly
 
 ## Additional
 
-It is also possible to search DNS for records other than [[focus.networking.protocol.dns.resource-records.a]] or [[focus.networking.protocol.dns.resource-records.aaaa]] records. For example, to show only Mail Exchange records in a specific domain, use the cmdlet:
+It is also possible to search DNS for records other than [[n.protocol.dns.resource-records.a]] or [[n.protocol.dns.resource-records.aaaa]] records. For example, to show only Mail Exchange records in a specific domain, use the cmdlet:
 
 ```powershell
 Resolve-DnsName domain-Type MX

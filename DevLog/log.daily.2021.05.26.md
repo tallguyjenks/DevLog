@@ -19,6 +19,6 @@ SELECT @@VERSION
 - https://www.codeproject.com/Articles/39131/Global-Variables-in-SQL-Server
 - [[s.l.powershell]]
   - Powershell is entirely case-insensitive so most of my case sensitive git aliases I make for \*nix shells don't work
-- [[focus.azure.devops]]
+- [[s.apps.azure.devops]]
   - The Pull Request Process can let other suggest changes with the lightbulb _"Suggestions"_ option for easy application of changes nad resolution of open items for Merging.
 

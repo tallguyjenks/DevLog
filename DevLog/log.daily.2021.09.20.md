@@ -14,7 +14,7 @@ isDir: false
 - [[s.l.rust]] [Why you shouldn’t use Rust][4]
 - [[s.l.python]] [[s.l.python.libs.sphinx]] [Auto Documenting a Python Project Using Sphinx][5]
 - [[s.l.python]] [[s.l.python.libs.sphinx]] [Write Beautiful Python Documentation with Sphinx][6]
-- [[focus.azure.devops]] [[focus.azure.test-plans]] [Automated and Manual Testing with Azure Test Plan][7]
+- [[s.apps.azure.devops]] [[s.apps.azure.test-plans]] [Automated and Manual Testing with Azure Test Plan][7]
 - Try out [[s.l.python]] [profiling][8]
 
 ```python

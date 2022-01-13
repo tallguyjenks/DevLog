@@ -9,7 +9,7 @@ isDir: false
 ---
 
 -  [[s.l.python]] [10 Python Shortcuts You Need To Know][1]
-  -  [[s.l.python]] [[focus.azure.devops]] [[s.l.python.sec]] [[s.apps.snyk]] [Find Vulnerabilities In Your Code With Snyk][2]
+  -  [[s.l.python]] [[s.apps.azure.devops]] [[s.l.python.sec]] [[s.apps.snyk]] [Find Vulnerabilities In Your Code With Snyk][2]
      -  [[s.l.bash]] [CDPATH - A Bash variable I didn't know existed][3]
   -  [[s.l.python]] [Python Generators Explained][4]
   -  [[cli]] [Command Line Interface Guidelines][5]

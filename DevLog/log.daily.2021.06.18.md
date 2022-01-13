@@ -10,8 +10,8 @@ isDir: false
    
 -  [[s.l.python]] [[s.l.python.libs.watermark]] [[s.l.python.tools.jupyter]] [Calm Code Watermark][1]
   -  move browser technical links to logseq
--  [[focus.azure.devops]] [Implementing DevSecOps in Azure][2]
--  [[focus.azure.pipelines]] [[focus.azure.devops]] [[R|r]] [Azure DevOps Pipelines for deploying content to RStudio Connect][3]
+-  [[s.apps.azure.devops]] [Implementing DevSecOps in Azure][2]
+-  [[s.apps.azure.pipelines]] [[s.apps.azure.devops]] [[R|r]] [Azure DevOps Pipelines for deploying content to RStudio Connect][3]
   -  [[s.l.python]] [Absolute vs Relative Imports in Python][4]
   - importing a package, essentially is importing the `__init__.py` module a module is any .py file
     - so having the `__init__.py` importing the other modules is how you load the whole thing in one go

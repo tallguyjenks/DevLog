@@ -7,7 +7,7 @@ created: 1641105063940
 stub: false
 isDir: false
 ---
-- Mermaid on [[focus.azure.devops]] uses a different syntax for the diagram code fences. Instead of 3 backticks \`\`\`  they use colons `:::`
+- Mermaid on [[s.apps.azure.devops]] uses a different syntax for the diagram code fences. Instead of 3 backticks \`\`\`  they use colons `:::`
   - The diagrams will only render and preview on the DevOps wiki pages not the markdown pages or their previews.
   - The diagrams will also no render in the preview pane of the pull request review section
   - The only way of reviewing diagram code visually is the code [[cli.cmd.diff]], or by using a sample test wiki page to show preview renders of the diagrams

@@ -49,7 +49,7 @@ git show -s 72a144e
 		- [even more](https://pre-commit.com/)
 		-  [awesome git hooks](https://github.com/aitemr/awesome-git-hooks)
 		-  azure devops [Branch policies](https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops) are kind of like hard stop checklist items like a merge conflict to be resolved before merge
-    - [[focus.azure.devops]] Pipelines like [[cli.cmd.git.tools.github.github-actions]] are automated [[terms.ci-cd]] tools driven by [[s.df.yaml]] files. This is the pipeline for a super linter:
+    - [[s.apps.azure.devops]] Pipelines like [[cli.cmd.git.tools.github.github-actions]] are automated [[terms.ci-cd]] tools driven by [[s.df.yaml]] files. This is the pipeline for a super linter:
 
 ```yaml
 # Starter pipeline
