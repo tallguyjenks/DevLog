@@ -2,7 +2,7 @@
 id: rKM3s9eOiZFkHhg7JFq3W
 title: For
 desc: ''
-updated: 1642489688690
+updated: 1642491197903
 created: 1642489019775
 ---
 
@@ -15,5 +15,3 @@ for file in *; do
         echo "$file" 
     fi 
 ```
-
-for file in *.webm; do ffmpeg -i $file -vcodec libx264 -crf 24 "${file%.*}.mp4"
