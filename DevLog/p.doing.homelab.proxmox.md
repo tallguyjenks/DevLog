@@ -2,11 +2,11 @@
 id: VwhzQnkxQgKYvCPoK2XeX
 title: Proxmox
 desc: ''
-updated: 1641638982588
+updated: 1642570336454
 created: 1641631765756
 ---
 
-![[focus.network.hypervisor]]
+![[n.hypervisor]]
 
 ## Proxmox setup steps
 
@@ -25,7 +25,7 @@ created: 1641631765756
 6. fill in network inforation
    1. Much of it can be gleaned from your router console
    2. `ifconfig get default | grep gateway` for the default gateway
-   3. for MacOS to find [[focus.networking.domain-name-system]] server just search for `DNS` in *system preferences*
+   3. for MacOS to find [[n.protocol.dns]] server just search for `DNS` in *system preferences*
 7. Once proxmox is finished bootstrapping and restarts the server, remove the flash media
 8. if screen loads to a console then you can just transition back to your main machine and use the web interface to finish.
 9. management console is at: `https://#.#.#.#:8006` (replace `#` with valid ipv4 address)
@@ -37,3 +37,5 @@ created: 1641631765756
 [1]: https://proxmox.com/en/downloads
 [2]: https://rufus.ie/en/
 [3]: https://www.balena.io/etcher/
+
+- TODO <https://youtu.be/GoZaMgEgrHw>
