@@ -2,7 +2,7 @@
 id: Vg7WNks5VCNtLbesu5Lka
 title: 124 Change Function Declaration
 desc: ''
-updated: 1641268466725
+updated: 1642626011728
 created: 1641105063874
 stub: false
 isDir: false
@@ -10,7 +10,8 @@ isDir: false
 
 ```javascript
 //FROM
-function circum(radius) {...}``
+function circum(radius) {...}
+
 //TO
 function circumference(radius) {...}
 ```
@@ -22,8 +23,8 @@ If deprecating something like API code a useful way of accomplishing that easily
 function circum(radius) {
 	return Math.PI * 2 * radius;
 }
-//TO
 
+//TO
 function circum(radius) {
 	console.log("This function is deprecated, please use circumference()");
 	return circumference(radius);
