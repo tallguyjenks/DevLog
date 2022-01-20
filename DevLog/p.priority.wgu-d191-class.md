@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642667380061
+updated: 1642667740549
 created: 1642658133797
 ---
 
@@ -108,13 +108,22 @@ FROM public.payment AS p
 ## D. Write code for function(s) that perform the transformation(s) you identified in part A4.
 
 ```sql
+CREATE FUNCTION rpt."TRF_ETL_Report_Data"()
+    RETURNS trigger
+    LANGUAGE 'plpgsal'
+    NOT LEAKPROOF
+AS SBODY$
 INSERT INTO rpt.report_data_clean
 SELECT DATE_PART('year', payment_date) AS Year
      , address AS Location
      , CAST(amount AS money) AS Revenue
 FROM rpt.report_data
-;
+
 TRUNCATE TABLE rpt.report_data;
+$BODY$ ;
+ALTER FUNCTION rpt."TRF_ETL_Report_Data"() OWNER TO postgres;
+COMMENT ON FUNCTION rpt."TRF_ETL_Report_Data"()
+IS 'New data in rep. report_data gets cleaned and inserted into rpt. report_data_clean' ;
 ```
 
 ## E. Write a SQL code that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
