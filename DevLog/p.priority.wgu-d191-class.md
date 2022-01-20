@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642660605548
+updated: 1642661359104
 created: 1642658133797
 ---
 
@@ -23,6 +23,7 @@ created: 1642658133797
                     - `Address`: address_id, address
 4. Identify one field in the detailed section that will require a custom transformation and explain why it should be transformed. For example, you might translate a field with a value of `N` to `No` and `Y` to `Yes`.
     - Will have to cast the date times in the `Payment` table to be just be the Year datepart for the roll up summary by year
+    - Casting the `Payment` field "amount" from numeric to money to more accurately reflect the underlying data
 5. Explain the different business uses of the detailed and the summary sections of the report.
     - Be able to see the most profitable rental locations
     - Be able to see the most profitable rentals at all locations
@@ -38,6 +39,21 @@ CREATE SCHEMA rpt
     AUTHORIZATION postgres;
 COMMENT ON SCHEMA rpt
     IS 'Reporting';
+GRANT USAGE ON SCHEMA rpt
+TO postgres;
+SET search_path TO rpt, public;
+```
+
+```sql
+CREATE TABLE public.trended_location_profitability
+(
+    "Location" character varying(255) NOT NULL,
+    "Film" character varying(255) NOT NULL,
+    "Revenue" money,
+    "Year" smallint NOT NULL
+);
+ALTER TABLE public.trended_location_profitability
+    OWNER to postgres;
 ```
 
 
