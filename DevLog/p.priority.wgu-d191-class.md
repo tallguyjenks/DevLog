@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642669035903
+updated: 1642670238710
 created: 1642658133797
 ---
 
@@ -121,7 +121,11 @@ $clean_data$ LANGUAGE 'plpgsql';
 ALTER FUNCTION rpt.FN_Clean_Data() OWNER TO postgres;
 COMMENT ON FUNCTION rpt.FN_Clean_Data()
 IS 'New data in rpt.report_data gets cleaned and inserted into rpt.report_data_clean';
+```
 
+## E. Write a SQL code that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
+
+```sql
 CREATE TRIGGER TR_ETL AFTER INSERT ON rpt.report_data
     FOR STATEMENT
     EXECUTE FUNCTION rpt.FN_Clean_Data();
@@ -129,13 +133,42 @@ COMMENT ON TRIGGER TR_ETL ON rpt.report_data
 IS 'Update reports when new data is added to the rpt.report_data table';
 ```
 
-## E. Write a SQL code that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
+## F. Create a stored procedure that can be used to refresh the data in both your detailed and summary tables. The procedure should clear the contents of the detailed and summary tables and perform the ETL load process from part C and include comments that identify how often the stored procedure should be executed.
+
+
+TODO left off here, refactor this trigger code into a stored proc to update the report tables based on new inserts to the clean_data table
+
 
 ```sql
+CREATE FUNCTION rpt.FN_ETL() RETURNS trigger AS $etl$
+BEGIN
+    TRUNCATE TABLE rpt.location_trended;
+    INSERT INTO rpt.location_trended
+    SELECT Year, Location, SUM(Revenue)
+    FROM rpt.report_data_clean
+    GROUP BY Year, Location;
+
+    TRUNCATE TABLE rpt.location_top;
+    INSERT INTO rpt.location_top
+    SELECT Year, Location, SUM(Revenue)
+    FROM rpt.report_data_clean
+    WHERE Year IN
+          CAST (DATE_PART ('year', NOW()) AS INT)     -- Curent Year
+        , CAST (DATE_PART ('year', NOW()) AS INT) - 1 -- Prior Year
+    GROUP BY Year, Location;
+END
+$etl$ LANGUAGE 'plpgsql';
+ALTER FUNCTION rpt.FN_ETL() OWNER TO postgres;
+COMMENT ON FUNCTION rpt.FN_ETL()
+IS 'New data in rpt.report_data_clean so update all reports';
+
+CREATE TRIGGER TR_Update Reports AFTER INSERT ON rpt.report_data_clean
+FOR STATEMENT
+EXECUTE FUNCTION rpt.FN_ETL();
+COMMENT ON TRIGGER TR_Update_Reports ON rpt.report_data_clean
+IS 'Update reports when new data is added to the rpt.report_data_clean table';
 
 ```
-
-## F. Create a stored procedure that can be used to refresh the data in both your detailed and summary tables. The procedure should clear the contents of the detailed and summary tables and perform the ETL load process from part C and include comments that identify how often the stored procedure should be executed.
 
 1.  Explain how the stored procedure can be run on a schedule to ensure data freshness.
 
