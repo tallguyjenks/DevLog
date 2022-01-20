@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642661560101
+updated: 1642662565964
 created: 1642658133797
 ---
 
@@ -51,6 +51,17 @@ CREATE TABLE rpt.trended_location_profitability
 );
 ALTER TABLE rpt.trended_location_profitability OWNER to postgres;
 ```
+
+```sql
+CREATE TABLE rpt.location_revenue_breakdown
+(
+    "Location" character varying (255) NOT NULL,
+    "Revenue" money,
+    "Year" smallint NOT NULL
+);
+ALTER TABLE rpt.location_revenue_breakdown OWNER to postgres;
+```
+
 
 
 
