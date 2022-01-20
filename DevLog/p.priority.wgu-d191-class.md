@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642661359104
+updated: 1642661560101
 created: 1642658133797
 ---
 
@@ -35,25 +35,21 @@ created: 1642658133797
 ## B. Write a SQL code that creates the tables to hold your report sections. 
 
 ```sql
-CREATE SCHEMA rpt
-    AUTHORIZATION postgres;
-COMMENT ON SCHEMA rpt
-    IS 'Reporting';
-GRANT USAGE ON SCHEMA rpt
-TO postgres;
-SET search_path TO rpt, public;
+CREATE SCHEMA rpt AUTHORIZATION postgres;
+COMMENT ON SCHEMA rpt IS 'Reporting';
+GRANT ALL PRIVILEGES ON SCHEMA rpt TO postgres;
+ALTER USER postgres SET search_path TO rpt, public;
 ```
 
 ```sql
-CREATE TABLE public.trended_location_profitability
+CREATE TABLE rpt.trended_location_profitability
 (
     "Location" character varying(255) NOT NULL,
     "Film" character varying(255) NOT NULL,
     "Revenue" money,
     "Year" smallint NOT NULL
 );
-ALTER TABLE public.trended_location_profitability
-    OWNER to postgres;
+ALTER TABLE rpt.trended_location_profitability OWNER to postgres;
 ```
 
 
