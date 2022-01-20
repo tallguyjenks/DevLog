@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642659584455
+updated: 1642659832319
 created: 1642658133797
 ---
 
@@ -12,13 +12,15 @@ created: 1642658133797
 1. Describe the data used for the report.
     - "Data around the product of DVD's and the various types of metadata and classification data that one might use in management of that product. Also contained in the database is standard business fact tables such as inventory, payment records, and Staffing"
 2. Identify two or more specific tables from the given dataset that will provide the data necessary for the detailed and the summary sections of the report.
-    - "`Film`, `Payment`, `Store`, `Rental`, `Staff`"
+    - `Film`, `Payment`, `Store`, `Rental`, `Staff`, `Address`, `Inventory`
 3. Identify the specific fields that will be included in the detailed and the summary sections of the report. 
-    - `Rental`: rental_id
-    - `Film`: film_id, title
-    - `Payment`: rental_id, payment_date, staff_id
-    - `Staff`: staff_id, store_id
-    - `Store`: store_id, address_id
+    - `Rental`: rental_id, inventory_id
+        - `Inventory`: inventory_id, film_id
+            - `Film`: film_id, title
+        - `Payment`: rental_id, payment_date, staff_id, ammount
+            - `Staff`: staff_id, store_id
+                - `Store`: store_id, address_id
+                    - `Address`: address_id, address
 4. Identify one field in the detailed section that will require a custom transformation and explain why it should be transformed. For example, you might translate a field with a value of `N` to `No` and `Y` to `Yes`.
     - <++>
 5. Explain the different business uses of the detailed and the summary sections of the report.
