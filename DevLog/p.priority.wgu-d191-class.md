@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642667740549
+updated: 1642669035903
 created: 1642658133797
 ---
 
@@ -108,27 +108,32 @@ FROM public.payment AS p
 ## D. Write code for function(s) that perform the transformation(s) you identified in part A4.
 
 ```sql
-CREATE FUNCTION rpt."TRF_ETL_Report_Data"()
-    RETURNS trigger
-    LANGUAGE 'plpgsal'
-    NOT LEAKPROOF
-AS SBODY$
-INSERT INTO rpt.report_data_clean
-SELECT DATE_PART('year', payment_date) AS Year
-     , address AS Location
-     , CAST(amount AS money) AS Revenue
-FROM rpt.report_data
+CREATE FUNCTION rpt.FN_Clean_Data () RETURNS trigger AS $clean_data$
+BEGIN
+    INSERT INTO rpt.report_data_clean
+    SELECT DATE_PART('year', payment_date) AS Year
+         , address AS Location
+         , CAST(amount AS money) AS Revenue
+    FROM rpt.report_data;
+    TRUNCATE TABLE rpt.report_data;
+END
+$clean_data$ LANGUAGE 'plpgsql';
+ALTER FUNCTION rpt.FN_Clean_Data() OWNER TO postgres;
+COMMENT ON FUNCTION rpt.FN_Clean_Data()
+IS 'New data in rpt.report_data gets cleaned and inserted into rpt.report_data_clean';
 
-TRUNCATE TABLE rpt.report_data;
-$BODY$ ;
-ALTER FUNCTION rpt."TRF_ETL_Report_Data"() OWNER TO postgres;
-COMMENT ON FUNCTION rpt."TRF_ETL_Report_Data"()
-IS 'New data in rep. report_data gets cleaned and inserted into rpt. report_data_clean' ;
+CREATE TRIGGER TR_ETL AFTER INSERT ON rpt.report_data
+    FOR STATEMENT
+    EXECUTE FUNCTION rpt.FN_Clean_Data();
+COMMENT ON TRIGGER TR_ETL ON rpt.report_data
+IS 'Update reports when new data is added to the rpt.report_data table';
 ```
 
 ## E. Write a SQL code that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
 
+```sql
 
+```
 
 ## F. Create a stored procedure that can be used to refresh the data in both your detailed and summary tables. The procedure should clear the contents of the detailed and summary tables and perform the ETL load process from part C and include comments that identify how often the stored procedure should be executed.
 
