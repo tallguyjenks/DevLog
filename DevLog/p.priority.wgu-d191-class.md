@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642659832319
+updated: 1642660605548
 created: 1642658133797
 ---
 
@@ -17,18 +17,31 @@ created: 1642658133797
     - `Rental`: rental_id, inventory_id
         - `Inventory`: inventory_id, film_id
             - `Film`: film_id, title
-        - `Payment`: rental_id, payment_date, staff_id, ammount
+        - `Payment`: rental_id, payment_date, staff_id, amount
             - `Staff`: staff_id, store_id
                 - `Store`: store_id, address_id
                     - `Address`: address_id, address
 4. Identify one field in the detailed section that will require a custom transformation and explain why it should be transformed. For example, you might translate a field with a value of `N` to `No` and `Y` to `Yes`.
-    - <++>
+    - Will have to cast the date times in the `Payment` table to be just be the Year datepart for the roll up summary by year
 5. Explain the different business uses of the detailed and the summary sections of the report.
-    - <++>
+    - Be able to see the most profitable rental locations
+    - Be able to see the most profitable rentals at all locations
+    - See payment revenue per location per year for trended metrics on each locations profitability
 6. Explain how frequently your report should be refreshed to remain relevant to stakeholders.
-    - <++>
+    - Since the revenue per location is calculated live it can be refreshed as needed or live via a trigger calling a stored procedure.
+    - To see the most profitable locations or products the true results wont finalize until fiscal year's end, but can still be used live for forcasting if desired.
 
 ## B. Write a SQL code that creates the tables to hold your report sections. 
+
+```sql
+CREATE SCHEMA rpt
+    AUTHORIZATION postgres;
+COMMENT ON SCHEMA rpt
+    IS 'Reporting';
+```
+
+
+
 
 ## C. Write a SQL query that will extract the raw data needed for the Detailed section of your report from the source database and verify the data`s accuracy.
 
