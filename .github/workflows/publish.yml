@@ -1,0 +1,56 @@
+name: Build Dendron Static Site
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Delete cache if present
+      run: "rm -rf .next && rm -rf docs && rm -rf node_modules"
+
+    - name: Install npm dependencies
+      ## Install latest version
+      # This always publishes with the latest dendron version
+      # Uncomment the next line, and comment out any other `npm install ...` line
+      run: npm install @dendronhq/dendron-cli@latest
+
+      ## OPTIONALLY: Install specific version
+      # Available versions: https://www.npmjs.com/package/@dendronhq/dendron-cli
+      # This example pins to 0.77.0
+      # Uncomment the next line, and comment out any other `npm install ...` line
+      #run: npm install @dendronhq/dendron-cli@0.77.0
+
+      ## OPTIONALLY: Install dependencies from package-lock.json
+      # Install version of Dendron from package-lock.json in workspace root
+      # To use:
+      # - Remove package-lock.json and package.json from .gitignore
+      # - Commit package.json and package-lock.json to repository
+      # - Uncomment the next line, and comment out the other `npm install ...` line
+      #run: npm install
+
+    - name: Output dependency tree to log
+      run: cat package*.json
+
+    - name: Initialize or pull nextjs template
+      run: npx dendron publish init
+
+    - name: Export notes
+      run: npx dendron publish export --target github --yes
+
+    - name: Deploy site
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: pages
+        publish_dir: docs/
+        force_orphan: true
+        #cname: example.com
