@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642664779958
+updated: 1642665500551
 created: 1642658133797
 ---
 
@@ -84,9 +84,13 @@ ALTER TABLE rpt.location_top CLUSTER ON "CIX_Year_Revenue";
 ## C. Write a SQL query that will extract the raw data needed for the Detailed section of your report from the source database and verify the data`s accuracy.
 
 ```sql
-
-
-
+SELECT DATE_PART('year', p.payment_date) AS Year
+     , a.address AS Location
+     , CAST(p.amount AS money) AS Revenue
+FROM public.payment AS p
+    LEFT JOIN public.staff AS s ON s.staff_id = p.staff_id
+    LEFT JOIN public.store AS st ON st.store_id = s.store_id
+    LEFT JOIN public.address AS a ON a.address_id = st.address_id
 ```
 
 ## D. Write code for function(s) that perform the transformation(s) you identified in part A4.
