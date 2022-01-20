@@ -21,7 +21,7 @@ site:
         action: useVault
         payload:
             - DevLog
-            - Norsk
+            # - Norsk
 commands:
     lookup:
         note:
