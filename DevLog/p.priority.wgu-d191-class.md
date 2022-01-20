@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642666603510
+updated: 1642667380061
 created: 1642658133797
 ---
 
@@ -114,6 +114,7 @@ SELECT DATE_PART('year', payment_date) AS Year
      , CAST(amount AS money) AS Revenue
 FROM rpt.report_data
 ;
+TRUNCATE TABLE rpt.report_data;
 ```
 
 ## E. Write a SQL code that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
