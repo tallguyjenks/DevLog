@@ -10,6 +10,8 @@ site:
     siteHierarchies:
         - root
     siteRootDir: docs
+    siteUrl: 'https://tallguyjenks.github.io'
+    assetsPrefix: /DevLog
     usePrettyRefs: true
     title: Dendron
     description: Personal knowledge space
@@ -36,6 +38,7 @@ commands:
         enableMultiSelect: false
     insertNoteIndex:
         enableMarker: false
+    randomNote: {}
 workspace:
     vaults:
         -
@@ -79,7 +82,7 @@ workspace:
     enableUserTags: true
     enableHashTags: true
     workspaceVaultSyncMode: noCommit
-    enableAutoFoldFrontmatter: false
+    enableAutoFoldFrontmatter: true
     enableEditorDecorations: true
     maxPreviewsCached: 10
     maxNoteLength: 204800
