@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642665500551
+updated: 1642666160360
 created: 1642658133797
 ---
 
@@ -40,11 +40,21 @@ ALTER USER postgres SET search_path TO rpt, public;
 
 CREATE TABLE rpt.report_data
 (
+    "payment_date" smallint NOT NULL,
+    "address" character varying (255) NOT NULL,
+    "amount" money
+);
+ALTER TABLE rpt.report_data OWNER to postgres;
+
+-----------------------------------------------------------
+
+CREATE TABLE rpt.report_data_clean
+(
     "Year" smallint NOT NULL,
     "Location" character varying (255) NOT NULL,
     "Revenue" money
 );
-ALTER TABLE rpt.report_data OWNER to postgres;
+ALTER TABLE rpt.report_data_clean OWNER to postgres;
 
 -----------------------------------------------------------
 
@@ -84,18 +94,31 @@ ALTER TABLE rpt.location_top CLUSTER ON "CIX_Year_Revenue";
 ## C. Write a SQL query that will extract the raw data needed for the Detailed section of your report from the source database and verify the data`s accuracy.
 
 ```sql
-SELECT DATE_PART('year', p.payment_date) AS Year
-     , a.address AS Location
-     , CAST(p.amount AS money) AS Revenue
+INSERT INTO rpt.report_data
+SELECT p.payment_date
+     , a.address
+     , p.amount
 FROM public.payment AS p
     LEFT JOIN public.staff AS s ON s.staff_id = p.staff_id
     LEFT JOIN public.store AS st ON st.store_id = s.store_id
     LEFT JOIN public.address AS a ON a.address_id = st.address_id
+;
 ```
 
 ## D. Write code for function(s) that perform the transformation(s) you identified in part A4.
 
+```sql
+INSERT INTO rpt.report_data_clean
+SELECT DATE_PART('year', payment_date) AS Year
+     , address AS Location
+     , CAST(amount AS money) AS Revenue
+FROM rpt.report_data
+;
+```
+
 ## E. Write a SQL code that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
+
+
 
 ## F. Create a stored procedure that can be used to refresh the data in both your detailed and summary tables. The procedure should clear the contents of the detailed and summary tables and perform the ETL load process from part C and include comments that identify how often the stored procedure should be executed.
 
