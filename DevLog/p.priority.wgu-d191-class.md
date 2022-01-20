@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642662565964
+updated: 1642662858719
 created: 1642658133797
 ---
 
@@ -44,22 +44,32 @@ ALTER USER postgres SET search_path TO rpt, public;
 ```sql
 CREATE TABLE rpt.trended_location_profitability
 (
+    "Year" smallint NOT NULL,
     "Location" character varying(255) NOT NULL,
     "Film" character varying(255) NOT NULL,
-    "Revenue" money,
-    "Year" smallint NOT NULL
+    "Revenue" money
 );
 ALTER TABLE rpt.trended_location_profitability OWNER to postgres;
 ```
 
 ```sql
-CREATE TABLE rpt.location_revenue_breakdown
+CREATE TABLE rpt.location_top_three_revenue_breakdown
 (
+    "Year" smallint NOT NULL,
     "Location" character varying (255) NOT NULL,
-    "Revenue" money,
-    "Year" smallint NOT NULL
+    "Revenue" money
 );
-ALTER TABLE rpt.location_revenue_breakdown OWNER to postgres;
+ALTER TABLE rpt.location_top_three_revenue_breakdown OWNER to postgres;
+```
+
+```sql
+CREATE TABLE rpt.location_top_three_films_breakdown
+    "Year" smallint NOT NULL,
+    "Location" character varying(255) NOT NULL,
+    "Film" character varying(255),
+    "Revenue" money NOT NULL
+);
+ALTER TABLE rpt.location_top_three_films_breakdown OWNER to postgres;
 ```
 
 
