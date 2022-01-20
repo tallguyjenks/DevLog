@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642666160360
+updated: 1642666603510
 created: 1642658133797
 ---
 
@@ -40,9 +40,9 @@ ALTER USER postgres SET search_path TO rpt, public;
 
 CREATE TABLE rpt.report_data
 (
-    "payment_date" smallint NOT NULL,
+    "payment_date" timestamp without time zone NOT NULL,
     "address" character varying (255) NOT NULL,
-    "amount" money
+    "amount" numeric
 );
 ALTER TABLE rpt.report_data OWNER to postgres;
 
