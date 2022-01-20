@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642658311651
+updated: 1642658858602
 created: 1642658133797
 ---
 
@@ -10,11 +10,17 @@ created: 1642658133797
 ## A. Summarize one real-world business report that can be created from the attached Data Sets and Associated Dictionaries. 
 
 1. Describe the data used for the report.
+    - "Data around the product of DVD's and the various types of metadata and classification data that one might use in management of that product. Also contained in the database is standard business fact tables such as inventory and payment records"
 2. Identify two or more specific tables from the given dataset that will provide the data necessary for the detailed and the summary sections of the report.
+    - <++>
 3. Identify the specific fields that will be included in the detailed and the summary sections of the report. 
+    - <++>
 4. Identify one field in the detailed section that will require a custom transformation and explain why it should be transformed. For example, you might translate a field with a value of `N` to `No` and `Y` to `Yes`.
+    - <++>
 5. Explain the different business uses of the detailed and the summary sections of the report.
+    - <++>
 6. Explain how frequently your report should be refreshed to remain relevant to stakeholders.
+    - <++>
 
 ## B. Write a SQL code that creates the tables to hold your report sections. 
 
