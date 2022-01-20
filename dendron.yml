@@ -38,7 +38,6 @@ commands:
         enableMultiSelect: false
     insertNoteIndex:
         enableMarker: false
-    randomNote: {}
 workspace:
     vaults:
         -
