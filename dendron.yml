@@ -10,7 +10,7 @@ site:
     siteHierarchies:
         - root
     siteRootDir: docs
-    siteUrl: `https://{GITHUB_USERNAME}.github.io`
+    siteUrl: 'https://{GITHUB_USERNAME}.github.io'
     assetsPrefix: /DevLog
     usePrettyRefs: true
     title: Dendron
