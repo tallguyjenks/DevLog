@@ -10,4 +10,8 @@ zz/
 node_modules
 .dendron.*
 build
+.next
+.history
 seeds
+package*.json
+yarn.lock

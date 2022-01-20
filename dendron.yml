@@ -10,6 +10,8 @@ site:
     siteHierarchies:
         - root
     siteRootDir: docs
+    siteUrl: 'https://{GITHUB_USERNAME}.github.io'
+    assetsPrefix: /DevLog
     usePrettyRefs: true
     title: Dendron
     description: Personal knowledge space
@@ -19,7 +21,7 @@ site:
         action: useVault
         payload:
             - DevLog
-            - Norsk
+            # - Norsk
 commands:
     lookup:
         note:
@@ -40,6 +42,7 @@ workspace:
     vaults:
         -
             fsPath: Norsk
+            visibility: private
         -
             fsPath: DevLog
     journal:
@@ -79,7 +82,7 @@ workspace:
     enableUserTags: true
     enableHashTags: true
     workspaceVaultSyncMode: noCommit
-    enableAutoFoldFrontmatter: false
+    enableAutoFoldFrontmatter: true
     enableEditorDecorations: true
     maxPreviewsCached: 10
     maxNoteLength: 204800
