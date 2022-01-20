@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642662858719
+updated: 1642663779857
 created: 1642658133797
 ---
 
@@ -12,25 +12,21 @@ created: 1642658133797
 1. Describe the data used for the report.
     - "Data around the product of DVD's and the various types of metadata and classification data that one might use in management of that product. Also contained in the database is standard business fact tables such as inventory, payment records, and Staffing"
 2. Identify two or more specific tables from the given dataset that will provide the data necessary for the detailed and the summary sections of the report.
-    - `Film`, `Payment`, `Store`, `Rental`, `Staff`, `Address`, `Inventory`
+    - `Payment`, `Store`, `Staff`, `Address`
 3. Identify the specific fields that will be included in the detailed and the summary sections of the report. 
-    - `Rental`: rental_id, inventory_id
-        - `Inventory`: inventory_id, film_id
-            - `Film`: film_id, title
-        - `Payment`: rental_id, payment_date, staff_id, amount
-            - `Staff`: staff_id, store_id
-                - `Store`: store_id, address_id
-                    - `Address`: address_id, address
+    - `Payment`: rental_id, payment_date, staff_id, amount
+    - `Staff`: staff_id, store_id
+    - `Store`: store_id, address_id
+    - `Address`: address_id, address
 4. Identify one field in the detailed section that will require a custom transformation and explain why it should be transformed. For example, you might translate a field with a value of `N` to `No` and `Y` to `Yes`.
     - Will have to cast the date times in the `Payment` table to be just be the Year datepart for the roll up summary by year
     - Casting the `Payment` field "amount" from numeric to money to more accurately reflect the underlying data
 5. Explain the different business uses of the detailed and the summary sections of the report.
     - Be able to see the most profitable rental locations
-    - Be able to see the most profitable rentals at all locations
     - See payment revenue per location per year for trended metrics on each locations profitability
 6. Explain how frequently your report should be refreshed to remain relevant to stakeholders.
     - Since the revenue per location is calculated live it can be refreshed as needed or live via a trigger calling a stored procedure.
-    - To see the most profitable locations or products the true results wont finalize until fiscal year's end, but can still be used live for forcasting if desired.
+    - To see the most profitable locations or products the definitive results wont finalize until fiscal year's end, but can still be used live for forcasting if desired.
 
 ## B. Write a SQL code that creates the tables to hold your report sections. 
 
@@ -42,39 +38,31 @@ ALTER USER postgres SET search_path TO rpt, public;
 ```
 
 ```sql
-CREATE TABLE rpt.trended_location_profitability
-(
-    "Year" smallint NOT NULL,
-    "Location" character varying(255) NOT NULL,
-    "Film" character varying(255) NOT NULL,
-    "Revenue" money
-);
-ALTER TABLE rpt.trended_location_profitability OWNER to postgres;
-```
-
-```sql
-CREATE TABLE rpt.location_top_three_revenue_breakdown
+CREATE TABLE rpt.location_trended
 (
     "Year" smallint NOT NULL,
     "Location" character varying (255) NOT NULL,
     "Revenue" money
 );
-ALTER TABLE rpt.location_top_three_revenue_breakdown OWNER to postgres;
+ALTER TABLE rpt.location_trended OWNER to postgres;
+
+CREATE UNIQUE INDEX "CIX_Year_Loc"
+    ON rpt.location_trended USING btree
+    ("Year" ASC NULLS LAST, "Location" COLLATE pg_catalog."default" ASC NULLS LAST)
+    INCLUDE ("Year", "Location")
+    TABLESPACE pg_default;
+    ALTER TABLE rpt.location_trended CLUSTER ON "CIX_Year_Loc";
 ```
 
 ```sql
-CREATE TABLE rpt.location_top_three_films_breakdown
+CREATE TABLE rpt.location_top
+(
     "Year" smallint NOT NULL,
     "Location" character varying(255) NOT NULL,
-    "Film" character varying(255),
     "Revenue" money NOT NULL
 );
-ALTER TABLE rpt.location_top_three_films_breakdown OWNER to postgres;
+ALTER TABLE rpt.location_top OWNER to postgres;
 ```
-
-
-
-
 
 ## C. Write a SQL query that will extract the raw data needed for the Detailed section of your report from the source database and verify the data`s accuracy.
 
