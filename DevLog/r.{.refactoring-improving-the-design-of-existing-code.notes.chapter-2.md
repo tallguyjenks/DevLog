@@ -2,7 +2,7 @@
 id: HcLXOo8q2iRWtCWROZ1uW
 title: Chapter 2
 desc: ''
-updated: 1642629757040
+updated: 1642720913182
 created: 1642629443133
 ---
 
@@ -18,3 +18,4 @@ created: 1642629443133
 - reduce the complexity of large branch feature merges with things like feature toggles to turn off "in-progress" work that is unable to be broken into smaller parts in a [[terms.ci-cd]] environment.
 
 ---
+https://youtu.be/0scjy6Zxzwc
