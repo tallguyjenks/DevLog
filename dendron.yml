@@ -42,6 +42,7 @@ workspace:
     vaults:
         -
             fsPath: Norsk
+            visibility: private
         -
             fsPath: DevLog
     journal:
