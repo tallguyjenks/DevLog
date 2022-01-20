@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642663779857
+updated: 1642663989247
 created: 1642658133797
 ---
 
@@ -62,6 +62,13 @@ CREATE TABLE rpt.location_top
     "Revenue" money NOT NULL
 );
 ALTER TABLE rpt.location_top OWNER to postgres;
+
+CREATE INDEX "CIX_Year_Revenue"
+    ON rpt.location top USING btree
+    ("Year" DESC NULLS LAST, "Revenue" DESC NULLS LAST)
+    INCLUDE ("Year", "Revenue")
+
+ALTER TABLE rpt.location_top CLUSTER ON "CIX_Year_Revenue";
 ```
 
 ## C. Write a SQL query that will extract the raw data needed for the Detailed section of your report from the source database and verify the data`s accuracy.
