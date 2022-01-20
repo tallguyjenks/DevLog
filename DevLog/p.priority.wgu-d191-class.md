@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642663989247
+updated: 1642664779958
 created: 1642658133797
 ---
 
@@ -14,7 +14,7 @@ created: 1642658133797
 2. Identify two or more specific tables from the given dataset that will provide the data necessary for the detailed and the summary sections of the report.
     - `Payment`, `Store`, `Staff`, `Address`
 3. Identify the specific fields that will be included in the detailed and the summary sections of the report. 
-    - `Payment`: rental_id, payment_date, staff_id, amount
+    - `Payment`: payment_date, staff_id, amount
     - `Staff`: staff_id, store_id
     - `Store`: store_id, address_id
     - `Address`: address_id, address
@@ -35,9 +35,19 @@ CREATE SCHEMA rpt AUTHORIZATION postgres;
 COMMENT ON SCHEMA rpt IS 'Reporting';
 GRANT ALL PRIVILEGES ON SCHEMA rpt TO postgres;
 ALTER USER postgres SET search_path TO rpt, public;
-```
 
-```sql
+-----------------------------------------------------------
+
+CREATE TABLE rpt.report_data
+(
+    "Year" smallint NOT NULL,
+    "Location" character varying (255) NOT NULL,
+    "Revenue" money
+);
+ALTER TABLE rpt.report_data OWNER to postgres;
+
+-----------------------------------------------------------
+
 CREATE TABLE rpt.location_trended
 (
     "Year" smallint NOT NULL,
@@ -52,9 +62,9 @@ CREATE UNIQUE INDEX "CIX_Year_Loc"
     INCLUDE ("Year", "Location")
     TABLESPACE pg_default;
     ALTER TABLE rpt.location_trended CLUSTER ON "CIX_Year_Loc";
-```
 
-```sql
+-----------------------------------------------------------
+
 CREATE TABLE rpt.location_top
 (
     "Year" smallint NOT NULL,
@@ -72,6 +82,12 @@ ALTER TABLE rpt.location_top CLUSTER ON "CIX_Year_Revenue";
 ```
 
 ## C. Write a SQL query that will extract the raw data needed for the Detailed section of your report from the source database and verify the data`s accuracy.
+
+```sql
+
+
+
+```
 
 ## D. Write code for function(s) that perform the transformation(s) you identified in part A4.
 
