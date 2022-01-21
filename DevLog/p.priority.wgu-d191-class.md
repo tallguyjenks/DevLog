@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642751432910
+updated: 1642752465996
 created: 1642658133797
 ---
 
@@ -95,8 +95,8 @@ ALTER TABLE rpt.location_top CLUSTER ON "CIX_Year_Revenue";
 
 ```sql
 INSERT INTO rpt.report_data
-SELECT p.payment_date
-     , a.address
+SELECT a.address
+     , p.payment_date
      , p.amount
 FROM public.payment AS p
     LEFT JOIN public.staff AS s ON s.staff_id = p.staff_id
