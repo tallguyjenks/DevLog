@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642670238710
+updated: 1642746390334
 created: 1642658133797
 ---
 
@@ -121,11 +121,7 @@ $clean_data$ LANGUAGE 'plpgsql';
 ALTER FUNCTION rpt.FN_Clean_Data() OWNER TO postgres;
 COMMENT ON FUNCTION rpt.FN_Clean_Data()
 IS 'New data in rpt.report_data gets cleaned and inserted into rpt.report_data_clean';
-```
 
-## E. Write a SQL code that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
-
-```sql
 CREATE TRIGGER TR_ETL AFTER INSERT ON rpt.report_data
     FOR STATEMENT
     EXECUTE FUNCTION rpt.FN_Clean_Data();
@@ -133,13 +129,10 @@ COMMENT ON TRIGGER TR_ETL ON rpt.report_data
 IS 'Update reports when new data is added to the rpt.report_data table';
 ```
 
-## F. Create a stored procedure that can be used to refresh the data in both your detailed and summary tables. The procedure should clear the contents of the detailed and summary tables and perform the ETL load process from part C and include comments that identify how often the stored procedure should be executed.
-
-
-TODO left off here, refactor this trigger code into a stored proc to update the report tables based on new inserts to the clean_data table
-
+## E. Write a SQL code that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
 
 ```sql
+
 CREATE FUNCTION rpt.FN_ETL() RETURNS trigger AS $etl$
 BEGIN
     TRUNCATE TABLE rpt.location_trended;
@@ -170,7 +163,20 @@ IS 'Update reports when new data is added to the rpt.report_data_clean table';
 
 ```
 
+## F. Create a stored procedure that can be used to refresh the data in both your detailed and summary tables. The procedure should clear the contents of the detailed and summary tables and perform the ETL load process from part C and include comments that identify how often the stored procedure should be executed.
+
 1.  Explain how the stored procedure can be run on a schedule to ensure data freshness.
+
+- [ ] truncate all rpt.tables
+- [ ] move data from source to raw landing zone
+- [ ] comment usage directions in the proc
+
+
+```sql
+
+
+
+```
 
 ## G. Provide a Panopto video recording that includes a demonstration of the functionality of the code used for the analysis and a summary of the programming environment. 
 
