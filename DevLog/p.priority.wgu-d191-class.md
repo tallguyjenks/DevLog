@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642755529007
+updated: 1642756649822
 created: 1642658133797
 ---
 
@@ -109,7 +109,7 @@ FROM public.payment AS p
 ## D. Write code for function(s) that perform the transformation(s) you identified in part A4.
 
 ```sql
-CREATE OR REPLACE FUNCTION rpt.FN_Clean_Data () RETURNS trigger LANGUAGE 'plpgsql' AS $$
+CREATE OR REPLACE FUNCTION rpt.FN_Clean_Data() RETURNS trigger LANGUAGE 'plpgsql' AS $$
 BEGIN
     INSERT INTO rpt.report_data_clean
     SELECT DATE_PART('year', payment_date) AS Year
@@ -138,30 +138,20 @@ CREATE OR REPLACE FUNCTION rpt.FN_ETL() RETURNS trigger LANGUAGE 'plpgsql' AS $$
 BEGIN
     TRUNCATE TABLE rpt.location_trended;
     INSERT INTO rpt.location_trended
-    SELECT "Year"
-         , "Location"
-         , SUM("Revenue")
+    SELECT "Year", "Location", SUM("Revenue")
     FROM rpt.report_data_clean
     GROUP BY "Year", "Location";
 
     TRUNCATE TABLE rpt.location_top;
     INSERT INTO rpt.location_top
-    SELECT "Year"
-         , "Location"
-         , SUM("Revenue")
+    SELECT "Year", "Location", SUM("Revenue")
          , RANK() OVER(ORDER BY "Year" DESC, SUM("Revenue") DESC) AS "Rank"
     FROM rpt.report_data_clean
     WHERE "Year" IN (
         --   CAST(DATE_PART('year', NOW()) AS INT)     -- Current Year
         -- , CAST(DATE_PART('year', NOW()) AS INT) - 1 -- Prior Year
-        (
-            SELECT MAX("Year")
-            FROM rpt.report_data_clean
-        ),
-        (
-            SELECT MAX("Year")-1
-            FROM rpt.report_data_clean
-        )
+          (SELECT MAX("Year") FROM rpt.report_data_clean)
+        , (SELECT MAX("Year") - 1 FROM rpt.report_data_clean)
     )
     GROUP BY "Year", "Location";
     RETURN NULL;
