@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642750777786
+updated: 1642751109564
 created: 1642658133797
 ---
 
@@ -145,9 +145,10 @@ BEGIN
     INSERT INTO rpt.location_top
     SELECT Year, Location, SUM(Revenue)
     FROM rpt.report_data_clean
-    WHERE Year IN
-          CAST (DATE_PART ('year', NOW()) AS INT)     -- Curent Year
-        , CAST (DATE_PART ('year', NOW()) AS INT) - 1 -- Prior Year
+    WHERE Year IN (
+          CAST(DATE_PART('year', NOW()) AS INT)     -- Curent Year
+        , CAST(DATE_PART('year', NOW()) AS INT) - 1 -- Prior Year
+    )
     GROUP BY Year, Location;
     RETURN NULL;
 END
@@ -156,7 +157,7 @@ ALTER FUNCTION rpt.FN_ETL() OWNER TO postgres;
 COMMENT ON FUNCTION rpt.FN_ETL()
 IS 'New data in rpt.report_data_clean so update all reports';
 
-CREATE TRIGGER TR_Update Reports AFTER INSERT ON rpt.report_data_clean
+CREATE TRIGGER TR_Update_Reports AFTER INSERT ON rpt.report_data_clean
 FOR STATEMENT
 EXECUTE FUNCTION rpt.FN_ETL();
 COMMENT ON TRIGGER TR_Update_Reports ON rpt.report_data_clean
@@ -175,13 +176,25 @@ IS 'Update reports when new data is added to the rpt.report_data_clean table';
 
 ```sql
 
-CREATE OR REPLACE PROCEDURE rpt.USP_Refresh() LANGUAGE 'plpgsql' AS $$
+CREATE OR REPLACE FUNCTION rpt."FN_Nuke_From_Orbit"() RETURNS void LANGUAGE 'plpgsql' AS $$
+BEGIN
+    TRUNCATE TABLE rpt.report_data;
+    TRUNCATE TABLE rpt.report_data_clean;
+    TRUNCATE TABLE rpt.location_trended;
+    TRUNCATE TABLE rpt.location_top;
+END;
+$$;
+ALTER FUNCTION rpt."FN_Nuke_From_Orbit"() OWNER TO postgres;
+COMMENT ON FUNCTION rpt."FN Nuke_From_Orbit"()
+IS 'Wipe all data in the rot schema from the Face of the earth';
+
+CREATE OR REPLACE PROCEDURE rpt."USP_Refresh"() LANGUAGE 'plpgsql' AS $$
 BEGIN
     /*********************************************************
     Wipe The entire structure of the rpt schema for a clean
     full rebuild via truncate and load ETL
     *********************************************************/
-    TRUNCATE TABLE rpt.report_data_clean;
+    PERFORM rpt."FN_Nuke_From_Orbit"();
     /*********************************************************
     Grab all raw data and kick off the live rebuild process
     driven by triggers.
@@ -197,7 +210,7 @@ BEGIN
     COMMIT;
 END;
 $$;
-COMMENT ON PROCEDURE rpt.USP_Refresh()
+COMMENT ON PROCEDURE rpt."USP_Refresh"()
 IS 'Refresh the entire reporting structure';
 
 ```
