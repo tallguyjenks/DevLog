@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642754791109
+updated: 1642755529007
 created: 1642658133797
 ---
 
@@ -77,10 +77,10 @@ CREATE UNIQUE INDEX "CIX_Year_Loc"
 
 CREATE TABLE rpt.location_top
 (
-    "Rank" int NOT NULL,
     "Year" smallint NOT NULL,
     "Location" character varying(255) NOT NULL,
-    "Revenue" money NOT NULL
+    "Revenue" money NOT NULL,
+    "Rank" int NOT NULL
 );
 ALTER TABLE rpt.location_top OWNER to postgres;
 
@@ -146,10 +146,10 @@ BEGIN
 
     TRUNCATE TABLE rpt.location_top;
     INSERT INTO rpt.location_top
-    SELECT RANK() OVER(ORDER BY "Year" DESC, "Revenue" DESC) AS "Rank"
-         , "Year"
+    SELECT "Year"
          , "Location"
          , SUM("Revenue")
+         , RANK() OVER(ORDER BY "Year" DESC, SUM("Revenue") DESC) AS "Rank"
     FROM rpt.report_data_clean
     WHERE "Year" IN (
         --   CAST(DATE_PART('year', NOW()) AS INT)     -- Current Year
@@ -181,13 +181,6 @@ IS 'Update reports when new data is added to the rpt.report_data_clean table';
 
 ## F. Create a stored procedure that can be used to refresh the data in both your detailed and summary tables. The procedure should clear the contents of the detailed and summary tables and perform the ETL load process from part C and include comments that identify how often the stored procedure should be executed.
 
-1.  Explain how the stored procedure can be run on a schedule to ensure data freshness.
-
-- [ ] truncate all rpt.tables
-- [ ] move data from source to raw landing zone
-- [ ] comment usage directions in the proc
-
-
 ```sql
 
 CREATE OR REPLACE FUNCTION rpt."FN_Nuke_From_Orbit"() RETURNS void LANGUAGE 'plpgsql' AS $$
@@ -204,6 +197,20 @@ IS 'Wipe all data in the rot schema from the Face of the earth';
 
 CREATE OR REPLACE PROCEDURE rpt."USP_Refresh"() LANGUAGE 'plpgsql' AS $$
 BEGIN
+
+    /*********************************************************
+    USAGE:
+        This stored procedure can be run at any interval desired.
+        Since this performs a full truncate and load of the entire
+            rpt schema and all table data this will be expensive
+            in resources.
+        Recommendation is, depending on geographic factors of
+            store locations affecting end of day accounting totals,
+            to run the stored procedure in the off hours such as 
+            at midnight or directly after C.O.B. so the day's
+            results are posted immediately after the conclusion
+            of that day's business.
+    *********************************************************/
     /*********************************************************
     Wipe The entire structure of the rpt schema for a clean
     full rebuild via truncate and load ETL
@@ -229,7 +236,11 @@ IS 'Refresh the entire reporting structure';
 
 ```
 
+1.  Explain how the stored procedure can be run on a schedule to ensure data freshness.
+    -  The stored procedure can be ran on regularly scheduled intervals via cron or a sql agent to run the stored proc as a job on a schedule.
 ## G. Provide a Panopto video recording that includes a demonstration of the functionality of the code used for the analysis and a summary of the programming environment. 
+
+TODO LEFT OFF HERE
 
 Note: For instructions on how to access and use Panopto, use the "Panopto How-To Videos" web link provided below. To access Panopto's website, navigate to the web link titled "Panopto Access," and then choose to log in using the “WGU” option. If prompted, log in using your WGU student portal credentials, and then it will forward you to Panopto`s website.
 To submit your recording, upload it to the Panopto drop box titled “XXX.” Once the recording has been uploaded and processed in Panopto's system, retrieve the URL of the recording from Panopto and copy and paste it into the Links option. Upload the remaining task requirements using the Attachments option.
