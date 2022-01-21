@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642757267159
+updated: 1642757440741
 created: 1642658133797
 ---
 
@@ -235,6 +235,8 @@ Note: For instructions on how to access and use Panopto, use the "Panopto How-To
 To submit your recording, upload it to the Panopto drop box titled “XXX.” Once the recording has been uploaded and processed in Panopto's system, retrieve the URL of the recording from Panopto and copy and paste it into the Links option. Upload the remaining task requirements using the Attachments option.
 
 ## H. Record the web sources you used to acquire data or segments of third-party code to support the application if applicable. Be sure the web sources are reliable.
+
+no code used from outside, only resources to understand syntax, everything written in the VM or written by postgres GUI menu's
 
 ## I. Acknowledge sources, using in-text citations and references, for content that is quoted, paraphrased, or summarized.
 
