@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642747698433
+updated: 1642748317187
 created: 1642658133797
 ---
 
@@ -108,7 +108,7 @@ FROM public.payment AS p
 ## D. Write code for function(s) that perform the transformation(s) you identified in part A4.
 
 ```sql
-CREATE FUNCTION rpt.FN_Clean_Data () RETURNS trigger AS $clean_data$
+CREATE FUNCTION rpt.FN_Clean_Data () RETURNS trigger LANGUAGE 'plpgsql' AS $$
 BEGIN
     INSERT INTO rpt.report_data_clean
     SELECT DATE_PART('year', payment_date) AS Year
@@ -117,7 +117,7 @@ BEGIN
     FROM rpt.report_data;
     TRUNCATE TABLE rpt.report_data;
 END
-$clean_data$ LANGUAGE 'plpgsql';
+$$;
 ALTER FUNCTION rpt.FN_Clean_Data() OWNER TO postgres;
 COMMENT ON FUNCTION rpt.FN_Clean_Data()
 IS 'New data in rpt.report_data gets cleaned and inserted into rpt.report_data_clean';
@@ -133,7 +133,7 @@ IS 'Update reports when new data is added to the rpt.report_data table';
 
 ```sql
 
-CREATE FUNCTION rpt.FN_ETL() RETURNS trigger AS $etl$
+CREATE FUNCTION rpt.FN_ETL() RETURNS trigger LANGUAGE 'plpgsql' AS $$
 BEGIN
     TRUNCATE TABLE rpt.location_trended;
     INSERT INTO rpt.location_trended
@@ -150,7 +150,7 @@ BEGIN
         , CAST (DATE_PART ('year', NOW()) AS INT) - 1 -- Prior Year
     GROUP BY Year, Location;
 END
-$etl$ LANGUAGE 'plpgsql';
+$$;
 ALTER FUNCTION rpt.FN_ETL() OWNER TO postgres;
 COMMENT ON FUNCTION rpt.FN_ETL()
 IS 'New data in rpt.report_data_clean so update all reports';
@@ -174,7 +174,7 @@ IS 'Update reports when new data is added to the rpt.report_data_clean table';
 
 ```sql
 
-CREATE OR REPLACE PROCEDURE rpt.USP_Refresh() AS $BODY$
+CREATE OR REPLACE PROCEDURE rpt.USP_Refresh() RETURNS void LANGUAGE 'plpgsql' AS $$
 BEGIN
     /*********************************************************
     Wipe The entire structure of the rpt schema for a clean
@@ -198,7 +198,7 @@ BEGIN
         LEFT JOIN public.address AS a ON a.address_id = st.address_id;
     COMMIT;
 END;
-$BODY$ LANGUAGE 'plpgsql';
+$$;
 COMMENT ON PROCEDURE rpt.USP_Refresh()
 IS 'Refresh the entire reporting structure';
 
