@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642753724273
+updated: 1642754791109
 created: 1642658133797
 ---
 
@@ -77,6 +77,7 @@ CREATE UNIQUE INDEX "CIX_Year_Loc"
 
 CREATE TABLE rpt.location_top
 (
+    "Rank" int NOT NULL,
     "Year" smallint NOT NULL,
     "Location" character varying(255) NOT NULL,
     "Revenue" money NOT NULL
@@ -137,17 +138,30 @@ CREATE OR REPLACE FUNCTION rpt.FN_ETL() RETURNS trigger LANGUAGE 'plpgsql' AS $$
 BEGIN
     TRUNCATE TABLE rpt.location_trended;
     INSERT INTO rpt.location_trended
-    SELECT "Year", "Location", SUM("Revenue")
+    SELECT "Year"
+         , "Location"
+         , SUM("Revenue")
     FROM rpt.report_data_clean
     GROUP BY "Year", "Location";
 
     TRUNCATE TABLE rpt.location_top;
     INSERT INTO rpt.location_top
-    SELECT "Year", "Location", SUM("Revenue")
+    SELECT RANK() OVER(ORDER BY "Year" DESC, "Revenue" DESC) AS "Rank"
+         , "Year"
+         , "Location"
+         , SUM("Revenue")
     FROM rpt.report_data_clean
     WHERE "Year" IN (
-          CAST(DATE_PART('year', NOW()) AS INT)     -- Current Year
-        , CAST(DATE_PART('year', NOW()) AS INT) - 1 -- Prior Year
+        --   CAST(DATE_PART('year', NOW()) AS INT)     -- Current Year
+        -- , CAST(DATE_PART('year', NOW()) AS INT) - 1 -- Prior Year
+        (
+            SELECT MAX("Year")
+            FROM rpt.report_data_clean
+        ),
+        (
+            SELECT MAX("Year")-1
+            FROM rpt.report_data_clean
+        )
     )
     GROUP BY "Year", "Location";
     RETURN NULL;
