@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642748906546
+updated: 1642750777786
 created: 1642658133797
 ---
 
@@ -108,15 +108,15 @@ FROM public.payment AS p
 ## D. Write code for function(s) that perform the transformation(s) you identified in part A4.
 
 ```sql
-CREATE FUNCTION rpt.FN_Clean_Data () RETURNS trigger LANGUAGE 'plpgsql' AS $$
+CREATE OR REPLACE FUNCTION rpt.FN_Clean_Data () RETURNS trigger LANGUAGE 'plpgsql' AS $$
 BEGIN
     INSERT INTO rpt.report_data_clean
     SELECT DATE_PART('year', payment_date) AS Year
          , address AS Location
          , CAST(amount AS money) AS Revenue
     FROM rpt.report_data;
-    TRUNCATE TABLE rpt.report_data;
-END
+    RETURN NULL;
+END;
 $$;
 ALTER FUNCTION rpt.FN_Clean_Data() OWNER TO postgres;
 COMMENT ON FUNCTION rpt.FN_Clean_Data()
@@ -133,7 +133,7 @@ IS 'Update reports when new data is added to the rpt.report_data table';
 
 ```sql
 
-CREATE FUNCTION rpt.FN_ETL() RETURNS trigger LANGUAGE 'plpgsql' AS $$
+CREATE OR REPLACE FUNCTION rpt.FN_ETL() RETURNS trigger LANGUAGE 'plpgsql' AS $$
 BEGIN
     TRUNCATE TABLE rpt.location_trended;
     INSERT INTO rpt.location_trended
@@ -149,6 +149,7 @@ BEGIN
           CAST (DATE_PART ('year', NOW()) AS INT)     -- Curent Year
         , CAST (DATE_PART ('year', NOW()) AS INT) - 1 -- Prior Year
     GROUP BY Year, Location;
+    RETURN NULL;
 END
 $$;
 ALTER FUNCTION rpt.FN_ETL() OWNER TO postgres;
