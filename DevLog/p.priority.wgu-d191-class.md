@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642752465996
+updated: 1642752658623
 created: 1642658133797
 ---
 
@@ -146,7 +146,7 @@ BEGIN
     SELECT "Year", "Location", SUM("Revenue")
     FROM rpt.report_data_clean
     WHERE "Year" IN (
-          CAST(DATE_PART('year', NOW()) AS INT)     -- Curent Year
+          CAST(DATE_PART('year', NOW()) AS INT)     -- Current Year
         , CAST(DATE_PART('year', NOW()) AS INT) - 1 -- Prior Year
     )
     GROUP BY "Year", "Location";
