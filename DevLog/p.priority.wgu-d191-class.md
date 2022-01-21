@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642748317187
+updated: 1642748906546
 created: 1642658133797
 ---
 
@@ -174,16 +174,13 @@ IS 'Update reports when new data is added to the rpt.report_data_clean table';
 
 ```sql
 
-CREATE OR REPLACE PROCEDURE rpt.USP_Refresh() RETURNS void LANGUAGE 'plpgsql' AS $$
+CREATE OR REPLACE PROCEDURE rpt.USP_Refresh() LANGUAGE 'plpgsql' AS $$
 BEGIN
     /*********************************************************
     Wipe The entire structure of the rpt schema for a clean
     full rebuild via truncate and load ETL
     *********************************************************/
-    TRUNCATE TABLE rpt.report_data;
     TRUNCATE TABLE rpt.report_data_clean;
-    TRUNCATE TABLE rpt.location_trended;
-    TRUNCATE TABLE rpt.location_top;
     /*********************************************************
     Grab all raw data and kick off the live rebuild process
     driven by triggers.
