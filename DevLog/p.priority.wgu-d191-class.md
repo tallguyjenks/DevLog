@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642751109564
+updated: 1642751432910
 created: 1642658133797
 ---
 
@@ -137,19 +137,19 @@ CREATE OR REPLACE FUNCTION rpt.FN_ETL() RETURNS trigger LANGUAGE 'plpgsql' AS $$
 BEGIN
     TRUNCATE TABLE rpt.location_trended;
     INSERT INTO rpt.location_trended
-    SELECT Year, Location, SUM(Revenue)
+    SELECT "Year", "Location", SUM("Revenue")
     FROM rpt.report_data_clean
-    GROUP BY Year, Location;
+    GROUP BY "Year", "Location";
 
     TRUNCATE TABLE rpt.location_top;
     INSERT INTO rpt.location_top
-    SELECT Year, Location, SUM(Revenue)
+    SELECT "Year", "Location", SUM("Revenue")
     FROM rpt.report_data_clean
-    WHERE Year IN (
+    WHERE "Year" IN (
           CAST(DATE_PART('year', NOW()) AS INT)     -- Curent Year
         , CAST(DATE_PART('year', NOW()) AS INT) - 1 -- Prior Year
     )
-    GROUP BY Year, Location;
+    GROUP BY "Year", "Location";
     RETURN NULL;
 END
 $$;
