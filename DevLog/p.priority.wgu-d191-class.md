@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642747121324
+updated: 1642747698433
 created: 1642658133797
 ---
 
@@ -174,9 +174,7 @@ IS 'Update reports when new data is added to the rpt.report_data_clean table';
 
 ```sql
 
-CREATE OR REPLACE PROCEDURE rpt."USP_Refresh"()
-LANGUAGE 'plpgsql'
-AS $BODY$
+CREATE OR REPLACE PROCEDURE rpt.USP_Refresh() AS $BODY$
 BEGIN
     /*********************************************************
     Wipe The entire structure of the rpt schema for a clean
@@ -192,17 +190,17 @@ BEGIN
     *********************************************************/
     INSERT INTO rpt.report_data
     SELECT p.payment_date
-        , a.address
-        , p.amount
+         , a.address
+         , p.amount
     FROM public.payment AS
         LEFT JOIN public.staff AS S ON s.staff_id = p.staff_id
         LEFT JOIN public.store AS st ON st.store_id = s.store_id
-        LEFT JOIN public.address AS a ON a.address_id = st.address_id
-    ;
-END
-$BODY$;
-COMMENT ON PROCEDURE rpt."USP_Refresh"()
-IS 'Refresh the entire reporting structure':
+        LEFT JOIN public.address AS a ON a.address_id = st.address_id;
+    COMMIT;
+END;
+$BODY$ LANGUAGE 'plpgsql';
+COMMENT ON PROCEDURE rpt.USP_Refresh()
+IS 'Refresh the entire reporting structure';
 
 ```
 
