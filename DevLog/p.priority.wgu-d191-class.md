@@ -2,7 +2,7 @@
 id: Dlv9oH86pZsbTNflEY3of
 title: Wgu D191 Class
 desc: ''
-updated: 1642756649822
+updated: 1642757267159
 created: 1642658133797
 ---
 
@@ -85,7 +85,7 @@ CREATE TABLE rpt.location_top
 ALTER TABLE rpt.location_top OWNER to postgres;
 
 CREATE INDEX "CIX_Year_Revenue"
-    ON rpt.location top USING btree
+    ON rpt.location_top USING btree
     ("Year" DESC NULLS LAST, "Revenue" DESC NULLS LAST)
     INCLUDE ("Year", "Revenue")
 
@@ -182,12 +182,11 @@ BEGIN
 END;
 $$;
 ALTER FUNCTION rpt."FN_Nuke_From_Orbit"() OWNER TO postgres;
-COMMENT ON FUNCTION rpt."FN Nuke_From_Orbit"()
+COMMENT ON FUNCTION rpt."FN_Nuke_From_Orbit"()
 IS 'Wipe all data in the rot schema from the Face of the earth';
 
 CREATE OR REPLACE PROCEDURE rpt."USP_Refresh"() LANGUAGE 'plpgsql' AS $$
 BEGIN
-
     /*********************************************************
     USAGE:
         This stored procedure can be run at any interval desired.
@@ -214,7 +213,7 @@ BEGIN
     SELECT p.payment_date
          , a.address
          , p.amount
-    FROM public.payment AS
+    FROM public.payment AS p
         LEFT JOIN public.staff AS S ON s.staff_id = p.staff_id
         LEFT JOIN public.store AS st ON st.store_id = s.store_id
         LEFT JOIN public.address AS a ON a.address_id = st.address_id;
