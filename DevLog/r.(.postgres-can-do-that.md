@@ -2,7 +2,7 @@
 id: Bdkl70JG99ObijlR57TEE
 title: Postgres Can Do That
 desc: ''
-updated: 1643221898853
+updated: 1643222484708
 created: 1643218935314
 ---
 
@@ -16,4 +16,5 @@ created: 1643218935314
 ---
 
 - [[s.q.postgres.tips-tricks.query-tuning-with-explain]]
+- [[s.q.postgres.tips-tricks.writeable-cte]]
 
