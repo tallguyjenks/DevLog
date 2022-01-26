@@ -2,7 +2,7 @@
 id: Bdkl70JG99ObijlR57TEE
 title: Postgres Can Do That
 desc: ''
-updated: 1643219250199
+updated: 1643221898853
 created: 1643218935314
 ---
 
@@ -14,4 +14,6 @@ created: 1643218935314
 - `Reviewed Date:` 
 
 ---
+
+- [[s.q.postgres.tips-tricks.query-tuning-with-explain]]
 

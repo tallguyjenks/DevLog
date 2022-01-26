@@ -2,7 +2,7 @@
 id: bA1ehIksZyQ3rBiAHWdha
 title: Query Tuning with Explain
 desc: ''
-updated: 1643220656908
+updated: 1643221958168
 created: 1643219775679
 ---
 
@@ -21,9 +21,18 @@ Using `EXPLAIN(ANALYZE)` and then pasting the output of the plan into this tool 
 
 ![flame graph](/assets/images/2022-01-26-10-09-32.png)
 
+This tool is also amazing for displaying graphics on a plan
+
+<https://explain.dalibo.com/>
+
+![query plan](/assets/images/2022-01-26-10-30-43.png)
+
 Setting EXPLAIN to be done automatically (must be a super user to load the module)
 
 ```sql
 LOAD 'auto_explain';
 ```
 
+`Explain` will just provide the plan calculations
+
+Running `Analyze` as well will actually execute the statement so if running on a `DELETE` statement be careful if just testing
