@@ -2,7 +2,7 @@
 id: I2WKX2ZrHxcmlnsLnUu3W
 title: Sql_for_data_analytics_perform_fast_and_efficient
 desc: ''
-updated: 1643227606917
+updated: 1643227906407
 created: 1643226241683
 ---
 
@@ -12,4 +12,5 @@ created: 1643226241683
 - [[s.q.postgres.funcs.coalesce.md]]
 - [[s.q.postgres.funcs.least-greatest.md]]
 - [[s.q.postgres.funcs.window-functions.md]]
+- [[s.q.postgres.funcs.copy]]
 - 
