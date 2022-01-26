@@ -2,13 +2,21 @@
 id: p2mfNaM5RmjyPu2NxPk2X
 title: Docker File
 desc: ''
-updated: 1641933853388
+updated: 1643232458324
 created: 1641931387867
 ---
 
 ## Tips
 
-consider each line of the docker a layer of the abstraction this comes into play in the next example.
+- consider each line of the docker a layer of the abstraction this comes into play in the next example.
+- Docker files MUST start with `FROM` but after that you can also add data like:
+
+```docker
+FROM python:3.9.7
+MAINTAINER Bryan Jenks bryan@bryanjenks.dev
+```
+
+- When you build your docker image from a docker file with [[s.containers.docker.cmd.build]] each command in the file create a new image and the layers are plastered on top, but each layer is cached so when you change things iteratively, only the changed items onward get re-ran. Essentially lazy loading.
 
 ## Base example of having to install all your dependencies and everything
 
