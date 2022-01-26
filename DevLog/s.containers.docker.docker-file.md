@@ -2,7 +2,7 @@
 id: p2mfNaM5RmjyPu2NxPk2X
 title: Docker File
 desc: ''
-updated: 1643232458324
+updated: 1643232814384
 created: 1641931387867
 ---
 
