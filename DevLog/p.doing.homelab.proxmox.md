@@ -2,7 +2,7 @@
 id: VwhzQnkxQgKYvCPoK2XeX
 title: Proxmox
 desc: ''
-updated: 1642570336454
+updated: 1643182772652
 created: 1641631765756
 ---
 
@@ -37,5 +37,17 @@ created: 1641631765756
 [1]: https://proxmox.com/en/downloads
 [2]: https://rufus.ie/en/
 [3]: https://www.balena.io/etcher/
+
+## Configuration
+
+### Updates Repository
+
+For regular updates and to avoid errors set the updates repository from the enterprise proxmox repo (subscription required) to the `pve-no-subscription` repo.
+
+![repos](/assets/images/2022-01-25-23-37-43.png)
+
+1. disable the enterprise repo
+2. `[Add]`
+3. `pve-no-subscription`
 
 - TODO <https://youtu.be/GoZaMgEgrHw>

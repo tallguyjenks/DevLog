@@ -1,9 +1,10 @@
 ---
 id: j6rUprJFPtgMVGY331LC3
 title: Ymir
-desc: ''
-updated: 1641018743268
+desc: 'HP Prolient DL360p G8'
+updated: 1643182237697
 created: 1641018533079
 ---
 
-HP Prolient DL360p G8
+- TODO <https://youtu.be/LxdCzfF77t4>
+    - ILO port and static network configuration
