@@ -7,7 +7,7 @@ pythonenv3.8
 zz/
 
 # Dendron specific stuff
-node_modules
+node_modules/
 .dendron.*
 build
 .next
