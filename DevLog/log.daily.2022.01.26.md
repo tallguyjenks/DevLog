@@ -2,7 +2,7 @@
 id: FhNRsEqbjM6Mfkxr8A2gU
 title: '2022-01-26'
 desc: ''
-updated: 1643226240145
+updated: 1643226240225
 created: 1643219043962
 traitIds:
   - journalNote
@@ -14,4 +14,4 @@ Also got the rest of the unifi gear headed here so i can work on the actual netw
 
 Decided i felt like learning more about [[s.q.postgres]] today via [[r.(.2022.01.26.postgres-can-do-that]]
 
-Finishing Work KT story on [[s.q.postgres]] by reviewing [[r.{.sql_for_data_analytics_perform_fast_and_efficient]]
+Finishing Work KT story on [[s.q.postgres]] by reviewing [[r.{.2022.01.26.sql_for_data_analytics_perform_fast_and_efficient]]
