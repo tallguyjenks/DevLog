@@ -2,14 +2,14 @@
 id: XCnK7dSe4IsCwAAYfdvpj
 title: Testclient
 desc: ''
-updated: 1641939117319
+updated: 1643233762183
 created: 1641937811703
 ---
 
 ```python
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
-from app.main import app
+from app.main import ap
 import pytest
 
 client = TestClient(app)
