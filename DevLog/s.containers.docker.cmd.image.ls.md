@@ -1,13 +1,15 @@
 ---
 id: Izc1TykFAz3cXsQ0tN5EJ
-title: Ls
+title: ls
 desc: ''
-updated: 1641760877723
+updated: 1643231993149
 created: 1641760803148
 ---
 
 ```bash
 docker image ls
+# OR
+docker images
 ```
 
 ## Example Output
