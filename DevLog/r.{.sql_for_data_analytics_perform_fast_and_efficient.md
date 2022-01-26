@@ -2,7 +2,7 @@
 id: I2WKX2ZrHxcmlnsLnUu3W
 title: Sql_for_data_analytics_perform_fast_and_efficient
 desc: ''
-updated: 1643228819413
+updated: 1643229327887
 created: 1643226241683
 ---
 
@@ -15,4 +15,4 @@ created: 1643226241683
 - [[s.q.postgres.funcs.copy]]
 - [[s.q.postgres.tips-tricks.extract-date-parts]]
 - [[s.q.postgres.tips-tricks.date-intervals]]
-- 
+- [[s.q.postgres.data-t.array]]
