@@ -2,14 +2,14 @@
 id: cXG0xkMCTlOQzwP9iKAqP
 title: Up
 desc: ''
-updated: 1641937577817
+updated: 1643234215714
 created: 1641932904936
 ---
 
 ## Command to run
 
 ```bash
-docker-compse up -d
+docker-compose up -d
 ```
 
 `-d` detaches the process to run it in the background
@@ -17,5 +17,5 @@ docker-compse up -d
 ## To use a specific configuration file
 
 ```bash
-docker-compse -f docker-compose-dev.yml up -d
+docker-compose -f docker-compose-dev.yml up -d
 ```
