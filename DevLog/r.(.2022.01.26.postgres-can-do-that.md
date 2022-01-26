@@ -15,8 +15,8 @@ created: 1643218935314
 
 ---
 
-- [[s.q.postgres.tips-tricks.query-tuning-with-explain]]
-- [[s.q.postgres.tips-tricks.writeable-cte]]
+- [[s.db.postgres.tips-tricks.query-tuning-with-explain]]
+- [[s.db.postgres.tips-tricks.writeable-cte]]
 
 Generate a mandelbrot set
 

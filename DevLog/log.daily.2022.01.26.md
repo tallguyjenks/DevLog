@@ -12,6 +12,6 @@ Did a lot of research and testing of virtual machines in [[p.doing.homelab.proxm
 
 Also got the rest of the unifi gear headed here so i can work on the actual network deployment and use my switch and the dream machine pro to manage the network at a higher level.
 
-Decided i felt like learning more about [[s.q.postgres]] today via [[r.(.2022.01.26.postgres-can-do-that]]
+Decided i felt like learning more about [[s.db.postgres]] today via [[r.(.2022.01.26.postgres-can-do-that]]
 
-Finishing Work KT story on [[s.q.postgres]] by reviewing [[r.{.2022.01.26.sql_for_data_analytics_perform_fast_and_efficient]]
+Finishing Work KT story on [[s.db.postgres]] by reviewing [[r.{.2022.01.26.sql_for_data_analytics_perform_fast_and_efficient]]
