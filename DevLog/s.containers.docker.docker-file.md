@@ -2,7 +2,7 @@
 id: p2mfNaM5RmjyPu2NxPk2X
 title: Docker File
 desc: ''
-updated: 1643319214313
+updated: 1643322944597
 created: 1641931387867
 ---
 
@@ -83,6 +83,14 @@ COPY static/ static/
 COPY --from=builder /go/bin/croc-hunter /app/croc-hunter
 EXPOSE 8080
 CMD [ "/app/croc-hunter" ]
+```
+
+## Dynamic Port exposure
+
+you can set the docker file to use `EXPOSE ${PORT}` in the docker file and then pass in that value during the `docker run` command. It also helps to have the deployed code rely on the environmental variable as well so everything is dynamic based on the arguments fed to the container:
+
+```bash
+docker run -e PORT=3000 -p 3000:3000 --name croc-hunter croc-hunter-port:1
 ```
 
 
