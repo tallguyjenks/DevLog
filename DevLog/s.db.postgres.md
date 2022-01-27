@@ -1,11 +1,8 @@
 ---
-id: fZsOYLNf1sYruY1pZMOqR
+id: wUQPHfZ3C7RIQCWVjG8fg
 title: Postgres
 desc: ''
-updated: 1641854752993
-created: 1641852909723
+updated: 1643273304834
+created: 1643273304834
 ---
 
-super user account is `postgres`
-
-When first creating a server instance the only database that will be in the server is also `postgres`
