@@ -2,7 +2,7 @@
 id: p2mfNaM5RmjyPu2NxPk2X
 title: Docker File
 desc: ''
-updated: 1643309952561
+updated: 1643310580069
 created: 1641931387867
 ---
 
@@ -26,15 +26,10 @@ Negates the utility of docker if the image is not just "good to go" but here's h
 
 ```docker
 FROM python:3.9.7
-
 WORKDIR /usr/src/app
-
 COPY requirements.txt ./
-
 RUN pip install --no-cache-dir -r requirements.txt
-
 COPY . .
-
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
@@ -68,3 +63,26 @@ At this point you can now create the image using [[s.containers.docker.cmd.build
 ## Security
 
 Specify a `USER` in the docker file like `USER 1000` so that processes do not run as root and prevent potential security risk
+
+## Multi-Stage
+
+Reduce container size by not building on top of a big image
+
+```docker
+FROM golang:1.14.2-alpine3.11 AS builder
+ENV GOPATH /go
+WORKDIR /$GOPATH/src/croc-hunter/
+COPY croc-hunter-go/go/src/croc-hunter/
+RUN go get -d -v
+RUN go build -o /go/bin/croc-hunter
+
+FROM alpine:3.11 AS runtime
+USER 1000
+WORKDIR /app
+COPY static/ static/
+COPY --from=builder /go/bin/croc-hunter /app/croc-hunter
+EXPOSE 8080
+CMD [ "/app/croc-hunter" ]
+```
+
+
