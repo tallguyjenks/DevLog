@@ -2,7 +2,7 @@
 id: p2mfNaM5RmjyPu2NxPk2X
 title: Docker File
 desc: ''
-updated: 1643232814384
+updated: 1643309952561
 created: 1641931387867
 ---
 
@@ -64,3 +64,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
   - essentially any time you have a space between anything in the command that is when you make a separate item in the array for it.
 
 At this point you can now create the image using [[s.containers.docker.cmd.build]]
+
+## Security
+
+Specify a `USER` in the docker file like `USER 1000` so that processes do not run as root and prevent potential security risk
