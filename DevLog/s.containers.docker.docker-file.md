@@ -2,7 +2,7 @@
 id: p2mfNaM5RmjyPu2NxPk2X
 title: Docker File
 desc: ''
-updated: 1643310580069
+updated: 1643319214313
 created: 1641931387867
 ---
 
@@ -72,7 +72,7 @@ Reduce container size by not building on top of a big image
 FROM golang:1.14.2-alpine3.11 AS builder
 ENV GOPATH /go
 WORKDIR /$GOPATH/src/croc-hunter/
-COPY croc-hunter-go/go/src/croc-hunter/
+COPY croc-hunter.go /go/src/croc-hunter/
 RUN go get -d -v
 RUN go build -o /go/bin/croc-hunter
 
