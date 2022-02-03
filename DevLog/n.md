@@ -29,6 +29,7 @@ created: 2021-11-15 1320
   - ![mac and port security](/assets/images/2022-01-08-12-31-23.png)
 - TODO guest network for people visiting the house to keep them off the main network
   - ![guest network](/assets/images/2022-01-08-12-42-25.png)
+- TODO [free zapier like integration that can be run locally in a docker container](https://n8n.io/)
 
 ---
 
