@@ -2,7 +2,7 @@
 id: Ga7bXwoDLwwapP05NOYbQ
 title: 'Networking'
 desc: ''
-updated: 2022-02-03 0030
+updated: 2022-02-03 0043
 created: 2021-11-15 1320
 ---
 
@@ -30,6 +30,7 @@ created: 2021-11-15 1320
 - TODO guest network for people visiting the house to keep them off the main network
   - ![guest network](/assets/images/2022-01-08-12-42-25.png)
 - TODO [free zapier like integration that can be run locally in a docker container](https://n8n.io/)
+- TODO run in a windows container or something: <https://www.tripplite.com/products/power-alert-local>
 
 ---
 
