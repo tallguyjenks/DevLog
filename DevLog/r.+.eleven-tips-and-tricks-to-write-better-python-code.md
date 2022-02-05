@@ -1,6 +1,6 @@
 ---
 id: d3EUIgaO5rpZTa40P6tn0
-title: 11 Tips and Tricks to Write Better Python Code
+title: Eleven Tips and Tricks to Write Better Python Code
 desc: ''
 updated: 1641270444240
 created: 1641168992636
