@@ -64,14 +64,14 @@ workspace:
         addBehavior: asOwnDomain
         statusSymbols:
             '': ' '
-            wip: w
+            wip: wip
             done: x
             assigned: a
             moved: m
             blocked: b
             delegated: l
             dropped: d
-            pending: 'y'
+            pending: y
         prioritySymbols:
             H: high
             M: medium
