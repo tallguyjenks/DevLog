@@ -8,7 +8,7 @@ stub: false
 isDir: false
 ---
 
--  [[s.l.python]] [[iac.containers.docker]] [scaffoldy][1] service to make the generation of docker template files easier
+-  [[s.l.python]] [[s.iac.containers.docker]] [scaffoldy][1] service to make the generation of docker template files easier
    -  [[s.l.python]] 3.10 case statements [Structural Pattern Matching - Exciting New Python Feature 3.10][2]
    
 ## New case statements

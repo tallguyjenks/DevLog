@@ -180,7 +180,7 @@ curl https://example.com/something.tar.gz | tar xvf -
     - While environment variables may be convenient for storing secrets, they have proven too prone to leakage:
     - Exported environment variables are sent to every process, and from there can easily leak into logs or be exfiltrated
       - Shell substitutions like `curl -H "Authorization: Bearer $BEARER_TOKEN"` will leak into globally-readable process state. (cURL offers the `-H @filename` alternative for reading sensitive headers from a file.)
-      - [[Docker|iac.containers.docker]] container environment variables can be viewed by anyone with Docker daemon access via docker inspect
+      - [[Docker|s.iac.containers.docker]] container environment variables can be viewed by anyone with Docker daemon access via docker inspect
       - Environment variables in [[linux.systemd]] units are globally readable via `systemctl show`
       - Secrets should only be accepted via credential files, pipes, `AF_UNIX` sockets, secret management services, or another IPC mechanism.
 - **Naming**
