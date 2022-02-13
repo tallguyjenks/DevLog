@@ -55,9 +55,13 @@ workspace:
         dateFormat: yyyy.MM.dd.HHmmss
         addBehavior: asOwnDomain
     task:
-        name: ''
+        # name: ''
+        # dateFormat: yyyy.MM.dd
+        # addBehavior: childOfCurrent
+        todoIntegration: true
+        name: task
         dateFormat: yyyy.MM.dd
-        addBehavior: childOfCurrent
+        addBehavior: asOwnDomain
         statusSymbols:
             '': ' '
             wip: w
@@ -72,7 +76,7 @@ workspace:
             H: high
             M: medium
             L: low
-        todoIntegration: false
+        # todoIntegration: false
         createTaskSelectionType: selection2link
     graph:
         zoomSpeed: 1
