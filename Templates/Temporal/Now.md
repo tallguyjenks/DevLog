@@ -1,1 +1,4 @@
-==2021-09-30 20:56==
+
+==<%tp.date.now("YYYY-MM-DD HH:mm")%>==
+
+<% tp.file.cursor(0) %>

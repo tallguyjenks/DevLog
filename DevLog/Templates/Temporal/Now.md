@@ -1,5 +1,8 @@
 ---
-created: 2021-12-31 1946
-updated: 2021-12-31 2246
+created: 2022-02-13 1152
+updated: 2022-02-13 1153
 ---
-==2021-09-30 20:56==
+
+==<%tp.date.now("YYYY-MM-DD HH:mm")%>==
+
+<% tp.file.cursor(0) %>
