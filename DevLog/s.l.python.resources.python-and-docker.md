@@ -8,4 +8,4 @@ stub: false
 isDir: false
 ---
 
-- [scaffoldy](https://scaffoldy.io/) service to make the generation of [[s.iac.containers.docker]] template files easier
+- [scaffoldy](https://scaffoldy.io/) service to make the generation of [[iac.containers.docker]] template files easier

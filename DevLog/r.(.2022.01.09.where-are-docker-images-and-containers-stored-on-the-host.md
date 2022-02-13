@@ -20,7 +20,7 @@ created: 1641760553297
 
 ## Notes
 
-- [[s.iac.containers.docker.cmd.image.ls]]
-- [[s.iac.containers.docker.cmd.image.prune]]
-- [[s.iac.containers.docker.cmd.inspect]]
-- [[s.iac.containers.docker.tips-and-tricks.modify-container-filesystem]]
+- [[iac.containers.docker.cmd.image.ls]]
+- [[iac.containers.docker.cmd.image.prune]]
+- [[iac.containers.docker.cmd.inspect]]
+- [[iac.containers.docker.tips-and-tricks.modify-container-filesystem]]
