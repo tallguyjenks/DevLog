@@ -1,16 +1,16 @@
 version: 1
 imports: []
 schemas:
-  - id: task
-    title: task
-    parent: root
+- id: task
+  title: task
+  parent: root
+  children:
+  - pattern: "[0-2][0-9][0-9][0-9]"
     children:
-    - pattern: "[0-2][0-9][0-9][0-9]"
+    - pattern: "[0-1][0-9]"
       children:
-      - pattern: "[0-1][0-9]"
+      - pattern: "[0-3][0-9]"
+        template: task.temp
         children:
-        - pattern: "[0-3][0-9]"
+        - pattern: "*"
           template: task.temp
-          children:
-          - pattern: "*"
-            template: task.temp

@@ -1,78 +1,78 @@
 version: 1
 imports: []
 schemas:
-  - id: s
-    title: software
-    parent: root
+- id: s
+  title: software
+  parent: root
+  children:
+  - pattern: df
+    title: 'Data Format'
+  - pattern: db
+    title: 'Database'
+  - pattern: m
+    title: 'Markup'
+  - pattern: o
+    title: 'Other'
+  - pattern: q
+    title: 'Query'
     children:
-      - pattern: df
-        title: 'Data Format'
-      - pattern: db
-        title: 'Database'
-      - pattern: m
-        title: 'Markup'
-      - pattern: o
-        title: 'Other'
-      - pattern: q
-        title: 'Query'
-        children:
-          - pattern: '*'
-            # namespace: true
-            children:
-              - pattern: build
-              - pattern: data-t
-                title: 'Data Types'
-              - pattern: data-s
-                title: 'Data Structures'
-              - pattern: doc
-              - pattern: files
-              - pattern: flow
-              - pattern: funcs
-              - pattern: libs
-              - pattern: mem-mgmt
-              - pattern: oop
-              - pattern: pkg
-              - pattern: proj
-              - pattern: quirks
-              - pattern: releases
-              - pattern: resources
-              - pattern: run
-              - pattern: sec
-              - pattern: setup
-              - pattern: test
-              - pattern: tips-tricks
-              - pattern: tools
-              - pattern: vars
-              - pattern: workflow
-      - pattern: l
-        title: language
-        # namespace: true
-        children:
-          - pattern: '*'
-            # namespace: true
-            children:
-              - pattern: build
-              - pattern: data-t
-                title: 'Data Types'
-              - pattern: data-s
-                title: 'Data Structures'
-              - pattern: doc
-              - pattern: files
-              - pattern: flow
-              - pattern: funcs
-              - pattern: libs
-              - pattern: mem-mgmt
-              - pattern: oop
-              - pattern: pkg
-              - pattern: proj
-              - pattern: quirks
-              - pattern: releases
-              - pattern: resources
-              - pattern: run
-              - pattern: sec
-              - pattern: setup
-              - pattern: test
-              - pattern: tips-tricks
-              - pattern: tools
-              - pattern: vars
-              - pattern: workflow
+    - pattern: '*'
+      # namespace: true
+      children:
+      - pattern: build
+      - pattern: data-t
+        title: 'Data Types'
+      - pattern: data-s
+        title: 'Data Structures'
+      - pattern: doc
+      - pattern: files
+      - pattern: flow
+      - pattern: funcs
+      - pattern: libs
+      - pattern: mem-mgmt
+      - pattern: oop
+      - pattern: pkg
+      - pattern: proj
+      - pattern: quirks
+      - pattern: releases
+      - pattern: resources
+      - pattern: run
+      - pattern: sec
+      - pattern: setup
+      - pattern: test
+      - pattern: tips-tricks
+      - pattern: tools
+      - pattern: vars
+      - pattern: workflow
+  - pattern: l
+    title: language
+    # namespace: true
+    children:
+    - pattern: '*'
+      # namespace: true
+      children:
+      - pattern: build
+      - pattern: data-t
+        title: 'Data Types'
+      - pattern: data-s
+        title: 'Data Structures'
+      - pattern: doc
+      - pattern: files
+      - pattern: flow
+      - pattern: funcs
+      - pattern: libs
+      - pattern: mem-mgmt
+      - pattern: oop
+      - pattern: pkg
+      - pattern: proj
+      - pattern: quirks
+      - pattern: releases
+      - pattern: resources
+      - pattern: run
+      - pattern: sec
+      - pattern: setup
+      - pattern: test
+      - pattern: tips-tricks
+      - pattern: tools
+      - pattern: vars
+      - pattern: workflow
