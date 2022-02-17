@@ -44,4 +44,10 @@
         "body": "```markdown\n$1\n```\n\n$0",
         "description": "Markdown Code Fence"
     },
+    "BSJ - ReStructured Text Code Fence": {
+        "prefix": "rst",
+        "scope": "markdown",
+        "body": "```rst\n$1\n```\n\n$0",
+        "description": "ReStructured Text Code Fence"
+    },
 }
