@@ -2,7 +2,7 @@
 id: Yy2jdsalltaQZQoxGLnuP
 title: Variables
 desc: ''
-updated: 1641854696558
+updated: 1645161332089
 created: 1641854437940
 ---
 
@@ -31,3 +31,9 @@ Today is {{ CURRENT_YEAR }}.{{ CURRENT_MONTH }}.{{ CURRENT_DAY }},
 output:
 
 > Today is 2022.01.04
+
+## Template Variable replacement
+
+For replacing the standard variables inside the dendron template files
+
+<https://wiki.dendron.so/notes/GelEQPZrSgr3CK9y10Nrg/#template-variables>
