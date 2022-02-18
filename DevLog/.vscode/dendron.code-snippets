@@ -50,4 +50,10 @@
         "body": "```rst\n$1\n```\n\n$0",
         "description": "ReStructured Text Code Fence"
     },
+    "BSJ - YAML Code Fence": {
+        "prefix": ["yaml","yml"],
+        "scope": "markdown",
+        "body": "```yaml\n$1\n```\n\n$0",
+        "description": "YAML Code Fence"
+    },
 }
