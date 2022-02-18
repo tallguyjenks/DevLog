@@ -4,7 +4,7 @@ title: >-
   Bryson Tyrrell Your Code Should Document Itself Embedding Documentation into
   Your Python Projects
 desc: ''
-updated: 1645132991333
+updated: 1645151566403
 created: 1645132865378
 ---
 
