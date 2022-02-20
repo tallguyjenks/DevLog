@@ -2,7 +2,7 @@
 id: sydN0r96FzX7sFOT893hh
 title: Setup
 desc: ''
-updated: 1645381174779
+updated: 1645381563867
 created: 1643183976632
 ---
 
@@ -41,8 +41,4 @@ created: 1643183976632
 
 1. [[p.doing.homelab.proxmox.confirguration#updates-repository]]
 2. `apt-get install neovim ranger`
-3. Enable [[terms.iommu]] so VM's can access hardware not made for virtualization (GPU's etc.)
-   1. you can do this but updating the `/etc/default/grub` file
-      change `GRUB_CMDLINE_LINUX_ DEFAULT="quiet"`
-      to: `GRUB_CMDLINE LINUX DEFAULT="quiet intel iommu=on"`
-   2. Then run `update-grub`
+3. [[p.doing.homelab.proxmox.confirguration#enable-iommu]]
