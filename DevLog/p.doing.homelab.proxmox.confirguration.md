@@ -2,7 +2,7 @@
 id: ACirxEkc5V7njTYEDwTGP
 title: Confirguration
 desc: ''
-updated: 1645384188376
+updated: 1645384450601
 created: 1643183994393
 ---
 
@@ -17,6 +17,7 @@ For regular updates and to avoid errors set the updates repository from the ente
 1. disable the enterprise repo
 2. `[Add]`
 3. `pve-no-subscription`
+4. run `apt-get update; apt dist-upgrade; reboot`
 
 ### Enable IOMMU
 
