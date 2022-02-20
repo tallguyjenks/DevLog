@@ -2,7 +2,7 @@
 id: sydN0r96FzX7sFOT893hh
 title: Setup
 desc: ''
-updated: 1645381563867
+updated: 1645382587496
 created: 1643183976632
 ---
 
@@ -42,3 +42,4 @@ created: 1643183976632
 1. [[p.doing.homelab.proxmox.confirguration#updates-repository]]
 2. `apt-get install neovim ranger`
 3. [[p.doing.homelab.proxmox.confirguration#enable-iommu]]
+4. [[p.doing.homelab.proxmox.confirguration#setup-nfs-for-backups]]

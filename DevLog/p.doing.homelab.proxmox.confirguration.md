@@ -2,7 +2,7 @@
 id: ACirxEkc5V7njTYEDwTGP
 title: Confirguration
 desc: ''
-updated: 1645381984075
+updated: 1645382571310
 created: 1643183994393
 ---
 
@@ -46,3 +46,8 @@ Then Reboot
 3. check the box for `VLAN aware:`
 
 This will update `/etc/network/interfaces` with new settings and where it says `bridge-vids` you can change the default `2-4094` to be a single number for the [[terms.vlan]] of the server, or do that for individual virtual machines
+
+### Setup NFS for backups
+
+0. You need to have the [[terms.nfs]] share already setup so [[p.doing.homelab.servers.fafnir]] needs to already be setup and mounted to the proxmox instance?
+1. `Datacenter node > storage > add > nfs`
