@@ -2,7 +2,7 @@
 id: sydN0r96FzX7sFOT893hh
 title: Setup
 desc: ''
-updated: 1645352657931
+updated: 1645379950566
 created: 1643183976632
 ---
 
@@ -21,7 +21,7 @@ created: 1643183976632
    1. Note: i did have to configure my disks in some of the boot menus to make a single logical volume RAID 5 configuration
    2. The in the Proxmox installer i just selected ext4 for the file system
    3. Will use ZFS on [[p.doing.homelab.servers.fafnir]]
-6. fill in network inforation
+6. fill in network information
    1. Much of it can be gleaned from your router console
    2. `ifconfig get default | grep gateway` for the default gateway
    3. for MacOS to find [[n.protocol.dns]] server just search for `DNS` in *system preferences*
