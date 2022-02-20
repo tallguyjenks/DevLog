@@ -2,7 +2,7 @@
 id: ACirxEkc5V7njTYEDwTGP
 title: Confirguration
 desc: ''
-updated: 1645385904936
+updated: 1645386594755
 created: 1643183994393
 ---
 
@@ -81,6 +81,8 @@ TODO This setup
 5. choose [[n.ieee-802.3ad]] mode for [[n.protocol.lacp]]
 6. Add Comment
 
+#### Make Network Bridge for Virutal Machines
+
 - <https://youtu.be/qTbeHpdHcqs>
 
 1. `pve node > System > Network > Create > Linux Bridge`
@@ -89,3 +91,11 @@ TODO This setup
 4. make it `VLAN aware:`
 5. List all the bridge ports in a space separated list
 6. Add Comment
+
+### Download Windows VirtIO drivers
+
+1. Go To [This page][1]
+2. Click the link under `Installation` for downloading latest stable release
+3. updload iso to proxmox iso's in `local > ISO images > Upload`
+
+[1]: https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers
