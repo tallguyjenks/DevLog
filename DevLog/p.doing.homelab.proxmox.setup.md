@@ -2,7 +2,7 @@
 id: sydN0r96FzX7sFOT893hh
 title: Setup
 desc: ''
-updated: 1645349883205
+updated: 1645350654028
 created: 1643183976632
 ---
 
@@ -16,7 +16,7 @@ created: 1643183976632
    3. MacOS: [Etcher][3]
 3. Put flash drive into target machine
 4. Boot from the flash drive
-   1. or using 
+   1. or using [[p.doing.homelab.servers.ymir.ilo]]
 5. Follow the prompts and fill in the information
    1. Note: i did have to configure my disks in some of the boot menus to make a single logical volume RAID 5 configuration
    2. The in the Proxmox installer i just selected ext4 for the file system
