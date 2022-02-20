@@ -2,7 +2,7 @@
 id: ACirxEkc5V7njTYEDwTGP
 title: Confirguration
 desc: ''
-updated: 1645384450601
+updated: 1645385904936
 created: 1643183994393
 ---
 
@@ -21,25 +21,26 @@ For regular updates and to avoid errors set the updates repository from the ente
 
 ### Enable IOMMU
 
+<!-- markdownlint-disable MD031-->
+
 Enable [[terms.iommu]] so VM's can access hardware not made for virtualization (GPU's etc.)
 
 1. you can do this but updating the `/etc/default/grub` file
    - change `GRUB_CMDLINE_LINUX_ DEFAULT="quiet"`
    - to: `GRUB_CMDLINE LINUX DEFAULT="quiet intel iommu=on"`
 2. Then run `update-grub`
-3. Then edit `/etc/modules`
+3. Then edit `/etc/modules` Add these 4 lines to it:
+4.  
+   ```txt
+   `vfio`
+   `vfio_iommu_typel`
+   `vfio_pci`
+   `vfio_virqfd`
+   ```
+5. Then run `update-initramfs -u -k all`
+6. reboot
 
-Add these 4 lines to it:
-
-```txt
-`vfio`
-`vfio_iommu_typel`
-`vfio_pci`
-`vfio_virqfd`
-```
-
-Then Reboot
-
+<!-- markdownlint-enable MD031-->
 ### Make Proxmox VLAN aware
 
 1. go to `System > Network`
@@ -51,8 +52,25 @@ This will update `/etc/network/interfaces` with new settings and where it says `
 
 ### Setup NFS for backups
 
+TODO This setup
+
 0. You need to have the [[terms.nfs]] share already setup so [[p.doing.homelab.servers.fafnir]] needs to already be setup and mounted to the proxmox instance?
-1. `Datacenter node > storage > add > nfs`
+1. `Datacenter node "> storage > add > nfs`
+2. `ID` ==> "Backups"
+3. Server IPV4 address (address to [[p.doing.homelab.servers.fafnir]]?)
+4. Export `/mnt/storage <++>`
+
+#### Schedule Backups
+
+1. `Datacenter node > backup > add`
+2. Select Node to backup
+3. Select storage share to send backups to
+4. Schedule Backups
+5. Email notification Settings
+6. Compression level (ZSTD)
+7. mode == snapshot
+8. test it
+   1. make a backup immediately
 
 ### Setup Linux Bridge for Virtual Machines Separate from management Layer
 
