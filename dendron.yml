@@ -86,7 +86,7 @@ workspace:
     enableUserTags: true
     enableHashTags: true
     workspaceVaultSyncMode: noCommit
-    enableAutoFoldFrontmatter: true
+    enableAutoFoldFrontmatter: false
     enableEditorDecorations: true
     maxPreviewsCached: 10
     maxNoteLength: 204800
