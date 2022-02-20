@@ -2,7 +2,7 @@
 id: ACirxEkc5V7njTYEDwTGP
 title: Confirguration
 desc: ''
-updated: 1645383067650
+updated: 1645384188376
 created: 1643183994393
 ---
 
@@ -52,3 +52,21 @@ This will update `/etc/network/interfaces` with new settings and where it says `
 
 0. You need to have the [[terms.nfs]] share already setup so [[p.doing.homelab.servers.fafnir]] needs to already be setup and mounted to the proxmox instance?
 1. `Datacenter node > storage > add > nfs`
+
+### Setup Linux Bridge for Virtual Machines Separate from management Layer
+
+1. `pve node > System > Network > Create > Linux Bond`
+2. `bond0`
+3. Give it a IPV4 address
+4. List all the bridge ports in a space separated list
+5. choose [[n.ieee-802.3ad]] mode for [[n.protocol.lacp]]
+6. Add Comment
+
+- <https://youtu.be/qTbeHpdHcqs>
+
+1. `pve node > System > Network > Create > Linux Bridge`
+2. `vmbr1` is fine
+3. Give it a IPV4 address
+4. make it `VLAN aware:`
+5. List all the bridge ports in a space separated list
+6. Add Comment
