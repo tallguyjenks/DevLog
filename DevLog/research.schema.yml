@@ -8,14 +8,39 @@ schemas:
   children:
   - pattern: '('
     title: article
+    children:
+    - pattern: '*'
+      template: 
+        id: templates.r.article
+        type: note
   - pattern: '{'
     title: book
+    children:
+    - pattern: '*'
+      template: 
+        id: templates.r.book
+        type: note
   - pattern: '&'
     title: paper
+    children:
+    - pattern: '*'
+      template: 
+        id: templates.r.paper
+        type: note
   - pattern: '%'
     title: podcast
+    children:
+    - pattern: '*'
+      template: 
+        id: templates.r.podcast
+        type: note
   - pattern: '!'
     title: tweet
+    children:
+    - pattern: '*'
+      template: 
+        id: templates.r.tweet
+        type: note
   - pattern: '+'
     title: video
     children:
