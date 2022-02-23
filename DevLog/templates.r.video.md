@@ -2,24 +2,16 @@
 id: R3Hc4ZohMxbkaXDWkIVmC
 title: Video
 desc: ''
-updated: 1645581512854
+updated: 1645581766374
 created: 1645581477270
 ---
 
-
-- `Title:` [[<%tp.file.title%>]]
-- `Type:` [[+]]
-- `Tags:` <%tp.file.cursor(1)%>
-- `URL:` <<%tp.file.cursor(2)%>>
-- `Channel/Host:` <%tp.file.cursor(3)%>
-- `Reference:` 
-- `Publish Date:` <%tp.file.cursor(4)%>
-- `Reviewed Date:` [[<%tp.date.now()%>]]
+- `URL:` <$1>
 
 ---
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/<%tp.file.cursor(5)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/$2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 ---
 
-- 
+- $0
