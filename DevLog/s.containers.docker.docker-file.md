@@ -16,7 +16,7 @@ FROM python:3.9.7
 MAINTAINER Bryan Jenks bryan@bryanjenks.dev
 ```
 
-- When you build your docker image from a docker file with [[s.iac.containers.docker.cmd.build]] each command in the file create a new image and the layers are plastered on top, but each layer is cached so when you change things iteratively, only the changed items onward get re-ran. Essentially lazy loading.
+- When you build your docker image from a docker file with [[s.containers.docker.cmd.build]] each command in the file create a new image and the layers are plastered on top, but each layer is cached so when you change things iteratively, only the changed items onward get re-ran. Essentially lazy loading.
 
 ## Base example of having to install all your dependencies and everything
 
@@ -58,7 +58,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
   - each array items is either a switch or a param
   - essentially any time you have a space between anything in the command that is when you make a separate item in the array for it.
 
-At this point you can now create the image using [[s.iac.containers.docker.cmd.build]]
+At this point you can now create the image using [[s.containers.docker.cmd.build]]
 
 ## Security
 
