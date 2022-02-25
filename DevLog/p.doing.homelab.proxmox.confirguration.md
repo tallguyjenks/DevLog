@@ -2,7 +2,7 @@
 id: ACirxEkc5V7njTYEDwTGP
 title: Confirguration
 desc: ''
-updated: 1645386594755
+updated: 1645774302462
 created: 1643183994393
 ---
 
@@ -81,7 +81,7 @@ TODO This setup
 5. choose [[n.ieee-802.3ad]] mode for [[n.protocol.lacp]]
 6. Add Comment
 
-#### Make Network Bridge for Virutal Machines
+#### Make Network Bridge for Virtual Machines
 
 - <https://youtu.be/qTbeHpdHcqs>
 
@@ -96,6 +96,6 @@ TODO This setup
 
 1. Go To [This page][1]
 2. Click the link under `Installation` for downloading latest stable release
-3. updload iso to proxmox iso's in `local > ISO images > Upload`
+3. upload iso to proxmox iso's in `local > ISO images > Upload`
 
 [1]: https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers
