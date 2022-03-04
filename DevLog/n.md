@@ -2,7 +2,7 @@
 id: vikxgpbxwdtt9aid35zxupa
 title: Networking
 desc: ''
-updated: 2022-03-03 1811
+updated: 2022-03-04 1352
 created: 2021-11-15 1320
 ---
 
@@ -22,14 +22,12 @@ created: 2021-11-15 1320
 - TODO portainer
 - TODO [heimdall](https://github.com/linuxserver/Heimdall) (the dashboard for all your services)
 - TODO [guacamole](https://guacamole.apache.org/) for SSH'ing into your services easier [example](https://youtu.be/E3aVxNtxFsU)
-- TODO [truenas](https://www.truenas.com/)
 - TODO use [[s.apps.gns3]] to map my home network (learn more about [[s.apps.gns3]])
   - TODO [Visualize Your Network with GNS3](https://www.gns3.com/)
 - Self hosted bitwarden
 - TODO mac and port security:
   - ![mac and port security](/assets/images/2022-01-08-12-31-23.png)
-- TODO guest network for people visiting the house to keep them off the main network
-  - ![guest network](/assets/images/2022-01-08-12-42-25.png)
+- ![guest network](/assets/images/2022-01-08-12-42-25.png)
 - TODO [free zapier like integration that can be run locally in a docker container](https://n8n.io/)
 - TODO run in a windows container or something: <https://www.tripplite.com/products/power-alert-local>
 
