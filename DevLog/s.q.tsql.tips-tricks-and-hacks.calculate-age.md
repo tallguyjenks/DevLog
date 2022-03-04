@@ -1,5 +1,5 @@
 ---
-id: VzZlo27Dn0ZiU8pRfgRFN
+id: selz2ygnlmdl3a8i2dcrz4i
 title: Calculate Age
 desc: ''
 updated: 1641412778772
@@ -7,6 +7,7 @@ created: 1641105063931
 stub: false
 isDir: false
 ---
+
 
 
 ```sql

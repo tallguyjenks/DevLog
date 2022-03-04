@@ -1,10 +1,11 @@
 ---
-id: gmS4iZuBShj8W5fvE15mm
+id: crqx8s2imkvgbeeiqttsvr0
 title: Stdin as Arg
 desc: ''
 updated: 1641429243801
 created: 1641429243801
 ---
+
 
 ### Stdin as a file argument
 

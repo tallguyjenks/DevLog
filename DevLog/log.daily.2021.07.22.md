@@ -1,5 +1,5 @@
 ---
-id: hARV8wRLnpCXqiYoqQTnc
+id: wtriqt3ud4z6uxzoylgk42d
 title: '22'
 desc: ''
 updated: 1641450646827
@@ -7,6 +7,7 @@ created: 1641105063956
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.python]] [Transcribe Audio and Use Speech Recognition in Python][1]
 

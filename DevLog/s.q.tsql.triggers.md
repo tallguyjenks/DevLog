@@ -1,5 +1,5 @@
 ---
-id: Bw3Qa8zA4NQVcRw3amRtg
+id: o2r8hdexh5r6gkzpoj4vwwg
 title: Triggers
 desc: ''
 updated: 1641414145018
@@ -7,6 +7,7 @@ created: 1641105063939
 stub: false
 isDir: false
 ---
+
 
 - <https://www.mssqltips.com/sqlservertip/5909/sql-server-trigger-example/>
 - <https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql?view=sql-server-ver15#remarks-for-dml-triggers>

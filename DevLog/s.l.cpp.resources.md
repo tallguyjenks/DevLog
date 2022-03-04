@@ -1,5 +1,5 @@
 ---
-id: 5qlXvAnnXXMisdSW97PbV
+id: 1o4w9piujmr33kpnt8ymla3
 title: Resources
 desc: ''
 updated: 1641377398416
@@ -7,6 +7,7 @@ created: 1641105063897
 stub: false
 isDir: false
 ---
+
 
 - [Assembly Code Breakdown of your code](https://godbolt.org/)
 - [cplusplus.com](http://cplusplus.com/reference/)

@@ -1,10 +1,11 @@
 ---
-id: AxuGxhHpsgaXpzJMpSGqB
+id: q5my7qwsbz4lpjc6ubp46cb
 title: Pyinputplus
 desc: ''
 updated: 1641801097656
 created: 1641801080333
 ---
+
 
 ## Installation
 

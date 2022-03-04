@@ -1,10 +1,11 @@
 ---
-id: xgCxOxnjoVawO7mnX5gOK
+id: ksgo0x9yoifz7bffih8rpvb
 title: Underscore Variable
 desc: ''
 updated: 1641423062478
 created: 1641423062478
 ---
+
 
 ## The \_ in Python
 

@@ -1,5 +1,5 @@
 ---
-id: Q4qUF3Ox2WMOWA2dLHGf8
+id: vusyno8g5fxjdks78y83wwq
 title: Decorators
 desc: ''
 updated: 1641421552031
@@ -7,6 +7,7 @@ created: 1641105063925
 stub: false
 isDir: false
 ---
+
 
 ```python
 def hello_decorator(func):

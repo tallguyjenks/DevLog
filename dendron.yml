@@ -1,27 +1,6 @@
-version: 4
-useFMTitle: true
-useNoteTitleForLink: true
-mermaid: true
-useKatex: true
+version: 5
 dev:
     enablePreviewV2: true
-site:
-    copyAssets: true
-    siteHierarchies:
-        - root
-    siteRootDir: docs
-    siteUrl: 'https://{GITHUB_USERNAME}.github.io'
-    assetsPrefix: /DevLog
-    usePrettyRefs: true
-    title: Dendron
-    description: Personal knowledge space
-    siteLastModified: true
-    gh_edit_branch: master
-    duplicateNoteBehavior:
-        action: useVault
-        payload:
-            - DevLog
-            # - Norsk
 commands:
     lookup:
         note:
@@ -30,6 +9,7 @@ commands:
             leaveTrace: false
             bubbleUpCreateNew: true
             fuzzThreshold: 0.2
+            vaultSelectionModeOnCreate: smart
     randomNote: {}
     insertNote:
         initialValue: templates
@@ -38,6 +18,7 @@ commands:
         enableMultiSelect: false
     insertNoteIndex:
         enableMarker: false
+    copyNoteLink: {}
 workspace:
     vaults:
         -
@@ -55,9 +36,6 @@ workspace:
         dateFormat: yyyy.MM.dd.HHmmss
         addBehavior: asOwnDomain
     task:
-        # name: ''
-        # dateFormat: yyyy.MM.dd
-        # addBehavior: childOfCurrent
         todoIntegration: true
         name: task
         dateFormat: yyyy.MM.dd
@@ -71,12 +49,11 @@ workspace:
             blocked: b
             delegated: l
             dropped: d
-            pending: y
+            pending: 'y'
         prioritySymbols:
             H: high
             M: medium
             L: low
-        # todoIntegration: false
         createTaskSelectionType: selection2link
     graph:
         zoomSpeed: 1
@@ -90,7 +67,7 @@ workspace:
     enableEditorDecorations: true
     maxPreviewsCached: 10
     maxNoteLength: 204800
-    dendronVersion: 0.75.1
+    dendronVersion: 0.84.0
 preview:
     enableFMTitle: true
     enableNoteTitleForLink: true
@@ -98,3 +75,35 @@ preview:
     enablePrettyRefs: true
     enableKatex: true
     automaticallyShowPreview: false
+    enableFrontmatterTags: true
+    enableHashesForFMTags: false
+publishing:
+    enableFMTitle: true
+    enableNoteTitleForLink: true
+    enableMermaid: true
+    enablePrettyRefs: true
+    enableKatex: true
+    assetsPrefix: /DevLog
+    copyAssets: true
+    siteHierarchies:
+        - root
+    enableSiteLastModified: true
+    siteRootDir: docs
+    siteUrl: 'https://{GITHUB_USERNAME}.github.io'
+    enableFrontmatterTags: true
+    enableHashesForFMTags: false
+    enableRandomlyColoredTags: true
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - DevLog
+    writeStubs: false
+    seo:
+        title: Dendron
+        description: Personal knowledge space
+    github:
+        enableEditLink: true
+        editLinkText: Edit this page on GitHub
+        editBranch: master
+        editViewMode: tree
+    enablePrettyLinks: true

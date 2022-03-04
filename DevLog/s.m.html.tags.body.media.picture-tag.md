@@ -1,5 +1,5 @@
 ---
-id: 2aBiedR825dJvlXRhOBlA
+id: pwjwl2nxnwu8csvkam02lx5
 title: Picture Tag
 desc: ''
 updated: 1641272564702
@@ -7,6 +7,7 @@ created: 1641105063905
 stub: false
 isDir: false
 ---
+
 
 The most common use of the [[HTML Picture Tag|⟨picture⟩]] element will be for art direction in responsive designs. Instead of having one image that is scaled up or down based on the viewport width, multiple images can be designed to more nicely fill the browser viewport.
 

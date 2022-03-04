@@ -1,5 +1,5 @@
 ---
-id: Ap0ihRPMzRqs6h9W4V1hr
+id: 1xnism1njq4dhe5ua8ohm0y
 title: '11'
 desc: ''
 updated: 1641446930572
@@ -7,6 +7,7 @@ created: 1641105063949
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] Wheel in python 
 -  [[s.l.python]] [Python Poetry](https://python-poetry.org/docs/cli/)

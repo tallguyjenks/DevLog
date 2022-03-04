@@ -1,10 +1,11 @@
 ---
-id: jarX0GpAm6ixBC9furAzb
+id: 597e6pwqr6ij86eqo3pzbip
 title: Using Pointers
 desc: ''
 updated: 1641377267848
 created: 1641377267848
 ---
+
 
 ## Using Pointers Example
 

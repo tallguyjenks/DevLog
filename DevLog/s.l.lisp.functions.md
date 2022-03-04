@@ -1,5 +1,5 @@
 ---
-id: KW6PGFqwjSr840d5aqcnX
+id: ymn8hfo97y4itv3ig1cxp29
 title: Functions
 desc: ''
 updated: 1641271745406
@@ -7,6 +7,7 @@ created: 1641105063920
 stub: false
 isDir: false
 ---
+
 
 - Using functions
   - pretty print function:

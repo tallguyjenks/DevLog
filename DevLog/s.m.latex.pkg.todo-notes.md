@@ -1,5 +1,5 @@
 ---
-id: VQLFxtS7lCQB8TTGrJMIp
+id: ltqe34p3wnl0njwobm9fhgi
 title: Todo Notes
 desc: ''
 updated: 1641409103264
@@ -7,6 +7,7 @@ created: 1641105063920
 stub: false
 isDir: false
 ---
+
 
 `Todonotes` is a way to allow visual note items in your compiled LaTeX document The notes can be customized for different colors and themes to correspond to different topics/categories and can be placed in-line, in the margins, and even be used as placeholders for figures that have not yet been added. 
 

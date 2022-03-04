@@ -1,10 +1,11 @@
 ---
-id: V6Fc62jiSyqMhRfrxsLO9
+id: ex3ocgqq1jmbyo2ffd82sgx
 title: Class
 desc: ''
 updated: 1641411850433
 created: 1641411850433
 ---
+
 
 ### Class Diagrams
 

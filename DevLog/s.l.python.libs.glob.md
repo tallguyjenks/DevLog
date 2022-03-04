@@ -1,5 +1,5 @@
 ---
-id: Ob5NBvhw6ZUjFkOaLwnp5
+id: imbi0cfhinzhw5863xtkcrz
 title: Glob
 desc: ''
 updated: 1641266847151
@@ -7,6 +7,7 @@ created: 1641105063854
 stub: false
 isDir: false
 ---
+
 
 > glob contains the [[os|import.os]], [[sys|import.sys]], and [[re|import.re]] modules.
 

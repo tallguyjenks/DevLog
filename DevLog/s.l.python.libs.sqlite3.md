@@ -1,5 +1,5 @@
 ---
-id: esdB5SRQmvZYAk55lczEp
+id: b3n81j0fepx0e13usq5e098
 title: Sqlite3
 desc: ''
 updated: 1641426934533
@@ -7,6 +7,7 @@ created: 1641105063868
 stub: false
 isDir: false
 ---
+
 
 - <https://devdocs.io/python~3.9/library/sqlite3>
 

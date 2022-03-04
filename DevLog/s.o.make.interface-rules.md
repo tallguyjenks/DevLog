@@ -1,10 +1,11 @@
 ---
-id: 9CbQwlGg60R4AOwHg11Tg
+id: grskjd5eb0fa1bhovcm33y2
 title: Interface Rules
 desc: ''
 updated: 1642708573551
 created: 1642708565632
 ---
+
 
 ## Inference rules
 

@@ -1,10 +1,11 @@
 ---
-id: MPQ3OFlnateuMEFlYs7Mu
+id: 12ljzyz99pxl6dx2z8a9ryx
 title: Workflow
 desc: ''
 updated: 1641422693518
 created: 1641422658151
 ---
+
 
 - Setup Git Repo and clone
 - Make directory and `*.py` file for your project name

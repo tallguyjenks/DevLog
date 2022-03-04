@@ -1,10 +1,11 @@
 ---
-id: QbdlSZiRXnw9woyzNGoX0
+id: chz24va5w46xkg9fkshptao
 title: Pass by Ref
 desc: ''
 updated: 1641421169852
 created: 1641421169852
 ---
+
 
 ### Data Structures are passed by reference not value
 

@@ -1,5 +1,5 @@
 ---
-id: rFojEaLaAz9C8l1NrwnkO
+id: 7iyhzkl8e72rmndl8sy29ae
 title: Select Data into Json
 desc: ''
 updated: 1641413928375
@@ -7,6 +7,7 @@ created: 1641105063937
 stub: false
 isDir: false
 ---
+
 
 ```sql
 SELECT TOP (1000) *

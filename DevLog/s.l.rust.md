@@ -1,5 +1,5 @@
 ---
-id: SaxSQPIIRFTU8RSN1xU9n
+id: qhk8x64x00qzw0vqvztw7ep
 title: Rust
 desc: ''
 updated: 1641113382638
@@ -7,6 +7,7 @@ created: 1641105063866
 stub: false
 isDir: false
 ---
+
 
 - Setup
 - Resources

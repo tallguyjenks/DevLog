@@ -1,10 +1,11 @@
 ---
-id: 1c0QNTyRW9ooCj3FGYvt0
+id: ql2c7jzpzk5qppw3nreje63
 title: Cut Clips from Video
 desc: ''
 updated: 1641438699452
 created: 1641184313079
 ---
+
 
 ## Cut clips of a video
 

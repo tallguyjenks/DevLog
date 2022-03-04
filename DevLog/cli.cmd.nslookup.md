@@ -1,10 +1,11 @@
 ---
-id: HPvfeFCeGrY5emhbsnnFe
+id: oqjw1ld806nrto0q0pt0ev7
 title: Nslookup
 desc: ''
 updated: 1641888080524
 created: 1641887787958
 ---
+
 
 
 ## Details

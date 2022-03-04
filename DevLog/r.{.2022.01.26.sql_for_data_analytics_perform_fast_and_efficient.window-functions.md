@@ -1,10 +1,11 @@
 ---
-id: Oc5oA3BRHSwp2GdGHvFCx
+id: x2s0fknuw4k8pdfu5lqxaz7
 title: Window Functions
 desc: ''
 updated: 1643227483111
 created: 1643227248223
 ---
+
 
 Examples of window functions
 

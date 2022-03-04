@@ -1,5 +1,5 @@
 ---
-id: uFM3ga8ULOfUNv7ceUY9a
+id: ux4d8oku5at2lveik2h6zh6
 title: Venv
 desc: ''
 updated: 1641427053762
@@ -7,6 +7,7 @@ created: 1641105063870
 stub: false
 isDir: false
 ---
+
 
 - **Python Virtual Environments**
   - **What are they**

@@ -1,10 +1,11 @@
 ---
-id: sqzoUYlSeMiyVuvbhql8p
+id: a9oap1sn8d14pap0qeqhm2m
 title: Formatting File Names
 desc: ''
 updated: 1641267391477
 created: 1641267391477
 ---
+
 
 ## Formatting filenames of downloaded playlist:
 

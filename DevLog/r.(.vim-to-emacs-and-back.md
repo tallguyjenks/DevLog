@@ -1,5 +1,5 @@
 ---
-id: IeXvWMWtNsjzi0Xwf9p9j
+id: all9dwm6oryjr6erqq93yhb
 title: Vim to Emacs and Back
 desc: ''
 updated: 1641270359472
@@ -7,6 +7,7 @@ created: 1641168992632
 stub: false
 isDir: false
 ---
+
 
 - `Author:` 
 - `Link:` <https://sean-warman.medium.com/vim-to-emacs-and-back-a0025855037e>

@@ -1,10 +1,11 @@
 ---
-id: BR4yhEhPtiQU5bH0Pnw40
+id: njrwd2djl9r5gyomawxsuwc
 title: Summarize
 desc: ''
 updated: 1641410073914
 created: 1641410073915
 ---
+
 
 ### Summarize
 

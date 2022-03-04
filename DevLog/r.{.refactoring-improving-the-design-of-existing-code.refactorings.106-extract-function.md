@@ -1,5 +1,5 @@
 ---
-id: 0feZo7VQO32tGwJSZmKen
+id: lq1bnrtqohsgq0fayg8wjgw
 title: 106 Extract Function
 desc: ''
 updated: 1642625949497

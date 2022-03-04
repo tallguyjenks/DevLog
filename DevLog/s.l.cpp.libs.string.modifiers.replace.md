@@ -1,10 +1,11 @@
 ---
-id: i6FOHHVPgN8SK5fOPRjwd
+id: dlctipp3u6c9khdeqfym9fl
 title: Replace
 desc: ''
 updated: 1641376799984
 created: 1641376799984
 ---
+
 
 ### replace( index, num, subStr )
 

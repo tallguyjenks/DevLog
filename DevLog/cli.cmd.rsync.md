@@ -1,5 +1,5 @@
 ---
-id: e47wNHWZEveMI698XInwX
+id: ksh04d639g8mei36tp3yxab
 title: Rsync
 desc: ''
 updated: 1641202717915
@@ -7,6 +7,7 @@ created: 1641105063865
 stub: false
 isDir: false
 ---
+
 
 ## rsync for system backups
 

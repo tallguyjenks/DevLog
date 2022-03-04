@@ -1,5 +1,5 @@
 ---
-id: IMUqLsYLSSbagED8tmJ5m
+id: pwsjrm1g5ckb5o1z2qx3h7q
 title: '14'
 desc: ''
 updated: 1641452135566
@@ -7,6 +7,7 @@ created: 1641105063967
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.python.libs.pandas]] [[s.l.python]] [[s.df.csv]] [Why “df.to_csv” could be a Mistake ?][1]
 - [[s.q.tsql.tools.ssis]] [[s.q.tsql]] [[s.q.tsql.tools.ssms]] [[s.l.python]] [3 Reasons Why I’m Ditching SSIS for Python][2]

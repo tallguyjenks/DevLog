@@ -1,5 +1,5 @@
 ---
-id: UvD5LY3cu531s3rnJZRus
+id: 9i1duaihyn80vyy79s5ph8j
 title: Preprocessor Directives
 desc: ''
 updated: 1641377388390
@@ -7,6 +7,7 @@ created: 1641105063897
 stub: false
 isDir: false
 ---
+
 
 > The **preprocessor** is a tool that scans the file from top to bottom looking for any lines that begin with #, known as a **hash symbol**. Each such line is not a program statement, but rather directs the **preprocessor** to modify the file in some way before compilation continues, each such line being known as a **preprocessor directive**. The directive ends at the end of the line, no semicolon is used at the end of the line.
 

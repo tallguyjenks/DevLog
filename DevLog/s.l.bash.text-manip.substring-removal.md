@@ -1,10 +1,11 @@
 ---
-id: FvF3C9uK6hJj1D6F8mnJe
+id: dch3wkm9t7rpdwyj6dbg58z
 title: Substring Removal
 desc: ''
 updated: 1641428804785
 created: 1641428804785
 ---
+
 
 #### Sub-String Removal In Bash
 

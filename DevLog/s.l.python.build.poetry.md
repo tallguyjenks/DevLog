@@ -1,5 +1,5 @@
 ---
-id: xERWahIIcQErgoMun7cRs
+id: c6qw193yj6rba0bbh4m7rnu
 title: Poetry
 desc: ''
 updated: 1641416470653
@@ -7,6 +7,7 @@ created: 1641105063927
 stub: false
 isDir: false
 ---
+
 
 **Using Poetry**
 

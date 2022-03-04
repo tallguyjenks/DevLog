@@ -1,5 +1,5 @@
 ---
-id: MBKglvsQdy2F2RMsK0bqq
+id: 7v72tkavgx7nu5e99lb5j1h
 title: Virtualenv
 desc: ''
 updated: 1641417509165
@@ -7,6 +7,7 @@ created: 1641105063871
 stub: false
 isDir: false
 ---
+
 
 ![alt](assets/images/Pasted_image_20210915142429.png)
 

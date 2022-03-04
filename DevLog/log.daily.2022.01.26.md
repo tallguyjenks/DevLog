@@ -1,5 +1,5 @@
 ---
-id: FhNRsEqbjM6Mfkxr8A2gU
+id: c6mhg4rfouhu1k38vfpyf9n
 title: '2022-01-26'
 desc: ''
 updated: 1643226240225
@@ -7,6 +7,7 @@ created: 1643219043962
 traitIds:
   - journalNote
 ---
+
 
 Did a lot of research and testing of virtual machines in [[p.doing.homelab.proxmox]] trying to see what i can get set up. Looking at trying to get [[p.doing.homelab.services.true-nas]] setup on [[p.doing.homelab.servers.fafnir]] so i can use that as the storage volume for things because at this point stuff is acting weird and im just trying to get something working and operational lol. 
 

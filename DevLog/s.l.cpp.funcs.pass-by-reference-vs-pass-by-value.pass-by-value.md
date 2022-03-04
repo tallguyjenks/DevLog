@@ -1,10 +1,11 @@
 ---
-id: il5ViRLnFK0TNdS1GEyhe
+id: xmc0ha1tkeeld5fedd7nduz
 title: Pass by Value
 desc: ''
 updated: 1641373379524
 created: 1641373379524
 ---
+
 
 #### Pass By Value
 

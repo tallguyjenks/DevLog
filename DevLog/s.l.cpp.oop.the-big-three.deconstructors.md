@@ -1,10 +1,11 @@
 ---
-id: 7GVtBq4v8GLxFPJNCIJ3k
+id: j2egwdi2n14yzvbpe9nk8yw
 title: Deconstructors
 desc: ''
 updated: 1641372793066
 created: 1641372793066
 ---
+
 
 ## Deconstructors
 

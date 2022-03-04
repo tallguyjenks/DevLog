@@ -1,10 +1,11 @@
 ---
-id: t0NWM5BlgHyXd7SaZR3Eb
+id: 4n5uh3h1inyg8jkhm4m3vwf
 title: Break Statement
 desc: ''
 updated: 1641373206136
 created: 1641373206136
 ---
+
 
 ## The break statement
 

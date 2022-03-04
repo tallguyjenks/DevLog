@@ -1,5 +1,5 @@
 ---
-id: ax4oM1AiVMVtxVfAxym7a
+id: l1pf4pb4y1fu37e5h3vxcsb
 title: How I Redesigned over 100 Etl into Elt Data Pipelines
 desc: ''
 updated: 1641269006262
@@ -7,6 +7,7 @@ created: 1641105063987
 stub: false
 isDir: false
 ---
+
 
 - `Author:` nicholas-leong
   - `Notable Authors:` 

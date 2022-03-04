@@ -1,5 +1,5 @@
 ---
-id: g8GzOlBmSDa3tr6BYJnCh
+id: 5tv7jmtzec15lxdo97mkx8m
 title: Loguru
 desc: ''
 updated: 1641416995043
@@ -7,6 +7,7 @@ created: 1641105063857
 stub: false
 isDir: false
 ---
+
 
 - [GitHub](https://github.com/Delgan/loguru)
 

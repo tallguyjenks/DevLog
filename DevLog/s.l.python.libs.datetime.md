@@ -1,5 +1,5 @@
 ---
-id: 0of8LrmO9JZtn9HDfNHue
+id: l0zalv0sodr7awwdb10urti
 title: Datetime
 desc: ''
 updated: 1641416828337
@@ -7,6 +7,7 @@ created: 1641105063848
 stub: false
 isDir: false
 ---
+
 
 > python will handle dates from january 1st 1 to december 31st 9999
 

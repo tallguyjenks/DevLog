@@ -1,10 +1,11 @@
 ---
-id: dpbqeiijCnYzz0kOFMer6
+id: rbywte2kk67dklc3rk66ae5
 title: Square Brackets
 desc: ''
 updated: 1641428707272
 created: 1641428707272
 ---
+
 
 #### Brackets
 

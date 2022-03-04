@@ -1,5 +1,5 @@
 ---
-id: BuKi9BaHU95JMM3HoEMc4
+id: po0oytp30i3wse5t7jx5s9u
 title: Rank over Partition
 desc: ''
 updated: 1641414661806
@@ -7,6 +7,7 @@ created: 1641105063936
 stub: false
 isDir: false
 ---
+
 
 ```sql
 RANK ( ) OVER ( [ partition_by_clause ] order_by_clause )

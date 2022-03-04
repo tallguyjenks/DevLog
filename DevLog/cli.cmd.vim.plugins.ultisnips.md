@@ -1,5 +1,5 @@
 ---
-id: gJJNgAD79wQZkHPex6eDq
+id: fsd7c0o6akz44e9jkjlbzkg
 title: Ultisnips
 desc: ''
 updated: 1641202114379
@@ -7,6 +7,7 @@ created: 1641105063870
 stub: false
 isDir: false
 ---
+
 
 ## Snippets look like this:
 

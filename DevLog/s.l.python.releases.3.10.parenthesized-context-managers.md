@@ -1,10 +1,11 @@
 ---
-id: YL9xoYq1gDwIXJBUU8GUq
+id: qbeilegetcgtc0a1j5p1gpj
 title: Parenthesized Context Managers
 desc: ''
 updated: 1641423485096
 created: 1641423485096
 ---
+
 
 ### Parenthesized Context Managers
 

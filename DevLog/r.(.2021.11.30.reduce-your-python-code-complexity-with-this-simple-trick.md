@@ -1,5 +1,5 @@
 ---
-id: KJjFKB8dxTDlaiqfJgNLI
+id: y1iscydeqbrauzuoxcyzugu
 title: Reduce Your Python Code Complexity with This Simple Trick
 desc: ''
 updated: 1641269336241
@@ -7,6 +7,7 @@ created: 1641105063989
 stub: false
 isDir: false
 ---
+
 
 - `Author:` ran-isenberg
 - `Link:` <https://isenberg-ran.medium.com/reduce-your-python-code-complexity-with-this-simple-trick-7046b7c54e7a>

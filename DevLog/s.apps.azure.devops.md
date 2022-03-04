@@ -1,5 +1,5 @@
 ---
-id: IjIh0JBppz5AXabTh2qyB
+id: f0lymfj4qjmmy9bj4ublql6
 title: Devops
 desc: ''
 updated: 1641442286054
@@ -7,6 +7,7 @@ created: 1641105063844
 stub: false
 isDir: false
 ---
+
 
 - Related: [Pivotal Tracker](https://www.pivotaltracker.com/dashboard)
 - naming branches in the repo's using forward slashes in the names groups them under folders:

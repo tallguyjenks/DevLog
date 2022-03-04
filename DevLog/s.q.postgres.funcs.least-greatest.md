@@ -1,10 +1,11 @@
 ---
-id: 5HC3RlQ9ZdCa0Gcgj4YlJ
+id: h8omli86k1dqv0h8zccbii9
 title: Least Greatest
 desc: ''
 updated: 1643227000293
 created: 1643226996993
 ---
+
 
 Unlike aggregate functions such as `MIN` or `MAX` using `LEAST` or `GREATEST` seems to be scalar oriented
 

@@ -1,10 +1,11 @@
 ---
-id: 9ORBFOwXQI16lahQvY4LL
+id: twaq64cqj9bud3jqfvvxyf5
 title: Returning Newly Inserted Record
 desc: ''
 updated: 1641855089860
 created: 1641854920709
 ---
+
 
 ## Return Newly Inserted Record
 

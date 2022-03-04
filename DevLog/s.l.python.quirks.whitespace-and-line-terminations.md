@@ -1,5 +1,5 @@
 ---
-id: R6X1AyoLaGYcmZF6Sw9js
+id: 6stnq9ibn2imczrc3b8vk0b
 title: Whitespace and Line Terminations
 desc: ''
 updated: 1641425019254
@@ -7,6 +7,7 @@ created: 1641105063928
 stub: false
 isDir: false
 ---
+
 
 - Python uses whitespace indentation to denote scope without braces.
 - It is bad practice to:

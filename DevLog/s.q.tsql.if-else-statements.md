@@ -1,5 +1,5 @@
 ---
-id: AesUYHUCOrkA29ZEcSaPQ
+id: i3ti4yf4h81ehbsv6zuekas
 title: If Else Statements
 desc: ''
 updated: 1641413216106
@@ -7,6 +7,7 @@ created: 1641105063935
 stub: false
 isDir: false
 ---
+
 
 Conditional operations. Useful with control [[T-SQL Variables|s.q.tsql.variables]]:
 

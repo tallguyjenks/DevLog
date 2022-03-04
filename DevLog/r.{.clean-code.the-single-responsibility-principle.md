@@ -1,5 +1,5 @@
 ---
-id: O02Uu2imqR3MRYRkM9emn
+id: n9cq1j8x83i17h9ovjywnt5
 title: The Single Responsibility Principle
 desc: ''
 updated: 1641268401405
@@ -7,6 +7,7 @@ created: 1641105063869
 stub: false
 isDir: false
 ---
+
 
 > “A class should have one, and only one, reason to change”
 

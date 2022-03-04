@@ -1,10 +1,11 @@
 ---
-id: vg0miRXVnvu574qh6SED0
+id: inilugdemsa0ynx63823j3h
 title: Rest Parameters
 desc: ''
 updated: 1641407082515
 created: 1641407082515
 ---
+
 
 ## The Rest Parameters
 

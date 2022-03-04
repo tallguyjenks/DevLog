@@ -1,10 +1,11 @@
 ---
-id: VUhCGcNrzpOcZQwCTkTgK
+id: 3nnlf94owqbp3pe281dlfd5
 title: Extraction before Getline
 desc: ''
 updated: 1641373103609
 created: 1641373103609
 ---
+
 
 ### Extraction Before Getline
 

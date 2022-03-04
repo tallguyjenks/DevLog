@@ -1,5 +1,5 @@
 ---
-id: HL2bGmAdO6PZjWT4XaDDX
+id: citim2gkwzkqrjoqujwxocl
 title: Beautiful Python Refactoring
 desc: ''
 updated: 1642625795145
@@ -7,6 +7,7 @@ created: 1641168992637
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/KTIl1MugsSY>
 - `Channel/Host:` coding-tech

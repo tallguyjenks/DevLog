@@ -1,10 +1,11 @@
 ---
-id: qP93HZqJ5XQo3IJ1SFSjt
+id: 16519q03p4glcq0auybdiom
 title: Member Initialization
 desc: ''
 updated: 1641372167144
 created: 1641372167144
 ---
+
 
 ## Constructor Member Initialization
 

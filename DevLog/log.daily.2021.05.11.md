@@ -1,5 +1,5 @@
 ---
-id: omLV7Cd4PhFXBOwl5dhki
+id: 4epzpfambqnhpglfkbcyji5
 title: '11'
 desc: ''
 updated: 1641440122186
@@ -7,6 +7,7 @@ created: 1641105063943
 stub: false
 isDir: false
 ---
+
 
 - Found [this great table generator](https://www.tablesgenerator.com/markdown_tables) thanks to bri watson.
   - It can export tables to [[s.m.html]], [[s.m.latex]], [[s.m.markdown]], and plain text

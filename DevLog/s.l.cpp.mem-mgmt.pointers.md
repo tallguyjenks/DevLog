@@ -1,5 +1,5 @@
 ---
-id: eF5F7Rn3kx6fGwGYRDkPq
+id: xv4xu375pcfa0jwhvmranm4
 title: Pointers
 desc: ''
 updated: 1641377319367
@@ -7,6 +7,7 @@ created: 1641105063896
 stub: false
 isDir: false
 ---
+
 
 ## Pointers in C++
 

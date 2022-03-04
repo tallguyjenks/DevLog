@@ -1,10 +1,11 @@
 ---
-id: DWLSqzKq9wyBVlDBR6sBr
+id: qmem3uhzneufllog3qml7mg
 title: TCP
 desc: ''
 updated: 1641881175694
 created: 1641872711679
 ---
+
 
 `T`ransmission `C`ontrol `P`rotocol
 

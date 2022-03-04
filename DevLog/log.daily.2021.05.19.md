@@ -1,5 +1,5 @@
 ---
-id: 2vKFtmRGYPFcAsYTL9z5Z
+id: d5qwfpgmze409kif0d4pw8x
 title: '19'
 desc: ''
 updated: 1641441187151
@@ -7,6 +7,7 @@ created: 1641105063945
 stub: false
 isDir: false
 ---
+
 - [[s.l.python]] [Socratica Video](https://www.youtube.com/watch?v=URBSvqib0xw&ab_channel=Socratica)
   - using the [[s.l.python.libs.pydoc]] module you can review documentation
   - This command (`python -m pydoc <++>`) searches for the following:

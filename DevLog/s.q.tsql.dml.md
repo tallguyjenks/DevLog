@@ -1,5 +1,5 @@
 ---
-id: z6vrQLza4f9rFntcYPQl5
+id: jzvqnei1syvryk2qx0xdcnu
 title: Dml
 desc: ''
 updated: 1641413074268
@@ -7,6 +7,7 @@ created: 1641105063933
 stub: false
 isDir: false
 ---
+
 
 ## Data Manipulation Language
 

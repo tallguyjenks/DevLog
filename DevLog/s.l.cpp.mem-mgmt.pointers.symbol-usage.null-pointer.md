@@ -1,10 +1,11 @@
 ---
-id: JRQNhjcmq88aH3fUQURrT
+id: p85a53pp15oz6lonxi1si07
 title: Null Pointer
 desc: ''
 updated: 1641377254903
 created: 1641377254904
 ---
+
 
 ### Null Pointer
 

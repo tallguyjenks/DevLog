@@ -1,5 +1,5 @@
 ---
-id: ttELoQlE1UbNNXlf2Vbfg
+id: li12euy9ncq7vmf1yjpm51y
 title: Tools
 desc: ''
 updated: 1641416613589
@@ -7,6 +7,7 @@ created: 1641105063928
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.python.tools.jupyter]]
   - [[s.l.python.tools.kite]]

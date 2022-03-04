@@ -1,10 +1,11 @@
 ---
-id: TycXAmGbrdITDBnPkkOzt
+id: crzprzxwmzlnegirso22l2l
 title: Fstrings
 desc: ''
 updated: 1641421091010
 created: 1641421049730
 ---
+
 
 - [Python 3's f-Strings: An Improved String Formatting Syntax (Guide)](https://realpython.com/python-f-strings/)
 - F String format specifications

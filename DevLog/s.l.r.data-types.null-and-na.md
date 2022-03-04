@@ -1,10 +1,11 @@
 ---
-id: MNmiU3Xif6pR04RkFjoHD
+id: v8g3j3hr43azltieehqfe9d
 title: Null and Na
 desc: ''
 updated: 1641409921829
 created: 1641409921829
 ---
+
 
 ## Null & NA
 

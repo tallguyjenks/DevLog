@@ -1,5 +1,5 @@
 ---
-id: vKE4QTTotCA2I1hwHGeH9
+id: eimk2kjqs2eoemll4kuju6v
 title: Right Join
 desc: ''
 updated: 1641413910982
@@ -7,6 +7,7 @@ created: 1641105063937
 stub: false
 isDir: false
 ---
+
 
 The same as a [[T-SQL Left Join|s.q.tsql.joins.left-join]] just in reverse. 
 

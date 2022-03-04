@@ -1,5 +1,5 @@
 ---
-id: DZJUj5NdVePbAXelhVklD
+id: gvad2tr46og966qtpu1y2ki
 title: Lint
 desc: ''
 updated: 1641411999589
@@ -7,6 +7,7 @@ created: 1641105063924
 stub: false
 isDir: false
 ---
+
 
 - [Repo](https://github.com/DavidAnson/markdownlint#optionsconfig)
   - [x] [List of Rules/Aliases](https://github.com/DavidAnson/markdownlint#rules--aliases) 

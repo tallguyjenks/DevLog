@@ -1,10 +1,11 @@
 ---
-id: XeBs7CtHFdLAVuBizBoYK
+id: x2ejfbdige05jertjqgoglj
 title: Member Access Operator
 desc: ''
 updated: 1641372299122
 created: 1641372299122
 ---
+
 
 ## Member Access Operator
 

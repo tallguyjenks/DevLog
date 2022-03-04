@@ -1,10 +1,11 @@
 ---
-id: 6dPGu7VYj1fGM7kfEByE3
+id: k2i729din6bjmsrwsuv7ba3
 title: Auto Documenting a Python Project Using Sphinx
 desc: ''
 updated: 1641454993352
 created: 1641454974880
 ---
+
 
 - [[s.l.python]] [[s.l.python.libs.sphinx]] [Auto Documenting a Python Project Using Sphinx][5]
 

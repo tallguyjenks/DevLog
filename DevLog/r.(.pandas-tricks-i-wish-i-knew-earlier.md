@@ -1,10 +1,11 @@
 ---
-id: IQ2EHqou24DT9IEQQzQ9r
+id: smohlrnzglslhegkbo7xua0
 title: Pandas Tricks I Wish I Knew Earlier
 desc: ''
 updated: 1641454240080
 created: 1641454227686
 ---
+
 
 - [[s.l.python]] [[s.l.python.libs.pandas]] [Pandas tricks I wish I knew earlier][1]
 

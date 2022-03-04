@@ -1,10 +1,11 @@
 ---
-id: NtfIZNCTBD2F0LrOvB2DM
+id: d8u0pk0ndcd1nah1ved38cs
 title: When to Use
 desc: ''
 updated: 1641373198718
 created: 1641373198718
 ---
+
 
 ## When to use For loops v.s. While Loops
 

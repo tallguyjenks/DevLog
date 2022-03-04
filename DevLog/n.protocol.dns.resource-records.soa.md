@@ -1,10 +1,11 @@
 ---
-id: ccT36B0EUJpBORSrJvSWH
+id: ofgjla5w8mes5v8ucqbucss
 title: Soa
 desc: ''
 updated: 1641886889810
 created: 1641886854370
 ---
+
 
 `S`tart `O`f `A`uthority
 

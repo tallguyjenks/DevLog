@@ -1,5 +1,5 @@
 ---
-id: DfI7Hz43FNhzg0kfitZhQ
+id: 4jd19wkfy6jmon7y9q4lkpn
 title: Shred
 desc: ''
 updated: 1641203432174
@@ -7,6 +7,7 @@ created: 1641105063866
 stub: false
 isDir: false
 ---
+
 
 - Shred command on linux
 - Privacy

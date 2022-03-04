@@ -1,5 +1,5 @@
 ---
-id: vGvVjhkVEQa4zeahuGxEQ
+id: bme9n8j15k2q3eb9tm2cpyt
 title: Abstract Base Classes
 desc: ''
 updated: 1641416391891
@@ -7,6 +7,7 @@ created: 1641105063925
 stub: false
 isDir: false
 ---
+
 
 > you should use abstract classes to specify which methods must be implemented by the child classes. The abc module "make sure" that you implement all those methods before being able to instantiate the objects.
 

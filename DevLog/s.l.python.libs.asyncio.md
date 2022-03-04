@@ -1,5 +1,5 @@
 ---
-id: kK2v0vvq3mRzgFWXCRgvP
+id: lssy0frxxfr9pra7chkj60i
 title: Asyncio
 desc: ''
 updated: 1641182382150
@@ -7,6 +7,7 @@ created: 1641105063844
 stub: false
 isDir: false
 ---
+
 
 ## Resources
 

@@ -1,10 +1,11 @@
 ---
-id: nIW25Zemoizfl3s4nGCHl
+id: 1jp3n718qwgn7b5t7ecynsu
 title: Dhcp6
 desc: ''
 updated: 1642144732482
 created: 1642144448775
 ---
+
 
 `D`ynamic `H`ost `C`onfiguration `P`rotocol (IPv`6`)
 

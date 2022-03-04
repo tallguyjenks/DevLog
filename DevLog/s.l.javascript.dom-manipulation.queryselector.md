@@ -1,5 +1,5 @@
 ---
-id: LjU0Z179qa89ySHR9D4vW
+id: wa39lfdz61dpuezfwt2r0rs
 title: Queryselector
 desc: ''
 updated: 1641406859866
@@ -7,6 +7,7 @@ created: 1641105063913
 stub: false
 isDir: false
 ---
+
 
 returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, `null` is returned.
 

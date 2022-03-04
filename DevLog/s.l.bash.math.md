@@ -1,10 +1,11 @@
 ---
-id: t1uAPdzSWDCDN99DZnCL7
+id: 8s41xdxefpd2y84i6hd5eg2
 title: Math
 desc: ''
 updated: 1641429399188
 created: 1641429399188
 ---
+
 
 #### Arithmetic Expansion
 

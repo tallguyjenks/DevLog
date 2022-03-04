@@ -1,5 +1,5 @@
 ---
-id: afkH1gbgeVBpgqkl6uJLI
+id: w904qkcp45aohd8oz8rrkru
 title: Pydoc
 desc: ''
 updated: 1641426617462
@@ -7,6 +7,7 @@ created: 1641105063862
 stub: false
 isDir: false
 ---
+
 
 - [Socratica Video](https://www.youtube.com/watch?v=URBSvqib0xw&ab_channel=Socratica)
 - using the [[s.l.python.libs.pydoc]] module you can review documentation

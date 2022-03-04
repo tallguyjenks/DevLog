@@ -1,5 +1,5 @@
 ---
-id: QLMxBqlN0P8dEqFrCRbdy
+id: aucc37505i8cdax90pzaq52
 title: Images
 desc: ''
 updated: 1641411992308
@@ -7,6 +7,7 @@ created: 1641105063923
 stub: false
 isDir: false
 ---
+
 
 Images in markdown hijack the [[s.m.markdown.syntax.links]] syntax in markdown and prepend a `!` before the link to the image file:
 

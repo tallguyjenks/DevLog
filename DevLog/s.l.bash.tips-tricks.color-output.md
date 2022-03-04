@@ -1,10 +1,11 @@
 ---
-id: TeGEzh1QPZ7pKKS2TnB7g
+id: 3i8eg02e42i29syc223z9i5
 title: Color Output
 desc: ''
 updated: 1641429208755
 created: 1641429208755
 ---
+
 
 ##### Colorized Output In Bash
 

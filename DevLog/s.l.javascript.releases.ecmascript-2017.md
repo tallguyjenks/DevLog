@@ -1,5 +1,5 @@
 ---
-id: 5By3QwQzKXgBOrcLGCR6u
+id: nbrrdzvcel88fa7hlyiiqyk
 title: Ecmascript 2017
 desc: ''
 updated: 1641406983415
@@ -7,6 +7,7 @@ created: 1641105063910
 stub: false
 isDir: false
 ---
+
 
 ## [[import.software.language.javascript.ecmascript-2017]]
 

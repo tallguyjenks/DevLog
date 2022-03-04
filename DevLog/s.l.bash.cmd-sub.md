@@ -1,10 +1,11 @@
 ---
-id: 6CYt45QX7K4h5kG6n1Mtk
+id: xd7bx9yr2hb29kzsw5x4t7r
 title: Cmd Sub
 desc: ''
 updated: 1641429393847
 created: 1641429393847
 ---
+
 
 #### Command Substitution
 

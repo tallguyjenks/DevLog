@@ -1,10 +1,11 @@
 ---
-id: 985627056755
+id: 85wr7ntyradwwx2gfktmor2
 title: Tuple
 desc: ''
 updated: 1641427007910
 created: 1641427007910
 ---
+
 
 ### Tuple Type:
 

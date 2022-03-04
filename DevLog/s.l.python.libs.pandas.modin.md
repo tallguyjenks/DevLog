@@ -1,10 +1,11 @@
 ---
-id: GEBg5WPoyHttT1DzbU6M9
+id: r0rgaycf5t2ingfyd0krs52
 title: Modin
 desc: ''
 updated: 1641426235564
 created: 1641426235564
 ---
+
 
 ## Faster and more efficient computation with modin
 

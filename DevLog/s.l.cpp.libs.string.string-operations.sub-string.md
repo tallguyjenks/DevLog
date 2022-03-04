@@ -1,10 +1,11 @@
 ---
-id: nNBOq7tqNuWEyhnFpmE0y
+id: 7vccv7yynp83w7kaurll2ax
 title: Sub String
 desc: ''
 updated: 1641376846554
 created: 1641376846554
 ---
+
 
 ### substr( index, len )
 

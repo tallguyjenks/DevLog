@@ -1,5 +1,5 @@
 ---
-id: 3Bc8b4euGuxFvWwC12bQg
+id: 62zrpeuh65qfzncatdr7w1x
 title: Youtube Dl
 desc: ''
 updated: 1641267453905
@@ -7,6 +7,7 @@ created: 1641105063873
 stub: false
 isDir: false
 ---
+
 
 - <https://ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/>
 

@@ -1,5 +1,5 @@
 ---
-id: HnBsebyutKabED11u1SRD
+id: qebqnr2v59nikecjgtzfiin
 title: Conditional Statements
 desc: ''
 updated: 1641409902841
@@ -7,6 +7,7 @@ created: 1641105063929
 stub: false
 isDir: false
 ---
+
 
 ```r
 # IF

@@ -1,5 +1,5 @@
 ---
-id: 3Yh1heypmLo9l73u0zMbJ
+id: sod06pamxhhcnyf70pfgsub
 title: Python Programming 86 Sql and Sqlite with Python 12 Minute Review
 desc: ''
 updated: 1641270849778
@@ -7,6 +7,7 @@ created: 1641168992654
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/DQ91bQzdRrk>
 - `Channel/Host:` Caleb Curry

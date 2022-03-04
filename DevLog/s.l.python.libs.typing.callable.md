@@ -1,10 +1,11 @@
 ---
-id: DkXRIdZI9167uGseG3Hh4
+id: z1nqv8dpytn6hyperi6evnq
 title: Callable
 desc: ''
 updated: 1641427001866
 created: 1641427001866
 ---
+
 
 ### Callable Type:
 

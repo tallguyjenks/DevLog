@@ -1,5 +1,5 @@
 ---
-id: hoabKrPrj89ATxzkEy7jw
+id: 4uieyd6upflohq2k7337f78
 title: Alter
 desc: ''
 updated: 1641412741651
@@ -7,6 +7,7 @@ created: 1641105063930
 stub: false
 isDir: false
 ---
+
 
 `ALTER` allows you to add, delete, or modify columns in an existing table.
 

@@ -1,10 +1,11 @@
 ---
-id: UPF6WUGDQGxlYFoZP3Jtw
+id: yqtz92hb9psu3197kiua1w5
 title: Writeable Cte
 desc: ''
 updated: 1643222465333
 created: 1643222381450
 ---
+
 
 ![writeable CTE](/assets/images/2022-01-26-10-39-53.png)
 

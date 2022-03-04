@@ -1,10 +1,11 @@
 ---
-id: btQtkT7cgcdwjWAXymqEg
+id: j2mhf7jnemmoaoe0qjqs0jf
 title: Loops
 desc: ''
 updated: 1641429090665
 created: 1641429069599
 ---
+
 
 ##### Loops In Bash
 

@@ -1,10 +1,11 @@
 ---
-id: 41ePZTJ3qgR6IruvuXz7f
+id: 123gcgi6micftjnlhqkbxek
 title: Char
 desc: ''
 updated: 1641377726760
 created: 1641377726760
 ---
+
 
 ### Character
 

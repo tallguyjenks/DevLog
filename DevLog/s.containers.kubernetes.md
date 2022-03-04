@@ -1,10 +1,11 @@
 ---
-id: vWa99zTDpU3af4gqdcBx4
+id: 9ximomlxtycykv7jv5ieh2s
 title: Kubernetes
 desc: ''
 updated: 1643308150255
 created: 1643307788227
 ---
+
 
 REVISIT
 

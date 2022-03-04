@@ -1,10 +1,11 @@
 ---
-id: y05yKkDOdskSbz8j8oHP5
+id: fwbju1gpj2yvrbmb1ugop0u
 title: Deleting a Class
 desc: ''
 updated: 1641422786556
 created: 1641422786556
 ---
+
 
 ## Deleting A Class Instance
 

@@ -1,10 +1,11 @@
 ---
-id: CbGfJDsvIYIf8muim1u5G
+id: njdfehy6rechvay6q8181em
 title: Multi Line Strings
 desc: ''
 updated: 1645151092201
 created: 1645151092201
 ---
+
 
 ## Multi-line strings
 

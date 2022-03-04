@@ -1,5 +1,5 @@
 ---
-id: bhAxkq3kruIucP98sW8AO
+id: wc2sik3tqks8r63rhetgob1
 title: Prettytable
 desc: ''
 updated: 1641202756638
@@ -7,6 +7,7 @@ created: 1641105063861
 stub: false
 isDir: false
 ---
+
 
 ## Resources
 

@@ -1,5 +1,5 @@
 ---
-id: bObuJ1cuReoFwk8aW70A0
+id: owvdh5cgpfzyzk30vqjcki5
 title: '06'
 desc: ''
 updated: 1641439933066
@@ -7,6 +7,7 @@ created: 1641105063943
 stub: false
 isDir: false
 ---
+
 
 - used the [[s.l.python.libs.pyinstaller]] package to make a python script into a `.exe` file
 - tried to use both [[s.m.markdown]] and [[s.m.html]] links to call the file and have it executed but none of these options worked.

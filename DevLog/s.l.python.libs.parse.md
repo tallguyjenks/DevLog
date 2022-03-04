@@ -1,5 +1,5 @@
 ---
-id: PlRz04Lk6pItJyd01cI6w
+id: 6w43v3l9h4dp8fwj042wc95
 title: Parse
 desc: ''
 updated: 1641426314517
@@ -7,6 +7,7 @@ created: 1641105063860
 stub: false
 isDir: false
 ---
+
 
 - [parse library for common string parsing](https://calmcode.io/parse/parse.html)
 

@@ -1,10 +1,11 @@
 ---
-id: VSt9WOwoY8TBw2pGAyPCx
+id: m14tqgawe8qpne10rw3oorm
 title: Enumerate
 desc: ''
 updated: 1641423116508
 created: 1641423116508
 ---
+
 
 ## Replace len() with enumerate()
 

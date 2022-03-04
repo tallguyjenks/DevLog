@@ -1,5 +1,5 @@
 ---
-id: BRbIasc2lalvfj4k6Fb09
+id: i6horczm4p3s7edwmixhiwj
 title: Object Entries
 desc: ''
 updated: 1641407998086
@@ -7,6 +7,7 @@ created: 1641105063912
 stub: false
 isDir: false
 ---
+
 
 ## JavaScript Object Entries
 

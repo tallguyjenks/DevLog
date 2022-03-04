@@ -1,5 +1,5 @@
 ---
-id: WqG4nGxNelKEe3NY3Xpwf
+id: km3xevxzn6sor23wnwwlgsc
 title: '14'
 desc: ''
 updated: 1641447040761
@@ -7,6 +7,7 @@ created: 1641105063949
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] [[s.l.python.libs.asyncio]] [Python Asynchronous Programming - AsyncIO & Async/Await](https://youtu.be/t5Bo1Je9EmE)
    -  [[s.l.python]] [Python 3's f-Strings: An Improved String Formatting Syntax (Guide)](https://realpython.com/python-f-strings/)

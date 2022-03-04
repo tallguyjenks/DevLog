@@ -1,5 +1,5 @@
 ---
-id: SZTiBOmuYPhjESMkqp9rK
+id: xjbamdyzt0m9r3563lul2aq
 title: '18'
 desc: ''
 updated: 1641451351084
@@ -7,6 +7,7 @@ created: 1641105063963
 stub: false
 isDir: false
 ---
+
 
 - [[s.apps.microsoft-orchestrator]] Get Affected User Email through relationships [How to get the Affected User from an Incident RRS feed][1]
   - [Get Affected User from an Incident in Service Manager with Orchestrator][1]

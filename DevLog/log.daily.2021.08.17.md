@@ -1,5 +1,5 @@
 ---
-id: Jg2oUTjd5LvVHHoav13wN
+id: ebd8nxpgwisgnt0eprfzn8i
 title: '17'
 desc: ''
 updated: 1641451328587
@@ -7,6 +7,7 @@ created: 1641105063963
 stub: false
 isDir: false
 ---
+
 
 - [[s.apps.microsoft-orchestrator]]  
 - [[s.q.tsql]] make a database single user and also cut off other sessions so you can drop it

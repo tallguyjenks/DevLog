@@ -1,5 +1,5 @@
 ---
-id: CHqdJkapeVO0E79oEpxTY
+id: jlzdvpxg56fk022pc9p7cfn
 title: Any Function in Python Check If an Iterable Contains True
 desc: ''
 updated: 1641270692688
@@ -7,6 +7,7 @@ created: 1641168992643
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/h5YiHNh8S5Y>
 - `Channel/Host:` Tech With Tim

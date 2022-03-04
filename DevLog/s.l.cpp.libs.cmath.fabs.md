@@ -1,10 +1,11 @@
 ---
-id: P681XNFQUs0c1jmbfxWNW
+id: 11dbyzmqb01w5rdzxjoderm
 title: Fabs
 desc: ''
 updated: 1641373550926
 created: 1641373550926
 ---
+
 
 ## fabs()
 

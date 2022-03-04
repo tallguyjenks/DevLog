@@ -1,10 +1,11 @@
 ---
-id: 3dTYqqF3vwW8TFAOBuoQH
+id: ugf5f5rfghxjc0uvr762u2m
 title: Strings
 desc: ''
 updated: 1641377752867
 created: 1641377745367
 ---
+
 
 ### Strings
 

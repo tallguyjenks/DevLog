@@ -1,10 +1,11 @@
 ---
-id: H0QwYgNk8XhWRfsTS6B59
+id: aedr53k1n6dp1gvzxue7gfi
 title: Pydantic Type Hints
 desc: ''
 updated: 1641420992016
 created: 1641420992016
 ---
+
 
 ## Pydantic for Data Class Type Hints
 

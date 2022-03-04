@@ -1,10 +1,11 @@
 ---
-id: hIn09UKAwoHyz4GVJ8HGR
+id: g8yotzl9enumoo9ei2yen2b
 title: Extract Date Parts
 desc: ''
 updated: 1643228701713
 created: 1643228489417
 ---
+
 
 ```sql
 SELECT current_date

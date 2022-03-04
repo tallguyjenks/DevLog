@@ -1,10 +1,11 @@
 ---
-id: NKjHuVsskgVkr4KZpzt8o
+id: wcgcjwi039t7qj7o4opppt6
 title: DNS
 desc: ''
 updated: 1641886616617
 created: 1641885863529
 ---
+
 
 `D`omain `N`ame `S`ystem
 

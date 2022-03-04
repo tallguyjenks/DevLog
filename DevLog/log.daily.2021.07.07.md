@@ -1,5 +1,5 @@
 ---
-id: bFvsQ7JnmOby4kYoMxZhK
+id: g57yoofxw70qb7oeo9ylpyl
 title: '07'
 desc: ''
 updated: 1641449823549
@@ -7,6 +7,7 @@ created: 1641105063954
 stub: false
 isDir: false
 ---
+
 
 - setting up devlog onto github pages with publish, using the desktop app, github cron job for auto push sync, and just figuring out the whole shenanigans.
 - I finished getting my [[cli.cmd.git]] sync [[s.l.powershell]] script setup on windows task scheduler so now i have a live sync of my DevLog using the desktop app and windows!

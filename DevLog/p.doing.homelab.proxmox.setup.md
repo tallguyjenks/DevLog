@@ -1,10 +1,11 @@
 ---
-id: sydN0r96FzX7sFOT893hh
+id: b2k2n8pkov4wj5y8u0d4qnl
 title: Setup
 desc: ''
 updated: 1645389174744
 created: 1643183976632
 ---
+
 
 ## Proxmox setup steps
 

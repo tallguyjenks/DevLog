@@ -1,5 +1,5 @@
 ---
-id: 3wZmN0WOHckt81JGUJuie
+id: y57epxa8ctazijy4b97a3xf
 title: '20'
 desc: ''
 updated: 1641455031397
@@ -7,6 +7,7 @@ created: 1641105063969
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.python]] [Python is a Bad Programming Language][1]
 - [[s.l.python]] [[terms.etl]] [Python ETL vs. ETL Tools][2]

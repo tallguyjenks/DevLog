@@ -1,10 +1,11 @@
 ---
-id: lePs4bmk7FkppE6GMbYxW
+id: u2tvy1fu8wuveu99ardfil0
 title: BGP
 desc: ''
 updated: 1641950573158
 created: 1641950505531
 ---
+
 
 `B`order `G`ateway `P`rotocol
 

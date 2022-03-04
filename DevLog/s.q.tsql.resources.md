@@ -1,10 +1,11 @@
 ---
-id: bqMQe5rXKq4ZMuHvwb4iJ
+id: 87cn2mi5rcdz91bxal57wf2
 title: Resources
 desc: ''
 updated: 1642056016185
 created: 1642056013613
 ---
+
 
 - [MSDN Documentation](https://docs.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver15)
 - [Documentation Outline Idea](https://derekhackett.com/t-sql-documentation)

@@ -1,5 +1,5 @@
 ---
-id: 96susWnxN4XB5eUE62suU
+id: ery6j1zk0gq3st5nvt1dje6
 title: '07'
 desc: ''
 updated: 1641440068009
@@ -7,6 +7,7 @@ created: 1641105063943
 stub: false
 isDir: false
 ---
+
 - windows Administrative Shares
   - These are network shares (share drive / NAS (Network Attached Storage)) That users with _administrative privileges_ can access remotely.
   - They have a naming convention that looks like the normal drive letter abbreviation but is subsequently followed by a dollar sign:

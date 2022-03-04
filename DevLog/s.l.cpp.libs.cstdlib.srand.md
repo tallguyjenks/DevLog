@@ -1,10 +1,11 @@
 ---
-id: Zf8hJ3ZRRmqSP1HDwX0OQ
+id: 5y1p6cdna33qgabn2at0lpn
 title: Srand
 desc: ''
 updated: 1641373598937
 created: 1641373598937
 ---
+
 
 ## srand
 

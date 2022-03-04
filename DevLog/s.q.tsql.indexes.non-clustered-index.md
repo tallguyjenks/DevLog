@@ -1,5 +1,5 @@
 ---
-id: n47J4PNWn0H3LKXAtQCV3
+id: gsp95cc2jlf7k9khaj0521g
 title: Non Clustered Index
 desc: ''
 updated: 1641413735840
@@ -7,6 +7,7 @@ created: 1641105063936
 stub: false
 isDir: false
 ---
+
 
 > A non-clustered index doesn’t sort the physical data inside the table. In fact, a non-clustered index is stored at one place and table data is stored in another place. This is similar to a textbook where the book content is located in one place and the index is located in another. This allows for more than one non-clustered index per table.
 > <br>

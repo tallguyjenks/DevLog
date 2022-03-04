@@ -1,5 +1,5 @@
 ---
-id: V48iGlXjYVNu9koKLoESJ
+id: 2foms5b0ur4x72fp2bj1e3r
 title: Cctype
 desc: ''
 updated: 1641105063892
@@ -7,6 +7,7 @@ created: 1641105063892
 stub: false
 isDir: false
 ---
+
 💻️/C++
 publish: true
 aliases:

@@ -1,10 +1,11 @@
 ---
-id: sLF3Gq9UyZdB7rPIY2Rhr
+id: yu5gcr0zz96nmqtj5ftfuf3
 title: Separation of Concerns
 desc: ''
 updated: 1641372098029
 created: 1641372058285
 ---
+
 
 ## Class Code Separation of Concerns
 

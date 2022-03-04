@@ -1,5 +1,5 @@
 ---
-id: 1wmfWn38Jwa0QVGQ83zQT
+id: fjomxbqneb1h0e58jn2yy5v
 title: Data Types & Structs
 desc: ''
 updated: 1641271738500
@@ -7,6 +7,7 @@ created: 1641105063920
 stub: false
 isDir: false
 ---
+
 
 - Type checking
 

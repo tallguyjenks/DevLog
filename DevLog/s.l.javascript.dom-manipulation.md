@@ -1,5 +1,5 @@
 ---
-id: QxWkMVD90KMGrUApKZ3UI
+id: 15wg0jbvlhb7ivggp132a2i
 title: Dom Manipulation
 desc: ''
 updated: 1641406827331
@@ -7,6 +7,7 @@ created: 1641105063909
 stub: false
 isDir: false
 ---
+
 
 The way of accessing the DOM tree. 
 

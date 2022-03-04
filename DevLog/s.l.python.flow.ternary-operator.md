@@ -1,10 +1,11 @@
 ---
-id: Ol91rKNl7ZTNg14z6TAUi
+id: z3fia6epa21i1oet3udktdu
 title: Ternary Operator
 desc: ''
 updated: 1641422457261
 created: 1641422457261
 ---
+
 
 ## Ternary Operator
 

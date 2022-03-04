@@ -1,5 +1,5 @@
 ---
-id: lOAOhLtH4g1FL5WF6W2CE
+id: eg5i3w97ayhe406i9h4nupa
 title: Csv
 desc: ''
 updated: 1641184434564
@@ -7,6 +7,7 @@ created: 1641105063848
 stub: false
 isDir: false
 ---
+
 
 - google stock data url [here](https://goo.gl/3zaUlD)
 

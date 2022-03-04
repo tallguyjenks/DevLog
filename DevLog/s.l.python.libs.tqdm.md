@@ -1,5 +1,5 @@
 ---
-id: yJCan04GQqNEezl9UshFm
+id: xlbz4vdysr40b7k6so7gbk4
 title: Tqdm
 desc: ''
 updated: 1641417415306
@@ -7,6 +7,7 @@ created: 1641105063870
 stub: false
 isDir: false
 ---
+
 
 - [GitHub Repo](https://github.com/tqdm/tqdm) \| [Docs](https://tqdm.github.io/) \| [Calm Code tqdm](https://calmcode.io/tqdm/making-a-progress-bar.html)
 - Wrap an itterable in the function for an aesthetic progress bar:

@@ -1,5 +1,5 @@
 ---
-id: m8FoI69UEibVVy2nJV0EL
+id: aqpjtauw6effe30fwxes27i
 title: Report
 desc: ''
 updated: 1641409062333
@@ -7,6 +7,7 @@ created: 1641105063919
 stub: false
 isDir: false
 ---
+
 
 This is meant for long form documentation unlike the [[LaTeX Article Document Class|latex-article-document-class]] document class and an example using a chapter argument is below:
 

@@ -1,5 +1,5 @@
 ---
-id: Dg9vbmOBsX3FwhVQGauVy
+id: nhp2u0q1ftiaszlxrskp8re
 title: Views
 desc: ''
 updated: 1641414271076
@@ -7,6 +7,7 @@ created: 1641105063940
 stub: false
 isDir: false
 ---
+
 
 In SQL, a view is a virtual table based on the result-set of an SQL statement. A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
 

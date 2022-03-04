@@ -1,10 +1,11 @@
 ---
-id: vV7oUMO8eEUJj1JLN61AT
+id: aelayhhna4wfn8n5kcemcg4
 title: Data Management
 desc: ''
 updated: 1641371939111
 created: 1641371939112
 ---
+
 
 ## Data management best practices
 

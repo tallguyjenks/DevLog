@@ -1,10 +1,11 @@
 ---
-id: k6eMZOVSC5lV3uqtqfrHv
+id: u50d7u2ws1r77mbjkn7k8z3
 title: Profiling
 desc: ''
 updated: 1641455087878
 created: 1641455062722
 ---
+
 
 - Try out [[s.l.python]] [profiling][8]
 

@@ -1,5 +1,5 @@
 ---
-id: BK3sM0GF0aD4VDXeRphPb
+id: st0x4hkj2d7nbpo9ntlwzok
 title: Label Tag
 desc: ''
 updated: 1641272411670
@@ -7,6 +7,7 @@ created: 1641105063905
 stub: false
 isDir: false
 ---
+
 
 ## Plain Labels
 

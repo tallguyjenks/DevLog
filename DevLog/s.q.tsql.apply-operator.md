@@ -1,5 +1,5 @@
 ---
-id: Evkd1zELtGrNFq5hhc9nb
+id: vragp33stl3ou9qq6pvriri
 title: Apply Operator
 desc: ''
 updated: 1641412756637
@@ -7,6 +7,7 @@ created: 1641105063931
 stub: false
 isDir: false
 ---
+
 
 `CROSS APPLY` = [[T-SQL Inner Join|s.q.tsql.joins.inner-join]]
 

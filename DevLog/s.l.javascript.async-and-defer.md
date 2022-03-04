@@ -1,5 +1,5 @@
 ---
-id: mOnfCIUhGPaSxGLwpU9SH
+id: ugnf5cyrpxeawt9l64ffqoq
 title: Async and Defer
 desc: ''
 updated: 1641406532104
@@ -7,6 +7,7 @@ created: 1641105063909
 stub: false
 isDir: false
 ---
+
 
 ## Async and Defer
 

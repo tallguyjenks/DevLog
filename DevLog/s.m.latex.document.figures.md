@@ -1,5 +1,5 @@
 ---
-id: EQHmuojv0snv1kfagotLa
+id: c5hftav5680nagkho03t0w5
 title: Figures
 desc: ''
 updated: 1641408586295
@@ -7,6 +7,7 @@ created: 1641105063916
 stub: false
 isDir: false
 ---
+
 
 ```latex
 \\begin{wrapfigure}{\<orientation `r` or `l`\>}{\<space to take up like 3in\>}

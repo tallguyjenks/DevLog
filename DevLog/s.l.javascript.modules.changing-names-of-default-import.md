@@ -1,10 +1,11 @@
 ---
-id: jakslSeniW3hG0xtq30in
+id: 0y3lttaz7zbwlpui0yl71w5
 title: Changing Names of Default Import
 desc: ''
 updated: 1641407904800
 created: 1641407904800
 ---
+
 
 ### Changing the names of the default import
 

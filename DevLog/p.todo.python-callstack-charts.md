@@ -1,10 +1,11 @@
 ---
-id: DXrVQbooGlcIYhNCbXge2
+id: wbm3weavzmrz0zroflioj58
 title: Python Callstack Charts
 desc: ''
 updated: 1641451851379
 created: 1641451847631
 ---
+
 
 - [ ] building flow call stack charts of [[s.l.python]] programs
   - use this python module: [code2flow](https://github.com/scottrogowski/code2flow)

@@ -1,10 +1,11 @@
 ---
-id: GQE1AXAmZDRjiOUmbppxd
+id: nmk4maonvepm2ih1qu9onj8
 title: Default Parameters
 desc: ''
 updated: 1641423050502
 created: 1641423050502
 ---
+
 
 ## Default Parameters
 

@@ -1,5 +1,5 @@
 ---
-id: i5Y1vO0loKnL5gz2VoWBV
+id: 4vf36l8mnmwius8ifdsk6l7
 title: Get the Last Argument of the Last Run Command in Your Shell
 desc: ''
 updated: 1641270605607
@@ -7,6 +7,7 @@ created: 1641168992641
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/vt-IvdFP5ZA>
 - `Channel/Host:` nick-janetakis

@@ -1,5 +1,5 @@
 ---
-id: 1Wy3LD6hsoc52wWmr89tN
+id: 9ojtfht0bogheyi0pmd99e8
 title: Requests
 desc: ''
 updated: 1641417284364
@@ -7,6 +7,7 @@ created: 1641105063864
 stub: false
 isDir: false
 ---
+
 
 - [Docs](https://docs.python-requests.org/en/master/)
 - [GitHub](https://github.com/psf/requests)

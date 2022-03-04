@@ -1,5 +1,5 @@
 ---
-id: Q6b8sMhF65UNkOWV9iBhx
+id: vtit15msn17pnr52688dgzr
 title: Programming Terms Memoization
 desc: ''
 updated: 1641270803413
@@ -7,6 +7,7 @@ created: 1641168992650
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/a7EjmdQzPqY>
 - `Channel/Host:` Corey Schafer

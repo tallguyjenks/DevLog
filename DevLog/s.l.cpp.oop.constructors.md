@@ -1,5 +1,5 @@
 ---
-id: xlJ8qK8E8w99sOYKo2UjE
+id: qzgf1rgguw7swhy4q0yad5z
 title: Constructors
 desc: ''
 updated: 1641372180335
@@ -7,6 +7,7 @@ created: 1641105063887
 stub: false
 isDir: false
 ---
+
 
 Constructors initialize instances of a class. A best practice is to initialize all variables when declared (likely to keep them in the same memory location on the stack). 
 

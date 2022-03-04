@@ -1,10 +1,11 @@
 ---
-id: nx3A5U2WQy1O7lM3hpKru
+id: 55la9yqk2xsui4739sk12rh
 title: Find
 desc: ''
 updated: 1641376838716
 created: 1641376838716
 ---
+
 
 ### find( item, index )
 

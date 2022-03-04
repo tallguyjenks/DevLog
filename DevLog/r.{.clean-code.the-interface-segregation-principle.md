@@ -1,5 +1,5 @@
 ---
-id: yXWGu255BLnaizglBihZJ
+id: d8nshqu0xmpoqyw8n4my44s
 title: The Interface Segregation Principle
 desc: ''
 updated: 1641268282124
@@ -7,6 +7,7 @@ created: 1641105063869
 stub: false
 isDir: false
 ---
+
 
 > “Many client-specific interfaces are better than one general-purpose interface”
 > <br>

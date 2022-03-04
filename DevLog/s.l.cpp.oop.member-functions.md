@@ -1,5 +1,5 @@
 ---
-id: MwXsKd46jLdxppO2Kvsmj
+id: 3nb592dizllp9yxkn6rldfk
 title: Member Functions
 desc: ''
 updated: 1641372422864
@@ -7,6 +7,7 @@ created: 1641105063888
 stub: false
 isDir: false
 ---
+
 
 A member function is a [[C++ Functions|s.l.cpp.funcs]] that is a _member_ of a class.
 

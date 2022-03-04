@@ -1,10 +1,11 @@
 ---
-id: 0E8zxlC6fu5qNrqjP8LZp
+id: cwwlp9nh97yf8t3zi94yi0h
 title: Re Use Cmd Args
 desc: ''
 updated: 1641429298131
 created: 1641429298131
 ---
+
 
 ### Re-use command arguments
 

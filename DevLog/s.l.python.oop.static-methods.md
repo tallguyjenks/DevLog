@@ -1,10 +1,11 @@
 ---
-id: 3sJjL5qNRQNoFsIo1uNzo
+id: upz266fdw6wb1twcuxyfcpc
 title: Static Methods
 desc: ''
 updated: 1641422823341
 created: 1641422800231
 ---
+
 
 ## Before
 

@@ -1,10 +1,11 @@
 ---
-id: 5TDHvbDyWoytmQNxsAHN3
+id: kc0fwcij48n9f7rfjg1guu4
 title: Wrapper Functions
 desc: ''
 updated: 1641426120251
 created: 1641426101600
 ---
+
 
 related: [[s.l.python.funcs.decorators]]
 

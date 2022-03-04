@@ -1,5 +1,5 @@
 ---
-id: 16HkAGZyLyJEJEgx5BR5p
+id: blqzxxeifoaaddcyu18blf8
 title: Getpass
 desc: ''
 updated: 1641416958177
@@ -7,6 +7,7 @@ created: 1641105063853
 stub: false
 isDir: false
 ---
+
 
 - python built in just import and:
 

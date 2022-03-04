@@ -1,5 +1,5 @@
 ---
-id: 1qi8uHLUVO46RyFI1JdSk
+id: i761ijnv22esr58k3gtzbt0
 title: Taskwarrior
 desc: ''
 updated: 1641203275900
@@ -7,6 +7,7 @@ created: 1641105063868
 stub: false
 isDir: false
 ---
+
 
 - Mac install brew
 - Install task warrior (its task on most systems)

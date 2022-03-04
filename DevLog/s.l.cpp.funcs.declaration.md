@@ -1,10 +1,11 @@
 ---
-id: oadiLsHKnrfRNeSDRiNMI
+id: 6shbw5xoop2lutell7lba0t
 title: Declaration
 desc: ''
 updated: 1641373416475
 created: 1641373416475
 ---
+
 
 ### Declaration
 

@@ -1,10 +1,11 @@
 ---
-id: qnMRcK0dYCnfsUytvYPna
+id: tk2g7ogofj6kocisrqzervf
 title: Callable
 desc: ''
 updated: 1641423255959
 created: 1641423255959
 ---
+
 
 ## Callable Type:
 

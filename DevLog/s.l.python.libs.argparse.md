@@ -1,5 +1,5 @@
 ---
-id: gtRFKfmWXYIwVTmTzpLIm
+id: elwry3u0m7e16kgd41spm3l
 title: Argparse
 desc: ''
 updated: 1641105063844
@@ -7,6 +7,7 @@ created: 1641105063844
 stub: false
 isDir: false
 ---
+
 
 ## Information
 

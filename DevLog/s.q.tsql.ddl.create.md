@@ -1,5 +1,5 @@
 ---
-id: uW21W5ZdkXwS3nDkIJCRz
+id: ci3dsawks0pqqr5dtgpcism
 title: Create
 desc: ''
 updated: 1641412939536
@@ -7,6 +7,7 @@ created: 1641105063932
 stub: false
 isDir: false
 ---
+
 
 ```sql
 CREATE TABLE Database.schema.table_name

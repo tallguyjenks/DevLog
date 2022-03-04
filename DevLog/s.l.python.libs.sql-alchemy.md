@@ -1,5 +1,5 @@
 ---
-id: r7b1cXRk0ZXCWb8NPgBTR
+id: 8xt4repl0o3o9y3pgipfn6x
 title: Sql Alchemy
 desc: ''
 updated: 1641417347766
@@ -7,6 +7,7 @@ created: 1641105063868
 stub: false
 isDir: false
 ---
+
 
 - Working with a [[s.l.python.libs.sqlite3]] database using sql alchemy
 

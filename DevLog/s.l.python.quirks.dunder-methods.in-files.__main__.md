@@ -1,10 +1,11 @@
 ---
-id: doOZFWYmCwJQ4ay087VuP
+id: vt92mpu4a59qxgpsmlcdk2j
 title: __main__
 desc: ''
 updated: 1641421686608
 created: 1641421686608
 ---
+
 
 - `__main__.py`
   - When there is a file with this name in a module folder it makes it so that you dont have to explicitly point to a script to run the module.

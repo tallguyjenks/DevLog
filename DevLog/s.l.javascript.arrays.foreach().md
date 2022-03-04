@@ -1,5 +1,5 @@
 ---
-id: eAGYWilm7Mjr6O4NJ3TBR
+id: vn1hcf835jb52t1gbfjxowj
 title: Foreach()
 desc: ''
 updated: 1641406456054
@@ -7,6 +7,7 @@ created: 1641105063907
 stub: false
 isDir: false
 ---
+
 
 <center>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/R8rmfD9Y5-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

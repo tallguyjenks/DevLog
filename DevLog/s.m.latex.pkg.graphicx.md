@@ -1,5 +1,5 @@
 ---
-id: VDsFn0dGWXbVdKUfkPooq
+id: yn8lhhatnnepkb2yptcq59g
 title: Graphicx
 desc: ''
 updated: 1641408600103
@@ -7,6 +7,7 @@ created: 1641105063918
 stub: false
 isDir: false
 ---
+
 
 - [Documentation](http://texdoc.net/texmf-dist/doc/latex/graphics/graphicx.pdf)
 

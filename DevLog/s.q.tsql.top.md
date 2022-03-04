@@ -1,5 +1,5 @@
 ---
-id: W7jDscDXJxtsekGmIKilO
+id: vqr6tsbj8txvpa3jwoxrxpd
 title: Top
 desc: ''
 updated: 1641414080895
@@ -7,6 +7,7 @@ created: 1641105063939
 stub: false
 isDir: false
 ---
+
 
 ```sql
 SELECT TOP 100 <COLUMN>

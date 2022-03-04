@@ -1,10 +1,11 @@
 ---
-id: EFN9De5pHEAscXzRy281E
+id: o4aii2edf2evz872f30d9kw
 title: Continue Statement
 desc: ''
 updated: 1641373217018
 created: 1641373217018
 ---
+
 
 ## The continue Statement
 

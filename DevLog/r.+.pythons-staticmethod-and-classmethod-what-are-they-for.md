@@ -1,5 +1,5 @@
 ---
-id: CBUWK90aXDrrZCjWMNEez
+id: jly2vfrfo6fico09tw6gc9r
 title: Pythons Staticmethod and Classmethod What Are They For
 desc: ''
 updated: 1641270867629
@@ -7,6 +7,7 @@ created: 1641168992655
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/SXApHXsDe8I>
 - `Channel/Host:` mCoding

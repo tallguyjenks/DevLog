@@ -1,5 +1,5 @@
 ---
-id: tgukmIU9JMd2fsxK2UvYm
+id: xnb80lb49mg3b759isywbh2
 title: Python Typing Type Hints and Annotations
 desc: ''
 updated: 1641271089790
@@ -7,6 +7,7 @@ created: 1641105063991
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/QORvB-_mbZ0>
 - `Channel/Host:` Tech With Tim

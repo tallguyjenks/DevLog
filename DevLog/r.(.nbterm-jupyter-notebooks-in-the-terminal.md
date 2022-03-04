@@ -1,5 +1,5 @@
 ---
-id: tXb5CGnupeBy1yx2TrzDk
+id: fzrbfvcbkxhd6zoqqxiptm0
 title: Nbterm Jupyter Notebooks in the Terminal
 desc: ''
 updated: 1641270195384
@@ -7,6 +7,7 @@ created: 1641168992617
 stub: false
 isDir: false
 ---
+
 
 - `Author:` david-brochart
 - `Link:` <https://blog.jupyter.org/nbterm-jupyter-notebooks-in-the-terminal-6a2b55d08b70>

@@ -1,10 +1,11 @@
 ---
-id: xtwN99BhmXHeHfo10He3P
+id: u5n3dp9d8p8kxfmaw7ad9jk
 title: Scope Resolution Operator
 desc: ''
 updated: 1641372313192
 created: 1641372313192
 ---
+
 
 ## Scope Resolution Operator
 

@@ -1,5 +1,5 @@
 ---
-id: UOmgujDHW3yew8uIYCVUA
+id: w1c4q73knb6t98gshnj2yzu
 title: '28'
 desc: ''
 updated: 1641430087357
@@ -7,6 +7,7 @@ created: 1641105063941
 stub: false
 isDir: false
 ---
+
 - [[s.m.markdown]] [[s.m.markdown.extended-functionality.mermaid-diagrams]]
   - Since the vscode plugin for Mermaid syntax highlighting doesn't support the [[s.apps.azure.devops]] wiki syntax of triple colons for the code fence:
 

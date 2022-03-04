@@ -1,10 +1,11 @@
 ---
-id: Hi4KSHtgNZdhKBfCD5Cgd
+id: ogycqcl944xpgoxw3qudbxk
 title: Strcmp
 desc: ''
 updated: 1641373737939
 created: 1641373737939
 ---
+
 
 ## strcmp()
 

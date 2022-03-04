@@ -1,10 +1,11 @@
 ---
-id: f0ac3Y0CtWXyvIBblTnOU
+id: 34npd3yxz2brvozn376eh2d
 title: Raspberry Pi
 desc: ''
 updated: 2022-01-12 2246
 created: 2021-11-16 1520
 ---
+
 
 - Raspberry Pi PLEX Home Media Server
   - [Main Resource](https://youtu.be/gyMpI8csWis)

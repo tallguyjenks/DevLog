@@ -1,10 +1,11 @@
 ---
-id: bCY9XAz5Hj8q8jlkcX19A
+id: nmtw8sbrrkqm7qe2ovn07fs
 title: Dictionary Access with Get
 desc: ''
 updated: 1641423130656
 created: 1641423130656
 ---
+
 
 ## Stop Using Square Brackets To Get Dictionary Items — Use .get()
 

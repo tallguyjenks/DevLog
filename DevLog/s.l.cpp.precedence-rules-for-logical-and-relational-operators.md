@@ -1,5 +1,5 @@
 ---
-id: tYd9Jg8oYcSzmBoiHxnfw
+id: qbnz6dm81y00l8cedc8vvti
 title: Precedence Rules for Logical and Relational Operators
 desc: ''
 updated: 1641377370637
@@ -7,6 +7,7 @@ created: 1641105063896
 stub: false
 isDir: false
 ---
+
 
 | Convention  | Description                                                                            | Explanation                                                                                                                |
 | ----------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |

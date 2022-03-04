@@ -1,10 +1,11 @@
 ---
-id: S65GZ36TUz3qUmw72EB9Y
+id: u1g0bz66vug7qfc0ejkas9f
 title: Pop Back
 desc: ''
 updated: 1641377024763
 created: 1641377024763
 ---
+
 
 #### pop_back()
 

@@ -1,5 +1,5 @@
 ---
-id: SrDmclYe5d79MeKDzlY4Q
+id: 79qtv7a9b4xshngnmgbooll
 title: Pragmatic Ai Labs and Solutions Testing in Python
 desc: ''
 updated: 1641269268398
@@ -7,6 +7,7 @@ created: 1641105063988
 stub: false
 isDir: false
 ---
+
 
 - `Author:` alfredo-deza
 - `Link:` <https://paiml.com/docs/home/books/testing-in-python/chapter02-testing-conventions/>

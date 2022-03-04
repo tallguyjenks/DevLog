@@ -1,5 +1,5 @@
 ---
-id: Fhqvl14sRgiTY65xPTR4m
+id: 5viade0r12uoxj3w1vlz3l3
 title: 0
 desc: ''
 updated: 1641451036649
@@ -7,6 +7,7 @@ created: 1641105063962
 stub: false
 isDir: false
 ---
+
 
 - [[s.q.tsql]] [Renaming SQL Server database objects and changing object owners][1]
   - Rename a database with `sp_renamedb` or `sp_rename`

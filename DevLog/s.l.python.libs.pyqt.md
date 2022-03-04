@@ -1,5 +1,5 @@
 ---
-id: 34d6K7LWTM17tE2VM8dIc
+id: 19n44hr0b2c0maww4c9lrye
 title: Pyqt
 desc: ''
 updated: 1641426651890
@@ -7,6 +7,7 @@ created: 1641105063863
 stub: false
 isDir: false
 ---
+
 
 > Create GUI apps
 

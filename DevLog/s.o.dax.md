@@ -1,5 +1,5 @@
 ---
-id: mYIFzSOsRgbEGBE7y0Mtl
+id: 1nd477ymqvc5uzn7nywzx4y
 title: Dax
 desc: ''
 updated: 1641185846637
@@ -7,6 +7,7 @@ created: 1641105063848
 stub: false
 isDir: false
 ---
+
 
 - Related: [[T-SQL|sql]]
 - Used in: [[Excel|s.apps.excel]]

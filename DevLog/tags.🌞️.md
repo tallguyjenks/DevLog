@@ -1,8 +1,9 @@
 ---
-id: LhyfX5BR3Kzc82JBDtMq3
-title: "\U0001F31E️"
+id: 51ufxjqdmmt1ogkgnnfqq3b
+title: "ð\x9F\x8C\x9E️"
 desc: ''
 updated: 1641183890858
 created: 1641183890858
 ---
+
 

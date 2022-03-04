@@ -1,5 +1,5 @@
 ---
-id: VsnQkXA9etd8xCiFvJfQD
+id: ban985ae1r5q1aq0qkojgwu
 title: The Var Keyword
 desc: ''
 updated: 1641408122241
@@ -7,6 +7,7 @@ created: 1641105063914
 stub: false
 isDir: false
 ---
+
 
 The `VAR` Keyword is a variable assignment declaration that is available globally in scope no matter where it is declared.
 

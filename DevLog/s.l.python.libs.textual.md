@@ -1,5 +1,5 @@
 ---
-id: objofKr7X9Ez1oLzHxH12
+id: hl9x1scxki6mqv2vj5gdr2q
 title: Textual
 desc: ''
 updated: 1641417389320
@@ -7,6 +7,7 @@ created: 1641105063868
 stub: false
 isDir: false
 ---
+
 
 - Reference: [This Tweet](https://twitter.com/simonw/status/1406336417500860423)
 

@@ -1,10 +1,11 @@
 ---
-id: DewmHeHevtFkVlzDgMpRw
+id: gtz4r8d3q5uo04b1g2b3a13
 title: Enums
 desc: ''
 updated: 1641522216087
 created: 1641423091668
 ---
+
 
 ## enums with the [[s.l.python.libs.enum]] module
 

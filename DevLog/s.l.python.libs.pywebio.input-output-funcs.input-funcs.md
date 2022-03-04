@@ -1,10 +1,11 @@
 ---
-id: Pj9El4Qa8vVfJZQ7nY1xP
+id: vifle3xhxvnthub8zl4yp3v
 title: Input Funcs
 desc: ''
 updated: 1641426816388
 created: 1641426816388
 ---
+
 
 ## Basic Input Functions
 

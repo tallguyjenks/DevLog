@@ -1,10 +1,11 @@
 ---
-id: VHUeS3KtodWoIEHwAvZeq
+id: 6cgzvgx54fwnuk7v342ktbk
 title: Empty
 desc: ''
 updated: 1641376715355
 created: 1641376715355
 ---
+
 
 ### empty()
 

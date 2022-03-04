@@ -1,5 +1,5 @@
 ---
-id: EXcp19nyUyvO2XaI8HG78
+id: yw9tav5x46md77vkowxx35w
 title: Query Execution Order of Operations
 desc: ''
 updated: 1641413900788
@@ -7,6 +7,7 @@ created: 1641105063936
 stub: false
 isDir: false
 ---
+
 
 ```sql
 ( 5.1 ) SELECT 

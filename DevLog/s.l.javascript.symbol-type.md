@@ -1,5 +1,5 @@
 ---
-id: LAAwXzUyFWunaFawpywbY
+id: 6uaazp0rx3109wxzoqnldvh
 title: Symbol Type
 desc: ''
 updated: 1641408065692
@@ -7,6 +7,7 @@ created: 1641105063913
 stub: false
 isDir: false
 ---
+
 
 A JavaScript `Symbol` is a primitive datatype just like Number, String, or Boolean.
 

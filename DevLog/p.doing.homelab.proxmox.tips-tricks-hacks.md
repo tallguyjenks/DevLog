@@ -1,10 +1,11 @@
 ---
-id: cKRwLCZtdSw0I5pDzsuA1
+id: r8h6rba0v8tppv5nuifqmpx
 title: Tips Tricks Hacks
 desc: ''
 updated: 1645390121500
 created: 1643184057250
 ---
+
 
 ## Tips
 

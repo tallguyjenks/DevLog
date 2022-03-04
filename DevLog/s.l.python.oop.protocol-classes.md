@@ -1,5 +1,5 @@
 ---
-id: Xz09pdrY6yuq0vOKTlm1g
+id: uui3bef8q4hg1xo5q02bu0w
 title: Protocol Classes
 desc: ''
 updated: 1641426191353
@@ -7,6 +7,7 @@ created: 1641105063927
 stub: false
 isDir: false
 ---
+
 
 ## Sample Implementation
 

@@ -1,10 +1,11 @@
 ---
-id: g7j1hvfVBTrMmEwaulAYD
+id: djfpgiueue92c9h6gefyehc
 title: Other
 desc: ''
 updated: 1641377712173
 created: 1641377712173
 ---
+
 
 #### Other types of Integers
 

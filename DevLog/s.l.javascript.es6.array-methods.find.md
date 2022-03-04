@@ -1,10 +1,11 @@
 ---
-id: bfhpO0rqRll1mmrGjW29L
+id: njl7y1racsc01qrynm38dtt
 title: Find
 desc: ''
 updated: 1641266068002
 created: 1641266039504
 ---
+
 
 ## Array.find()
 

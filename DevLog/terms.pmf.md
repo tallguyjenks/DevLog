@@ -1,10 +1,11 @@
 ---
-id: aJ95VUhibPZFcte8tJevp
+id: 3k5jhbcmlgquo6q89ykrnpl
 title: PMF
-desc: 'Protected Management Frames'
+desc: Protected Management Frames
 updated: 1643876847316
 created: 1643876749587
 ---
+
 
 > prevents a malicious third party from sending deauth frames and kicking clients off the network and forcing them to reauth, or from otherwise screwing with the network.
 >

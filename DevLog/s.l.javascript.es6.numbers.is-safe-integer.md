@@ -1,10 +1,11 @@
 ---
-id: uRgjaODgBrMRjIoqb68Gk
+id: pzi7lzy7w0kqk37wccx86p1
 title: Is Safe Integer
 desc: ''
 updated: 1641266314221
 created: 1641266314221
 ---
+
 
 ## The Number.isSafeInteger() Method
 

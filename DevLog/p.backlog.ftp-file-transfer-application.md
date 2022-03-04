@@ -1,5 +1,5 @@
 ---
-id: SlHNPgIZD0zuD0skMsw3h
+id: lugeryg5s8pglfx4ksvfg1o
 title: Ftp File Transfer Application
 desc: ''
 updated: 1641266381153
@@ -7,6 +7,7 @@ created: 1641105063852
 stub: false
 isDir: false
 ---
+
 
 - [Article On This Project](https://medium.com/geekculture/build-your-own-file-transfer-app-using-python-within-5-minutes-56adffc7906b)
 - Uses: [[os|import.os]], [[socket|import.socket]], [[tqdm|import.tqdm]]

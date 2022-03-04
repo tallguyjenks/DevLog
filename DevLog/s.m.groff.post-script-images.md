@@ -1,10 +1,11 @@
 ---
-id: Y536YykmPbito8WKDQJpS
+id: 2xn1a10da3g5d7amwpw3cfi
 title: Post Script Images
 desc: ''
 updated: 1641271477364
 created: 1641271477364
 ---
+
 
 |    Groff cmd    |           LaTeX cmd            | markdown  |  What it is   |
 | :-------------: | :----------------------------: | :-------: | :-----------: |

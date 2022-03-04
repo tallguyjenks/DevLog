@@ -1,5 +1,5 @@
 ---
-id: MCxuqC8iaV06fdTOlIgWp
+id: h3jvztoojl6q9py927pwz32
 title: Level up Your Python Code with Abstract Classes
 desc: ''
 updated: 1641269154522
@@ -7,6 +7,7 @@ created: 1641105063988
 stub: false
 isDir: false
 ---
+
 
 - `Link:` <https://python.plainenglish.io/level-up-your-python-code-with-abstract-classes-7f7f6bdcbb5c>
 - `Publish Date:` 2021-10-17

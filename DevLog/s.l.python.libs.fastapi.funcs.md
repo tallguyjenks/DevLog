@@ -1,5 +1,5 @@
 ---
-id: 2uaK8JlttcYTBrcG6tV0G
+id: 5mj619zfj2g6eauoqqhdgys
 title: Funcs
 desc: ''
 updated: 1641924398644

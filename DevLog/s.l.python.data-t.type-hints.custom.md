@@ -1,10 +1,11 @@
 ---
-id: yMRpoRlqDeY1KvE9zXpAk
+id: xgjkm02nbma9zmynhbqv4ho
 title: Custom
 desc: ''
 updated: 1641423222440
 created: 1641423222440
 ---
+
 
 - Using the `typing` library you can import types for data structures and custom types more than just the standard primitive types
 

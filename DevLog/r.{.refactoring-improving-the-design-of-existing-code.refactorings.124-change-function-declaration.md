@@ -1,5 +1,5 @@
 ---
-id: Vg7WNks5VCNtLbesu5Lka
+id: pmqoe98selx1ikpcra04ph6
 title: 124 Change Function Declaration
 desc: ''
 updated: 1642626011728

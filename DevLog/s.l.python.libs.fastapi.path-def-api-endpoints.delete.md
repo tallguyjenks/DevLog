@@ -1,10 +1,11 @@
 ---
-id: dalL6NoHLu9XNQgp70oTg
+id: 22ugurq5o7qokv1q118yurc
 title: Delete
 desc: ''
 updated: 1641425964475
 created: 1641425964475
 ---
+
 
 ### Delete
 

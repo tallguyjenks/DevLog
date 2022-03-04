@@ -1,5 +1,5 @@
 ---
-id: PRCIgD4RBprPGUZJDZ3uU
+id: op3qu2ent7i415s7265ul0f
 title: '10'
 desc: ''
 updated: 1641446857973
@@ -7,6 +7,7 @@ created: 1641105063949
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] [Calm Code Package Setup](https://calmcode.io/setup/introduction.html)
 -  [[s.l.python]] [[s.l.python.libs.mkdocs]] [Calm Code Documentation](https://calmcode.io/docs/introduction.html)

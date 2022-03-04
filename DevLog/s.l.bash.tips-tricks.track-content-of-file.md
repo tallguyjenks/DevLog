@@ -1,10 +1,11 @@
 ---
-id: VtBqoOnxAuSTV0RecofUa
+id: izacwmgcoj9raxjn504tzh7
 title: Track Content of File
 desc: ''
 updated: 1641429330097
 created: 1641429330097
 ---
+
 
 ### Track the content of a log file
 

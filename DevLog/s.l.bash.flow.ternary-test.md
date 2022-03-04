@@ -1,10 +1,11 @@
 ---
-id: IZnN8vmdGzkQjyQkPP2MC
+id: c5xvdugh56gt0whr4qdzy6b
 title: Ternary Test
 desc: ''
 updated: 1641429007797
 created: 1641429007797
 ---
+
 
 ##### Ternary Tests
 

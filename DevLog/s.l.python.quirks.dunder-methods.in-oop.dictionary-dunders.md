@@ -1,10 +1,11 @@
 ---
-id: UKsTd6IV3cRC5nBFPv8q6
+id: qk9hfga4fa910bnoqym2r8g
 title: Dictionary Dunders
 desc: ''
 updated: 1641422005926
 created: 1641421999967
 ---
+
 
 ```python
 class softwares:

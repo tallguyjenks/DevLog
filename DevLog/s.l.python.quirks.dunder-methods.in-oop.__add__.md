@@ -1,10 +1,11 @@
 ---
-id: tHdc77csWBtlWo1yaxGgk
+id: tfrzwvkrc77q438hh4wqe4w
 title: __add__
 desc: ''
 updated: 1641421935187
 created: 1641421842776
 ---
+
 
 ```python
 class point:

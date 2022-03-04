@@ -1,5 +1,5 @@
 ---
-id: j2zQo0fni439lXdnGMI5m
+id: tucmlwdafet2trdadg624k9
 title: Select Data into Xml
 desc: ''
 updated: 1641412749197
@@ -7,6 +7,7 @@ created: 1641105063931
 stub: false
 isDir: false
 ---
+
 
 - <https://www.sqlshack.com/working-with-xml-data-in-sql-server/>
 

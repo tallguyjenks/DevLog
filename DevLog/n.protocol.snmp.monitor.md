@@ -1,10 +1,11 @@
 ---
-id: WpyeyOayFXiH6XZ7Yx3NV
+id: r34qjnnyp42lss1h2dyxap7
 title: Monitor
 desc: ''
 updated: 1641952943028
 created: 1641952706154
 ---
+
 
 Management software that provides a location from which you can oversee network activity. 
 

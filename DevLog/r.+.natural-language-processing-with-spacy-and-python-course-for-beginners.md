@@ -1,5 +1,5 @@
 ---
-id: QWtcxGgHHZKWTR4mdFfmF
+id: vztt41e922u8yln8xar8uqj
 title: Natural Language Processing with Spacy and Python Course for Beginners
 desc: ''
 updated: 1641270783050
@@ -7,6 +7,7 @@ created: 1641168992649
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/dIUTsFT2MeQ>
 - `Channel/Host:` FreeCodeCamp

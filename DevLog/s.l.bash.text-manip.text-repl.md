@@ -1,10 +1,11 @@
 ---
-id: f9tPbdxQ1upwNd9liyy6o
+id: blyoqqzj2jtaq5y88zbu4yt
 title: Text Repl
 desc: ''
 updated: 1641428826843
 created: 1641428826843
 ---
+
 
 #### Text Replacement In Bash
 

@@ -1,5 +1,5 @@
 ---
-id: knQjksrXCZDgXsG6qFezE
+id: yhjxvqwa2nc0ntgkdr1rjne
 title: Tips Tricks and Hacks
 desc: ''
 updated: 1641410138183
@@ -7,6 +7,7 @@ created: 1641105063930
 stub: false
 isDir: false
 ---
+
 
 ## How to add indexed areas to your R script:
 

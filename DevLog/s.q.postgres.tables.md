@@ -1,10 +1,11 @@
 ---
-id: eEjJCffhky2cQCzfaVHIH
+id: yp7h54s8406plqleeyezp2c
 title: Tables
 desc: ''
 updated: 1643273474184
 created: 1643273461554
 ---
+
 
 ```sql
 CREATE TABLE rpt.report_data

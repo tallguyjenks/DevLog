@@ -1,5 +1,5 @@
 ---
-id: MtZZzXHoroutHXqh3BiW5
+id: bydrax2dzrnx7h64rt0pv98
 title: String Padding
 desc: ''
 updated: 1641408059736
@@ -7,6 +7,7 @@ created: 1641105063913
 stub: false
 isDir: false
 ---
+
 
 ## JavaScript String Padding
 

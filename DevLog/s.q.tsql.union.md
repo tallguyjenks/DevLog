@@ -1,5 +1,5 @@
 ---
-id: Zlq4nyAdo0p5yJn0xt2Ej
+id: nloyg5g5gyylrag8cu8wphe
 title: Union
 desc: ''
 updated: 1641414187500
@@ -7,6 +7,7 @@ created: 1641105063939
 stub: false
 isDir: false
 ---
+
 
 The `UNION` Operator us useful for combining the records from one table to another.
 

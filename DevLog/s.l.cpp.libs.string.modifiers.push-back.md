@@ -1,10 +1,11 @@
 ---
-id: YjYAqe1BBtZ3XEkNFPPUo
+id: h8aeip1wa512ckkupc5qhin
 title: Push Back
 desc: ''
 updated: 1641376759310
 created: 1641376754350
 ---
+
 
 Appends `newChar` to the end.
 

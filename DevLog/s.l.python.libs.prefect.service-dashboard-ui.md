@@ -1,10 +1,11 @@
 ---
-id: mjml8yIL5V0sADTEYFgLd
+id: 4gfoz6ypr81iujo17bnv4f7
 title: Service Dashboard UI
 desc: ''
 updated: 1641202863313
 created: 1641202863313
 ---
+
 
 ## UI Dashboard of your service
 

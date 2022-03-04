@@ -1,10 +1,11 @@
 ---
-id: i6HjKIfk52E1bjUcNBvIt
+id: hkgkge51cv5s3n91o8gnm0a
 title: Funcs
 desc: ''
 updated: 1641429117387
 created: 1641429117387
 ---
+
 
 #### Functions In Bash
 

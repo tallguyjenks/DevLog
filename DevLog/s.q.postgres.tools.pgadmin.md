@@ -1,10 +1,11 @@
 ---
-id: JWUXBM6ZCGg3pXw6PXPC7
+id: jop2e9crurbmmxlhlzrm90z
 title: Pgadmin
 desc: ''
 updated: 1641853158649
 created: 1641852951589
 ---
+
 
 ## Setup
 

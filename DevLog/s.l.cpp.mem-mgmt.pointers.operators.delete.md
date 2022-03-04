@@ -1,10 +1,11 @@
 ---
-id: z22U6et95siaGSoaSeWpU
+id: n6lwq9wigwpktglk0m6ci1n
 title: Delete
 desc: ''
 updated: 1641377305023
 created: 1641377305023
 ---
+
 
 ### The 'delete' Operator
 

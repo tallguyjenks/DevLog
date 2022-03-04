@@ -1,5 +1,5 @@
 ---
-id: u9uUdQ3T5n7KFJRiCNOdZ
+id: l96cbd64cojfga3iu79sgsb
 title: '24'
 desc: ''
 updated: 1641447880534
@@ -7,6 +7,7 @@ created: 1641105063951
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] [5 Python Tips & Tricks That You Should Know][1]
    -  [[s.l.python]] [[s.l.python.libs.pytest]] [[s.l.python.libs.pytest-duration-insights]] [pytest-duration-insights][2]

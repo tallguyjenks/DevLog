@@ -1,5 +1,5 @@
 ---
-id: 8FvMG1gU6vgPPclkbX1tQ
+id: k9zptno1qx4j4wllo1aom9g
 title: S Testing Theory and a Few Less Obvious Testing Techniques
 desc: ''
 updated: 1641270880859
@@ -7,6 +7,7 @@ created: 1641168992656
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/K47pr6lPxsA>
 - `Channel/Host:` ArjanCodes

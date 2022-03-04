@@ -1,5 +1,5 @@
 ---
-id: bJemQJ7k0DGQEmXy0dtmE
+id: crcjomc90lqhtsnqm4ellf6
 title: Zip Function in Python Combine Iterables Together
 desc: ''
 updated: 1641270890727
@@ -7,6 +7,7 @@ created: 1641168992657
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/NgIWu-lDucM>
 - `Channel/Host:` Tech With Tim

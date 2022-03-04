@@ -1,10 +1,11 @@
 ---
-id: sekxtitI60JnSbmoaVA7G
+id: hahqp6ged4qn5tk7kplj7tm
 title: File Manipulation
 desc: ''
 updated: 1641426333068
 created: 1641426333068
 ---
+
 
 ## Easy file manipulation
 

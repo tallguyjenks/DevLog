@@ -1,10 +1,11 @@
 ---
-id: JguKHVaLwxlATmBjC3OKj
+id: vsa8dhk4eqd4mg4rx9d2lsz
 title: With Const
 desc: ''
 updated: 1641373400391
 created: 1641373400391
 ---
+
 
 ##### Pass By References with Const
 

@@ -1,5 +1,5 @@
 ---
-id: 4LAV0OMGEWTuKZILEyDRG
+id: b93sxoiagah60ca5icv1yhy
 title: '03'
 desc: ''
 updated: 1641442745285
@@ -7,6 +7,7 @@ created: 1641105063947
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]]
 	- the `__main__` function is used so that when you import the script as a module it will not execute the code within it, rather it will now let you import the code as a module so I can `from <module> import <something>` The only time the that `__name__ == __main__` is when we run the file as a script

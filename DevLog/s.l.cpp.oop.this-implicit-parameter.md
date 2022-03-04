@@ -1,5 +1,5 @@
 ---
-id: RJhcRUxdXTuLnhpiRTTvQ
+id: 4hgmix41642saix5504iq96
 title: This Implicit Parameter
 desc: ''
 updated: 1641372459539
@@ -7,6 +7,7 @@ created: 1641105063888
 stub: false
 isDir: false
 ---
+
 
 > Within a member function, the implicitly-passed object pointer is accessible via the name this. In particular, a member can be accessed as `this->member`. The `->` is the member access operator for a pointer, similar to the `.` operator for non-pointers.
 

@@ -1,10 +1,11 @@
 ---
-id: iliEA107wmW1P1pAzJMld
+id: pre25z1h59s1y5jw19q3ex2
 title: Cdpath
 desc: ''
 updated: 1641429229113
 created: 1641429229113
 ---
+
 
 ##### CDPATH
 

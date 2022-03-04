@@ -1,10 +1,11 @@
 ---
-id: 14kBWyeakuozzBte6K2dS
+id: xlccb7ybqmcwrvs12qvz3e0
 title: __repr__
 desc: ''
 updated: 1641422050002
 created: 1641422046615
 ---
+
 
 ```python
 # A simple Person class

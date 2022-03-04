@@ -1,10 +1,11 @@
 ---
-id: 8fTMyVD9AmijpTELfbCsO
+id: zkdiq5bsdinl8u2283uqxwi
 title: Copy
 desc: ''
 updated: 1643228324972
 created: 1643227649367
 ---
+
 
 > The COPY statement retrieves data from your database and dumps it in the file format of your choosing. For example, take the following statement:
 

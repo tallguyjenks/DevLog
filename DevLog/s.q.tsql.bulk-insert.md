@@ -1,5 +1,5 @@
 ---
-id: RJ3lV0hlzfpX9DOXZAN8b
+id: r4yg67ppkwxne46rltmwqz2
 title: Bulk Insert
 desc: ''
 updated: 1642546724363

@@ -1,10 +1,11 @@
 ---
-id: GPUWvVGzCWqWMUDZhQgjV
+id: dcm9ek952o9sci2v6lls5co
 title: Pointer Variables
 desc: ''
 updated: 1641377222895
 created: 1641377222895
 ---
+
 
 ### Pointer Variables
 

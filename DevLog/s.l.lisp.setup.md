@@ -1,5 +1,5 @@
 ---
-id: xYbtMZk1gjmgEg26rZD75
+id: ktktxuj03qpd1c8r69ke2t2
 title: Setup
 desc: ''
 updated: 1641271780971
@@ -7,6 +7,7 @@ created: 1641105063920
 stub: false
 isDir: false
 ---
+
 
 - vscode Extensions
   - `ailisp.strict-paredit`

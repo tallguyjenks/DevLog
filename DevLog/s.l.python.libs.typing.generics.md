@@ -1,10 +1,11 @@
 ---
-id: gN7QNEOT7vhigGDpN62ii
+id: yofnrso3uulj9rdct42ariy
 title: Generics
 desc: ''
 updated: 1641426985085
 created: 1641426985085
 ---
+
 
 ### Generics:
 

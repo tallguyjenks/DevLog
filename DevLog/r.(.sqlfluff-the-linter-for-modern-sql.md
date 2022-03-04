@@ -1,5 +1,5 @@
 ---
-id: gj8yc0PR7saEesSvdBqDT
+id: my3o7rj3tovt47wf5l6384y
 title: Sqlfluff the Linter for Modern Sql
 desc: ''
 updated: 1641270314921
@@ -7,6 +7,7 @@ created: 1641168992626
 stub: false
 isDir: false
 ---
+
 
 - `Author:` daniel-mateus-pires
 - `Link:` <https://towardsdatascience.com/sqlfluff-the-linter-for-modern-sql-8f89bd2e9117>

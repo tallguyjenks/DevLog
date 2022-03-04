@@ -1,5 +1,5 @@
 ---
-id: MtgxNGnZLqnbn1ycbmbOV
+id: om81osmjwmy2kq4pc09qewb
 title: Footnotes
 desc: ''
 updated: 1641411687830
@@ -7,6 +7,7 @@ created: 1641105063922
 stub: false
 isDir: false
 ---
+
 
 Footnotes are declared with a single pair of square brackets prepended with a carat: `^[]`
 

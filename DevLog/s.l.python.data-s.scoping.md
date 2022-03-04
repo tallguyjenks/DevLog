@@ -1,10 +1,11 @@
 ---
-id: qWVl3XCg1fJSmZiRGRQXt
+id: wp6wxqz03jzbnuem4vv8e0n
 title: Scoping
 desc: ''
 updated: 1641421189208
 created: 1641421189208
 ---
+
 
 ### Data Structures do not even need to be passed to class \_\_init\_\_ functions
 

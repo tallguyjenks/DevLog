@@ -1,0 +1,100 @@
+version: 4
+useFMTitle: true
+useNoteTitleForLink: true
+mermaid: true
+useKatex: true
+dev:
+    enablePreviewV2: true
+site:
+    copyAssets: true
+    siteHierarchies:
+        - root
+    siteRootDir: docs
+    siteUrl: 'https://{GITHUB_USERNAME}.github.io'
+    assetsPrefix: /DevLog
+    usePrettyRefs: true
+    title: Dendron
+    description: Personal knowledge space
+    siteLastModified: true
+    gh_edit_branch: master
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - DevLog
+            # - Norsk
+commands:
+    lookup:
+        note:
+            selectionMode: extract
+            confirmVaultOnCreate: true
+            leaveTrace: false
+            bubbleUpCreateNew: true
+            fuzzThreshold: 0.2
+    randomNote: {}
+    insertNote:
+        initialValue: templates
+    insertNoteLink:
+        aliasMode: none
+        enableMultiSelect: false
+    insertNoteIndex:
+        enableMarker: false
+workspace:
+    vaults:
+        -
+            fsPath: Norsk
+            visibility: private
+        -
+            fsPath: DevLog
+    journal:
+        dailyDomain: log
+        name: daily
+        dateFormat: yyyy.MM.dd
+        addBehavior: childOfCurrent
+    scratch:
+        name: scratch
+        dateFormat: yyyy.MM.dd.HHmmss
+        addBehavior: asOwnDomain
+    task:
+        # name: ''
+        # dateFormat: yyyy.MM.dd
+        # addBehavior: childOfCurrent
+        todoIntegration: true
+        name: task
+        dateFormat: yyyy.MM.dd
+        addBehavior: asOwnDomain
+        statusSymbols:
+            '': ' '
+            wip: wip
+            done: x
+            assigned: a
+            moved: m
+            blocked: b
+            delegated: l
+            dropped: d
+            pending: y
+        prioritySymbols:
+            H: high
+            M: medium
+            L: low
+        # todoIntegration: false
+        createTaskSelectionType: selection2link
+    graph:
+        zoomSpeed: 1
+    enableAutoCreateOnDefinition: false
+    enableXVaultWikiLink: false
+    enableRemoteVaultInit: true
+    enableUserTags: true
+    enableHashTags: true
+    workspaceVaultSyncMode: noCommit
+    enableAutoFoldFrontmatter: false
+    enableEditorDecorations: true
+    maxPreviewsCached: 10
+    maxNoteLength: 204800
+    dendronVersion: 0.75.1
+preview:
+    enableFMTitle: true
+    enableNoteTitleForLink: true
+    enableMermaid: true
+    enablePrettyRefs: true
+    enableKatex: true
+    automaticallyShowPreview: false

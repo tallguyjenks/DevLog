@@ -1,10 +1,11 @@
 ---
-id: 2p75KvzSqT4m5oLdOjByd
+id: sij5mkjplyzfpacuwld9ex6
 title: Global Configs
 desc: ''
 updated: 1641185445816
 created: 1641185445816
 ---
+
 
 ## Set Global Configs
 

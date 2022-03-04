@@ -1,10 +1,11 @@
 ---
-id: rnrjkBoKdEac8oVx7NhcJ
+id: ndiat7i1jmm51bs6z619o4n
 title: Strategy
 desc: ''
 updated: 1641325983098
 created: 1641325860169
 ---
+
 
 1. Learn Written system if applicable (kanji etc)
 2. Learn the top 100 more used words in that language

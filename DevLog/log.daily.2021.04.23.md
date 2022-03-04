@@ -1,5 +1,5 @@
 ---
-id: UhClAbdqILoKISv8qe7pZ
+id: yai3wreilccmm8td0rip4r6
 title: '23'
 desc: ''
 updated: 1641429951067
@@ -7,6 +7,7 @@ created: 1641105063941
 stub: false
 isDir: false
 ---
+
 - [[s.q.tsql]] 
   - Databases can live in a single `.db` file
   - queries have to end with a `;`

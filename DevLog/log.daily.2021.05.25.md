@@ -1,5 +1,5 @@
 ---
-id: N8AFBN4Xv6aFFqbxcfkBf
+id: qmqto0r3y9quosnkg3o39pp
 title: '25'
 desc: ''
 updated: 1641442319833
@@ -7,6 +7,7 @@ created: 1641105063946
 stub: false
 isDir: false
 ---
+
 
 - [[s.apps.azure.devops]] Extension for [Automatic Release Notes](https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-XplatGenerateReleaseNotes&ssr=false#overview)
 - [[s.q.tsql]] [[s.q.tsql.tools.redgate]] [Version Control Demo With Git](https://youtu.be/mNXipSFbV0s)

@@ -1,10 +1,11 @@
 ---
-id: bPbIvVrHb2Zc1bLrT237n
+id: k9katdch6pvmd8q6wc2jdx9
 title: Classes with Vectors
 desc: ''
 updated: 1641371959790
 created: 1641371959790
 ---
+
 
 ## Classes with vectors
 

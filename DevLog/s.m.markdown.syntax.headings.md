@@ -1,5 +1,5 @@
 ---
-id: W8RAmONpvOeco9u4aRTx9
+id: q7fc0bjprgrnb8kzyq05xdc
 title: Headings
 desc: ''
 updated: 1641412399247
@@ -7,6 +7,7 @@ created: 1641105063923
 stub: false
 isDir: false
 ---
+
 
 ## Traditional
 

@@ -1,5 +1,5 @@
 ---
-id: 3iDdeispuvFwvlh4NLiGc
+id: co8q46bcez07xqnmrwtd243
 title: Joins
 desc: ''
 updated: 1641413323369
@@ -7,6 +7,7 @@ created: 1641105063935
 stub: false
 isDir: false
 ---
+
 
 
 ```sql

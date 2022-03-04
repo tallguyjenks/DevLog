@@ -1,10 +1,11 @@
 ---
-id: FJXVWFNmhFCvxAKP2O8gz
+id: czho8rptma9ns394raayiit
 title: Kickstart Collaborative Devsecops Practices with GitHub and Azure
 desc: ''
 updated: 1641454398603
 created: 1641454390584
 ---
+
 
 - [[s.apps.azure.devops]] [[cli.cmd.git.tools.github]] [[s.apps.azure.devops]] [kickstart collaborative DevSecOps practices with GitHub and Azure][1]
 

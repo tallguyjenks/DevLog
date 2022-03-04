@@ -1,10 +1,11 @@
 ---
-id: Bdkl70JG99ObijlR57TEE
+id: 0ivlml3dhhhmn3kfgs9fcq9
 title: Postgres Can Do That
 desc: ''
 updated: 1643225363746
 created: 1643218935314
 ---
+
 
 <https://medium.com/cognite/postgres-can-do-that-f221a8046e>
 

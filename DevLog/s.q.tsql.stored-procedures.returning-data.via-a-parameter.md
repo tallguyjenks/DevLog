@@ -1,10 +1,11 @@
 ---
-id: nIhFsPwTxmn3QgDLRlmLq
+id: x9dv58xpdvm7filqgwprdza
 title: Via a Parameter
 desc: ''
 updated: 1641414003387
 created: 1641414003387
 ---
+
 
 ### Return via parameter
 

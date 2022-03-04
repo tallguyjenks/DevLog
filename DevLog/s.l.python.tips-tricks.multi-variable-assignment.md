@@ -1,10 +1,11 @@
 ---
-id: 07eTrWjplZ2Mlm6Sa4EaY
+id: hdqsz6o5g9hyg9ea4mn3uiu
 title: Multi Variable Assignment
 desc: ''
 updated: 1641423025374
 created: 1641423025374
 ---
+
 
 ## Multi-Variable Assignment
 

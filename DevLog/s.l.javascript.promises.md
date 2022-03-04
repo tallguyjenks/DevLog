@@ -1,5 +1,5 @@
 ---
-id: ng524vwbZLqGYnB1RWOlk
+id: 0qg3edom41cj7jxq6msze2a
 title: Promises
 desc: ''
 updated: 1641408048699
@@ -7,6 +7,7 @@ created: 1641105063912
 stub: false
 isDir: false
 ---
+
 
 ## Promises
 

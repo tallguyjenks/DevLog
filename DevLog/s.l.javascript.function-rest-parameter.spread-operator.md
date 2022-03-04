@@ -1,10 +1,11 @@
 ---
-id: UpfY3w6FH0uPhOFcSxTqK
+id: ok1edt8h4ufarejb9dvafpz
 title: Spread Operator
 desc: ''
 updated: 1641407094079
 created: 1641407094079
 ---
+
 
 ## The Spread Operator
 

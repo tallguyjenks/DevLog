@@ -1,5 +1,5 @@
 ---
-id: WJdwpbaH8q8WUeaCzjuZ2
+id: qiawje68hp5cj8ou3inrh79
 title: Wild Cards
 desc: ''
 updated: 1641414285872
@@ -7,6 +7,7 @@ created: 1641105063940
 stub: false
 isDir: false
 ---
+
 
 > A wildcard character is used to substitute one or more characters in a string
 >

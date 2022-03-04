@@ -1,5 +1,5 @@
 ---
-id: CI9Ht2hux8aB9qeXigWSM
+id: d5u6bvrm0j7htqahba4g52m
 title: Memory Regions
 desc: ''
 updated: 1641377185284
@@ -7,6 +7,7 @@ created: 1641105063895
 stub: false
 isDir: false
 ---
+
 
 ## Static Memory
 

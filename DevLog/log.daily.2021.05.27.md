@@ -1,5 +1,5 @@
 ---
-id: hBDtYqDv54lAbT3YEoKCA
+id: yfjadktevcal4lxwxwxq3xr
 title: '27'
 desc: ''
 updated: 1641442472806
@@ -7,6 +7,7 @@ created: 1641105063946
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.r]] [[s.l.r.tools.rmarkdown]]
   - [[s.l.r.libs.slidev]] [Website](https://sli.dev/)

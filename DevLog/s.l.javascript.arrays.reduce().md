@@ -1,5 +1,5 @@
 ---
-id: C0Qce7yV4K82u9gOrP9yH
+id: wvma0r5ledxrflqi0ognde8
 title: Reduce()
 desc: ''
 updated: 1641406485057
@@ -7,6 +7,7 @@ created: 1641105063908
 stub: false
 isDir: false
 ---
+
 
 <center>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/R8rmfD9Y5-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

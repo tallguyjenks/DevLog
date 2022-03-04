@@ -1,5 +1,5 @@
 ---
-id: YgsCDBk0D06t690WQEXJB
+id: kavtsn3nb1osjwkisj707vs
 title: How to Easily Do Asynchronous Programming with Asyncio in Python
 desc: ''
 updated: 1641271119784
@@ -7,6 +7,7 @@ created: 1641105063991
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/2IW-ZEui4h4>
 - `Channel/Host:` ArjanCodes

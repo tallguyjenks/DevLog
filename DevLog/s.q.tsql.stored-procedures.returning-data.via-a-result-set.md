@@ -1,10 +1,11 @@
 ---
-id: vxjxn2nKn1iIt2w21ovHW
+id: xtejm3wwwe76a9b6zl8xrqp
 title: Via a Result Set
 desc: ''
 updated: 1641413994976
 created: 1641413994976
 ---
+
 
 ### Return via result set
 

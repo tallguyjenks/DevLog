@@ -1,10 +1,11 @@
 ---
-id: L4V9npodKi6E4v0bk4mcc
+id: fa5728wsmyp91jjio3ao11q
 title: Migrating Databases
 desc: ''
 updated: 1643188492404
 created: 1643188389856
 ---
+
 
 To migrate a database:
 

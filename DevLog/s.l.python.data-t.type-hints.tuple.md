@@ -1,10 +1,11 @@
 ---
-id: u3ROYzAvvRfAM7PzAqwEt
+id: nkawqwpuqaj3ojwxyz89813
 title: Tuple
 desc: ''
 updated: 1641423249411
 created: 1641423249411
 ---
+
 
 ## Tuple Type:
 

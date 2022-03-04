@@ -1,5 +1,5 @@
 ---
-id: 5uWmyNXlkbxQ4TBXqf1Ov
+id: rpgo0oxe0enkay7yg7ya7ja
 title: Left Join
 desc: ''
 updated: 1641413337735
@@ -7,6 +7,7 @@ created: 1641105063935
 stub: false
 isDir: false
 ---
+
 
 The `LEFT JOIN` is Like the [[T-SQL Inner Join|s.q.tsql.joins.inner-join]] except instead of throwing out all the single people, if we `LEFT JOIN` Women to Men on `MARRIAGE_ID` then the only records we're throwing out are _all the single ladies_.
 

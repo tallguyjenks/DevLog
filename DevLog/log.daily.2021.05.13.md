@@ -1,5 +1,5 @@
 ---
-id: wsmoxEhpJU0s9LHBIAjNQ
+id: 8q91fryns91uagphvtkklv6
 title: '13'
 desc: ''
 updated: 1641440474318
@@ -7,6 +7,7 @@ created: 1641105063944
 stub: false
 isDir: false
 ---
+
 - [[s.q.tsql]] Comparing Sub queries and CTE's there's no real difference.
   - CTE's care recursive whereas sub queries are not
   - CTE's only live for the duration of the execution. If you need that data for multiple queries and it is used in multiple places then you're likely better off using temporary tables.

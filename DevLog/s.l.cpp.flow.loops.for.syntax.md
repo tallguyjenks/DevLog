@@ -1,10 +1,11 @@
 ---
-id: igVF0GAuJIpdAXPbUIMyA
+id: 5sud13r4gm2pa98535v5uqs
 title: Syntax
 desc: ''
 updated: 1641373188828
 created: 1641373188828
 ---
+
 
 ## For Loop Syntax
 

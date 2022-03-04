@@ -1,5 +1,5 @@
 ---
-id: zqRM9Jh31uDafeugHR6Qy
+id: g6f9bo997no4binawg3qkwk
 title: Heading Ids
 desc: ''
 updated: 1641411707955
@@ -7,6 +7,7 @@ created: 1641105063922
 stub: false
 isDir: false
 ---
+
 
 ## Syntax
 

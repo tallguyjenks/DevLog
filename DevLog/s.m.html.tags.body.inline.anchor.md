@@ -1,10 +1,11 @@
 ---
-id: RtoKXhKpJ8dCXf6S9v2HV
+id: ided2npe5edzwcc6a2obqem
 title: Anchor
 desc: ''
 updated: 1641429612425
 created: 1641429534719
 ---
+
 
 ```html
 <a href="mailto:bryan@bryanjenks.dev?subject=mailto%20links">Send Mail</a>

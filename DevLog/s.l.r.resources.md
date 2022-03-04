@@ -1,5 +1,5 @@
 ---
-id: Q2agdiN7Gc6GpzHnmcqZV
+id: rqkxbuki8d3ttlcsk9ow2i3
 title: Resources
 desc: ''
 updated: 1641410118866
@@ -7,6 +7,7 @@ created: 1641105063930
 stub: false
 isDir: false
 ---
+
 
 - [Ten random useful things in R that you might not know about](https://towardsdatascience.com/ten-random-useful-things-in-r-that-you-might-not-know-about-54b2044a3868)
 - [HexSticker Maker](https://connect.thinkr.fr/hexmake/)

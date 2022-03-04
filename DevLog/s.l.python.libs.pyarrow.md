@@ -1,5 +1,5 @@
 ---
-id: 9xCoJNz1zNQ7lsBwHVW1n
+id: 0lw78dek8c3sm81ek4osg0n
 title: Pyarrow
 desc: ''
 updated: 1641449389020
@@ -7,6 +7,7 @@ created: 1641105063862
 stub: false
 isDir: false
 ---
+
 
 - Pyarrow for faster data reads
   - `pip install pyarrow`

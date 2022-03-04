@@ -1,12 +1,15 @@
 ---
-id: uo0SEJ0ik9H0kXx5rwCQc
+id: 8e15qjzd6lmpugejytzg64y
 title: Temp Tables
 desc: ''
-updated: 1641414049311
+updated: 1646340328486
 created: 1641105063938
 stub: false
 isDir: false
 ---
+
+
+## Temporary Tables
 
 Temp Tables are result sets that are stored in memory for the live of the connection session. There are two types:
 

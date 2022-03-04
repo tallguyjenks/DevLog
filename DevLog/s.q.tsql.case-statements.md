@@ -1,5 +1,5 @@
 ---
-id: kkgZ1I9cb48vouvyBVQ8K
+id: 9xdgg5eqcxmqv0iy3h7v5rp
 title: Case Statements
 desc: ''
 updated: 1641412787585
@@ -7,6 +7,7 @@ created: 1641105063932
 stub: false
 isDir: false
 ---
+
 
 With case statements in T-SQL you can in essence insert a bunch of logic and calculation into a multi-faceted case statement with the output being a single result field
 

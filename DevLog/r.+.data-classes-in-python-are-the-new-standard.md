@@ -1,5 +1,5 @@
 ---
-id: o4FCepLQpOofBuWuMtGQh
+id: pzugug2i2jlkd1i0xcccy78
 title: Data Classes in Python Are the New Standard
 desc: ''
 updated: 1641270706856
@@ -7,6 +7,7 @@ created: 1641168992645
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/ojrbuVKblew>
 - `Channel/Host:` NeuralNine

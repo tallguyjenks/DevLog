@@ -1,5 +1,5 @@
 ---
-id: rJgAWjZoJvCxf0WLwgtrc
+id: bok1zd5nf94nhpqvz8ymirx
 title: '16'
 desc: ''
 updated: 1641447148422
@@ -7,6 +7,7 @@ created: 1641105063950
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.python]] [TALK / Meredydd Luff / Writing Good Documentation for Developers](https://youtu.be/eWaWvUhpseM?list=PL2Uw4_HvXqvYk1Y5P8kryoyd83L_0Uk5K) #💻️/📖️ #💻️/⭐
 - [[s.l.python]] [TALK / Mariatta Wijaya / Oops! I Became an Open Source Maintainer!](https://youtu.be/iPs64t1nsSM?list=PL2Uw4_HvXqvYk1Y5P8kryoyd83L_0Uk5K)

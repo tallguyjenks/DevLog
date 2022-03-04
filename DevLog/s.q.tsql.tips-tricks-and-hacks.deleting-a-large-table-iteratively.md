@@ -1,10 +1,11 @@
 ---
-id: 5LM0n5LK9R06maGB9Clya
+id: v93rx94knxg54974i4rckz8
 title: Deleting a Large Table Iteratively
 desc: ''
 updated: 1645433358824
 created: 1645433302224
 ---
+
 
 Neat way to use TOP to delete / truncate
 

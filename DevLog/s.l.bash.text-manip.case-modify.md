@@ -1,10 +1,11 @@
 ---
-id: R9qnvHuWm147sj7RGE3wT
+id: k8vjg30lifb5yxd5fv2cyzb
 title: Case Modify
 desc: ''
 updated: 1641428844735
 created: 1641428844735
 ---
+
 
 #### Text Case Modification In Bash
 

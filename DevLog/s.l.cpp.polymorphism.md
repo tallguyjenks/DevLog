@@ -1,5 +1,5 @@
 ---
-id: G4yBJuPC8a6UG2Gxtnd91
+id: 2cngbnz0bdth3bmmmq0xvox
 title: Polymorphism
 desc: ''
 updated: 1641377338567
@@ -7,6 +7,7 @@ created: 1641105063896
 stub: false
 isDir: false
 ---
+
 
 ## Function Name Overloading
 

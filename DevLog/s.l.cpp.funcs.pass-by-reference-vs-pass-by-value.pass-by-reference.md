@@ -1,10 +1,11 @@
 ---
-id: IQLingH7NiuwCIVpY9uaD
+id: a9ffso8stnjfkgvwscgxo4h
 title: Pass by Reference
 desc: ''
 updated: 1641373400751
 created: 1641373390236
 ---
+
 
 #### Pass By References
 

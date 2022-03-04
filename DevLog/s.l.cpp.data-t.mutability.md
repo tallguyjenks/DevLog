@@ -1,10 +1,11 @@
 ---
-id: wmZqTV6s8QVWAzmc6764O
+id: og7tzulaiyedab353zv5cu8
 title: Mutability
 desc: ''
 updated: 1641377774023
 created: 1641377774023
 ---
+
 
 ## Mutability
 

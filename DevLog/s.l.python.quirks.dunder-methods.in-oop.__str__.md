@@ -1,10 +1,11 @@
 ---
-id: 2Ac0wk5xoP5Gahe0HsIMX
+id: k3fvhpggp9cuh1vq5ejnd3y
 title: __str__
 desc: ''
 updated: 1641422097092
 created: 1641422093584
 ---
+
 
 ```python
 class MyClass:

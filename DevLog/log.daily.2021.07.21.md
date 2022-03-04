@@ -1,5 +1,5 @@
 ---
-id: bdxPm5xuyiiel2HtpRkCw
+id: 4bqqg8fkn726c3w7b4au364
 title: '21'
 desc: ''
 updated: 1641450604036
@@ -7,6 +7,7 @@ created: 1641105063956
 stub: false
 isDir: false
 ---
+
   
 -  [2023 California Technology Strategic Vision ][1] 
 -  [Market Research Guidelines][2] 

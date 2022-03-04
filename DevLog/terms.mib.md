@@ -1,10 +1,11 @@
 ---
-id: 60YXTiYFDIYQK0nLC2ZEN
+id: xnj0pdcdmxsphvsre9s1ei9
 title: MIB
 desc: ''
 updated: 1641952968816
 created: 1641952597116
 ---
+
 
 `M`anagement `I`nformation `B`ase
 

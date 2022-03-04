@@ -1,10 +1,11 @@
 ---
-id: 68a976oLtqcSpSQMkgXiw
+id: nsh1wed4ty27jk8rjvlirma
 title: Import Non Default Things
 desc: ''
 updated: 1641407892998
 created: 1641407892998
 ---
+
 
 ### To import non-default things
 

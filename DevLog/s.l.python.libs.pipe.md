@@ -1,5 +1,5 @@
 ---
-id: 7Y4sXdEQYnoRxcAEqQ6xE
+id: b4jnfrq4untl157gyhs9vce
 title: Pipe
 desc: ''
 updated: 1641202937930
@@ -7,6 +7,7 @@ created: 1641105063860
 stub: false
 isDir: false
 ---
+
 
 ```python
 arr = [1, 2, 3, 4, 5]

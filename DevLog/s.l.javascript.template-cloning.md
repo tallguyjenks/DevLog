@@ -1,5 +1,5 @@
 ---
-id: L6jPdJXwkYes6mbOfSmEh
+id: 43agmvhvkk3fpk7uwcwxw60
 title: Template Cloning
 desc: ''
 updated: 1641408096819
@@ -7,6 +7,7 @@ created: 1641105063913
 stub: false
 isDir: false
 ---
+
 
 ## [[import.software.language.javascript.template-cloning]]
 

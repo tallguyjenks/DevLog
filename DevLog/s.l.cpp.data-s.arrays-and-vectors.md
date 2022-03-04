@@ -1,5 +1,5 @@
 ---
-id: rOfZ6y976mSDBz6XAifJQ
+id: opuvystjobr2v7aw5z1v4u6
 title: Arrays and Vectors
 desc: ''
 updated: 1641371575517
@@ -7,6 +7,7 @@ created: 1641105063886
 stub: false
 isDir: false
 ---
+
 
 ## Vectors are Array++
 

@@ -1,10 +1,11 @@
 ---
-id: 47QdmSDmodqtfjFk2KVyu
+id: 4sgzbdlxjkp8j0wr5371xpb
 title: Input Output Funcs
 desc: ''
 updated: 1641426798847
 created: 1641426798847
 ---
+
 
 ## Input Output Functions
 

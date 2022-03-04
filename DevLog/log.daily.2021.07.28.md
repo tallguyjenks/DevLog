@@ -1,5 +1,5 @@
 ---
-id: bCJfUvGh6qvkil8WgXtWY
+id: anf8gajmcpjas6xbnwfvxd6
 title: '28'
 desc: ''
 updated: 1641450731834
@@ -7,6 +7,7 @@ created: 1641105063957
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] [Jupyter Notebooks in Visual Studio Code][1]
   -  [[s.l.python]] [Jupyter Tips and Tricks][2]

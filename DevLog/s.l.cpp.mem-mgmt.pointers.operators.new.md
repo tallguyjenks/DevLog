@@ -1,10 +1,11 @@
 ---
-id: TmrQmL02b22ZcAnMyCBTu
+id: 4sxf2nnx3lc8nrrnt1diucw
 title: New
 desc: ''
 updated: 1641377296641
 created: 1641377296641
 ---
+
 
 ### The 'New' Operator
 

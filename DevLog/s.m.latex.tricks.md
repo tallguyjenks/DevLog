@@ -1,10 +1,11 @@
 ---
-id: woyO4qQvOnEHUk8odil9f
+id: kg8pc5zsa69km2iqykhrufk
 title: Tricks
 desc: ''
 updated: 1641409212735
 created: 1641409176285
 ---
+
 
 - `\part`
 - `\chapter`

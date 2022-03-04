@@ -1,5 +1,5 @@
 ---
-id: pdq3zior9XfvAMKDPY8bt
+id: z5204w7p8gwoplnyjwn64b0
 title: The Const Keyword
 desc: ''
 updated: 1641408109091
@@ -7,6 +7,7 @@ created: 1641105063914
 stub: false
 isDir: false
 ---
+
 
 The `CONST` keyword is a way to assign a value to an immutable variable that respects local scoping.
 

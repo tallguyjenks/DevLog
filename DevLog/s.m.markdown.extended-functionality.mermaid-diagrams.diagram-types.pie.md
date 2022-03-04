@@ -1,10 +1,11 @@
 ---
-id: Q689LSmoqg8AHeu2woyQe
+id: o8ekbzyow0rw1kujh5wwomp
 title: Pie
 desc: ''
 updated: 1641411829234
 created: 1641411817225
 ---
+
 
 ### Pie Chart
 

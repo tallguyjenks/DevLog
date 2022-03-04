@@ -1,10 +1,11 @@
 ---
-id: ewJnnTlMUsadYEcK1Wyyu
+id: 5zyyapxr4ml2f9e0jw1z4km
 title: Ns
 desc: ''
 updated: 1641886952071
 created: 1641886896270
 ---
+
 
 `N`ame `S`erver
 

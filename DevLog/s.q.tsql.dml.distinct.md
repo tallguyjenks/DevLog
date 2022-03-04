@@ -1,5 +1,5 @@
 ---
-id: Ca1mPmboSanC1lBsXXkCM
+id: 7fo4mvts7wx8qbcmzpcdqx1
 title: Distinct
 desc: ''
 updated: 1641413089299
@@ -7,6 +7,7 @@ created: 1641105063934
 stub: false
 isDir: false
 ---
+
 
 ```sql
 SELECT DISTINCT <COLUMN>

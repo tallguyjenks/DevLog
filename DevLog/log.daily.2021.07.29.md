@@ -1,5 +1,5 @@
 ---
-id: zsU5vuKKYka3zvfP2w16a
+id: 6580jpzxtngu15c04v8kp9e
 title: '29'
 desc: ''
 updated: 1641450762887
@@ -7,6 +7,7 @@ created: 1641105063957
 stub: false
 isDir: false
 ---
+
 
 - [Mastering Chaos - A Netflix Guide to Microservices][1]
 - [[cli.cmd.git.tools.github]] task lists [Github Task Lists][2]

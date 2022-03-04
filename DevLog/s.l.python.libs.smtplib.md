@@ -1,5 +1,5 @@
 ---
-id: 5gFOIPluU4ZBVH3gUUs02
+id: ndp2burxjybxe7fvt4rcz1k
 title: Smtplib
 desc: ''
 updated: 1641417323534
@@ -7,6 +7,7 @@ created: 1641105063867
 stub: false
 isDir: false
 ---
+
 
 - [Article About Sending Emails](https://www.courier.com/blog/three-ways-to-send-emails-using-python-with-code-tutorials)
 

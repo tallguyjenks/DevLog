@@ -1,5 +1,5 @@
 ---
-id: W0MCOnDDjwaVEMLUcrxn9
+id: qzlhph3toist9ooyrz1vqeh
 title: The Open Closed Principle
 desc: ''
 updated: 1641268367489
@@ -7,6 +7,7 @@ created: 1641105063869
 stub: false
 isDir: false
 ---
+
 
 > “Software entities … should be open for extension but closed for modification”
 

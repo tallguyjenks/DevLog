@@ -1,5 +1,5 @@
 ---
-id: nCyuuJCxhH6GoIeTeu23w
+id: ridthsr92x6s0yd71vbr8s6
 title: Block Quotes
 desc: ''
 updated: 1641412015034
@@ -7,6 +7,7 @@ created: 1641105063921
 stub: false
 isDir: false
 ---
+
 
 ## Syntax
 

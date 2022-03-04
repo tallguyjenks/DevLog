@@ -1,5 +1,5 @@
 ---
-id: oJwA32L1CbHNAHGhuQBMY
+id: hqh2ioak16qk9mi0z7h1eek
 title: Vba
 desc: ''
 updated: 1641184115342
@@ -7,6 +7,7 @@ created: 1641105063871
 stub: false
 isDir: false
 ---
+
 
 > **V**isual **B**asic For **A**pplications
 

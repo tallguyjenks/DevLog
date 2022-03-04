@@ -1,10 +1,11 @@
 ---
-id: ywtB6BmPqaZ6Zq0IBEmwY
+id: l095amirvu859in42plizzk
 title: Exist Status
 desc: ''
 updated: 1641428975929
 created: 1641428975929
 ---
+
 
 ### Exit Status In Bash
 

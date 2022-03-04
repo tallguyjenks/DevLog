@@ -1,10 +1,11 @@
 ---
-id: vZuRtsyJtr2clJQzOAMg3
+id: z4xkpzvh8z8bqjwxtbyun1j
 title: Pretty Log Output
 desc: ''
 updated: 1641185313665
 created: 1641185313665
 ---
+
 
 ### git log
 

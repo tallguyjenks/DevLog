@@ -1,5 +1,5 @@
 ---
-id: oB4BvpzmUIsMY55gA1333
+id: s9be739huuriwbjd0jxn4j3
 title: Qrcode
 desc: ''
 updated: 1641168469942
@@ -7,6 +7,7 @@ created: 1641105063864
 stub: false
 isDir: false
 ---
+
 
 ```python
 import qrcode

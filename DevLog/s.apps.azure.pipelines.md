@@ -1,10 +1,11 @@
 ---
-id: ZxvnHmV9G2VZveq1SdyP6
+id: pt5wk77zejxvgbshdnb9eph
 title: Pipelines
 desc: ''
 updated: 1641442416855
 created: 1641442176898
 ---
+
 
 - [[focus.azure.pipelines]]
   - [YAML Schema Reference for pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?tabs=schema%2Cparameter-schema&view=azure-devops)

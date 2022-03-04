@@ -1,5 +1,5 @@
 ---
-id: E3vnU9Gk4W7SwoREqhJrm
+id: gug87s0vmpvjb2r0y01zbng
 title: Mongodb Crash Course
 desc: ''
 updated: 1641270769452
@@ -7,6 +7,7 @@ created: 1641168992648
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/ofme2o29ngU>
 - `Channel/Host:` Web Dev Simplified

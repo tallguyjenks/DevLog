@@ -1,10 +1,11 @@
 ---
-id: 555xcWubho8VBZFbNcVJJ
+id: jvi9ep8veitcm8pbx7103fd
 title: Variables
 desc: ''
 updated: 1641271520334
 created: 1641271520334
 ---
+
 
 ## Variables
 

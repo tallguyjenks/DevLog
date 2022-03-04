@@ -1,10 +1,11 @@
 ---
-id: AyBVGeM9Y7RxLG4W04Ypt
+id: 1o1q2ey2uhdtyor1om6g57c
 title: The Best Way to Request User Input in Python
 desc: ''
 updated: 1641801161060
 created: 1641800904311
 ---
+
 
 ## Installation
 

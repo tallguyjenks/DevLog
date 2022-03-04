@@ -1,5 +1,5 @@
 ---
-id: SYiPuFi6uk39L9a77AWmR
+id: kd1ysehvr5ks2ryt18lbhef
 title: __new__ Vs __init__ in Python
 desc: ''
 updated: 1641270905722
@@ -7,6 +7,7 @@ created: 1641168992642
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/-zsV0_QrfTw>
 - `Channel/Host:` mCoding

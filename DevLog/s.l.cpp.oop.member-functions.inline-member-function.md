@@ -1,10 +1,11 @@
 ---
-id: LHQKRnbU5pEmRreHkbMu5
+id: lmfn0aby61x42y71w3fnndi
 title: Inline Member Function
 desc: ''
 updated: 1641372338408
 created: 1641372338408
 ---
+
 
 ## Inline Member Functions
 

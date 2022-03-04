@@ -1,5 +1,5 @@
 ---
-id: SbdjSzkywgPc5h0xf8Qxz
+id: yffieiprtcix6pxcnry442j
 title: Stored Procedures
 desc: ''
 updated: 1641414024038
@@ -7,6 +7,7 @@ created: 1641105063937
 stub: false
 isDir: false
 ---
+
 
 A <u>stored procedure</u> is a group of SQL statements that have been created and stored in the database. A stored procedure will accept input parameters like `@dates` or `@Name`.
 

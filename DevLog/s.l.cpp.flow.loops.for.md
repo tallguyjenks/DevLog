@@ -1,5 +1,5 @@
 ---
-id: ZFbLGEcHPHWEFxvJ1metY
+id: lx0ojj3hzbtga7zrbpm3ykc
 title: For
 desc: ''
 updated: 1641373222765
@@ -7,6 +7,7 @@ created: 1641105063891
 stub: false
 isDir: false
 ---
+
 
 For Loops Are Cleaner Than [[C++ While Loops|s.l.cpp.flow.loops.while]]
 

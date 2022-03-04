@@ -1,5 +1,5 @@
 ---
-id: pFzYJielVNzAeevRPRai2
+id: y25wnwug4brw803r0d9cv3u
 title: '27'
 desc: ''
 updated: 1641450696303
@@ -7,6 +7,7 @@ created: 1641105063957
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] [[s.l.python.tools.jupyter]] [jupyter notebook introduction][1]
    -  [[s.l.python]] [[s.l.python.tools.jupyter]] [Jupyter Notebook Tutorial: Introduction, Setup, and Walkthrough][2]

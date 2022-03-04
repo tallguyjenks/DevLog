@@ -1,10 +1,11 @@
 ---
-id: RLrDwqRY7jS9pf6iWuWJb
+id: g6wiip5bz5io9jq9rei0d6i
 title: For
 desc: ''
 updated: 1641422438860
 created: 1641422438861
 ---
+
 
 ### For Loop
 

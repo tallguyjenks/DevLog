@@ -1,5 +1,5 @@
 ---
-id: sEBkKHFeJKyIEm8B9LZDG
+id: 8ca70blmd2ihasl8tiqq7pw
 title: Write Clean Python Code Using Pipes
 desc: ''
 updated: 1641269106087
@@ -7,6 +7,7 @@ created: 1641105063988
 stub: false
 isDir: false
 ---
+
 - `Author:` khuyen-tran
 - `Link:` <https://towardsdatascience.com/write-clean-python-code-using-pipes-1239a0f3abf5>
 - `Reference:` [[s.l.python.libs.pipe]]

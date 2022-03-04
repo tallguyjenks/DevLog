@@ -1,10 +1,11 @@
 ---
-id: 43kO1j9p5lFpLpkvMorn3
+id: jk4x2030paxwg37woqgh3s8
 title: Strchr
 desc: ''
 updated: 1641373764592
 created: 1641373764592
 ---
+
 
 ## strchr()
 

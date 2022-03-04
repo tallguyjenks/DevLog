@@ -1,10 +1,11 @@
 ---
-id: o5R9FSmSNOigxQ83ZZQ2r
+id: 7oq35e7p9o5hou4ahcmgc66
 title: Multi List Iteration with Zip
 desc: ''
 updated: 1641423146207
 created: 1641423146207
 ---
+
 
 ## Simplify Iterating Over Multiple Lists With Zip()
 

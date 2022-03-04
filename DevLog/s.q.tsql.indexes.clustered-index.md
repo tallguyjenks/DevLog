@@ -1,5 +1,5 @@
 ---
-id: s50EKD7tAICFmYuTAGCmz
+id: b4ykrif56ivveaicdmf119t
 title: Clustered Index
 desc: ''
 updated: 1641412803998
@@ -7,6 +7,7 @@ created: 1641105063932
 stub: false
 isDir: false
 ---
+
 
 > A clustered index defines the order in which data is physically stored in a table. Table data can be sorted in only way, therefore, there can be only one clustered index per table. In SQL Server, the primary key constraint automatically creates a clustered index on that particular column.
 

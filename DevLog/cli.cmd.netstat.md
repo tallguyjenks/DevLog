@@ -1,10 +1,11 @@
 ---
-id: oYPJOB51rUiNBMKVbIB23
+id: 0pga5l5oqy7hgf3lnhlt9pn
 title: Netstat
 desc: ''
 updated: 1641881146535
 created: 1641879876574
 ---
+
 
 allows you to check the state of ports on the local host.
 

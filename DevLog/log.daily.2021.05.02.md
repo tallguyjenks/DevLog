@@ -1,5 +1,5 @@
 ---
-id: 5vXNZyo2ewOUD6dhZmbYx
+id: 1w7th13wo7x3tumbjuddlc2
 title: '02'
 desc: ''
 updated: 1641439863312
@@ -7,6 +7,7 @@ created: 1641105063942
 stub: false
 isDir: false
 ---
+
 
 - Great bash config for using git from [this thoughtbot article](https://thoughtbot.com/upcase/videos/git-customizing)
 

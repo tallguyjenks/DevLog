@@ -1,10 +1,11 @@
 ---
-id: J3Qi0RdhSFACm6OwMRo28
+id: e4zvztp72shnvguetm0kap8
 title: Integers
 desc: ''
 updated: 1641421120095
 created: 1641421108958
 ---
+
 
 ```python
 # Integer whole numbers

@@ -1,10 +1,11 @@
 ---
-id: ODXWS3W4FX0ytxBbhPBsZ
+id: tlhlbp8z1faxvywgkqpvbou
 title: Insert
 desc: ''
 updated: 1641376807978
 created: 1641376807978
 ---
+
 
 ### insert( index, subStr )
 

@@ -1,10 +1,11 @@
 ---
-id: JqbJjGiUDRk67kDLWo7Ri
+id: 9kvq7nupog8ummt2tr6y59g
 title: Indexes
 desc: ''
 updated: 1643273498620
 created: 1643273488614
 ---
+
 
 ```sql
 CREATE UNIQUE INDEX "CIX_Year_Loc"

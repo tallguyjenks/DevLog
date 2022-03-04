@@ -1,10 +1,11 @@
 ---
-id: avhu5atSYP8TY7MUpNqY7
+id: ti26wzo0a48fbzkasuq69lj
 title: Win10 Ssms
 desc: ''
 updated: 1645393683453
 created: 1645393642980
 ---
+
 
 TODO go through this video and actually write out the steps with pictures too on what to set up
 

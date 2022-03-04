@@ -1,5 +1,5 @@
 ---
-id: YTHOfrwsy0WrTm6FnqvDG
+id: uy2qyjpq70jdzwszkfycx3a
 title: '21'
 desc: ''
 updated: 1641442080803
@@ -7,6 +7,7 @@ created: 1641105063945
 stub: false
 isDir: false
 ---
+
 - [[cli.cmd.vim]]
   - command `<number>i<text>`
     - number of times to insert

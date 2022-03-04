@@ -1,10 +1,11 @@
 ---
-id: IjoeEZ3xLGRYsHElELD4H
+id: nfpe5fd0h2nac21d0a7vk9s
 title: In Oop
 desc: ''
 updated: 1641496601571
 created: 1641421830492
 ---
+
 
 ### In OOP Code
 

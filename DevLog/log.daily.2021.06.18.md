@@ -1,5 +1,5 @@
 ---
-id: gkN0ym0VOW2XH4WDaeHXT
+id: c9yx3zz2p5ajjtn7may6dq7
 title: '18'
 desc: ''
 updated: 1641447617847
@@ -7,6 +7,7 @@ created: 1641105063950
 stub: false
 isDir: false
 ---
+
    
 -  [[s.l.python]] [[s.l.python.libs.watermark]] [[s.l.python.tools.jupyter]] [Calm Code Watermark][1]
   -  move browser technical links to logseq

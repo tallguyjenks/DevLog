@@ -1,5 +1,5 @@
 ---
-id: LffedF2FRxpdj1rhGPvAE
+id: bh3onmf7erg7r3o1mnqi5du
 title: '20'
 desc: ''
 updated: 1641441365200
@@ -7,6 +7,7 @@ created: 1641105063945
 stub: false
 isDir: false
 ---
+
 - [[s.q.tsql]] [[SSIS|ssis]]
   - Can use variables within visual elements
   - Can call scripts and other files like [[C|s.l.clang]]

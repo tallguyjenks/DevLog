@@ -1,10 +1,11 @@
 ---
-id: bhW3pd2COLqEKZuoEoOYb
+id: 73b720c2kmufyu7wb1ax8oi
 title: Case
 desc: ''
 updated: 1641429050878
 created: 1641429050878
 ---
+
 
 ##### Bash Case Statements
 

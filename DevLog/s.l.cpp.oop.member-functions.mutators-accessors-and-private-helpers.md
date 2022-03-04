@@ -1,10 +1,11 @@
 ---
-id: yCxb9JKGRzBgLkznDMWK3
+id: mzs62eeu9939hz5vbicaisi
 title: Mutators Accessors and Private Helpers
 desc: ''
 updated: 1641372417847
 created: 1641372370330
 ---
+
 
 ## Mutators, Accessors, and Private Helpers
 

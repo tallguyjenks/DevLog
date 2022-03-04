@@ -1,5 +1,5 @@
 ---
-id: MrYK5YxUJDRZUvFhgzChn
+id: nhp8xg7nhz81s8lrh4cmzyg
 title: '04'
 desc: ''
 updated: 1641446085045
@@ -7,6 +7,7 @@ created: 1641105063948
 stub: false
 isDir: false
 ---
+
 - [[s.l.bash]] `case` statements can have actions split legibly across lines for legibility
 
 ```bash

@@ -1,5 +1,5 @@
 ---
-id: tAIZxGyLN1pzAcpTz5qVo
+id: sz3fwg1yihje79nur2ty2oj
 title: Time
 desc: ''
 updated: 1641376884185
@@ -7,6 +7,7 @@ created: 1641105063894
 stub: false
 isDir: false
 ---
+
 
 ## C Time Library
 

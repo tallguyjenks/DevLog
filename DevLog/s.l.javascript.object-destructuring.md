@@ -1,5 +1,5 @@
 ---
-id: dUkTF8zBpIUIpJUBu3Sx7
+id: 120m5am4zmw23zr5w1ofq0c
 title: Object Destructuring
 desc: ''
 updated: 1641407992741
@@ -7,6 +7,7 @@ created: 1641105063912
 stub: false
 isDir: false
 ---
+
 
 ## The object destructuring assignment
 

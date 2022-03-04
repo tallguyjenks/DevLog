@@ -1,10 +1,11 @@
 ---
-id: YT5LwWJXq1yChIotKjq8J
+id: lj423wz6m9isy7b5tsza1vs
 title: Tricks
 desc: ''
 updated: 1641185595299
 created: 1641185595299
 ---
+
 
 ## Tricks
 

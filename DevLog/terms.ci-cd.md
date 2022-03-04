@@ -1,10 +1,11 @@
 ---
-id: mgjIWXOWt7eqdFpguUwlv
+id: 5k7wukroohw6jnwb6w185f4
 title: CI CD
 desc: ''
 updated: 1645579263413
 created: 1641440364153
 ---
+
 
 `C`ontinuous `I`ntegration - `C`ontinuous `D`evelopment
 

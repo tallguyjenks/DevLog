@@ -1,10 +1,11 @@
 ---
-id: 0rtDcMLHep01r6tZxz1ti
+id: m2jl4u6vzn5xbqv88tcabpq
 title: Generators
 desc: ''
 updated: 1641266740348
 created: 1641266729947
 ---
+
 
 ```python
 # Instead of holding values in memory:

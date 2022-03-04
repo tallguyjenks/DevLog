@@ -1,5 +1,5 @@
 ---
-id: ygXD7zfrN6r58jIPwhyL0
+id: 31fc0mbgh1qk9yoggr1ei55
 title: '17'
 desc: ''
 updated: 1641454406568
@@ -7,6 +7,7 @@ created: 1641105063968
 stub: false
 isDir: false
 ---
+
 
 - [[s.apps.azure.devops]] [[cli.cmd.git.tools.github]] [[s.apps.azure.devops]] [kickstart collaborative DevSecOps practices with GitHub and Azure](https://techcommunity.microsoft.com/t5/azure-developer-community-blog/kickstart-collaborative-devsecops-practices-with-github-and/ba-p/2357730)
 - [[s.l.python]] [The Power Of The Plugin Architecture In Python](https://youtu.be/iCE1bDoit9Q)

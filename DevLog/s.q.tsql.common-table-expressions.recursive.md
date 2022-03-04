@@ -1,10 +1,11 @@
 ---
-id: gfQlY10ZeusHsFyUqSY66
+id: h3wq1bz3ue65g816428vce3
 title: Recursive
 desc: ''
 updated: 1641412858662
 created: 1641412858662
 ---
+
 
 ### Recursive CTE
 

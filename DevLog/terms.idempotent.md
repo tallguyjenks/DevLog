@@ -1,5 +1,5 @@
 ---
-id: kSBi8lUnJpS14siIB9Zx9
+id: hwxkrf6qjyy51agdd8p8x3x
 title: Idempotent
 desc: ''
 updated: 1645738438104

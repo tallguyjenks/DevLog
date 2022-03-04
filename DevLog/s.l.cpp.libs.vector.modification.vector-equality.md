@@ -1,10 +1,11 @@
 ---
-id: E1iZCs1D2oti25IgPFm9t
+id: idnv5bejspsnkbx0v911mgo
 title: Vector Equality
 desc: ''
 updated: 1641377063526
 created: 1641377063526
 ---
+
 
 ### Vector Equality
 

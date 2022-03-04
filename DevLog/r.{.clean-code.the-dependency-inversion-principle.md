@@ -1,5 +1,5 @@
 ---
-id: IsnafdcIScdhoygzPpvyo
+id: o8i1ki575a4ggt5sgrxp1si
 title: The Dependency Inversion Principle
 desc: ''
 updated: 1641268182255
@@ -7,6 +7,7 @@ created: 1641105063869
 stub: false
 isDir: false
 ---
+
 
 > > “Abstractions should not depend on details. Details should depend on abstraction. High-level modules should not depend on low-level modules. Both should depend on abstractions”
 >

@@ -1,10 +1,11 @@
 ---
-id: BJ51i5ytROEyeNGC6vn0u
+id: zb32un0vjqhb1hjh07g6vis
 title: Reset
 desc: ''
 updated: 1641185468757
 created: 1641185468757
 ---
+
 
 ## Open a cloned repository from a particular commit
 

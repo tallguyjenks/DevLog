@@ -1,10 +1,11 @@
 ---
-id: RjXC4Ci8uNpmkZj4miEFF
+id: refes0kj1mxhubwjojdklqg
 title: Pipe
 desc: ''
 updated: 1641426244311
 created: 1641426244311
 ---
+
 
 ## Pandas Pipe
 

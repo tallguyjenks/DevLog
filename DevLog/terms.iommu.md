@@ -1,10 +1,11 @@
 ---
-id: PIINn8diGbttU85KRWmbR
+id: wkw5f6bzur2dbak5dkw147y
 title: iommu
-desc: 'Input-output memory management unit'
+desc: Input-output memory management unit
 updated: 1645380620250
 created: 1645380527046
 ---
+
 
 - <https://en.wikipedia.org/wiki/Input%E2%80%93output_memory_management_unit>
 

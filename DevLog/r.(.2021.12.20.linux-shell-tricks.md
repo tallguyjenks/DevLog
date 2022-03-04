@@ -1,5 +1,5 @@
 ---
-id: AHjoJbLe2uay5aimBo3SC
+id: v8sflsvv9d18dmrrpcvwfyp
 title: Linux Shell Tricks
 desc: ''
 updated: 1641271386112
@@ -7,6 +7,7 @@ created: 1641105063990
 stub: false
 isDir: false
 ---
+
 
 - `Author:` Sergio Daniel Cortez Chavez
 - `Link:` <https://sergiocortez-37830.medium.com/linux-shell-tricks-2f34c5935b89>

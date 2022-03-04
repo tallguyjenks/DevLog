@@ -1,10 +1,11 @@
 ---
-id: mmK0RgmxFFqWXsYD04fkB
+id: cqfweun5b1vtfp28f4p1o40
 title: Awk
 desc: ''
 updated: 1641097235338
 created: 1641097193050
 ---
+
 
 ```bash
 #!/usr/bin/env bash

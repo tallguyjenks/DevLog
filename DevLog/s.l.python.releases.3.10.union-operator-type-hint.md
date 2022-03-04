@@ -1,10 +1,11 @@
 ---
-id: p42rHlV4DqbGjwEwsQ5QE
+id: 7hra7h5rv1qpqc9eu4slqo9
 title: Union Operator Type Hint
 desc: ''
 updated: 1641423359710
 created: 1641423359710
 ---
+
 
 ### Union Operator for Type Hints
 

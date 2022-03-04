@@ -1,10 +1,11 @@
 ---
-id: i4C7ldfCjnIdcnET4mYu2
+id: 9w36wpa7lp3uzpexpbqfvy6
 title: Accessors
 desc: ''
 updated: 1641372402962
 created: 1641372402962
 ---
+
 
 ### Accessors
 

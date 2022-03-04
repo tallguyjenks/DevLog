@@ -1,10 +1,11 @@
 ---
-id: TGNHKEsIAWOP9WHq42uKB
+id: lk6ffxifz64dzg01hm30xii
 title: With Rollup
 desc: ''
 updated: 1641413167348
 created: 1641413167348
 ---
+
 
 ### The 'RollUp' Sub-Clause
 

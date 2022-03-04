@@ -1,10 +1,11 @@
 ---
-id: Y6MyvxAaZiwp2Qp7H4Pp0
+id: 07b009gbn8ol7o8yxxot5i2
 title: Default Imports
 desc: ''
 updated: 1641407921432
 created: 1641407921432
 ---
+
 
 ## You can only default export one thing so it will likely be the class you are defining if you are defining a class in your file
 

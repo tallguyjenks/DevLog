@@ -1,5 +1,5 @@
 ---
-id: BbikdWqKBmE816XAHDXHW
+id: pgoayogviv5qdk02hvzpcql
 title: Logging
 desc: ''
 updated: 1641416988527
@@ -7,6 +7,7 @@ created: 1641105063856
 stub: false
 isDir: false
 ---
+
 
 - [article on logging for a python app](https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540)
 - [Official Docs](https://docs.python.org/3/library/logging.html#)

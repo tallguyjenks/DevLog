@@ -1,5 +1,5 @@
 ---
-id: FbA9QyLJpJf4d9d1eRcbj
+id: y4i0p7uzv71nxxgutbmuv7s
 title: Wiki Links
 desc: ''
 updated: 1641412007935
@@ -7,6 +7,7 @@ created: 1641105063924
 stub: false
 isDir: false
 ---
+
 
 - Internal Links
   - `[[Internal Link]]`: links to a file named `Internal Link`

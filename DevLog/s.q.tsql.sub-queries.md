@@ -1,5 +1,5 @@
 ---
-id: PzVk7XrIBjWToxEnylyEs
+id: xmxvx3vj1xmu51ursx1zow9
 title: Sub Queries
 desc: ''
 updated: 1641414029592
@@ -7,6 +7,7 @@ created: 1641105063938
 stub: false
 isDir: false
 ---
+
 
 A sub-query is a nested `SELECT` statement inside of another parent `SELECT` statement.
 

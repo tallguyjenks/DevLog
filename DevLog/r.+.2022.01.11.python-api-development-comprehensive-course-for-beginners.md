@@ -1,5 +1,5 @@
 ---
-id: F2YOggmJYq70PtDEl7SPE
+id: o4etcir7uj001ff118w8r75
 title: Python API Development Comprehensive Course for Beginners
 desc: ''
 updated: 1641939403448
@@ -7,6 +7,7 @@ created: 1641168992651
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/0sOvCWFmrtA>
 - `Channel/Host:` FreeCodeCamp

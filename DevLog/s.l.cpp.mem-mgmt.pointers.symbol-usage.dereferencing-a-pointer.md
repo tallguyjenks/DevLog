@@ -1,10 +1,11 @@
 ---
-id: zHtU1679XCVlrlL62n0Ue
+id: 7ha1rkob5ibxeb6up1grffi
 title: Dereferencing a Pointer
 desc: ''
 updated: 1641377242826
 created: 1641377242826
 ---
+
 
 ### Dereferencing a Pointer
 

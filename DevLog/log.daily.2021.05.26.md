@@ -1,5 +1,5 @@
 ---
-id: FFHN7ShoGMztGcZxB0C0D
+id: 7b7wvkbd9lymfy8rht8pu0n
 title: '26'
 desc: ''
 updated: 1641442350384
@@ -7,6 +7,7 @@ created: 1641105063946
 stub: false
 isDir: false
 ---
+
 
 - [[s.q.tsql]] 
 

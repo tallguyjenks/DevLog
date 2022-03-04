@@ -1,5 +1,5 @@
 ---
-id: 7TMExZm0WF28YysjIozB8
+id: jzcrgxj028x3fb0casjben5
 title: Guard Clauses
 desc: ''
 updated: 1641267081941
@@ -7,6 +7,7 @@ created: 1641105063854
 stub: false
 isDir: false
 ---
+
 
 The idea behind returning early is that you write functions that return the expected positive result at the end of the function.
 

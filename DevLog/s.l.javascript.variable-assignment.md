@@ -1,5 +1,5 @@
 ---
-id: lC0SfRLys4PD9d3g4Ecco
+id: byd9znlli5kibcjpy6moq1h
 title: Variable Assignment
 desc: ''
 updated: 1641408169074
@@ -7,6 +7,7 @@ created: 1641105063914
 stub: false
 isDir: false
 ---
+
 
 There are 3 methods of variable assignment in JavaScript
 

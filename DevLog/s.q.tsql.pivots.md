@@ -1,5 +1,5 @@
 ---
-id: 4ygcECHXYAzuc4ADCweKW
+id: gcfg3h4ykxwq9yirrtsq0ag
 title: Pivots
 desc: ''
 updated: 1641413891718
@@ -7,6 +7,7 @@ created: 1641105063936
 stub: false
 isDir: false
 ---
+
 
 ### Pivoting
 

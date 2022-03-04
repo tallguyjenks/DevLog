@@ -1,5 +1,5 @@
 ---
-id: pDlVfYwOYEFxKUzwt1isJ
+id: 7685z8vcpb6yllvc8k95pib
 title: The Last 20 Python Packages You Will Ever Need
 desc: ''
 updated: 1641270346969
@@ -7,6 +7,7 @@ created: 1641168992631
 stub: false
 isDir: false
 ---
+
 
 - `Author:` sandro-luck
 - `Link:` <https://pub.towardsai.net/the-last-20-python-packages-you-will-ever-need-a4bc0a0d1214>

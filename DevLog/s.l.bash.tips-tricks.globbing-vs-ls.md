@@ -1,10 +1,11 @@
 ---
-id: 4TMjj0iidlHSayfuN0MyZ
+id: i9ifmetjexuk4jb8ydmh9ns
 title: Globbing Vs Ls
 desc: ''
 updated: 1641452267646
 created: 1641429174025
 ---
+
 
 ##### Use globbing instead of  ls
 

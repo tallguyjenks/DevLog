@@ -1,5 +1,5 @@
 ---
-id: e6rMVVD3TuaMwDVOQuE4C
+id: pcakl5y7pad14qdex8bz5au
 title: '21'
 desc: ''
 updated: 1641455239088
@@ -7,6 +7,7 @@ created: 1641105063969
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.python]] [[s.l.python.libs.numpy]] [NumPy Tutorial](https://youtube.com/playlist?list=PLhTjy8cBISEpTyVbZGYUesjpeUXth8rqs)
 - [x] [This One Technique Is How I Build Projects Without Getting Stuck][1]

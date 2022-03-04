@@ -1,5 +1,5 @@
 ---
-id: BZ2EtECC7rbMQg0dR0Fnl
+id: lhxs6m71r20bn3zm16gv7ii
 title: Csharp
 desc: ''
 updated: 1641271404143
@@ -7,6 +7,7 @@ created: 1641105063847
 stub: false
 isDir: false
 ---
+
 
 - [Extract Fields from PDF][0]
 - [Coderr automated exception handling][1]

@@ -1,10 +1,11 @@
 ---
-id: tPNtUcM9O0ULLtflb52BG
+id: zenrfcxa0qwoyzw2vy0xb0k
 title: Macros
 desc: ''
 updated: 1641271445695
 created: 1641271445695
 ---
+
 
 |     Groff cmd      |     LaTeX cmd      |   markdown   |                         What it is                          |
 | :----------------: | :----------------: | :----------: | :---------------------------------------------------------: |

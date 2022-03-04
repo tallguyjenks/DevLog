@@ -1,10 +1,11 @@
 ---
-id: Tr1L06K5O07o4bdjzJP1G
+id: g1810yt68inu44v01pmlt8o
 title: TTL
 desc: ''
 updated: 1641950207610
 created: 1641949954408
 ---
+
 
 `T`ime `T`o `L`ive
 

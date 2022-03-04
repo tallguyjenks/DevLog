@@ -1,5 +1,5 @@
 ---
-id: wr9lK6PVI56b2YZ885txp
+id: 94l9dvmed825xtmrqr48m8k
 title: Generators in Python Python Tutorial Learn Python Programming
 desc: ''
 updated: 1641270572433
@@ -7,6 +7,7 @@ created: 1641168992640
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/gMompY5MyPg>
 - `Channel/Host:` [[@Socratica|@socratica]]

@@ -1,5 +1,5 @@
 ---
-id: CRFirtsv1nNgZah61qYpR
+id: ywsicxnhowfk5p4gt0wgev2
 title: 0
 desc: ''
 updated: 1641450911224
@@ -7,6 +7,7 @@ created: 1641105063962
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.python]] [[s.l.r]] [Choosing Python or R for Data Analysis? An Infographic][1]
 - [[s.db.mongodb]] [Donald Feury MongoDB notes][2]

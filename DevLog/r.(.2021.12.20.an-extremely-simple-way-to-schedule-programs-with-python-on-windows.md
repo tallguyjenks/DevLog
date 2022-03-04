@@ -1,5 +1,5 @@
 ---
-id: cnHHInGlZTousXKeJ6iJr
+id: 8yh4ptjonn0gzdcgqldip7m
 title: An Extremely Simple Way to Schedule Programs with Python on Windows
 desc: ''
 updated: 1641271338487
@@ -7,6 +7,7 @@ created: 1641105063989
 stub: false
 isDir: false
 ---
+
 
 - `Author:` Robby Boney
 - `Link:` <https://medium.com/short-bits/an-extremely-simple-way-to-schedule-programs-with-python-on-windows-46fc34074874>

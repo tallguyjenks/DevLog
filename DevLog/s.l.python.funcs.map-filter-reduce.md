@@ -1,10 +1,11 @@
 ---
-id: 1gpA6Qso2eBtwk5BvBMhy
+id: t354ppyvkwqxlzgnnebx7rd
 title: Map Filter Reduce
 desc: ''
 updated: 1641422544654
 created: 1641422544654
 ---
+
 
 ## Map Filter Reduce
 

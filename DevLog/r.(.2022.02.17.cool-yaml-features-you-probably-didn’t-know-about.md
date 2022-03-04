@@ -1,10 +1,11 @@
 ---
-id: 3JFoma9JjKeRSGJlISO4B
+id: cnqwn0f6azdinsil332zi9a
 title: Cool Yaml Features You Probably Didn’t Know About
 desc: ''
 updated: 1645151349348
 created: 1645151218707
 ---
+
 
 <https://faun.pub/cool-yaml-features-you-probably-didnt-know-cb15e8112576>
 

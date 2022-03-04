@@ -1,5 +1,5 @@
 ---
-id: Cney45FAvJL6S59CcXgwa
+id: hq1wcv1f1rgmabv123yuvr9
 title: Mathjax
 desc: ''
 updated: 1641411735891
@@ -7,6 +7,7 @@ created: 1641105063924
 stub: false
 isDir: false
 ---
+
 
 ## Syntax
 

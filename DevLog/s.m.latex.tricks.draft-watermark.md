@@ -1,5 +1,5 @@
 ---
-id: PULplkdW7kpDnrjuZ4NHF
+id: o749f907vz0k7ekj955m8cm
 title: Draft Watermark
 desc: ''
 updated: 1641408492154
@@ -7,6 +7,7 @@ created: 1641105063916
 stub: false
 isDir: false
 ---
+
 
 <https://tex.stackexchange.com/questions/118939/add-watermark-that-overlays-the-images>
 

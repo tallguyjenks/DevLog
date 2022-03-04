@@ -1,5 +1,5 @@
 ---
-id: FBYI9nMyWASiUHiP2ADjt
+id: xz19tf5nv9202rzwx9jap0f
 title: '25'
 desc: ''
 updated: 1641429999396
@@ -7,6 +7,7 @@ created: 1641105063941
 stub: false
 isDir: false
 ---
+
 
 - [[s.q.tsql]] [[s.l.python.libs.sqlite3]]
   - In vscode using the SQLite extention you can't use the command `PRAGMA foreign_keys = ON;` to enable foreign key constrains on your SQLite tables.

@@ -1,5 +1,5 @@
 ---
-id: AWRy1IRz0YUpl51AuyQWL
+id: v4tzya5etomdr53yzuxfkif
 title: Exponentation
 desc: ''
 updated: 1641407045623
@@ -7,6 +7,7 @@ created: 1641105063910
 stub: false
 isDir: false
 ---
+
 
 ```js
 let base = 3;

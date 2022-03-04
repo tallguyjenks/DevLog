@@ -1,5 +1,5 @@
 ---
-id: YMXYuigIzH6G9V1HtcOwJ
+id: yo78r3uwh6dvkpslatl92y4
 title: Write Data This Alternative Is 7 Times Faster
 desc: ''
 updated: 1641269061613
@@ -7,6 +7,7 @@ created: 1641105063988
 stub: false
 isDir: false
 ---
+
 
 - `Author:` dario-radečić
 - `Link:` <https://towardsdatascience.com/stop-using-pandas-to-read-write-data-this-alternative-is-7-times-faster-893301633475>

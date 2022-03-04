@@ -1,5 +1,5 @@
 ---
-id: HhHtVf0XK85MWhlQAXSsP
+id: n8xzjj9wqi9ebxo6sm2x88i
 title: Mind Bending Metaclasses Adding Function Overloads to Python
 desc: ''
 updated: 1641270755502
@@ -7,6 +7,7 @@ created: 1641168992647
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/yWzMiaqnpkI>
 - `Channel/Host:` mCoding

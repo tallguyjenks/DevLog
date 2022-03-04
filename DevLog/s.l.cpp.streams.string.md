@@ -1,10 +1,11 @@
 ---
-id: KJ2lSFkru1gmXAL0mksVD
+id: a72167oy9mknrxczyfsf8ju
 title: String
 desc: ''
 updated: 1641377621261
 created: 1641377621262
 ---
+
 
 ### String Streams
 

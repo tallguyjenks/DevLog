@@ -1,5 +1,5 @@
 ---
-id: xf2J5V51v6oInR2FeKM18
+id: ic6qm2hj5mhp6cf8wmo55v9
 title: Data Classes
 desc: ''
 updated: 1641416405448
@@ -7,6 +7,7 @@ created: 1641105063925
 stub: false
 isDir: false
 ---
+
 
 - [x] [If you're not using Python DATA CLASSES yet, you should 🚀](https://youtu.be/vRVVyl9uaZc)
 

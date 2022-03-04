@@ -1,10 +1,11 @@
 ---
-id: Laio7GsiMRJnsa6sZLN2L
+id: vij59hw57yasq6qpvrm9vym
 title: Is Nan
 desc: ''
 updated: 1641266337649
 created: 1641266337649
 ---
+
 
 ## The isNaN() Method
 

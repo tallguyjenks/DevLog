@@ -1,10 +1,11 @@
 ---
-id: RUnu7V3wVzpsPhMW5k8Ie
+id: qrjk7w319lm0uxa1u5wb3io
 title: Variables Aka Macros
 desc: ''
 updated: 1642708557481
 created: 1642708537883
 ---
+
 
 ## Variable aka Macros
 

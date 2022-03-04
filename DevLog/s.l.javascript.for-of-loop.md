@@ -1,5 +1,5 @@
 ---
-id: xFTYIeduoQvxnHPQnnHLH
+id: tb0scmsbt0yxf93rqs20r6r
 title: For of Loop
 desc: ''
 updated: 1641407061381
@@ -7,6 +7,7 @@ created: 1641105063911
 stub: false
 isDir: false
 ---
+
 
 ## The `for...of` Loop
 

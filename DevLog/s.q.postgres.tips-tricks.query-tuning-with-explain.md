@@ -1,10 +1,11 @@
 ---
-id: bA1ehIksZyQ3rBiAHWdha
+id: q4sovnipe5uwz7zn4zkm0xt
 title: Query Tuning with Explain
 desc: ''
 updated: 1643221958168
 created: 1643219775679
 ---
+
 
 ```sql
 EXPLAIN(FORMAT JSON)

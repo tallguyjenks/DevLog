@@ -1,10 +1,11 @@
 ---
-id: Yy2jdsalltaQZQoxGLnuP
+id: 0hm5ic32aakmqn4o7r2iy50
 title: Variables
 desc: ''
 updated: 1645581640196
 created: 1641854437940
 ---
+
 
 ## VS Code Stanard Variables
 

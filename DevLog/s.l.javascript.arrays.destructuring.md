@@ -1,5 +1,5 @@
 ---
-id: MJFmT9XfCfiVDs0DYmoDe
+id: kujeqqzxcmdibwr8m4int5r
 title: Destructuring
 desc: ''
 updated: 1641406421501
@@ -7,6 +7,7 @@ created: 1641105063907
 stub: false
 isDir: false
 ---
+
 
 ```js
 // Before:

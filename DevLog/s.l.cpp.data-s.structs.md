@@ -1,5 +1,5 @@
 ---
-id: G0AZLSzZD4Fc6BEkjVhhK
+id: jhrhzv9s94oz9k5gc50r5cx
 title: Structs
 desc: ''
 updated: 1641372937445
@@ -7,6 +7,7 @@ created: 1641105063897
 stub: false
 isDir: false
 ---
+
 
 ## Structs
 

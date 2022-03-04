@@ -1,5 +1,5 @@
 ---
-id: 2fvwpsgLyX7UPcinPpfq5
+id: l9375hh12hmuqeqbm4m00p0
 title: 0
 desc: ''
 updated: 1641446803033
@@ -7,6 +7,7 @@ created: 1641105063948
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] [[s.l.python.libs.black]] code formatter/linter
    - [[s.l.python]] [Calm Code Decorators](https://calmcode.io/decorators/usage.html)

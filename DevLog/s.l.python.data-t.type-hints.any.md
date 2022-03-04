@@ -1,10 +1,11 @@
 ---
-id: ok1a2sr2HKZCX9dGx3bqL
+id: k90qogg6nvmfzu8s3821xry
 title: Any
 desc: ''
 updated: 1641423238048
 created: 1641423238048
 ---
+
 
 ## Any Type
 

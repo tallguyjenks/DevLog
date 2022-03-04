@@ -1,10 +1,11 @@
 ---
-id: m5cPigrU8Ryj9dBfXcRdR
+id: 9dhhgr4lxv7l2pwila59qz3
 title: The Ideal CI CD Pipeline Concepts Overview
 desc: ''
 updated: 1645580161896
 created: 1645579199516
 ---
+
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/OPwU3UWCxhw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 

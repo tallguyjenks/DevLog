@@ -1,5 +1,5 @@
 ---
-id: 5Egli2rHNYMvbXGcwS1V8
+id: tktor8lbkcio8mq7hked0pi
 title: Why You Should Start Using Pathlib as an Alternative to the Os Module
 desc: ''
 updated: 1641271287973
@@ -7,6 +7,7 @@ created: 1641105063989
 stub: false
 isDir: false
 ---
+
 
 - `Author:` Ahmed Besbes
 - `Link:` <https://towardsdatascience.com/why-you-should-start-using-pathlib-as-an-alternative-to-the-os-module-d9eccd994745>

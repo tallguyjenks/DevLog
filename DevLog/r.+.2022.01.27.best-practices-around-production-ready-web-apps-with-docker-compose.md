@@ -1,10 +1,11 @@
 ---
-id: 8NfZWZnOLJ7TS4JvjRD9T
+id: 2ceao1bhhx06inb3ixnnyrj
 title: Best Practices around Production Ready Web Apps with Docker Compose
 desc: ''
 updated: 1643239408312
 created: 1643237190312
 ---
+
 
 - `URL:` <https://youtu.be/T--X3v2pwtU>
 - `Author:` Nick Janetakis

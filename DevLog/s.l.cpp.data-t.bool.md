@@ -1,10 +1,11 @@
 ---
-id: 03ARR3zJeWsiKAOXiHeNc
+id: 484gasm083gc6abxb1yj13y
 title: Bool
 desc: ''
 updated: 1641377733176
 created: 1641377733176
 ---
+
 
 ### Boolean
 

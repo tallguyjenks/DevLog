@@ -1,5 +1,5 @@
 ---
-id: 3a7GgBjDjTSnoKEZNyWuk
+id: offmxiroqavcjjyqlk5fpcv
 title: '26'
 desc: ''
 updated: 1641447921059
@@ -7,6 +7,7 @@ created: 1641105063952
 stub: false
 isDir: false
 ---
+
 
 - [[s.apps.vscode]] [25 VS Code Productivity Tips and Speed Hacks][1]
   - hotkeys `CRTL + SHIFT + .` open symbols searcher.

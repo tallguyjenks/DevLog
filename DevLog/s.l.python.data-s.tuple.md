@@ -1,10 +1,11 @@
 ---
-id: LMWw2SYHiGmAyS2W8vjkL
+id: 7ero1q327jm7sdjey5voe3t
 title: Tuple
 desc: ''
 updated: 1641421209241
 created: 1641421209241
 ---
+
 
 ### Tuple
 

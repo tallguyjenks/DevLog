@@ -1,10 +1,11 @@
 ---
-id: Lwg6XN2t2EpwW5F6K6Bd2
+id: flya8ooflgw5q1tyzl57k09
 title: Stored Proc
 desc: ''
 updated: 1643273607190
 created: 1643273591180
 ---
+
 
 
 ```sql

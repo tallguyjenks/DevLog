@@ -1,10 +1,11 @@
 ---
-id: GbavkIurwSEKK3FdzIDGP
+id: octgqikw7h9a8e810ow9idm
 title: Vector Copying
 desc: ''
 updated: 1641377055235
 created: 1641377055235
 ---
+
 
 ### Vector copying
 

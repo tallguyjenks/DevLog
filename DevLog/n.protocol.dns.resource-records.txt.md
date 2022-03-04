@@ -1,10 +1,11 @@
 ---
-id: kZCAGkNDR3yWMiKgu11MT
+id: ypt5kd5fzxxxlkemp1pqb00
 title: Txt
 desc: ''
 updated: 1641887423756
 created: 1641887318108
 ---
+
 
 `T`e`xt` records
 

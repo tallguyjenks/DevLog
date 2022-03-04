@@ -1,5 +1,5 @@
 ---
-id: UFwbwLd8djtoQorGlzPYp
+id: av5cjmxa9pxlg2vmqr76e2s
 title: Date Manipulation
 desc: ''
 updated: 1641414578629
@@ -7,6 +7,7 @@ created: 1641105063933
 stub: false
 isDir: false
 ---
+
 
 ```sql
 DATEPART ( datepart , date )

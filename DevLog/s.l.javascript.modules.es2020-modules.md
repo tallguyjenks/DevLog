@@ -1,10 +1,11 @@
 ---
-id: nDeeosK9tAAtrgRB9x1R5
+id: 6k82ml9f12ohye988g1hmst
 title: Es2020 Modules
 desc: ''
 updated: 1641407971856
 created: 1641407960879
 ---
+
 
 ### [[s.l.javascript.releases.ecmascript-2020]]
 

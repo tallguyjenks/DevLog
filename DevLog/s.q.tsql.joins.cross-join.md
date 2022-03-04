@@ -1,5 +1,5 @@
 ---
-id: xemdYmwn1yEZ3EAD3xDh6
+id: 2r7iwuq308zjnxryer90xdj
 title: Cross Join
 desc: ''
 updated: 1641412960454
@@ -7,6 +7,7 @@ created: 1641105063933
 stub: false
 isDir: false
 ---
+
 
 A Cartesian Product that matches every unique value from one table to every unique value on another table for the complete list of every unique pairing:
 

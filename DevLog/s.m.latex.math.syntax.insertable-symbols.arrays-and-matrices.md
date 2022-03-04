@@ -1,10 +1,11 @@
 ---
-id: IuBAOfjgxGZe3hKhkAok8
+id: vuz02hbu9tpe21xeds6aqny
 title: Arrays and Matrices
 desc: ''
 updated: 1641409015401
 created: 1641409015401
 ---
+
 
 #### Arrays and Matrices
 

@@ -1,10 +1,11 @@
 ---
-id: k2i0Bps3VyExLRNor9N5B
+id: 544ssghmluumunrewmboo90
 title: Rip
 desc: ''
 updated: 1641950697760
 created: 1641950225470
 ---
+
 
 `R`outing `I`nformation `P`rotocol
 

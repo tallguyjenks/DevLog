@@ -1,5 +1,5 @@
 ---
-id: SLS0jHKP8nzi6dXPTeGEF
+id: r7gvz1si5pm75zi3r3yf1h9
 title: Latex
 desc: ''
 updated: 1641409409075
@@ -7,6 +7,7 @@ created: 1641105063880
 stub: false
 isDir: true
 ---
+
 
 > LaTeX is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. LaTeX is the de facto standard for the communication and publication of scientific documents.
 

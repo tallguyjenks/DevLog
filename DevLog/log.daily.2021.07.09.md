@@ -1,5 +1,5 @@
 ---
-id: n5OUl2ZfkR1dgaeX50PmF
+id: yxwyc881ql8yf53osfjnkaj
 title: 0
 desc: ''
 updated: 1641449865566
@@ -7,6 +7,7 @@ created: 1641105063954
 stub: false
 isDir: false
 ---
+
      
 -  [[s.l.python]] [python tips][1]
   -  [[s.l.python]] [[s.l.r]] [The Flawless Pipes of Python/ Pandas][2]

@@ -1,10 +1,11 @@
 ---
-id: Wqae3VTow4VtnsfPHaX7F
+id: 8a04j66hlewd8e6b151gydz
 title: Strncat
 desc: ''
 updated: 1641373707261
 created: 1641373707261
 ---
+
 
 ## strncat()
 

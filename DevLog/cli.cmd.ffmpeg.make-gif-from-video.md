@@ -1,10 +1,11 @@
 ---
-id: A4cS07P58XXhTWAkp9hnd
+id: 8350mel4u43g98fr330doo6
 title: Make Gif from Video
 desc: ''
 updated: 1641184338599
 created: 1641184338599
 ---
+
 
 ## Making a GIF out of a video clip:
 

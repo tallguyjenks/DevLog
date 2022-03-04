@@ -1,10 +1,11 @@
 ---
-id: Kdd7vARZOXJ7u6By4GCgY
+id: oz2zb5iyxvx7mejd03e35wu
 title: Write Subtitles to Video File
 desc: ''
 updated: 1641184383191
 created: 1641184383191
 ---
+
 
 ## Write Subtitles to a video file
 

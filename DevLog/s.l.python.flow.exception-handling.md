@@ -1,10 +1,11 @@
 ---
-id: 5DdtoOzcvjjP0zcWdRRRT
+id: eoct8p3jk7rsepw3fbkd0za
 title: Exception Handling
 desc: ''
 updated: 1641422448644
 created: 1641422448644
 ---
+
 
 ## Exception Handling
 

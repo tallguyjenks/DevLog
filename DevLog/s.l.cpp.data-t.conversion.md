@@ -1,5 +1,5 @@
 ---
-id: st3s1fPiSGYUQmlgdZ4b7
+id: jmegqg8l74cbjv9h8sagnyh
 title: Conversion
 desc: ''
 updated: 1641372972519
@@ -7,6 +7,7 @@ created: 1641105063890
 stub: false
 isDir: false
 ---
+
 
 If you do not want to make a new variable or refactor an existing variable due to the need for it to be a `double` and not an `int` any longer.
 

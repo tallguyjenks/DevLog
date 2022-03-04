@@ -1,5 +1,5 @@
 ---
-id: gZXiINj4Z1bkxuzYwyxre
+id: b8m0o3uwpk15pd0v0l9la8i
 title: Links
 desc: ''
 updated: 1641412410813
@@ -7,6 +7,7 @@ created: 1641105063923
 stub: false
 isDir: false
 ---
+
 
 ## Syntax
 

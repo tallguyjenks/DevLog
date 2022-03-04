@@ -1,5 +1,5 @@
 ---
-id: Iz1fA5890gXI8AmPMYufa
+id: 38ru5duoge6vejst5bgj08j
 title: 0
 desc: ''
 updated: 1641451620306
@@ -7,6 +7,7 @@ created: 1641105063966
 stub: false
 isDir: false
 ---
+
 
 - [[s.l.python]] [5 Advanced Python Function Concepts Explained With Examples][1]
 - [[s.l.python]] [7 Levels of Using F-Strings in Python][2]

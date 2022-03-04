@@ -1,10 +1,11 @@
 ---
-id: YG0h75r6wNcHY30YaYcwn
+id: n4u6yx60t7hzpkuz6ybp858
 title: Variable Names
 desc: ''
 updated: 1641421712379
 created: 1641421712379
 ---
+
 
 ### Variable Names
 

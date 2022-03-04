@@ -1,5 +1,5 @@
 ---
-id: OlxohwuqpRCsX5lw4dHXM
+id: zzgx6g9ah038hgj4liikd69
 title: Python F Strings Can Do More than You Thought
 desc: ''
 updated: 1641271059094
@@ -7,6 +7,7 @@ created: 1641105063991
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/BxUxX1Ku1EQ>
 - `Channel/Host:` mCoding

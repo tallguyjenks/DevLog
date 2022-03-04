@@ -1,5 +1,5 @@
 ---
-id: SxFsZSbL5y3VNF4TLkG3s
+id: pyaruxd0fwtw32937fcz82z
 title: Emojis
 desc: ''
 updated: 1641411638756
@@ -7,6 +7,7 @@ created: 1641105063922
 stub: false
 isDir: false
 ---
+
 
 ## Syntax
 

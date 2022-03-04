@@ -1,10 +1,11 @@
 ---
-id: hh8UXpJAAmNBiwdPmMw0I
+id: zh4ocso1okwpidxt7vrwdy1
 title: Get Opts
 desc: ''
 updated: 1641429218772
 created: 1641429218772
 ---
+
 
 ##### Get Opts In Bash
 

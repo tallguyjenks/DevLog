@@ -1,5 +1,5 @@
 ---
-id: tr2Ee0jomDtI0ArTqTGyi
+id: w1pbkf971n4tftbh92gl9f6
 title: >-
   Iterators, Iterables, and Itertools in Python Python Tutorial Learn Python
   Programming
@@ -9,6 +9,7 @@ created: 1641168992646
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/WR7mO_jYN9g>
 - `Channel/Host:` Socratica

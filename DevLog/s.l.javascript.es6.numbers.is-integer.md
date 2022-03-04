@@ -1,10 +1,11 @@
 ---
-id: ZRus3ffMX4MFdz1vRkgo6
+id: nkaz49xxsg73i9meefuhwiw
 title: Is Integer
 desc: ''
 updated: 1641266303313
 created: 1641266303313
 ---
+
 
 ## The Number.isInteger() Method
 

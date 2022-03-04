@@ -1,5 +1,5 @@
 ---
-id: pN47iMyYELF8njRcbFwin
+id: 4e7k85egvv377tahwlkywvz
 title: Solid Coding in Python
 desc: ''
 updated: 1641269219844
@@ -7,6 +7,7 @@ created: 1641105063988
 stub: false
 isDir: false
 ---
+
 
 - `Author:` mattia-cinelli
 - `Link:` <https://towardsdatascience.com/solid-coding-in-python-1281392a6a94>

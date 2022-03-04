@@ -1,5 +1,5 @@
 ---
-id: nOsHEnhzaPlcrH0kfuRzZ
+id: pye1pmizdfvf3st4i76ro15
 title: Ddl
 desc: ''
 updated: 1641413028952
@@ -7,6 +7,7 @@ created: 1641105063933
 stub: false
 isDir: false
 ---
+
 
 ## Data Definition Language
 

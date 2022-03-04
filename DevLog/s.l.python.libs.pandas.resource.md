@@ -1,10 +1,11 @@
 ---
-id: o8dYeE2jMVNdcg1cKngdJ
+id: dyc2xgc4fxutslzv4hqj268
 title: Resource
 desc: ''
 updated: 1641426290815
 created: 1641426290815
 ---
+
 
 ## Resources
 

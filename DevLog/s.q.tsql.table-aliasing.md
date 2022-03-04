@@ -1,5 +1,5 @@
 ---
-id: a219S14lkunAkQpHwmInK
+id: 6q8acfxzhhv3tr60lcjiuga
 title: Table Aliasing
 desc: ''
 updated: 1641414037544
@@ -7,6 +7,7 @@ created: 1641105063938
 stub: false
 isDir: false
 ---
+
 
 Aliasing a table is to reduce the amount of typing needed for a query. This allows for something like `A_REALLY_LONG_TABLE_NAME` to be reduced to `T` by using an alias:
 

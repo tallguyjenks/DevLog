@@ -1,10 +1,11 @@
 ---
-id: jGMYhEiqiiWx2mcI1UKQk
+id: ujfbpm2sp00dqxivmk9x4ag
 title: Ip Addressing
 desc: ''
 updated: 1641614919334
 created: 1641614919334
 ---
+
 
 - IP addressing conventions
   - 1st Network IP Address --> Default Gateway i.e. Router

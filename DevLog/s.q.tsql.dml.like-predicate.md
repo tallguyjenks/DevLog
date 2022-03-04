@@ -1,5 +1,5 @@
 ---
-id: ofC6FNH5aPCLCSRL2EkF0
+id: d4oe5rw5r85eobqy2xjltoo
 title: Like Predicate
 desc: ''
 updated: 1641413724286
@@ -7,6 +7,7 @@ created: 1641105063936
 stub: false
 isDir: false
 ---
+
 
 Used with [[T-SQL Wild Cards|s.q.tsql.wild-cards]], the `LIKE` predicate looks at a [[s.q.tsql.wild-cards]] string and runs the [[s.o.regular-expressions]] pattern matching operation.
 

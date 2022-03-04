@@ -1,5 +1,5 @@
 ---
-id: SnA0tLk0ZubGkaaOhVdB7
+id: wu89rhqa0x28txz7m70tndk
 title: '12'
 desc: ''
 updated: 1641449938671
@@ -7,6 +7,7 @@ created: 1641105063955
 stub: false
 isDir: false
 ---
+
 
 -  [[s.o.make]] [What is a Makefile and how does it work?][1]
   -  [[s.o.make]] [C++ Programming Tutorial 75 - Creating a Simple Makefile][2]

@@ -1,5 +1,5 @@
 ---
-id: P0OehBSbD4e5k4sbGw080
+id: lbr5bxczy3hedmoz4lomr7j
 title: Files
 desc: ''
 updated: 1641416431708
@@ -7,6 +7,7 @@ created: 1641105063926
 stub: false
 isDir: false
 ---
+
 
 ```python
 with open("employees.txt","r") as employee_file: # Filename, Mode (r:read a:append w:write)

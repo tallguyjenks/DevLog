@@ -1,5 +1,5 @@
 ---
-id: KEI3BUt5BibRZyycPb2j8
+id: 07yoay99jzj3mwfljx6upew
 title: The Secret World of Newline Characters
 desc: ''
 updated: 1641269721438
@@ -7,6 +7,7 @@ created: 1641105063989
 stub: false
 isDir: false
 ---
+
 
 - `Author:` yang-yang
 - `Link:` <https://enigma.com/blog/post/the-secret-world-of-newline-characters>

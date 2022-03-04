@@ -1,5 +1,5 @@
 ---
-id: 7wgTdycx8HBKTX87ZyAyd
+id: bhokcsa7hqr69i2tz9sla9r
 title: Rich Inspect
 desc: ''
 updated: 1641417302204
@@ -7,6 +7,7 @@ created: 1641105063865
 stub: false
 isDir: false
 ---
+
 
 - ![alt](assets/images/Pasted_image_20211014090651.png)
 - ![alt](assets/images/Pasted_image_20211014090656.png)

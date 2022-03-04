@@ -1,5 +1,5 @@
 ---
-id: 5r8fOm0xL3kjRkaLuKcgN
+id: rbbyrgqhs56gz0gjze45k6p
 title: Full Outer Join
 desc: ''
 updated: 1641413144236
@@ -7,6 +7,7 @@ created: 1641105063934
 stub: false
 isDir: false
 ---
+
 
 This joins preserves both tables and retains all records but where there are matches it links them up
 

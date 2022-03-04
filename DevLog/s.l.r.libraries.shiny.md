@@ -1,5 +1,5 @@
 ---
-id: wu3NeMNzV0YXOco2RWAFR
+id: 0h7tzjmuuxy8r383zt2nssq
 title: Shiny
 desc: ''
 updated: 1641113718214
@@ -7,6 +7,7 @@ created: 1641105063866
 stub: false
 isDir: false
 ---
+
 
 - Shiny dashboards consist of 2 main elements the `ui` and the `server` files
 - Shiny dashboards are not great for high user traffic but can still handle mutliple user sessions. Hosting on RStudio is an option but shiny server can be hosted on your own system or containers.

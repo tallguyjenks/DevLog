@@ -1,10 +1,11 @@
 ---
-id: yxH3hjbuUuDGcbFSKx7FL
+id: l6ub33uye0geutbdvla6vuu
 title: Batching Promise Execution
 desc: ''
 updated: 1641408035306
 created: 1641408035306
 ---
+
 
 ## Batching Promise Execution
 

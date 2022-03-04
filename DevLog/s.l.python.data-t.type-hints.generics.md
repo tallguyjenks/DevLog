@@ -1,10 +1,11 @@
 ---
-id: 6CKJ7ZOAFEnlIApvsmUdH
+id: je1q4omwkxcirq0ekjcf4lw
 title: Generics
 desc: ''
 updated: 1641423261917
 created: 1641423261917
 ---
+
 
 ## Generics:
 

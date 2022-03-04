@@ -1,5 +1,5 @@
 ---
-id: 6SCPiDtHb0qh6GJqzuG9E
+id: q1b7euq4yieuc6qx7lnheri
 title: Syntax
 desc: ''
 updated: 1641271789671
@@ -7,6 +7,7 @@ created: 1641105063921
 stub: false
 isDir: false
 ---
+
 
 - One of the hallmarks of lisp is that the data resembles the code.
 - Lisp is dynamically typed

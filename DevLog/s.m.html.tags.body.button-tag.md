@@ -1,5 +1,5 @@
 ---
-id: Frz1GkCK7S5OaDMbi3GGT
+id: hh8ag1c78qfi1bvj86tsli3
 title: Button Tag
 desc: ''
 updated: 1641272708812
@@ -7,6 +7,7 @@ created: 1641105063900
 stub: false
 isDir: false
 ---
+
 
 ```html
 <button>Button Text</button>

@@ -1,5 +1,5 @@
 ---
-id: V9fVlq4nvGrFqRf9im24h
+id: di8rcaor2r1k9bgaynusa26
 title: The in Predicate
 desc: ''
 updated: 1641414075937
@@ -7,6 +7,7 @@ created: 1641105063938
 stub: false
 isDir: false
 ---
+
 
 Similar to [[s.q.tsql.between-predicate]], the `IN` predicate denotes not a range between value A and B but any value in a list that doesnt lend itself to ranging like specific text values or disjointed numerical values:
 

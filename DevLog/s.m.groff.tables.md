@@ -1,10 +1,11 @@
 ---
-id: LtpwY17qxvVUKq59UfXWj
+id: qdnuef549wyb70uecw9fawm
 title: Tables
 desc: ''
 updated: 1641271458338
 created: 1641271458338
 ---
+
 
 ## tables
 

@@ -1,5 +1,5 @@
 ---
-id: d3EUIgaO5rpZTa40P6tn0
+id: 6qltm92kif13x6qbvr532cg
 title: Eleven Tips and Tricks to Write Better Python Code
 desc: ''
 updated: 1641270444240
@@ -7,6 +7,7 @@ created: 1641168992636
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/8OKTAedgFYg>
 - `Channel/Host:` python-engineer

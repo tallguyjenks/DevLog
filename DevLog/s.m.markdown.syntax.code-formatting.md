@@ -1,5 +1,5 @@
 ---
-id: WxX0v3X1dubAJyX6SYcoP
+id: cn3984vtqaap26008o0u2pg
 title: Code Formatting
 desc: ''
 updated: 1641412028574
@@ -7,6 +7,7 @@ created: 1641105063921
 stub: false
 isDir: false
 ---
+
 
 ## Syntax
 

@@ -1,5 +1,5 @@
 ---
-id: hmNyVx8imuCENPhgfyJkt
+id: roj8qk3edeo96ayrvgdp0wl
 title: '2022-01-02'
 desc: ''
 updated: 1641173268300
@@ -7,6 +7,7 @@ created: 1641173176816
 traitIds:
   - journalNote
 ---
+
 
 ## Inputs
 

@@ -1,5 +1,5 @@
 ---
-id: gv0OgmHcqVzFFOpakxvIf
+id: 5ter0by6cgvlab0r1tudijw
 title: Classes
 desc: ''
 updated: 1641406539404
@@ -7,6 +7,7 @@ created: 1641105063909
 stub: false
 isDir: false
 ---
+
 
 JavaScript Classes are templates for JavaScript Objects.
 

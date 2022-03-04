@@ -1,10 +1,11 @@
 ---
-id: tFpWTsOXBb4wAdsY1wT0u
+id: 5z56t3up8sktda4cj5gdmeq
 title: Coalesce
 desc: ''
 updated: 1643227038717
 created: 1643227036237
 ---
+
 
 > To illustrate a simple usage of the COALESCE function, let's return to the customers table. Let's say the marketing team would like a list of the first names, last names, and phone numbers of all male customers. However, for those customers with no phone number, they would like the table to instead write the value 'NO PHONE'. We can accomplish this request with `COALESCE`:
   

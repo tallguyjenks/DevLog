@@ -1,10 +1,11 @@
 ---
-id: aoaDByj4SfexSAPb31SUa
+id: 8crcqu7ppdf5sscr5y4cxux
 title: Spf
 desc: ''
 updated: 1641887560717
 created: 1641887350380
 ---
+
 
 `S`ender `P`olicy `F`ramework
 

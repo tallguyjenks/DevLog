@@ -1,10 +1,11 @@
 ---
-id: 7qVaKwmoH1hIhUCC40jr6
+id: alkbhrjeme9ydqslp4lm75p
 title: Findindex
 desc: ''
 updated: 1641266087958
 created: 1641266087958
 ---
+
 
 ## Array.findIndex()
 

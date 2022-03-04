@@ -1,5 +1,5 @@
 ---
-id: s7KN87bqlHbpQ6kHlGqzf
+id: 7nvi8rf498kxevk4ki5wxth
 title: Black
 desc: ''
 updated: 1641416793000
@@ -7,6 +7,7 @@ created: 1641105063845
 stub: false
 isDir: false
 ---
+
 
 - [Calm Code](https://calmcode.io/black/introduction.html)
 - `.pre-commit-config.yaml`

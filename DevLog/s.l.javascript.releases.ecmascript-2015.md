@@ -1,5 +1,5 @@
 ---
-id: Y9t8k9CcJFzcSQ1GEszn4
+id: egggdahyicmymb4et4b6ri9
 title: Ecmascript 2015
 desc: ''
 updated: 1641406902183
@@ -7,6 +7,7 @@ created: 1641105063910
 stub: false
 isDir: false
 ---
+
 
 ECMAScript 6, also known as ES6 and ECMAScript 2015, was the second major revision to JavaScript.
 

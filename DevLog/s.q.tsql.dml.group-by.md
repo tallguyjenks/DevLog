@@ -1,5 +1,5 @@
 ---
-id: JlaEgG3XIzcsET3Bkxza5
+id: vmo51tpvjhfzooreh5tle86
 title: Group By
 desc: ''
 updated: 1641413160371
@@ -7,6 +7,7 @@ created: 1641105063934
 stub: false
 isDir: false
 ---
+
 
 ```sql
 SELECT Age, Name, COUNT(Name)

@@ -1,10 +1,11 @@
 ---
-id: PIy2SYcfXgq6H0xtXfoGh
+id: mkzeibm79uda57mketfyip1
 title: Interpolation
 desc: ''
 updated: 1641428742363
 created: 1641428742363
 ---
+
 
 ### Interpolation In Bash
 

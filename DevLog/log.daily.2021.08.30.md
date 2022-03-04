@@ -1,5 +1,5 @@
 ---
-id: ma7JXqlD7vSmNghnqbOyZ
+id: ypn6hn54h9nqrkm3e65yb9j
 title: '30'
 desc: ''
 updated: 1641451513286
@@ -7,6 +7,7 @@ created: 1641105063965
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] [5 Python BAD Practices To Avoid][1]
   -  [[s.l.python]] [Brew a Coffee With Python - Tuya Smart IOT Platform Walkthrough][2]

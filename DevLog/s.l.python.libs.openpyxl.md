@@ -1,5 +1,5 @@
 ---
-id: kyWjZJkJw9Ov9Pbd4ugxx
+id: 24j3e843yyyy2lkkzzx62v0
 title: Openpyxl
 desc: ''
 updated: 1641417011482
@@ -7,6 +7,7 @@ created: 1641105063858
 stub: false
 isDir: false
 ---
+
 
 - **Resources:**
   - [Automate Excel With Python - Python Excel Tutorial (OpenPyXL)](https://youtu.be/7YS6YDQKFh0)

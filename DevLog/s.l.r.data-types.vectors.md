@@ -1,10 +1,11 @@
 ---
-id: eL7etvo7W8k3vOWlislBm
+id: ynsmfxxd555bwu19pft6t96
 title: Vectors
 desc: ''
 updated: 1641409929019
 created: 1641409929019
 ---
+
 
 ## Vectors
 

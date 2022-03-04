@@ -1,5 +1,5 @@
 ---
-id: W7ypcX4SlZsxmLlZXf4nd
+id: 0toorc842snhao88zq7k21y
 title: Xdg
 desc: ''
 updated: 1641203357525
@@ -7,6 +7,7 @@ created: 1641105063872
 stub: false
 isDir: false
 ---
+
 
 - <https://wiki.archlinux.org/title/XDG_Base_Directory>
 

@@ -1,5 +1,5 @@
 ---
-id: EqHNbN9XW28PYM1RxLhJ6
+id: ntldy87balzuvmkgg1wugb8
 title: 362 Replace Type Code with Subclasses
 desc: ''
 updated: 1642627263013

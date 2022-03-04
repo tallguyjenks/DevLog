@@ -1,10 +1,11 @@
 ---
-id: Jwh1cQJn0WPhhVZIRdaLZ
+id: ax1nzzuj522flbicsgr5jb6
 title: Output as File Arg
 desc: ''
 updated: 1641429260125
 created: 1641429260125
 ---
+
 
 ### Use the output of another command as a file argument
 

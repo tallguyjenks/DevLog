@@ -1,5 +1,5 @@
 ---
-id: CBpwslmXXpI2sgJ13biyK
+id: vsqam67qo8evbv96bb547q9
 title: Author
 desc: ''
 updated: 1641408484869
@@ -7,6 +7,7 @@ created: 1641105063915
 stub: false
 isDir: false
 ---
+
 
 To pass in your author credentials you can use `\author{Bryan Jenks}` and to use it as another argument in another command you can also use `\theauthor`
 

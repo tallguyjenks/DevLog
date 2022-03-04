@@ -1,10 +1,11 @@
 ---
-id: RUEDKLg0VypW5ZK8CPaHc
+id: hrhye7dyfvt221ctar4asbn
 title: Bootp
 desc: ''
 updated: 1642144246747
 created: 1642144225047
 ---
+
 
 Port: [[n.port.67]] BOOTP/DHCP Server
 Port: [[n.port.68]] BOOTP/DHCP Client

@@ -1,5 +1,5 @@
 ---
-id: hwOP6ZhVGw9Ld2fWMJ4yL
+id: lcihbf2c3umhxj06y00vhr1
 title: Template Literals
 desc: ''
 updated: 1641408102014
@@ -7,6 +7,7 @@ created: 1641105063913
 stub: false
 isDir: false
 ---
+
 
 ## Template Literals
 

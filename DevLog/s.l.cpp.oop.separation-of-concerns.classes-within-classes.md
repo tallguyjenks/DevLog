@@ -1,10 +1,11 @@
 ---
-id: COaB6WgbKFPlnh0TVjT9l
+id: 3lsgup5t9k2lhbpcu9dqz7e
 title: Classes within Classes
 desc: ''
 updated: 1641372091857
 created: 1641372091857
 ---
+
 
 ### Classes Within Classes
 

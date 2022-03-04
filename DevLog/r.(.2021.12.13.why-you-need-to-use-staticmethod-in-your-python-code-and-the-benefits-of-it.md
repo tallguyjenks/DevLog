@@ -1,5 +1,5 @@
 ---
-id: Tm611FIrJRjWo65sOA2ll
+id: gi90j6d0dbmyiaz4pxdmppu
 title: Why You Need to Use Staticmethod in Your Python Code and the Benefits of It
 desc: ''
 updated: 1641271174281
@@ -7,6 +7,7 @@ created: 1641105063989
 stub: false
 isDir: false
 ---
+
 
 - `Author:` Felipe Florencio Garcia
 - `Link:` <https://medium.com/dev-today/why-you-need-to-use-staticmethod-in-your-python-code-and-the-benefits-of-it-f777a5f21de6>

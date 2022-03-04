@@ -1,10 +1,11 @@
 ---
-id: GUvqypR7agKVSZ1BnLMnA
+id: ax0sxh3950vu8etloeferar
 title: Strlen
 desc: ''
 updated: 1641373784270
 created: 1641373784270
 ---
+
 
 ## strlen()
 

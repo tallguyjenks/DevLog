@@ -1,10 +1,11 @@
 ---
-id: iO9VDFxvGwvlNRYZ90rNB
+id: se3s25pb4yalizn871mjuhc
 title: Math Environment
 desc: ''
 updated: 1641408696331
 created: 1641408696331
 ---
+
 
 ## Math Environment
 

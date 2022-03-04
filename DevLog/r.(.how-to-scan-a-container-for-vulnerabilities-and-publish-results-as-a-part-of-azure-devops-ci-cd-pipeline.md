@@ -1,5 +1,5 @@
 ---
-id: ywdSNUOJJ8xfUlwKWQclY
+id: kvkv1rgr2v6uxays07uh5sr
 title: >-
   How to Scan a Container for Vulnerabilities and Publish Results as a Part of
   Azure Devops CI CD Pipeline
@@ -7,6 +7,7 @@ desc: ''
 updated: 1641454343106
 created: 1641454270748
 ---
+
 
 - [[s.apps.azure.devops]] [[terms.ci-cd]] [[s.apps.azure.pipelines]] [How to scan a container for vulnerabilities and publish results as a part of Azure DevOps CI/CD pipeline][1]
 

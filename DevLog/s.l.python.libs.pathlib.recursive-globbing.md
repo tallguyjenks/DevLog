@@ -1,10 +1,11 @@
 ---
-id: xNXwg0qyRw804tvpIfnDx
+id: bl44b2ajbz6ud1nuqdekjkt
 title: Recursive Globbing
 desc: ''
 updated: 1641426346815
 created: 1641426346815
 ---
+
 
 ## Recursive globbing
 

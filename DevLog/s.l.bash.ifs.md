@@ -1,10 +1,11 @@
 ---
-id: WLlo1Sw3FYYFhxCJPsoJK
+id: r9m0x75vemmus09oozmicvs
 title: Ifs
-desc: 'Internal Field Separator'
+desc: Internal Field Separator
 updated: 1641428759930
 created: 1641428752752
 ---
+
 
 ### Internal Field Separator - IFS
 

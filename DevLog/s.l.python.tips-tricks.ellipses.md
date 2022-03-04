@@ -1,10 +1,11 @@
 ---
-id: JTtatohvJaVk5xFwII035
+id: 5gk2fbkxkqgx3pc3z2bxnrg
 title: Ellipses
 desc: ''
 updated: 1641423085742
 created: 1641423085742
 ---
+
 
 ## For ... Else
 

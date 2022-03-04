@@ -1,5 +1,5 @@
 ---
-id: FLkZ1gcWTTc5b4S57yHEX
+id: sorl23tfcflmdz3d77wf19k
 title: Arrow Functions
 desc: ''
 updated: 1641406505691
@@ -7,6 +7,7 @@ created: 1641105063908
 stub: false
 isDir: false
 ---
+
 
 Arrow functions do not have their own `this`. They are not well suited for defining **object methods**.
 

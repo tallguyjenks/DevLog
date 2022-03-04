@@ -1,10 +1,11 @@
 ---
-id: mdWXxOHIEzAJjZxpAdnUg
+id: f6kbmlofzhzqd6vwvnlvd2m
 title: Server Profiler
 desc: ''
 updated: 1645167391132
 created: 1645167281562
 ---
+
 
 - SQL Server Profiler
   - Allows a trace of all commands being sent to SQL Server

@@ -1,10 +1,11 @@
 ---
-id: AmeSJIfFkrRMw4YC9Kn5j
+id: jwzmjmkurwbkd1hp5fv46zp
 title: Return Type
 desc: ''
 updated: 1641373260300
 created: 1641373260300
 ---
+
 
 ### Return type
 

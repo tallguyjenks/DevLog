@@ -1,5 +1,5 @@
 ---
-id: wY5RrL82KI7xDjduEoA5o
+id: ld4yqjwwv2grpfvm7wc3fkv
 title: '10'
 desc: ''
 updated: 1641451150957
@@ -7,6 +7,7 @@ created: 1641105063962
 stub: false
 isDir: false
 ---
+
 
 -  [[s.l.python]] [10 Python Shortcuts You Need To Know][1]
   -  [[s.l.python]] [[s.apps.azure.devops]] [[s.l.python.sec]] [[s.apps.snyk]] [Find Vulnerabilities In Your Code With Snyk][2]

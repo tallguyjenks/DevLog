@@ -1,10 +1,11 @@
 ---
-id: oUORTLZY9iyvRxNN6F4eu
+id: jpsd5j2d47aw44rhy5rn2zb
 title: Chaining
 desc: ''
 updated: 1641597850997
 created: 1641412852683
 ---
+
 
 ### Chaining CTE's:
 

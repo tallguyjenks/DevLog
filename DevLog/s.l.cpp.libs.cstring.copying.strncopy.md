@@ -1,10 +1,11 @@
 ---
-id: SWY7Tt3wIwEe8Xqevp2bM
+id: y7cb9xxxkuq2vbnpxh99b1s
 title: Strncopy
 desc: ''
 updated: 1641373657832
 created: 1641373657832
 ---
+
 
 ## strncpy()
 

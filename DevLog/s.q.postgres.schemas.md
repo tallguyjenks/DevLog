@@ -1,10 +1,11 @@
 ---
-id: 1cVIRXIc8Ctdt4TbbkqsN
+id: f9k6hlerfc2a06oyy7qay93
 title: Schemas
 desc: ''
 updated: 1643273453501
 created: 1643273424751
 ---
+
 
 
 ```sql

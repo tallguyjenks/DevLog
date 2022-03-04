@@ -1,10 +1,11 @@
 ---
-id: S98UFklJupD8ll9P2M39H
+id: pe3o1k8e6ilynaze0a8zvdf
 title: Resize
 desc: ''
 updated: 1641376720874
 created: 1641376720874
 ---
+
 
 ### resize( num )
 

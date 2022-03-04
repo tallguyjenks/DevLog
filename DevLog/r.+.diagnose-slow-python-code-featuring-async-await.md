@@ -1,5 +1,5 @@
 ---
-id: PbzF8rgP103fEL2Dey2vt
+id: 6o4hbmn5f8e2kuovbfv4v7u
 title: Diagnose Slow Python Code Featuring Async Await
 desc: ''
 updated: 1641270723507
@@ -7,6 +7,7 @@ created: 1641168992645
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/m_a0fN48Alw>
 - `Channel/Host:` mCoding

@@ -1,10 +1,11 @@
 ---
-id: HoP9VG7x1EKuBfx7bAmgC
+id: zor82cazb9yw5ceiqfde6yx
 title: Resources
 desc: ''
 updated: 1641522102650
 created: 1641419603168
 ---
+
 
 - [[assets/pdfs/2_page_python_cheatsheet.pdf]]
 - [Comprehensive Cheatsheet](https://github.com/gto76/python-cheatsheet)

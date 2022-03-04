@@ -1,10 +1,11 @@
 ---
-id: lcSLnBu6QTaeijL79CA7k
+id: xipbu9hcxr803gpu5wmn9ms
 title: Cache
 desc: ''
 updated: 1641426089369
 created: 1641426069688
 ---
+
 
 ## Cache
 

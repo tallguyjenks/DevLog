@@ -1,10 +1,11 @@
 ---
-id: WatTVl1UVSRZVLGjeureZ
+id: xxwyrg5fzhwz6j07ku8x6bf
 title: Strcat
 desc: ''
 updated: 1641373698314
 created: 1641373698314
 ---
+
 
 ## strcat()
 

@@ -1,10 +1,11 @@
 ---
-id: iXU483YjsGgnVYcNwLhbo
+id: 87vbqu9f50jhf5s4st1fxlo
 title: Text Blocks
 desc: ''
 updated: 1641428881427
 created: 1641428881427
 ---
+
 
 #### Text Blocks In Bash
 

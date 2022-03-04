@@ -1,10 +1,11 @@
 ---
-id: lTdyjSaOyjiSMLC53ttps
+id: qqu2sev41q68r24k0n88hqs
 title: Adding Data to a Table
 desc: ''
 updated: 1641863508195
 created: 1641853744130
 ---
+
 
 <br></br>
 **When** you select values from a table you can edit the output and add new data

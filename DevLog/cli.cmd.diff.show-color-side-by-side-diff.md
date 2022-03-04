@@ -1,10 +1,11 @@
 ---
-id: T3dk0gvZ9aTVRiGGJvOaz
+id: 24m4zwl4wmyacvtzlxnaset
 title: Show Color Side by Side Diff
 desc: ''
 updated: 1644535567981
 created: 1641185251169
 ---
+
 
 ```bash
 diff --color=always --minimal --side-by-side file1 file2

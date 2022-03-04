@@ -1,10 +1,11 @@
 ---
-id: r1Awx922Qbb0SHY6HXPJO
+id: i4aghfb9tyba86pz7emkmp6
 title: Cat6 Cabling
 desc: ''
 updated: 1641614907886
 created: 1641614907886
 ---
+
 
 - [Cat6 Cabling](https://youtu.be/NWhoJp8UQpo)
   - UTP - Unshielded Twisted Pair

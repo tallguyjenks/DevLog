@@ -1,5 +1,5 @@
 ---
-id: gOe6HTrXERbxatajNjymw
+id: 8ray1vgvhey2z2pnek5lfsq
 title: Shutil
 desc: ''
 updated: 1641417308188
@@ -7,6 +7,7 @@ created: 1641105063866
 stub: false
 isDir: false
 ---
+
 
 > Shell Util
 

@@ -1,10 +1,11 @@
 ---
-id: wWhRDNUouBlTwzwNQ5w9R
+id: ev0ay4i06sbh9x8tb1g523z
 title: If Else
 desc: ''
 updated: 1641429031364
 created: 1641429031364
 ---
+
 
 ##### Bash IF Statements
 

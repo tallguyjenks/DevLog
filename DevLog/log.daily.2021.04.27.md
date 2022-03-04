@@ -1,5 +1,5 @@
 ---
-id: EbPJfVoZ0pVYBWdaDbpyj
+id: 5mn512f0ut9k2vbgrl44grj
 title: '27'
 desc: ''
 updated: 1641430029482
@@ -7,6 +7,7 @@ created: 1641105063941
 stub: false
 isDir: false
 ---
+
 -  [[cli.cmd.git]] 
   - The `git checkout` command was replaced by `git switch` in git v2.23 as `git checkout` was apparently too overloaded.
   - **Rebasing:** essentially takes a set of commits, "copies" them, and plops them down somewhere else.

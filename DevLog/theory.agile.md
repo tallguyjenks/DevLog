@@ -1,5 +1,5 @@
 ---
-id: cQfjlvNgonhYtv5pCyndg
+id: 6so7mrpckttle21t71kg3wb
 title: Agile
 desc: ''
 updated: 1641168350687
@@ -7,6 +7,7 @@ created: 1641105063844
 stub: false
 isDir: false
 ---
+
 
 ## Risk & Release Frequency
 

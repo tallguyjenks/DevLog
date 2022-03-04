@@ -1,5 +1,5 @@
 ---
-id: pURTqxnjPyC9uNnr4GsTZ
+id: f3tafdqjbnw395h6t25srtt
 title: Chr and Ord in Python Using Ascii Values
 desc: ''
 updated: 1641270988194
@@ -7,6 +7,7 @@ created: 1641105063990
 stub: false
 isDir: false
 ---
+
 
 - `URL:` <https://youtu.be/_tBHdKsRLVM>
 - `Channel/Host:` Tech With Tim

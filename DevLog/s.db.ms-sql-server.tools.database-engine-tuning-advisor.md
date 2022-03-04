@@ -1,10 +1,11 @@
 ---
-id: JSa9TvspLIm8t4FplLqQc
+id: jt2u83l0v28cnsn82pyaisw
 title: Database Engine Tuning Advisor
 desc: ''
 updated: 1645167432800
 created: 1645167415225
 ---
+
 
 - Database Engine Tuning Advisor
   - Optimizes performance of SQL Server

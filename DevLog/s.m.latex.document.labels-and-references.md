@@ -1,5 +1,5 @@
 ---
-id: d1YrhCnrURtAqzqNR2uNb
+id: 9o48ujm2ou9xbpkuuh56a9x
 title: Labels and References
 desc: ''
 updated: 1641408606185
@@ -7,6 +7,7 @@ created: 1641105063918
 stub: false
 isDir: false
 ---
+
 
 `\label{}` This will add an invisible label to any item like so:
 

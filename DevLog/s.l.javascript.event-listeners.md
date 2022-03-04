@@ -1,5 +1,5 @@
 ---
-id: pCN0Mf6AEOshvRtI1Sqma
+id: aynmkw6fugszdas1k6hdxng
 title: Event Listeners
 desc: ''
 updated: 1641407040019
@@ -7,6 +7,7 @@ created: 1641105063910
 stub: false
 isDir: false
 ---
+
 
 `target.addEventListener( type, listener );`
 

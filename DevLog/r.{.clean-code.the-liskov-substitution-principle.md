@@ -1,5 +1,5 @@
 ---
-id: BdBOI5KMnZHeSvS3Bp8We
+id: cbt5nenk11nsmjiy9m7jd6b
 title: The Liskov Substitution Principle
 desc: ''
 updated: 1641268328303
@@ -7,6 +7,7 @@ created: 1641105063869
 stub: false
 isDir: false
 ---
+
 
 > “Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it”
 

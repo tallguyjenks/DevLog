@@ -1,10 +1,11 @@
 ---
-id: 3f3Ze6awQZx60DbAZPE3k
+id: whktqiudsiuyp5xs5e8lw6d
 title: Triggers
 desc: ''
 updated: 1643273584556
 created: 1643273529461
 ---
+
 
 ```sql
 CREATE OR REPLACE FUNCTION rpt.FN_Clean_Data() RETURNS trigger LANGUAGE 'plpgsql' AS $$

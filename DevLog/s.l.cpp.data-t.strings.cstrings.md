@@ -1,10 +1,11 @@
 ---
-id: oD7livZzxwpjElssKGI7y
+id: gftbnoqea3bo64lfrne3fke
 title: Cstrings
 desc: ''
 updated: 1641377755643
 created: 1641377755643
 ---
+
 
 #### C Strings
 

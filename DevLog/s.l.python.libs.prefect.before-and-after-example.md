@@ -1,10 +1,11 @@
 ---
-id: tKGBRVzVI4wE0JLDMMWxB
+id: acvmshbxkxzax2v1hcfi4dz
 title: Before and after Example
 desc: ''
 updated: 1641202817827
 created: 1641202817827
 ---
+
 
 ## Before ETL Process:
 

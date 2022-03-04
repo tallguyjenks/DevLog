@@ -1,10 +1,11 @@
 ---
-id: UHcujCYTvnHIBLRMJ3IVO
+id: zq0o13lvtgjowhasoy77v27
 title: While
 desc: ''
 updated: 1641422436420
 created: 1641422428586
 ---
+
 
 ### While Loop
 

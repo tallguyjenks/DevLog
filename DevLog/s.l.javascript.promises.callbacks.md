@@ -1,10 +1,11 @@
 ---
-id: JOWspGklXJK0RL42hMr57
+id: j31nziqnqxhjbbt0paa0fuo
 title: Callbacks
 desc: ''
 updated: 1641408042050
 created: 1641408042050
 ---
+
 
 ## Callbacks (superceded by promises)
 

@@ -1,10 +1,11 @@
 ---
-id: Ys56LfgyFCv5t2v1ppPg0
+id: qjukinw127eier95ib8kngr
 title: Is Finite
 desc: ''
 updated: 1641266328669
 created: 1641266328669
 ---
+
 
 ## The isFinite() Method
 

@@ -1,5 +1,5 @@
 ---
-id: f28HLJunotlas48xC3eMS
+id: v90xaodl1yenia6wh00oxdq
 title: Floating Point Comparison
 desc: ''
 updated: 1641373131739
@@ -7,6 +7,7 @@ created: 1641105063891
 stub: false
 isDir: false
 ---
+
 
 ## 'Good Enough' Equality
 

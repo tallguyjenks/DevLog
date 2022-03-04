@@ -1,5 +1,5 @@
 ---
-id: X9QfZ8B5b7L70ci4rvRQ0
+id: 1nym2aq5h55k7nj41b21x0e
 title: Modular Documents
 desc: ''
 updated: 1641409056541
@@ -7,6 +7,7 @@ created: 1641105063919
 stub: false
 isDir: false
 ---
+
 
 `\input{<included file>}`
 

@@ -1,5 +1,5 @@
 ---
-id: lmtpS0Ro7BzlFMmhyoQBK
+id: u49bp1w53sdzdo6cpxc9o8y
 title: Mito
 desc: ''
 updated: 1641168427438
@@ -7,6 +7,7 @@ created: 1641105063858
 stub: false
 isDir: false
 ---
+
 
 ```bash
 python -m pip install mitoinstaller

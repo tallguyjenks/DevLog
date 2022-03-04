@@ -1,10 +1,11 @@
 ---
-id: QlqEAvCgfKb4B7FyODuIm
+id: gayxbcza1o4l1250hzuu63e
 title: Rst
 desc: ''
 updated: 1641873282313
 created: 1641873213056
 ---
+
 
 `R`e`s`e`t` segment
 

@@ -1,10 +1,11 @@
 ---
-id: DOgVabH9iRdkNLFQvO6bR
+id: v4uelz9wxbskopsq9t3lino
 title: Get Memory Address
 desc: ''
 updated: 1641377232654
 created: 1641377232654
 ---
+
 
 ### Get Memory Address
 

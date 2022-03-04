@@ -1,10 +1,11 @@
 ---
-id: zfViZf0NN958Wkv9WZAqi
+id: 98244byx242eya84kiuu75f
 title: Redirections
 desc: ''
 updated: 1641428968373
 created: 1641428968373
 ---
+
 
 ### Bash Redirections
 

@@ -1,10 +1,11 @@
 ---
-id: rKATeayhj3UnfrJM3Poua
+id: m431veyfsts08ks47jvctaz
 title: Float
 desc: ''
 updated: 1641377721045
 created: 1641377721045
 ---
+
 
 ### Double / Float
 

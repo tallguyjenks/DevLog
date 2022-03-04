@@ -1,5 +1,5 @@
 ---
-id: GceOTqMsm8Zubo86OVa7P
+id: vn495taistrfo4zc7t9fn7z
 title: Inner Join
 desc: ''
 updated: 1641413222511
@@ -7,6 +7,7 @@ created: 1641105063935
 stub: false
 isDir: false
 ---
+
 
 An inner join is the default join in T-SQL. The `INNER` is optional but it is a best practice to use it.
 

@@ -1,10 +1,11 @@
 ---
-id: a4mdsKTeYpQWf0bcMoWeW
+id: c7hqp1k8b1172ucq9hyps5b
 title: Syntax
 desc: ''
 updated: 1641411746761
 created: 1641411746761
 ---
+
 
 ## Syntax
 

@@ -1,5 +1,5 @@
 ---
-id: NLDjRPDfrn0WEdz2S0Gvk
+id: 6cc0mdkoz69nhpaxt45gsvl
 title: Emmet Shortcuts in Vscode
 desc: ''
 updated: 1641272916790
@@ -7,6 +7,7 @@ created: 1641105063901
 stub: false
 isDir: false
 ---
+
 
 <center>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/45eWEO0gRHI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

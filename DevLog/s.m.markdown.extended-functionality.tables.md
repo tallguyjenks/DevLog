@@ -1,5 +1,5 @@
 ---
-id: 1tC2Om0aAPtSUZUOdPDCI
+id: y2j812ml9abei7yna8hrj38
 title: Tables
 desc: ''
 updated: 1641105063924
@@ -7,6 +7,7 @@ created: 1641105063924
 stub: false
 isDir: false
 ---
+
 💻️/Markdown
 publish: true
 aliases:

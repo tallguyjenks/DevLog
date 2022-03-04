@@ -1,10 +1,11 @@
 ---
-id: 9RKlOkohv9fp1MUJDo5m6
+id: mbfaduqd3bvulosv2ch09k8
 title: Hl7
 desc: ''
 updated: 1641429808822
 created: 1641429802234
 ---
+
 
 - HL7
   - HL7 terms to better understand what is HL7. There are four primary HL7 standard message types:

@@ -1,10 +1,11 @@
 ---
-id: 3ooR7tb5J9PbNCalVN4sa
+id: 4q6taughvgvre0v6gwkdul3
 title: Length and Size
 desc: ''
 updated: 1641376709458
 created: 1641376709458
 ---
+
 
 ### length() & size()
 

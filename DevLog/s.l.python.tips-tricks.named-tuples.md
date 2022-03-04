@@ -1,10 +1,11 @@
 ---
-id: s7ic3IM3Sas45rardn02o
+id: 63w3utoffgx2xluh7pwsymh
 title: Named Tuples
 desc: ''
 updated: 1641423068841
 created: 1641423068841
 ---
+
 
 ## Named Tuples
 

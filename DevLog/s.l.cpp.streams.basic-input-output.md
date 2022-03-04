@@ -1,5 +1,5 @@
 ---
-id: qzhhIfunJc7SmFhcF1u36
+id: xlvjunflrqwzb4uur227zx9
 title: Basic Input Output
 desc: ''
 updated: 1641371589114
@@ -7,6 +7,7 @@ created: 1641105063887
 stub: false
 isDir: false
 ---
+
 
 ```cpp
 /*

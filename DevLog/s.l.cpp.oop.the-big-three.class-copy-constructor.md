@@ -1,10 +1,11 @@
 ---
-id: 0UzHd20ETZxrPpCXlgCQ2
+id: ld3yq44bm47vsqm34qyl64c
 title: Class Copy Constructor
 desc: ''
 updated: 1641372664248
 created: 1641372639439
 ---
+
 
 ## Class Copy Constructors
 

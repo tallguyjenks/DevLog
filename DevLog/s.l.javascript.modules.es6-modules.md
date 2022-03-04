@@ -1,10 +1,11 @@
 ---
-id: ziT88yamtvYgfTZceg6rC
+id: 04tvdg39mcs6tf4mo2x50vt
 title: Es6 Modules
 desc: ''
 updated: 1641407934998
 created: 1641407934998
 ---
+
 
 ### ES6 Modules
 

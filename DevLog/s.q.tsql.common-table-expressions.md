@@ -1,5 +1,5 @@
 ---
-id: bN8JeLWAfd5L0hZih17w3
+id: d8njr2chsv4x5mj3k8746la
 title: Common Table Expressions
 desc: ''
 updated: 1641412863950
@@ -7,6 +7,7 @@ created: 1641105063932
 stub: false
 isDir: false
 ---
+
 
 A `CTE` is a temporary result set that you can reference within another `SELECT`, [[s.q.tsql.dml.insert-into]], [[T-SQL UPDATE|s.q.tsql.dml.update]], or [[T-SQL DELETE|s.q.tsql.dml.delete]] statement.
 

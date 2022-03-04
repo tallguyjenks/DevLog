@@ -1,5 +1,5 @@
 ---
-id: KACrVg2ZlOE5OZX12Qg2L
+id: pagjkveerxrdf38nu4lb0bi
 title: Update
 desc: ''
 updated: 1641414254981
@@ -7,6 +7,7 @@ created: 1641105063939
 stub: false
 isDir: false
 ---
+
 
 `UPDATE` Allows us to update a set of data in a table that can be specified by the `WHERE` criteria.
 

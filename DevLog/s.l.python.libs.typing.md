@@ -1,5 +1,5 @@
 ---
-id: hvqCl6uFAgxBxq8823Otj
+id: pu6oqj5pld9iybahio08rqt
 title: Typing
 desc: ''
 updated: 1641427044064
@@ -7,6 +7,7 @@ created: 1641105063870
 stub: false
 isDir: false
 ---
+
 
 - To do a type annotation for items in a list (a vector basically) you can pass the type like `list[int]` but this can also be used to pass things like a list of int lists: `list[list[int]]`
 - But now in newer versions of python you can just use the built in types

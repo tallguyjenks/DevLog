@@ -1,10 +1,11 @@
 ---
-id: rCtVFWI5lbkYUhhW9ea44
+id: g69uajq2ydfkcg4fetjh0si
 title: Clear
 desc: ''
 updated: 1641376730487
 created: 1641376730487
 ---
+
 
 ### clear()
 

@@ -1,5 +1,5 @@
 ---
-id: nz6mHVZ49gqn98XzNarAS
+id: 67p5z8bklynbpggdgzcmh3e
 title: Jupyter
 desc: ''
 updated: 1641267185092
@@ -7,6 +7,7 @@ created: 1641105063856
 stub: false
 isDir: false
 ---
+
 
 - **Themes**
   - To get a custom theme (_gruvboxdark_) onto my jupyter notebook i used the tool [jupyter-themes](https://github.com/dunovank/jupyter-themes)

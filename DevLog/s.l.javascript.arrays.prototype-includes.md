@@ -1,5 +1,5 @@
 ---
-id: 2Ag7OCHAFuWPkKkROXxc2
+id: 6y2b4q8i69rm01jdv4nwad2
 title: Prototype Includes
 desc: ''
 updated: 1641406479183
@@ -7,6 +7,7 @@ created: 1641105063908
 stub: false
 isDir: false
 ---
+
 
 ## JavaScript Array.prototype.includes
 

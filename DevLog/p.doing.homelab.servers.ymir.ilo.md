@@ -1,10 +1,11 @@
 ---
-id: IC0OT4PM5edoNbD5cbCeh
+id: gw7c76n2740c9okzjzfkon2
 title: iLO
-desc: 'Integrated Lights Out'
+desc: Integrated Lights Out
 updated: 1645350622695
 created: 1645349901517
 ---
+
 
 ## Resources
 

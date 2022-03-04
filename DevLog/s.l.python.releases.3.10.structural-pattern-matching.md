@@ -1,10 +1,11 @@
 ---
-id: iLGtqqoIRpJFDA0RlLIvo
+id: h1o6bnntmou1v3zvhmv4bz3
 title: Structural Pattern Matching
 desc: ''
 updated: 1641423345597
 created: 1641423345597
 ---
+
 
 ## Structural Pattern Matching
 

@@ -1,10 +1,11 @@
 ---
-id: NKqQ47uFJRxfCTXmKAOYZ
+id: pxtjewc8e09yrcta3ukh4gd
 title: Dataframe
 desc: ''
 updated: 1641409958601
 created: 1641409958601
 ---
+
 
 ## Data Frame
 

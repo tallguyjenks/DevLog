@@ -1,8 +1,7 @@
 ---
-id: U4aEXBO2dIYRYAhGRQLfQ
+id: xe7nitu5r52lflw5kuby1ws
 title: T-SQL
 desc: ''
-updated: 1642056043094
+updated: 1646345244655
 created: 1641182165043
 ---
-

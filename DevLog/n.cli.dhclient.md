@@ -1,10 +1,11 @@
 ---
-id: OFX5JdXChUlEzYCSacYy8
+id: fevzxxg27ma0ps6q9mlavcm
 title: Dhclient
 desc: ''
 updated: 1644112025488
 created: 1644111959734
 ---
+
 
 Release all IP Addresses on a given interface on linux
 

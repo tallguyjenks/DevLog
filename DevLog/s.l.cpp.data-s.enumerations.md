@@ -1,5 +1,5 @@
 ---
-id: EzQSszPIxPBbotnVkYrd8
+id: m6oxfocaftztew61mpz68fd
 title: Enumerations
 desc: ''
 updated: 1641372931167
@@ -7,6 +7,7 @@ created: 1641105063891
 stub: false
 isDir: false
 ---
+
 
 enums are basically just numbers. In this instance 
 
