@@ -2,7 +2,7 @@
 id: b2k2n8pkov4wj5y8u0d4qnl
 title: Setup
 desc: ''
-updated: 1645389174744
+updated: 1646001945518
 created: 1643183976632
 ---
 
@@ -40,12 +40,12 @@ created: 1643183976632
 
 ## Post Install Configuration
 
-1. [[p.doing.homelab.proxmox.confirguration#updates-repository]]
+1. [[p.doing.homelab.services.proxmox.confirguration#updates-repository]]
 2. `apt-get install neovim ranger`
-3. [[p.doing.homelab.proxmox.confirguration#enable-iommu]]
-4. [[p.doing.homelab.proxmox.confirguration#make-proxmox-vlan-aware]]
-5. [[p.doing.homelab.proxmox.confirguration#setup-linux-bridge-for-virtual-machines-separate-from-management-layer]]
-   1. [[p.doing.homelab.proxmox.confirguration#make-network-bridge-for-virutal-machines]]
-6. [[p.doing.homelab.proxmox.confirguration#download-windows-virtio-drivers]]
-7. [[p.doing.homelab.proxmox.confirguration#setup-nfs-for-backups]]
-   1. [[p.doing.homelab.proxmox.confirguration#schedule-backups]]
+3. [[p.doing.homelab.services.proxmox.confirguration#enable-iommu]]
+4. [[p.doing.homelab.services.proxmox.confirguration#make-proxmox-vlan-aware]]
+5. [[p.doing.homelab.services.proxmox.confirguration#setup-linux-bridge-for-virtual-machines-separate-from-management-layer]]
+   1. [[p.doing.homelab.services.proxmox.confirguration#make-network-bridge-for-virtual-machines]]
+6. [[p.doing.homelab.services.proxmox.confirguration#download-windows-virtio-drivers]]
+7. [[p.doing.homelab.services.proxmox.confirguration#setup-nfs-for-backups]]
+   1. [[p.doing.homelab.services.proxmox.confirguration#schedule-backups]]
