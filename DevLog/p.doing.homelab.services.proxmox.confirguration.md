@@ -2,10 +2,9 @@
 id: ynijq10h9tuyqrjmzb2rte0
 title: Confirguration
 desc: ''
-updated: 1646010849545
+updated: 1646373894119
 created: 1643183994393
 ---
-
 
 ## Configuration
 
