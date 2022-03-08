@@ -2,7 +2,7 @@
 id: 87cn2mi5rcdz91bxal57wf2
 title: Resources
 desc: ''
-updated: 1642056016185
+updated: 1646695267229
 created: 1642056013613
 ---
 
@@ -14,4 +14,4 @@ created: 1642056013613
 - [getting sql server and databases setup on mac](https://database.guide/install-sql-server-2019-on-a-mac/)
 - [SQL Code Formatter](https://www.freeformatter.com/sql-formatter.html#ad-output)
 - [SQL injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/)
-
+- [Data Warehouse ETL Framework](https://etl-framework.massstreetuniversity.com/data-warehouse-etl-framework/)

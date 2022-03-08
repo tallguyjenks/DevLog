@@ -13,7 +13,7 @@ created: 1646340567277
 
 ## Related
 
-It appears that [[CTE's|s.q.tsql.common-table-expressions]] are the most efficient and fastest of the temporary result set options and even [[s.q.tsql.temp-tables]] are better than [[s.q.tsql.table-variables]]
+It appears that [[CTE's|s.q.tsql.dbos.common-table-expressions]] are the most efficient and fastest of the temporary result set options and even [[s.q.tsql.dbos.temp-tables]] are better than [[s.q.tsql.syntax.table-variables]]
 
 ## Notes
 
