@@ -2,11 +2,13 @@
 id: 1lpaxh3d5akybf5ql65q070
 title: Fafnir
 desc: Dell PowerEdge R720
-updated: 1646727229555
+updated: 1646737653962
 created: 1641018811979
 ---
 
 TODO add info on the hardware, ports, etc
+
+- [Manual](assets/pdfs/dell-poweredge-r720_owners-manual_en-us.pdf)
 
 ## Resources
 
