@@ -1,7 +1,7 @@
 ---
 id: 2rqyod9IPx7ixluls207i
 title: iDRAC
-desc: 'Integrated Dell Remote Access Controller'
+desc: Integrated Dell Remote Access Controller
 updated: 1646008334340
 created: 1646002838857
 ---

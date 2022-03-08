@@ -2,7 +2,7 @@
 id: 8uwug8f8zbnr2gzb163euk2
 title: TrueNAS
 desc: ''
-updated: 1646727221691
+updated: 1646727222054
 created: 1641324520480
 ---
 
@@ -10,7 +10,7 @@ TODO <https://youtu.be/psVNn-JVT9Q>
 
 ## Installation
 
-- View [[p.doing.homelab.servers.fafnir.idrac]] interface in firefox
+- View [[p.doing.homelab.servers.fafnir.hardware.idrac]] interface in firefox
   - Set console to be HTML5
 - Load .iso virtual media to the CD/ROM
 - `F11` to open UEFI manager
