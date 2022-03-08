@@ -1,6 +1,6 @@
 ---
 id: ynijq10h9tuyqrjmzb2rte0
-title: Confirguration
+title: Configuration
 desc: ''
 updated: 1646373894119
 created: 1643183994393
