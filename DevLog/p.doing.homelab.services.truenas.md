@@ -1,8 +1,8 @@
 ---
 id: 8uwug8f8zbnr2gzb163euk2
-title: True Nas
+title: TrueNAS
 desc: ''
-updated: 1641324529607
+updated: 1646726622478
 created: 1641324520480
 ---
 
