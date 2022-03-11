@@ -2,7 +2,7 @@
 id: pvln3vc79b9y2xs7yl4lfjj
 title: Data Warehouse Etl Framework
 desc: ''
-updated: 1646695354980
+updated: 1646959025725
 created: 1646680597557
 ---
 

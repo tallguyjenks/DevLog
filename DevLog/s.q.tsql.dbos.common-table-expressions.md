@@ -2,7 +2,7 @@
 id: d8njr2chsv4x5mj3k8746la
 title: Common Table Expressions
 desc: ''
-updated: 1641412863950
+updated: 1646945624879
 created: 1641105063932
 stub: false
 isDir: false
@@ -22,7 +22,7 @@ AS
 	WHERE Age > 55
 	GROUP BY Age
 )
-SELET *
+SELECT *
 FROM My_Table
 ORDER BY Age
 GO
