@@ -2,7 +2,7 @@
 id: vikxgpbxwdtt9aid35zxupa
 title: Networking
 desc: ''
-updated: 2022-03-04 1352
+updated: 2022-03-12 1120
 created: 2021-11-15 1320
 ---
 
@@ -30,6 +30,7 @@ created: 2021-11-15 1320
 - ![guest network](/assets/images/2022-01-08-12-42-25.png)
 - TODO [free zapier like integration that can be run locally in a docker container](https://n8n.io/)
 - TODO run in a windows container or something: <https://www.tripplite.com/products/power-alert-local>
+- TODO [calibre book server](https://manual.calibre-ebook.com/server.html)
 
 ---
 
