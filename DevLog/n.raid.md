@@ -2,14 +2,13 @@
 id: mep0uxfj8cg7vokezmzxgf4
 title: Raid
 desc: ''
-updated: 1647124729975
+updated: 1647125332973
 created: 1643181270670
 ---
 
 
 TODO flesh out these notes
 
-<https://www.acronis.com/en-us/articles/whats-raid10-and-why-should-i-use-it/>
 <https://en.wikipedia.org/wiki/Standard_RAID_levels>
 <https://www.techrepublic.com/article/understand-when-raid-60-is-overkill/>
 <https://www.ionos.com/digitalguide/server/security/raid-6/>
@@ -34,19 +33,25 @@ TODO flesh out these notes
 ### RAID 5
 
 - When a drive fails
-  - it needs to read everything on all the remaining drives to rebuild the new, replaced disk (distributing the load unlike [RAID 10](#raid-10))
+  - it needs to read everything on all the remaining drives to rebuild the new, replaced disk (A heavy load for the surviving disk and potential failure point of the 2nd disk)
 
 ### RAID 6
 
-<++>
+- Combines four or more hard drives into a single logical drive.
+- Often referred to as “RAID 5 expansion”
+- Striping (All data is divided into blocks and distributed evenly to the participating hard disks.)
+- Parity (always saves two sets of parity information. In that way, associated data can be restored if one or two disks fail.)
+- Storage Volume ((Number of hard drives - 2) x space of the smallest hard drive)
+  - 
 
 ### RAID 10
 
 - ![RAID 0, 1, and 10 Example](/assets/images/2022-03-12-14-20-16.png)
-- Combination of [RAID 0](#raid-0) and [RAID 1](#raid-1)
+- Combination of [[RAID 0|n.raid#raid-0]] and [[RAID 1|n.raid#raid-1]]
 - Requires at least 4 drives
+  - Drives should be identical (The disk geometry (number of heads, cylinders, etc.) is critical and it is strongly recommended NOT to use dissimilar disks.)
 - Protects you from a single drive failure
-  - reads the surviving mirror and stores the copy to the new drive you replaced. (A heavy load for the surviving disk and potential failure point of the 2nd disk)
+  - reads the surviving mirror and stores the copy to the new drive you replaced. (Not nearly as taxing of an operation as [[RAID 5|n.raid#raid-5]])
 - cuts your usable disk space in half 4x2TB Disks == 4TB total storage
 
 ### RAID 50
