@@ -2,7 +2,7 @@
 id: mep0uxfj8cg7vokezmzxgf4
 title: Raid
 desc: ''
-updated: 1647125412493
+updated: 1647126546000
 created: 1643181270670
 ---
 
@@ -22,18 +22,30 @@ TODO flesh out these notes
 
 ### RAID 0
 
-- ![RAID 0, 1, and 10 Example](/assets/images/2022-03-12-14-20-16.png)
+- ![RAID 0](/assets/images/2022-03-12-15-04-25.png)
 - Striping (Disk A and B contain data split between them that together forms the whole)
 
 ### RAID 1
 
-- ![RAID 0, 1, and 10 Example](/assets/images/2022-03-12-14-20-16.png)
+- ![RAID 1](/assets/images/2022-03-12-15-02-23.png)
 - Mirroring (Disk A and B are exact copies of each other)
+
+### RAID 10
+
+- ![RAID 0, 1, and 10 Example](/assets/images/2022-03-12-14-20-16.png)
+- Combination of [[RAID 0|n.raid#raid-0]] and [[RAID 1|n.raid#raid-1]]
+- Requires at least 4 drives
+  - Drives should be identical (The disk geometry (number of heads, cylinders, etc.) is critical and it is strongly recommended NOT to use dissimilar disks.)
+- Protects you from a single drive failure
+  - reads the surviving mirror and stores the copy to the new drive you replaced. (Not nearly as taxing of an operation as [[RAID 5|n.raid#raid-5]])
+- cuts your usable disk space in half 4x2TB Disks == 4TB total storage
 
 ### RAID 5
 
 - When a drive fails
   - it needs to read everything on all the remaining drives to rebuild the new, replaced disk (A heavy load for the surviving disk and potential failure point of the 2nd disk)
+- Storage Volume ((Number of hard drives - 1) x storage capacity of the smallest hard drive)
+  - 
 
 ### RAID 6
 
@@ -45,17 +57,8 @@ TODO flesh out these notes
 - Storage Volume ((Number of hard drives - 2) x space of the smallest hard drive)
   - For example, with four 1GB hard disks, only 50% of their potential memory would be available to store user data. However, as the number of disks increases, this relationship between capacity and parity improves.
 - Advantage over [[RAID 5|n.raid#raid-5]]
-  - 
-
-### RAID 10
-
-- ![RAID 0, 1, and 10 Example](/assets/images/2022-03-12-14-20-16.png)
-- Combination of [[RAID 0|n.raid#raid-0]] and [[RAID 1|n.raid#raid-1]]
-- Requires at least 4 drives
-  - Drives should be identical (The disk geometry (number of heads, cylinders, etc.) is critical and it is strongly recommended NOT to use dissimilar disks.)
-- Protects you from a single drive failure
-  - reads the surviving mirror and stores the copy to the new drive you replaced. (Not nearly as taxing of an operation as [[RAID 5|n.raid#raid-5]])
-- cuts your usable disk space in half 4x2TB Disks == 4TB total storage
+  - parity information to recover lost data is saved in duplicate. Duplicated parity data is a more efficient way of creating redundancy, and also ensures higher reliability.
+  - This is less taxing on the remaining drives compared to ordinary 
 
 ### RAID 50
 
