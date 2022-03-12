@@ -2,7 +2,7 @@
 id: mep0uxfj8cg7vokezmzxgf4
 title: Raid
 desc: ''
-updated: 1647125332973
+updated: 1647125412493
 created: 1643181270670
 ---
 
@@ -37,11 +37,14 @@ TODO flesh out these notes
 
 ### RAID 6
 
+- ![RAID 6](/assets/images/2022-03-12-14-49-20.png)
 - Combines four or more hard drives into a single logical drive.
 - Often referred to as “RAID 5 expansion”
 - Striping (All data is divided into blocks and distributed evenly to the participating hard disks.)
 - Parity (always saves two sets of parity information. In that way, associated data can be restored if one or two disks fail.)
 - Storage Volume ((Number of hard drives - 2) x space of the smallest hard drive)
+  - For example, with four 1GB hard disks, only 50% of their potential memory would be available to store user data. However, as the number of disks increases, this relationship between capacity and parity improves.
+- Advantage over [[RAID 5|n.raid#raid-5]]
   - 
 
 ### RAID 10
