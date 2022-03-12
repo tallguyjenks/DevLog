@@ -2,7 +2,7 @@
 id: mep0uxfj8cg7vokezmzxgf4
 title: Raid
 desc: ''
-updated: 1647126546000
+updated: 1647126637535
 created: 1643181270670
 ---
 
@@ -42,10 +42,13 @@ TODO flesh out these notes
 
 ### RAID 5
 
+- ![RAID 5](/assets/images/2022-03-12-15-10-33.png)
 - When a drive fails
   - it needs to read everything on all the remaining drives to rebuild the new, replaced disk (A heavy load for the surviving disk and potential failure point of the 2nd disk)
 - Storage Volume ((Number of hard drives - 1) x storage capacity of the smallest hard drive)
-  - 
+  - 3x1TB drives == 2TB storage, 3rd disk is for parity data
+- Only at risk for failure if at least 2 drives fail simultaneously
+  - That’s why, typically, an odd number of data carriers, i.e., three, five, seven, etc., is combined.
 
 ### RAID 6
 
