@@ -2,7 +2,7 @@
 id: mep0uxfj8cg7vokezmzxgf4
 title: Raid
 desc: ''
-updated: 1647123987750
+updated: 1647124729975
 created: 1643181270670
 ---
 
@@ -33,7 +33,8 @@ TODO flesh out these notes
 
 ### RAID 5
 
-- 
+- When a drive fails
+  - it needs to read everything on all the remaining drives to rebuild the new, replaced disk (distributing the load unlike [RAID 10](#raid-10))
 
 ### RAID 6
 
