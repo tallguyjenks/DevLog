@@ -2,7 +2,7 @@
 id: 6gb2cbkzu03iilsh92668n6
 title: Resources
 desc: ''
-updated: 1646695267229
+updated: 1647147265383
 created: 1642056013613
 ---
 
@@ -15,3 +15,4 @@ created: 1642056013613
 - [SQL Code Formatter](https://www.freeformatter.com/sql-formatter.html#ad-output)
 - [SQL injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/)
 - [Data Warehouse ETL Framework](https://etl-framework.massstreetuniversity.com/data-warehouse-etl-framework/)
+- [Data Models](http://www.databaseanswers.org/data_models/)

@@ -30,7 +30,7 @@ traitIds:
 [[n.protocol]]
 [[n.protocol.tcp]]
 [[n.protocol.udp]]
-[[p.doing.dendron.templates.variables]]
+[[p.done.dendron.templates.variables]]
 [[s.q.postgres.data-t]]
 [[s.q.postgres.data-t.numeric.serial]]
 [[s.q.postgres.funcs]]
