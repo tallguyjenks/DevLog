@@ -2,22 +2,22 @@
 id: 8uwug8f8zbnr2gzb163euk2
 title: TrueNAS
 desc: ''
-updated: 1646727222054
+updated: 1647141936823
 created: 1641324520480
 ---
 
-TODO <https://youtu.be/psVNn-JVT9Q>
-
 ## Installation
 
-- View [[p.doing.homelab.servers.fafnir.hardware.idrac]] interface in firefox
-  - Set console to be HTML5
-- Load .iso virtual media to the CD/ROM
-- `F11` to open UEFI manager
-- change boot order and select boot device
-  - select `Virtual Media Optical Disk`
-- Install with the minimal prompts to the 2 mirrored SSD's
-- Reboot
-- Change the boot order to now boot from the SSD's first
-- Boot into TrueNAS
-- Begin [[p.doing.homelab.services.truenas.configuration]]
+Helpful Resource: <https://youtu.be/psVNn-JVT9Q>
+
+1. View [[p.doing.homelab.servers.fafnir.hardware.idrac]] interface in firefox
+   1. Set console to be HTML5
+2. Load .iso virtual media to the CD/ROM
+3. `F11` to open UEFI manager
+4. change boot order and select boot device
+   1. select `Virtual Media Optical Disk`
+5. Install with the minimal prompts to the 2 mirrored SSD's
+6. Reboot
+7. Change the boot order to now boot from the SSD's first
+8. Boot into TrueNAS
+9. Begin [[p.doing.homelab.services.truenas.configuration]]
