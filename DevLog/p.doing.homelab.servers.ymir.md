@@ -2,7 +2,7 @@
 id: 5zg8w11x4eajqsrt1acqo3g
 title: Ymir
 desc: 'HP Prolient DL360p G8'
-updated: 1647136949944
+updated: 1647137541550
 created: 1641018533079
 ---
 
@@ -13,6 +13,7 @@ created: 1641018533079
 ## Hardware
 
 - [Information on iLO][1]
+- [TO BUY for more memory some day](https://www.ebay.com/itm/222462491975?hash=item33cbcc3d47:g:Ks4AAOSwNZRfLGSf)
 
 ## Services
 
