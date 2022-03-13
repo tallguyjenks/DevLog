@@ -2,16 +2,9 @@
 id: mep0uxfj8cg7vokezmzxgf4
 title: Raid
 desc: ''
-updated: 1647131399113
+updated: 1647131583708
 created: 1643181270670
 ---
-
-
-TODO flesh out these notes
-
-<https://en.wikipedia.org/wiki/Standard_RAID_levels>
-<https://www.techrepublic.com/article/understand-when-raid-60-is-overkill/>
-<https://www.ionos.com/digitalguide/server/security/raid-6/>
 
 ## RAID
 
@@ -39,6 +32,13 @@ TODO flesh out these notes
 - Protects you from a single drive failure
   - reads the surviving mirror and stores the copy to the new drive you replaced. (Not nearly as taxing of an operation as [[RAID 5|n.raid#raid-5]])
 - cuts your usable disk space in half 4x2TB Disks == 4TB total storage
+
+### RAID 4
+
+- ![RAID 4](/assets/images/2022-03-12-16-31-20.png)
+- consists of block-level striping with a dedicated parity disk.
+- As a result of its layout, RAID 4 provides good performance of random reads
+- while the performance of random writes is low due to the need to write all parity data to a single disk
 
 ### RAID 5
 
@@ -69,3 +69,9 @@ TODO flesh out these notes
 - Minimum of 6 drives
 
 ### RAID 60
+
+- ![RAID 60](/assets/images/2022-03-12-16-30-23.png)
+
+## Storage via ZFS
+
+See [[n.zfs]]
