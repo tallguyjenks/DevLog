@@ -2,7 +2,7 @@
 id: 1wiwbdlnty47tsyagfqnccc
 title: Tools
 desc: ''
-updated: 1647149631444
+updated: 1647150033428
 created: 1641105063928
 stub: false
 isDir: false
@@ -45,3 +45,7 @@ isDir: false
 
 - [[visualize call stacks|s.l.python.libs.code2flow]]
 - [[visualize project dependencies|s.l.python.libs.pydeps]]
+
+## Project Oversight
+
+- [[cli.cmd.git.tools.github.tools.deep-source]]

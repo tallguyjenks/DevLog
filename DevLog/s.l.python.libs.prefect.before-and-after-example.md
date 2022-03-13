@@ -2,7 +2,7 @@
 id: ad6l5tf0fj06bfl5sdi9e0p
 title: Before and after Example
 desc: ''
-updated: 1641202817827
+updated: 1647150103432
 created: 1641202817827
 ---
 
@@ -20,7 +20,7 @@ def extract() -> dict:
 
   url = "https://api.openweathermap.org/data/2.5/weather"
 
-  # TODO: Use a real API key. You can get a free one from https://openweathermap.org/
+  #  Use a real API key. You can get a free one from https://openweathermap.org/
   response = requests.request(
 	  "GET", url, params={"q": "Boston", "appid": "e5ecbcc49e3debeead24d0fe012fb46e"}
   )

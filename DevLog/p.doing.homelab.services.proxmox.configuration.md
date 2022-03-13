@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1646373894119
+updated: 1647150080616
 created: 1643183994393
 ---
 
@@ -52,7 +52,7 @@ This will update `/etc/network/interfaces` with new settings and where it says `
 
 ### Setup NFS for backups
 
-TODO This setup
+ACTIVE This setup
 
 0. You need to have the [[terms.nfs]] share already setup so [[p.doing.homelab.servers.fafnir]] needs to already be setup and mounted to the proxmox instance?
 1. `Datacenter node "> storage > add > nfs`
