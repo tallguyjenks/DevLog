@@ -1,8 +1,8 @@
 ---
 id: blrmrhzhmdk0mqzgvahb919
-title: NFS
-desc: Network File System
-updated: 1645382187628
+title: Network File System
+desc: ''
+updated: 1647146387913
 created: 1645382167676
 ---
 

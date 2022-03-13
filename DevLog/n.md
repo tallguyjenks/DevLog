@@ -1,12 +1,10 @@
 ---
 id: vikxgpbxwdtt9aid35zxupa
 title: Networking
-desc: ''s
-updated: 2022-03-12 1120
+desc: ''
+updated: 2022-03-12 2040
 created: 2021-11-15 1320
 ---
-
-
 ## Resources
 
 ---
