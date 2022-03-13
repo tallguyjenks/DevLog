@@ -2,7 +2,7 @@
 id: mep0uxfj8cg7vokezmzxgf4
 title: Raid
 desc: ''
-updated: 1647126637535
+updated: 1647131399113
 created: 1643181270670
 ---
 
@@ -61,10 +61,11 @@ TODO flesh out these notes
   - For example, with four 1GB hard disks, only 50% of their potential memory would be available to store user data. However, as the number of disks increases, this relationship between capacity and parity improves.
 - Advantage over [[RAID 5|n.raid#raid-5]]
   - parity information to recover lost data is saved in duplicate. Duplicated parity data is a more efficient way of creating redundancy, and also ensures higher reliability.
-  - This is less taxing on the remaining drives compared to ordinary 
+  - This is less taxing on the remaining drives compared to ordinary
 
 ### RAID 50
 
-<++>
+- ![RAID 50](/assets/images/2022-03-12-16-28-30.png)
+- Minimum of 6 drives
 
 ### RAID 60
