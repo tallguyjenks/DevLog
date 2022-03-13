@@ -1,7 +1,7 @@
 ---
-id: 5zg8w11x4eajqsrt1acqo3g
+id: qvhbcchue9f94i895osdpbf
 title: Ymir
-desc: 'HP Prolient DL360p G8'
+desc: HP Prolient DL360p G8
 updated: 1647137541550
 created: 1641018533079
 ---

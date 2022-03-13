@@ -1,5 +1,5 @@
 ---
-id: nkaz49xxsg73i9meefuhwiw
+id: 22wb79omjpvgam24hsc0qpv
 title: Is Integer
 desc: ''
 updated: 1641266303313

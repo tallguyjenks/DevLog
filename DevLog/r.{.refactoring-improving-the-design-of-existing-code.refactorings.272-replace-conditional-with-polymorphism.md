@@ -1,5 +1,5 @@
 ---
-id: i8yi6xnabvncve1wouptexc
+id: su0vmv0rlvwjrxyogt7xgue
 title: 272 Replace Conditional with Polymorphism
 desc: ''
 updated: 1642626832366

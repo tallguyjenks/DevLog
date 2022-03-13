@@ -1,5 +1,5 @@
 ---
-id: a2x5hrl3o2pgp808iakm5m7
+id: 3bnsk0svcc9gcbqjipz4nv5
 title: Get Common Paths
 desc: ''
 updated: 1641426324854

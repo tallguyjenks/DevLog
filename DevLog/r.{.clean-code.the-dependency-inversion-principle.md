@@ -1,5 +1,5 @@
 ---
-id: o8i1ki575a4ggt5sgrxp1si
+id: t1ef0zbrn8nkt0cxbngenwf
 title: The Dependency Inversion Principle
 desc: ''
 updated: 1641268182255

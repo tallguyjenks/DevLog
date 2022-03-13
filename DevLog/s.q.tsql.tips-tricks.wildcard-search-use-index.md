@@ -1,5 +1,5 @@
 ---
-id: au2hjy17jp2ott8hbwr6ucf
+id: h6vipx3h5dlzbww5nlbtbt2
 title: Wildcard Search Use Index
 desc: ''
 updated: 1643060222583

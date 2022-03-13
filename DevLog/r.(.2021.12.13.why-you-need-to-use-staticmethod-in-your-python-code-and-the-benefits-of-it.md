@@ -1,5 +1,5 @@
 ---
-id: gi90j6d0dbmyiaz4pxdmppu
+id: nx87qf5vrg014kivyb2k5qv
 title: Why You Need to Use Staticmethod in Your Python Code and the Benefits of It
 desc: ''
 updated: 1641271174281

@@ -1,5 +1,5 @@
 ---
-id: 25j6ace09d4blyj3j4t3vem
+id: h16u9mmz8ycsfex7m0gb3nb
 title: Strcopy
 desc: ''
 updated: 1641373647626

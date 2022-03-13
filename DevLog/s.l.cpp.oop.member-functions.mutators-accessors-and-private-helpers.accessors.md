@@ -1,5 +1,5 @@
 ---
-id: 9w36wpa7lp3uzpexpbqfvy6
+id: vsvj0uiwymeq8rtc7b5z6mn
 title: Accessors
 desc: ''
 updated: 1641372402962

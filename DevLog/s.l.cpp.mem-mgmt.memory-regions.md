@@ -1,5 +1,5 @@
 ---
-id: d5u6bvrm0j7htqahba4g52m
+id: rn7mpnchks5iocdejgeaqzw
 title: Memory Regions
 desc: ''
 updated: 1641377185284

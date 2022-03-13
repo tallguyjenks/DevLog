@@ -1,5 +1,5 @@
 ---
-id: crzprzxwmzlnegirso22l2l
+id: ceszwn6ix85el7c951slbag
 title: Fstrings
 desc: ''
 updated: 1641421091010

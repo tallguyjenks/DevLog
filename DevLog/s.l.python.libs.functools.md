@@ -1,5 +1,5 @@
 ---
-id: ovn9uieo7nhasd11tevm0ex
+id: 1diy2pbnwi7mbwpjub9gens
 title: Functools
 desc: ''
 updated: 1641426101926

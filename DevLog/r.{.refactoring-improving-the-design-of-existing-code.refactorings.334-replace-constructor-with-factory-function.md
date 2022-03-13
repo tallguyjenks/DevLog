@@ -1,5 +1,5 @@
 ---
-id: 4ddgcy0glcxp2991ic466yh
+id: nmqnpgdeae0kizb5xtyrnsg
 title: 334 Replace Constructor with Factory Function
 desc: ''
 updated: 1641268550142

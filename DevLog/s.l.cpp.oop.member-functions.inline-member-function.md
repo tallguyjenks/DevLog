@@ -1,5 +1,5 @@
 ---
-id: lmfn0aby61x42y71w3fnndi
+id: 3uprbf9dmgtvb8lf6mujjl4
 title: Inline Member Function
 desc: ''
 updated: 1641372338408

@@ -1,5 +1,5 @@
 ---
-id: i6horczm4p3s7edwmixhiwj
+id: fmbpyabn5iwy8fygqy7b70g
 title: Object Entries
 desc: ''
 updated: 1641407998086

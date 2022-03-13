@@ -1,5 +1,5 @@
 ---
-id: zm4chq4sf5gxjkiwnfw654i
+id: a4ia69swnsbs7viykdj1bhh
 title: Make a Discord Bot
 desc: ''
 updated: 1641203167778

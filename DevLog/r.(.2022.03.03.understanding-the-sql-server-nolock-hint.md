@@ -1,5 +1,5 @@
 ---
-id: eqrpm85h0vgbsycfgfdzasx
+id: g23lf95gbl69dw0im383iqn
 title: Understanding the Sql Server Nolock Hint
 desc: ''
 updated: 1646356296638

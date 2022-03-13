@@ -1,5 +1,5 @@
 ---
-id: wcgcjwi039t7qj7o4opppt6
+id: 84pi5u7op8dg5x5x008k304
 title: DNS
 desc: ''
 updated: 1641886616617

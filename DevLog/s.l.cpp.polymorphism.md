@@ -1,5 +1,5 @@
 ---
-id: 2cngbnz0bdth3bmmmq0xvox
+id: nyazw5tr3g14gl5sfztv4et
 title: Polymorphism
 desc: ''
 updated: 1641377338567

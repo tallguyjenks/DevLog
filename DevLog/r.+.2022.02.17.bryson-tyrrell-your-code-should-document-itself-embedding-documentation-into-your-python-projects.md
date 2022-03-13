@@ -1,5 +1,5 @@
 ---
-id: up7oa4bagru2oeufoy79kwr
+id: vqkj3y92lqea10ce3vcyedd
 title: >-
   Bryson Tyrrell Your Code Should Document Itself Embedding Documentation into
   Your Python Projects

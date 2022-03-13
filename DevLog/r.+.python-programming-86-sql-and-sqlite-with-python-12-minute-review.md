@@ -1,5 +1,5 @@
 ---
-id: sod06pamxhhcnyf70pfgsub
+id: orzoatxxjf7sh5r9hab7qbg
 title: Python Programming 86 Sql and Sqlite with Python 12 Minute Review
 desc: ''
 updated: 1641270849778

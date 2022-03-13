@@ -1,8 +1,8 @@
 ---
-id: vikxgpbxwdtt9aid35zxupa
+id: sh4851li2rsrhx47wwsirgv
 title: Networking
 desc: ''
-updated: 2022-03-12 2040
+updated: 2022-03-12 2045
 created: 2021-11-15 1320
 ---
 ## Resources

@@ -1,5 +1,5 @@
 ---
-id: xcmtohbvbjlqhlmefonh4la
+id: n6rt9rei6k5x4iawxsxlsrk
 title: Building a Custom Context Manager in Python a Closer Look
 desc: ''
 updated: 1644031807247

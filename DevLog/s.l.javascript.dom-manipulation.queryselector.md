@@ -1,5 +1,5 @@
 ---
-id: wa39lfdz61dpuezfwt2r0rs
+id: zbxewv0x2i3t4pl0orb60ck
 title: Queryselector
 desc: ''
 updated: 1641406859866

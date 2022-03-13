@@ -1,5 +1,5 @@
 ---
-id: 7fgbw41hfk3f9i58w6cal7e
+id: wux1tiwgp2uvluq2mz3knqy
 title: Data Operators
 desc: ''
 updated: 1641409910220

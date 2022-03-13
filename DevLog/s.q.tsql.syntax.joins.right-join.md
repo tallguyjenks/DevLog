@@ -1,5 +1,5 @@
 ---
-id: eimk2kjqs2eoemll4kuju6v
+id: govd3fftr6lwej8k63rujs7
 title: Right Join
 desc: ''
 updated: 1641413910982

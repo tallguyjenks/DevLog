@@ -1,5 +1,5 @@
 ---
-id: z1nqv8dpytn6hyperi6evnq
+id: h6e7oj3no3lfn5hy6bwc0x7
 title: Callable
 desc: ''
 updated: 1641427001866

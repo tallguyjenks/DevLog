@@ -1,5 +1,5 @@
 ---
-id: vtta2lid4vm43b0emgluz6n
+id: vuv0dtzu9tr3iyrnolz8t3i
 title: Operators
 desc: ''
 updated: 1641377310182

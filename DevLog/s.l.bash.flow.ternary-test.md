@@ -1,5 +1,5 @@
 ---
-id: c5xvdugh56gt0whr4qdzy6b
+id: 1prqx2gxhevatzqj9e1cqyj
 title: Ternary Test
 desc: ''
 updated: 1641429007797

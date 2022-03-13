@@ -1,6 +1,9 @@
 ---
+id: ky2wyju62g3gjhhj4fdqnxj
+title: Vim
+desc: ''
+updated: 2022-03-12 2045
 created: 2022-03-03 1810
-updated: 2022-03-03 1811
 ---
 
 ---

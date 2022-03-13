@@ -1,5 +1,5 @@
 ---
-id: citim2gkwzkqrjoqujwxocl
+id: y82hlp9lvqnsv8p6tru1swv
 title: Beautiful Python Refactoring
 desc: ''
 updated: 1642625795145

@@ -1,5 +1,5 @@
 ---
-id: rpgo0oxe0enkay7yg7ya7ja
+id: ahs5n2rskoyw7pwbti5gm3v
 title: Left Join
 desc: ''
 updated: 1641413337735

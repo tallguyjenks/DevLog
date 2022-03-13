@@ -1,5 +1,5 @@
 ---
-id: 3nnlf94owqbp3pe281dlfd5
+id: n0a82fzdfgiuwa53iosa9j8
 title: Extraction before Getline
 desc: ''
 updated: 1641373103609

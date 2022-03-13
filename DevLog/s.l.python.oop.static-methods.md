@@ -1,5 +1,5 @@
 ---
-id: upz266fdw6wb1twcuxyfcpc
+id: kq86spwh06vaw720oex86pj
 title: Static Methods
 desc: ''
 updated: 1641422823341

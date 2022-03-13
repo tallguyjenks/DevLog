@@ -1,5 +1,5 @@
 ---
-id: xy4g861evh7louvdcjmth57
+id: stwam2b1x01mnxxu6jmbawo
 title: T Sql Show Index Statistics
 desc: ''
 updated: 1641409763912

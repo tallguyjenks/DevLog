@@ -1,5 +1,5 @@
 ---
-id: inilugdemsa0ynx63823j3h
+id: idxgsinj0mmgvp8tvhp0edt
 title: Rest Parameters
 desc: ''
 updated: 1641407082515

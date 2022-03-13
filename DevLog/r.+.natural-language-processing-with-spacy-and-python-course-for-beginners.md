@@ -1,5 +1,5 @@
 ---
-id: vztt41e922u8yln8xar8uqj
+id: rvk6ns5lqus579bavujbhyl
 title: Natural Language Processing with Spacy and Python Course for Beginners
 desc: ''
 updated: 1641270783050

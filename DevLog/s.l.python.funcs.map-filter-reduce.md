@@ -1,5 +1,5 @@
 ---
-id: t354ppyvkwqxlzgnnebx7rd
+id: 6ulrwyab24twhl850kdbzeu
 title: Map Filter Reduce
 desc: ''
 updated: 1641422544654

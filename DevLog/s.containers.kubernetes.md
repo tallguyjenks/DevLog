@@ -1,5 +1,5 @@
 ---
-id: 9ximomlxtycykv7jv5ieh2s
+id: 9eecnd7aauqxyxgwrk6l8ne
 title: Kubernetes
 desc: ''
 updated: 1643308150255

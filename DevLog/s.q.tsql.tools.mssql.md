@@ -1,8 +1,8 @@
 ---
-id: qb9psummopj8h9hzltw85tn
-title: Mssql
+id: j4ttcbke1h3q31rud4dwzke
+title: MSSQL
 desc: ''
-updated: 1647145789246
+updated: 1647146539860
 created: 1647145568140
 ---
 

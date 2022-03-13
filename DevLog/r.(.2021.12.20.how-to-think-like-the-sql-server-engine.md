@@ -1,5 +1,5 @@
 ---
-id: j1y8qh5h73zxbe525ciet6h
+id: adxz02oyahul862n5n4vbc6
 title: How to Think like the Sql Server Engine
 desc: ''
 updated: 1641271360986

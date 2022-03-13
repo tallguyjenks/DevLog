@@ -1,5 +1,5 @@
 ---
-id: 7uqgtfvksjjtdysb49dzfpq
+id: pbwv5sxmth7ucuxnqyvmf6n
 title: 4 anti Patterns in Python and How to Avoid Them
 desc: ''
 updated: 1641269791000

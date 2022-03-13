@@ -1,5 +1,5 @@
 ---
-id: j1jli0nk37yd7k83xmcocqx
+id: ckokw5p5zsa3t92qh013z0c
 title: Type Hints
 desc: ''
 updated: 1641423265974

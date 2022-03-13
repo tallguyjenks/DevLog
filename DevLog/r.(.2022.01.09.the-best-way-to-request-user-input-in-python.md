@@ -1,5 +1,5 @@
 ---
-id: 1o1q2ey2uhdtyor1om6g57c
+id: 65rmfa6tjlcdtb6pv3vu3hp
 title: The Best Way to Request User Input in Python
 desc: ''
 updated: 1641801161060

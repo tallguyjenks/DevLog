@@ -1,5 +1,5 @@
 ---
-id: y1iscydeqbrauzuoxcyzugu
+id: i7uekikjizoq3usrxmxaem4
 title: Reduce Your Python Code Complexity with This Simple Trick
 desc: ''
 updated: 1641269336241

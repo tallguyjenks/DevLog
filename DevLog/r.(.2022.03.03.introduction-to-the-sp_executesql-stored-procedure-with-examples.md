@@ -1,5 +1,5 @@
 ---
-id: 1nodiv6joln5c3gzpa0gy2s
+id: ocud51rffi6p77kkp4fhe9q
 title: Introduction to the Sp_executesql Stored Procedure with Examples
 desc: ''
 updated: 1646348642643

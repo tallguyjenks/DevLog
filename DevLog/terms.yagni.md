@@ -1,5 +1,5 @@
 ---
-id: zcvoki11zh5rqjl7smbiads
+id: csyvqnelv1ozx12f9w6zg2o
 title: Yagni
 desc: ''
 updated: 1642631921997

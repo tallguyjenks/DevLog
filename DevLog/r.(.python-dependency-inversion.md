@@ -1,5 +1,5 @@
 ---
-id: lhho2yva780xfcnzse5hhet
+id: 5qo2wpbyzf4y91i997xxxwd
 title: Python Dependency Inversion
 desc: ''
 updated: 1641270268570

@@ -1,5 +1,5 @@
 ---
-id: lcihbf2c3umhxj06y00vhr1
+id: 1lljdxf5o98bzy1984ykq9b
 title: Template Literals
 desc: ''
 updated: 1641408102014

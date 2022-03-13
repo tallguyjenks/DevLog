@@ -1,5 +1,5 @@
 ---
-id: e9ek28fwcby9le0tz25tdbh
+id: yhcd8xzriuqas724an5usp5
 title: Pipe Stdout and Stderr to Separate Commands
 desc: ''
 updated: 1647045846433

@@ -1,5 +1,5 @@
 ---
-id: smohlrnzglslhegkbo7xua0
+id: gfb8u32ouilge9snic5mfog
 title: Pandas Tricks I Wish I Knew Earlier
 desc: ''
 updated: 1641454240080

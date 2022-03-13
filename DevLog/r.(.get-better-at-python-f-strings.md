@@ -1,5 +1,5 @@
 ---
-id: u70jd293zx26owxbnl9m72g
+id: aubva9eoqez1vez1jk3tubo
 title: Get Better at Python F Strings
 desc: ''
 updated: 1641456437252

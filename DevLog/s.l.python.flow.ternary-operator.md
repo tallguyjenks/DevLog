@@ -1,5 +1,5 @@
 ---
-id: z3fia6epa21i1oet3udktdu
+id: x8jn2htcxpsj58bxl2mq1bp
 title: Ternary Operator
 desc: ''
 updated: 1641422457261

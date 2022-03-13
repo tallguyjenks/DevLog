@@ -1,5 +1,5 @@
 ---
-id: sorl23tfcflmdz3d77wf19k
+id: poy9ie6ovtc4qlryfqh6jgt
 title: Arrow Functions
 desc: ''
 updated: 1641406505691

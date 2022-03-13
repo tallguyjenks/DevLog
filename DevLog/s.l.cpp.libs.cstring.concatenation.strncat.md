@@ -1,5 +1,5 @@
 ---
-id: 8a04j66hlewd8e6b151gydz
+id: 6xn7x6i94riocpmh1djlj4x
 title: Strncat
 desc: ''
 updated: 1641373707261

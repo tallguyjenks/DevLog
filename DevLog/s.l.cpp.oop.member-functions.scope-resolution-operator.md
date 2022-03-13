@@ -1,5 +1,5 @@
 ---
-id: u5n3dp9d8p8kxfmaw7ad9jk
+id: krcif72auwtgcdn00x5opzn
 title: Scope Resolution Operator
 desc: ''
 updated: 1641372313192

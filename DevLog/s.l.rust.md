@@ -1,5 +1,5 @@
 ---
-id: qhk8x64x00qzw0vqvztw7ep
+id: ygxq3639d4hx58yerem4chm
 title: Rust
 desc: ''
 updated: 1641113382638

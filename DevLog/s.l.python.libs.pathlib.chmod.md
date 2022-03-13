@@ -1,5 +1,5 @@
 ---
-id: gvje8rw4u5bvepv9zv39h62
+id: q7whr22rn9uvqodw0trmqie
 title: Chmod
 desc: ''
 updated: 1641426424303

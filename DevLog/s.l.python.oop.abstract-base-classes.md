@@ -1,5 +1,5 @@
 ---
-id: bme9n8j15k2q3eb9tm2cpyt
+id: v7i96kp105u0du2q9tz97ta
 title: Abstract Base Classes
 desc: ''
 updated: 1641416391891

@@ -1,5 +1,5 @@
 ---
-id: 7oq35e7p9o5hou4ahcmgc66
+id: ekcwr1uissnvgfzdbb3qla3
 title: Multi List Iteration with Zip
 desc: ''
 updated: 1641423146207

@@ -1,5 +1,5 @@
 ---
-id: wc2sik3tqks8r63rhetgob1
+id: euw0kmjohpu0kt1xr17ibrb
 title: Prettytable
 desc: ''
 updated: 1641202756638

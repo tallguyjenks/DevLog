@@ -1,5 +1,5 @@
 ---
-id: hqqq540kmus8s6angvjaspv
+id: csc90cc2dtknt6jwkwx8fwt
 title: Generate a Parameter List for All Sql Server Stored Procedures and Functions
 desc: ''
 updated: 1646352483112

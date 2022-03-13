@@ -1,5 +1,5 @@
 ---
-id: ogycqcl944xpgoxw3qudbxk
+id: r1wapbjxpcsx22comhuxecv
 title: Strcmp
 desc: ''
 updated: 1641373737939

@@ -1,5 +1,5 @@
 ---
-id: 9unxu7ekg489gm3ofxhrgto
+id: o7p5ulgu8njourzegxdia0b
 title: Rust Clone
 desc: ''
 updated: 1641426201395

@@ -1,5 +1,5 @@
 ---
-id: 04tvdg39mcs6tf4mo2x50vt
+id: ownd2t65pbr9qb0kcsf91sj
 title: Es6 Modules
 desc: ''
 updated: 1641407934998

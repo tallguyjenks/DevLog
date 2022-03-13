@@ -1,11 +1,9 @@
 ---
-id: bzedh50nd8vrvrd5nr0hpc9
+id: gb0vs7cudycbw6hi8hswq6h
 title: Ledger CLI
 desc: ''
-updated: 1647145803165
+updated: 1647146529188
 created: 1641105063856
-stub: false
-isDir: false
 ---
 
 - cli tool for managing finances.

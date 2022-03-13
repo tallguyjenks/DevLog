@@ -1,5 +1,5 @@
 ---
-id: bll63kggf8jb0fdn4uk5ty6
+id: ajj6k1wo6fl20w6bjvqdiz7
 title: 310 Parameterize Function
 desc: ''
 updated: 1642628091710

@@ -1,5 +1,5 @@
 ---
-id: hdqsz6o5g9hyg9ea4mn3uiu
+id: uly5s6ghzxik040h6dccrqa
 title: Multi Variable Assignment
 desc: ''
 updated: 1641423025374

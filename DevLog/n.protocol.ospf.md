@@ -1,5 +1,5 @@
 ---
-id: eaafga8n3h5d7o2o82kk5wz
+id: 7ne7l3rec2k7310k6zip2fx
 title: OSPF
 desc: ''
 updated: 1641950486939

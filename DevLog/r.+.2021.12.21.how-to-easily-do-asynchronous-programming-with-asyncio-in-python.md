@@ -1,5 +1,5 @@
 ---
-id: kavtsn3nb1osjwkisj707vs
+id: qfdeitrjtwmbnkpa7iqjac9
 title: How to Easily Do Asynchronous Programming with Asyncio in Python
 desc: ''
 updated: 1641271119784

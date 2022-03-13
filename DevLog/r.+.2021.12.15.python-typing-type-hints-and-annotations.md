@@ -1,5 +1,5 @@
 ---
-id: xnb80lb49mg3b759isywbh2
+id: 0lwmuc1u7vq1szz21l22xid
 title: Python Typing Type Hints and Annotations
 desc: ''
 updated: 1641271089790

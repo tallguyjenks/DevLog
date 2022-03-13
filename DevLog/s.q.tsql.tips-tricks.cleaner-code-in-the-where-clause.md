@@ -1,5 +1,5 @@
 ---
-id: qljk99z3too7c1199jybw4h
+id: y6hc54p919aj728ggkjtzgg
 title: Cleaner Code in the Where Clause
 desc: ''
 updated: 1647035596236

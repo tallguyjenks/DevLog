@@ -1,5 +1,5 @@
 ---
-id: r6o2tqpirghkz82sdm0dmwo
+id: 5buxn1k28igv61ytb6hteqh
 title: Truncate
 desc: ''
 updated: 1641414150879

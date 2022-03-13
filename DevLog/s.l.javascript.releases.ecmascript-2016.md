@@ -1,5 +1,5 @@
 ---
-id: 0xkcdolfv7wfnm39h95izhi
+id: bpombfbgzca0rlylit0cjiw
 title: Ecmascript 2016
 desc: ''
 updated: 1641406935613

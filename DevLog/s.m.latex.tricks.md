@@ -1,5 +1,5 @@
 ---
-id: kg8pc5zsa69km2iqykhrufk
+id: 1rjj8jw4gcg4y5hqsv9a838
 title: Tricks
 desc: ''
 updated: 1641409212735

@@ -1,5 +1,5 @@
 ---
-id: wkw5f6bzur2dbak5dkw147y
+id: 0xbcevuqumdxife2dxgb30y
 title: iommu
 desc: Input-output memory management unit
 updated: 1645380620250

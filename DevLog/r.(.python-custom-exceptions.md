@@ -1,5 +1,5 @@
 ---
-id: l0n8d61gf982d8m97cnoj9j
+id: 4z390naxyx1anq66ltmg7u0
 title: Python Custom Exceptions
 desc: ''
 updated: 1641270246992

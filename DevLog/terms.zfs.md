@@ -1,7 +1,7 @@
 ---
-id: 1y9zTHdliEMYWaTBJONme
+id: zz27rkdxzth47il63gdho79
 title: ZFS
-desc: 'Zettabyte file system'
+desc: Zettabyte file system
 updated: 1646010727686
 created: 1646010591661
 ---

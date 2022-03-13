@@ -1,5 +1,5 @@
 ---
-id: mxa7eb2i08eank59hbqx8j4
+id: lbzkjygshz0wtctzpwon2yv
 title: How to Read Log File in Sql Server Using Tsql
 desc: ''
 updated: 1646347290300

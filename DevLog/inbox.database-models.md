@@ -1,12 +1,9 @@
 ---
-id: g1exvaeq81zxdci47973mtg
+id: 4cy0ft5sk9ebl9mn4kmygqv
 title: Database Models
 desc: ''
-updated: 1641409699707
+updated: 1647146521047
 created: 1641168992579
-stub: false
-isDir: false
 ---
-
 
 - [ ] <http://www.databaseanswers.org/data_models/>

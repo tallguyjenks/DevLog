@@ -1,5 +1,5 @@
 ---
-id: f477cnyh4tsioer2gxhcebg
+id: yxeqsi8oylsubsxudgr0dqz
 title: Where Are Docker Images and Containers Stored on the Host
 desc: ''
 updated: 1641761385415

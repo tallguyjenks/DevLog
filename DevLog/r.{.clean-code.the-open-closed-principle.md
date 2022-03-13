@@ -1,5 +1,5 @@
 ---
-id: qzlhph3toist9ooyrz1vqeh
+id: 1amnje7ne66ooilbfyvighv
 title: The Open Closed Principle
 desc: ''
 updated: 1641268367489

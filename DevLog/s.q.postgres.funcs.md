@@ -1,5 +1,5 @@
 ---
-id: rnee9zg15znhar1l2bwfmaq
+id: izc530ati922ownwa2dxmql
 title: Funcs
 desc: ''
 updated: 1641854175863

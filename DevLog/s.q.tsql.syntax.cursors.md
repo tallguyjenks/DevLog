@@ -1,5 +1,5 @@
 ---
-id: ckl3o7opf84il84xshayc6c
+id: qrxtly4o0v34o5oecwq4n4j
 title: Cursors
 desc: '"Cursors are the devil"'
 updated: 1646690281097

@@ -1,5 +1,5 @@
 ---
-id: egggdahyicmymb4et4b6ri9
+id: z7ttjzpaawtowwhofdvag95
 title: Ecmascript 2015
 desc: ''
 updated: 1641406902183

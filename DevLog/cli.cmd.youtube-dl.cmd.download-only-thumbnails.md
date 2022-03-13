@@ -1,5 +1,5 @@
 ---
-id: rfyfpstpc4et06nzq9q8n2l
+id: 887zkjijgksi6gk260d49lq
 title: Download Only Thumbnails
 desc: ''
 updated: 1641267403462

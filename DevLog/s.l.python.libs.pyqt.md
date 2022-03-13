@@ -1,5 +1,5 @@
 ---
-id: 19n44hr0b2c0maww4c9lrye
+id: mf06ulkdx70wdr1g2uvmjgq
 title: Pyqt
 desc: ''
 updated: 1641426651890

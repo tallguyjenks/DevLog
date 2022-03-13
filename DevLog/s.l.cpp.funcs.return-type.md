@@ -1,5 +1,5 @@
 ---
-id: jwzmjmkurwbkd1hp5fv46zp
+id: 1wua013dokbrx4gf7t2hc3c
 title: Return Type
 desc: ''
 updated: 1641373260300

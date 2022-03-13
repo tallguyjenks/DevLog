@@ -1,5 +1,5 @@
 ---
-id: 5ypweihn6ywhdrno31pxcf5
+id: 9voqqcm1pakwsgkcb3m65bp
 title: How to Use Rowcount in Sql Server
 desc: ''
 updated: 1646345349638

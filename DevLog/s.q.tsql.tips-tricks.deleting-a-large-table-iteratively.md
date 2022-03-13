@@ -1,5 +1,5 @@
 ---
-id: v93rx94knxg54974i4rckz8
+id: kixpllc9xo3jathieq0ilpy
 title: Deleting a Large Table Iteratively
 desc: ''
 updated: 1645433358824

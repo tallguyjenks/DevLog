@@ -1,5 +1,5 @@
 ---
-id: ipfw5o4gpdwgjekf8aq38ba
+id: avcqivhqynd9idgmva251t8
 title: Pyinstaller
 desc: ''
 updated: 1641426630798

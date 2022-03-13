@@ -1,5 +1,5 @@
 ---
-id: 6xykqlc5ncgz4xosp7rtpu4
+id: dyb0hpf87zmxheunlzci1vn
 title: Global Interpreter Lock
 desc: ''
 updated: 1641266936875

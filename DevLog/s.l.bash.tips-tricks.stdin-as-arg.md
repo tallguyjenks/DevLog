@@ -1,5 +1,5 @@
 ---
-id: crqx8s2imkvgbeeiqttsvr0
+id: pczv4pwyuou1ty12a24dna3
 title: Stdin as Arg
 desc: ''
 updated: 1641429243801

@@ -1,5 +1,5 @@
 ---
-id: 41gqlxjsn63key79gzeunc0
+id: 0xqxb9yll7zjv0wcpi2zbhs
 title: Install on Windows
 desc: ''
 updated: 1642708476537

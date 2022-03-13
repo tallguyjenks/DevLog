@@ -1,5 +1,5 @@
 ---
-id: pyytpe9us7ozjcik9g1qufv
+id: hkhhwt82t0s07vf1md7nn0u
 title: Avoiding Premature S Abstractions
 desc: ''
 updated: 1641270017782

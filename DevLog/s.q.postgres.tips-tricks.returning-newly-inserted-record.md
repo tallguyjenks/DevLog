@@ -1,5 +1,5 @@
 ---
-id: twaq64cqj9bud3jqfvvxyf5
+id: gx7j089ne4d6yfjhkh20dww
 title: Returning Newly Inserted Record
 desc: ''
 updated: 1641855089860

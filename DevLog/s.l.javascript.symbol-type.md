@@ -1,5 +1,5 @@
 ---
-id: 6uaazp0rx3109wxzoqnldvh
+id: 1qwpj2il6mwyel9llxpqtyw
 title: Symbol Type
 desc: ''
 updated: 1641408065692

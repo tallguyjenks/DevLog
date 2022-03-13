@@ -1,5 +1,5 @@
 ---
-id: vn495taistrfo4zc7t9fn7z
+id: 5fcy6d3xfewb8jmo75lxre2
 title: Inner Join
 desc: ''
 updated: 1641413222511

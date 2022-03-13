@@ -1,5 +1,5 @@
 ---
-id: h3jvztoojl6q9py927pwz32
+id: u590suzogpsrw0tlqk0ofoh
 title: Level up Your Python Code with Abstract Classes
 desc: ''
 updated: 1641269154522

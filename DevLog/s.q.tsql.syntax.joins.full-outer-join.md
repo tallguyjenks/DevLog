@@ -1,5 +1,5 @@
 ---
-id: rbbyrgqhs56gz0gjze45k6p
+id: gt0b82l6ol4nlif1euzcngi
 title: Full Outer Join
 desc: ''
 updated: 1641413144236

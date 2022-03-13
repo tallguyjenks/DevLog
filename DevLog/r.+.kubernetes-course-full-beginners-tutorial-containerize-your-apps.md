@@ -1,5 +1,5 @@
 ---
-id: w66ovtrn7jpg8nnn46sq8o0
+id: 44pm4sg58mkjwmsbjr00bck
 title: Kubernetes Course Full Beginners Tutorial Containerize Your Apps
 desc: ''
 updated: 1643345945795

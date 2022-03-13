@@ -1,5 +1,5 @@
 ---
-id: gs142gj4gv5tjf0h33gc2d3
+id: tg7ggg895gwd22vlbx6ifn8
 title: Create a Directory and Change into It at the Same Time
 desc: ''
 updated: 1647046154628

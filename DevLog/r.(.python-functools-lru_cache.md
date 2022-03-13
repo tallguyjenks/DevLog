@@ -1,5 +1,5 @@
 ---
-id: zauc9d9kem559ti7lytxqcl
+id: yv3430dnw96bg4ig5yvin3w
 title: Python Functools Lru_cache
 desc: ''
 updated: 1641270280811

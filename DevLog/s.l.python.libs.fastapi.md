@@ -1,5 +1,5 @@
 ---
-id: 6giu8th472z7i8oc6m33frk
+id: s3z841ezl7wxwc8pmv7bmzz
 title: Fastapi
 desc: ''
 updated: 1641924359728

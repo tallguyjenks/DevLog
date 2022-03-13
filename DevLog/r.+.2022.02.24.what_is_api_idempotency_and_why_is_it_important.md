@@ -1,5 +1,5 @@
 ---
-id: dln7hl5c6lr1g49vi1kldwq
+id: 2ck6k08o9aebzuhjxqk4wy9
 title: What_is_api_idempotency_and_why_is_it_important
 desc: ''
 updated: 1645740128536

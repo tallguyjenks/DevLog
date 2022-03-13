@@ -1,5 +1,5 @@
 ---
-id: dhas6lnmw7wgaxgrj1ph3cz
+id: xtiqksjwmrw3fs42ceid84o
 title: Args and Kwargs in Python Accept Unlimited Arguments
 desc: ''
 updated: 1641455998796

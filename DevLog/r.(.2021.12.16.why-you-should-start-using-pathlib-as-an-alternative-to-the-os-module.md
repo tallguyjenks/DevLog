@@ -1,5 +1,5 @@
 ---
-id: tktor8lbkcio8mq7hked0pi
+id: ux2zkytrq7p8qtdk3i0rsq7
 title: Why You Should Start Using Pathlib as an Alternative to the Os Module
 desc: ''
 updated: 1641271287973

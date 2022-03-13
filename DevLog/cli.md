@@ -1,5 +1,5 @@
 ---
-id: h9pjtdhicyhhunatl8pky9r
+id: 6pxwlugphnw6vm4t8kn0j5p
 title: CLI
 desc: ''
 updated: 1641451184674

@@ -1,5 +1,5 @@
 ---
-id: vusyno8g5fxjdks78y83wwq
+id: pgeqoy6v7zvlhh0mie1fn7i
 title: Decorators
 desc: ''
 updated: 1641421552031

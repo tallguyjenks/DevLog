@@ -1,5 +1,5 @@
 ---
-id: 6cc0mdkoz69nhpaxt45gsvl
+id: urgn8d7g6awf5n7re0nwfh9
 title: Emmet Shortcuts in Vscode
 desc: ''
 updated: 1641272916790

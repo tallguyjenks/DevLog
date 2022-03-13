@@ -1,5 +1,5 @@
 ---
-id: 8myfeb6a8eplm8r7tmwm1xs
+id: hdm45inddfpclg3lrovf81x
 title: Secret Features in Your Unix Shell Cdpath
 desc: ''
 updated: 1646356669959

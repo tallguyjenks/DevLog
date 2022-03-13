@@ -1,5 +1,5 @@
 ---
-id: wfu6nyxv8vm53xixvmwhvns
+id: fva75vscrfhi5k6k6mfow7w
 title: Stat
 desc: Get the size of a file in bytes
 updated: 1642545500622

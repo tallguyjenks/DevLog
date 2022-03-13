@@ -1,5 +1,5 @@
 ---
-id: 8lf2vrqq1xmhd9n5tyc5l8w
+id: z1zvmlh48gzj2zy72u3ly6z
 title: Comparing Python and Sql for Building Data Pipelines
 desc: ''
 updated: 1641270078374

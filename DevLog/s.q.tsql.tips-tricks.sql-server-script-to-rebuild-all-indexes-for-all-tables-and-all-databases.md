@@ -1,5 +1,5 @@
 ---
-id: i35bqyk444ruv7bsxxn2td9
+id: cbs944ax07layzy5vm21r82
 title: Sql Server Script to Rebuild All Indexes for All Tables and All Databases
 desc: ''
 updated: 1646355860284

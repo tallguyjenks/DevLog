@@ -1,5 +1,5 @@
 ---
-id: f3tafdqjbnw395h6t25srtt
+id: qg05k4l6lvulbn1z9gilgmr
 title: Chr and Ord in Python Using Ascii Values
 desc: ''
 updated: 1641270988194

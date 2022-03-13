@@ -1,5 +1,5 @@
 ---
-id: 4vf36l8mnmwius8ifdsk6l7
+id: ljkrpd543l18ia2764nprsp
 title: Get the Last Argument of the Last Run Command in Your Shell
 desc: ''
 updated: 1641270605607

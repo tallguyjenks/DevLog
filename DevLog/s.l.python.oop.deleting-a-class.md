@@ -1,5 +1,5 @@
 ---
-id: fwbju1gpj2yvrbmb1ugop0u
+id: kruzidih560s1cmlhevcm2d
 title: Deleting a Class
 desc: ''
 updated: 1641422786556

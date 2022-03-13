@@ -1,5 +1,5 @@
 ---
-id: n9cq1j8x83i17h9ovjywnt5
+id: 77as5fo1z0tumngaml2rxip
 title: The Single Responsibility Principle
 desc: ''
 updated: 1641268401405

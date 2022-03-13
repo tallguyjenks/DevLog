@@ -1,5 +1,5 @@
 ---
-id: tafi3p6chxw6g7cj2gy2pqf
+id: 4j623sgb26nqe4qld7x8af6
 title: Variations of the Strategy Pattern Using Python Features
 desc: ''
 updated: 1641456025328

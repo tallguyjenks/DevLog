@@ -1,5 +1,5 @@
 ---
-id: 8ca70blmd2ihasl8tiqq7pw
+id: m6qsov2eili1x36mgsp9m9g
 title: Write Clean Python Code Using Pipes
 desc: ''
 updated: 1641269106087

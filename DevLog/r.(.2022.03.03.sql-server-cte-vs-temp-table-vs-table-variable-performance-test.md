@@ -1,5 +1,5 @@
 ---
-id: c35s535p5qtdwpfsuwacdj8
+id: mxbhcyic84m1wtodxw996wm
 title: Sql Server Cte Vs Temp Table Vs Table Variable Performance Test
 desc: ''
 updated: 1646340810667

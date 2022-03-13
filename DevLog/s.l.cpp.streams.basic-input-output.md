@@ -1,5 +1,5 @@
 ---
-id: xlvjunflrqwzb4uur227zx9
+id: d26rd5m00v296wi9mzv8lnq
 title: Basic Input Output
 desc: ''
 updated: 1641371589114

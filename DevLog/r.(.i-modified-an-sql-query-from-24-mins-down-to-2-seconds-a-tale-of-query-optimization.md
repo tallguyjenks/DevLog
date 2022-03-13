@@ -1,5 +1,5 @@
 ---
-id: ccjqoip8veauaxdie1ln4nb
+id: qtvmnm42fkhdhaf163d9d8l
 title: >-
   I Modified an Sql Query from 24 Mins down to 2 Seconds a Tale of Query
   Optimization

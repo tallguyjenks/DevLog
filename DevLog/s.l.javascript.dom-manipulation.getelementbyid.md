@@ -1,5 +1,5 @@
 ---
-id: mod3kircvqa20bdg8gtyu10
+id: rzo4evbklzizm8n0xpw1otp
 title: Getelementbyid
 desc: ''
 updated: 1641406840771

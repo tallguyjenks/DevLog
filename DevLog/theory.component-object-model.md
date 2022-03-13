@@ -1,5 +1,5 @@
 ---
-id: a67i42fzdhjp1srq2vi5rjo
+id: 9m7afr0dqiz1mnjzh3nuk82
 title: Component Object Model
 desc: ''
 updated: 1641265916773

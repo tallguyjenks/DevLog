@@ -1,5 +1,5 @@
 ---
-id: vvkq15jdmbyqrue9b72fgiw
+id: cd944jsy78zy6n5rioyuzsj
 title: The Power of the Plugin Architecture in Python
 desc: ''
 updated: 1641454372954

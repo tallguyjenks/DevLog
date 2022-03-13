@@ -1,5 +1,5 @@
 ---
-id: zzgx6g9ah038hgj4liikd69
+id: qmkmjshuky3ui8uqud8lfdj
 title: Python F Strings Can Do More than You Thought
 desc: ''
 updated: 1641271059094

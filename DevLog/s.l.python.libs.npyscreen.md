@@ -1,5 +1,5 @@
 ---
-id: klmtz18snfvlv47pxr0morz
+id: 84g41p706si58yrbzynppvy
 title: Npyscreen
 desc: ''
 updated: 1641417004685

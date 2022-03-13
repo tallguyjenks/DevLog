@@ -1,5 +1,5 @@
 ---
-id: fb1k78qiuemqvy5pqh8rn5j
+id: m7o5rv1pe0u5fvhbhjfy6y0
 title: Itertools
 desc: ''
 updated: 1641416979223

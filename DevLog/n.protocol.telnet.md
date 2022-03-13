@@ -1,5 +1,5 @@
 ---
-id: a4iokuvrktz5eabq4z5uf9c
+id: meu8f692uj99b2exdxdd8tj
 title: Telnet
 desc: ''
 updated: 1642144141637

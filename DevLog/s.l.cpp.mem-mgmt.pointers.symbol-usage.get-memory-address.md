@@ -1,5 +1,5 @@
 ---
-id: v4uelz9wxbskopsq9t3lino
+id: x1ox4r6cmxdq42s1dug2jn6
 title: Get Memory Address
 desc: ''
 updated: 1641377232654

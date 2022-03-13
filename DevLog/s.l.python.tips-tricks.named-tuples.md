@@ -1,5 +1,5 @@
 ---
-id: 63w3utoffgx2xluh7pwsymh
+id: d5rbu1gg2bg7bs61yfschoj
 title: Named Tuples
 desc: ''
 updated: 1641423068841

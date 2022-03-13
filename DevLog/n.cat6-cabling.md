@@ -1,5 +1,5 @@
 ---
-id: i4aghfb9tyba86pz7emkmp6
+id: 555zpmh40sa8t4b0v2m843o
 title: Cat6 Cabling
 desc: ''
 updated: 1641614907886

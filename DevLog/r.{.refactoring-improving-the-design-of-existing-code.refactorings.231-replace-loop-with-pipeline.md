@@ -1,5 +1,5 @@
 ---
-id: wb8oig0e52do3z20hypyu6w
+id: onlu0bzh9xktxnnjhsz3nze
 title: 231 Replace Loop with Pipeline
 desc: ''
 updated: 1642626735475

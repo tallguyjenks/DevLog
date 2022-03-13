@@ -1,5 +1,5 @@
 ---
-id: g83u6kvdibo3m4u028o8zgo
+id: 19bhkblgi2vz31b7jgxt52f
 title: Data Engineering Essentials Patterns and Best Practices
 desc: ''
 updated: 1641173146734

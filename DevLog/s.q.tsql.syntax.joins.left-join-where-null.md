@@ -1,5 +1,5 @@
 ---
-id: xda23cax3lrtblyimxjruzn
+id: q0oso8zqjw10lhkn5ykrj8f
 title: Left Join Where Null
 desc: ''
 updated: 1641413348611

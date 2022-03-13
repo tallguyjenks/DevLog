@@ -1,5 +1,5 @@
 ---
-id: tz0be966hbq24k0jz6dr56v
+id: be7xsfsh44sro3y66wqp1xb
 title: Path Def API Endpoints
 desc: ''
 updated: 1641425974426

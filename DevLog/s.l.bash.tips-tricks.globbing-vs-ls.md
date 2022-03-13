@@ -1,5 +1,5 @@
 ---
-id: i9ifmetjexuk4jb8ydmh9ns
+id: di58ib3sihg54t3zh4vptsb
 title: Globbing Vs Ls
 desc: ''
 updated: 1641452267646

@@ -1,5 +1,5 @@
 ---
-id: aedr53k1n6dp1gvzxue7gfi
+id: 0vclnouj6pq14st3wbxwmjq
 title: Pydantic Type Hints
 desc: ''
 updated: 1641420992016

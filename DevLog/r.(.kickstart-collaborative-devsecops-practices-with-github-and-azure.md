@@ -1,5 +1,5 @@
 ---
-id: czho8rptma9ns394raayiit
+id: ocfr2polcnt7ir97kfitwae
 title: Kickstart Collaborative Devsecops Practices with GitHub and Azure
 desc: ''
 updated: 1641454398603

@@ -1,5 +1,5 @@
 ---
-id: pzi7lzy7w0kqk37wccx86p1
+id: a4hbzhcewdjtgvmwyz2pgy2
 title: Is Safe Integer
 desc: ''
 updated: 1641266314221

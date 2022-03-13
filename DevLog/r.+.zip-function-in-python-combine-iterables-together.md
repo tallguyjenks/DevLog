@@ -1,5 +1,5 @@
 ---
-id: crcjomc90lqhtsnqm4ellf6
+id: nesfhvsf1doeiydefqj01qa
 title: Zip Function in Python Combine Iterables Together
 desc: ''
 updated: 1641270890727

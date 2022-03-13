@@ -1,5 +1,5 @@
 ---
-id: o2r8hdexh5r6gkzpoj4vwwg
+id: uzujw74xkabwj68i15gwg3f
 title: Triggers
 desc: ''
 updated: 1641414145018

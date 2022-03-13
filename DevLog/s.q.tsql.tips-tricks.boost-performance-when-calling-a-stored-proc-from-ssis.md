@@ -1,5 +1,5 @@
 ---
-id: nwht9f6porbqnwmtzajd3wp
+id: z1z8x7zmx85hrfv4ou5ek4y
 title: Boost Performance When Calling a Stored Proc from Ssis
 desc: ''
 updated: 1646691070184

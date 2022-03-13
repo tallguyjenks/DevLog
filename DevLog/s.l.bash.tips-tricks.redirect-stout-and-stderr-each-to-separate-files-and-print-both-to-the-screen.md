@@ -1,5 +1,5 @@
 ---
-id: qh85qi608yhmghekbmsth0n
+id: z38ie5j1080bot9snj8az5r
 title: Redirect Stout and Stderr Each to Separate Files and Print Both to the Screen
 desc: ''
 updated: 1647045881970

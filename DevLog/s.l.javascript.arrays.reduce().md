@@ -1,5 +1,5 @@
 ---
-id: wvma0r5ledxrflqi0ognde8
+id: wrihm8kk77zfm5poxi8me7d
 title: Reduce()
 desc: ''
 updated: 1641406485057

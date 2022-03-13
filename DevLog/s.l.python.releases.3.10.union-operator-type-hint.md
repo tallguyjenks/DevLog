@@ -1,5 +1,5 @@
 ---
-id: 7hra7h5rv1qpqc9eu4slqo9
+id: tbzxa7rofygipag7kczxs1k
 title: Union Operator Type Hint
 desc: ''
 updated: 1641423359710

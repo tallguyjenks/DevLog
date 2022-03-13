@@ -1,5 +1,5 @@
 ---
-id: cbt5nenk11nsmjiy9m7jd6b
+id: 7qcsca9fxcemzd3jp05mbk9
 title: The Liskov Substitution Principle
 desc: ''
 updated: 1641268328303

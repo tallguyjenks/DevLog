@@ -1,5 +1,5 @@
 ---
-id: 2ceao1bhhx06inb3ixnnyrj
+id: du8bk18r0pq7eah82uah4uq
 title: Best Practices around Production Ready Web Apps with Docker Compose
 desc: ''
 updated: 1643239408312

@@ -1,5 +1,5 @@
 ---
-id: ifjs1dx22jq03t7bh3tpv0z
+id: k1xgws8krw608i4gy2lxukt
 title: Delete All Files in a Folder That Don't Match a Certain File Extension
 desc: ''
 updated: 1647046079417

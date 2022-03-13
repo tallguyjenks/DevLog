@@ -1,5 +1,5 @@
 ---
-id: jlzdvpxg56fk022pc9p7cfn
+id: tu7q0k3a56jrxxhn8559oku
 title: Any Function in Python Check If an Iterable Contains True
 desc: ''
 updated: 1641270692688

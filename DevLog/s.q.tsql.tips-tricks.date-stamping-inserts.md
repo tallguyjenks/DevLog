@@ -1,5 +1,5 @@
 ---
-id: kotuy2zf8i463y8z8ehxz1w
+id: qq72frkuuajd27569tyagbq
 title: Date Stamping Inserts
 desc: ''
 updated: 1641850088420

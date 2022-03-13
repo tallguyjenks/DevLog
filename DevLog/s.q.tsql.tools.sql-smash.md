@@ -1,5 +1,5 @@
 ---
-id: dpegbwm094sjh97osmc3tx5
+id: 2ejwcbtas4ijg95mpzl7mwb
 title: Sql Smash
 desc: ''
 updated: 1641455275554

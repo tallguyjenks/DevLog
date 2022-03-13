@@ -1,5 +1,5 @@
 ---
-id: p6n3xqcwwvjhz870p3gpqo6
+id: 4n8dged55dp17eo6mun8xnw
 title: Dockerfile Tutorial by Example Basics and Best Practices 2018
 desc: ''
 updated: 1643235437252

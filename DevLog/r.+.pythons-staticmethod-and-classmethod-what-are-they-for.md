@@ -1,5 +1,5 @@
 ---
-id: jly2vfrfo6fico09tw6gc9r
+id: p1ymthe9g9exrx2ju5qrho3
 title: Pythons Staticmethod and Classmethod What Are They For
 desc: ''
 updated: 1641270867629

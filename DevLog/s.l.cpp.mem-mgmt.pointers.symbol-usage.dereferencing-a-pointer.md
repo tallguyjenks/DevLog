@@ -1,5 +1,5 @@
 ---
-id: 7ha1rkob5ibxeb6up1grffi
+id: 2o679fd7udhdsfyh4a4fbfn
 title: Dereferencing a Pointer
 desc: ''
 updated: 1641377242826

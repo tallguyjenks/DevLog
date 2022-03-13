@@ -1,8 +1,8 @@
 ---
-id: 5derfvutbf2dqgcshuf2nwl
+id: p0avaurqnh2812h1sgg50jz
 title: Design Pattern
 desc: ''
-updated: 1647146119432
+updated: 1647146802459
 created: 1641168992579
 ---
 

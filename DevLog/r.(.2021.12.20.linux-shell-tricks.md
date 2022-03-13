@@ -1,5 +1,5 @@
 ---
-id: v8sflsvv9d18dmrrpcvwfyp
+id: i4z0y0kkgnt8q7htpwocawl
 title: Linux Shell Tricks
 desc: ''
 updated: 1641271386112

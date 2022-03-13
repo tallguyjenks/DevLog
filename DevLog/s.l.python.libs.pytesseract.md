@@ -1,5 +1,5 @@
 ---
-id: wcktxjp86keds9kjddl7988
+id: tbkee7nmlqs777z7qqcrh3z
 title: Pytesseract
 desc: ''
 updated: 1641417218152

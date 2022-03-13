@@ -1,5 +1,5 @@
 ---
-id: em98hyf3arw43obfdtrc709
+id: pnadsfaqzcc88fscnvm7tqd
 title: How to Build Advanced Sql
 desc: ''
 updated: 1641454695641

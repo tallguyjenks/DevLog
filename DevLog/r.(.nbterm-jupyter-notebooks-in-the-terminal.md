@@ -1,5 +1,5 @@
 ---
-id: fzrbfvcbkxhd6zoqqxiptm0
+id: n73e7yxhbfbh9j5y5z6afxw
 title: Nbterm Jupyter Notebooks in the Terminal
 desc: ''
 updated: 1641270195384

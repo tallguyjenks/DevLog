@@ -1,5 +1,5 @@
 ---
-id: lj423wz6m9isy7b5tsza1vs
+id: yj1a1gs5asadkix0z47sny0
 title: Tricks
 desc: ''
 updated: 1641185595299

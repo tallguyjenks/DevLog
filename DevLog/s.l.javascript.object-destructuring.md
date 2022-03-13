@@ -1,5 +1,5 @@
 ---
-id: 120m5am4zmw23zr5w1ofq0c
+id: 466p3dede94ns5u6r2lt9et
 title: Object Destructuring
 desc: ''
 updated: 1641407992741

@@ -1,7 +1,7 @@
 ---
-id: 4kvjrxxf9hgrg4weop8p9vg
+id: yqdqe7tme7vq78ozb2rytgz
 title: ACID
-desc: 'Atomicity Consistency Isolation Durability'
+desc: Atomicity Consistency Isolation Durability
 updated: 1646679773726
 created: 1646679575598
 ---

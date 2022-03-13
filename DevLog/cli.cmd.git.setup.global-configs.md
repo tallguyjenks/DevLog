@@ -1,5 +1,5 @@
 ---
-id: sij5mkjplyzfpacuwld9ex6
+id: wygy1yxt80muggei5kcbn8c
 title: Global Configs
 desc: ''
 updated: 1641185445816

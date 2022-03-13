@@ -1,5 +1,5 @@
 ---
-id: 3y1anyah14axq7q2o7sobt4
+id: 5jta5bbccmex46b8akgyxbj
 title: Iac
 desc: Infrastructure As Code
 updated: 1643345736463

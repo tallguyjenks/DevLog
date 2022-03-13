@@ -1,5 +1,5 @@
 ---
-id: v3ap7or636q26jl86g09gjm
+id: cjyc31tt6a5i4gk16ayr4fj
 title: Function Rest Parameter
 desc: ''
 updated: 1641407094414

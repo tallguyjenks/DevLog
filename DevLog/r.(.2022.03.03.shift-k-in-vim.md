@@ -1,5 +1,5 @@
 ---
-id: 55tspi6wy4dcfhniyy332qs
+id: 4b8d1mti26hfsnhmgcmctmv
 title: Shift K in Vim
 desc: ''
 updated: 1646357400755

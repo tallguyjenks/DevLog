@@ -1,5 +1,5 @@
 ---
-id: vpdkuqoibrgoveq2cbfd9m7
+id: wmi8enzjoiq6tolzsb7ap53
 title: Reduce Code and save Time with Default Column Values
 desc: ''
 updated: 1646691264398

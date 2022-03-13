@@ -1,5 +1,5 @@
 ---
-id: jzvqnei1syvryk2qx0xdcnu
+id: 1fh7l8osaohd8d3f5s5blm9
 title: DML
 desc: Data Manipulation Language
 updated: 1646688261916

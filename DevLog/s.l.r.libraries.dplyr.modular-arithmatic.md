@@ -1,5 +1,5 @@
 ---
-id: 656foovfq9obtd79yvlx1zq
+id: ae8s80jd3junwpile52qb5k
 title: Modular Arithmatic
 desc: ''
 updated: 1641410064570

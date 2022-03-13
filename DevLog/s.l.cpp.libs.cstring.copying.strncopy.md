@@ -1,5 +1,5 @@
 ---
-id: y7cb9xxxkuq2vbnpxh99b1s
+id: 56mrocudi09sar1lj113o01
 title: Strncopy
 desc: ''
 updated: 1641373657832

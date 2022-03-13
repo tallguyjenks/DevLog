@@ -1,5 +1,5 @@
 ---
-id: hq1wcv1f1rgmabv123yuvr9
+id: 6zubw7j306eqbhs414yqp1s
 title: Mathjax
 desc: ''
 updated: 1641411735891

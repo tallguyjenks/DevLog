@@ -1,5 +1,5 @@
 ---
-id: h6g5w98m5jzxvdj2bor2ils
+id: 26h8j1xpo3616knvuk6w2no
 title: Mental Models
 desc: ''
 updated: 1641169042370

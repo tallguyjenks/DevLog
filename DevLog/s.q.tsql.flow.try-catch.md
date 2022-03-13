@@ -1,5 +1,5 @@
 ---
-id: ao5vq894m50kg6r6c4202m8
+id: yb7xuzb776ndjy2947j0m9m
 title: Try Catch
 desc: ''
 updated: 1646687718011

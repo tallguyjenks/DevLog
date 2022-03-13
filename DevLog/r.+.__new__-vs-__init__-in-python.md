@@ -1,5 +1,5 @@
 ---
-id: kd1ysehvr5ks2ryt18lbhef
+id: rmx5qqv1m2znx5qvkpjqhe1
 title: __new__ Vs __init__ in Python
 desc: ''
 updated: 1641270905722

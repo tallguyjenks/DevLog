@@ -1,5 +1,5 @@
 ---
-id: sbrzhw2z8ru1gkemlbco7y1
+id: hkfqvb1p9477ib0mssf0g2a
 title: Yyyymm Date Part Calculation
 desc: ''
 updated: 1641414296650

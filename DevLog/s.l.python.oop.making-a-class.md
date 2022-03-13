@@ -1,5 +1,5 @@
 ---
-id: qwrocg9kl5rrpp48t97vtwj
+id: ydaasmvsr7vkv2jasd82nht
 title: Making a Class
 desc: ''
 updated: 1641422771295

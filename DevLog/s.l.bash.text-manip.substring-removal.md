@@ -1,5 +1,5 @@
 ---
-id: dch3wkm9t7rpdwyj6dbg58z
+id: 2fryuhjwlfnq97weoeynsgv
 title: Substring Removal
 desc: ''
 updated: 1641428804785

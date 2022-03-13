@@ -1,5 +1,5 @@
 ---
-id: yo78r3uwh6dvkpslatl92y4
+id: fvjp3k8cyciowzz8fkn855b
 title: Write Data This Alternative Is 7 Times Faster
 desc: ''
 updated: 1641269061613

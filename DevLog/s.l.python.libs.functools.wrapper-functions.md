@@ -1,5 +1,5 @@
 ---
-id: kc0fwcij48n9f7rfjg1guu4
+id: rcymyutvngehlnmawjnz6un
 title: Wrapper Functions
 desc: ''
 updated: 1641426120251

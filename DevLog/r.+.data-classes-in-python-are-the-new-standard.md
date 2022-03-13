@@ -1,5 +1,5 @@
 ---
-id: pzugug2i2jlkd1i0xcccy78
+id: jwp8tdl6ngmjc16dlhakg8t
 title: Data Classes in Python Are the New Standard
 desc: ''
 updated: 1641270706856

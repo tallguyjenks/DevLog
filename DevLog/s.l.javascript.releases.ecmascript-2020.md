@@ -1,5 +1,5 @@
 ---
-id: yuk9ijskn5t20x9bt9gxwa9
+id: dbxn96n98efk7b2iwyx7q7p
 title: Ecmascript 2020
 desc: ''
 updated: 1641407009937

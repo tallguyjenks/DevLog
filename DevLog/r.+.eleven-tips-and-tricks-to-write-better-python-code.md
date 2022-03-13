@@ -1,5 +1,5 @@
 ---
-id: 6qltm92kif13x6qbvr532cg
+id: 930q4fejesh42dgm6l1cgbs
 title: Eleven Tips and Tricks to Write Better Python Code
 desc: ''
 updated: 1641270444240

@@ -1,5 +1,5 @@
 ---
-id: ndiat7i1jmm51bs6z619o4n
+id: fmx7cfcdzale0ezna61yq5z
 title: Strategy
 desc: ''
 updated: 1641325983098

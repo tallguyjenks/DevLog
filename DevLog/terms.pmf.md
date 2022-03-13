@@ -1,5 +1,5 @@
 ---
-id: 3k5jhbcmlgquo6q89ykrnpl
+id: 0j1psochrpccykyy9g0jraj
 title: PMF
 desc: Protected Management Frames
 updated: 1643876847316

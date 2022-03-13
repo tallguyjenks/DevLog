@@ -1,5 +1,5 @@
 ---
-id: wc4scgxsthwprmj2wv0ah1f
+id: yah6spesmpstech2ue2k3lq
 title: Vocab
 desc: ''
 updated: 1641242261161

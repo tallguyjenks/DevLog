@@ -1,5 +1,5 @@
 ---
-id: cgoyy7w9n17ugd4q8m4qk9a
+id: q3x4qpvhvtcy7h4efgbwh3n
 title: JavaScript
 desc: ''
 updated: 1641406164587

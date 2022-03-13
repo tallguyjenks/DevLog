@@ -1,5 +1,5 @@
 ---
-id: ok1edt8h4ufarejb9dvafpz
+id: 4ecnzjmuvyjz2hnhmum2tee
 title: Spread Operator
 desc: ''
 updated: 1641407094079

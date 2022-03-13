@@ -1,5 +1,5 @@
 ---
-id: f7x8uvlzadd8nxxymjh82un
+id: jvokpuuuker7vheqovn8swp
 title: Do We Still Need Dataclasses Pydantic Tutorial
 desc: ''
 updated: 1641451810515

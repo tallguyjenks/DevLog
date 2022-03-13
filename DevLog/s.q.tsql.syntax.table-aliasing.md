@@ -1,5 +1,5 @@
 ---
-id: 6q8acfxzhhv3tr60lcjiuga
+id: ckwtellpfhh8y7xdxmjmxq8
 title: Table Aliasing
 desc: ''
 updated: 1641414037544

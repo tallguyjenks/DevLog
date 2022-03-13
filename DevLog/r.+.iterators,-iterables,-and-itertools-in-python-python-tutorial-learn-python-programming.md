@@ -1,5 +1,5 @@
 ---
-id: w1pbkf971n4tftbh92gl9f6
+id: lzxg7b7p9n1ca5sis5iagmz
 title: >-
   Iterators, Iterables, and Itertools in Python Python Tutorial Learn Python
   Programming

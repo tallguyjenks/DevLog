@@ -1,5 +1,5 @@
 ---
-id: b4pb2vk0s8cdz12in8a7kwf
+id: oivsvqq92vghk5ftwesjuzi
 title: Quickly Truncate a File
 desc: ''
 updated: 1647046052406

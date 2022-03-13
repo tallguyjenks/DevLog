@@ -1,5 +1,5 @@
 ---
-id: 94l9dvmed825xtmrqr48m8k
+id: 9i8msmbxeoks6xvxaevencl
 title: Generators in Python Python Tutorial Learn Python Programming
 desc: ''
 updated: 1641270572433

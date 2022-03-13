@@ -1,5 +1,5 @@
 ---
-id: p85a53pp15oz6lonxi1si07
+id: gcgx6ev4rokgxvraj07ewzg
 title: Null Pointer
 desc: ''
 updated: 1641377254903

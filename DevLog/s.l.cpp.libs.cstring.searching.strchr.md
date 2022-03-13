@@ -1,5 +1,5 @@
 ---
-id: jk4x2030paxwg37woqgh3s8
+id: 66sj6ymf5lfjkpoonuy6g0b
 title: Strchr
 desc: ''
 updated: 1641373764592

@@ -1,5 +1,5 @@
 ---
-id: odglxtkkvr7nofzpjr1i0oq
+id: kyeu3h5pym90eziek8pjn4n
 title: Sql_for_data_analytics_perform_fast_and_efficient
 desc: ''
 updated: 1643229327887

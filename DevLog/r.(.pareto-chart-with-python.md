@@ -1,5 +1,5 @@
 ---
-id: 9n77nk4loe9tpgw7d0vzbhw
+id: ajpg08v6z5f8axlgs24x78e
 title: Pareto Chart with Python
 desc: ''
 updated: 1641270228812

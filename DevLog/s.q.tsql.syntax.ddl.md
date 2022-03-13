@@ -1,5 +1,5 @@
 ---
-id: pye1pmizdfvf3st4i76ro15
+id: c3bo64ilgxhjfevf3ettvz2
 title: DDL
 desc: Data Definition Language
 updated: 1646688223024

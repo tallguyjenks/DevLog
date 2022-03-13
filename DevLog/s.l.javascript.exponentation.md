@@ -1,5 +1,5 @@
 ---
-id: v4tzya5etomdr53yzuxfkif
+id: vx70uq3mry6ufbimqmbbjad
 title: Exponentation
 desc: ''
 updated: 1641407045623

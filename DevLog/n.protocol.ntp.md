@@ -1,5 +1,5 @@
 ---
-id: jumcjp67zntkv14jmqtk5xt
+id: qd3tl6dxonvm6fmrj9ulz9t
 title: NTP
 desc: ''
 updated: 1642055744794

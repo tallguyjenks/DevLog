@@ -1,5 +1,5 @@
 ---
-id: 3966lr0df4rhj4ikfpmieyi
+id: whhydyqe9z9a3yweqmd1j14
 title: What Is Service Oriented Architecture
 desc: ''
 updated: 1641456407474

@@ -1,5 +1,5 @@
 ---
-id: qbnz6dm81y00l8cedc8vvti
+id: twklb5avgn4s7j7wsw09azv
 title: Precedence Rules for Logical and Relational Operators
 desc: ''
 updated: 1641377370637

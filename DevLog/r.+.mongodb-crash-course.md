@@ -1,5 +1,5 @@
 ---
-id: gug87s0vmpvjb2r0y01zbng
+id: ex93eejqj6sjbugtw9y5cv5
 title: Mongodb Crash Course
 desc: ''
 updated: 1641270769452

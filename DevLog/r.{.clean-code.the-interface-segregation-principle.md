@@ -1,5 +1,5 @@
 ---
-id: d8nshqu0xmpoqyw8n4my44s
+id: u9cpqr3dpozpvae0rtykwvo
 title: The Interface Segregation Principle
 desc: ''
 updated: 1641268282124

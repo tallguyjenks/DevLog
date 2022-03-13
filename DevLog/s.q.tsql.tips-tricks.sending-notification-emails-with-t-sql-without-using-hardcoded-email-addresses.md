@@ -1,5 +1,5 @@
 ---
-id: h0j42swpcqtrn0p3slal3di
+id: 5523jjxk5nyfufe8n2wu2mt
 title: Sending Notification Emails with T Sql without Using Hardcoded Email Addresses
 desc: ''
 updated: 1646692213108

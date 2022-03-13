@@ -1,10 +1,9 @@
 ---
-id: aw4hknuqt34tqo5t6hi9hrl
+id: vp7v4vlypynayz6cqnmllz0
 title: Python Design Patterns
 desc: ''
-updated: 1645166373893
+updated: 1647146742826
 created: 1645166364546
 ---
-
 
 <https://python-patterns.guide/>

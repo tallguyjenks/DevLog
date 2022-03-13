@@ -1,5 +1,5 @@
 ---
-id: q5my7qwsbz4lpjc6ubp46cb
+id: xjkp6t03s6tyjafy6y1eml2
 title: Pyinputplus
 desc: ''
 updated: 1641801097656
