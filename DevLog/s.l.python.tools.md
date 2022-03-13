@@ -2,7 +2,7 @@
 id: 1wiwbdlnty47tsyagfqnccc
 title: Tools
 desc: ''
-updated: 1641416613589
+updated: 1647148940179
 created: 1641105063928
 stub: false
 isDir: false
@@ -10,7 +10,7 @@ isDir: false
 
 
 - [[s.l.python.tools.jupyter]]
-  - [[s.l.python.tools.kite]]
+- [[s.l.python.tools.kite]]
   - vscode Extensions
     - _General_
       - `ms-python.python` Python language support
@@ -39,8 +39,7 @@ isDir: false
     - _Jupyter Notebooks_
       - `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
       - `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
-  - [[s.l.python.libs.black]] Code formatter
-  - [[s.l.python.build.poetry]]
-  - ==Build Tools==
-    - [Pants](https://www.pantsbuild.org/docs)
-
+- [[s.l.python.libs.black]] Code formatter
+- [[s.l.python.build.poetry]]
+- [Pants](https://www.pantsbuild.org/docs)
+- [[s.l.python.libs.code2flow]]
