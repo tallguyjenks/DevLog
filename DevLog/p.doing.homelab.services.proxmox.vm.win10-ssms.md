@@ -1,15 +1,16 @@
 ---
 id: ti26wzo0a48fbzkasuq69lj
-title: Win10 Ssms
+title: Win10 SSMS
 desc: ''
-updated: 1647134933603
+updated: 1647135047728
 created: 1645393642980
 ---
 
+## Resources
 
-TODO go through this video and actually write out the steps with pictures too on what to set up
+Guide Used: <https://youtu.be/6c-6xBkD2J4>
 
-<https://youtu.be/6c-6xBkD2J4>
+## Instructions
 
 1. Download [Windows 10 iso][0] (64bit)
 2. Download the Latest [virtio-win iso][1]
@@ -121,8 +122,9 @@ TODO go through this video and actually write out the steps with pictures too on
 25. Enter the Console
 26. Boot the VM
 27. once booted check on the guest-agent has an IP
-28. Done!
-29. BONUS
+28. Install [[s.q.tsql.tools.ssms]]
+29. Done!
+30. BONUS
     1. For faster performance can activate Remote Desktop and just RDP onto the VM for near native performance
 
 [0]: https://www.microsoft.com/en-us/software-download/windows10ISO

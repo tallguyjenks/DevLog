@@ -2,7 +2,7 @@
 id: 1lpaxh3d5akybf5ql65q070
 title: Fafnir
 desc: Dell PowerEdge R720
-updated: 1646737653962
+updated: 1647135186852
 created: 1641018811979
 ---
 
@@ -18,10 +18,17 @@ TODO add info on the hardware, ports, etc
 - [This upgrade][0]
   - [further notes][4]
 
-## Notes
+## Hardware
+
+<++>
+
+## Services
 
 - Running [[p.doing.homelab.services.truenas]]
 
+## Projects
+
+<++>
 
 [0]: https://dan.langille.org/2019/10/05/preparing-the-dell-r720-for-zfs/
 [1]: https://qrl.dell.com/Product/Detail/3
