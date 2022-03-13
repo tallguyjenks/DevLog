@@ -2,7 +2,7 @@
 id: ti26wzo0a48fbzkasuq69lj
 title: Win10 Ssms
 desc: ''
-updated: 1647133786317
+updated: 1647134391378
 created: 1645393642980
 ---
 
@@ -61,7 +61,7 @@ TODO go through this video and actually write out the steps with pictures too on
 7. follow allow with the normal installation of windows
 8. can continue on without product key for reduced functionality mode
 9. Select Custom install
-    1. No harddrives found to install windows onto, need to load drivers from virtio
+    1. No hard drives found to install windows onto, need to load drivers from virtio
     2. Click `Load Driver`
     3. ![load driver](/assets/images/2022-03-12-17-06-28.png)
     4. click `Browse`
@@ -73,7 +73,38 @@ TODO go through this video and actually write out the steps with pictures too on
     10. `vioscsi > w10 > amd64 > OK`
     11. ![amd64](/assets/images/2022-03-12-17-09-22.png)
     12. Click `Next`
-    13. 
+    13. Now we can see the hard drive
+    14. ![hard drive](/assets/images/2022-03-12-17-10-06.png)
+    15. Click `Load Driver`
+    16. ![load driver](/assets/images/2022-03-12-17-06-28.png)
+    17. click `Browse`
+    18. Go to virtio disk and expand
+    19. ![expand](/assets/images/2022-03-12-17-07-35.png)
+    25. `NetKVM > w10 > amd64`
+        1.  downloads network adapter drivers so we can get upgrades while installing
+    26. ![netkvm](/assets/images/2022-03-12-17-15-03.png)
+    27. Click `Next`
+    28. Click `Load Driver`
+    29. ![load driver](/assets/images/2022-03-12-17-06-28.png)
+    31. click `Browse`
+    32. Go to virtio disk and expand
+    33. ![expand](/assets/images/2022-03-12-17-07-35.png)
+    34. `Balloon > w10 > amd64`
+    35. ![balloon](/assets/images/2022-03-12-17-17-15.png)
+    36. Click `Next`
+10. Now ready to continue with windows installation
+11. Click `Next`
+12. choose location
+13. keyboard layout
+14. personal use
+15. offline account
+16. name the pc
+17. password
+18. security questions
+19. choose privacy settings (uncheck everything)
+20. windows is running
+21. go to `Device Manager`
+22. 
 
 [0]: https://www.microsoft.com/en-us/software-download/windows10ISO
 [1]: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
