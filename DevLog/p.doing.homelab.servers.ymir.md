@@ -2,7 +2,7 @@
 id: 5zg8w11x4eajqsrt1acqo3g
 title: Ymir
 desc: 'HP Prolient DL360p G8'
-updated: 1647135142959
+updated: 1647135966761
 created: 1641018533079
 ---
 
