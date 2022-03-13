@@ -2,7 +2,7 @@
 id: fxonnpiy5se3pzl4r6o8bui
 title: Workflow
 desc: ''
-updated: 1641416749727
+updated: 1647149650290
 created: 1641105063929
 stub: false
 isDir: false
@@ -241,7 +241,7 @@ repos:
 - Set up unit testing framework with [[s.l.python.libs.pytest]]
   - `pytest-cov --cov <SRC DIR> --cov-report html`
     - This tests the coverage of the entire source code directory and writes an intricate [[s.m.html]] report for viewing test results
-- [ ] Set up auto documentation with [[s.l.python.libs.sphinx]] & [[s.m.restructured-text]]
+- Set up auto documentation with [[s.l.python.libs.sphinx]] & [[s.m.restructured-text]]
 - **More on Packaging**
   - build your distribution: `poetry build`
   - publish your distribution: `poetry publish`

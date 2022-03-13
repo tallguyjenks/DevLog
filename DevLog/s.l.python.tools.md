@@ -2,7 +2,7 @@
 id: 1wiwbdlnty47tsyagfqnccc
 title: Tools
 desc: ''
-updated: 1647148940179
+updated: 1647149631444
 created: 1641105063928
 stub: false
 isDir: false
@@ -10,36 +10,38 @@ isDir: false
 
 
 - [[s.l.python.tools.jupyter]]
-- [[s.l.python.tools.kite]]
-  - vscode Extensions
-    - _General_
-      - `ms-python.python` Python language support
-      - `ms-python.vscode-pylance` Python language support
-      - `brainfit.vscode-importmagic` Fix missing module imports
-      - `formulahendry.code-runner` Code runner to run the language for output and not just python code
-      - _AI Code Completion_
-        - [Comparisons here](https://medium.com/swlh/kite-vs-tabnine-which-ai-code-autocomplete-should-you-choose-eb6eba85c3a6)
-          - ❌️ `kiteco.kite` Kite
-          - ✅️ `tabnine.tabnine-vscode` TabNine
-      - `almenon.arepl` Coding REPL
-    - _Documentation_
-      - `njpwerner.autodocstring` Auto Generatre Doc Strings
-    - _Formatting_
-      - `kevinrose.vsc-python-indent` Correct Indentation
-    - _Debugging_
-      - `dongli.python-preview` Preview execution stack
-    - _Unit Testing_
-      - `littlefoxteam.vscode-python-test-adapter` Python Test explorer
-    - _Static Typing_
-      - `njqdev.vscode-python-typehint` Data type hint
-      - `ms-pyright.pyright` for static type checking
-    - _App Dev_
-      - ❌️ `nikolapaunovic.tkinter-snippets` [[tkinter]] snippets
-      - `njqdev.vscode-python-typehint` Data type hint
-    - _Jupyter Notebooks_
-      - `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
-      - `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
-- [[s.l.python.libs.black]] Code formatter
-- [[s.l.python.build.poetry]]
+- vscode Extensions
+  - `ms-python.python` Python language support
+  - `ms-python.vscode-pylance` Python language support
+  - `brainfit.vscode-importmagic` Fix missing module imports
+  - `formulahendry.code-runner` Code runner to run the language for output and not just python code
+  - AI Code Completion
+    - [Comparisons here](https://medium.com/swlh/kite-vs-tabnine-which-ai-code-autocomplete-should-you-choose-eb6eba85c3a6)
+      - ❌️ `kiteco.kite` Kite
+        - [[s.l.python.tools.kite]]
+      - ✅️ `tabnine.tabnine-vscode` TabNine
+  - `almenon.arepl` Coding REPL
+  - `njpwerner.autodocstring` Auto Generatre Doc Strings
+  - `kevinrose.vsc-python-indent` Correct Indentation
+  - `dongli.python-preview` Preview execution stack
+  - `littlefoxteam.vscode-python-test-adapter` Python Test explorer
+  - `njqdev.vscode-python-typehint` Data type hint
+  - `ms-pyright.pyright` for static type checking
+  - ❌️ `nikolapaunovic.tkinter-snippets` [[tkinter]] snippets
+  - `njqdev.vscode-python-typehint` Data type hint
+  - `jithurjacob.nbpreviewer` Jupyter Notebook Support and Viewing
+  - `ms-toolsai.jupyter` Jupyter Notebook Support and Viewing
+
+## Build Tools
+
+- [[s.l.python.build.poetry]] build tool
 - [Pants](https://www.pantsbuild.org/docs)
-- [[s.l.python.libs.code2flow]]
+
+## Linting
+
+- [[s.l.python.libs.black]] Code formatter
+
+## Visualization Tools
+
+- [[visualize call stacks|s.l.python.libs.code2flow]]
+- [[visualize project dependencies|s.l.python.libs.pydeps]]

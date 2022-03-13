@@ -2,9 +2,8 @@
 id: f39fy20j28qid1r7x20owvm
 title: Deep Source
 desc: ''
-updated: 1641185959791
+updated: 1647149965547
 created: 1641185939030
 ---
 
-
-- TODO <https://deepsource.io/gh/tallguyjenks/PyRM/metrics>
+<https://deepsource.io/gh/tallguyjenks/PyRM/metrics>
