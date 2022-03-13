@@ -2,7 +2,7 @@
 id: ti26wzo0a48fbzkasuq69lj
 title: Win10 Ssms
 desc: ''
-updated: 1647134391378
+updated: 1647134933603
 created: 1645393642980
 ---
 
@@ -80,18 +80,18 @@ TODO go through this video and actually write out the steps with pictures too on
     17. click `Browse`
     18. Go to virtio disk and expand
     19. ![expand](/assets/images/2022-03-12-17-07-35.png)
-    25. `NetKVM > w10 > amd64`
-        1.  downloads network adapter drivers so we can get upgrades while installing
-    26. ![netkvm](/assets/images/2022-03-12-17-15-03.png)
-    27. Click `Next`
-    28. Click `Load Driver`
-    29. ![load driver](/assets/images/2022-03-12-17-06-28.png)
-    31. click `Browse`
-    32. Go to virtio disk and expand
-    33. ![expand](/assets/images/2022-03-12-17-07-35.png)
-    34. `Balloon > w10 > amd64`
-    35. ![balloon](/assets/images/2022-03-12-17-17-15.png)
-    36. Click `Next`
+    20. `NetKVM > w10 > amd64`
+        1. downloads network adapter drivers so we can get upgrades while installing
+    21. ![netkvm](/assets/images/2022-03-12-17-15-03.png)
+    22. Click `Next`
+    23. Click `Load Driver`
+    24. ![load driver](/assets/images/2022-03-12-17-06-28.png)
+    25. click `Browse`
+    26. Go to virtio disk and expand
+    27. ![expand](/assets/images/2022-03-12-17-07-35.png)
+    28. `Balloon > w10 > amd64`
+    29. ![balloon](/assets/images/2022-03-12-17-17-15.png)
+    30. Click `Next`
 10. Now ready to continue with windows installation
 11. Click `Next`
 12. choose location
@@ -104,7 +104,26 @@ TODO go through this video and actually write out the steps with pictures too on
 19. choose privacy settings (uncheck everything)
 20. windows is running
 21. go to `Device Manager`
-22. 
+22. Double click missing driver under `Other Devices`
+    1. ![Other Devices](/assets/images/2022-03-12-17-20-23.png)
+    2. Click `Update Driver...`
+    3. Browse my computer for driver software
+    4. Browse to the virtio disk and select it
+    5. Click `OK`
+    6. When prompted click `Install` to install the driver
+23. Need to install the Guest Agent
+    1. Go to `This PC`
+    2. Enter the `virtio disk > guest-agent`
+    3. Execute `qemu-ga-x86_64`
+    4. Click `Yes` to install
+    5. reboot
+24. Click on `VM > Summary` See that guest agent isn't running because windows hasn't booted yet
+25. Enter the Console
+26. Boot the VM
+27. once booted check on the guest-agent has an IP
+28. Done!
+29. BONUS
+    1. For faster performance can activate Remote Desktop and just RDP onto the VM for near native performance
 
 [0]: https://www.microsoft.com/en-us/software-download/windows10ISO
 [1]: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
