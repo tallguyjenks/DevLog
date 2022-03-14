@@ -4,8 +4,6 @@ title: Date Manipulation
 desc: ''
 updated: 1641414578629
 created: 1641105063933
-stub: false
-isDir: false
 ---
 
 

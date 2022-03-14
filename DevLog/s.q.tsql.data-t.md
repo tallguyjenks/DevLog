@@ -4,13 +4,11 @@ title: Data T
 desc: ''
 updated: 1641414592572
 created: 1641105063933
-stub: false
-isDir: false
 ---
 
 
 |     Data Type     | Range                                                                                                                                                                        | Storage                   |
-| :---------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------ |
+|:-----------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|
 |   `varchar(x)`    | string of `x` number of bytes "variable character"                                                                                                                           | Variable                  |
 |   `nvarchar(x)`   | string of `x` number of bytes "non-variable character"                                                                                                                       | User Defined              |
 |     `char(x)`     | string of `x` number of bytes of characters. Unlike `varchar` if you only use 1/50 chars, the other 49 will be taken up with spaces                                          | User Defined              |
