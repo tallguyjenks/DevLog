@@ -2,7 +2,7 @@
 id: qvhbcchue9f94i895osdpbf
 title: Ymir
 desc: HP Prolient DL360p G8
-updated: 1647315580295
+updated: 1647315649287
 created: 1641018533079
 ---
 
@@ -13,7 +13,7 @@ created: 1641018533079
 ## Hardware
 
 - [Information on iLO][1]
-- [TO BUY for more memory some day](https://www.ebay.com/itm/222462491975?hash=item33cbcc3d47:g:Ks4AAOSwNZRfLGSf)
+- [TO BUY for more memory some day][3]
 
 ## Services
 
@@ -22,12 +22,6 @@ created: 1641018533079
 ## Projects
 
 - [reorganizing hardware with m.2 for OS][2]
-
----
-
-[1]: https://en.wikipedia.org/wiki/HP_Integrated_Lights-Out
-[2]: https://www.reddit.com/r/homelab/comments/t5na4v/comment/hz66dwy/?utm_source=share&utm_medium=web2x&context=3
-
 
 ### First Menu
 
@@ -41,3 +35,9 @@ created: 1641018533079
 - <kbd>F8</kbd> Run the Option ROM Configuration For Arrays Utility
 - <kbd>ESC</kbd> Skip Configuration and Continue
 - <kbd>CTRL</kbd> + <kbd>C</kbd> to start the Avagio utility
+
+---
+
+[1]: https://en.wikipedia.org/wiki/HP_Integrated_Lights-Out
+[2]: https://www.reddit.com/r/homelab/comments/t5na4v/comment/hz66dwy/?utm_source=share&utm_medium=web2x&context=3
+[3]: https://www.ebay.com/itm/222462491975?hash=item33cbcc3d47:g:Ks4AAOSwNZRfLGSf
