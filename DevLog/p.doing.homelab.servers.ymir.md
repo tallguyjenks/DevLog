@@ -2,7 +2,7 @@
 id: qvhbcchue9f94i895osdpbf
 title: Ymir
 desc: HP Prolient DL360p G8
-updated: 1647315649287
+updated: 1647322035927
 created: 1641018533079
 ---
 
@@ -34,7 +34,11 @@ created: 1641018533079
 - <kbd>F5</kbd> Smart Storage Administrator
 - <kbd>F8</kbd> Run the Option ROM Configuration For Arrays Utility
 - <kbd>ESC</kbd> Skip Configuration and Continue
-- <kbd>CTRL</kbd> + <kbd>C</kbd> to start the Avagio utility
+- <kbd>CTRL</kbd> + <kbd>C</kbd> to start the Avago utility
+
+### Third Menu
+
+![](/assets/images/2022-03-14-22-25-02.png)
 
 ---
 

@@ -2,7 +2,7 @@
 id: p4mog8mu5oi3u7tg97iwjb4
 title: Setup
 desc: ''
-updated: 1646001945518
+updated: 1647321807271
 created: 1643183976632
 ---
 
@@ -39,6 +39,8 @@ created: 1643183976632
 [3]: https://www.balena.io/etcher/
 
 ## Post Install Configuration
+
+TODO reformat this section by separating out the steps to their own notes and making this list more legible
 
 1. [[p.doing.homelab.services.proxmox.configuration#updates-repository]]
 2. `apt-get install neovim ranger`
