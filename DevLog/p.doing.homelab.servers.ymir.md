@@ -2,7 +2,7 @@
 id: qvhbcchue9f94i895osdpbf
 title: Ymir
 desc: HP Prolient DL360p G8
-updated: 1647314923289
+updated: 1647315580295
 created: 1641018533079
 ---
 
@@ -31,12 +31,13 @@ created: 1641018533079
 
 ### First Menu
 
-- <kbd>F8</kbd> iLO
+- <kbd>F8</kbd> iLO 4 advanced
 - <kbd>F9</kbd> setup
+- <kbd>CTRL</kbd> + <kbd>S</kbd> enter Ethernet Boot Agent Configuration Menu
 
 ### Second Menu
 
 - <kbd>F5</kbd> Smart Storage Administrator
 - <kbd>F8</kbd> Run the Option ROM Configuration For Arrays Utility
 - <kbd>ESC</kbd> Skip Configuration and Continue
-- <kbd>CTRL</kbd> + <kbd>S</kbd> enter Ethernet Boot Agent Configuration Menu
+- <kbd>CTRL</kbd> + <kbd>C</kbd> to start the Avagio utility
