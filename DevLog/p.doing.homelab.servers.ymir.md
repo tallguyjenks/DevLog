@@ -2,7 +2,7 @@
 id: qvhbcchue9f94i895osdpbf
 title: Ymir
 desc: HP Prolient DL360p G8
-updated: 1647322371870
+updated: 1647323137069
 created: 1641018533079
 ---
 
@@ -23,6 +23,8 @@ created: 1641018533079
 
 - [reorganizing hardware with m.2 for OS][2]
 
+## Post menus
+
 ### First Menu
 
 - <kbd>F8</kbd> iLO 4 advanced
@@ -42,9 +44,6 @@ created: 1641018533079
 - <kbd>F10</kbd> Intelligent Provisioning (can access menus to get to Storage Admin, diagnostics, RBSU utility, etc)
 - <kbd>F11</kbd> Default Boot Override Options
 - <kbd>F12</kbd> Network Boot
-
-
-![](/assets/images/2022-03-14-22-25-02.png)
 
 ---
 
