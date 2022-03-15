@@ -2,7 +2,7 @@
 id: qvhbcchue9f94i895osdpbf
 title: Ymir
 desc: HP Prolient DL360p G8
-updated: 1647322035927
+updated: 1647322371870
 created: 1641018533079
 ---
 
@@ -37,6 +37,12 @@ created: 1641018533079
 - <kbd>CTRL</kbd> + <kbd>C</kbd> to start the Avago utility
 
 ### Third Menu
+
+- <kbd>F9</kbd> ROM-Based Setup Utility (same as <kbd>F9</kbd> in Menu One)
+- <kbd>F10</kbd> Intelligent Provisioning (can access menus to get to Storage Admin, diagnostics, RBSU utility, etc)
+- <kbd>F11</kbd> Default Boot Override Options
+- <kbd>F12</kbd> Network Boot
+
 
 ![](/assets/images/2022-03-14-22-25-02.png)
 
