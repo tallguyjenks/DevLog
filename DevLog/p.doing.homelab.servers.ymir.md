@@ -2,7 +2,7 @@
 id: qvhbcchue9f94i895osdpbf
 title: Ymir
 desc: HP Prolient DL360p G8
-updated: 1647137541550
+updated: 1647314923289
 created: 1641018533079
 ---
 
@@ -27,3 +27,16 @@ created: 1641018533079
 
 [1]: https://en.wikipedia.org/wiki/HP_Integrated_Lights-Out
 [2]: https://www.reddit.com/r/homelab/comments/t5na4v/comment/hz66dwy/?utm_source=share&utm_medium=web2x&context=3
+
+
+### First Menu
+
+- <kbd>F8</kbd> iLO
+- <kbd>F9</kbd> setup
+
+### Second Menu
+
+- <kbd>F5</kbd> Smart Storage Administrator
+- <kbd>F8</kbd> Run the Option ROM Configuration For Arrays Utility
+- <kbd>ESC</kbd> Skip Configuration and Continue
+- <kbd>CTRL</kbd> + <kbd>S</kbd> enter Ethernet Boot Agent Configuration Menu
