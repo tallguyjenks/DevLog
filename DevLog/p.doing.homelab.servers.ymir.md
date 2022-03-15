@@ -2,7 +2,7 @@
 id: qvhbcchue9f94i895osdpbf
 title: Ymir
 desc: HP Prolient DL360p G8
-updated: 1647323137069
+updated: 1647324300661
 created: 1641018533079
 ---
 
@@ -22,6 +22,7 @@ created: 1641018533079
 ## Projects
 
 - [reorganizing hardware with m.2 for OS][2]
+    - [This advice for mirroring the boot drives][4]
 
 ## Post menus
 
@@ -50,3 +51,4 @@ created: 1641018533079
 [1]: https://en.wikipedia.org/wiki/HP_Integrated_Lights-Out
 [2]: https://www.reddit.com/r/homelab/comments/t5na4v/comment/hz66dwy/?utm_source=share&utm_medium=web2x&context=3
 [3]: https://www.ebay.com/itm/222462491975?hash=item33cbcc3d47:g:Ks4AAOSwNZRfLGSf
+[4]: https://forum.proxmox.com/threads/installation-with-m-2-ok.58009/
