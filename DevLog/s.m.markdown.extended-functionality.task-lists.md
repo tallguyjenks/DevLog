@@ -4,8 +4,6 @@ title: Task Lists
 desc: ''
 updated: 1647149717071
 created: 1641105063924
-stub: false
-isDir: false
 ---
 
 Using the [[Markdown Lists|s.m.markdown.syntax.lists]] feature, tasks are just an additional syntax on top of the list syntax
@@ -13,22 +11,20 @@ Using the [[Markdown Lists|s.m.markdown.syntax.lists]] feature, tasks are just a
 ## Syntax
 
 ```
-- [] an uncompleted task
+- an uncompleted task
 - [x] a completed task
-	- [] an indented uncompleted task
+	- an indented uncompleted task
 	- [x] an indented completed task
 ```
 
 In some processors completing the parent task to children tasks causes formatting such as strike through on sub items of the completed parent:
 
-- [] an `uncompleted` task
+- an `uncompleted` task
 - [x] a completed task
-  - [] THIS IS UNCOMPLETED BUT IT'S PARENT IS COMPLETED
+  - THIS IS UNCOMPLETED BUT IT'S PARENT IS COMPLETED
   - [x] an indented completed task
 
 ---
 
-- ## Tags:
-- ## Reference:
 - Related:
   - [[Markdown Definition Lists|s.m.markdown.extended-functionality.definition-lists]]
