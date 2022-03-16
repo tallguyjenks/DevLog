@@ -8,8 +8,7 @@ stub: false
 isDir: false
 ---
 
-
-### Pivoting
+## Pivoting
 
 the Pivot is like a transcribe operator in excel. You take the top left point, anchor it and then flips the axis' and their values.
 
@@ -25,7 +24,7 @@ PIVOT
 	) AS pvt
 ```
 
-### UN-pivoting
+## UN-pivoting
 
 ```sql
 SELECT Name
@@ -36,3 +35,7 @@ UNPIVOT
 	(Total FOR Level IN ([Low], [Med], [High], [Ultra])
 	) AS upvt
 ```
+
+## Advanced Pivoting
+
+<https://www.mssqltips.com/sqlservertip/7167/sql-pivot-grouping-sets-advanced-reporting/>
