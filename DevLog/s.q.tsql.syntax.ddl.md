@@ -1,8 +1,8 @@
 ---
 id: c3bo64ilgxhjfevf3ettvz2
-title: DDL
-desc: Data Definition Language
-updated: 1646688223024
+title: Data Definition Language
+desc: ''
+updated: 1647459938116
 created: 1641105063933
 stub: false
 isDir: false

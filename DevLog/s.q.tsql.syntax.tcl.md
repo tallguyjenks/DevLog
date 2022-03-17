@@ -1,8 +1,8 @@
 ---
 id: cjp70v56kna46nat8q046qe
-title: Tcl
-desc: Transaction Control Language
-updated: 1646688179701
+title: Transaction Control Language
+desc: ''
+updated: 1647459949588
 created: 1641105063939
 stub: false
 isDir: false

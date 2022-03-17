@@ -1,13 +1,12 @@
 ---
 id: 1fh7l8osaohd8d3f5s5blm9
-title: DML
-desc: Data Manipulation Language
-updated: 1646688261916
+title: Data Manipulation Language
+desc: ''
+updated: 1647459923162
 created: 1641105063933
 stub: false
 isDir: false
 ---
-
 
 ## Data Manipulation Language
 

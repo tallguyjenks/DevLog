@@ -1,12 +1,12 @@
 ---
 id: uo668sf67oh9hpb7om9uhhf
-title: Chapter 1
+title: Refactoring A First Example
 desc: ''
-updated: 1642629432319
+updated: 1647552656906
 created: 1642629432319
 ---
 
-### Chapter 1 Refactoring: A First Example
+## Chapter 1 Refactoring: A First Example
 
 ---
 

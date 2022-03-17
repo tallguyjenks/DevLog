@@ -1,13 +1,13 @@
 ---
 id: 4eafrbxrlb72fg1rg68qftr
-title: Chapter 2
+title: Principles In Refactoring
 desc: ''
-updated: 1646359153139
+updated: 1647552598653
 created: 1642629443133
 ---
 
 
-### Chapter 2
+## Chapter 2
 
 ---
 

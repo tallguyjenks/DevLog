@@ -2,12 +2,11 @@
 id: fmxlsyin8erzw0oqbkvmr5e
 title: Select Data into Json
 desc: ''
-updated: 1641413928375
+updated: 1647462364050
 created: 1641105063937
 stub: false
 isDir: false
 ---
-
 
 ```sql
 SELECT TOP (1000) *
