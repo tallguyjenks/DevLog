@@ -2,7 +2,7 @@
 id: qxiase7pfirf3k9mkp797v2
 title: Raid
 desc: ''
-updated: 1647131583708
+updated: 1647584360210
 created: 1643181270670
 ---
 
@@ -75,3 +75,7 @@ created: 1643181270670
 ## Storage via ZFS
 
 See [[n.zfs]]
+
+## RAID-Z
+
+TODO <https://www.diskinternals.com/raid-recovery/what-is-raidz/>
