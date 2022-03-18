@@ -2,19 +2,19 @@
 id: p4mog8mu5oi3u7tg97iwjb4
 title: Setup
 desc: ''
-updated: 1647321807271
+updated: 1647584701347
 created: 1643183976632
 ---
 
 
 ## Proxmox setup steps
 
-0. [Great installation video][0]
-1. [download iso][1]
+0. [Great installation video](https://youtu.be/azORbxrItOo)
+1. [download iso](https://proxmox.com/en/downloads)
 2. Burn iso to a flashdrive
    1. linux: `dd` command
-   2. Windows: [rufus][2]
-   3. MacOS: [Etcher][3]
+   2. Windows: [rufus](https://rufus.ie/en/)
+   3. MacOS: [Etcher](https://www.balena.io/etcher/)
 3. Put flash drive into target machine
 4. Boot from the flash drive
    1. or using [[p.doing.homelab.servers.ymir.ilo]]
@@ -32,11 +32,6 @@ created: 1643183976632
 10. connection will be unsecure and that's okay, proceed anyhow
 11. login as `root` with the password you previously set.
 12. Ignore subscription popup, its FOSS unless you want enterprise subscription
-
-[0]: https://youtu.be/azORbxrItOo
-[1]: https://proxmox.com/en/downloads
-[2]: https://rufus.ie/en/
-[3]: https://www.balena.io/etcher/
 
 ## Post Install Configuration
 
