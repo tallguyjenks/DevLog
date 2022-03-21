@@ -2,7 +2,7 @@
 id: qvhbcchue9f94i895osdpbf
 title: Ymir
 desc: HP Prolient DL360p G8
-updated: 1647324300661
+updated: 1647880784592
 created: 1641018533079
 ---
 
@@ -22,7 +22,7 @@ created: 1641018533079
 ## Projects
 
 - [reorganizing hardware with m.2 for OS][2]
-    - [This advice for mirroring the boot drives][4]
+  - [This advice for mirroring the boot drives][4]
 
 ## Post menus
 
