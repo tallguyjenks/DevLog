@@ -2,7 +2,7 @@
 id: z8z79s4uyfj2a9glnx3903p
 title: Data Classes
 desc: ''
-updated: 1641416405448
+updated: 1648420942566
 created: 1641105063925
 stub: false
 isDir: false
@@ -10,6 +10,7 @@ isDir: false
 
 
 - [x] [If you're not using Python DATA CLASSES yet, you should 🚀](https://youtu.be/vRVVyl9uaZc)
+- <https://youtu.be/CvQ7e6yUtnw>
 
 ```python
 # Regular classes
@@ -62,4 +63,15 @@ print(person3 == person2)
 print(person1 > person2)
 ```
 
-
+```python
+@dataclass
+class Person:
+    name: str
+    address: str
+    active: bool = True
+    email_addresses: list[str] = field(default_factory=list)
+    id: str = field (init=False, default_factory=generate_id)
+    _search_string: str = field(init=False)
+    def __post_init__(self) None:
+        self. _search_string = f" {self.name} {self.address}"
+```
