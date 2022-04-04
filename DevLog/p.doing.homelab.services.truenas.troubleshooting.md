@@ -2,7 +2,7 @@
 id: so9y5z1c2e7sjgzgh583ap9
 title: Troubleshooting
 desc: ''
-updated: 1649035026618
+updated: 1649035437965
 created: 1649033508110
 ---
 
@@ -35,6 +35,10 @@ created: 1649033508110
 2. `sysctl kern.geom.debugflags=0x10`
 3. `dd if=/dev/zero of=/dev/da0 bs=512 count=1`
    - My cheat way:
-     - `for disk in $ (ls grep-E "(^da[0-9]$) | (^da1[1-5]$)"); do dd if=/dev/zero of=/dev/$disk bs=512 count=1¡done`
+     - `for disk in $(ls | grep -E "(^da[0-9]$) | (^da1[1-5]$)"); do dd if=/dev/zero of=/dev/$disk bs=512 count=1¡done`
+     - The `dd` command way might not work so if not resort to the next option
+   - Failsafe
+     - `sg_format --format --size=512 --six -v /dev/da9`
+       - `for disk in $(ls | grep -E "(^da[0-9]$) | (^da1[1-5]$)"); do sg_format --format --size=512 --six -v /dev/$disk;done`
 4. Log into web interface and use “View Disks” to wipe the drives in that interface
 5. Create new ZFS volume including these disks.
