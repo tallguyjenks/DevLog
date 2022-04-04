@@ -2,7 +2,7 @@
 id: so9y5z1c2e7sjgzgh583ap9
 title: Troubleshooting
 desc: ''
-updated: 1649033875090
+updated: 1649034510399
 created: 1649033508110
 ---
 
@@ -21,3 +21,10 @@ created: 1649033508110
 > For those reading this with the same issue, what I've learned so far is that used HDD are often good value but if they have been used in Netapp/EMC hardware, they need to be mounted on an HBA (not a raid card) and re-formatted to 512 byte sectors in order for them to work and be mounted as useable drives in Freenas/Truenas.
 >
 > The reason this is pretty unique and hard to track down is that it seems to be an issue that is limited or confined to situations where drives that have been used in other storage arrays that utilise 520 bytes sectors are used in equipment that is looking for 512 byte sectors.
+
+### Resolution
+
+<https://bitfix.be/freenas-error-unable-to-gpt-format-the-disk-ada0/>
+
+
+
