@@ -2,7 +2,7 @@
 id: so9y5z1c2e7sjgzgh583ap9
 title: Troubleshooting
 desc: ''
-updated: 1649038773255
+updated: 1649950371194
 created: 1649033508110
 ---
 
@@ -35,7 +35,7 @@ created: 1649033508110
 2. `sysctl kern.geom.debugflags=0x10`
 3. `dd if=/dev/zero of=/dev/da0 bs=512 count=1`
    - My cheat way:
-     - `for disk in $(ls /dev | grep -E "(^da[0-9]$) | (^da1[1-5]$)"); do dd if=/dev/zero of=/dev/$disk bs=512 count=1¡done`
+     - `for disk in $(ls /dev | grep -E "(^da[0-9]$) | (^da1[1-5]$)"); do dd if=/dev/zero of=/dev/$disk bs=512 count=1;done`
      - The `dd` command way might not work so if not resort to the next option
    - Failsafe
      - `sg_format --format --size=512 --six -v /dev/da9`
