@@ -2,7 +2,7 @@
 id: p4mog8mu5oi3u7tg97iwjb4
 title: Setup
 desc: ''
-updated: 1648485849610
+updated: 1650006098499
 created: 1643183976632
 ---
 
@@ -29,7 +29,7 @@ created: 1643183976632
 7. Once proxmox is finished bootstrapping and restarts the server, remove the flash media
 8. if screen loads to a console then you can just transition back to your main machine and use the web interface to finish.
 9. management console is at: `https://#.#.#.#:8006` (replace `#` with valid IPV4 address)
-10. connection will be unsecure and that's okay, proceed anyhow
+10. connection will be insecure and that's okay, proceed anyhow
 11. login as `root` with the password you previously set.
 12. Ignore subscription popup, its FOSS unless you want enterprise subscription
 

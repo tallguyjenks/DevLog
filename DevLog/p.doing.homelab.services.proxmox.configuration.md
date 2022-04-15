@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1647150080616
+updated: 1650006219108
 created: 1643183994393
 ---
 
@@ -14,6 +14,7 @@ For regular updates and to avoid errors set the updates repository from the ente
 
 ![repos](/assets/images/2022-01-25-23-37-43.png)
 
+0. `pve node > updates > repositories`
 1. disable the enterprise repo
 2. `[Add]`
 3. `pve-no-subscription`
