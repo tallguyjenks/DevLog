@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650060168872
+updated: 1650063675295
 created: 1646726626690
 ---
 
@@ -39,6 +39,13 @@ SAVE
    - `1.1.1.1`
    - `8.8.8.8`
 4. Keep 1 interface for management layer and 3 interfaces in [[n.protocol.lacp]] for data
+5. `System > General > web interface address`
+   - use [[n.protocol.https]] redirect
+6. make [[n.protocol.ssh]] NOT start automatically.
+   - And in the advanced settings `ssh > pencil icon > advanced > auxillary parameters`
+     - add `AllowUsers root@#.#.#.#` where `#.#.#.#` is the IP Address of the computer you want to be able to [[n.protocol.ssh]] from
+7. Give root an email for those important notifications
+   - configure the notifications 
 
 ## Configure Users and groups for shared volumes
 
@@ -101,8 +108,6 @@ SAVE
       - When it asks for username and password, use the username of the new account you created in the WebGUI and its password.
       - If you see your folder, great! If not, refer back to the previous steps to see if you did anything wrong.
 
-## Setup WebUI access
 
-- `System > General > web interface address`
-  - use [[n.protocol.https]] redirect
+
 
