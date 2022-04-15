@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650063675295
+updated: 1650064744477
 created: 1646726626690
 ---
 
@@ -44,8 +44,14 @@ SAVE
 6. make [[n.protocol.ssh]] NOT start automatically.
    - And in the advanced settings `ssh > pencil icon > advanced > auxillary parameters`
      - add `AllowUsers root@#.#.#.#` where `#.#.#.#` is the IP Address of the computer you want to be able to [[n.protocol.ssh]] from
-7. Give root an email for those important notifications
-   - configure the notifications 
+7. Give root an email for those important notifications (destination)
+   - configure the notifications: `system > email`
+   - use the gmail OAuth and my service account email
+8. Periodic snapshots: `tasks > periodic snapshots`
+   - <https://www.truenas.com/docs/scale/communityrecommends/hardened-backup-repository-for-veeam/#configure-zfs-periodic-snapshots>
+     - hourly, daily, and weekly
+9. Configure HTTPS
+   - 
 
 ## Configure Users and groups for shared volumes
 
