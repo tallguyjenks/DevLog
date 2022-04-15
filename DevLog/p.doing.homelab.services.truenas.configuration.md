@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650057553296
+updated: 1650057946424
 created: 1646726626690
 ---
 
@@ -25,6 +25,20 @@ Description: Long SMART test
 Schedule: Monthly (0 0 1 * *) on the first day of the month at 00:00 (12:00 AM)
 SAVE
 ```
+
+## Hardening
+
+- <https://www.truenas.com/docs/scale/communityrecommends/hardened-backup-repository-for-veeam/#configure-smart-tests>
+
+1. Use Fixed IP Address not DHCP
+2. Disable Service Announcement
+   - NetBIOS-NS
+   - mDNS
+   - WS-Discovery
+3. use well known DNS servers
+   - `1.1.1.1`
+   - `8.8.8.8`
+
 
 ## Configure Users and groups for shared volumes
 
