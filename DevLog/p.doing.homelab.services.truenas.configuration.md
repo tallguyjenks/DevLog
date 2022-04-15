@@ -2,13 +2,11 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650048883456
+updated: 1650049769786
 created: 1646726626690
 ---
 
 ## Link Aggregation
-
-### CLI Version
 
 [[n.link-aggregation]] / [[n.protocol.lacp]]
 
@@ -16,6 +14,21 @@ in the console follow the prompts to add all current interfaces to a `lagg` usin
 
 Now the web console should be available at a listed IP Address
 
-### Web console
+## Configure Users and groups for shared volumes
 
-1. Change 
+To create shared volumes you can access through connection to your local network, see the following instructions.
+Go to accounts on the left panel.
+Click on groups.
+Click add.
+Enter a group name (you can leave the GID as it is).
+Enable permit sudo and samba authentication.
+Submit.
+Go to accounts on the left panel.
+Click on users.
+Click add.
+Fill in all the empty field under Identification
+Uncheck new primary group.
+Choose the group you made previously from the drop down menu in primary groups.
+Go ahead and check all of the boxes under Home Directory Permissions.
+Under Authentication check permit sudo and Samba authentication.
+Submit.

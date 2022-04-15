@@ -2,13 +2,11 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1650044775479
+updated: 1650049348126
 created: 1643183994393
 ---
 
-## Configuration
-
-### Updates Repository
+## Updates Repository
 
 For regular updates and to avoid errors set the updates repository from the enterprise proxmox repo (subscription required) to the `pve-no-subscription` repo.
 
@@ -20,7 +18,7 @@ For regular updates and to avoid errors set the updates repository from the ente
 3. `pve-no-subscription`
 4. run `apt-get update; apt dist-upgrade; reboot`
 
-### Enable IOMMU
+## Enable IOMMU
 
 <!-- markdownlint-disable MD031-->
 
@@ -42,7 +40,7 @@ Enable [[terms.iommu]] so VM's can access hardware not made for virtualization (
 6. reboot
 
 <!-- markdownlint-enable MD031-->
-### Make Proxmox VLAN aware
+## Make Proxmox VLAN aware
 
 1. go to `pve node > System > Network`
 2. "Edit" your Linux bridge
@@ -51,7 +49,7 @@ Enable [[terms.iommu]] so VM's can access hardware not made for virtualization (
 
 This will update `/etc/network/interfaces` with new settings and where it says `bridge-vids` you can change the default `2-4094` to be a single number for the [[terms.vlan]] of the server, or do that for individual virtual machines
 
-### Setup Linux Bridge for Virtual Machines Separate from management Layer
+## Setup Linux Bridge for Virtual Machines Separate from management Layer
 
 1. `pve node > System > Network > Create > Linux Bond`
 2. `bond0`
@@ -60,7 +58,7 @@ This will update `/etc/network/interfaces` with new settings and where it says `
 5. Add Comment
 6. after finished creating modify switch side settings for [[n.protocol.lacp]] for those ports
 
-#### Make Network Bridge for Virtual Machines
+### Make Network Bridge for Virtual Machines
 
 - <https://youtu.be/qTbeHpdHcqs>
 
@@ -71,7 +69,7 @@ This will update `/etc/network/interfaces` with new settings and where it says `
 5. List all the bridge ports in a space separated list (the [[n.protocol.lacp]] `bond0` you made)
 6. Add Comment
 
-### Setup NFS for backups
+## Setup NFS for backups
 
 ACTIVE This setup
 
@@ -81,7 +79,7 @@ ACTIVE This setup
 3. Server IPV4 address (address to [[p.doing.homelab.servers.fafnir]]?)
 4. Export `/mnt/storage <++>`
 
-#### Schedule Backups
+### Schedule Backups
 
 1. `Datacenter node > backup > add`
 2. Select Node to backup
@@ -93,7 +91,7 @@ ACTIVE This setup
 8. test it
    1. make a backup immediately
 
-### Download Windows VirtIO drivers
+## Download Windows VirtIO drivers
 
 1. Go To [This page][1]
 2. Click the link under `Installation` for downloading latest stable release
