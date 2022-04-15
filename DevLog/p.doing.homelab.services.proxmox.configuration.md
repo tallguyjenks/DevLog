@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1650042429552
+updated: 1650043174978
 created: 1643183994393
 ---
 
@@ -78,7 +78,7 @@ ACTIVE This setup
 1. `pve node > System > Network > Create > Linux Bond`
 2. `bond0`
 3. Give it a IPV4 address
-4. List all the bridge ports in a space separated list
+4. List all the bridge ports in a space separated list except the 1 used for the management layer
 5. choose [[n.ieee-802.3ad]] mode for [[n.protocol.lacp]]
 6. Add Comment
 
@@ -88,9 +88,9 @@ ACTIVE This setup
 
 1. `pve node > System > Network > Create > Linux Bridge`
 2. `vmbr1` is fine
-3. Give it a IPV4 address
+3. Give it a IPV4 address like `10.10.10.0/24`
 4. make it `VLAN aware:`
-5. List all the bridge ports in a space separated list
+5. List all the bridge ports in a space separated list (the [[n.protocol.lacp]] `bond0` you made)
 6. Add Comment
 
 ### Download Windows VirtIO drivers
