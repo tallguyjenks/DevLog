@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650058423332
+updated: 1650060168872
 created: 1646726626690
 ---
 
@@ -101,5 +101,8 @@ SAVE
       - When it asks for username and password, use the username of the new account you created in the WebGUI and its password.
       - If you see your folder, great! If not, refer back to the previous steps to see if you did anything wrong.
 
-## b
+## Setup WebUI access
+
+- `System > General > web interface address`
+  - use [[n.protocol.https]] redirect
 
