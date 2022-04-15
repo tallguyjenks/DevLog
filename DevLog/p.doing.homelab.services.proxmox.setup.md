@@ -2,7 +2,7 @@
 id: p4mog8mu5oi3u7tg97iwjb4
 title: Setup
 desc: ''
-updated: 1650006098499
+updated: 1650057255837
 created: 1643183976632
 ---
 
@@ -37,12 +37,5 @@ created: 1643183976632
 
 TODO reformat this section by separating out the steps to their own notes and making this list more legible
 
-1. [[p.doing.homelab.services.proxmox.configuration#updates-repository]]
-2. `apt-get install neovim ranger`
-3. [[p.doing.homelab.services.proxmox.configuration#enable-iommu]]
-4. [[p.doing.homelab.services.proxmox.configuration#make-proxmox-vlan-aware]]
-5. [[p.doing.homelab.services.proxmox.configuration#setup-linux-bridge-for-virtual-machines-separate-from-management-layer]]
-   1. [[p.doing.homelab.services.proxmox.configuration#make-network-bridge-for-virtual-machines]]
-6. [[p.doing.homelab.services.proxmox.configuration#download-windows-virtio-drivers]]
-7. [[p.doing.homelab.services.proxmox.configuration#setup-nfs-for-backups]]
-   1. [[p.doing.homelab.services.proxmox.configuration#schedule-backups]]
+1. `apt-get install neovim ranger`
+2. [[p.doing.homelab.services.proxmox.configuration]]

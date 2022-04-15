@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650050112506
+updated: 1650057553296
 created: 1646726626690
 ---
 
@@ -13,6 +13,18 @@ created: 1646726626690
 in the console follow the prompts to add all current interfaces to a `lagg` using [[n.protocol.lacp]], Then configure the aggregation for [[n.protocol.dhcp]]
 
 Now the web console should be available at a listed IP Address
+
+## Configure SMART Tests
+
+- `Tasks > S.M.A.R.T Test > Add`
+
+```txt
+All Disks
+Type: LONG
+Description: Long SMART test
+Schedule: Monthly (0 0 1 * *) on the first day of the month at 00:00 (12:00 AM)
+SAVE
+```
 
 ## Configure Users and groups for shared volumes
 
@@ -74,3 +86,6 @@ Now the web console should be available at a listed IP Address
         - `\\youripaddress`
       - When it asks for username and password, use the username of the new account you created in the WebGUI and its password.
       - If you see your folder, great! If not, refer back to the previous steps to see if you did anything wrong.
+
+## b
+
