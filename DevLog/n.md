@@ -2,10 +2,23 @@
 id: sh4851li2rsrhx47wwsirgv
 title: Networking
 desc: ''
-updated: 2022-03-14 1020
+updated: 2022-04-15 1646
 created: 2021-11-15 1320
 ---
-## Resources
+
+## Pending Research
+
+---
+
+- TrueNAS
+  - Look up each item in the menu
+  - Read Manual/guide
+- Proxmox
+  - Read manual/guide
+
+---
+
+## Tasks
 
 ---
 
