@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650044918731
+updated: 1650048883456
 created: 1646726626690
 ---
 
@@ -12,7 +12,7 @@ created: 1646726626690
 
 [[n.link-aggregation]] / [[n.protocol.lacp]]
 
-in the console follow the prompts to add all current interfaces to a lagg using the load balance configuration, Then configure the aggregation for [[n.protocol.dhcp]]
+in the console follow the prompts to add all current interfaces to a `lagg` using [[n.protocol.lacp]], Then configure the aggregation for [[n.protocol.dhcp]]
 
 Now the web console should be available at a listed IP Address
 
