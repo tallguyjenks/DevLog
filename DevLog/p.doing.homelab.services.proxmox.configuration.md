@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1650043749403
+updated: 1650044775479
 created: 1643183994393
 ---
 
@@ -51,6 +51,26 @@ Enable [[terms.iommu]] so VM's can access hardware not made for virtualization (
 
 This will update `/etc/network/interfaces` with new settings and where it says `bridge-vids` you can change the default `2-4094` to be a single number for the [[terms.vlan]] of the server, or do that for individual virtual machines
 
+### Setup Linux Bridge for Virtual Machines Separate from management Layer
+
+1. `pve node > System > Network > Create > Linux Bond`
+2. `bond0`
+3. List all the bridge ports in a space separated list except the 1 used for the management layer
+4. choose [[n.ieee-802.3ad]] mode for [[n.protocol.lacp]]
+5. Add Comment
+6. after finished creating modify switch side settings for [[n.protocol.lacp]] for those ports
+
+#### Make Network Bridge for Virtual Machines
+
+- <https://youtu.be/qTbeHpdHcqs>
+
+1. `pve node > System > Network > Create > Linux Bridge`
+2. `vmbr1` is fine
+3. Give it a IPV4 address like `10.10.10.0/24`
+4. make it `VLAN aware:`
+5. List all the bridge ports in a space separated list (the [[n.protocol.lacp]] `bond0` you made)
+6. Add Comment
+
 ### Setup NFS for backups
 
 ACTIVE This setup
@@ -72,26 +92,6 @@ ACTIVE This setup
 7. mode == snapshot
 8. test it
    1. make a backup immediately
-
-### Setup Linux Bridge for Virtual Machines Separate from management Layer
-
-1. `pve node > System > Network > Create > Linux Bond`
-2. `bond0`
-3. Give it a IPV4 address
-4. List all the bridge ports in a space separated list except the 1 used for the management layer
-5. choose [[n.ieee-802.3ad]] mode for [[n.protocol.lacp]]
-6. Add Comment
-
-#### Make Network Bridge for Virtual Machines
-
-- <https://youtu.be/qTbeHpdHcqs>
-
-1. `pve node > System > Network > Create > Linux Bridge`
-2. `vmbr1` is fine
-3. Give it a IPV4 address like `10.10.10.0/24`
-4. make it `VLAN aware:`
-5. List all the bridge ports in a space separated list (the [[n.protocol.lacp]] `bond0` you made)
-6. Add Comment
 
 ### Download Windows VirtIO drivers
 
