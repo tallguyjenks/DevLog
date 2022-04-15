@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650064744477
+updated: 1650065245804
 created: 1646726626690
 ---
 
@@ -50,7 +50,7 @@ SAVE
 8. Periodic snapshots: `tasks > periodic snapshots`
    - <https://www.truenas.com/docs/scale/communityrecommends/hardened-backup-repository-for-veeam/#configure-zfs-periodic-snapshots>
      - hourly, daily, and weekly
-9. Configure HTTPS
+9. Configure [[n.protocol.ssh]] rules
    - 
 
 ## Configure Users and groups for shared volumes
