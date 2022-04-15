@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1650006219108
+updated: 1650042429552
 created: 1643183994393
 ---
 
@@ -44,7 +44,7 @@ Enable [[terms.iommu]] so VM's can access hardware not made for virtualization (
 <!-- markdownlint-enable MD031-->
 ### Make Proxmox VLAN aware
 
-1. go to `System > Network`
+1. go to `pve node > System > Network`
 2. "Edit" your Linux bridge
 3. check the box for `VLAN aware:`
 4. Click `Apply Configuration`
