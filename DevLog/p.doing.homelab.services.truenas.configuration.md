@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650057946424
+updated: 1650058423332
 created: 1646726626690
 ---
 
@@ -38,7 +38,7 @@ SAVE
 3. use well known DNS servers
    - `1.1.1.1`
    - `8.8.8.8`
-
+4. Keep 1 interface for management layer and 3 interfaces in [[n.protocol.lacp]] for data
 
 ## Configure Users and groups for shared volumes
 
