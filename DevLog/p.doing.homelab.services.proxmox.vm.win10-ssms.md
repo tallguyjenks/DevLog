@@ -2,7 +2,7 @@
 id: lo9v0suz98gpxk1coih86i7
 title: Win10 SSMS
 desc: ''
-updated: 1650070267628
+updated: 1650127311950
 created: 1645393642980
 ---
 
@@ -31,7 +31,7 @@ Guide Used: <https://youtu.be/6c-6xBkD2J4>
       1. Bus/Device --> SCSI
       2. Storage --> your choice
       3. Disk Size --> 60GB?
-      4. Cache --> Write back
+      4. !!**Cache --> Write back**!!
       5. ![hard disk](/assets/images/2022-03-12-16-56-29.png)
    5. CPU
       1. Cores --> 24?
