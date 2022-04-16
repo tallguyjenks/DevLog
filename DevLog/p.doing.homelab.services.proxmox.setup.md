@@ -2,7 +2,7 @@
 id: p4mog8mu5oi3u7tg97iwjb4
 title: Setup
 desc: ''
-updated: 1650057255837
+updated: 1650071627623
 created: 1643183976632
 ---
 
@@ -37,5 +37,5 @@ created: 1643183976632
 
 TODO reformat this section by separating out the steps to their own notes and making this list more legible
 
-1. `apt-get install neovim ranger`
+1. `apt-get install neovim ranger tldr`
 2. [[p.doing.homelab.services.proxmox.configuration]]
