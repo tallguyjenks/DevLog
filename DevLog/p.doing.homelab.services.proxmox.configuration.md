@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1650070217078
+updated: 1650075142455
 created: 1643183994393
 ---
 
@@ -91,8 +91,60 @@ This will update `/etc/network/interfaces` with new settings and where it says `
 
 ## Download Windows VirtIO drivers
 
-1. Go To [This page][1]
+1. Go To [This page](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers)
 2. Click the link under `Installation` for downloading latest stable release
 3. upload iso to proxmox iso's in `local > ISO images > Upload`
 
-[1]: https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers
+## Configure Email notifications
+
+Change `/etc/postfix/main.cf` to include/change these lines:
+
+```txt
+relayhost = [smtp.gmail.com]:587
+smtp_use_tls = yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+
+#mydestination = $myhostname, localhost.$mydomain, localhost
+```
+
+Be sure there are no dupes as the `main.cf` may have `smtp_sasl_security_options = {}` , and `relayhost = {}`. Just delete or comment those lines.
+
+Create an `/etc/postfix/sasl_passwd` file with:
+
+```txt
+[smtp.gmail.com]:587    testmehere@gmail.com:PASSWD
+```
+
+run
+
+```bash
+chmod 600 /etc/postfix/sasl_passwd
+postmap /etc/postfix/sasl_passwd
+```
+
+install for passwd support:
+
+```bash
+apt-get install libsasl2-modules
+```
+
+Restart service:
+
+```bash
+systemctl restart postfix.service
+```
+
+Test:
+
+```bash
+echo "Test mail from postfix" | mail -s "Test Postfix" test@test.com
+```
+
+Test from PVE:
+
+```bash
+echo "test" | /usr/bin/pvemailforward
+```
