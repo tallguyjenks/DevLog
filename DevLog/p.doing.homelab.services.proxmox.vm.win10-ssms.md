@@ -2,7 +2,7 @@
 id: lo9v0suz98gpxk1coih86i7
 title: Win10 SSMS
 desc: ''
-updated: 1650127311950
+updated: 1650129531689
 created: 1645393642980
 ---
 
@@ -37,7 +37,7 @@ Guide Used: <https://youtu.be/6c-6xBkD2J4>
       1. Cores --> 24?
       2. ![CPU](/assets/images/2022-03-12-16-57-19.png)
    6. Memory
-      1. Balooning (use minimum 1GB max 8GB)
+      1. Ballooning (use minimum 1GB max 8GB)
       2. Memory (MiB) --> 8192
       3. Minimum memory (MiB) --> 1024
       4. ![Memory](/assets/images/2022-03-12-16-58-55.png)
