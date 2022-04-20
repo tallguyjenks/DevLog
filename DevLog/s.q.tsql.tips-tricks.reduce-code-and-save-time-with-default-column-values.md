@@ -2,7 +2,7 @@
 id: wmi8enzjoiq6tolzsb7ap53
 title: Reduce Code and save Time with Default Column Values
 desc: ''
-updated: 1646691264398
+updated: 1648161098523
 created: 1646691219629
 ---
 
@@ -29,7 +29,7 @@ CREATE TABLE YourSchemaName.YourStageTableName(
  CONSTRAINT [PK_YourStageTableName] PRIMARY KEY CLUSTERED 
 (
        [ETLKey] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO

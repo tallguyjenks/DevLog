@@ -2,7 +2,7 @@
 id: tzms0ujpwfktqg4cnt0q19e
 title: Bad Smells In Code
 desc: ''
-updated: 1647559228363
+updated: 1647905182081
 created: 1647552668237
 ---
 

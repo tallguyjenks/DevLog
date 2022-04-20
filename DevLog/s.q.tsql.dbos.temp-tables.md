@@ -43,3 +43,10 @@ INTO #table
 FROM other_table
 WHERE Age > 55
 ```
+
+Template Version
+
+```sql
+IF OBJECT_ID('Tempdb.dbo.#<Temp Table Name, Table,>') IS NOT NULL DROP TABLE #<Temp Table Name, Table,>
+```
+

@@ -2,10 +2,8 @@
 id: 29fsikt3jdzoes7j9qc37az
 title: Views
 desc: ''
-updated: 1641414271076
+updated: 1648069901021
 created: 1641105063940
-stub: false
-isDir: false
 ---
 
 
@@ -19,3 +17,4 @@ can be queried like most normal tables:
 SELECT *
 FROM v_view
 ```
+
