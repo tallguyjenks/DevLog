@@ -2,7 +2,7 @@
 id: lo9v0suz98gpxk1coih86i7
 title: Win10 SSMS
 desc: ''
-updated: 1650129531689
+updated: 1650509452601
 created: 1645393642980
 ---
 
@@ -61,6 +61,7 @@ Guide Used: <https://youtu.be/6c-6xBkD2J4>
 6. Right click `VM > Start`
 7. follow allow with the normal installation of windows
 8. can continue on without product key for reduced functionality mode
+   - If you want to RDP onto the machine it needs to be a windows 10 Pro version
 9. Select Custom install
     1. No hard drives found to install windows onto, need to load drivers from virtio
     2. Click `Load Driver`
@@ -126,6 +127,7 @@ Guide Used: <https://youtu.be/6c-6xBkD2J4>
 29. Done!
 30. BONUS
     1. For faster performance can activate Remote Desktop and just RDP onto the VM for near native performance
+    2. On mac use [this app](https://apps.apple.com/us/app/microsoft-remote-desktop-10/id1295203466?mt=12)
 
 [0]: https://www.microsoft.com/en-us/software-download/windows10ISO
 [1]: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
