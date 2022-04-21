@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1650075142455
+updated: 1650527367466
 created: 1643183994393
 ---
 
@@ -147,4 +147,14 @@ Test from PVE:
 
 ```bash
 echo "test" | /usr/bin/pvemailforward
+```
+
+## Setup port forwarding for RDP to windows VM's and make VM's visible on the internal network:
+
+1. Start a shell from the web console
+2. edit `/etc/network/interfaces`
+3. make it look like:
+
+```bash
+
 ```
