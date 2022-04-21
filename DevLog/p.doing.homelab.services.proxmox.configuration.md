@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1650527367466
+updated: 1650527447109
 created: 1643183994393
 ---
 
@@ -156,5 +156,17 @@ echo "test" | /usr/bin/pvemailforward
 3. make it look like:
 
 ```bash
-
+auto vmbr1
+iface vmbr1 inet static
+        address 10.1.10.0/24
+        bridge-ports bond0
+        bridge-stp off
+        bridge-fd 0
+        bridge-vlan-aware yes
+        bridge-vids 20
+        post-up echo 1 > /proc/sys/net/ipv4/ip_forward
+        post-up iptables -t nat -A POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE    
+        iptables -t nat -A PREROUTING -i bond0 -p tcp --dport 13389 -j DNAT --to 192.168.3.15:3389
+#VM Net
 ```
