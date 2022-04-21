@@ -2,7 +2,7 @@
 id: lo9v0suz98gpxk1coih86i7
 title: Win10 SSMS
 desc: ''
-updated: 1650509452601
+updated: 1650519865841
 created: 1645393642980
 ---
 
@@ -128,6 +128,7 @@ Guide Used: <https://youtu.be/6c-6xBkD2J4>
 30. BONUS
     1. For faster performance can activate Remote Desktop and just RDP onto the VM for near native performance
     2. On mac use [this app](https://apps.apple.com/us/app/microsoft-remote-desktop-10/id1295203466?mt=12)
+    3. If unable to connect to the VM and pinging the VM doesn't work check that the firewalls are not on for the VM or turn them off to establish connectivity
 
 [0]: https://www.microsoft.com/en-us/software-download/windows10ISO
 [1]: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
