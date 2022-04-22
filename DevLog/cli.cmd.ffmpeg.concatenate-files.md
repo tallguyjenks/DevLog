@@ -2,7 +2,7 @@
 id: vtmtfuaswzxoe8rwri1mves
 title: Concatenate Files
 desc: ''
-updated: 1641184295466
+updated: 1650667271429
 created: 1641184279802
 ---
 
@@ -23,7 +23,7 @@ File '~/Movie2.mkv'
 File '~/Movie3.mkv'
 ```
 
-after the `copy` command you list the output file/path/extention all of that and it works!
+after the `copy` command you list the output file/path/extension all of that and it works!
 
 ```bash
 $ cat mylist.txt
