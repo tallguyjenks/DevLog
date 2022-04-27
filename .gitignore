@@ -16,3 +16,5 @@ seeds
 package*.json
 yarn.lock
 pods/service-connections
+
+.backup

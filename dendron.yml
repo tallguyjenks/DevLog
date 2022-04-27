@@ -68,6 +68,7 @@ workspace:
     maxPreviewsCached: 10
     maxNoteLength: 204800
     dendronVersion: 0.84.0
+    enableFullHierarchyNoteTitle: false
 preview:
     enableFMTitle: true
     enableNoteTitleForLink: true
@@ -89,7 +90,7 @@ publishing:
         - root
     enableSiteLastModified: true
     siteRootDir: docs
-    siteUrl: 'https://{GITHUB_USERNAME}.github.io'
+    siteUrl: https://{GITHUB_USERNAME}.github.io
     enableFrontmatterTags: true
     enableHashesForFMTags: false
     enableRandomlyColoredTags: true
