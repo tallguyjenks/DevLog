@@ -2,7 +2,7 @@
 id: z5h8kud1gtm0mg81bj8zftz
 title: Merge
 desc: ''
-updated: 1646690054461
+updated: 1651075401669
 created: 1646687976354
 ---
 
@@ -89,3 +89,15 @@ SELECT * FROM Person
 DROP TABLE Person
 DROP TABLE PersonStageTable
 ```
+
+Another Example of syntax
+
+```sql
+MERGE target AS TARGET  
+USING source AS SOURCE   
+ON condition
+WHEN MATCHED THEN UPDATE                       
+WHEN NOT MATCHED BY TARGET THEN INSERT                        
+WHEN NOT MATCHED BY SOURCE THEN DELETE;
+```
+
