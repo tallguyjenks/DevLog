@@ -2,7 +2,7 @@
 id: q1qemne48z3ymgg0a06cdik
 title: Concat_ws
 desc: ''
-updated: 1651075664407
+updated: 1651075943738
 created: 1651075554432
 ---
 
@@ -17,4 +17,3 @@ SELECT CONCAT(first_name, ' ', last_name) FROM person_table;
 ```sql
 SELECT CONCAT_WS(' ', first_name, middle_name, last_name) FROM person_table;
 ```
-
