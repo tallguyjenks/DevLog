@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1650527472410
+updated: 1651076881116
 created: 1646726626690
 ---
 
@@ -113,6 +113,7 @@ SAVE
       - When it asks for username and password, use the username of the new account you created in the WebGUI and its password.
       - If you see your folder, great! If not, refer back to the previous steps to see if you did anything wrong.
 
+## snapshots
 
-
+Snapshots only store the differential of the change so if data is 100GB and i add 1GB the snapshot is only 1GB
 
