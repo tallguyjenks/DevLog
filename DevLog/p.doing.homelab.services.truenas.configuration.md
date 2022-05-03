@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1651076881116
+updated: 1651596581693
 created: 1646726626690
 ---
 
@@ -116,4 +116,3 @@ SAVE
 ## snapshots
 
 Snapshots only store the differential of the change so if data is 100GB and i add 1GB the snapshot is only 1GB
-
