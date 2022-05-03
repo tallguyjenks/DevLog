@@ -1,8 +1,8 @@
 ---
 id: 35d65udbt42pc3o4m9f2yf7
-title: Sp_send_dbmail
+title: sp_send_dbmail
 desc: ''
-updated: 1651598285579
+updated: 1651598589615
 created: 1651596632396
 ---
 
@@ -21,8 +21,21 @@ created: 1651596632396
 5. `Create a new account` this is the email account that will actually be sending the emails for you
    - Gmail is great here because it can be used as a pass through thought you might need to enable additional access in the settings menu of gmail
    - The outcome of this is that you receive emails from that Gmail account but in an automated fashion
-6. `Create a new profile`, this is what will be holding the account(s) that send email
-7. 
+6. New account details
+   - Account name and description are just for your reference but use them in tandem with the Display name to use an account for each of your Services
+   - Email address is the service account email address
+   - Display name is what it looks like the email is actually from
+   - reply email is who the replies go to
+   - server name for gmail would be `smtp.gmail.com` with port number [[n.port.587]]
+   - The [[n.protocol.ssl]] checkbox should be ticked
+   - Use basic authentication (radio button)
+   - username is the service account email address
+   - password is the password for the service account email address
+7. `Create a new profile`, this is what will be holding the account(s) that send email
+8. Give it a name and description
+9. add your email account you made to it
+10. finish
+11. test `sp_send_dbmail`
 
 ## Examples
 
