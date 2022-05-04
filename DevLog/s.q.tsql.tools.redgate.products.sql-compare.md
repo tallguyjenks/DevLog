@@ -1,9 +1,9 @@
 ---
-id: 5zop09fnj3gtd7s1nzilyml
-title: Data Compare
+id: rkdcey8i2azzu7gpplud596
+title: Sql Compare
 desc: ''
-updated: 1651252759228
-created: 1649694184275
+updated: 1651013369168
+created: 1651013354629
 ---
 
 ## Setup

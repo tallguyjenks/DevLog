@@ -2,7 +2,7 @@
 id: vt2uvnxhvp6t1y95vdepuq1
 title: Implementation
 desc: ''
-updated: 1649193719542
+updated: 1651532781754
 created: 1649193719542
 ---
 
@@ -19,5 +19,3 @@ created: 1649193719542
 6. Setup Source control filters so you essentially have gitignore functionality in the repository
 7. [[s.q.tsql.tools.redgate.implementation.link-a-development-database-to-your-source-control-system]]
    - If applicable [[s.q.tsql.tools.redgate.implementation.linking-static-data]]
-
-

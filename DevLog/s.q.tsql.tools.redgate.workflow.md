@@ -2,7 +2,7 @@
 id: faytj94ihnr194nopiw4lzj
 title: Workflow
 desc: ''
-updated: 1649361469294
+updated: 1651013750263
 created: 1649361469294
 ---
 
@@ -25,16 +25,36 @@ created: 1649361469294
   - They pull the repo and branch down to local machine
   - People make their own branch off of `PROD` that will contains the changes they want for specific work
   - they are now up to date and ready to work
-  - Right click the database you want to change
-  - `Tasks > Copy Database`
-  - The new empty database naming convention being DATABASE_BSJ_DEV
+- Cloning the database you want to work in
+  <!-- - Right click the database you want to change
+  - `Tasks > Copy Database` -->
+- Open [[s.q.tsql.tools.redgate.products.sql-compare]]
+  - Select Source Server and Database
+  - Select Target Server and in the database selection dropdown type the name of your new DEV copy of the database
+    - The new empty database naming convention being DATABASE_BSJ_DEV
     - the database name in all caps, followed by the developers initials, and ended with DEV so people know its someones development copy
-  - Right click that new DB and `Link with source control`
-  - `Link with my source control system`
-  - Select the folder location of the database from within the repository
-  - `Get Latest` if applicable
-  - `Apply Changes` if applicable
-  - Developer is now free to make changes to schema, objects, etc inside their test database
+    - When the name is ready click the `Create` link below the dropdown
+  - Continue through the Sql Compare menus and no need to save or backup the migration scripts
+  - After copying of the database is complete you're ready to begin work if changes are only schema related
+    - Right click that new DB and `Link with source control`
+    - `Link with my source control system`
+    - Select the folder location of the database from within the repository
+    - `Get Latest` if applicable
+    - `Apply Changes` if applicable
+    - Developer is now free to make changes to schema, objects, etc inside their test database
+- If data is also required within the dev copy from the source database then open [[s.q.tsql.tools.redgate.products.data-compare]]
+  - Select Source Server and Database
+  - Select Target Server and in the database selection dropdown type the name of your new DEV copy of the database you made prior
+  - No need to save the migration scripts and run everything within the Data Compare tool for deployment
+  - Select the data to copy across databases
+  - `Deploy`
+  - Now your schema and data all match across the servers and databases
+    - Right click that new DB and `Link with source control`
+    - `Link with my source control system`
+    - Select the folder location of the database from within the repository
+    - `Get Latest` if applicable
+    - `Apply Changes` if applicable
+    - Developer is now free to make changes to schema, objects, etc inside their test database
 
 ### Getting your change into the Pull Request process
 
