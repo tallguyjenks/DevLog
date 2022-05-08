@@ -1,6 +1,9 @@
 {
     "folders": [
         {
+            "path": "sterkere"
+        },
+        {
             "path": "Norsk"
         },
         {
@@ -44,7 +47,7 @@
         "recommendations": [
             "dendron.dendron-paste-image",
             "redhat.vscode-yaml",
-            "tomoki1207.pdf",
+            "tomoki1207.pdf"
         ],
         "unwantedRecommendations": [
             "dendron.dendron-markdown-links",

@@ -22,6 +22,8 @@ commands:
 workspace:
     vaults:
         -
+            fsPath: sterkere
+        -
             fsPath: Norsk
             visibility: private
         -
@@ -98,6 +100,7 @@ publishing:
         action: useVault
         payload:
             - DevLog
+            - sterkere
     writeStubs: false
     seo:
         title: Dendron
