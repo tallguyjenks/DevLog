@@ -1,0 +1,41 @@
+# description: Where to import from
+# type: string
+# required: true
+src: '/Users/bryanjenks/Desktop/Petrichor/Sterkere'
+
+# description: name of vault to import into
+# type: string
+# required: true
+vaultName: sterkere
+
+# description: whether to concatenate everything into one note
+# type: boolean
+# concatenate: TODO
+
+# description: frontmatter to add to each note
+# type: object
+frontmatter: 
+  imported: true
+# description: use the file name as the id
+# type: boolean
+# fnameAsId: TODO
+
+# description: If concatenate is set, name of destination path
+# type: string
+# destName: TODO
+
+# description: Don't add uuid to assets
+# type: boolean
+# noAddUUID: TODO
+
+# description: If you have an index file per directory, merge that file with the directory note
+# type: string
+# indexName: TODO
+
+# description: Import note metadata. In case of any conflicts, the conflicting fields are prefixed with _import
+# type: boolean
+importFrontmatter: true
+
+# description: An optional set of variable mappings, with the key being the variable name in the import source and the value being the resulting variable name in Dendron. See https://wiki.dendron.so/notes/f23a6290-2dec-45dc-b616-c218ee53db6b.html for examples.
+# type: object
+# frontmatterMapping: TODO
