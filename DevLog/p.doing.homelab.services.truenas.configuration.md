@@ -2,7 +2,7 @@
 id: 23xvy5h0503jnwb51mhvvjv
 title: Configuration
 desc: ''
-updated: 1651596581693
+updated: 1652072654653
 created: 1646726626690
 ---
 
@@ -116,3 +116,19 @@ SAVE
 ## snapshots
 
 Snapshots only store the differential of the change so if data is 100GB and i add 1GB the snapshot is only 1GB
+
+## Setup iperf3 on the server
+
+```bash
+apt-get install iperf3
+```
+
+In the `~/.profile` file, add this line:
+
+```bash
+iperf3 -s &
+```
+
+this will make it so upon server startup iperf3 will be run as an independant process that can can gather data from.
+
+By default it listens on port [[n.port.5021]]
