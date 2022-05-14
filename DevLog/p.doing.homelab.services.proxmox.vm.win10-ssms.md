@@ -2,7 +2,7 @@
 id: lo9v0suz98gpxk1coih86i7
 title: Win10 SSMS
 desc: ''
-updated: 1650527237517
+updated: 1652559125652
 created: 1645393642980
 ---
 
