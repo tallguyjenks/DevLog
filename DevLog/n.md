@@ -2,7 +2,7 @@
 id: sh4851li2rsrhx47wwsirgv
 title: Networking
 desc: ''
-updated: 2022-04-15 1646
+updated: 2022-05-15 0930
 created: 2021-11-15 1320
 ---
 
@@ -24,6 +24,7 @@ created: 2021-11-15 1320
 
 - TODO [Observium SNMP](https://observium.org/)
 - TODO [Wireshark](https://www.wireshark.org/)
+- TODO ceph on the proxmox and truenas nodes and having that data sent to grafana
 - TODO Nextclound
 - TODO `iperf`
 - TODO [nmap](https://nmap.org/download.html)
