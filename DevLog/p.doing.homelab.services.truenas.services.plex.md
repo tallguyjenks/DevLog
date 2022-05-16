@@ -2,13 +2,14 @@
 id: jig9fwrxnzgjbm2vdkm7ugq
 title: Plex
 desc: ''
-updated: 1652678880840
+updated: 1652679005936
 created: 1652643232116
 ---
 
 ## Resources
 
 - [Documentation](https://support.plex.tv/articles/)
+- [Full setup guide](https://troypoint.com/plex-media-server-setup-guide/#Media)
 
 ## Troubleshooting
 

@@ -2,7 +2,7 @@
 id: d2533pz9tslw9nd56f5t6lo
 title: Changelog
 desc: ''
-updated: 1652559400804
+updated: 1652679131247
 created: 1652559086416
 ---
 
@@ -15,6 +15,7 @@ created: 1652559086416
 - Create METRICS database and a heartbeat dashboard
 - Add SSIS metrics tables to METRICS database under schema `ssis`
 - spin up new VM to run Visual Studio
+  - Install SQL Server Data Tools
 
 ## 2022-04-25
 
