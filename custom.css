@@ -88,8 +88,7 @@ color: #928374;
 .ant-menu-item > .ant-badge a:hover,
 .ant-menu-submenu-selected {
 /* Color for the selected item in the sidebar. */
-color: red;
-/* color: #ebdbb2; */
+color: #ebdbb2;
 }
 
 .ant-menu-submenu .ant-menu-submenu-title:hover {
@@ -105,7 +104,8 @@ border-color: red;
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
 /* The color for the background of the currently selected sidebar item. */
-background-color: #c3cbdb;
+background-color: red;
+/* background-color: #c3cbdb; */
 }
 
 .dendron-toc .ant-anchor-ink-ball {
