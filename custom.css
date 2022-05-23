@@ -71,12 +71,12 @@ color: #f28019;
 
 .dendron-tree-menu.ant-menu .ant-menu-title-content a {
 /* Color for links in the sidebar. */
-color: #458588;
+color: #fe8019;
 }
 
 footer .ant-typography {
 /* Color for text in the footer, except the "Page last modified" text. */
-color: #ebdbb2;
+color: #928374;
 }
 
 footer .ant-typography.ant-typography-secondary {
@@ -88,7 +88,8 @@ color: #928374;
 .ant-menu-item > .ant-badge a:hover,
 .ant-menu-submenu-selected {
 /* Color for the selected item in the sidebar. */
-color: #1d2021;
+color: red;
+/* color: #ebdbb2; */
 }
 
 .ant-menu-submenu .ant-menu-submenu-title:hover {
@@ -98,7 +99,8 @@ color: #002b5c;
 
 .dendron-tree-menu.ant-menu .ant-menu-inline .ant-menu-item-selected::after {
 /* The color for the bar on the right side of the currently selected sidebar item. */
-border-color: #002b5c;
+border-color: red;
+/* border-color: #002b5c; */
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
