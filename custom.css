@@ -10,26 +10,28 @@ We'll be trying to stabilize these as soon as possible to minimize breakages!
 /* ============> background colors <============ */
 section.side-layout-main {
 /* Background color of the main section, with the page contents and table of contents. */
-background: #1d2021;
+background: #282828;
 }
 
 footer.ant-layout-footer {
 /* Background color of the footer */
-background: #282828;
+background: #1d2021;
 }
 
 header.ant-layout-header {
 /* Background color of the header, with logo and search bar. */
-background: #282828;
+background: #1d2021;
 }
 
-#__next > section > section > section > section.ant-layout.side-layout-main > main > div
+svg {
+    color: #ebdbb2 !important;
+}
 
 .dendron-tree-menu.ant-menu
 .ant-menu-submenu.dendron-ant-menu-submenu-selected
 > .ant-menu-submenu-title {
 /* Background color for the currently selected item on the sidebar. */
-background: #689d6a;
+background: #8ec07c;
 }
 
 .site-layout-sidebar.ant-layout,
@@ -41,7 +43,7 @@ background: #689d6a;
 .ant-menu-vertical-right .ant-menu-submenu,
 .ant-menu-inline .ant-menu-submenu {
 /* Background color for the sidebar. */
-background: #282828;
+background: #1d2021;
 }
 
 /* ============> Text and link colors <============ */
@@ -63,7 +65,7 @@ color: #f28019;
 
 a:visited {
 /* Color for links that have been already visited. */
-color: #d3869b;
+color: #cc241d;
 }
 
 .dendron-toc .ant-anchor-link-title {
@@ -100,12 +102,12 @@ color: #fe8019;
 
 .dendron-tree-menu.ant-menu .ant-menu-inline .ant-menu-item-selected::after {
 /* The color for the bar on the right side of the currently selected sidebar item. */
-border-color: #8ec07c;
+border-color: #689d6a;
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
 /* The color for the background of the currently selected sidebar item. */
-background-color: #689d6a;
+background-color: #8ec07c;
 }
 
 .dendron-toc .ant-anchor-ink-ball {
