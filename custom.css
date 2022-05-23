@@ -65,7 +65,7 @@ color: #f28019;
 
 a:visited {
 /* Color for links that have been already visited. */
-color: #cc241d;
+color: #fb4934;
 }
 
 .dendron-toc .ant-anchor-link-title {
@@ -113,4 +113,8 @@ background-color: #8ec07c;
 .dendron-toc .ant-anchor-ink-ball {
 /* The color for the dot in the table of contents showing the current position. */
 border-color: #458588;
+}
+
+#__next > section > section > section > section.ant-layout.side-layout-main > main > div.ant-breadcrumb > span:nth-child(2) > span.ant-breadcrumb-link > a {
+    color: #fb4934;
 }
