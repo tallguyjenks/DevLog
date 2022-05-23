@@ -117,5 +117,17 @@ border-color: #458588;
 a:not([class]) {
     /* background-image: none; */
     background-image: linear-gradient(#fe8019 0%, #fe8019 100%);
+}
 
+#__next > section > header > div > div.ant-col.gutter-row.ant-col-xs-0.ant-col-sm-20.ant-col-md-20.ant-col-lg-19 > div > div.ant-select-selector {
+    background-color: #282828;
+    color: #ebdbb2
+}
+#__next > section > header > div > div.ant-col.gutter-row.ant-col-xs-0.ant-col-sm-20.ant-col-md-20.ant-col-lg-19 > div > div.ant-select-selector > span.ant-select-selection-placeholder {
+    color: #928374
+}
+
+#__next > section > header > div > div.ant-col.gutter-row.ant-col-xs-0.ant-col-sm-20.ant-col-md-20.ant-col-lg-19 > div > div:nth-child(3) > div > div > div > div.rc-virtual-list {
+    background-color: #1d2021;
+    color: #ebdbb2
 }
