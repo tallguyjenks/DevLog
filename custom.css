@@ -10,24 +10,24 @@ We'll be trying to stabilize these as soon as possible to minimize breakages!
 /* ============> background colors <============ */
 section.side-layout-main {
 /* Background color of the main section, with the page contents and table of contents. */
-background: #ffffff;
+background: #1d2021;
 }
 
 footer.ant-layout-footer {
 /* Background color of the footer */
-background: #fafafa;
+background: #282828;
 }
 
 header.ant-layout-header {
 /* Background color of the header, with logo and search bar. */
-background: #e0e0e0;
+background: #282828;
 }
 
 .dendron-tree-menu.ant-menu
 .ant-menu-submenu.dendron-ant-menu-submenu-selected
 > .ant-menu-submenu-title {
 /* Background color for the currently selected item on the sidebar. */
-background: #c5dcff;
+background: #689d6a;
 }
 
 .site-layout-sidebar.ant-layout,
@@ -39,7 +39,7 @@ background: #c5dcff;
 .ant-menu-vertical-right .ant-menu-submenu,
 .ant-menu-inline .ant-menu-submenu {
 /* Background color for the sidebar. */
-background: #e0e0e0;
+background: #282828;
 }
 
 /* ============> Text and link colors <============ */
@@ -49,46 +49,46 @@ h2,
 h3,
 h4 {
 /* Text color for the text, not including links. */
-color: #0c0c0c;
+color: #ebdbb2;
 }
 
 a,
 a:hover,
 a:active {
 /** Color for links, except ones that have been already visited. */
-color: #00629b;
+color: #f28019;
 }
 
 a:visited {
 /* Color for links that have been already visited. */
-color: #002b5c;
+color: #b16286;
 }
 
 .dendron-toc .ant-anchor-link-title {
 /* Color for items in the table of contents. */
-color: #0c0c0c;
+color: #f28019;
 }
 
 .dendron-tree-menu.ant-menu .ant-menu-title-content a {
 /* Color for links in the sidebar. */
-color: #00629b;
+color: #458588;
 }
 
 footer .ant-typography {
 /* Color for text in the footer, except the "Page last modified" text. */
-color: #1b1b1b;
+color: #ebdbb2;
 }
 
 footer .ant-typography.ant-typography-secondary {
 /* Color for the "Page last modified" text in the footer. */
-color: #4e4e4e;
+color: #928374;
 }
 
 .ant-menu-item a:hover,
 .ant-menu-item > .ant-badge a:hover,
 .ant-menu-submenu-selected {
 /* Color for the selected item in the sidebar. */
-color: #002b5c;
+color: #1d2021;
 }
 
 .ant-menu-submenu .ant-menu-submenu-title:hover {
