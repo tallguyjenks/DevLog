@@ -114,7 +114,8 @@ background-color: #8ec07c;
 /* The color for the dot in the table of contents showing the current position. */
 border-color: #458588;
 }
+a:not([class]) {
+    /* background-image: none; */
+    background-image: linear-gradient(#fe8019 0%, #fe8019 100%);
 
-#__next > section > section > section > section.ant-layout.side-layout-main > main > div.ant-breadcrumb > span:nth-child(2) > span.ant-breadcrumb-link > a {
-    color: #fb4934;
 }
