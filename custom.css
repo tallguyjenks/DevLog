@@ -61,7 +61,7 @@ color: #f28019;
 
 a:visited {
 /* Color for links that have been already visited. */
-color: #b16286;
+color: #d3869b;
 }
 
 .dendron-toc .ant-anchor-link-title {
@@ -93,22 +93,20 @@ color: #ebdbb2;
 
 .ant-menu-submenu .ant-menu-submenu-title:hover {
 /* The color for the currently highlighted sidebar item. */
-color: #002b5c;
+color: #fe8019;
 }
 
 .dendron-tree-menu.ant-menu .ant-menu-inline .ant-menu-item-selected::after {
 /* The color for the bar on the right side of the currently selected sidebar item. */
-border-color: red;
-/* border-color: #002b5c; */
+border-color: #8ec07c;
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
 /* The color for the background of the currently selected sidebar item. */
-background-color: red;
-/* background-color: #c3cbdb; */
+background-color: #689d6a;
 }
 
 .dendron-toc .ant-anchor-ink-ball {
 /* The color for the dot in the table of contents showing the current position. */
-border-color: #002b5c;
+border-color: #458588;
 }
