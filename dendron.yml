@@ -23,6 +23,7 @@ workspace:
     vaults:
         -
             fsPath: sterkere
+            visibility: private
         -
             fsPath: Norsk
             visibility: private
@@ -69,7 +70,7 @@ workspace:
     enableEditorDecorations: true
     maxPreviewsCached: 10
     maxNoteLength: 204800
-    dendronVersion: 0.84.0
+    dendronVersion: 0.95.1
     enableFullHierarchyNoteTitle: false
 preview:
     enableFMTitle: true
@@ -87,7 +88,7 @@ publishing:
     enableMermaid: true
     enablePrettyRefs: true
     enableKatex: true
-    assetsPrefix: /DevLog
+    # assetsPrefix: /DevLog
     copyAssets: true
     siteHierarchies:
         - root
@@ -101,7 +102,6 @@ publishing:
         action: useVault
         payload:
             - DevLog
-            - sterkere
     writeStubs: false
     seo:
         title: Dendron
