@@ -127,7 +127,13 @@ a:not([class]) {
     color: #928374
 }
 
-#__next > section > header > div > div.ant-col.gutter-row.ant-col-xs-0.ant-col-sm-20.ant-col-md-20.ant-col-lg-19 > div > div:nth-child(3) > div > div > div > div.rc-virtual-list {
+/* #__next > section > header > div > div.ant-col.gutter-row.ant-col-xs-0.ant-col-sm-20.ant-col-md-20.ant-col-lg-19 > div > div:nth-child(3) > div > div > div >  */
+div.rc-virtual-list {
+    background-color: #1d2021;
+    color: #ebdbb2
+}
+
+div.rc-virtual-list > div.rc-virtual-list-holder > div > div > div.ant-select-item.ant-select-item-option.ant-select-item-option-active {
     background-color: #1d2021;
     color: #ebdbb2
 }
