@@ -102,12 +102,12 @@ color: #fe8019;
 
 .dendron-tree-menu.ant-menu .ant-menu-inline .ant-menu-item-selected::after {
 /* The color for the bar on the right side of the currently selected sidebar item. */
-border-color: #689d6a;
+border-color: #8ec07c;
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
 /* The color for the background of the currently selected sidebar item. */
-background-color: #8ec07c;
+background-color: #689d6a;
 }
 
 .dendron-toc .ant-anchor-ink-ball {
