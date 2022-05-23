@@ -88,7 +88,7 @@ publishing:
     enableMermaid: true
     enablePrettyRefs: true
     enableKatex: true
-    # assetsPrefix: /DevLog
+    assetsPrefix: /DevLog
     copyAssets: true
     siteHierarchies:
         - root
