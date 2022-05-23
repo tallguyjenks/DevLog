@@ -141,6 +141,6 @@ div.rc-virtual-list > div.rc-virtual-list-holder > div > div > div.ant-select-it
     background-color: #1d2021; 
     color: #ebdbb2
 }
-#rc_select_0_list {
+#rc_select_0_list > *{
     color: #ebdbb2
 }
