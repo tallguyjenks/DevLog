@@ -2,7 +2,7 @@
 id: p50tt2ssehdosmqr4wqug20
 title: MSSQL
 desc: ''
-updated: 1655667744253
+updated: 1655675816595
 created: 1652558782274
 ---
 
@@ -78,23 +78,74 @@ sudo systemctl restart mssql-server
 sudo timedatectl set-timezone America/Los_Angeles
 ```
 
-## Setup ODBC Driver
+## Setup ODBC Driver for connectivity to this server
 
-> <https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver16#ubuntu18>
+- <https://manjaro.site/how-to-connect-to-microsoft-sql-server-using-python-on-macos-catalina/>
 
 ```bash
-if ! [[ "18.04 20.04 21.04" == *"$(lsb_release -rs)"* ]]; then
-    echo "Ubuntu $(lsb_release -rs) is not currently supported." && exit;
-fi
-sudo su
-curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list
-sudo apt-get update
-sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
-sudo ACCEPT_EULA=Y apt-get install -y mssql-tools18 # optional: for bcp and sqlcmd
-echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
-source ~/.bashrc
-sudo apt-get install -y unixodbc-dev # optional: for unixODBC development headers
-apt-get install -y pip
+brew update
+brew install unixodbc freetds # Install dependencies
 sudo -H pip install pyodbc
+tsql -C # Find freetds conf file
+```
+
+```bash
+sudo nvim /usr/local/etc/freetds.conf # Add configuration information
+```
+
+```ini
+[Ubuntu-Docker] # <-- Change this
+host = 192.168.100.52 # <-- Change this
+port = 1433
+tds version = 7.3
+```
+
+```bash
+tsql -S Ubuntu-Docker -U myUser -P myPassword # Test connection
+```
+
+```bash
+odbcinst -j # Edit DSN files
+```
+
+```bash
+sudo nvim /usr/etc/local/odbcinst.ini # Add configuration information
+```
+
+```ini
+[FreeTDS]
+DescriptionFreeTDS Driver for Linux MSSOL
+Driver-/usr/local/lib/libtdsodbc.so
+Setup-/usr/local/lib/libtdsodbc.so
+UsageCount=1
+```
+
+```bash
+sudo nvim /usr/etc/local/odbc.ini # Add configuration information
+```
+
+```ini
+[Ubuntu-Docker]
+Description = SOL Server on Ubuntu Docker
+Driver = FreeTDS
+Servername = Ubuntu-Docker
+```
+
+```bash
+isql Ubuntu-Docker myUser myPassword # verify connectivity
+```
+
+### pyodbc connection to database
+
+> Temporary issue with pyodbc <https://stackoverflow.com/questions/71067094/pyodbc-deprecation-warning-when-printing>
+> work around: "set an environment variable named `PYTHONWARNINGS` to the value `ignore::DeprecationWarning` and then just run the script normally."
+
+```python
+import pyodbc
+myconn = pyodbc.connect('DSN-Ubuntu-Docker;UID-sa;PWD=mYPasswd.23')
+mycursor = myconn.cursor ()
+myrows = mycursor.execute("SELECT @@VERSION").fetchall()
+print(myrows)
+mycursor.close()
+myconn.close()
 ```
