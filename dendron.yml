@@ -58,8 +58,12 @@ workspace:
             M: medium
             L: low
         createTaskSelectionType: selection2link
+        taskCompleteStatus:
+            - done
+            - x
     graph:
         zoomSpeed: 1
+        createStub: false
     enableAutoCreateOnDefinition: false
     enableXVaultWikiLink: false
     enableRemoteVaultInit: true
@@ -72,6 +76,8 @@ workspace:
     maxNoteLength: 204800
     dendronVersion: 0.95.1
     enableFullHierarchyNoteTitle: false
+    enableHandlebarTemplates: false
+    templateHierarchy: template
 preview:
     enableFMTitle: true
     enableNoteTitleForLink: true
@@ -112,3 +118,4 @@ publishing:
         editBranch: master
         editViewMode: tree
     enablePrettyLinks: true
+    enableTaskNotes: true

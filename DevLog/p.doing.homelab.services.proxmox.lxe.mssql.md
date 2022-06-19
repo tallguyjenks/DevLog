@@ -2,7 +2,7 @@
 id: p50tt2ssehdosmqr4wqug20
 title: MSSQL
 desc: ''
-updated: 1655667602280
+updated: 1655667744253
 created: 1652558782274
 ---
 
@@ -80,6 +80,8 @@ sudo timedatectl set-timezone America/Los_Angeles
 
 ## Setup ODBC Driver
 
+> <https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver16#ubuntu18>
+
 ```bash
 if ! [[ "18.04 20.04 21.04" == *"$(lsb_release -rs)"* ]]; then
     echo "Ubuntu $(lsb_release -rs) is not currently supported." && exit;
@@ -93,4 +95,6 @@ sudo ACCEPT_EULA=Y apt-get install -y mssql-tools18 # optional: for bcp and sqlc
 echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
 source ~/.bashrc
 sudo apt-get install -y unixodbc-dev # optional: for unixODBC development headers
+apt-get install -y pip
+sudo -H pip install pyodbc
 ```
