@@ -1,8 +1,8 @@
 ---
 id: nlgpx5dp7cg0vlaz18z4lvi
-title: Sample Job Cod
+title: Sample Job Code
 desc: ''
-updated: 1646342530578
+updated: 1657053084280
 created: 1646342530578
 ---
 
@@ -22,7 +22,7 @@ CREATE procedure [dbo].[sp_add_job_quick]
 as
 --Add a job
 EXEC dbo.sp_add_job
-    @job_name = @job ;
+    @job_name = @job 
 --Add a job step named process step. This step runs the stored procedure
 EXEC sp_add_jobstep
     @job_name = @job,

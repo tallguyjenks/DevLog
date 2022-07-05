@@ -2,7 +2,7 @@
 id: lojiy17xp2w1my9mah7rslm
 title: Regular Expressions
 desc: ''
-updated: 1641267600397
+updated: 1653520718840
 created: 1641105063864
 stub: false
 isDir: false
@@ -14,6 +14,7 @@ Useful site for writing and testing regex
 - <https://www.regexpal.com/>
 - <https://regex101.com/>
 - <http://regextutorials.com/index.html>
+- <https://regexper.com/#%5E%28%5Ba-z%5D%2B%5Cd*_%5Ba-z%5Cd_%5D*%7C_%2B%5Ba-z%5Cd%5D%2B%5Ba-z%5Cd_%5D*%29%24>
 
 ![image.png](image_1626507098408_0.png)
 
