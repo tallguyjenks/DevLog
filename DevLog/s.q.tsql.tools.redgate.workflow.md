@@ -2,7 +2,7 @@
 id: faytj94ihnr194nopiw4lzj
 title: Workflow
 desc: ''
-updated: 1651013750263
+updated: 1652206122414
 created: 1649361469294
 ---
 
@@ -51,6 +51,7 @@ created: 1649361469294
   - Now your schema and data all match across the servers and databases
     - Right click that new DB and `Link with source control`
     - `Link with my source control system`
+    - Select the folder location of the database from within the repository
     - Select the folder location of the database from within the repository
     - `Get Latest` if applicable
     - `Apply Changes` if applicable
