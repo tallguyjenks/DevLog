@@ -19,8 +19,12 @@ commands:
     insertNoteIndex:
         enableMarker: false
     copyNoteLink: {}
+    templateHierarchy: template
 workspace:
     vaults:
+        -
+            fsPath: sterkere
+            visibility: private
         -
             fsPath: Norsk
             visibility: private
@@ -55,8 +59,12 @@ workspace:
             M: medium
             L: low
         createTaskSelectionType: selection2link
+        taskCompleteStatus:
+            - done
+            - x
     graph:
         zoomSpeed: 1
+        createStub: false
     enableAutoCreateOnDefinition: false
     enableXVaultWikiLink: false
     enableRemoteVaultInit: true
@@ -67,8 +75,10 @@ workspace:
     enableEditorDecorations: true
     maxPreviewsCached: 10
     maxNoteLength: 204800
-    dendronVersion: 0.84.0
+    dendronVersion: 0.95.1
     enableFullHierarchyNoteTitle: false
+    enableHandlebarTemplates: false
+    templateHierarchy: template
 preview:
     enableFMTitle: true
     enableNoteTitleForLink: true
@@ -79,6 +89,7 @@ preview:
     enableFrontmatterTags: true
     enableHashesForFMTags: false
 publishing:
+    theme: custom
     enableFMTitle: true
     enableNoteTitleForLink: true
     enableMermaid: true
@@ -108,3 +119,4 @@ publishing:
         editBranch: master
         editViewMode: tree
     enablePrettyLinks: true
+    enableTaskNotes: true
