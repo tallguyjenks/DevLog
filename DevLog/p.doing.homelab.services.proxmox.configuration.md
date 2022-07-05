@@ -2,7 +2,7 @@
 id: ghqfq24dh7bjkpabdqvstm6
 title: Configuration
 desc: ''
-updated: 1650527447109
+updated: 1652072375716
 created: 1643183994393
 ---
 
@@ -170,3 +170,19 @@ iface vmbr1 inet static
         iptables -t nat -A PREROUTING -i bond0 -p tcp --dport 13389 -j DNAT --to 192.168.3.15:3389
 #VM Net
 ```
+
+## Setup iperf3 on the server
+
+```bash
+apt-get install iperf3
+```
+
+In the `~/.profile` file, add this line:
+
+```bash
+iperf3 -s &
+```
+
+this will make it so upon server startup iperf3 will be run as an independant process that can can gather data from.
+
+By default it listens on port [[n.port.5021]]
