@@ -1,7 +1,7 @@
 ---
 id: 5jta5bbccmex46b8akgyxbj
-title: Iac
-desc: Infrastructure As Code
+title: Infrastructure As Code
+desc: ''
 updated: 1643345736463
 created: 1643345697308
 ---

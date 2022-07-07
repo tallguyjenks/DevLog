@@ -1,7 +1,7 @@
 ---
 id: 0j1psochrpccykyy9g0jraj
-title: PMF
-desc: Protected Management Frames
+title: Protected Management Frames
+desc: ''
 updated: 1643876847316
 created: 1643876749587
 ---

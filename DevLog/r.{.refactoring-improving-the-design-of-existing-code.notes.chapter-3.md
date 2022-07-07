@@ -2,12 +2,12 @@
 id: tzms0ujpwfktqg4cnt0q19e
 title: Bad Smells In Code
 desc: ''
-updated: 1647905182081
+updated: 1657139826560
 created: 1647552668237
 ---
 
 - Mysterious Name
-  - [[r.{.refactoring-improving-the-design-of-existing-code.refactorings.124-change-function-declaration]]
+  - [[r.{.refactoring-improving-the-design-of-existing-code.refactorings.124-change-function-declaration]
   - [[r.{.refactoring-improving-the-design-of-existing-code.refactorings.123-inline-variable]]
   - [[r.{.refactoring-improving-the-design-of-existing-code.refactorings.137-rename-variable]]
   - [[r.{.refactoring-improving-the-design-of-existing-code.refactorings.244-rename-field]]

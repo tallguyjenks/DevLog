@@ -1,7 +1,7 @@
 ---
-id: zz27rkdxzth47il63gdho79
-title: ZFS
-desc: Zettabyte file system
+id: zza27rkdxzth47il63gdho79
+title: Zettabyte file system
+desc: ''
 updated: 1647150060933
 created: 1646010591661
 ---
