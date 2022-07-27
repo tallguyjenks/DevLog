@@ -2,7 +2,7 @@
 id: p4mog8mu5oi3u7tg97iwjb4
 title: Setup
 desc: ''
-updated: 1650071627623
+updated: 1658898174865
 created: 1643183976632
 ---
 
@@ -19,7 +19,7 @@ created: 1643183976632
 4. Boot from the flash drive
    1. or using [[p.doing.homelab.servers.ymir.ilo]]
 5. Follow the prompts and fill in the information
-   1. Note: i did have to configure my disks in some of the boot menus to make a single logical volume RAID 5 configuration
+   1. **Note:** i did have to configure my disks in some of the boot menus to make a single logical volume RAID 5 configuration
    2. The in the Proxmox installer i just selected ext4 for the file system
    3. Will use ZFS on [[p.doing.homelab.servers.fafnir]]
 6. fill in network information
