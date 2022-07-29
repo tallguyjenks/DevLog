@@ -1,0 +1,46 @@
+<h1 id="pyinstrument"><a aria-hidden="true" class="anchor-heading icon-link" href="#pyinstrument"></a>Pyinstrument</h1>
+<p>Great visual profiling library</p>
+<h2 id="installation"><a aria-hidden="true" class="anchor-heading icon-link" href="#installation"></a>installation</h2>
+<pre class="language-shell"><code class="language-shell">pip <span class="token function">install</span> Pyinstrument
+</code></pre>
+<h2 id="get-great-output-from-testing"><a aria-hidden="true" class="anchor-heading icon-link" href="#get-great-output-from-testing"></a>Get great output from testing</h2>
+<pre class="language-shell"><code class="language-shell">Pyinstrument -r <span class="token string">'html'</span> -o output.html file.py
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-01-06-15-25-38.png" alt="pyinstrument html output"></p>
+<h2 id="get-an-interactive-graphical-flamegraph"><a aria-hidden="true" class="anchor-heading icon-link" href="#get-an-interactive-graphical-flamegraph"></a>Get an interactive graphical flamegraph</h2>
+<pre class="language-shell"><code class="language-shell">pyinstrument -r speedscope -o speedscope.json path/script.py
+</code></pre>
+<p>Then open your <a href="/DevLog/notes/0omx8pba0w9z6p5q0fu56a1">Json</a> file with <a href="https://www.speedscope.app/">https://www.speedscope.app/</a></p>
+<p><img src="/DevLog/assets/images/2022-01-06-15-33-51.png" alt="flamegraph"></p>
+<h2 id="running-the-profiler-on-inline-code"><a aria-hidden="true" class="anchor-heading icon-link" href="#running-the-profiler-on-inline-code"></a>running the profiler on inline code</h2>
+<p>using the function at the bottom <code>profiler.open_in_browser()</code> would be great if
+passing a flag to a <a href="/DevLog/notes/6pxwlugphnw6vm4t8kn0j5p">CLI</a> program to enter into a testing/troubleshooting mode</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> time
+<span class="token keyword">from</span> pyinstrument <span class="token keyword">import</span> Profiler
+
+<span class="token comment"># Note the interval value is 1/10th the sleeptime!</span>
+<span class="token comment"># This lets you change the speed graph intervals</span>
+<span class="token comment"># profiler = Profiler(interval=0.000001)</span>
+
+profiler <span class="token operator">=</span> Profiler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+profiler<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+sleep_time <span class="token operator">=</span> <span class="token number">0.1</span>
+
+<span class="token keyword">def</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>sleep_time<span class="token punctuation">)</span>
+    do_sleep1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    do_sleep2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">do_sleep1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>sleep_time<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">do_sleep2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    do_sleep1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>sleep_time<span class="token punctuation">)</span>
+
+start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+profiler<span class="token punctuation">.</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+profiler<span class="token punctuation">.</span>open_in_browser<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># Several Options here</span>
+</code></pre>

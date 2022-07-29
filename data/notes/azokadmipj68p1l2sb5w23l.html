@@ -1,0 +1,23 @@
+<h1 id="25"><a aria-hidden="true" class="anchor-heading icon-link" href="#25"></a>25</h1>
+<ul>
+<li><a href="/DevLog/notes/lo9v0suz98gpxk1coih86i7">Win10 SSMS</a>
+<ul>
+<li>Install SSMS (T-SQL)</li>
+</ul>
+</li>
+<li><a href="/DevLog/notes/p50tt2ssehdosmqr4wqug20">MSSQL</a>
+<ul>
+<li>Management > Database Mail > Configure and setup <code>(See [[s.q.tsql.system-resources.stored-procedure.msdb.sp_send_dbmail]])</code></li>
+<li>Setup alternate login</li>
+</ul>
+</li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> LOGIN <span class="token punctuation">[</span>Bryan<span class="token punctuation">]</span> <span class="token keyword">WITH</span> PASSWORD <span class="token operator">=</span> <span class="token operator">&#x3C;</span><span class="token operator">+</span><span class="token operator">+</span><span class="token operator">></span><span class="token punctuation">,</span> 
+DEFAULT_DATABASE<span class="token operator">=</span><span class="token punctuation">[</span>master<span class="token punctuation">]</span><span class="token punctuation">,</span> 
+DEFAULT_LANGUAGE<span class="token operator">=</span><span class="token punctuation">[</span>us_english<span class="token punctuation">]</span><span class="token punctuation">,</span> 
+CHECK_EXPIRATION<span class="token operator">=</span><span class="token keyword">OFF</span><span class="token punctuation">,</span> 
+CHECK_POLICY<span class="token operator">=</span><span class="token keyword">ON</span><span class="token punctuation">;</span>
+GO
+<span class="token keyword">ALTER</span> SERVER ROLE <span class="token punctuation">[</span>sysadmin<span class="token punctuation">]</span> <span class="token keyword">ADD</span> MEMBER <span class="token punctuation">[</span>Bryan<span class="token punctuation">]</span><span class="token punctuation">;</span>
+GO
+</code></pre>

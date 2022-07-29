@@ -1,0 +1,28 @@
+<h1 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h1>
+<h3 id="examples"><a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a>Examples</h3>
+<pre class="language-latex"><code class="language-latex"><span class="token function selector">\titleformat</span><span class="token punctuation">{</span><span class="token function selector">\section</span><span class="token punctuation">}</span><span class="token punctuation">[</span>frame<span class="token punctuation">]</span>
+<span class="token punctuation">{</span><span class="token function selector">\huge</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>.25em<span class="token punctuation">}</span> <span class="token comment">% The only required argument</span>
+<span class="token punctuation">{</span><span class="token function selector">\filcenter</span><span class="token function selector">\bfseries</span><span class="token function selector">\lowercase</span><span class="token punctuation">}</span><span class="token comment">% Horizontal line [\titlerule] % Optional param</span>
+
+<span class="token comment">% SubSection Formatting</span>
+<span class="token function selector">\titleformat</span><span class="token punctuation">{</span><span class="token function selector">\subsection</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token function selector">\bfseries</span><span class="token function selector">\Large</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token function selector">\hspace</span><span class="token punctuation">{</span>-.25in<span class="token punctuation">}</span><span class="token equation string">$<span class="token equation-command regex">\bullet</span>$</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>.3em<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">% SubSubSection Formatting</span>
+<span class="token function selector">\titleformat</span><span class="token punctuation">{</span><span class="token function selector">\subsubsection</span><span class="token punctuation">}</span><span class="token punctuation">[</span>runin<span class="token punctuation">]</span> <span class="token comment">% Optional param</span>
+<span class="token punctuation">{</span><span class="token function selector">\bfseries</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>0em<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">[</span>---<span class="token punctuation">]</span>
+
+<span class="token function selector">\titleformat</span><span class="token punctuation">{</span><span class="token function selector">\section</span><span class="token punctuation">}</span><span class="token punctuation">[</span>frame<span class="token punctuation">]</span>
+<span class="token punctuation">{</span><span class="token function selector">\normalfont</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token function selector">\filright</span><span class="token function selector">\footnotesize</span><span class="token function selector">\enspace</span> SECTION <span class="token function selector">\thesection</span><span class="token function selector">\enspace</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>8pt<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token function selector">\Large</span><span class="token function selector">\bfseries</span><span class="token function selector">\filcenter</span><span class="token punctuation">}</span>
+</code></pre>

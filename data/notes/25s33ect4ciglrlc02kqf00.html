@@ -1,0 +1,39 @@
+<h1 id="test-bench"><a aria-hidden="true" class="anchor-heading icon-link" href="#test-bench"></a>Test Bench</h1>
+<h2 id="test-bench-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#test-bench-1"></a>Test Bench</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   StatsInfo testData<span class="token punctuation">;</span>
+
+   <span class="token comment">// Typical testbench tests more thoroughly </span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Beginning tests."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   <span class="token comment">// Check set/get num1</span>
+   testData<span class="token punctuation">.</span><span class="token function">SetNum1</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>testData<span class="token punctuation">.</span><span class="token function">GetNum1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   FAILED set/get num1"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">// Check set/get num2</span>
+   testData<span class="token punctuation">.</span><span class="token function">SetNum2</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>testData<span class="token punctuation">.</span><span class="token function">GetNum2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">50</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   FAILED set/get num2"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">// Check GetAverage()</span>
+   testData<span class="token punctuation">.</span><span class="token function">SetNum1</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   testData<span class="token punctuation">.</span><span class="token function">SetNum2</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>testData<span class="token punctuation">.</span><span class="token function">GetAverage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">15</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   FAILED GetAverage for 10, 20"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   testData<span class="token punctuation">.</span><span class="token function">SetNum1</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   testData<span class="token punctuation">.</span><span class="token function">SetNum2</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>testData<span class="token punctuation">.</span><span class="token function">GetAverage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   FAILED GetAverage for -10, 0"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Tests complete."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

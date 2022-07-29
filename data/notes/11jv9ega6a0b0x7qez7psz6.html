@@ -1,0 +1,48 @@
+<h1 id="ordered"><a aria-hidden="true" class="anchor-heading icon-link" href="#ordered"></a>Ordered</h1>
+<h2 id="ordered-lists"><a aria-hidden="true" class="anchor-heading icon-link" href="#ordered-lists"></a>Ordered Lists</h2>
+<p>ordered lists can be explicitly numbered</p>
+<pre><code>1. First item
+2. Second item
+3. Third item
+4. Fourth item
+</code></pre>
+<p>Or they will be automatically numbered based on order and indentation</p>
+<pre><code>1. First item
+1. Second item
+1. Third item
+1. Fourth item
+</code></pre>
+<p>becomes:</p>
+<pre><code>1. First item
+2. Second item
+3. Third item
+4. Fourth item
+</code></pre>
+<p>Indentation levels reset the counts for each instance of a sublist</p>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item
+<ol>
+<li>Indented item</li>
+<li>Indented item</li>
+</ol>
+</li>
+<li>Fourth item</li>
+</ol>
+<p>Even when unordered the relative links still work correctly</p>
+<pre><code>1. First item
+1. Second item
+1. Third item
+    1. Indented item
+    1. Indented item
+1. Fourth item
+</code></pre>
+<p>becomes:</p>
+<pre><code>1. First item
+2. Second item
+3. Third item
+    1. Indented item
+    2. Indented item
+4. Fourth item
+</code></pre>

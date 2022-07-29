@@ -1,0 +1,50 @@
+<h1 id="sphinx"><a aria-hidden="true" class="anchor-heading icon-link" href="#sphinx"></a>Sphinx</h1>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="http://www.sphinx-doc.org/en/stable/tutorial.html">Sphinx Tutorial</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/rest.html">reStructuredText Primer</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/markup/index.html">Sphinx Markup Constructs</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/domains.html">Sphinx Domains</a></li>
+</ul>
+<h2 id="quick-start"><a aria-hidden="true" class="anchor-heading icon-link" href="#quick-start"></a>Quick Start</h2>
+<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> Sphinx
+<span class="token function">mkdir</span> docs
+<span class="token builtin class-name">cd</span> docs
+sphinx-quickstart
+</code></pre>
+<p>This creates:</p>
+<p><img src="/DevLog/assets/images/2022-02-17-12-49-53.png" alt="quick start"></p>
+<h2 id="versioning"><a aria-hidden="true" class="anchor-heading icon-link" href="#versioning"></a>Versioning</h2>
+<p>Instead of hardcoding version in the quick start wizard, use the python <code>__version__</code> dunder to have the version automatically be pulled.</p>
+<p><img src="/DevLog/assets/images/2022-02-17-12-51-56.png" alt="version"></p>
+<h2 id="building-the-docs"><a aria-hidden="true" class="anchor-heading icon-link" href="#building-the-docs"></a>Building The docs</h2>
+<pre class="language-bash"><code class="language-bash">sphinx-build <span class="token builtin class-name">.</span> _build/html/
+<span class="token function">make</span> html <span class="token comment"># this is just an alias to the above command</span>
+</code></pre>
+<p>Instead of just detecting changes you might want to rebuild the whole thing:</p>
+<pre class="language-bash"><code class="language-bash">sphinx-build -E <span class="token builtin class-name">.</span> _build/html/
+<span class="token function">make</span> clean<span class="token punctuation">;</span> <span class="token function">make</span> html
+</code></pre>
+<h3 id="code-coverage"><a aria-hidden="true" class="anchor-heading icon-link" href="#code-coverage"></a>Code Coverage</h3>
+<p>can use a different build tool addon that is activated from the quickstart wizard called <code>coverage</code></p>
+<pre class="language-bash"><code class="language-bash">sphinx-build -b coverage <span class="token builtin class-name">.</span> _build/coverage/`
+</code></pre>
+<p>This will use <code>coverage</code> as the build tool and tell you when you have undocumented functions. Otherwise sphinx will fail quietly because if there's no work to do (functions dont have doc strings) then it fails quietly.</p>
+<p>There is a flag to get it to process and render function documentation even if its blank called <code>undock members</code> but coverage gives insight into undocumented things.</p>
+<h2 id="themes"><a aria-hidden="true" class="anchor-heading icon-link" href="#themes"></a>Themes</h2>
+<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> sphinx_rtd_theme <span class="token comment"># this is for read the docs theme</span>
+</code></pre>
+<p>and then inside <code>conf.py</code> in the <code>docs/</code> directory:</p>
+<pre class="language-python"><code class="language-python">html_theme <span class="token operator">=</span> <span class="token string">'sphinx_rtd_theme'</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/1ybe6k2p2ay2de564eat8r6">Extensions</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x6qarznuyyyjttcfb3k8b7f">2022-02-17 (DevLog)</a></li>
+<li><a href="/DevLog/notes/vqkj3y92lqea10ce3vcyedd">Bryson Tyrrell Your Code Should Document Itself Embedding Documentation into Your Python Projects (DevLog)</a></li>
+</ul>

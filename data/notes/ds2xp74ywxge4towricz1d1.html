@@ -1,0 +1,80 @@
+<h1 id="19"><a aria-hidden="true" class="anchor-heading icon-link" href="#19"></a>19</h1>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://www.youtube.com/watch?v=URBSvqib0xw&#x26;ab_channel=Socratica">Socratica Video</a>
+<ul>
+<li>using the <a href="/DevLog/notes/ra6qs7gd8vyyfaws0iw9jcu">Pydoc</a> module you can review documentation</li>
+<li>This command (<code>python -m pydoc &#x3C;++></code>) searches for the following:
+<ul>
+<li>modules (<code>math</code>)</li>
+<li>classes (<code>tuple</code>)</li>
+<li>functions (<code>pow</code>)</li>
+</ul>
+</li>
+<li><a href="/DevLog/notes/ra6qs7gd8vyyfaws0iw9jcu">Pydoc</a> commands:</li>
+<li><code>pydoc -k &#x3C;keyword></code>
+<ul>
+<li>Search for a keyword in the synopsis lines of all available modules.</li>
+</ul>
+</li>
+<li><code>pydoc -n &#x3C;hostname></code>
+<ul>
+<li>Start an HTTP server with the given hostname (default: localhost).</li>
+</ul>
+</li>
+<li><code>pydoc -p &#x3C;port></code>
+<ul>
+<li>Start an HTTP server on the given port on the local machine. Port number 0 can be used to get an arbitrary unused port.</li>
+</ul>
+</li>
+<li><code>pydoc -b</code>
+<ul>
+<li>Start an HTTP server on an arbitrary unused port and open a Web browser to interactively browse documentation. This option can be used in combination with -n and/or - p•</li>
+</ul>
+</li>
+<li><code>pydoc -W &#x3C;name> ...</code>
+<ul>
+<li>Write out the HTML documentation for a module to a file in the current directory. If <name> contains a '\' it is treated as a filename; if it names a directory, documentation is written for all the contents.</name></li>
+<li>If <name> contains a '' it is treated as a filename; if it names a directory, documentation is written for all the contents.</name></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/DevLog/notes/xtwe2e10czog2dhozs86g3f">CSS</a>
+<ul>
+<li>idea of replacing some tags with different appearances:</li>
+</ul>
+</li>
+</ul>
+<pre class="language-css"><code class="language-css"><span class="token selector">a<span class="token class">.tag</span><span class="token attribute"><span class="token punctuation">[</span><span class="token attr-name">data-ref</span><span class="token operator">=</span><span class="token attr-value">"star"</span> <span class="token case-sensitivity keyword">i</span><span class="token punctuation">]</span></span><span class="token pseudo-element">::before</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"⭐"</span><span class="token punctuation">;</span>
+    <span class="token property">visibility</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token unit">px</span><span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token unit">px</span><span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--blue</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">4</span><span class="token unit">px</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--blue</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">a<span class="token class">.tag</span><span class="token attribute"><span class="token punctuation">[</span><span class="token attr-name">data-ref</span><span class="token operator">=</span><span class="token attr-value">"star"</span> <span class="token case-sensitivity keyword">i</span><span class="token punctuation">]</span></span></span> <span class="token punctuation">{</span>
+    <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">24</span><span class="token unit">px</span><span class="token punctuation">;</span>
+    <span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>
+<p>from: <a href="https://discuss.logseq.com/t/custom-tags-rendering-with-emojis/709">https://discuss.logseq.com/t/custom-tags-rendering-with-emojis/709</a></p>
+</li>
+<li>
+<p><a href="/DevLog/notes/ku0abqmell3qfg5bvcvx7i0">T-SQL</a></p>
+<ul>
+<li>Exporting database objects to files for <a href="/DevLog/notes/jak8s12bepa7jt6n3pem8ro">Git</a>:</li>
+<li><em>database-->Tasks-->Generate Scripts-->Choose file for each procedure option</em></li>
+<li>Better option for <a href="/DevLog/notes/jak8s12bepa7jt6n3pem8ro">Git</a> version control is an actual <a href="/DevLog/notes/jak8s12bepa7jt6n3pem8ro">Git</a> repo via the <a href="/DevLog/notes/5oymml7bokzrnhln9n2ulo9">Redgate</a> tool
+<ul>
+<li><strong>The Tool:</strong> <a href="https://www.red-gate.com/products/sql-development/sql-source-control/">https://www.red-gate.com/products/sql-development/sql-source-control/</a></li>
+<li><strong>About it:</strong> <a href="https://www.youtube.com/watch?v=aR5IHfHvh98">https://www.youtube.com/watch?v=aR5IHfHvh98</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>

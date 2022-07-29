@@ -1,0 +1,24 @@
+<h1 id="pragmatic-ai-labs-and-solutions-testing-in-python"><a aria-hidden="true" class="anchor-heading icon-link" href="#pragmatic-ai-labs-and-solutions-testing-in-python"></a>Pragmatic Ai Labs and Solutions Testing in Python</h1>
+<ul>
+<li><code>Author:</code> alfredo-deza</li>
+<li><code>Link:</code> <a href="https://paiml.com/docs/home/books/testing-in-python/chapter02-testing-conventions/">https://paiml.com/docs/home/books/testing-in-python/chapter02-testing-conventions/</a></li>
+<li><code>Reviewed Date:</code> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">import.research.article.2021.11.12 (Private)</a></li>
+</ul>
+<hr>
+<ul>
+<li>author links to have his tests in the source code directory alongside existing codebase and mirror the directory structure of the code.</li>
+<li>a separate sub-directory under the <code>tests/</code> directory for tests like sending an API call are a functional test and not something as granular to test in a unit like a sum function</li>
+<li>have tests even if living at the top level of the project (this is so the test code doesnt ship with the source code and is just less code to move around) and have them mirror the directory structure of the code base so if the <code>src/</code> directory has <code>src/utilities/utils.py</code> then there should be <code>tests/utilities/test_utils.py</code></li>
+</ul>
+<h2 id="special-test-class-methods"><a aria-hidden="true" class="anchor-heading icon-link" href="#special-test-class-methods"></a>Special test class methods</h2>
+<p>Aside from test naming conventions, there are other special names that you should be aware of when using classes. These names should be considered reserved, and should only be used for their intended purpose. These are all the special methods:</p>
+<p><code>setup</code>: This method allows to provide attributes or anything else that is used by tests. By convention, it is called once before every test method in the class is executed. If lots of tests are using some sample data, it can be defined once here instead of having it referenced over and over in every single test method.</p>
+<p><code>teardown</code>: This method allows to perform any cleanup actions needed by tests. Just like the setup method, it gets called once, but after every test method in the class is executed. For example, if a test is always leaving behind artifacts like files that shouldn’t be present, this special method could remove them, so that the next test doesn’t have a polluted environment.</p>
+<p><code>setupclass</code>: Similar to setup, but instead of running before every test is executed it runs once before starting a test in a class.</p>
+<p><code>teardownclass</code>: This method runs once after all tests in the class have been executed.</p>
+<p>If you are wondering why <code>__init__</code> is not mentioned in this list, it is because you should not have one for test classes. Historically, <code>unittest.TestCase</code> (Python’s standard library for testing) didn’t have them, and it relied on setup and teardown class methods, and tools like pytest skips collection of test classes if it detects an <code>__init__</code> method in them.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/hud6uw8wwi8ndecwedow0w4">10 (DevLog)</a></li>
+</ul>

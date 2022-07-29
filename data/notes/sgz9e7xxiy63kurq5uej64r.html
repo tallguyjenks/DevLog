@@ -1,0 +1,54 @@
+<h1 id="sql-alchemy"><a aria-hidden="true" class="anchor-heading icon-link" href="#sql-alchemy"></a>Sql Alchemy</h1>
+<ul>
+<li>Working with a <a href="/DevLog/notes/52p7bxiy1idu06t2wyn9cpp">Sqlite3</a> database using sql alchemy</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> create_engine
+<span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> Column
+
+<span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> String
+<span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> DateTime
+<span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> Integer
+
+<span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> select
+<span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> Table
+<span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> Identity
+<span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> MetaData
+
+<span class="token keyword">from</span> sqlalchemy<span class="token punctuation">.</span>ext<span class="token punctuation">.</span>declarative <span class="token keyword">import</span> declarative_base
+<span class="token keyword">from</span> sqlalchemy<span class="token punctuation">.</span>orm <span class="token keyword">import</span> sessionmaker
+
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> sqlalchemy<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>elements <span class="token keyword">import</span> Null
+
+engine <span class="token operator">=</span> create_engine<span class="token punctuation">(</span><span class="token string">"sqlite:///test_db.db"</span><span class="token punctuation">)</span>
+session <span class="token operator">=</span> sessionmaker<span class="token punctuation">(</span>bind<span class="token operator">=</span>engine<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># con = engine.connect()</span>
+
+Base <span class="token operator">=</span> declarative_base<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Log</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+  __tablename__<span class="token operator">=</span><span class="token string">"Log"</span>
+
+  Log_ID <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+  Email_ID <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">)</span>
+  Ticket_ID <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">)</span>
+  Work_Item_ID <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> Log_ID<span class="token punctuation">,</span> Email_ID<span class="token punctuation">,</span> Ticket_ID<span class="token punctuation">,</span> Work_Item_ID<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	  self<span class="token punctuation">.</span>Log_ID <span class="token operator">=</span> Log_ID
+	  self<span class="token punctuation">.</span>Email_ID <span class="token operator">=</span> Email_ID
+	  self<span class="token punctuation">.</span>Ticket_ID <span class="token operator">=</span> Ticket_ID
+	  self<span class="token punctuation">.</span>Work_Item_ID <span class="token operator">=</span> Work_Item_ID
+
+logentry <span class="token operator">=</span> Log<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> Null<span class="token punctuation">,</span> Null<span class="token punctuation">,</span> Null<span class="token punctuation">)</span>
+
+
+session<span class="token punctuation">.</span>add<span class="token punctuation">(</span>logentry<span class="token punctuation">)</span>
+session<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/z8wyfam5vhtu7lefezkadia">16 (DevLog)</a></li>
+</ul>

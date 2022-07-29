@@ -1,0 +1,51 @@
+<h1 id="triggers"><a aria-hidden="true" class="anchor-heading icon-link" href="#triggers"></a>Triggers</h1>
+<ul>
+<li><a href="https://www.mssqltips.com/sqlservertip/5909/sql-server-trigger-example/">https://www.mssqltips.com/sqlservertip/5909/sql-server-trigger-example/</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql?view=sql-server-ver15#remarks-for-dml-triggers">https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql?view=sql-server-ver15#remarks-for-dml-triggers</a></li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>
+GO
+<span class="token keyword">IF</span> OBJECT_ID <span class="token punctuation">(</span><span class="token string">'Purchasing.LowCredit'</span><span class="token punctuation">,</span><span class="token string">'TR'</span><span class="token punctuation">)</span> <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+   <span class="token keyword">DROP</span> <span class="token keyword">TRIGGER</span> Purchasing<span class="token punctuation">.</span>LowCredit<span class="token punctuation">;</span>
+GO
+<span class="token comment">-- This trigger prevents a row from being inserted in the Purchasing.PurchaseOrderHeader table</span>
+<span class="token comment">-- when the credit rating of the specified vendor is set to 5 (below average).  </span>
+  
+<span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> Purchasing<span class="token punctuation">.</span>LowCredit <span class="token keyword">ON</span> Purchasing<span class="token punctuation">.</span>PurchaseOrderHeader  
+<span class="token keyword">AFTER</span> <span class="token keyword">INSERT</span>  
+<span class="token keyword">AS</span>  
+<span class="token keyword">IF</span> <span class="token punctuation">(</span>ROWCOUNT_BIG<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span><span class="token punctuation">;</span>
+<span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token number">1</span>  
+           <span class="token keyword">FROM</span> inserted <span class="token keyword">AS</span> i   
+           <span class="token keyword">JOIN</span> Purchasing<span class="token punctuation">.</span>Vendor <span class="token keyword">AS</span> v   
+           <span class="token keyword">ON</span> v<span class="token punctuation">.</span>BusinessEntityID <span class="token operator">=</span> i<span class="token punctuation">.</span>VendorID  
+           <span class="token keyword">WHERE</span> v<span class="token punctuation">.</span>CreditRating <span class="token operator">=</span> <span class="token number">5</span>  
+          <span class="token punctuation">)</span>  
+<span class="token keyword">BEGIN</span>  
+<span class="token keyword">RAISERROR</span> <span class="token punctuation">(</span><span class="token string">'A vendor''s credit rating is too low to accept new  
+purchase orders.'</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token keyword">ROLLBACK</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>  
+<span class="token keyword">RETURN</span>   
+<span class="token keyword">END</span><span class="token punctuation">;</span>  
+GO  
+  
+<span class="token comment">-- This statement attempts to insert a row into the PurchaseOrderHeader table  </span>
+<span class="token comment">-- for a vendor that has a below average credit rating.  </span>
+<span class="token comment">-- The AFTER INSERT trigger is fired and the INSERT transaction is rolled back.  </span>
+  
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> Purchasing<span class="token punctuation">.</span>PurchaseOrderHeader <span class="token punctuation">(</span>RevisionNumber<span class="token punctuation">,</span> <span class="token keyword">Status</span><span class="token punctuation">,</span> EmployeeID<span class="token punctuation">,</span>  
+VendorID<span class="token punctuation">,</span> ShipMethodID<span class="token punctuation">,</span> OrderDate<span class="token punctuation">,</span> ShipDate<span class="token punctuation">,</span> SubTotal<span class="token punctuation">,</span> TaxAmt<span class="token punctuation">,</span> Freight<span class="token punctuation">)</span>  
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span>  
+<span class="token number">2</span>  
+<span class="token punctuation">,</span><span class="token number">3</span>  
+<span class="token punctuation">,</span><span class="token number">261</span>  
+<span class="token punctuation">,</span><span class="token number">1652</span>  
+<span class="token punctuation">,</span><span class="token number">4</span>  
+<span class="token punctuation">,</span>GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token punctuation">,</span>GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token punctuation">,</span><span class="token number">44594.55</span>  
+<span class="token punctuation">,</span><span class="token number">3567.564</span>  
+<span class="token punctuation">,</span><span class="token number">1114.8638</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+GO
+</code></pre>

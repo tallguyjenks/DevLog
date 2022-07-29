@@ -1,0 +1,117 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><title>Regular Expressions</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="Personal knowledge space"/><meta property="og:title" content="Regular Expressions"/><meta property="og:description" content="Personal knowledge space"/><meta property="og:url" content="https://{GITHUB_USERNAME}.github.io/DevLog/notes/lojiy17xp2w1my9mah7rslm/"/><meta property="og:type" content="article"/><meta property="article:published_time" content="1/2/2022"/><meta property="article:modified_time" content="5/25/2022"/><link rel="canonical" href="https://{GITHUB_USERNAME}.github.io/DevLog/notes/lojiy17xp2w1my9mah7rslm/"/><meta name="next-head-count" content="14"/><link rel="preload" href="/DevLog/_next/static/css/477fdc912058141b.css" as="style"/><link rel="stylesheet" href="/DevLog/_next/static/css/477fdc912058141b.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/DevLog/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/DevLog/_next/static/chunks/webpack-193abd745db5a977.js" defer=""></script><script src="/DevLog/_next/static/chunks/framework-bb5c596eafb42b22.js" defer=""></script><script src="/DevLog/_next/static/chunks/main-e26c16bc784f9179.js" defer=""></script><script src="/DevLog/_next/static/chunks/pages/_app-fbacaa7678b5d585.js" defer=""></script><script src="/DevLog/_next/static/chunks/78-13ae6acd5ce7ca5b.js" defer=""></script><script src="/DevLog/_next/static/chunks/373-2f3879190a46a3d9.js" defer=""></script><script src="/DevLog/_next/static/chunks/pages/notes/%5Bid%5D-69449972c2a725d8.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_buildManifest.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_ssgManifest.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><section class="ant-layout" style="width:100%;min-height:100%"><header class="ant-layout-header" style="position:fixed;isolation:isolate;z-index:1;width:100%;border-bottom:1px solid #d4dadf;height:64px;padding:0 24px 0 2px"><div class="ant-row ant-row-center" style="max-width:992px;justify-content:space-between;margin:0 auto"><div style="display:flex" class="ant-col ant-col-xs-20 ant-col-sm-4"></div><div class="ant-col gutter-row ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19"><div class="ant-select ant-select-lg ant-select-auto-complete ant-select-single ant-select-allow-clear ant-select-show-search" style="width:100%"><div class="ant-select-selector"><span class="ant-select-selection-search"><input type="search" autoComplete="off" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="undefined_list" aria-autocomplete="list" aria-controls="undefined_list" aria-activedescendant="undefined_list_0" value=""/></span><span class="ant-select-selection-placeholder">For full text search please use the &#x27;?&#x27; prefix. e.g. ? Onboarding</span></div></div></div><div style="display:none;align-items:center;justify-content:center" class="ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0"><span role="img" aria-label="menu" style="font-size:24px" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div></div></header><section class="ant-layout site-layout" style="margin-top:64px"><section class="ant-layout site-layout"><div class="site-layout-sidebar" style="flex:0 0 auto;width:calc(max((100% - 992px) / 2, 0px) + 200px);min-width:200px;padding-left:calc((100% - 992px) / 2)"><aside class="ant-layout-sider ant-layout-sider-dark" style="position:fixed;overflow:auto;height:calc(100vh - 64px);background-color:transparent;flex:0 0 200px;max-width:200px;min-width:200px;width:200px"><div class="ant-layout-sider-children"></div></aside></div><section class="ant-layout side-layout-main" style="max-width:1200px;display:initial"><main class="ant-layout-content main-content" role="main" style="padding:0 24px"><div class="ant-row"><div class="ant-col ant-col-24"><div class="ant-row" style="margin-left:-10px;margin-right:-10px"><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-24 ant-col-md-18"><div><h1 id="regular-expressions"><a aria-hidden="true" class="anchor-heading icon-link" href="#regular-expressions"></a>Regular Expressions</h1>
+<p>Useful site for writing and testing regex</p>
+<ul>
+<li><a href="https://www.regexpal.com/">https://www.regexpal.com/</a></li>
+<li><a href="https://regex101.com/">https://regex101.com/</a></li>
+<li><a href="http://regextutorials.com/index.html">http://regextutorials.com/index.html</a></li>
+<li><a href="https://regexper.com/#%5E%28%5Ba-z%5D%2B%5Cd*_%5Ba-z%5Cd_%5D*%7C_%2B%5Ba-z%5Cd%5D%2B%5Ba-z%5Cd_%5D*%29%24">https://regexper.com/#%5E%28%5Ba-z%5D%2B%5Cd*_%5Ba-z%5Cd_%5D*%7C_%2B%5Ba-z%5Cd%5D%2B%5Ba-z%5Cd_%5D*%29%24</a></li>
+</ul>
+<p><img src="/DevLog/image_1626507098408_0.png" alt="image.png"></p>
+<p>Image Source: <a href="https://twitter.com/manekinekko/status/1335330878403260419">https://twitter.com/manekinekko/status/1335330878403260419</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">code</th><th align="center">Purpose</th></tr></thead><tbody><tr><td align="center"><code>\d</code></td><td align="center">represent any digit 0-9</td></tr><tr><td align="center"><code>[0-9]</code> or <code>[abc]</code></td><td align="center">matches a range or any specfic item in the brackets could find a,b, or c but will find all of them</td></tr><tr><td align="center"><code>\D</code></td><td align="center">match any NON-digit characters</td></tr><tr><td align="center"><code>[^0-9]</code> or <code>[^\d]</code></td><td align="center">says match all BUT these in which case this is digits</td></tr><tr><td align="center"><code>\w</code></td><td align="center">will match words, <code>\D</code> will match white space, punctuation, hyphens, etc. while <code>\w</code> does not. <code>\w</code> matches only letters and numbers, equivalently: <code>[a-zA-Z0-9]</code></td></tr><tr><td align="center"><code>\W</code></td><td align="center">to match a non word character. matches opposite of alphanumeric and is equivalent to <code>[^_a-zA-Z0-9]</code></td></tr><tr><td align="center"><code>\s</code></td><td align="center">match a space character</td></tr><tr><td align="center"><code>\n</code></td><td align="center">New line</td></tr><tr><td align="center"><code>\t</code></td><td align="center">a tab</td></tr><tr><td align="center"><code>\r</code></td><td align="center">carriage return</td></tr><tr><td align="center"><code>.</code></td><td align="center">match any single character</td></tr><tr><td align="center"><code>\b</code></td><td align="center">boundry, so for a word <code>\bA.{5}T\b</code> the boundries encompass words that start with 'A', end with 'T' and have 5 characters in the middle like ANCYENT or ANCIENT also akin to <code>\b\w{7}\b</code></td></tr><tr><td align="center"><code>^</code></td><td align="center">beginning of a line anchor</td></tr><tr><td align="center"><code>$</code></td><td align="center">end of a line anchor</td></tr><tr><td align="center"></td><td align="center">the pipe is an 'or' statement in brackets is saying 't' OR 'T' in a regex search</td></tr><tr><td align="center"><code>[0-3[4-5]]</code></td><td align="center">Union of 2 character sets, this would return 04, 05, 14, 15, 24, 25, 34, 35, this can also work with negation to use a set of 'NOT THESE' characters</td></tr></tbody></table>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Quantifier</th><th align="center">Description</th><th></th></tr></thead><tbody><tr><td><code>{8}</code></td><td align="center">quantifyer, same as linux CLI <code>.{8}</code> would match any 8 characters, this one matches the patter a specific number of times, 8 times.</td><td></td></tr><tr><td><code>{8,}</code></td><td align="center">the comma means it will match  or more occurances of the pattern</td><td></td></tr><tr><td><code>{2,4}</code></td><td align="center">will match the pattern anytime it ocurs 2-4 times any of those options are captured</td><td></td></tr></tbody></table>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/55ymo3uxol4vc47yjx8cbnh">06 (DevLog)</a></li>
+<li><a href="/DevLog/notes/qt6tj6odl7qbodpavaed9bc">Like Predicate (DevLog)</a></li>
+</ul></div></div><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-0 ant-col-md-6"><div><div class=""><div class="ant-anchor-wrapper dendron-toc" style="max-height:calc(100vh - 64px);z-index:1"><div class="ant-anchor"><div class="ant-anchor-ink"><span class="ant-anchor-ink-ball"></span></div></div></div></div></div></div></div></div></div></main><div class="ant-divider ant-divider-horizontal" role="separator"></div><footer class="ant-layout-footer" style="padding:0 24px 24px"></footer></section></section></section></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"id":"lojiy17xp2w1my9mah7rslm","title":"Regular Expressions","desc":"","updated":1653520718840,"created":1641105063864,"stub":false,"isDir":false,"custom":{"stub":false,"isDir":false},"fname":"s.o.regular-expressions","type":"note","vault":{"fsPath":"DevLog"},"contentHash":"94d7a8f8405121aefd51ce7466c84a5c","links":[{"from":{"fname":"log.daily.2021.06.06","vaultName":"DevLog"},"type":"backlink","position":{"start":{"line":3,"column":3,"offset":4},"end":{"line":3,"column":30,"offset":31},"indent":[]},"value":"s.o.regular-expressions","alias":"s.o.regular-expressions"},{"from":{"fname":"s.q.tsql.syntax.dml.like-predicate","vaultName":"DevLog"},"type":"backlink","position":{"start":{"line":3,"column":143,"offset":144},"end":{"line":3,"column":170,"offset":171},"indent":[]},"value":"s.o.regular-expressions","alias":"s.o.regular-expressions"}],"anchors":{},"children":[],"parent":"xtqhfrd0i07j1xpp5tvue25","data":{}},"body":"\u003ch1 id=\"regular-expressions\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#regular-expressions\"\u003e\u003c/a\u003eRegular Expressions\u003c/h1\u003e\n\u003cp\u003eUseful site for writing and testing regex\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://www.regexpal.com/\"\u003ehttps://www.regexpal.com/\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://regex101.com/\"\u003ehttps://regex101.com/\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"http://regextutorials.com/index.html\"\u003ehttp://regextutorials.com/index.html\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://regexper.com/#%5E%28%5Ba-z%5D%2B%5Cd*_%5Ba-z%5Cd_%5D*%7C_%2B%5Ba-z%5Cd%5D%2B%5Ba-z%5Cd_%5D*%29%24\"\u003ehttps://regexper.com/#%5E%28%5Ba-z%5D%2B%5Cd*_%5Ba-z%5Cd_%5D*%7C_%2B%5Ba-z%5Cd%5D%2B%5Ba-z%5Cd_%5D*%29%24\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cimg src=\"/DevLog/image_1626507098408_0.png\" alt=\"image.png\"\u003e\u003c/p\u003e\n\u003cp\u003eImage Source: \u003ca href=\"https://twitter.com/manekinekko/status/1335330878403260419\"\u003ehttps://twitter.com/manekinekko/status/1335330878403260419\u003c/a\u003e\u003c/p\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth align=\"center\"\u003ecode\u003c/th\u003e\u003cth align=\"center\"\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\d\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003erepresent any digit 0-9\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e[0-9]\u003c/code\u003e or \u003ccode\u003e[abc]\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ematches a range or any specfic item in the brackets could find a,b, or c but will find all of them\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\D\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ematch any NON-digit characters\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e[^0-9]\u003c/code\u003e or \u003ccode\u003e[^\\d]\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003esays match all BUT these in which case this is digits\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\w\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ewill match words, \u003ccode\u003e\\D\u003c/code\u003e will match white space, punctuation, hyphens, etc. while \u003ccode\u003e\\w\u003c/code\u003e does not. \u003ccode\u003e\\w\u003c/code\u003e matches only letters and numbers, equivalently: \u003ccode\u003e[a-zA-Z0-9]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\W\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003eto match a non word character. matches opposite of alphanumeric and is equivalent to \u003ccode\u003e[^_a-zA-Z0-9]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\s\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ematch a space character\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\n\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003eNew line\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\t\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ea tab\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\r\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ecarriage return\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e.\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ematch any single character\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e\\b\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003eboundry, so for a word \u003ccode\u003e\\bA.{5}T\\b\u003c/code\u003e the boundries encompass words that start with 'A', end with 'T' and have 5 characters in the middle like ANCYENT or ANCIENT also akin to \u003ccode\u003e\\b\\w{7}\\b\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e^\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ebeginning of a line anchor\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e$\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003eend of a line anchor\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ethe pipe is an 'or' statement in brackets is saying 't' OR 'T' in a regex search\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd align=\"center\"\u003e\u003ccode\u003e[0-3[4-5]]\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003eUnion of 2 character sets, this would return 04, 05, 14, 15, 24, 25, 34, 35, this can also work with negation to use a set of 'NOT THESE' characters\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003chr\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eQuantifier\u003c/th\u003e\u003cth align=\"center\"\u003eDescription\u003c/th\u003e\u003cth\u003e\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003e{8}\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003equantifyer, same as linux CLI \u003ccode\u003e.{8}\u003c/code\u003e would match any 8 characters, this one matches the patter a specific number of times, 8 times.\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003e{8,}\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ethe comma means it will match  or more occurances of the pattern\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003e{2,4}\u003c/code\u003e\u003c/td\u003e\u003ctd align=\"center\"\u003ewill match the pattern anytime it ocurs 2-4 times any of those options are captured\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003chr\u003e\n\u003cstrong\u003eBacklinks\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"/DevLog/notes/55ymo3uxol4vc47yjx8cbnh\"\u003e06 (DevLog)\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"/DevLog/notes/qt6tj6odl7qbodpavaed9bc\"\u003eLike Predicate (DevLog)\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e","noteIndex":{"id":"root","title":"root","desc":"","updated":1641013093667,"created":1595961348801,"stub":false,"custom":{"stub":false,"nav_order":0,"permalink":"/"},"fname":"root","type":"note","vault":{"fsPath":"DevLog"},"contentHash":"b0b26527a2962dbb8bd5fb9a53ad702f","links":[],"anchors":{},"children":["rzqe5mjn3q2zfscw1roxr20","Bl9NeJmftBQJyJA3X4a6u","inm1S24v2GcN3Quf7gzDb","fmx7cfcdzale0ezna61yq5z","q6tr8q7gahfijix2ktlhcu3","yah6spesmpstech2ue2k3lq","6pxwlugphnw6vm4t8kn0j5p","i17wi8y2hgivywe08h6q6it","1st35wikvph2aew8aana21u","mijr0wvj3qz0mt9pv9xo1jv","qaf8v120h0ffvbowysjxw50","sh4851li2rsrhx47wwsirgv","fwqjigvqyfxiyl3pbpjvgdw","pxdvvln974xhe8w0alh0hoy","n6yddb1smrac5ll3l1y6wbd","g5dllyqoqkenoiz3opalzu6","kbwt8ucy0yh6bo8fl0kv9iw","beykavbe22agsufmm03hu0c","2uvuqa3c15o5r4j7sqadqvr","yr6gzhx0bhzyec6f52y66vf","4no90tcdswtuwmjm0bxnetx"],"parent":null,"data":{},"body":"\nThe hyperfixated rabbit hole diving knowledge base that is my brain looking at technology.\n"},"collectionChildren":null,"customHeadContent":null,"config":{"version":5,"dev":{"enablePreviewV2":true},"commands":{"lookup":{"note":{"selectionMode":"extract","confirmVaultOnCreate":true,"leaveTrace":false,"bubbleUpCreateNew":true,"fuzzThreshold":0.2,"vaultSelectionModeOnCreate":"smart"}},"randomNote":{},"insertNote":{"initialValue":"templates"},"insertNoteLink":{"aliasMode":"none","enableMultiSelect":false},"insertNoteIndex":{"enableMarker":false},"copyNoteLink":{},"templateHierarchy":"template"},"workspace":{"vaults":[{"fsPath":"sterkere","visibility":"private"},{"fsPath":"Norsk","visibility":"private"},{"fsPath":"DevLog"}],"journal":{"dailyDomain":"log","name":"daily","dateFormat":"yyyy.MM.dd","addBehavior":"childOfCurrent"},"scratch":{"name":"scratch","dateFormat":"yyyy.MM.dd.HHmmss","addBehavior":"asOwnDomain"},"task":{"todoIntegration":true,"name":"task","dateFormat":"yyyy.MM.dd","addBehavior":"asOwnDomain","statusSymbols":{"":" ","wip":"wip","done":"x","assigned":"a","moved":"m","blocked":"b","delegated":"l","dropped":"d","pending":"y"},"prioritySymbols":{"H":"high","M":"medium","L":"low"},"createTaskSelectionType":"selection2link","taskCompleteStatus":["done","x"]},"graph":{"zoomSpeed":1,"createStub":false},"enableAutoCreateOnDefinition":false,"enableXVaultWikiLink":false,"enableRemoteVaultInit":true,"enableUserTags":true,"enableHashTags":true,"workspaceVaultSyncMode":"noCommit","enableAutoFoldFrontmatter":false,"enableEditorDecorations":true,"maxPreviewsCached":10,"maxNoteLength":204800,"dendronVersion":"0.95.1","enableFullHierarchyNoteTitle":false,"enableHandlebarTemplates":false,"templateHierarchy":"template","enableSmartRefs":false},"preview":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enableMermaid":true,"enablePrettyRefs":true,"enableKatex":true,"automaticallyShowPreview":false,"enableFrontmatterTags":true,"enableHashesForFMTags":false},"publishing":{"theme":"custom","enableFMTitle":true,"enableNoteTitleForLink":true,"enableMermaid":true,"enablePrettyRefs":true,"enableKatex":true,"assetsPrefix":"/DevLog","copyAssets":true,"siteHierarchies":["root"],"enableSiteLastModified":true,"siteRootDir":"docs","siteUrl":"https://{GITHUB_USERNAME}.github.io","enableFrontmatterTags":true,"enableHashesForFMTags":false,"enableRandomlyColoredTags":true,"duplicateNoteBehavior":{"action":"useVault","payload":["DevLog"]},"writeStubs":false,"seo":{"title":"Dendron","description":"Personal knowledge space"},"github":{"enableEditLink":true,"editLinkText":"Edit this page on GitHub","editBranch":"master","editViewMode":"tree"},"enablePrettyLinks":true,"enableTaskNotes":true,"siteFaviconPath":"favicon.ico","siteIndex":"root"}}},"__N_SSG":true},"page":"/notes/[id]","query":{"id":"lojiy17xp2w1my9mah7rslm"},"buildId":"1h5ulSjjsPnt_rJPFXOd4","assetPrefix":"/DevLog","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

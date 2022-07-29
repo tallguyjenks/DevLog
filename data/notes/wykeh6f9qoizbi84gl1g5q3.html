@@ -1,0 +1,74 @@
+<h1 id="number"><a aria-hidden="true" class="anchor-heading icon-link" href="#number"></a>Number</h1>
+<h4 id="number-formatting"><a aria-hidden="true" class="anchor-heading icon-link" href="#number-formatting"></a>Number Formatting</h4>
+<blockquote>
+<p>A programmer can adjust the way that output appears, a task known as output formatting. The main formatting approach uses manipulators. A manipulator is an item designed to be used with the insertion operator <code>&#x3C;&#x3C;</code> or extraction operator <code>>></code> to adjust the way output appears, and is available via <code>#include &#x3C;iomanip>; </code>or <code>#include &#x3C;ios>;</code> in namespace std. For example, <code>cout &#x3C;&#x3C; setprecision(3) &#x3C;&#x3C; myFloat;</code> causes the floating-point variable <code>myFloat</code> to be output with only 3 digits; if <code>myFloat</code> was 12.34, the output would be 12.3.
+.
+<u>Most manipulators change the state of the stream such that the manipulation affects all subsequent output, not just the next output.</u></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Manipulator</th><th align="left">Description</th><th align="left">Example</th></tr></thead><tbody><tr><td align="left">fixed</td><td align="left">Use fixed-point notation. <code>From &#x3C;ios></code></td><td align="left">12.34</td></tr><tr><td align="left">scientific</td><td align="left">Use scientific notation. <code>From &#x3C;ios></code></td><td align="left">12.3E+01</td></tr><tr><td align="left">setprecision(p)</td><td align="left">If stream has not been manipulated to fixed or scientific: Sets max number of digits in number</td><td align="left">p=3 yields 12.3 p=5 yields 12.34</td></tr><tr><td align="left"></td><td align="left">If stream has been manipulated to fixed or scientific: Sets max number of digits in fraction only (after the decimal point). From <code>&#x3C;iomanip></code></td><td align="left">fixed: p=1 yields 12.3 scientific: p=1 yields 1.2e+01</td></tr><tr><td align="left">showpoint</td><td align="left">Even if fraction is 0, show decimal point and trailing 0s. Opposite is noshowpoint. <code>From &#x3C;ios></code></td><td align="left">For 99.0 with precision=2 and fixed: 99 (default or noshowpoint) 99.00 (showpoint)</td></tr></tbody></table>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;ios></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iomanip></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   
+   <span class="token keyword">double</span> milesTrvld <span class="token operator">=</span> <span class="token number">765.4321</span><span class="token punctuation">;</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"setprecision(p) -- Sets # digits"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> milesTrvld <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" (default p is 6)"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setprecision</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> milesTrvld <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" (p = 8)"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setprecision</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> milesTrvld <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" (p = 5)"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setprecision</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> milesTrvld <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" (p = 2)"</span>
+        <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" (note rounding)"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> milesTrvld <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" (manipulator persists)"</span> <span class="token operator">&#x3C;&#x3C;</span> endl <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setprecision</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"(For following, p = 2 applies to fraction only)"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// fixed -- uses fixed point notation</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> fixed<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"fixed: "</span> <span class="token operator">&#x3C;&#x3C;</span> milesTrvld <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// scientific -- uses scientific notation</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> scientific<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"scientific: "</span> <span class="token operator">&#x3C;&#x3C;</span> milesTrvld <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

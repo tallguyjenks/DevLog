@@ -1,0 +1,20 @@
+<h1 id="extract-date-parts"><a aria-hidden="true" class="anchor-heading icon-link" href="#extract-date-parts"></a>Extract Date Parts</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">current_date</span>
+     <span class="token punctuation">,</span> EXTRACT<span class="token punctuation">(</span>dow <span class="token keyword">FROM</span> <span class="token keyword">current_date</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> day_of_week
+     <span class="token punctuation">,</span> EXTRACT<span class="token punctuation">(</span>week <span class="token keyword">FROM</span> <span class="token keyword">current_date</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> week_of_year
+     <span class="token punctuation">,</span> EXTRACT<span class="token punctuation">(</span>quarter <span class="token keyword">FROM</span> <span class="token keyword">current_date</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> quarter<span class="token punctuation">;</span>
+
+<span class="token comment">/*
+
+current_date | day_of_week | week | quarter
+-------------+-------------+------+--------
+2019-04-28   |           0 |   17 |       2
+(1 row)
+
+*/</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/kyeu3h5pym90eziek8pjn4n">Sql_for_data_analytics_perform_fast_and_efficient (DevLog)</a></li>
+</ul>

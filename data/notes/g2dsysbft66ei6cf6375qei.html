@@ -1,0 +1,14 @@
+<h1 id="file-manipulation"><a aria-hidden="true" class="anchor-heading icon-link" href="#file-manipulation"></a>File Manipulation</h1>
+<h2 id="easy-file-manipulation"><a aria-hidden="true" class="anchor-heading icon-link" href="#easy-file-manipulation"></a>Easy file manipulation</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
+
+random_file <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">"random_file.txt"</span><span class="token punctuation">)</span>
+
+random_file<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># False</span>
+
+random_file<span class="token punctuation">.</span>touch<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+random_file<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># True</span>
+</code></pre>

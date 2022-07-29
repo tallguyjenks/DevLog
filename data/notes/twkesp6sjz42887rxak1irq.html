@@ -1,0 +1,37 @@
+<h1 id="__add__"><a aria-hidden="true" class="anchor-heading icon-link" href="#__add__"></a>__add__</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">point</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> <span class="token boolean">None</span>
+    y <span class="token operator">=</span> <span class="token boolean">None</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x <span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>x <span class="token operator">=</span> x
+        self<span class="token punctuation">.</span>y <span class="token operator">=</span> y
+    
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        s <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'(</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>x<span class="token punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>y<span class="token punctuation">}</span></span><span class="token string">)'</span></span>
+        <span class="token keyword">return</span> s
+
+	<span class="token keyword">def</span> <span class="token function">__add__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		x <span class="token operator">=</span> self<span class="token punctuation">.</span>x <span class="token operator">+</span> p2<span class="token punctuation">.</span>x
+		y <span class="token operator">=</span> self<span class="token punctuation">.</span>y <span class="token operator">+</span> p2<span class="token punctuation">.</span>y
+		<span class="token keyword">return</span> point<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+	
+	<span class="token keyword">def</span> <span class="token function">__iadd__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		self<span class="token punctuation">.</span>x <span class="token operator">+=</span> p2<span class="token punctuation">.</span>x
+		self<span class="token punctuation">.</span>y <span class="token operator">+=</span> p2<span class="token punctuation">.</span>y
+		<span class="token keyword">return</span> self
+
+p1 <span class="token operator">=</span> point<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span>
+p2 <span class="token operator">=</span> point<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+p3 <span class="token operator">=</span> p1 <span class="token operator">+</span> p2 <span class="token comment"># this runs the __add__ method</span>
+<span class="token comment"># >>> p3 = (7,7)</span>
+
+p1 <span class="token operator">+=</span> p2
+<span class="token comment"># >>> p1 = (7,7)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x1pe7g0d0wgazcl4oemzoy4">In Oop (DevLog)</a></li>
+</ul>

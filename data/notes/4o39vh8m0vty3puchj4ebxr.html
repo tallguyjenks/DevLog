@@ -1,0 +1,73 @@
+<h1 id="api"><a aria-hidden="true" class="anchor-heading icon-link" href="#api"></a>API</h1>
+<p><code>A</code>pplication <code>P</code>rogramming <code>I</code>nterface</p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">What_is_api_idempotency_and_why_is_it_important</span></div>
+<a href="/DevLog/notes/2ck6k08o9aebzuhjxqk4wy9" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h2>
+<ul>
+<li><a href="/DevLog/notes/xfvil9t7nqt4trgmlunqykf">Idempotent</a> <a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a>'s should not duplicate an outcome despite duplicating requests
+<ul>
+<li>should a server not respond to a request then if we send more requests the outcome should not result in multiple events or side effects</li>
+</ul>
+</li>
+<li>Resilient <a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a>'s use built-in client retries, client generated tokens to guarantee <a href="/DevLog/notes/xfvil9t7nqt4trgmlunqykf">Idempotent</a>cy, and return identical responses to support predictable client behavior</li>
+<li>Approaches
+<ul>
+<li><img src="/DevLog/assets/images/2022-02-24-13-36-48.png" alt="attempt1">
+<ul>
+<li>Client makes request</li>
+<li><a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a> Arguments are sent to the Resource server</li>
+<li>A hash function on the arguments is generated and creates a request token</li>
+<li>The request token is then stored in a stateStore database in the resource server</li>
+<li>The resources server then fulfills the request</li>
+<li>If a duplicate request is sent, the first thing that happens is the stateStore is checked for this request and if it has already been fulfilled then it can kick back an error response and not crash.
+<ul>
+<li>The token's uniqueness could be the hash, on several items, the timestamp, the user, the actual request content, and several other things to make it easily unique
+<ul>
+<li>downside is, what if we actually WANTED to have multiple requests granted?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="/DevLog/assets/images/2022-02-24-13-50-53.png" alt="A better way">
+<ul>
+<li>Instead of resource server inspecting the resource arguments to determine if this is a repeat request or a duplicate, or retry we put the onus on the Client</li>
+<li>as part of the <a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a> contract, you (the user) need to provide a <a href="/DevLog/notes/dc7lbz323j3wob8aznc335q">uuid</a> as part of sending a request</li>
+<li>this way the token from the client sent to the resource server is either duplicated for a retry or a duplicate action and can get processed or kicked back if appropriate</li>
+<li>but if the client sends a duplicate request but with a different <a href="/DevLog/notes/dc7lbz323j3wob8aznc335q">uuid</a> then the resources server can check the state store and determine that multiple requests need to be fulfilled.</li>
+<li>Important point is that for any requests that use the same token, the resource server but return syntactically identical responses
+<ul>
+<li>Why is this important?
+<ul>
+<li><img src="/DevLog/assets/images/2022-02-24-13-58-19.png" alt="Always Success"></li>
+<li>What if our first request made it through and our request was fulfilled, and we never got a response of success back</li>
+<li>We then send a retry which is now a duplicate request in the stateStore.</li>
+<li>Do we send an error message back that a duplicate operation is occurring?</li>
+<li>No, we should just send a <code>Success</code> response back for the duplicate request because the request has already been fulfilled so ultimately the duplicate is trying to do something that was already done so in this case the user receives success</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></div><p></p><p></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/xfvil9t7nqt4trgmlunqykf">Idempotent (DevLog)</a></li>
+<li><a href="/DevLog/notes/ouyjuvjg0oiwociu0bza2f3">19 (DevLog)</a></li>
+<li><a href="/DevLog/notes/f6wx02gwrpmg9job7qwdbjt">2022-01-10 (DevLog)</a></li>
+<li><a href="/DevLog/notes/e445isyiviwgz0zs1yq7xdh">The Ideal CI CD Pipeline Concepts Overview (DevLog)</a></li>
+<li><a href="/DevLog/notes/2ck6k08o9aebzuhjxqk4wy9">What_is_api_idempotency_and_why_is_it_important (DevLog)</a></li>
+</ul>

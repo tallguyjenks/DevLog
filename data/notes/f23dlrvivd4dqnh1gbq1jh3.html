@@ -1,0 +1,36 @@
+<h1 id="worktree"><a aria-hidden="true" class="anchor-heading icon-link" href="#worktree"></a>Worktree</h1>
+<h3 id="git-worktree"><a aria-hidden="true" class="anchor-heading icon-link" href="#git-worktree"></a>git worktree</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> worktree <span class="token function">add</span> master
+</code></pre>
+<ul>
+<li>Create a bare repo and start making new worktrees <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">import.git (Private)</a>
+<ul>
+<li>This means that a copy of the repo files is made for each worktree at the source commit that the bare repo was made from</li>
+<li>Worktrees make it easier to open multiple repo branches at once under a unified workspace for easy switching of work between multiple features</li>
+<li>Doesn't lend itself to easy updating.
+<ul>
+<li>The bare repo doesn't <code>git pull</code> itself but the worktrees after creation can use <code>git pull</code> but this is not ideal. The bare repo is basically frozen at a single commit for all new worktrees made.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="making-work-trees"><a aria-hidden="true" class="anchor-heading icon-link" href="#making-work-trees"></a>Making work-trees</h2>
+<ul>
+<li><a href="https://youtu.be/2uEqYw-N8uE">ThePrimeagen</a></li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone --bare <span class="token operator">&#x3C;</span>repo url.git<span class="token operator">></span> <span class="token operator">&#x3C;</span>name of the folder to create<span class="token operator">></span>
+<span class="token comment"># ex:</span>
+<span class="token function">git</span> clone --bare git@github.com:tallguyjenks/CV.git CV
+
+
+<span class="token comment"># makes a bare repo of my resume</span>
+<span class="token comment"># there's nothing in it, none of the files from the repo just git stuff</span>
+<span class="token comment"># THEN</span>
+
+<span class="token function">git</span> worktree <span class="token function">add</span> master
+<span class="token function">git</span> worktree <span class="token function">add</span> <span class="token builtin class-name">test</span>
+<span class="token function">git</span> worktree <span class="token function">add</span> feature
+
+<span class="token comment"># it takes the current commit at the HEAD of the repo (git pull at you're at the most recent) and this way # you're working with 3 folders basically 3 branches of the same repo but simultaneously. NO SWITCHING BACK &#x26; AND FORTH 🤯️🤯️🤯️</span>
+</code></pre>

@@ -1,0 +1,13 @@
+<h1 id="sequence"><a aria-hidden="true" class="anchor-heading icon-link" href="#sequence"></a>Sequence</h1>
+<h3 id="sequence-type"><a aria-hidden="true" class="anchor-heading icon-link" href="#sequence-type"></a>Sequence Type</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Sequence
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>seq<span class="token punctuation">:</span> Sequence<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+foo<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span> <span class="token comment"># This is fine because a string is a sequence of characters</span>
+foo<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># a Tuple is an ordered and immutable indexed Object</span>
+foo<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># A list is an ordered and indexed object </span>
+foo<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment"># A set is hashed and not indexed or ordered so it cannot be a sequence</span>
+foo<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment">#>>> Last one throws an error because static analysis determines that it is an incompabile type</span>
+</code></pre>

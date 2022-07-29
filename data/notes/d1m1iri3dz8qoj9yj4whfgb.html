@@ -1,0 +1,72 @@
+<h1 id="loops"><a aria-hidden="true" class="anchor-heading icon-link" href="#loops"></a>Loops</h1>
+<h5 id="loops-in-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#loops-in-bash"></a>Loops In Bash</h5>
+<ul>
+<li>For looping over all positional arguments / words sent to the command you can use the following:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">arg</span> <span class="token keyword">in</span> <span class="token string">"<span class="token variable">$@</span>"</span>
+<span class="token comment"># Or simply:</span>
+<span class="token keyword">for</span> arg
+</code></pre>
+<ul>
+<li>Since looping over the positional parameters is such a common thing to do in
+scripts, for arg defaults to for arg in <code>"$@"</code>. The double-quoted <code>"$@"</code> is
+special magic that causes each parameter to be used as a single word (or a
+single loop iteration). It's what you should be using at least 99% of the time.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Correct version</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">x</span> <span class="token keyword">in</span> <span class="token string">"<span class="token variable">$@</span>"</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">"parameter: '<span class="token variable">$x</span>'"</span>
+<span class="token keyword">done</span>
+
+<span class="token comment"># or better:</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">"parameter: '<span class="token variable">$x</span>'"</span>
+<span class="token keyword">done</span>
+
+$ ./myscript <span class="token string">'arg 1'</span> arg2 arg3
+
+<span class="token comment">#> parameter: 'arg 1'</span>
+<span class="token comment">#> parameter: 'arg2'</span>
+<span class="token comment">#> parameter: 'arg3'</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">do</span> <span class="token punctuation">[</span>command list<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">done</span>
+</code></pre>
+<ul>
+<li>This constitutes the actual loop that is used by the next few commands.
+The list of commands between the do and done are the commands that will be executed in every iteration of the loop.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>words<span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>The next loop will iterate over each WORD after the in keyword.
+The loop's commands will be executed with the value of the variable denoted by name set to the word.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> [arithmetic expression]<span class="token punctuation">;</span> [arithmetic expression]<span class="token punctuation">;</span> [arithmetic expression] <span class="token punctuation">))</span></span>
+</code></pre>
+<ul>
+<li>The next loop will run as long as the second arithmetic expression remains true.
+The first arithmetic expression will be run before the loop starts. The third arithmetic expression will be run after the last command in each iteration has been executed.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">while</span> <span class="token punctuation">[</span>command list<span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>The next loop will be repeated for as long as the last command ran in the command list exits successfully.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">until</span> <span class="token punctuation">[</span>command list<span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>The next loop will be repeated for as long as the last command ran in the command list exits unsuccessfully ("fails").</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">select</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>words<span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>The next loop will repeat forever, letting the user choose between the given words.</li>
+<li>The iteration's commands are executed with the variable denoted by name's value set to the word chosen by the user. Naturally, you can use break to end this loop.</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/oa7v4lr3uj2hsy8z492c7fp">For</a></li>
+</ol>

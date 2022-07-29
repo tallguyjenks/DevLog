@@ -1,0 +1,61 @@
+<h1 id="header-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#header-file"></a>Header File</h1>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Preprocessor Directives</span></div>
+<a href="/DevLog/notes/cnrg8jpu8cm8gdkb6yk8w3r" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><blockquote>
+<p>The <strong>preprocessor</strong> is a tool that scans the file from top to bottom looking for any lines that begin with #, known as a <strong>hash symbol</strong>. Each such line is not a program statement, but rather directs the <strong>preprocessor</strong> to modify the file in some way before compilation continues, each such line being known as a <strong>preprocessor directive</strong>. The directive ends at the end of the line, no semicolon is used at the end of the line.</p>
+</blockquote>
+<h2 id="include"><a aria-hidden="true" class="anchor-heading icon-link" href="#include"></a>Include</h2>
+<blockquote>
+<p>Perhaps the most commonly-used preprocessor directive is <strong><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">#include (Private)</a></strong>, known as an include directive. <strong><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">#include (Private)</a></strong> directs the compiler to replace that line by the contents of the given filename.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"filename"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;filename></span></span>
+</code></pre>
+<h2 id="header-files"><a aria-hidden="true" class="anchor-heading icon-link" href="#header-files"></a>Header Files</h2>
+<p>Header files are included through Pre-Processor Directives.</p>
+<p>Header files contain code such as groups of related functions &#x26; their <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Functions (Private)</a>'s and <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Functions (Private)</a>'s', as well as <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Classes (Private)</a>. </p>
+<p>When you input a header file with an <code>#include</code> statement its basically like copy/pasting all the code where the file is included. sometimes this can lead to duplication and errors if included multiple times so to prevent this we use <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">import.software.language.cpp.preprocessor-directives (Private)</a>.</p>
+<h3 id="header-file-guards"><a aria-hidden="true" class="anchor-heading icon-link" href="#header-file-guards"></a>Header File Guards</h3>
+<p>These guards look like this:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">FILENAME_H</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">FILENAME_H</span></span>
+
+<span class="token comment">// Header file contents</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+</code></pre>
+<blockquote>
+<p><code>#define FILENAME_H</code> defines the symbol <code>FILENAME_H</code> to the preprocessor. The <code>#ifndef FILENAME_H</code> and <code>#endif</code> form a pair that instructs the preprocessor to process the code between the pair only if FILENAME_H is not defined ("ifndef" is short for "if not defined"). Thus, if the preprocessor includes encounter the header more than once, the code in the file during the second and any subsequent encounters will be skipped because <code>FILENAME_H</code> was already defined.
+.
+<u>Good practice</u> is to guard every header file. The following shows the <code>threeintsfcts.h</code> file with the guarding code added:</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">THREEINTSFCT_H</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">THREEINTSFCT_H</span></span>
+
+<span class="token keyword">int</span> <span class="token function">ThreeIntsSum</span><span class="token punctuation">(</span><span class="token keyword">int</span> num1<span class="token punctuation">,</span> <span class="token keyword">int</span> num2<span class="token punctuation">,</span> <span class="token keyword">int</span> num3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">ThreeIntsAvg</span><span class="token punctuation">(</span><span class="token keyword">int</span> num1<span class="token punctuation">,</span> <span class="token keyword">int</span> num2<span class="token punctuation">,</span> <span class="token keyword">int</span> num3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+</code></pre>
+<p>Another example from <a href="https://youtu.be/9RJTQmK0YPI?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb">This video by The Cherno</a> is instead of <code>ifndef</code> and all that, using instead <code>#pragma once</code> which says to include the file only once per translation unit. </p>
+<p>To be safe and make sure all compilers will support portability and the use the fastest option you can use both:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression">once</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">_HEADER_H_</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">_HEADER_H_</span></span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+</code></pre></div></div><p></p><p></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/ufxzayfz68160unpras33uh">Router (DevLog)</a></li>
+</ul>

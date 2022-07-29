@@ -1,0 +1,23 @@
+<h1 id="constructor-overloading"><a aria-hidden="true" class="anchor-heading icon-link" href="#constructor-overloading"></a>Constructor Overloading</h1>
+<h2 id="constructor-overloading-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#constructor-overloading-1"></a>Constructor Overloading</h2>
+<p>Just like with  <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Polymorphism (Private)</a> you can overload a constructor to instantiate the same object (class) with different initialization values based on the parameters passed to the constructor:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Seat</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+   <span class="token function">Seat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Default constructor</span>
+   <span class="token function">Seat</span><span class="token punctuation">(</span>string resfirstName<span class="token punctuation">,</span> string resLastName<span class="token punctuation">,</span> <span class="token keyword">int</span> resAmountPaid<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Second constructor</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token class-name">Seat</span><span class="token double-colon punctuation">::</span><span class="token function">Seat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Default constructor</span>
+   firstName  <span class="token operator">=</span> <span class="token string">"none"</span><span class="token punctuation">;</span>
+   lastName   <span class="token operator">=</span> <span class="token string">"none"</span><span class="token punctuation">;</span>
+   amountPaid <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Seat</span><span class="token double-colon punctuation">::</span><span class="token function">Seat</span><span class="token punctuation">(</span>string resfirstName<span class="token punctuation">,</span> string resLastName<span class="token punctuation">,</span> <span class="token keyword">int</span> resAmountPaid<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Second constructor</span>
+   firstName  <span class="token operator">=</span> resfirstName<span class="token punctuation">;</span>
+   lastName   <span class="token operator">=</span> resLastName<span class="token punctuation">;</span>
+   amountPaid <span class="token operator">=</span> resAmountPaid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

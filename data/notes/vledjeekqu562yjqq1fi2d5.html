@@ -1,0 +1,64 @@
+<h1 id="anchors"><a aria-hidden="true" class="anchor-heading icon-link" href="#anchors"></a>Anchors</h1>
+<h2 id="anchors-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#anchors-1"></a>Anchors</h2>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">man</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> Utibe
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">alien</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kal<span class="token punctuation">-</span>el
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">10000000</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">names</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Utibe
+  <span class="token punctuation">-</span> kal<span class="token punctuation">-</span>el
+</code></pre>
+<blockquote>
+<p>As you can see, we have a names key that lists the <code>names</code> of both <code>man</code> and <code>alien</code>.
+However, this is not ideal as we are writing out the names multiple times and if the name changes we have to change each reference to it.
+YAML has a feature known as anchors that allows us to reference a value. Here’s how it works</p>
+</blockquote>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">man</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;man</span> Utibe
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">alien</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;alien</span> kal<span class="token punctuation">-</span>el
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">10000000</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">names</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token important">*man</span>
+  <span class="token punctuation">-</span> <span class="token important">*alien</span>
+</code></pre>
+<h3 id="remove-redundancy-with-anchors"><a aria-hidden="true" class="anchor-heading icon-link" href="#remove-redundancy-with-anchors"></a>Remove Redundancy With Anchors</h3>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">metadata</span><span class="token punctuation">:</span> <span class="token important">&#x26;metadata</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">man</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;man</span> Utibe
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">&#x3C;&#x3C;</span><span class="token punctuation">:</span> <span class="token important">*metadata</span>
+<span class="token key atrule">alien</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;alien</span> kal<span class="token punctuation">-</span>el
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">10000000</span>
+  <span class="token key atrule">&#x3C;&#x3C;</span><span class="token punctuation">:</span> <span class="token important">*metadata</span>
+<span class="token key atrule">names</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token important">*man</span>
+  <span class="token punctuation">-</span> <span class="token important">*alien</span>
+</code></pre>
+<p>And to overide standard template metadata in this example with specific values simply overwrite at the end as if the last thing read is what happens like in <a href="/DevLog/notes/xtwe2e10czog2dhozs86g3f">CSS</a></p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">man</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;man</span> Utibe
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">&#x3C;&#x3C;</span><span class="token punctuation">:</span> <span class="token important">*metadata</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> another<span class="token punctuation">-</span>galaxy
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x6qarznuyyyjttcfb3k8b7f">2022-02-17 (DevLog)</a></li>
+<li><a href="/DevLog/notes/4acj8vf1ltk01elnn08soku">Cool Yaml Features You Probably Didn’t Know About (DevLog)</a></li>
+</ul>

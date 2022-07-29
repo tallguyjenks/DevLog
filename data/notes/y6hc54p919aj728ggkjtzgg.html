@@ -1,0 +1,9 @@
+<h1 id="cleaner-code-in-the-where-clause"><a aria-hidden="true" class="anchor-heading icon-link" href="#cleaner-code-in-the-where-clause"></a>Cleaner Code in the Where Clause</h1>
+<p>In your code start your WHERE clause with a <code>WHERE TRUE</code> so that all logical statements are in <code>AND</code> statement on subsequent lines and therefore more easily commented out.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> dbo<span class="token punctuation">.</span>my_table
+<span class="token keyword">WHERE</span> <span class="token boolean">TRUE</span>
+<span class="token operator">AND</span> person_id <span class="token operator">></span> <span class="token number">5</span>
+<span class="token operator">AND</span> age <span class="token operator">BETWEEN</span> <span class="token number">18</span> <span class="token operator">AND</span> <span class="token number">65</span>
+<span class="token operator">AND</span> first_name <span class="token operator">LIKE</span> <span class="token string">'%Paul%'</span>
+</code></pre>

@@ -1,0 +1,20 @@
+<h1 id="run-and-view"><a aria-hidden="true" class="anchor-heading icon-link" href="#run-and-view"></a>Run and View</h1>
+<h2 id="create-and-run-in-venv-or-on-server-port"><a aria-hidden="true" class="anchor-heading icon-link" href="#create-and-run-in-venv-or-on-server-port"></a>Create and Run in Venv or on server port</h2>
+<pre class="language-bash"><code class="language-bash">poetry init <span class="token operator">&#x26;&#x26;</span>
+poetry shell <span class="token operator">&#x26;&#x26;</span>
+poetry <span class="token function">add</span> fastapi<span class="token punctuation">[</span>all<span class="token punctuation">]</span>
+</code></pre>
+<p>After Code is setup and ready to run:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># runs the app in the main.py file with the --reload option so that</span>
+<span class="token comment"># changes when the file is saved are hot loaded into the running API service</span>
+<span class="token comment"># on the port where the API is listening</span>
+
+<span class="token comment"># assumes there is a python package</span>
+<span class="token comment"># . My_Repo_Name</span>
+<span class="token comment"># ├─── app/</span>
+<span class="token comment"># │    ├─── __init__.py</span>
+<span class="token comment"># │    └─── main.py</span>
+<span class="token comment"># │         └─── app()</span>
+
+uvicorn app.main:app --reload
+</code></pre>

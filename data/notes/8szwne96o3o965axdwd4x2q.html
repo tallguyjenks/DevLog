@@ -1,0 +1,14 @@
+<h1 id="author"><a aria-hidden="true" class="anchor-heading icon-link" href="#author"></a>Author</h1>
+<p>To pass in your author credentials you can use <code>\author{Bryan Jenks}</code> and to use it as another argument in another command you can also use <code>\theauthor</code></p>
+<pre class="language-latex"><code class="language-latex"><span class="token comment">% Overwrite existing command '\maktitle'</span>
+<span class="token function selector">\renewcommand</span><span class="token punctuation">{</span><span class="token function selector">\maketitle</span><span class="token punctuation">}</span><span class="token punctuation">{</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">center</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token function selector">\huge</span><span class="token function selector">\bfseries</span>
+*<span class="token function selector">\theauthor*</span><span class="token punctuation">}</span>
+<span class="token function selector">\vspace</span><span class="token punctuation">{</span>.25em<span class="token punctuation">}</span>
+
+my email --- https://www.bryanjenks.xyz
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">center</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token comment">% first new arg from titling package</span>
+</code></pre>

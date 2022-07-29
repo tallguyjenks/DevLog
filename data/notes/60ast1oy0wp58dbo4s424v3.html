@@ -1,0 +1,6 @@
+<h1 id="write-subtitles-to-video-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#write-subtitles-to-video-file"></a>Write Subtitles to Video File</h1>
+<h2 id="write-subtitles-to-a-video-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#write-subtitles-to-a-video-file"></a>Write Subtitles to a video file</h2>
+<pre class="language-shell"><code class="language-shell">yt-dlp <span class="token operator">&#x3C;</span>URL<span class="token operator">></span>
+yt-dlp --write-sub --convert-subs srt <span class="token operator">&#x3C;</span>URL<span class="token operator">></span>
+ffmpeg -i video.webm -i subtitles.srt -c:v copy -c:s copy output.mkv
+</code></pre>

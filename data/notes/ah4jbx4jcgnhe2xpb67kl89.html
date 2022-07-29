@@ -1,0 +1,11 @@
+<h1 id="underscore-variable"><a aria-hidden="true" class="anchor-heading icon-link" href="#underscore-variable"></a>Underscore Variable</h1>
+<h2 id="the-_-in-python"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-_-in-python"></a>The _ in Python</h2>
+<ul>
+<li>The <code>_</code> in python can hold the last value in an interactive shell session but can be used like the unnamed register in <a href="/DevLog/notes/ky2wyju62g3gjhhj4fdqnxj">Vim</a> and you can use it to avoid issues when unpacking tuples or just throwing something away:</li>
+</ul>
+<pre class="language-python"><code class="language-python">my_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+x<span class="token punctuation">,</span> _<span class="token punctuation">,</span> z <span class="token operator">=</span> my_tuple <span class="token comment"># (1,2,3)</span>
+<span class="token comment">#> x = 1</span>
+<span class="token comment">#> _ = 2</span>
+<span class="token comment">#> z = 3</span>
+</code></pre>

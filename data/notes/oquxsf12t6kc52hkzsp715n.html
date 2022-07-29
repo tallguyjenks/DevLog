@@ -1,0 +1,22 @@
+<h1 id="strings"><a aria-hidden="true" class="anchor-heading icon-link" href="#strings"></a>Strings</h1>
+<h3 id="strings-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#strings-1"></a>Strings</h3>
+<p><em>Strings make use of the <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Include string (Private)</a> library to represent an array of characters (a word or more) in a single datatype with minimal headache on management and more options and functionality than C-style strings</em></p>
+<pre class="language-cpp"><code class="language-cpp">string firstName <span class="token operator">=</span> <span class="token string">"bryan"</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If you are reading in^[<a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Basic Input Output (Private)</a>] a string value into a variable, any spaces will be considered the termination of the string.</p>
+<p>To get the entire input string you need to use <code>getline()</code></p>
+<pre class="language-cpp"><code class="language-cpp">string firstName<span class="token punctuation">;</span>
+string lastName<span class="token punctuation">;</span>
+cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter first name:"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span> firstName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Gets entire line up to ENTER</span>
+cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter last name:"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span> lastName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Gets entire line up to ENTER</span>
+cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Welcome "</span> <span class="token operator">&#x3C;&#x3C;</span> firstName <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" "</span> <span class="token operator">&#x3C;&#x3C;</span> lastName <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"!"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"May I call you "</span> <span class="token operator">&#x3C;&#x3C;</span> firstName <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"?"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/1mp01xvt6rmb568japsizb7">Cstrings</a></li>
+</ol>

@@ -1,0 +1,45 @@
+<h1 id="files"><a aria-hidden="true" class="anchor-heading icon-link" href="#files"></a>Files</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"employees.txt"</span><span class="token punctuation">,</span><span class="token string">"r"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> employee_file<span class="token punctuation">:</span> <span class="token comment"># Filename, Mode (r:read a:append w:write)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>employee_file<span class="token punctuation">.</span>readable<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># returns T/F if we can read the file</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>employee_file<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># reads the first line of the file</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>employee_file<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># reads the next line (second) in the file</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>employee_file<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># reads the (third) in the file</span>
+<span class="token comment"># always close open files</span>
+employee_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># not necessary if using a context manager `with`</span>
+
+
+<span class="token comment"># Python program to illustrate</span>
+<span class="token comment"># Append vs write mode</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"myfile.txt"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file1<span class="token punctuation">:</span>
+	L <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This is Delhi \n"</span><span class="token punctuation">,</span> <span class="token string">"This is Paris \n"</span><span class="token punctuation">,</span> <span class="token string">"This is London"</span><span class="token punctuation">]</span>
+	file1<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span>L<span class="token punctuation">)</span>
+	   
+<span class="token comment"># Append-adds at last</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"myfile.txt"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file1<span class="token punctuation">:</span>  <span class="token comment"># append mode </span>
+	file1<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"Today \n"</span><span class="token punctuation">)</span>
+	   
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"myfile.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file1<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Output of Readlines after appending"</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>file1<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	   
+<span class="token comment"># Write-Overwrites</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"myfile.txt"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file1<span class="token punctuation">:</span>  <span class="token comment"># write mode </span>
+	file1<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"Tomorrow \n"</span><span class="token punctuation">)</span>
+	   
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"myfile.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file1<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Output of Readlines after writing"</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>file1<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	
+<span class="token comment"># Output:</span>
+
+<span class="token comment">#> Output of Readlines after appending</span>
+<span class="token comment">#> This is Delhi</span>
+<span class="token comment">#> This is Paris</span>
+<span class="token comment">#> This is LondonToday</span>
+<span class="token comment">#> </span>
+<span class="token comment">#> </span>
+<span class="token comment">#> Output of Readlines after writing</span>
+<span class="token comment">#> Tomorrow</span>
+</code></pre>

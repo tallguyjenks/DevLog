@@ -1,0 +1,15 @@
+<h1 id="cut-clips-from-video"><a aria-hidden="true" class="anchor-heading icon-link" href="#cut-clips-from-video"></a>Cut Clips from Video</h1>
+<h2 id="cut-clips-of-a-video"><a aria-hidden="true" class="anchor-heading icon-link" href="#cut-clips-of-a-video"></a>Cut clips of a video</h2>
+<pre class="language-bash"><code class="language-bash">ffmpeg -ss <span class="token number">0</span> -t <span class="token number">608</span> -i input.mkv output.mkv
+</code></pre>
+<p><code>-ss</code> which are the start seconds of the clip
+<code>-t</code> is how long the clip is to cut out so if we start at 0 and go until 608 seconds then it clips out a 10min8sec video out of what ever video we have.
+<code>-i</code> flags the next argument as an input file, there can be multiple.</p>
+<p><em>Alternative:</em></p>
+<pre class="language-bash"><code class="language-bash">ffmpeg -i input.mkv -ss <span class="token number">0</span> -t <span class="token number">10</span>:08 -c copy output.mkv
+</code></pre>
+<p>In this alternative examples,
+<code>-i</code> the input file
+<code>-ss</code> start stream at 0 seconds and
+<code>-t</code> says the amount of time to go is 10min8sec then
+<code>-c</code> is codec its a copy this way it doesnt need to reencode it saving time, and then the output file.</p>

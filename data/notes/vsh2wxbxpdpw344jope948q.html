@@ -1,0 +1,27 @@
+<h1 id="some"><a aria-hidden="true" class="anchor-heading icon-link" href="#some"></a>Some()</h1>
+<center>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/R8rmfD9Y5-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<p>Given data:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Bike'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">100</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'TV'</span><span class="token punctuation">,</span>       <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">200</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Album'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">10</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Book'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">5</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Phone'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">500</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Computer'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Keyboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">25</span>   <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="some-method"><a aria-hidden="true" class="anchor-heading icon-link" href="#some-method"></a>Some method</h2>
+<p>this method returns a boolean value and is great for asking a question of your data and getting simple response in return.</p>
+<hr>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> hasInexpensiveItems <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token method function property-access">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> item<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">&#x3C;=</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Result:</strong></p>
+<blockquote>
+<p>true</p>
+</blockquote>
+<p>for each item in items, is there at least 1 item that is less than or equal to 100? if so return true, otherwise false. </p>

@@ -1,0 +1,16 @@
+<h1 id="exception-handling"><a aria-hidden="true" class="anchor-heading icon-link" href="#exception-handling"></a>Exception Handling</h1>
+<h2 id="exception-handling-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#exception-handling-1"></a>Exception Handling</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+	number <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"enter a number: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>number<span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">#divide by zero</span>
+<span class="token keyword">except</span> ZeroDivisionError <span class="token keyword">as</span> err<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Divided By Zero"</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"invalid input"</span><span class="token punctuation">)</span>
+<span class="token comment"># OUTPUT:</span>
+<span class="token comment">## ./test.py</span>
+<span class="token comment">## enter a number: 1</span>
+<span class="token comment">## integer division or modulo by zero</span>
+<span class="token comment">## Divided By Zero</span>
+</code></pre>

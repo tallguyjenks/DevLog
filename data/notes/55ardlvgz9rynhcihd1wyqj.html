@@ -1,0 +1,53 @@
+<h1 id="postgres-can-do-that"><a aria-hidden="true" class="anchor-heading icon-link" href="#postgres-can-do-that"></a>Postgres Can Do That</h1>
+<p><a href="https://medium.com/cognite/postgres-can-do-that-f221a8046e">https://medium.com/cognite/postgres-can-do-that-f221a8046e</a></p>
+<ul>
+<li><code>Author:</code> alex brasetvik</li>
+<li><code>Link:</code> <a href="https://medium.com/cognite/postgres-can-do-that-f221a8046e">https://medium.com/cognite/postgres-can-do-that-f221a8046e</a></li>
+<li><code>Publish Date:</code> 2021.12.06</li>
+<li><code>Reviewed Date:</code> <a href="/DevLog/notes/gsddzigij5cwe7kmrx98gss">2022-01-26</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="/DevLog/notes/qn0tkqt3q8gpzm3v2ssqqbm">Query Tuning with Explain</a></li>
+<li><a href="/DevLog/notes/9gzl2f4a4qkshd4haffpemu">Writeable Cte</a></li>
+</ul>
+<p>Generate a mandelbrot set</p>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">--Mandelbrot set</span>
+<span class="token keyword">WITH</span> RECURSIVE x<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+	<span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+	<span class="token keyword">UNION</span> <span class="token keyword">ALL</span>
+	<span class="token keyword">SELECT</span> i <span class="token operator">+</span> <span class="token number">1</span> <span class="token keyword">FROM</span> x <span class="token keyword">WHERE</span> i <span class="token operator">&#x3C;</span> <span class="token number">101</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span>
+Z<span class="token punctuation">(</span>Ix<span class="token punctuation">,</span> Iy<span class="token punctuation">,</span> Cx<span class="token punctuation">,</span> Cy<span class="token punctuation">,</span> X<span class="token punctuation">,</span> Y<span class="token punctuation">,</span> I<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+	<span class="token keyword">SELECT</span> Ix<span class="token punctuation">,</span> Iy<span class="token punctuation">,</span> X::<span class="token keyword">float</span><span class="token punctuation">,</span> Y::<span class="token keyword">float</span><span class="token punctuation">,</span> X::<span class="token keyword">float</span><span class="token punctuation">,</span> Y::<span class="token keyword">float</span><span class="token punctuation">,</span> <span class="token number">0</span>
+	<span class="token keyword">FROM</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token operator">-</span><span class="token number">2.2</span> <span class="token operator">+</span> <span class="token number">0.031</span> <span class="token operator">*</span> i<span class="token punctuation">,</span> i <span class="token keyword">FROM</span> x<span class="token punctuation">)</span> <span class="token keyword">AS</span> xgen<span class="token punctuation">(</span>x<span class="token punctuation">,</span> ix<span class="token punctuation">)</span>
+		<span class="token keyword">CROSS</span> <span class="token keyword">JOIN</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token operator">-</span><span class="token number">1.5</span> <span class="token operator">+</span> <span class="token number">0.031</span> <span class="token operator">*</span> i<span class="token punctuation">,</span> i <span class="token keyword">FROM</span> x<span class="token punctuation">)</span> <span class="token keyword">AS</span> ygen<span class="token punctuation">(</span>y<span class="token punctuation">,</span> iy<span class="token punctuation">)</span>
+	<span class="token keyword">UNION</span> <span class="token keyword">ALL</span>
+		<span class="token keyword">SELECT</span> Ix<span class="token punctuation">,</span> Iy<span class="token punctuation">,</span> Cx<span class="token punctuation">,</span> Cy<span class="token punctuation">,</span> X <span class="token operator">*</span> X <span class="token operator">-</span> Y <span class="token operator">*</span> Y <span class="token operator">+</span> CX <span class="token keyword">AS</span> X<span class="token punctuation">,</span> Y <span class="token operator">*</span> X <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> Cy<span class="token punctuation">,</span> I <span class="token operator">+</span> <span class="token number">1</span>
+		<span class="token keyword">FROM</span> Z
+		<span class="token keyword">WHERE</span> X <span class="token operator">*</span> X <span class="token operator">+</span> Y <span class="token operator">*</span> Y <span class="token operator">&#x3C;</span> <span class="token number">16.0</span> <span class="token operator">AND</span> I <span class="token operator">&#x3C;</span> <span class="token number">27</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span>
+Zt <span class="token punctuation">(</span>Ix<span class="token punctuation">,</span> Iy<span class="token punctuation">,</span> I<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+	<span class="token keyword">SELECT</span> Ix<span class="token punctuation">,</span> Iy<span class="token punctuation">,</span> <span class="token function">MAX</span> <span class="token punctuation">(</span>I<span class="token punctuation">)</span> <span class="token keyword">AS</span> I
+	<span class="token keyword">FROM</span> Z
+	<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Iy<span class="token punctuation">,</span> Ix
+	<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> Iy<span class="token punctuation">,</span> Ix
+<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> array_to_string<span class="token punctuation">(</span>
+	array_agg<span class="token punctuation">(</span>
+		SUBSTRING<span class="token punctuation">(</span>
+			<span class="token string">' .,,,-----++++%%%%@@@@#### '</span><span class="token punctuation">,</span>
+			GREATEST <span class="token punctuation">(</span>I<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token number">1</span>
+		<span class="token punctuation">)</span>
+	<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">''</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Zt
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Iy
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> Iy<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/gsddzigij5cwe7kmrx98gss">2022-01-26 (DevLog)</a></li>
+</ul>

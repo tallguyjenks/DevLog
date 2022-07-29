@@ -1,0 +1,70 @@
+<h1 id="functions"><a aria-hidden="true" class="anchor-heading icon-link" href="#functions"></a>Functions</h1>
+<pre class="language-r"><code class="language-r"><span class="token comment"># Functions ----</span>
+<span class="token comment"># Descriptive Statistics Functions ----</span>
+
+myValues <span class="token operator">&#x3C;-</span> c<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">)</span>
+myValues
+
+mean<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+median<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+mode<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+min<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+max<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+sum<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+sd<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span> <span class="token comment">#standard deviation</span>
+class<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+length<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+log<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+log10<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+
+
+mySqrt <span class="token operator">&#x3C;-</span> sqrt<span class="token punctuation">(</span>myValues<span class="token punctuation">)</span>
+mySqrt
+
+?rnorm <span class="token comment"># Adding a question mark before the name of a function opens a help pane with all the details</span>
+<span class="token comment"># on that function, this is a great way to learn about what the functions require as arguments</span>
+?rgb
+
+hist<span class="token punctuation">(</span>rnorm<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> mean <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Data frame Functioons ----</span>
+
+<span class="token comment"># setting up the data frame vectors</span>
+id <span class="token operator">&#x3C;-</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">200</span>
+group <span class="token operator">&#x3C;-</span> c<span class="token punctuation">(</span>rep<span class="token punctuation">(</span><span class="token string">"Vehicle"</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	   rep<span class="token punctuation">(</span><span class="token string">"Drug"</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+response <span class="token operator">&#x3C;-</span> c<span class="token punctuation">(</span>rnorm<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span>mean <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">,</span> sd <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		  rnorm<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span>mean <span class="token operator">=</span> <span class="token number">23</span><span class="token punctuation">,</span> sd<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#compiling the data frame</span>
+myData <span class="token operator">&#x3C;-</span> data.frame<span class="token punctuation">(</span>Patient <span class="token operator">=</span> id<span class="token punctuation">,</span>
+				 Treatment <span class="token operator">=</span> group<span class="token punctuation">,</span>
+				 Response <span class="token operator">=</span> response<span class="token punctuation">)</span>
+
+myData
+head<span class="token punctuation">(</span>myData<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+tail<span class="token punctuation">(</span>myData<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+dim<span class="token punctuation">(</span>myData<span class="token punctuation">)</span>
+str<span class="token punctuation">(</span>myData<span class="token punctuation">)</span>
+summary<span class="token punctuation">(</span>myData<span class="token punctuation">)</span>
+
+
+<span class="token comment"># Change Value of data type present can work for entire columns ----</span>
+as.numeric<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+as.character<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># Remove Objects ----</span>
+<span class="token comment"># Objects names cannot contain  spaces in varialbe/object names </span>
+<span class="token comment"># But underscores and periods allowed but best to just stick with camel case</span>
+
+my_Object <span class="token operator">&#x3C;-</span> <span class="token number">3</span>
+my.Object <span class="token operator">&#x3C;-</span> <span class="token number">3</span>
+myObject <span class="token operator">&#x3C;-</span><span class="token number">3</span>
+
+<span class="token comment"># all of these are valid</span>
+<span class="token comment"># to remove an object use the RM command</span>
+
+rm<span class="token punctuation">(</span>my_Object<span class="token punctuation">)</span>
+rm<span class="token punctuation">(</span>my.Object<span class="token punctuation">)</span>
+</code></pre>

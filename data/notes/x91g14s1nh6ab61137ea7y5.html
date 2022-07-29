@@ -1,0 +1,19 @@
+<h1 id="sub-queries"><a aria-hidden="true" class="anchor-heading icon-link" href="#sub-queries"></a>Sub Queries</h1>
+<p>A sub-query is a nested <code>SELECT</code> statement inside of another parent <code>SELECT</code> statement.</p>
+<p>A usage of this is to select a record set from which you then want to manipulate and operate on after that initial pool is generated:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> P<span class="token punctuation">.</span>Age
+<span class="token keyword">FROM</span> <span class="token punctuation">(</span>
+	<span class="token keyword">SELECT</span> P1<span class="token punctuation">.</span><span class="token operator">*</span>
+	<span class="token keyword">FROM</span> PERSON P1
+	<span class="token keyword">WHERE</span> P1<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">'Paul'</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>In this example the first operation performed is the gathering of all records from the <code>P1</code> table where the <code>Name</code> field contains the string value <em>Paul</em>. Then from that result set we are selecting the <code>Age</code> field from that initial result set.</p>
+<p>With sub-queries:</p>
+<p>A Required <code>SELECT</code> statement list
+A Required <code>FROM</code> clause
+An Optional <code>WHERE</code> clause
+An Optional <code>GROUP BY</code> clause
+An Optional <code>HAVING</code> clause
+But <strong>NO</strong> <code>ORDER BY</code> clause this will throw an <em>error</em></p>
+<p>Sub queries can be used anywhere an expression is allowed. This includes the <code>SELECT</code> portion of a query, the <code>FROM</code> clause, the <code>WHERE</code> clause, <code>JOIN</code>'s, <code>GROUP BY</code>'s.</p>

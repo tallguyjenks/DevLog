@@ -1,0 +1,40 @@
+<h1 id="setup"><a aria-hidden="true" class="anchor-heading icon-link" href="#setup"></a>Setup</h1>
+<h2 id="proxmox-setup-steps"><a aria-hidden="true" class="anchor-heading icon-link" href="#proxmox-setup-steps"></a>Proxmox setup steps</h2>
+<ol start="0">
+<li><a href="https://youtu.be/azORbxrItOo">Great installation video</a></li>
+<li><a href="https://proxmox.com/en/downloads">download iso</a></li>
+<li>Use management interface on the server, <a href="/DevLog/notes/v8cblzfw9pxccuas5jqjaj5">iDRAC</a>
+<ol>
+<li>Turn server on</li>
+<li>Attach virtual media (the .iso)</li>
+</ol>
+</li>
+<li>Follow the prompts and fill in the information
+<ol>
+<li>chose <a href="/DevLog/notes/qxiase7pfirf3k9mkp797v2#raid-z">Raid</a>1 for a mirrored boot drive on SSD pair
+<ol>
+<li>if SSD's are not visible on boot, check that the SATA settings in device settings is set to ACHI and auto</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>fill in network information
+<ol>
+<li>Much of it can be gleaned from your router console</li>
+<li><code>ifconfig get default | grep gateway</code> for the default gateway</li>
+<li>for MacOS to find <a href="/DevLog/notes/84pi5u7op8dg5x5x008k304">DNS</a> server just search for <code>DNS</code> in <em>system preferences</em></li>
+</ol>
+</li>
+<li>Once proxmox is finished bootstrapping and restarts the server, remove the virtual media</li>
+<li>if screen loads to a console then you can just transition back to your main machine and use the web interface to finish.</li>
+<li>management console is at: <code>https://#.#.#.#:8006</code> (replace <code>#</code> with valid IPV4 address)</li>
+<li>connection will be insecure and that's okay, proceed anyhow</li>
+<li>login as <code>root</code> with the password you previously set.</li>
+<li>Ignore subscription popup, its FOSS unless you want enterprise subscription</li>
+</ol>
+<h2 id="post-install-configuration"><a aria-hidden="true" class="anchor-heading icon-link" href="#post-install-configuration"></a>Post Install Configuration</h2>
+<p>TODO reformat this section by separating out the steps to their own notes and making this list more legible</p>
+<ol>
+<li><code>apt-get install neovim ranger tldr</code></li>
+<li><a href="/DevLog/notes/ghqfq24dh7bjkpabdqvstm6">Configuration</a></li>
+</ol>

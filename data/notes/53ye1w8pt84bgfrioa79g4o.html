@@ -1,0 +1,22 @@
+<h1 id="least-greatest"><a aria-hidden="true" class="anchor-heading icon-link" href="#least-greatest"></a>Least Greatest</h1>
+<p>Unlike aggregate functions such as <code>MIN</code> or <code>MAX</code> using <code>LEAST</code> or <code>GREATEST</code> seems to be scalar oriented</p>
+<blockquote>
+<p>Two functions that come in handy for data preparation are the <code>LEAST</code> and <code>GREATEST</code> functions. Each function takes any number of values and returns the least or the greatest of the values, respectively.</p>
+<p>A simple use of this variable would be to replace the value if it's too high or low. For example, the sales team may want to create a sales list where every scooter is $600 or less than that. We can create this using the following query:</p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> product_id
+     <span class="token punctuation">,</span> model
+     <span class="token punctuation">,</span> <span class="token keyword">year</span>
+     <span class="token punctuation">,</span> product_type
+     <span class="token punctuation">,</span> LEAST<span class="token punctuation">(</span><span class="token number">600.00</span><span class="token punctuation">,</span> base_msrp<span class="token punctuation">)</span> <span class="token keyword">AS</span> base_msrp
+     <span class="token punctuation">,</span> production_start_date
+     <span class="token punctuation">,</span> production_end_date
+<span class="token keyword">FROM</span> products
+<span class="token keyword">WHERE</span> product_type<span class="token operator">=</span><span class="token string">'scooter'</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/kyeu3h5pym90eziek8pjn4n">Sql_for_data_analytics_perform_fast_and_efficient (DevLog)</a></li>
+</ul>

@@ -1,0 +1,31 @@
+<h1 id="pypdf2"><a aria-hidden="true" class="anchor-heading icon-link" href="#pypdf2"></a>Pypdf2</h1>
+<ul>
+<li>Use this to append all PDF's in the given directory into 1</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> PyPDF2<span class="token punctuation">,</span> os
+
+<span class="token comment"># Get all the PDF filenames.</span>
+pdfFiles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> filename <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">if</span> filename<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'.pdf'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	  pdfFiles<span class="token punctuation">.</span>append<span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+pdfFiles<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+pdfWriter <span class="token operator">=</span> PyPDF2<span class="token punctuation">.</span>PdfFileWriter<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Loop through all the PDF files.</span>
+<span class="token keyword">for</span> filename <span class="token keyword">in</span> pdfFiles<span class="token punctuation">:</span>
+  pdfFileObj <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span>
+  pdfReader <span class="token operator">=</span> PyPDF2<span class="token punctuation">.</span>PdfFileReader<span class="token punctuation">(</span>pdfFileObj<span class="token punctuation">)</span>
+
+  <span class="token comment"># Loop through all the pages (except the first) and add them.</span>
+  <span class="token keyword">for</span> pageNum <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> pdfReader<span class="token punctuation">.</span>numPages<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	  pageObj <span class="token operator">=</span> pdfReader<span class="token punctuation">.</span>getPage<span class="token punctuation">(</span>pageNum<span class="token punctuation">)</span>
+	  pdfWriter<span class="token punctuation">.</span>addPage<span class="token punctuation">(</span>pageObj<span class="token punctuation">)</span>
+
+<span class="token comment"># Save the resulting PDF to a file.</span>
+pdfOutput <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'allminutes.pdf'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span>
+pdfWriter<span class="token punctuation">.</span>write<span class="token punctuation">(</span>pdfOutput<span class="token punctuation">)</span>
+pdfOutput<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre>

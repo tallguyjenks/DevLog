@@ -1,0 +1,20 @@
+<h1 id="deleting-a-class"><a aria-hidden="true" class="anchor-heading icon-link" href="#deleting-a-class"></a>Deleting a Class</h1>
+<h2 id="deleting-a-class-instance"><a aria-hidden="true" class="anchor-heading icon-link" href="#deleting-a-class-instance"></a>Deleting A Class Instance</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">User</span>
+	<span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I Live!"</span><span class="token punctuation">)</span>
+	<span class="token keyword">def</span> <span class="token function">say_hi</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hi!"</span><span class="token punctuation">)</span>
+
+My_User <span class="token operator">=</span> User<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#>>> "I Live!"</span>
+My_User<span class="token punctuation">.</span>say_hi<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#>>> "Hi!"</span>
+MY_User
+<span class="token comment">#>>> &#x3C;__main__.User object at 0x000001BF37B38D30></span>
+<span class="token keyword">del</span> My_User
+My_User
+<span class="token comment">#>>> Traceback (most recent call last):</span>
+<span class="token comment">#>>>   File "&#x3C;stdin>", line 1, in &#x3C;module></span>
+<span class="token comment">#>>> NameError: name 'My_User' is not defined</span>
+</code></pre>

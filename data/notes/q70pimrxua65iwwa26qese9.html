@@ -1,0 +1,22 @@
+<h1 id="conversion"><a aria-hidden="true" class="anchor-heading icon-link" href="#conversion"></a>Conversion</h1>
+<p>If you do not want to make a new variable or refactor an existing variable due to the need for it to be a <code>double</code> and not an <code>int</code> any longer.</p>
+<p>Like when finding the average of integers and the returned value is floating point</p>
+<p>this will work like <code>cast()</code> in SQL</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> kidsInFamily1 <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// Should be int, not double</span>
+   <span class="token keyword">int</span> kidsInFamily2 <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token comment">// (know anyone with 2.3 kids?)</span>
+   <span class="token keyword">int</span> numFamilies   <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// Should be int, not double</span>
+
+   <span class="token keyword">double</span> avgKidsPerFamily <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span> <span class="token comment">// Expect fraction, so double</span>
+
+   avgKidsPerFamily <span class="token operator">=</span> <span class="token generic-function"><span class="token function">static_cast</span><span class="token generic class-name"><span class="token operator">&#x3C;</span><span class="token keyword">double</span><span class="token operator">></span></span></span><span class="token punctuation">(</span>kidsInFamily1 <span class="token operator">+</span> kidsInFamily2<span class="token punctuation">)</span> 
+                      <span class="token operator">/</span> <span class="token generic-function"><span class="token function">static_cast</span><span class="token generic class-name"><span class="token operator">&#x3C;</span><span class="token keyword">double</span><span class="token operator">></span></span></span><span class="token punctuation">(</span>numFamilies<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Average kids per family: "</span> <span class="token operator">&#x3C;&#x3C;</span> avgKidsPerFamily <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

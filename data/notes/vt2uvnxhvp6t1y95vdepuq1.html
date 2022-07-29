@@ -1,0 +1,38 @@
+<h1 id="implementation-notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#implementation-notes"></a>Implementation Notes</h1>
+<ol>
+<li>Make Empty Git repository on Azure DevOps</li>
+<li>Make sure git repo has a master branch on the remote
+<ul>
+<li>If you cannot make this happen, it can be fixed later and might just have to be</li>
+</ul>
+</li>
+<li>Setup <a href="/DevLog/notes/1v4a685ktgnn62gqytdzcvs">Changelog Database</a>
+<ul>
+<li>Or at least make sure all users have followed steps to get added to changelog DB</li>
+</ul>
+</li>
+<li>if no remote master branch then errors will occur in the local repository
+<ul>
+<li>To correct errors of missing <code>origin/master</code> run <code>git branch --unset-upstream</code> since an upstream <code>master</code> branch doesn't yet exist</li>
+<li>This will arise when you add a DB to the source control and try to enter the commit screen</li>
+</ul>
+</li>
+<li>Make a new folder for each Version Controlled DB in your Repo
+<ul>
+<li>Convention being used is to name each folder the same as the DB's name but in all CAPS</li>
+</ul>
+</li>
+<li>Setup Source control filters so you essentially have gitignore functionality in the repository</li>
+<li><a href="/DevLog/notes/wjn7gyf9v25or1jci9x0asu">Link a Development Database to Your Source Control System</a>
+<ul>
+<li>If applicable <a href="/DevLog/notes/bvdobcenkwubyk0zktyetnx">Linking Static Data</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/1v4a685ktgnn62gqytdzcvs">Changelog Database</a></li>
+<li><a href="/DevLog/notes/wjn7gyf9v25or1jci9x0asu">Link a Development Database to Your Source Control System</a></li>
+<li><a href="/DevLog/notes/bvdobcenkwubyk0zktyetnx">Linking Static Data</a></li>
+</ol>

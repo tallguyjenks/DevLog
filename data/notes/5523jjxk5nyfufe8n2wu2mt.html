@@ -1,0 +1,9 @@
+<h1 id="sending-notification-emails-with-t-sql-without-using-hardcoded-email-addresses"><a aria-hidden="true" class="anchor-heading icon-link" href="#sending-notification-emails-with-t-sql-without-using-hardcoded-email-addresses"></a>Sending Notification Emails with T Sql without Using Hardcoded Email Addresses</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> demo
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@OperatorName</span> sysname <span class="token operator">=</span> N<span class="token string">'YourOperatorName'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@OperatorEmailAddress</span> nvarchar<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> email_address <span class="token keyword">FROM</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sysoperators <span class="token keyword">WHERE</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">@OperatorName</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">PRINT</span> <span class="token variable">@OperatorEmailAddress</span>
+</code></pre>

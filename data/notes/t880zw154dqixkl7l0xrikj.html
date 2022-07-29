@@ -1,0 +1,6 @@
+<h1 id="resize"><a aria-hidden="true" class="anchor-heading icon-link" href="#resize"></a>Resize</h1>
+<h4 id="resize-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#resize-1"></a>resize()</h4>
+<p>To dynamically resize a vector while program is executing and size is not known during compile time.</p>
+<pre class="language-cpp"><code class="language-cpp">vctr<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Allocates N elements for vector vctr.</span>
+</code></pre>
+<p>resize is now adding new slots on top of existing elements, rather it just states that <em>"THIS is how many elements are in this vector"</em>. If the resize value is smaller than the vectors current size, all elements in indexes larger than <code>N</code> are destroyed and <code>N</code> is now the size of the vector.</p>

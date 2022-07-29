@@ -1,0 +1,70 @@
+<h1 id="microsoft-orchestrator"><a aria-hidden="true" class="anchor-heading icon-link" href="#microsoft-orchestrator"></a>Microsoft Orchestrator</h1>
+<h2 id="make-a-new-run-books"><a aria-hidden="true" class="anchor-heading icon-link" href="#make-a-new-run-books"></a>Make a New Run Books</h2>
+<h3 id="sc-2016-service-manager"><a aria-hidden="true" class="anchor-heading icon-link" href="#sc-2016-service-manager"></a>SC 2016 Service Manager</h3>
+<ul>
+<li>==Monitor Object==:
+<ul>
+<li>Monitoring For new or updated items</li>
+<li><strong>Connection:</strong> <code>SCSM PROD</code></li>
+<li><strong>Class:</strong> <code>service request</code> or <code>incident</code>
+<ul>
+<li>One monitor for each class type</li>
+</ul>
+</li>
+<li><strong>Trigger:</strong> Keep trigger to <em>New</em> because <em>Update</em> will do a biiiig pull</li>
+<li><strong>Filters:</strong> To match your criteria Title works with <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Regex (Private)</a></li>
+</ul>
+</li>
+<li>==Update Object==</li>
+<li>==Create Relationship==</li>
+</ul>
+<h2 id="utilities"><a aria-hidden="true" class="anchor-heading icon-link" href="#utilities"></a>Utilities</h2>
+<ul>
+<li>==Write To Database==</li>
+</ul>
+<h2 id="text-file-management"><a aria-hidden="true" class="anchor-heading icon-link" href="#text-file-management"></a>Text File Management</h2>
+<ul>
+<li>==Append Line==</li>
+</ul>
+<h2 id="tips"><a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a>Tips</h2>
+<ul>
+<li><strong>Data Fields:</strong>
+<ul>
+<li>For input areas <em>right click</em> to get <code>subscribe data</code> or <code>variables</code></li>
+</ul>
+</li>
+<li><strong>Data Connectors:</strong> To connect nodes together and have data flow between nodes hover over an icon and it's arrow until the cursor changes to a black cross hairs then click and drag to another node. no visual indication of the operation will occur until the drag and drop is complete
+<ul>
+<li>The connector lines also have additional options you can access with double clicking</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Never just change ticket status to <code>Closed</code>
+<ul>
+<li>Change to <code>Completed</code> the <code>Closed</code> status is auto</li>
+<li>Make sure to update comments or description with <code>implementation status</code> and <code>notes</code> so tickets are not just closed with no user communication</li>
+</ul>
+</li>
+<li>ADM account doesnt have access to file location? then for
+<strong>Security</strong> pass your normal credentials and the path to the location that your normal account has access to
+Best to have a service account own this though
+<ul>
+<li>Service account would need:
+<ul>
+<li>ADM Account</li>
+<li>Access to <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@IT (Private)</a></li>
+<li>Access to the SCORTCH AD group</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/k6guttgmzz6o6hgyfh37ktp">17 (DevLog)</a></li>
+<li><a href="/DevLog/notes/7hh4wd7rv9zeskbxv35yrjx">18 (DevLog)</a></li>
+<li><a href="/DevLog/notes/4ae4821voz5iy0g8o7x3ja9">19 (DevLog)</a></li>
+</ul>

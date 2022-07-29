@@ -1,0 +1,27 @@
+<h1 id="workflow"><a aria-hidden="true" class="anchor-heading icon-link" href="#workflow"></a>Workflow</h1>
+<ul>
+<li>Setup Git Repo and clone</li>
+<li>Make directory and <code>*.py</code> file for your project name
+<ul>
+<li>In that directory add an <code>__init__.py</code> file and in that file add code to import your desired objects from your package</li>
+<li>like "Install module but also add to working session these objects"</li>
+</ul>
+</li>
+<li>in the root set up a <code>setup.py</code> file
+<ul>
+<li>This file lets the local files be installed by pip as a proper package</li>
+</ul>
+</li>
+<li>Live iteration through <a href="/DevLog/notes/j13rvob3zgyz8xz8z7ul1z5">Jupyter</a> lab with magics:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">python -m pip <span class="token function">install</span> jupyterlab
+python -m jupyter lab
+</code></pre>
+<pre><code>%load_ext autoreload
+%autoreload 2
+</code></pre>
+<ul>
+<li>Upload package to PyPi (Python Package Index)</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">python -m pip <span class="token function">install</span> twine wheel
+</code></pre>

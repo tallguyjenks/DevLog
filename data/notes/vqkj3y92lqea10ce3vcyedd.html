@@ -1,0 +1,80 @@
+<h1 id="bryson-tyrrell-your-code-should-document-itself-embedding-documentation-into-your-python-projects"><a aria-hidden="true" class="anchor-heading icon-link" href="#bryson-tyrrell-your-code-should-document-itself-embedding-documentation-into-your-python-projects"></a>Bryson Tyrrell Your Code Should Document Itself Embedding Documentation into Your Python Projects</h1>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/JQ8RQru-Y9Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Syntax</span></div>
+<a href="/DevLog/notes/u4p5st1m9zs7acn8wb72b7r" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div>
+</div></div><p></p>
+<p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Sphinx</span></div>
+<a href="/DevLog/notes/u2viguh10cx5nf3oz1pjy9u" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="http://www.sphinx-doc.org/en/stable/tutorial.html">Sphinx Tutorial</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/rest.html">reStructuredText Primer</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/markup/index.html">Sphinx Markup Constructs</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/domains.html">Sphinx Domains</a></li>
+</ul>
+<h2 id="quick-start"><a aria-hidden="true" class="anchor-heading icon-link" href="#quick-start"></a>Quick Start</h2>
+<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> Sphinx
+<span class="token function">mkdir</span> docs
+<span class="token builtin class-name">cd</span> docs
+sphinx-quickstart
+</code></pre>
+<p>This creates:</p>
+<p><img src="/DevLog/assets/images/2022-02-17-12-49-53.png" alt="quick start"></p>
+<h2 id="versioning"><a aria-hidden="true" class="anchor-heading icon-link" href="#versioning"></a>Versioning</h2>
+<p>Instead of hardcoding version in the quick start wizard, use the python <code>__version__</code> dunder to have the version automatically be pulled.</p>
+<p><img src="/DevLog/assets/images/2022-02-17-12-51-56.png" alt="version"></p>
+<h2 id="building-the-docs"><a aria-hidden="true" class="anchor-heading icon-link" href="#building-the-docs"></a>Building The docs</h2>
+<pre class="language-bash"><code class="language-bash">sphinx-build <span class="token builtin class-name">.</span> _build/html/
+<span class="token function">make</span> html <span class="token comment"># this is just an alias to the above command</span>
+</code></pre>
+<p>Instead of just detecting changes you might want to rebuild the whole thing:</p>
+<pre class="language-bash"><code class="language-bash">sphinx-build -E <span class="token builtin class-name">.</span> _build/html/
+<span class="token function">make</span> clean<span class="token punctuation">;</span> <span class="token function">make</span> html
+</code></pre>
+<h3 id="code-coverage"><a aria-hidden="true" class="anchor-heading icon-link" href="#code-coverage"></a>Code Coverage</h3>
+<p>can use a different build tool addon that is activated from the quickstart wizard called <code>coverage</code></p>
+<pre class="language-bash"><code class="language-bash">sphinx-build -b coverage <span class="token builtin class-name">.</span> _build/coverage/`
+</code></pre>
+<p>This will use <code>coverage</code> as the build tool and tell you when you have undocumented functions. Otherwise sphinx will fail quietly because if there's no work to do (functions dont have doc strings) then it fails quietly.</p>
+<p>There is a flag to get it to process and render function documentation even if its blank called <code>undock members</code> but coverage gives insight into undocumented things.</p>
+<h2 id="themes"><a aria-hidden="true" class="anchor-heading icon-link" href="#themes"></a>Themes</h2>
+<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> sphinx_rtd_theme <span class="token comment"># this is for read the docs theme</span>
+</code></pre>
+<p>and then inside <code>conf.py</code> in the <code>docs/</code> directory:</p>
+<pre class="language-python"><code class="language-python">html_theme <span class="token operator">=</span> <span class="token string">'sphinx_rtd_theme'</span>
+</code></pre></div></div><p></p>
+<p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Read the Docs</span></div>
+<a href="/DevLog/notes/rqw8a8ms7im0q0746ezfw33" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="public-documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#public-documentation"></a>Public Documentation</h2>
+<p><a href="https://www.readthedocs.org">https://www.readthedocs.org</a></p>
+<p>can link to publix github projects and when you successfully commit into a branch it will rebuild your docs on the readthedocs site.</p>
+<h2 id="private-docs"><a aria-hidden="true" class="anchor-heading icon-link" href="#private-docs"></a>Private Docs</h2>
+<p>In <a href="/DevLog/notes/5j1n121xly1zkgpe825qqj2">Pipelines</a> i can build the docs and return an artifact and deploy that artifact somewhere afterwards</p>
+</div></div><p></p><p></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x6qarznuyyyjttcfb3k8b7f">2022-02-17 (DevLog)</a></li>
+</ul>

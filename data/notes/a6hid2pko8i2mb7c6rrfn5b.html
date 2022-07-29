@@ -1,0 +1,94 @@
+<h1 id="break-statement"><a aria-hidden="true" class="anchor-heading icon-link" href="#break-statement"></a>Break Statement</h1>
+<h2 id="the-break-statement"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-break-statement"></a>The break statement</h2>
+<p>Just like <a href="/DevLog/notes/wpjwxd59fo8phfcopj1sh2z">C++ Case Statements</a> the <code>break;</code> keyword will cause the loop to end, just like the case statement will run, executing all code on the flow down until it hits a <code>break;</code> statement:</p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Case Statements</span></div>
+<a href="/DevLog/notes/wpjwxd59fo8phfcopj1sh2z" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="syntax"><a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a>Syntax</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter a number (1,2, or 3: "</span><span class="token punctuation">;</span>
+    cin  <span class="token operator">>></span> num<span class="token punctuation">;</span>
+
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+          cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"You Chose 1!"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+          <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+          cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"You Chose 2!"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+          <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
+          cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"You Chose 3!"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+          <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">default</span><span class="token operator">:</span>
+          cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"WUT"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+          <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="multi-case-flows"><a aria-hidden="true" class="anchor-heading icon-link" href="#multi-case-flows"></a>Multi-Case Flows</h2>
+<p>If you line up a bunch of cases like this:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> dogAgeYears  <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span> dogAgeMonths <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter dog's age (in years): "</span><span class="token punctuation">;</span>
+   cin <span class="token operator">>></span> dogAgeYears<span class="token punctuation">;</span>
+
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>dogAgeYears <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter dog's age in months: "</span><span class="token punctuation">;</span>
+      cin  <span class="token operator">>></span> dogAgeMonths<span class="token punctuation">;</span>
+
+      <span class="token keyword">switch</span> <span class="token punctuation">(</span>dogAgeMonths<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+            cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"That's 0..14 human months."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+         <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">5</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span>
+            cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"That's 1..5 human years."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+         <span class="token keyword">case</span> <span class="token number">7</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">8</span><span class="token operator">:</span>
+            cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"That's 5..9 human years."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+         <span class="token keyword">case</span> <span class="token number">9</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">10</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">11</span><span class="token operator">:</span>
+         <span class="token keyword">case</span> <span class="token number">12</span><span class="token operator">:</span>
+            cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"That's 9..15 human years."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+         <span class="token keyword">default</span><span class="token operator">:</span>
+            cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Invalid input."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"FIXME: Do earlier dog year cases."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      <span class="token keyword">switch</span> <span class="token punctuation">(</span>dogAgeYears<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The cases for 3,4,5, and 6 will all cause the same result, i.e. the result for case 6. The other cases will hit and then flow down executing all code until they finally hit a <code>break;</code> statement. This can be useful shorthand for grouping multiple inputs to the same output code. 723541</p></div></div><p></p><p></p>

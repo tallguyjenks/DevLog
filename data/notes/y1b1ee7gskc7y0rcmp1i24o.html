@@ -1,0 +1,47 @@
+<h1 id="csv"><a aria-hidden="true" class="anchor-heading icon-link" href="#csv"></a>Csv</h1>
+<ul>
+<li>google stock data url <a href="https://goo.gl/3zaUlD">here</a></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> csv
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
+
+path <span class="token operator">=</span> <span class="token string">"googleStockData.csv"</span>
+<span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+reader <span class="token operator">=</span> csv<span class="token punctuation">.</span>reader<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span>
+
+header <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span>reader<span class="token punctuation">)</span> <span class="token comment">#the first line is the header</span>
+
+<span class="token comment">#print(header)</span>
+<span class="token comment">#print(data[0])</span>
+data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> reader<span class="token punctuation">:</span>
+  <span class="token comment"># row = [date, open, high, low, close, volume, adj.close]</span>
+  <span class="token comment">#       date, float, float,float,float,integer,float</span>
+  date <span class="token operator">=</span> datetime<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'%m/%d/%Y'</span><span class="token punctuation">)</span>
+  open_price <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#rename column as open is a function call</span>
+  high <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  low <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  close <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  volume <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  adj_close <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  data<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>date<span class="token punctuation">,</span> open_price<span class="token punctuation">,</span> high<span class="token punctuation">,</span> low<span class="token punctuation">,</span> close<span class="token punctuation">,</span> volume<span class="token punctuation">,</span> adj_close<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment">#compute and store daily stock returns</span>
+returns_path <span class="token operator">=</span> <span class="token string">"google_returns.csv"</span>
+<span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>returns_path<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
+writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span>
+writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Date"</span><span class="token punctuation">,</span> <span class="token string">"Return"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  todays_row <span class="token operator">=</span> data<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+  todays_date <span class="token operator">=</span> todays_row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+  todays_price <span class="token operator">=</span> todays_row<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+  yesterdays_row <span class="token operator">=</span> data<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
+  yesterdays_price <span class="token operator">=</span> yesterdays_row<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+  daily_return <span class="token operator">=</span> <span class="token punctuation">(</span>todays_price <span class="token operator">-</span> yesterdays_price<span class="token punctuation">)</span> <span class="token operator">/</span> yesterdays_price
+  formatted_date <span class="token operator">=</span> todays_date<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%m/%d/%Y'</span><span class="token punctuation">)</span>
+  writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span><span class="token punctuation">[</span>formatted_date<span class="token punctuation">,</span> daily_return<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>

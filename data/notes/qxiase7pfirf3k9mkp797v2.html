@@ -1,0 +1,102 @@
+<h1 id="raid"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid"></a>Raid</h1>
+<h2 id="raid-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-1"></a>RAID</h2>
+<blockquote>
+<p>Redundant Array of Independent Disks</p>
+</blockquote>
+<ul>
+<li>Is not a backup
+<ul>
+<li>If your operating system or software, rather than the hard disk, corrupts your data, this corrupted data is sent to both disks and simultaneously corrupts both drives.</li>
+</ul>
+</li>
+</ul>
+<h3 id="raid-0"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-0"></a>RAID 0</h3>
+<ul>
+<li><img src="/DevLog/assets/images/2022-03-12-15-04-25.png" alt="RAID 0"></li>
+<li>Striping (Disk A and B contain data split between them that together forms the whole)</li>
+</ul>
+<h3 id="raid-1-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-1-1"></a>RAID 1</h3>
+<ul>
+<li><img src="/DevLog/assets/images/2022-03-12-15-02-23.png" alt="RAID 1"></li>
+<li>Mirroring (Disk A and B are exact copies of each other)</li>
+</ul>
+<h3 id="raid-10"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-10"></a>RAID 10</h3>
+<ul>
+<li><img src="/DevLog/assets/images/2022-03-12-14-20-16.png" alt="RAID 0, 1, and 10 Example"></li>
+<li>Combination of <a href="/DevLog/notes/qxiase7pfirf3k9mkp797v2#raid-0">RAID 0</a> and <a href="/DevLog/notes/qxiase7pfirf3k9mkp797v2#raid-1">RAID 1</a></li>
+<li>Requires at least 4 drives
+<ul>
+<li>Drives should be identical (The disk geometry (number of heads, cylinders, etc.) is critical and it is strongly recommended NOT to use dissimilar disks.)</li>
+</ul>
+</li>
+<li>Protects you from a single drive failure
+<ul>
+<li>reads the surviving mirror and stores the copy to the new drive you replaced. (Not nearly as taxing of an operation as <a href="/DevLog/notes/qxiase7pfirf3k9mkp797v2#raid-5">RAID 5</a>)</li>
+</ul>
+</li>
+<li>cuts your usable disk space in half 4x2TB Disks == 4TB total storage</li>
+</ul>
+<h3 id="raid-4"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-4"></a>RAID 4</h3>
+<ul>
+<li><img src="/DevLog/assets/images/2022-03-12-16-31-20.png" alt="RAID 4"></li>
+<li>consists of block-level striping with a dedicated parity disk.</li>
+<li>As a result of its layout, RAID 4 provides good performance of random reads</li>
+<li>while the performance of random writes is low due to the need to write all parity data to a single disk</li>
+</ul>
+<h3 id="raid-5"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-5"></a>RAID 5</h3>
+<ul>
+<li><img src="/DevLog/assets/images/2022-03-12-15-10-33.png" alt="RAID 5"></li>
+<li>When a drive fails
+<ul>
+<li>it needs to read everything on all the remaining drives to rebuild the new, replaced disk (A heavy load for the surviving disk and potential failure point of the 2nd disk)</li>
+</ul>
+</li>
+<li>Storage Volume ((Number of hard drives - 1) x storage capacity of the smallest hard drive)
+<ul>
+<li>3x1TB drives == 2TB storage, 3rd disk is for parity data</li>
+</ul>
+</li>
+<li>Only at risk for failure if at least 2 drives fail simultaneously
+<ul>
+<li>That’s why, typically, an odd number of data carriers, i.e., three, five, seven, etc., is combined.</li>
+</ul>
+</li>
+</ul>
+<h3 id="raid-6"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-6"></a>RAID 6</h3>
+<ul>
+<li><img src="/DevLog/assets/images/2022-03-12-14-49-20.png" alt="RAID 6"></li>
+<li>Combines four or more hard drives into a single logical drive.</li>
+<li>Often referred to as “RAID 5 expansion”</li>
+<li>Striping (All data is divided into blocks and distributed evenly to the participating hard disks.)</li>
+<li>Parity (always saves two sets of parity information. In that way, associated data can be restored if one or two disks fail.)</li>
+<li>Storage Volume ((Number of hard drives - 2) x space of the smallest hard drive)
+<ul>
+<li>For example, with four 1GB hard disks, only 50% of their potential memory would be available to store user data. However, as the number of disks increases, this relationship between capacity and parity improves.</li>
+</ul>
+</li>
+<li>Advantage over <a href="/DevLog/notes/qxiase7pfirf3k9mkp797v2#raid-5">RAID 5</a>
+<ul>
+<li>parity information to recover lost data is saved in duplicate. Duplicated parity data is a more efficient way of creating redundancy, and also ensures higher reliability.</li>
+<li>This is less taxing on the remaining drives compared to ordinary</li>
+</ul>
+</li>
+</ul>
+<h3 id="raid-50"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-50"></a>RAID 50</h3>
+<ul>
+<li><img src="/DevLog/assets/images/2022-03-12-16-28-30.png" alt="RAID 50"></li>
+<li>Minimum of 6 drives</li>
+</ul>
+<h3 id="raid-60"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-60"></a>RAID 60</h3>
+<ul>
+<li><img src="/DevLog/assets/images/2022-03-12-16-30-23.png" alt="RAID 60"></li>
+</ul>
+<h2 id="storage-via-zfs"><a aria-hidden="true" class="anchor-heading icon-link" href="#storage-via-zfs"></a>Storage via ZFS</h2>
+<p>See <a href="/DevLog/notes/pb9hujszsuq4s8gbgf9d2w2">Zfs</a></p>
+<h2 id="raid-z"><a aria-hidden="true" class="anchor-heading icon-link" href="#raid-z"></a>RAID-Z</h2>
+<p>TODO <a href="https://www.diskinternals.com/raid-recovery/what-is-raidz/">https://www.diskinternals.com/raid-recovery/what-is-raidz/</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/82umkyemhjtdlkjgew0a2km">Fafnir (DevLog)</a></li>
+<li><a href="/DevLog/notes/p4mog8mu5oi3u7tg97iwjb4">Setup (DevLog)</a></li>
+</ul>

@@ -1,0 +1,23 @@
+<h1 id="guard-clauses"><a aria-hidden="true" class="anchor-heading icon-link" href="#guard-clauses"></a>Guard Clauses</h1>
+<p>The idea behind returning early is that you write functions that return the expected positive result at the end of the function.</p>
+<p>The rest of the code, in the function, should trigger the termination as soon as possible in case of divergence with the function’s purpose.</p>
+<p>An early return does exactly as its name implies. This is what an early return looks like:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">someFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>someCondition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+    <span class="token comment">// Do something</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="https://levelup.gitconnected.com/how-you-can-avoid-using-else-in-your-code-871197a1adbc">https://levelup.gitconnected.com/how-you-can-avoid-using-else-in-your-code-871197a1adbc</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x6bo9vi8gaam35hlrb6us0g">If Statements (DevLog)</a></li>
+</ul>

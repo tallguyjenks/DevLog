@@ -1,0 +1,8 @@
+<h1 id="changing-names-of-default-import"><a aria-hidden="true" class="anchor-heading icon-link" href="#changing-names-of-default-import"></a>Changing Names of Default Import</h1>
+<h3 id="changing-the-names-of-the-default-import"><a aria-hidden="true" class="anchor-heading icon-link" href="#changing-the-names-of-the-default-import"></a>Changing the names of the default import</h3>
+<p>so if you have a User <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">JavaScript Classes (Private)</a> you're importing but in the new file you import that into you want to import that class but call it something different, then what you can do is basically treat it like a base class (which it is) and say:</p>
+<p><code>import U from '/user.js'</code></p>
+<p>because the User class is the default export its assuming we're saying something like this if we were in python</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+</code></pre>
+<p>except that its <code>import User as U</code></p>

@@ -1,0 +1,22 @@
+<h1 id="input-and-output"><a aria-hidden="true" class="anchor-heading icon-link" href="#input-and-output"></a>Input and Output</h1>
+<h3 id="input--output"><a aria-hidden="true" class="anchor-heading icon-link" href="#input--output"></a>Input / Output</h3>
+<h4 id="output-stream"><a aria-hidden="true" class="anchor-heading icon-link" href="#output-stream"></a>Output Stream</h4>
+<p>or <code>ostream</code> for short is a class that supports output. It is included from <a href="/DevLog/notes/qihqrlu7hnsxholhiqo4xfm">Iostream</a></p>
+<p><code>&#x3C;iostream></code> provides the <code>&#x3C;&#x3C;</code> operator known as the <strong>insertion operator</strong>.</p>
+<p><code>cout</code> is a predefined <code>ostream</code> object (e.g., you can think of it as declared as <code>ostream cout;</code></p>
+<blockquote>
+<p>The <code>&#x3C;&#x3C;</code> operator is overloaded with functions to support the various standard data types, such as int, bool, float, etc., each function converting that data type to a sequence of characters. The operator may be further overloaded by the string library from <code>#include &#x3C;string></code> or by the programmer for programmer-created classes.
+.
+The <code>&#x3C;&#x3C;</code> operator returns a reference to the <code>ostream</code> that called it, and is evaluated from left to right like most operators, so <code>&#x3C;&#x3C;</code> operators can appear in series.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp">cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Num"</span> <span class="token operator">&#x3C;&#x3C;</span> myInt<span class="token punctuation">;</span>
+
+<span class="token comment">// can be thought of as:</span>
+
+<span class="token punctuation">(</span> cout<span class="token punctuation">.</span><span class="token keyword">operator</span><span class="token operator">&#x3C;&#x3C;</span><span class="token punctuation">(</span><span class="token string">"Num"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">operator</span><span class="token operator">&#x3C;&#x3C;</span><span class="token punctuation">(</span>myInt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="input-stream"><a aria-hidden="true" class="anchor-heading icon-link" href="#input-stream"></a>Input Stream</h4>
+<p>Or <code>istream</code>, provides the <code>>></code> operator known as the <strong>extraction operator</strong>. To extract data from a data buffer and write the data into different types of variables.</p>
+<blockquote>
+<p><code>cin</code> is a predefined istream pre-associated with a system's standard input, usually a computer keyboard. The system automatically puts the standard input into a data buffer associated with <code>cin</code>. The <code>>></code> operator <u>skips leading whitespace</u>, extracts as many characters as possible consistent with the target variable's type and <u>stopping at the next whitespace</u>, converts the extracted characters to the target variable's type, and stores the result into the variable.</p>
+</blockquote>

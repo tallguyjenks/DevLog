@@ -1,0 +1,156 @@
+<h1 id="string"><a aria-hidden="true" class="anchor-heading icon-link" href="#string"></a>String</h1>
+<h3 id="string-streams"><a aria-hidden="true" class="anchor-heading icon-link" href="#string-streams"></a>String Streams</h3>
+<h4 id="input-stream"><a aria-hidden="true" class="anchor-heading icon-link" href="#input-stream"></a>Input Stream</h4>
+<blockquote>
+<p>Sometimes a programmer wishes to read input data from a string rather than from the keyboard (standard input). A new input string stream variable of type <code>istringstream</code> can be created that is associated with a string rather than with the keyboard (standard input). <code>istringstream</code> is derived from <code>istream</code>. Such a stream can be used just like the <code>cin</code> stream. The following program illustrates.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;sstream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   string  userInfo <span class="token operator">=</span> <span class="token string">"Amy Smith 19"</span><span class="token punctuation">;</span> <span class="token comment">// Input string</span>
+   istringstream <span class="token function">inSS</span><span class="token punctuation">(</span>userInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// Input string stream</span>
+   string firstName<span class="token punctuation">;</span>                  <span class="token comment">// First name</span>
+   string lastName<span class="token punctuation">;</span>                   <span class="token comment">// Last name</span>
+   <span class="token keyword">int</span> userAge <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                   <span class="token comment">// Age</span>
+   
+   <span class="token comment">// Parse name and age values from input string</span>
+   inSS <span class="token operator">>></span> firstName<span class="token punctuation">;</span>
+   inSS <span class="token operator">>></span> lastName<span class="token punctuation">;</span>
+   inSS <span class="token operator">>></span> userAge<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Output parsed values</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"First name: "</span> <span class="token operator">&#x3C;&#x3C;</span> firstName <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Last  name: "</span> <span class="token operator">&#x3C;&#x3C;</span> lastName <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Age: "</span>        <span class="token operator">&#x3C;&#x3C;</span> userAge <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//#> First name: Amy</span>
+<span class="token comment">//#> Last  name: Smith</span>
+<span class="token comment">//#> Age: 19</span>
+</code></pre>
+<blockquote>
+<p>The program uses <code>#include &#x3C;sstream></code> for access to the string stream class, which is in <code>namespace std</code>. The line <code>istringstream inSS(userInfo);</code> declares a new stream variable and initializes its buffer to a copy of <code>userInfo</code>. Then, the program can extract data from stream <code>inSS</code> using <code>>></code> similar to extracting from <code>cin</code>.
+.
+A common use of string streams is to process user input line-by-line. The following program reads in the line as a string, and then extracts individual data items from that string.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;sstream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   istringstream inSS<span class="token punctuation">;</span>       <span class="token comment">// Input string stream</span>
+   string lineString<span class="token punctuation">;</span>        <span class="token comment">// Holds line of text</span>
+   string firstName<span class="token punctuation">;</span>         <span class="token comment">// First name</span>
+   string lastName<span class="token punctuation">;</span>          <span class="token comment">// Last name</span>
+   <span class="token keyword">int</span>    userAge <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>       <span class="token comment">// Age</span>
+   <span class="token keyword">bool</span>   inputDone <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// Flag to indicate next iteration</span>
+   
+   <span class="token comment">// Prompt user for input</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter \"firstname lastname age\" on each line"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"(\"Exit\" as firstname exits)."</span> <span class="token operator">&#x3C;&#x3C;</span> endl <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Grab data as long as "Exit" is not entered</span>
+   <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>inputDone<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      
+      <span class="token comment">// Entire line into lineString</span>
+      <span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span> lineString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token comment">// Copies to inSS's string buffer</span>
+      inSS<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      inSS<span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span>lineString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token comment">// Now process the line</span>
+      inSS <span class="token operator">>></span> firstName<span class="token punctuation">;</span>
+      
+      <span class="token comment">// Output parsed values</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>firstName <span class="token operator">==</span> <span class="token string">"Exit"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   Exiting."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+         
+         inputDone <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">else</span> <span class="token punctuation">{</span>
+         inSS <span class="token operator">>></span> lastName<span class="token punctuation">;</span>
+         inSS <span class="token operator">>></span> userAge<span class="token punctuation">;</span>
+         
+         cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   First name: "</span> <span class="token operator">&#x3C;&#x3C;</span> firstName <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+         cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   Last  name: "</span> <span class="token operator">&#x3C;&#x3C;</span> lastName <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+         cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   Age:        "</span> <span class="token operator">&#x3C;&#x3C;</span> userAge   <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+         cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//#> Enter "firstname lastname age" on each line</span>
+<span class="token comment">//#> ("Exit" as firstname exits).</span>
+<span class="token comment">//#> </span>
+<span class="token comment">//#> Mary Jones 22</span>
+<span class="token comment">//#>    First name: Mary</span>
+<span class="token comment">//#>    Last  name: Jones</span>
+<span class="token comment">//#>    Age:        22</span>
+<span class="token comment">//#> </span>
+<span class="token comment">//#> Sally Smith 14</span>
+<span class="token comment">//#>    First name: Sally</span>
+<span class="token comment">//#>    Last  name: Smith</span>
+<span class="token comment">//#>    Age:        14</span>
+<span class="token comment">//#> </span>
+<span class="token comment">//#> Exit</span>
+<span class="token comment">//#>    Exiting.</span>
+</code></pre>
+<h4 id="output-stream"><a aria-hidden="true" class="anchor-heading icon-link" href="#output-stream"></a>Output Stream</h4>
+<blockquote>
+<p>The program uses <code>getline</code> to read an input line into a string. The line <code>inSS.str(lineString);</code> uses the <code>str(s)</code> function to initialize the stream's buffer to string <code>s</code>. Afterwards, the program extracts input from that stream using <code>>>.</code> The statement <code>inSS.clear();</code> is necessary to reset the state of the stream so that subsequent extractions start from the beginning; the clear resets the stream's state.
+.
+Similarly, a new output string stream variable of type <strong>ostringstream</strong> can be created that is associated with a string rather than with the screen (standard output). <strong>ostringstream</strong> is a special kind of (i.e., is derived from) <code>ostream</code>. Once created, a program can insert characters into that stream using <code>&#x3C;&#x3C;</code>, as follows.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;sstream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ostringstream fullNameOSS<span class="token punctuation">;</span> <span class="token comment">// Output string stream</span>
+   ostringstream ageOSS<span class="token punctuation">;</span>      <span class="token comment">// Output string stream</span>
+   string firstName<span class="token punctuation">;</span>          <span class="token comment">// First name</span>
+   string lastName<span class="token punctuation">;</span>           <span class="token comment">// Last name</span>
+   string fullName<span class="token punctuation">;</span>           <span class="token comment">// Full name (first and last)</span>
+   string ageStr<span class="token punctuation">;</span>             <span class="token comment">// Age (string)</span>
+   <span class="token keyword">int</span> userAge <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>           <span class="token comment">// Age</span>
+   
+   <span class="token comment">// Prompt user for input</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter \"firstname lastname age\": "</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cin <span class="token operator">>></span> firstName<span class="token punctuation">;</span>
+   cin <span class="token operator">>></span> lastName<span class="token punctuation">;</span>
+   cin <span class="token operator">>></span> userAge<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Writes to buffer, then copies from buffer into string</span>
+   fullNameOSS <span class="token operator">&#x3C;&#x3C;</span> lastName <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">", "</span> <span class="token operator">&#x3C;&#x3C;</span> firstName<span class="token punctuation">;</span>
+   fullName <span class="token operator">=</span> fullNameOSS<span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token comment">// Output parsed input</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   Full name: "</span> <span class="token operator">&#x3C;&#x3C;</span> fullName <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Writes int age as chars to buffer</span>
+   ageOSS <span class="token operator">&#x3C;&#x3C;</span> userAge<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Appends (minor) to buffer if less than 21, then</span>
+   <span class="token comment">// copies buffer into string</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>userAge <span class="token operator">&#x3C;</span> <span class="token number">21</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ageOSS <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" (minor)"</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   ageStr <span class="token operator">=</span> ageOSS<span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token comment">// Output string</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"   Age: "</span> <span class="token operator">&#x3C;&#x3C;</span> ageStr <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

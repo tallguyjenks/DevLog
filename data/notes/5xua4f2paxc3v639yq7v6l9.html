@@ -1,0 +1,30 @@
+<h1 id="array"><a aria-hidden="true" class="anchor-heading icon-link" href="#array"></a>Array</h1>
+<h2 id="array-data"><a aria-hidden="true" class="anchor-heading icon-link" href="#array-data"></a>Array data</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> ARRAY<span class="token punctuation">[</span><span class="token string">'Lemon'</span><span class="token punctuation">,</span> <span class="token string">'Bat Limited Edition'</span> <span class="token punctuation">]</span> <span class="token keyword">AS</span> example_purchased_products<span class="token punctuation">;</span>
+
+<span class="token comment">/*
+
+example_purchased_products
+------------------------------
+{Lemon, "Bat Limited Edition"}
+
+*/</span>
+</code></pre>
+<h2 id="unnest-array"><a aria-hidden="true" class="anchor-heading icon-link" href="#unnest-array"></a>Unnest array</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> UNNEST<span class="token punctuation">(</span>ARRAY<span class="token punctuation">[</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token number">456</span><span class="token punctuation">,</span> <span class="token number">789</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> example_ids<span class="token punctuation">;</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-01-26-12-29-12.png" alt="unested array"></p>
+<p>This is a great way to add tags to an item in a single column in a better way than using string split on csv values!</p>
+<h2 id="array-aggregate"><a aria-hidden="true" class="anchor-heading icon-link" href="#array-aggregate"></a>Array aggregate</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> product_type<span class="token punctuation">,</span> ARRAY_AGG<span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> model<span class="token punctuation">)</span> <span class="token keyword">AS</span> models <span class="token keyword">FROM</span> products <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-01-26-12-31-31.png" alt="array_agg"></p>
+<h2 id="string-splitting-to-array"><a aria-hidden="true" class="anchor-heading icon-link" href="#string-splitting-to-array"></a>String splitting to array</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> STRING_TO_ARRAY<span class="token punctuation">(</span><span class="token string">'hello there how are you?'</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-01-26-12-32-26.png" alt="string to array"></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/kyeu3h5pym90eziek8pjn4n">Sql_for_data_analytics_perform_fast_and_efficient (DevLog)</a></li>
+</ul>

@@ -1,0 +1,36 @@
+<h1 id="implementation"><a aria-hidden="true" class="anchor-heading icon-link" href="#implementation"></a>Implementation</h1>
+<h3 id="implementation-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#implementation-1"></a>Implementation</h3>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token operator">~</span><span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      <span class="token keyword">int</span><span class="token operator">*</span> subObj<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token class-name">MyClass</span><span class="token double-colon punctuation">::</span><span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Constructor called."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   subObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span> <span class="token comment">// Allocate mem for data</span>
+   <span class="token operator">*</span>subObj <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">MyClass</span><span class="token double-colon punctuation">::</span><span class="token operator">~</span><span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Destructor called."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token keyword">delete</span> subObj<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   MyClass<span class="token operator">*</span> tempClassObj<span class="token punctuation">;</span>      <span class="token comment">// Create object of type MyClass</span>
+
+   tempClassObj <span class="token operator">=</span> <span class="token keyword">new</span> MyClass<span class="token punctuation">;</span> <span class="token comment">// Allocate mem for object</span>
+   <span class="token keyword">delete</span> tempClassObj<span class="token punctuation">;</span>        <span class="token comment">// No more memory leak</span>
+                               <span class="token comment">// Freed obj's mem, including subObj</span>
+   <span class="token comment">// Rest of program ...</span>
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

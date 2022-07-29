@@ -1,0 +1,12 @@
+<h1 id="profiling"><a aria-hidden="true" class="anchor-heading icon-link" href="#profiling"></a>Profiling</h1>
+<ul>
+<li>Try out <a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://docs.python.org/3/library/profile.html">profiling</a></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> cProfile
+<span class="token keyword">import</span> pstats
+<span class="token keyword">with</span> cProfile<span class="token punctuation">.</span>Profile<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> pr<span class="token punctuation">:</span>
+    yourfunctionhere<span class="token punctuation">(</span><span class="token punctuation">)</span>
+stats <span class="token operator">=</span> pstats<span class="token punctuation">.</span>Stats<span class="token punctuation">(</span>pr<span class="token punctuation">)</span>
+stats<span class="token punctuation">.</span>sort_stats<span class="token punctuation">(</span>pstats<span class="token punctuation">.</span>SortKey<span class="token punctuation">.</span>TIME<span class="token punctuation">)</span>
+stats<span class="token punctuation">.</span>print_stats<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>

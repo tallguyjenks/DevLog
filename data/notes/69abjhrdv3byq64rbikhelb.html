@@ -1,0 +1,68 @@
+<h1 id="datetime"><a aria-hidden="true" class="anchor-heading icon-link" href="#datetime"></a>Datetime</h1>
+<blockquote>
+<p>python will handle dates from january 1st 1 to december 31st 9999</p>
+</blockquote>
+<ul>
+<li><strong>Classes</strong>
+<ul>
+<li>Date
+<ul>
+<li>dates are constructed with 3 args <code>date(y,m,d)</code></li>
+</ul>
+</li>
+<li>Time</li>
+<li>Datetime</li>
+</ul>
+</li>
+<li><strong>Timedelta</strong>
+<ul>
+<li>use this class to add days to a date:</li>
+</ul>
+</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> date<span class="token punctuation">,</span> timedelta
+
+today <span class="token operator">=</span> date<span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">.</span>day<span class="token punctuation">)</span>
+
+tomorrow <span class="token operator">=</span> timedelta<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Tomorrow is: "</span><span class="token punctuation">,</span> today <span class="token operator">+</span> tomorrow<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>formatting a date that is dropped into a template literal:</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> datetime
+
+today <span class="token operator">=</span> datetime<span class="token punctuation">.</span>date<span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">.</span>day<span class="token punctuation">)</span>
+
+tomorrow <span class="token operator">=</span> datetime<span class="token punctuation">.</span>timedelta<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Tomorrow is: "</span><span class="token punctuation">,</span> today <span class="token operator">+</span> tomorrow<span class="token punctuation">)</span>
+
+<span class="token comment"># date time message formatting:</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>today<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%A, %B %d, %Y"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+message <span class="token operator">=</span> <span class="token string">"Today is: {:%A, %B %d, %Y}."</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>today<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>time delta can also be used to DATEDIFF</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/sz13pndlwpuqbdmp9vuwh74">Formatting</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/qjin0r2l3qlmwxft4rjmncy">Workalendar (DevLog)</a></li>
+</ul>

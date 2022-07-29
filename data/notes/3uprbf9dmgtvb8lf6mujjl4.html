@@ -1,0 +1,21 @@
+<h1 id="inline-member-function"><a aria-hidden="true" class="anchor-heading icon-link" href="#inline-member-function"></a>Inline Member Function</h1>
+<h2 id="inline-member-functions"><a aria-hidden="true" class="anchor-heading icon-link" href="#inline-member-functions"></a>Inline Member Functions</h2>
+<p>Unlike the example you can put all the code for a member function in the class declaration. this is called an Inline Member Function, because the function is in the class declaration.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">RunnerInfo</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token keyword">void</span>   <span class="token function">SetTime</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeRunSecs<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Here is the inline function</span>
+         timeRun <span class="token operator">=</span> timeRunSecs<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">void</span>   <span class="token function">SetDist</span><span class="token punctuation">(</span><span class="token keyword">double</span> distRunMiles<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">double</span> <span class="token function">GetSpeedMph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      <span class="token keyword">int</span>    timeRun<span class="token punctuation">;</span>
+      <span class="token keyword">double</span> distRun<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token class-name">RunnerInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetDist</span><span class="token punctuation">(</span><span class="token keyword">double</span> distRunMiles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   distRun <span class="token operator">=</span> distRunMiles<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

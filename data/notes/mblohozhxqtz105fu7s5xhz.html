@@ -1,0 +1,52 @@
+<h1 id="stored-proc"><a aria-hidden="true" class="anchor-heading icon-link" href="#stored-proc"></a>Stored Proc</h1>
+<pre class="language-sql"><code class="language-sql">
+<span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span><span class="token string">"FN_Nuke_From_Orbit"</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">RETURNS</span> void <span class="token keyword">LANGUAGE</span> <span class="token string">'plpgsql'</span> <span class="token keyword">AS</span> $$
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span> rpt<span class="token punctuation">.</span>report_data<span class="token punctuation">;</span>
+    <span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span> rpt<span class="token punctuation">.</span>report_data_clean<span class="token punctuation">;</span>
+    <span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span> rpt<span class="token punctuation">.</span>location_trended<span class="token punctuation">;</span>
+    <span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span> rpt<span class="token punctuation">.</span>location_top<span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+$$<span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span><span class="token string">"FN_Nuke_From_Orbit"</span><span class="token punctuation">(</span><span class="token punctuation">)</span> OWNER <span class="token keyword">TO</span> postgres<span class="token punctuation">;</span>
+<span class="token keyword">COMMENT</span> <span class="token keyword">ON</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span><span class="token string">"FN_Nuke_From_Orbit"</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">IS</span> <span class="token string">'Wipe all data in the rot schema from the Face of the earth'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">PROCEDURE</span> rpt<span class="token punctuation">.</span><span class="token string">"USP_Refresh"</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">LANGUAGE</span> <span class="token string">'plpgsql'</span> <span class="token keyword">AS</span> $$
+<span class="token keyword">BEGIN</span>
+    <span class="token comment">/*********************************************************
+    USAGE:
+        This stored procedure can be run at any interval desired.
+        Since this performs a full truncate and load of the entire
+            rpt schema and all table data this will be expensive
+            in resources.
+        Recommendation is, depending on geographic factors of
+            store locations affecting end of day accounting totals,
+            to run the stored procedure in the off hours such as 
+            at midnight or directly after C.O.B. so the day's
+            results are posted immediately after the conclusion
+            of that day's business.
+    *********************************************************/</span>
+    <span class="token comment">/*********************************************************
+    Wipe The entire structure of the rpt schema for a clean
+    full rebuild via truncate and load ETL
+    *********************************************************/</span>
+    PERFORM rpt<span class="token punctuation">.</span><span class="token string">"FN_Nuke_From_Orbit"</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">/*********************************************************
+    Grab all raw data and kick off the live rebuild process
+    driven by triggers.
+    *********************************************************/</span>
+    <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> rpt<span class="token punctuation">.</span>report_data
+    <span class="token keyword">SELECT</span> p<span class="token punctuation">.</span>payment_date
+         <span class="token punctuation">,</span> a<span class="token punctuation">.</span>address
+         <span class="token punctuation">,</span> p<span class="token punctuation">.</span>amount
+    <span class="token keyword">FROM</span> <span class="token keyword">public</span><span class="token punctuation">.</span>payment <span class="token keyword">AS</span> p
+        <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> <span class="token keyword">public</span><span class="token punctuation">.</span>staff <span class="token keyword">AS</span> S <span class="token keyword">ON</span> s<span class="token punctuation">.</span>staff_id <span class="token operator">=</span> p<span class="token punctuation">.</span>staff_id
+        <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> <span class="token keyword">public</span><span class="token punctuation">.</span>store <span class="token keyword">AS</span> st <span class="token keyword">ON</span> st<span class="token punctuation">.</span>store_id <span class="token operator">=</span> s<span class="token punctuation">.</span>store_id
+        <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> <span class="token keyword">public</span><span class="token punctuation">.</span>address <span class="token keyword">AS</span> a <span class="token keyword">ON</span> a<span class="token punctuation">.</span>address_id <span class="token operator">=</span> st<span class="token punctuation">.</span>address_id<span class="token punctuation">;</span>
+    <span class="token keyword">COMMIT</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+$$<span class="token punctuation">;</span>
+<span class="token keyword">COMMENT</span> <span class="token keyword">ON</span> <span class="token keyword">PROCEDURE</span> rpt<span class="token punctuation">.</span><span class="token string">"USP_Refresh"</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">IS</span> <span class="token string">'Refresh the entire reporting structure'</span><span class="token punctuation">;</span>
+</code></pre>

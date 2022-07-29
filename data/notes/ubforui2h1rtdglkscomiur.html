@@ -1,0 +1,45 @@
+<h1 id="member-initialization"><a aria-hidden="true" class="anchor-heading icon-link" href="#member-initialization"></a>Member Initialization</h1>
+<h2 id="constructor-member-initialization"><a aria-hidden="true" class="anchor-heading icon-link" href="#constructor-member-initialization"></a>Constructor Member Initialization</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Given</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SampleClass</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token function">SampleClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">void</span> <span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      <span class="token keyword">int</span> field1<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> field2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Instead of this:</span>
+
+<span class="token class-name">SampleClass</span><span class="token double-colon punctuation">::</span><span class="token function">SampleClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   field1 <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+   field2 <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// You can do this:</span>
+
+<span class="token class-name">SampleClass</span><span class="token double-colon punctuation">::</span><span class="token function">SampleClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">field1</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">field2</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This is not particularly useful for members of basic types, but for data members like <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Arrays and Vectors (Private)</a> that need to be explicitly constructed with a size, this can be very useful:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">SampleClass</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token function">SampleClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">void</span> <span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      vector<span class="token operator">&#x3C;</span><span class="token keyword">int</span><span class="token operator">></span> itemList<span class="token punctuation">;</span> 
+      <span class="token comment">// vector&#x3C;int> itemList(2);  not allowed</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token class-name">SampleClass</span><span class="token double-colon punctuation">::</span><span class="token function">SampleClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">itemList</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment">// itemList gets constructed with size 2</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

@@ -1,0 +1,41 @@
+<h1 id="class-to-tes"><a aria-hidden="true" class="anchor-heading icon-link" href="#class-to-tes"></a>Class to Tes</h1>
+<h2 id="class-to-test"><a aria-hidden="true" class="anchor-heading icon-link" href="#class-to-test"></a>Class to Test</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">// Note: This class intentionally has errors</span>
+
+<span class="token keyword">class</span> <span class="token class-name">StatsInfo</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+   <span class="token keyword">void</span> <span class="token function">SetNum1</span><span class="token punctuation">(</span><span class="token keyword">int</span> numVal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">void</span> <span class="token function">SetNum2</span><span class="token punctuation">(</span><span class="token keyword">int</span> numVal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span>  <span class="token function">GetNum1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span>  <span class="token function">GetNum2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span>  <span class="token function">GetAverage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   <span class="token keyword">void</span> <span class="token function">PrintNums</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token keyword">const</span><span class="token punctuation">;</span>
+   
+<span class="token keyword">private</span><span class="token operator">:</span>
+   <span class="token keyword">int</span> num1<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> num2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token class-name">StatsInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetNum1</span><span class="token punctuation">(</span><span class="token keyword">int</span> numVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   num1 <span class="token operator">=</span> numVal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">StatsInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetNum2</span><span class="token punctuation">(</span><span class="token keyword">int</span> numVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   num2 <span class="token operator">=</span> numVal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token class-name">StatsInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetNum1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> num1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token class-name">StatsInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetNum2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> num1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token class-name">StatsInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetAverage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2 <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

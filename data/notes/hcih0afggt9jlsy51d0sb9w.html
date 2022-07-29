@@ -1,0 +1,144 @@
+<h1 id="black-jack-example"><a aria-hidden="true" class="anchor-heading icon-link" href="#black-jack-example"></a>Black Jack Example</h1>
+<h3 id="black-jack-repo-project-example"><a aria-hidden="true" class="anchor-heading icon-link" href="#black-jack-repo-project-example"></a>Black Jack Repo Project Example</h3>
+<ul>
+<li><a href="https://github.com/koaning/blackjack/">Sample Repo for this project</a></li>
+</ul>
+<h4 id="blackjackpy"><a aria-hidden="true" class="anchor-heading icon-link" href="#blackjackpy"></a>blackjack.py</h4>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">card_score</span><span class="token punctuation">(</span>cards<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  numbers <span class="token operator">=</span> <span class="token punctuation">[</span>c <span class="token keyword">for</span> c <span class="token keyword">in</span> cards <span class="token keyword">if</span> c <span class="token keyword">in</span> <span class="token string">"23456789"</span><span class="token punctuation">]</span>
+  faces <span class="token operator">=</span> <span class="token punctuation">[</span>c <span class="token keyword">for</span> c <span class="token keyword">in</span> cards <span class="token keyword">if</span> c <span class="token keyword">in</span> <span class="token string">"JQK"</span><span class="token punctuation">]</span>
+  n_aces <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">for</span> c <span class="token keyword">in</span> cards <span class="token keyword">if</span> c <span class="token operator">==</span> <span class="token string">"A"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  score <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> numbers<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">len</span><span class="token punctuation">(</span>faces<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span>
+  <span class="token keyword">while</span> n_aces <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+	  score <span class="token operator">+=</span> <span class="token number">1</span> <span class="token keyword">if</span> score <span class="token operator">+</span> <span class="token number">11</span> <span class="token operator">></span> <span class="token number">21</span> <span class="token keyword">else</span> <span class="token number">11</span>
+	  n_aces <span class="token operator">-=</span> <span class="token number">1</span>
+  <span class="token keyword">return</span> score <span class="token keyword">if</span> score <span class="token operator">&#x3C;=</span> <span class="token number">21</span> <span class="token keyword">else</span> <span class="token number">0</span>
+</code></pre>
+<h4 id="test_blackjackpy"><a aria-hidden="true" class="anchor-heading icon-link" href="#test_blackjackpy"></a>test_blackjack.py</h4>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pytest
+
+<span class="token keyword">from</span> blackjack <span class="token keyword">import</span> card_score
+
+<span class="token keyword">def</span> <span class="token function">test_simple_usecase1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  card_score<span class="token punctuation">(</span><span class="token string">"JK"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">20</span>
+
+<span class="token keyword">def</span> <span class="token function">test_simple_usecase2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  card_score<span class="token punctuation">(</span><span class="token string">"JKQ"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span>
+
+<span class="token keyword">def</span> <span class="token function">test_simple_usecase3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  card_score<span class="token punctuation">(</span><span class="token string">"KA"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">21</span>
+
+<span class="token keyword">def</span> <span class="token function">test_simple_usecase4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  card_score<span class="token punctuation">(</span><span class="token string">"AA"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">12</span>
+</code></pre>
+<ul>
+<li>A more robust way to stay <a href="/DevLog/notes/61vxjcmjavnv2oj9cgtby39">DRY</a> is to use <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">pytest (Private)</a></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@pytest<span class="token punctuation">.</span>mark<span class="token punctuation">.</span>parametrize</span><span class="token punctuation">(</span><span class="token string">"cards,score"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'JK'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'KKK'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'AA'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'AK'</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">test_simple_usecase</span><span class="token punctuation">(</span>cards<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">assert</span> card_score<span class="token punctuation">(</span>cards<span class="token punctuation">)</span> <span class="token operator">==</span> score
+</code></pre>
+<ul>
+<li>Run tests with <code>pytest --verbose</code> or configure auto process to do that
+<ul>
+<li>pytest is looking for files and functions whose names begin with <code>test_*</code></li>
+<li>You can run singular unit tests with the following syntax:</li>
+</ul>
+</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">pytest --verbose test_blackjack.py::test_Simple_case4
+</code></pre>
+<h4 id="blackjack-with-dry-pytests"><a aria-hidden="true" class="anchor-heading icon-link" href="#blackjack-with-dry-pytests"></a>Blackjack with DRY Pytests</h4>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">pytest (Private)</a> in a package</li>
+</ul>
+<pre><code>├── blackjack
+│   ├── __init__.py
+│   └── common.py
+├── setup.py
+└── tests
+  ├── __init__.py
+  └── test_blackjack.py
+</code></pre>
+<h5 id="blackjack"><a aria-hidden="true" class="anchor-heading icon-link" href="#blackjack"></a>blackjack</h5>
+<ul>
+<li><code>__init__.py</code> should be empty</li>
+<li><code>common.py</code> (user preference on naming, example said "common utilities")</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">card_score</span><span class="token punctuation">(</span>cards<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>cards<span class="token punctuation">)</span> <span class="token operator">&#x3C;</span> <span class="token number">2</span><span class="token punctuation">:</span>
+	  <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"The `card_score` function requires at least 2 cards."</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>cards<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	  <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"The input for `card_score` needs to be a string."</span><span class="token punctuation">)</span>
+  numbers <span class="token operator">=</span> <span class="token punctuation">[</span>c <span class="token keyword">for</span> c <span class="token keyword">in</span> cards <span class="token keyword">if</span> c <span class="token keyword">in</span> <span class="token string">"23456789"</span><span class="token punctuation">]</span>
+  faces <span class="token operator">=</span> <span class="token punctuation">[</span>c <span class="token keyword">for</span> c <span class="token keyword">in</span> cards <span class="token keyword">if</span> c <span class="token keyword">in</span> <span class="token string">"JQK"</span><span class="token punctuation">]</span>
+  n_aces <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">for</span> c <span class="token keyword">in</span> cards <span class="token keyword">if</span> c <span class="token operator">==</span> <span class="token string">"A"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  score <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> numbers<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">len</span><span class="token punctuation">(</span>faces<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span>
+  <span class="token keyword">while</span> n_aces <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+	  score <span class="token operator">+=</span> <span class="token number">1</span> <span class="token keyword">if</span> score <span class="token operator">+</span> <span class="token number">11</span> <span class="token operator">></span> <span class="token number">21</span> <span class="token keyword">else</span> <span class="token number">11</span>
+	  n_aces <span class="token operator">-=</span> <span class="token number">1</span>
+  <span class="token keyword">return</span> score <span class="token keyword">if</span> score <span class="token operator">&#x3C;=</span> <span class="token number">21</span> <span class="token keyword">else</span> <span class="token number">0</span>
+</code></pre>
+<h5 id="tests"><a aria-hidden="true" class="anchor-heading icon-link" href="#tests"></a>tests</h5>
+<ul>
+<li><code>__init__.py</code> should be empty</li>
+<li><code>test_blackjack.py</code></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pytest
+
+<span class="token keyword">from</span> blackjack<span class="token punctuation">.</span>common <span class="token keyword">import</span> card_score
+
+<span class="token decorator annotation punctuation">@pytest<span class="token punctuation">.</span>mark<span class="token punctuation">.</span>parametrize</span><span class="token punctuation">(</span><span class="token string">"cards,score"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'JK'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'KKK'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'AA'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'AK'</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">test_simple_usecase</span><span class="token punctuation">(</span>cards<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">assert</span> card_score<span class="token punctuation">(</span>cards<span class="token punctuation">)</span> <span class="token operator">==</span> score
+</code></pre>
+<ul>
+<li>To be able to work on the package in developer mode you'll need to run;
+<ul>
+<li><code>python setup.py develop</code></li>
+</ul>
+</li>
+<li>And from here you can safely run pytest again.</li>
+<li><code>pytest --verbose</code></li>
+<li><code>pytest-cov</code> for code coverage testing
+<ul>
+<li><code>python -m pip install pytest-cov</code></li>
+<li><a href="/DevLog/notes/g8jz1e99nnpbzc83mxv264r">HTML</a> output: <code>pytest --cov blackjack --cov-report html</code></li>
+</ul>
+</li>
+<li><a href="https://calmcode.io/test/conftest.html">Calm Code Conftest</a>
+<ul>
+<li>For greater code reusability and provide data to the testing suite, you can use <code>conftest.py</code> in the <code>tests</code> directory</li>
+<li>This allows you to repeat yourself less and have a single location that feeds data into the testing suite instead of making the data for each test individually.</li>
+</ul>
+</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> clumper <span class="token keyword">import</span> Clumper <span class="token comment"># our custom module</span>
+<span class="token keyword">import</span> pytest
+
+<span class="token decorator annotation punctuation">@pytest<span class="token punctuation">.</span>fixture</span><span class="token punctuation">(</span>scope<span class="token operator">=</span><span class="token string">"module"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">base_clumper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  data <span class="token operator">=</span> <span class="token punctuation">[</span>
+	  <span class="token punctuation">{</span><span class="token string">"data"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"i"</span><span class="token punctuation">:</span> i<span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">:</span> c<span class="token punctuation">}</span>
+	  <span class="token keyword">for</span> i<span class="token punctuation">,</span> c <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span><span class="token string">"abcdefghijklmnopqrstuvwxyz"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+  <span class="token keyword">return</span> Clumper<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+
+<span class="token comment"># So that tests like this:</span>
+
+<span class="token keyword">def</span> <span class="token function">test_headtail_size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">'i'</span><span class="token punctuation">:</span> i<span class="token punctuation">}</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+  c <span class="token operator">=</span> Clumper<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">10</span>
+  <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">10</span>
+  <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">5</span>
+  <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">5</span>
+
+<span class="token comment"># can become like:</span>
+
+<span class="token keyword">def</span> <span class="token function">test_headtail_size</span><span class="token punctuation">(</span>base_clumper<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>base_clumper<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">10</span>
+  <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>base_clumper<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">10</span>
+  <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>base_clumper<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">5</span>
+  <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>base_clumper<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">5</span>
+</code></pre>

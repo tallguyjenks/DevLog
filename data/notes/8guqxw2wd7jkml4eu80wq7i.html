@@ -1,0 +1,14 @@
+<h1 id="es2020-modules"><a aria-hidden="true" class="anchor-heading icon-link" href="#es2020-modules"></a>Es2020 Modules</h1>
+<h3 id="ecmascript-2020"><a aria-hidden="true" class="anchor-heading icon-link" href="#ecmascript-2020"></a><a href="/DevLog/notes/dbxn96n98efk7b2iwyx7q7p">Ecmascript 2020</a></h3>
+<h4 id="hot-loading-modules"><a aria-hidden="true" class="anchor-heading icon-link" href="#hot-loading-modules"></a>Hot loading modules</h4>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> baseModulePath <span class="token operator">=</span> <span class="token string">"./modules"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> btnBooks <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"btnBooks"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> bookList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+btnBooks<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">e</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> bookModule <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token keyword module">import</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>baseModulePath<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/books.js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  bookList <span class="token operator">=</span> bookModule<span class="token punctuation">.</span><span class="token method function property-access">loadList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>So this code will only load the module on a particular click event, instead of a static declaration at the top of a file.</p>

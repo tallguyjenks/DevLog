@@ -1,0 +1,22 @@
+<h1 id="pass-by-reference"><a aria-hidden="true" class="anchor-heading icon-link" href="#pass-by-reference"></a>Pass by Reference</h1>
+<h4 id="pass-by-references"><a aria-hidden="true" class="anchor-heading icon-link" href="#pass-by-references"></a>Pass By References</h4>
+<blockquote>
+<p>A <strong>pass by reference</strong> parameter does not create a local copy of the argument, but rather the parameter refers directly to the argument variable's memory location. Appending &#x26; to a parameter's data type makes the parameter pass by reference type.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">MyFunction</span><span class="token punctuation">(</span> vector<span class="token operator">&#x3C;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&#x26;</span> inputVector <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// References my vector but doesnt copy it into the function</span>
+	<span class="token comment">// body scope taking up an identical amount of memory.</span>
+	cout <span class="token operator">&#x3C;&#x3C;</span> inputVector<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">16345</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	vector<span class="token operator">&#x3C;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">myVector</span><span class="token punctuation">(</span><span class="token number">785746353</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token function">MyFunction</span><span class="token punctuation">(</span>myVector<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/90ozukvzahik6nte3mne31n">With Const</a></li>
+</ol>

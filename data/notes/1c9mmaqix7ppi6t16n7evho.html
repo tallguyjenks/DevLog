@@ -1,0 +1,24 @@
+<h1 id="04"><a aria-hidden="true" class="anchor-heading icon-link" href="#04"></a>04</h1>
+<ul>
+<li><a href="/DevLog/notes/8a6f5aineqilpmdmkc3lked">Bash</a> <code>case</code> statements can have actions split legibly across lines for legibility</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">case</span> <span class="token string">"<span class="token variable">$RESPONSE</span>"</span> <span class="token keyword">in</span>
+	<span class="token punctuation">[</span>QqNn<span class="token punctuation">]</span><span class="token punctuation">)</span> 
+	Clean_Exit
+	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+	<span class="token punctuation">[</span>Yy<span class="token punctuation">]</span><span class="token punctuation">)</span>
+	<span class="token function">git</span> config --global user.name <span class="token string">"<span class="token variable">$USER_NAME</span>"</span>
+	<span class="token function">git</span> config --global user.email <span class="token string">"<span class="token variable">$USER_EMAIL</span>@covered.ca.gov"</span>
+	<span class="token builtin class-name">echo</span> -e <span class="token string">"<span class="token entity" title="\n">\n</span><span class="token variable">${GREEN}</span>Great!<span class="token variable">${NC}</span> That's all configured now...<span class="token variable">$successful_execution_msg</span>"</span>
+	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+	*<span class="token punctuation">)</span>
+	<span class="token operator">></span><span class="token file-descriptor important">&#x26;2</span> <span class="token builtin class-name">echo</span> -e <span class="token string">"Invalid choice, please select either <span class="token variable">${LGREEN}</span>y<span class="token variable">${NC}</span> or <span class="token variable">${LRED}</span>n<span class="token variable">${NC}</span><span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>"</span>
+	<span class="token function">sleep</span> <span class="token number">1</span>
+	Dirty_Exit
+	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+</code></pre>
+<ul>
+<li><a href="/DevLog/notes/8a6f5aineqilpmdmkc3lked">Bash</a> using git bash you can open a windows explorer window in the current directory by running the command <code>explorer</code></li>
+<li><a href="/DevLog/notes/ygxq3639d4hx58yerem4chm">Rust</a> <a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://deps.dev/">Google's Dependency Management service</a></li>
+</ul>

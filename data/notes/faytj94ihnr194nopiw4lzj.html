@@ -1,0 +1,106 @@
+<h1 id="workflow"><a aria-hidden="true" class="anchor-heading icon-link" href="#workflow"></a>Workflow</h1>
+<h2 id="deploying-new-db-from-test-to-prod"><a aria-hidden="true" class="anchor-heading icon-link" href="#deploying-new-db-from-test-to-prod"></a>Deploying New DB from TEST to PROD</h2>
+<ol>
+<li>Create same name copy of DB onto PROD</li>
+<li>Link that DB with the working folder you've been working out of</li>
+<li><code>Get Latest</code></li>
+<li>Apply changes
+<ul>
+<li>If there are changes on the remote Repository you can pull those too to apply those changes as well</li>
+</ul>
+</li>
+</ol>
+<h2 id="every-day-workflow"><a aria-hidden="true" class="anchor-heading icon-link" href="#every-day-workflow"></a>Every Day Workflow</h2>
+<ul>
+<li>This assumes all setup and connection work has been done for redgate work</li>
+<li>The following examples assume you're performing all this work on 1 SQL Server: <code>TEST</code> and that downstream, migration scripts will be applied to push those changes automatically onto the <code>PROD</code> server without human intervention.</li>
+</ul>
+<h3 id="getting-started-and-setup"><a aria-hidden="true" class="anchor-heading icon-link" href="#getting-started-and-setup"></a>Getting Started and Setup</h3>
+<ul>
+<li>Main repository is Repo @ <code>PROD</code>
+<ul>
+<li>They pull the repo and branch down to local machine</li>
+<li>People make their own branch off of <code>PROD</code> that will contains the changes they want for specific work</li>
+<li>they are now up to date and ready to work</li>
+</ul>
+</li>
+<li>Cloning the database you want to work in
+<!-- - Right click the database you want to change
+- `Tasks > Copy Database` -->
+</li>
+<li>Open <a href="/DevLog/notes/rkdcey8i2azzu7gpplud596">Sql Compare</a>
+<ul>
+<li>Select Source Server and Database</li>
+<li>Select Target Server and in the database selection dropdown type the name of your new DEV copy of the database
+<ul>
+<li>The new empty database naming convention being DATABASE_BSJ_DEV</li>
+<li>the database name in all caps, followed by the developers initials, and ended with DEV so people know its someones development copy</li>
+<li>When the name is ready click the <code>Create</code> link below the dropdown</li>
+</ul>
+</li>
+<li>Continue through the Sql Compare menus and no need to save or backup the migration scripts</li>
+<li>After copying of the database is complete you're ready to begin work if changes are only schema related
+<ul>
+<li>Right click that new DB and <code>Link with source control</code></li>
+<li><code>Link with my source control system</code></li>
+<li>Select the folder location of the database from within the repository</li>
+<li><code>Get Latest</code> if applicable</li>
+<li><code>Apply Changes</code> if applicable</li>
+<li>Developer is now free to make changes to schema, objects, etc inside their test database</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If data is also required within the dev copy from the source database then open <a href="/DevLog/notes/5zop09fnj3gtd7s1nzilyml">Data Compare</a>
+<ul>
+<li>Select Source Server and Database</li>
+<li>Select Target Server and in the database selection dropdown type the name of your new DEV copy of the database you made prior</li>
+<li>No need to save the migration scripts and run everything within the Data Compare tool for deployment</li>
+<li>Select the data to copy across databases</li>
+<li><code>Deploy</code></li>
+<li>Now your schema and data all match across the servers and databases
+<ul>
+<li>Right click that new DB and <code>Link with source control</code></li>
+<li><code>Link with my source control system</code></li>
+<li>Select the folder location of the database from within the repository</li>
+<li>Select the folder location of the database from within the repository</li>
+<li><code>Get Latest</code> if applicable</li>
+<li><code>Apply Changes</code> if applicable</li>
+<li>Developer is now free to make changes to schema, objects, etc inside their test database</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="getting-your-change-into-the-pull-request-process"><a aria-hidden="true" class="anchor-heading icon-link" href="#getting-your-change-into-the-pull-request-process"></a>Getting your change into the Pull Request process</h3>
+<ul>
+<li>Make your changes, New UDF, new USP, modify existing items, make new tables, alter other tables, etc.</li>
+<li>When ready, or incrementally throughout the process add your changes to your branch via commits</li>
+<li>when you are ready to enter the PR process push your branch to the remote repository</li>
+<li>open pull request of your branch into the master branch</li>
+<li>Normal PR process occurs here</li>
+<li>Once PR is merged then at that point CI/CD pipelines should take over to build, test, and deploy the changes to the <code>PROD</code> server with no human intervention.
+<ul>
+<li><strong>IF NO AUTOMATED PROCESS YET PROCEED TO SECTION BELOW</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="manual-implementation-of-new-changes-in-the-absence-of-a-cicd-pipeline"><a aria-hidden="true" class="anchor-heading icon-link" href="#manual-implementation-of-new-changes-in-the-absence-of-a-cicd-pipeline"></a>Manual implementation of new changes in the absence of a CI/CD pipeline</h4>
+<!-- - Back in [[s.db.ms-sql-server.tools.ssms]] select your target database (the one you wanted to make changes to not your DEV copy of it)
+- Got to the SQL Source Control Interface and `Get Latest`
+- Apply Changes -->
+<ul>
+<li>Open <a href="/DevLog/notes/6kdvvtsinvlmuq5ix2b97d1">Sql Change Automation</a></li>
+<li>Pick your source and target for changes
+<ul>
+<li>Based on this proposed workflow your source would be the "master" copy of the Database on the <code>TEST</code> server</li>
+<li>Based on this proposed workflow your target would be the same Database on the <code>PROD</code> server</li>
+</ul>
+</li>
+<li>Select desired changes to be implemented</li>
+<li>Click <code>Deploy</code> to generate a migration script to implement changes without modification to the repository code
+<ul>
+<li>If the individual cannot run the code then pass it to someone who can as a final deliverable artifact to be executed and discarded</li>
+</ul>
+</li>
+</ul>

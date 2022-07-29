@@ -1,0 +1,39 @@
+<h1 id="default-parameters"><a aria-hidden="true" class="anchor-heading icon-link" href="#default-parameters"></a>Default Parameters</h1>
+<h4 id="default-parameters-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#default-parameters-1"></a>Default Parameters</h4>
+<blockquote>
+<p>Sometimes a function's last parameter (or last few) should be optional. A function call could then omit the last argument, and instead the program would use a default value for that parameter. A function can have a <strong>default parameter value</strong> for the last parameter(s), meaning a call can optionally omit a corresponding argument.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">// Function prints date in two styles (0: American (default), 1: European)</span>
+<span class="token keyword">void</span> <span class="token function">DatePrint</span><span class="token punctuation">(</span><span class="token keyword">int</span> currDay<span class="token punctuation">,</span> <span class="token keyword">int</span> currMonth<span class="token punctuation">,</span> <span class="token keyword">int</span> currYear<span class="token punctuation">,</span> <span class="token keyword">int</span> printStyle <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>printStyle <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>      <span class="token comment">// American</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> currMonth <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"/"</span> <span class="token operator">&#x3C;&#x3C;</span> currDay <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"/"</span> <span class="token operator">&#x3C;&#x3C;</span> currYear<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>printStyle <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// European</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> currDay <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"/"</span> <span class="token operator">&#x3C;&#x3C;</span> currMonth <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"/"</span> <span class="token operator">&#x3C;&#x3C;</span> currYear<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"(invalid style)"</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   
+   <span class="token comment">// Print dates given various style settings</span>
+   <span class="token function">DatePrint</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">2012</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token function">DatePrint</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">2012</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token function">DatePrint</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">2012</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Uses default value for printStyle</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

@@ -1,0 +1,12 @@
+<h1 id="continue-statement"><a aria-hidden="true" class="anchor-heading icon-link" href="#continue-statement"></a>Continue Statement</h1>
+<h2 id="the-continue-statement"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-continue-statement"></a>The continue Statement</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;=</span> <span class="token number">19</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token punctuation">(</span> i <span class="token operator">%</span> <span class="token number">10</span> <span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">continue</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	cout <span class="token operator">&#x3C;&#x3C;</span> i <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The <code>continue;</code> statement will skip everything else in the loop and go to the next iteration of the loop.</p>
+<p>In this case it will not send 10 to cout because it was told to continue on.
+when the if condition found that the 10 was divisible by 10 with modulus division: <code>%</code>, it then ran <code>continue;</code> and said <em>"skip the printing of this value"</em>.</p>

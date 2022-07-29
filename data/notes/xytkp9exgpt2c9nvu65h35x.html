@@ -1,0 +1,16 @@
+<h1 id="223-slide-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#223-slide-statements"></a>223 Slide Statements</h1>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">//FROM</span>
+<span class="token keyword">const</span> pricingPlan <span class="token operator">=</span> <span class="token function">retrievePricingPlan</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> order <span class="token operator">=</span> <span class="token function">retreiveOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> charge<span class="token punctuation">;</span>
+<span class="token keyword">const</span> chargePerUnit <span class="token operator">=</span> pricingPlan<span class="token punctuation">.</span><span class="token property-access">unit</span><span class="token punctuation">;</span>
+
+<span class="token comment">//TO</span>
+<span class="token keyword">const</span> pricingPlan <span class="token operator">=</span> <span class="token function">retrievePricingPlan</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> chargePerUnit <span class="token operator">=</span> pricingPlan<span class="token punctuation">.</span><span class="token property-access">unit</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> order <span class="token operator">=</span> <span class="token function">retreiveOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> charge<span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>Code is easier to understand when things that are related to each other appear together. If several lines of code access the same data structure, it's best for them to be together rather than intermingled with code accessing other data structures. At its simplest, I use Slide Statements to keep such code together. A very common case of this is declaring and using variables. Some people like to declare all their variables at the top of a function. I prefer to declare the variable just before I first use it.</p>
+</blockquote>

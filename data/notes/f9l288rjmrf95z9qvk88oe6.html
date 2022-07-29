@@ -1,0 +1,13 @@
+<h1 id="2022-06-19"><a aria-hidden="true" class="anchor-heading icon-link" href="#2022-06-19"></a>2022-06-19</h1>
+<p>Spent most of the morning finishing up all my report views for the financial transactions, then moved on to how to get flat file data into the server. turns out SQL Server hosted on linux cannot use the <code>bulkadmin</code> role and bulk insert is basically out the window or if its not the configuration for it was a mire of unhelpful articles so i went for the custom python/pandas insert route</p>
+<p>enter database driver issues. since im not on windows at all i cant use the <code>ODBC Driver 17 for SQL Server</code> driver that we use adnauseum at work i had to figure out a bunch of round about crap to get a driver so i could connect to my server container running on the hypervisor. finally got that figured out now im just designing process around how to deal with the files so my partner and i can manage our transactions easier.</p>
+<p>thinking something like:</p>
+<ul>
+<li>she gets a custom drop off point in her file share on the NAS</li>
+<li>python file watch sees new file</li>
+<li>python copies file to sql server private share</li>
+<li>python processes the file and upserts data and metrics</li>
+<li>python adds file name to list of file names to ignore because it was been processed already</li>
+<li>python uses sql server to send my partner a text that her file was processed successfully</li>
+</ul>
+<p>✨ D A T A ✨</p>

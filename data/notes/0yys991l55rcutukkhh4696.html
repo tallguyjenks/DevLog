@@ -1,0 +1,18 @@
+<h1 id="via-a-result-set"><a aria-hidden="true" class="anchor-heading icon-link" href="#via-a-result-set"></a>Via a Result Set</h1>
+<h3 id="return-via-result-set"><a aria-hidden="true" class="anchor-heading icon-link" href="#return-via-result-set"></a>Return via result set</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>  
+GO  
+<span class="token keyword">IF</span> OBJECT_ID<span class="token punctuation">(</span><span class="token string">'Sales.uspGetEmployeeSalesYTD'</span><span class="token punctuation">,</span> <span class="token string">'P'</span><span class="token punctuation">)</span> <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  
+   <span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span> Sales<span class="token punctuation">.</span>uspGetEmployeeSalesYTD<span class="token punctuation">;</span>  
+GO  
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> Sales<span class="token punctuation">.</span>uspGetEmployeeSalesYTD  
+<span class="token keyword">AS</span>    
+ 
+   <span class="token keyword">SET</span> NOCOUNT <span class="token keyword">ON</span><span class="token punctuation">;</span>  
+   <span class="token keyword">SELECT</span> LastName<span class="token punctuation">,</span> SalesYTD  
+   <span class="token keyword">FROM</span> Sales<span class="token punctuation">.</span>SalesPerson <span class="token keyword">AS</span> sp  
+   <span class="token keyword">JOIN</span> HumanResources<span class="token punctuation">.</span>vEmployee <span class="token keyword">AS</span> e <span class="token keyword">ON</span> e<span class="token punctuation">.</span>BusinessEntityID <span class="token operator">=</span> sp<span class="token punctuation">.</span>BusinessEntityID  
+   
+<span class="token keyword">RETURN</span>  
+GO
+</code></pre>

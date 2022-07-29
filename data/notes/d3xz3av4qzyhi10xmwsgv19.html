@@ -1,0 +1,21 @@
+<h1 id="schedule-your-workflow"><a aria-hidden="true" class="anchor-heading icon-link" href="#schedule-your-workflow"></a>Schedule Your Workflow</h1>
+<blockquote>
+<p>The <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@task (Private)</a> decorator converts a regular python function into a Prefect task. The optional arguments allow you to specify its retry behavior.</p>
+</blockquote>
+<h2 id="scheduling-the-workflow"><a aria-hidden="true" class="anchor-heading icon-link" href="#scheduling-the-workflow"></a>Scheduling The Workflow</h2>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Imports to facilitate Scheduling.</span>
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> timedelta<span class="token punctuation">,</span> datetime
+<span class="token keyword">from</span> prefect<span class="token punctuation">.</span>schedules <span class="token keyword">import</span> IntervalSchedule
+
+<span class="token comment"># Create a schedule object</span>
+schedule <span class="token operator">=</span> IntervalSchedule<span class="token punctuation">(</span>
+  start_date<span class="token operator">=</span>datetime<span class="token punctuation">.</span>utcnow<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> timedelta<span class="token punctuation">(</span>seconds<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  interval<span class="token operator">=</span>timedelta<span class="token punctuation">(</span>minutes<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># Attach the schedule object to the windspeed trakcer flow.</span>
+<span class="token keyword">with</span> Flow<span class="token punctuation">(</span><span class="token string">"Windspeed Tracker"</span><span class="token punctuation">,</span> schedule<span class="token operator">=</span>schedule<span class="token punctuation">)</span> <span class="token keyword">as</span> flow<span class="token punctuation">:</span>
+  response <span class="token operator">=</span> extract<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  windspeed <span class="token operator">=</span> transform<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+  load<span class="token punctuation">(</span>windspeed<span class="token punctuation">)</span>
+</code></pre>

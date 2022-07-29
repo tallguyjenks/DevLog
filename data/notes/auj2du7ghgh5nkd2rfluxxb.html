@@ -1,0 +1,22 @@
+<h1 id="select-data-into-xml"><a aria-hidden="true" class="anchor-heading icon-link" href="#select-data-into-xml"></a>Select Data into Xml</h1>
+<ul>
+<li><a href="https://www.sqlshack.com/working-with-xml-data-in-sql-server/">https://www.sqlshack.com/working-with-xml-data-in-sql-server/</a></li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> CAST<span class="token punctuation">(</span><span class="token string">'&#x3C;Name>&#x3C;FName>Carol&#x3C;/FName>&#x3C;LName>Elliot&#x3C;/LName>&#x3C;/Name>'</span> <span class="token keyword">AS</span> XML<span class="token punctuation">)</span>
+
+<span class="token keyword">USE</span> AdventureWorks2012
+GO
+
+<span class="token keyword">SELECT</span> Cust<span class="token punctuation">.</span>CustomerID<span class="token punctuation">,</span>
+       OrderHeader<span class="token punctuation">.</span>CustomerID<span class="token punctuation">,</span>
+       OrderHeader<span class="token punctuation">.</span>SalesOrderID<span class="token punctuation">,</span>
+       OrderHeader<span class="token punctuation">.</span><span class="token keyword">Status</span>
+<span class="token keyword">FROM</span> Sales<span class="token punctuation">.</span>Customer Cust 
+	<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> Sales<span class="token punctuation">.</span>SalesOrderHeader OrderHeader
+		<span class="token keyword">ON</span> Cust<span class="token punctuation">.</span>CustomerID <span class="token operator">=</span> OrderHeader<span class="token punctuation">.</span>CustomerID
+<span class="token keyword">FOR</span> XML AUTO<span class="token punctuation">;</span>
+
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> ticketer<span class="token punctuation">.</span>sp<span class="token punctuation">.</span>ticket 
+<span class="token keyword">for</span> xml path <span class="token punctuation">(</span><span class="token string">'Ticket'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> root<span class="token punctuation">(</span><span class="token string">'Tickets'</span><span class="token punctuation">)</span>
+</code></pre>

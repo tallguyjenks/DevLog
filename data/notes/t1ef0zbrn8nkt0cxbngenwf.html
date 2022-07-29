@@ -1,0 +1,41 @@
+<h1 id="the-dependency-inversion-principle"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-dependency-inversion-principle"></a>The Dependency Inversion Principle</h1>
+<blockquote>
+<blockquote>
+<p>“Abstractions should not depend on details. Details should depend on abstraction. High-level modules should not depend on low-level modules. Both should depend on abstractions”</p>
+</blockquote>
+<p> So, that abstractions (e.g., the interface, as seen above) should not be dependent on low-level methods but both should depend on a third interface.
+<br>
+To better explain this concept, I prefer to think of a sort of information flow.
+<br>
+Imagine that you have a program that takes in input a specific set of info (a file, a format, etc) and you wrote a script to process it.
+<br>
+What would happen if that info were subject to changes?
+<br>
+You would have to rewrite your script and adjust the new format. Losing the retro compatibility with the older files.
+<br>
+However, you could solve this by creating a third abstraction that takes the info as input and passes it to the others.
+This is basically what an API is also, used for.</p>
+</blockquote>
+<p><img src="/DevLog/assets/images/Pasted_image_20211110092721.png" alt="alt"></p>
+<hr>
+<ul>
+<li>
+<h2 id="tags"><a aria-hidden="true" class="anchor-heading icon-link" href="#tags"></a>Tags:</h2>
+</li>
+<li>Reference:
+<ul>
+<li><a href="/DevLog/notes/9knz69r6nooffoynnm56e9h">SOLID Coding in Python</a></li>
+</ul>
+</li>
+<li>Related:
+<ul>
+<li><a href="/DevLog/notes/v7i96kp105u0du2q9tz97ta">Python Abstract Base Classes</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/5qo2wpbyzf4y91i997xxxwd">Python Dependency Inversion (DevLog)</a></li>
+<li><a href="/DevLog/notes/9knz69r6nooffoynnm56e9h">Solid Coding in Python (DevLog)</a></li>
+</ul>

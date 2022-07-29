@@ -1,0 +1,32 @@
+<h1 id="create-loading-animations"><a aria-hidden="true" class="anchor-heading icon-link" href="#create-loading-animations"></a>Create Loading Animations</h1>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token keyword">while</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">do</span>
+    <span class="token comment"># Frame #1</span>
+    <span class="token builtin class-name">printf</span> <span class="token string">"<span class="token entity" title="\r">\r</span>&#x3C; Loading..."</span> 
+    <span class="token function">sleep</span> <span class="token number">0.5</span>
+    <span class="token comment"># Frame #2 </span>
+    <span class="token builtin class-name">printf</span> <span class="token string">"<span class="token entity" title="\r">\r</span>> Loading..."</span> 
+    <span class="token function">sleep</span> <span class="token number">0.5</span> 
+<span class="token keyword">done</span>
+</code></pre>
+<p>or</p>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token function">sleep</span> <span class="token number">5</span> <span class="token operator">&#x26;</span>
+<span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token variable">$!</span>
+<span class="token assign-left variable">frames</span><span class="token operator">=</span><span class="token string">"/ | <span class="token entity" title="\\">\\</span> -"</span>
+<span class="token keyword">while</span> <span class="token function">kill</span> -0 <span class="token variable">$pid</span> <span class="token number">2</span><span class="token operator">&#x26;></span><span class="token number">1</span> <span class="token operator">></span> /dev/null<span class="token punctuation">;</span>
+<span class="token keyword">do</span>
+    <span class="token keyword">for</span> <span class="token for-or-select variable">frame</span> <span class="token keyword">in</span> <span class="token variable">$frames</span><span class="token punctuation">;</span>
+    <span class="token keyword">do</span>
+        <span class="token builtin class-name">printf</span> <span class="token string">"<span class="token entity" title="\r">\r</span><span class="token variable">$frame</span> Loading..."</span> 
+        <span class="token function">sleep</span> <span class="token number">0.5</span>
+    <span class="token keyword">done</span>
+<span class="token keyword">done</span>
+<span class="token builtin class-name">printf</span> <span class="token string">"<span class="token entity" title="\n">\n</span>"</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/o71rv4ceuqozrwkogybwukm">5 Modern Bash Scripting Techniques That Only a Few Programmers Know (DevLog)</a></li>
+</ul>

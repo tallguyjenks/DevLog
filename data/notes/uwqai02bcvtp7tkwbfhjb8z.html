@@ -1,0 +1,69 @@
+<h1 id="16"><a aria-hidden="true" class="anchor-heading icon-link" href="#16"></a>16</h1>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://youtu.be/eWaWvUhpseM?list=PL2Uw4_HvXqvYk1Y5P8kryoyd83L_0Uk5K">TALK / Meredydd Luff / Writing Good Documentation for Developers</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">#💻️/📖️ (Private)</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">#💻️/⭐ (Private)</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://youtu.be/iPs64t1nsSM?list=PL2Uw4_HvXqvYk1Y5P8kryoyd83L_0Uk5K">TALK / Mariatta Wijaya / Oops! I Became an Open Source Maintainer!</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/p7o36tilo5ljx9je2jo21hy">Pytest</a> <a href="https://youtu.be/DJoffYEPttY?list=PL2Uw4_HvXqvYk1Y5P8kryoyd83L_0Uk5K">TUTORIAL / Moshe Z / Python Unit Testing with Pytest and Mock</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://levelup.gitconnected.com/python-features-you-probably-dont-know-about-but-should-a66c6b30c528">Python Features You Probably Don’t Know About, But Should</a></li>
+</ul>
+<h2 id="named-tuples"><a aria-hidden="true" class="anchor-heading icon-link" href="#named-tuples"></a>Named Tuples</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> collections <span class="token keyword">import</span> namedtuple
+
+Coordinate <span class="token operator">=</span> namedtuple<span class="token punctuation">(</span><span class="token string">"Coordinate"</span><span class="token punctuation">,</span> <span class="token string">"longitude latitude"</span><span class="token punctuation">)</span>
+location <span class="token operator">=</span> Coordinate<span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">37.5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"location:"</span><span class="token punctuation">,</span> location<span class="token punctuation">)</span> 
+<span class="token comment"># accessing attributes with dot notation</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>longitude<span class="token punctuation">,</span> location<span class="token punctuation">.</span>latitude<span class="token punctuation">)</span> 
+<span class="token comment"># Output: </span>
+<span class="token comment"># location: Coordinate(longitude=90, latitude=37.5) </span>
+<span class="token comment"># (90, 37.5) </span>
+</code></pre>
+<h2 id="for--else"><a aria-hidden="true" class="anchor-heading icon-link" href="#for--else"></a>For ... Else</h2>
+<pre class="language-python"><code class="language-python"><span class="token comment">#case 1</span>
+<span class="token keyword">for</span> letter <span class="token keyword">in</span> <span class="token string">'foo'</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>letter<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"All letters have been printed"</span><span class="token punctuation">)</span>
+
+<span class="token comment">#case 2</span>
+<span class="token keyword">for</span> letter <span class="token keyword">in</span> <span class="token string">'foo'</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>letter<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> letter <span class="token operator">==</span> <span class="token string">'o'</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Letters have been printed"</span><span class="token punctuation">)</span>
+    
+<span class="token comment"># Output:</span>
+<span class="token comment"># case 1</span>
+<span class="token comment"># f</span>
+<span class="token comment"># o</span>
+<span class="token comment"># o</span>
+<span class="token comment"># All letters have been printed</span>
+<span class="token comment"># case 2</span>
+<span class="token comment"># f</span>
+<span class="token comment"># o</span>
+</code></pre>
+<h2 id="enums-with-the-enum-module"><a aria-hidden="true" class="anchor-heading icon-link" href="#enums-with-the-enum-module"></a>enums with the <a href="/DevLog/notes/2vakk48y4zpjk9tawr3iyyf">Enum</a> module</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> enum <span class="token keyword">import</span> Enum
+Season <span class="token operator">=</span> Enum<span class="token punctuation">(</span><span class="token string">'Season'</span><span class="token punctuation">,</span> <span class="token string">'winter summer spring autumn'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Season<span class="token punctuation">.</span>summer<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Season<span class="token punctuation">.</span>summer<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+
+<span class="token comment">#using class</span>
+<span class="token keyword">class</span> <span class="token class-name">Season</span><span class="token punctuation">(</span>Enum<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    winter <span class="token operator">=</span> <span class="token number">1</span>
+    summer <span class="token operator">=</span> <span class="token number">2</span>
+    spring <span class="token operator">=</span> <span class="token number">3</span>
+    autumn <span class="token operator">=</span> <span class="token number">4</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Season<span class="token punctuation">.</span>winter<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Season<span class="token punctuation">.</span>winter<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+
+<span class="token comment"># Output:</span>
+<span class="token comment"># summer</span>
+<span class="token comment"># 2</span>
+<span class="token comment"># winter</span>
+<span class="token comment"># 1</span>
+</code></pre>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/veb8qw9ytjdozzo1ljmbxye">Black</a> <a href="/DevLog/notes/2mnfz9w7nvn45y8b936d0e0">Flake8</a> <a href="/DevLog/notes/fr7mmpniszgquo1o85rrwtr">Isort</a> <a href="https://medium.com/staqu-dev-logs/keeping-python-code-clean-with-pre-commit-hooks-black-flake8-and-isort-cac8b01e0ea1">https://medium.com/staqu-dev-logs/keeping-python-code-clean-with-pre-commit-hooks-black-flake8-and-isort-cac8b01e0ea1</a>
+<a href="/DevLog/notes/fxonnpiy5se3pzl4r6o8bui">Workflow</a></li>
+</ul>

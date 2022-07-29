@@ -1,0 +1,87 @@
+<h1 id="an-extremely-simple-way-to-schedule-programs-with-python-on-windows"><a aria-hidden="true" class="anchor-heading icon-link" href="#an-extremely-simple-way-to-schedule-programs-with-python-on-windows"></a>An Extremely Simple Way to Schedule Programs with Python on Windows</h1>
+<ul>
+<li><code>Author:</code> Robby Boney</li>
+<li><code>Link:</code> <a href="https://medium.com/short-bits/an-extremely-simple-way-to-schedule-programs-with-python-on-windows-46fc34074874">https://medium.com/short-bits/an-extremely-simple-way-to-schedule-programs-with-python-on-windows-46fc34074874</a></li>
+<li><code>Publish Date:</code> 2021.12.14</li>
+<li><code>Reviewed Date:</code> <a href="/DevLog/notes/g7nabkltbq6i1mowm945isw">On This Day...</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="/DevLog/notes/bd6g93xjeadw3ny7dkuco6k">Schedule</a> library:</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> schedule
+<span class="token keyword">import</span> time
+
+<span class="token keyword">def</span> <span class="token function">job</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I'm working..."</span><span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>seconds<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>minutes<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hour<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>day<span class="token punctuation">.</span>at<span class="token punctuation">(</span><span class="token string">"10:30"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>minutes<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>monday<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>wednesday<span class="token punctuation">.</span>at<span class="token punctuation">(</span><span class="token string">"13:15"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>minute<span class="token punctuation">.</span>at<span class="token punctuation">(</span><span class="token string">":17"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+  schedule<span class="token punctuation">.</span>run_pending<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>The package includes many other actions available from the main API including:
+<ul>
+<li>Use a decorator to schedule a job</li>
+<li>Pass arguments to a job schedule.every(2).seconds.do(greet, name="Alice")</li>
+<li>Cancel a job</li>
+<li>Run a job once</li>
+<li>Get all jobs</li>
+<li>Cancel all jobs</li>
+<li>Get several jobs, filtered by tags</li>
+<li>Cancel several jobs, filtered by tags</li>
+<li>Run a job at random intervals</li>
+<li>Run a job until a certain time</li>
+<li>Time until the next execution</li>
+<li>Run all jobs now, regardless of their scheduling</li>
+</ul>
+</li>
+<li>Schedule a python script on windows with a 3 file setup
+<ul>
+<li>A bat file which can be executed (directly or via shortcut) automatically by windows in the startup folder
+<ul>
+<li><img src="/DevLog/assets/images/Pasted_image_20211220105600.png" alt="alt"></li>
+<li>Ensure this runs even after an automatic or scheduled restart by placing the script or a shortcut to it in the startup directory which can be found by running:
+<ul>
+<li><code>shell:startup</code> in the menu that pops up when you press <kbd>ctrl</kbd>+ <kbd>R</kbd></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>a manager powershell script to perform any setup steps like activating a conda environment and then running the scheduler
+<ul>
+<li><img src="/DevLog/assets/images/Pasted_image_20211220105611.png" alt="alt"></li>
+</ul>
+</li>
+<li>a scheduler python script that runs a python function or command line script via a package like <code>subprocess</code>
+<ul>
+<li><img src="/DevLog/assets/images/Pasted_image_20211220105625.png" alt="alt"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="when-does-this-not-work"><a aria-hidden="true" class="anchor-heading icon-link" href="#when-does-this-not-work"></a>When Does this NOT Work</h2>
+<ul>
+<li>schedule is designed as a simple scheduling package. As mentioned on the the projects documentation, it is not ideal when the following are required:
+<ul>
+<li><strong>Job persistence</strong> (remember schedule between restarts) (although we have “somewhat” solved this one in this article)</li>
+<li><strong>Exact timing</strong> (sub-second precision execution)</li>
+<li><strong>Concurrent execution</strong> (multiple threads)</li>
+<li><strong>Localization</strong> (time zones, workdays or holidays)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/g7nabkltbq6i1mowm945isw">On This Day... (DevLog)</a></li>
+<li><a href="/DevLog/notes/bd6g93xjeadw3ny7dkuco6k">Schedule (DevLog)</a></li>
+</ul>

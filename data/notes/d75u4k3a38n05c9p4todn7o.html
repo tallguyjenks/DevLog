@@ -1,0 +1,132 @@
+<h1 id="biblatex"><a aria-hidden="true" class="anchor-heading icon-link" href="#biblatex"></a>Biblatex</h1>
+<h2 id="biblatex-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#biblatex-1"></a>BibLaTeX</h2>
+<p>Use the package via:</p>
+<p><code>\usepackage[backend=biber, style=authoryear-icomp]{biblatex}</code>
+<code>\addbibresource{&#x3C;file path to .bib file>}</code></p>
+<p>To print our your bibliography:</p>
+<p><code>\printbibliography</code></p>
+<p><code>\textcite{&#x3C;ref>}</code> will add a reference like <em>Mould [1]</em> but 'Mould' would be the name of the ref you passed in and it has that number but adding <code>style=authoryear-icomp</code> to the biblatex package optional arg will change it to <em>Mould (2003)</em> with no brackets and numbers</p>
+<p><code>\parencite{&#x3C;ref>}</code> is what I typically like and use and appears like <em>(Mould 2003)</em></p>
+<h2 id="documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a>Documentation</h2>
+<ul>
+<li><a href="https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex">OverleafOnBiber</a></li>
+</ul>
+<hr>
+<ul>
+<li>address</li>
+<li>annote</li>
+<li>author
+<ul>
+<li>booktitle</li>
+<li>chapter</li>
+<li>crossref</li>
+<li>edition</li>
+<li>editor</li>
+<li>institution</li>
+<li>journal</li>
+<li>key</li>
+<li>month</li>
+<li>note</li>
+<li>number</li>
+<li>organization</li>
+<li>pages</li>
+</ul>
+</li>
+<li>publisher
+<ul>
+<li>school</li>
+<li>series</li>
+</ul>
+</li>
+<li>title
+<ul>
+<li>type</li>
+<li>volume</li>
+</ul>
+</li>
+<li>year</li>
+<li>URL</li>
+<li>ISBN
+<ul>
+<li>ISSN</li>
+<li>LCCN</li>
+<li>abstract</li>
+<li>keywords</li>
+<li>price</li>
+<li>copyright</li>
+<li>language</li>
+<li>contents</li>
+</ul>
+</li>
+</ul>
+<h3 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h3>
+<p>This package is used for references and bibliographies</p>
+<h4 id="reference-guide"><a aria-hidden="true" class="anchor-heading icon-link" href="#reference-guide"></a>Reference guide</h4>
+<h5 id="standard-entry-types"><a aria-hidden="true" class="anchor-heading icon-link" href="#standard-entry-types"></a>Standard entry types</h5>
+<ul>
+<li><strong>article</strong>
+<ul>
+<li>Article from a magazine or journal</li>
+</ul>
+</li>
+<li><strong>booklet</strong>
+<ul>
+<li>A work that is printed but have no publisher or sponsoring institution</li>
+</ul>
+</li>
+<li><strong>conference</strong>
+<ul>
+<li>An article in a conference proceedings</li>
+</ul>
+</li>
+<li><strong>inbook</strong>
+<ul>
+<li>A part of a book (section, chapter and so on)</li>
+</ul>
+</li>
+<li><strong>incollection</strong>
+<ul>
+<li>A part of a book having its own title</li>
+</ul>
+</li>
+<li><strong>inproceedings</strong>
+<ul>
+<li>An article in a conference proceedings</li>
+</ul>
+</li>
+<li><strong>manual</strong>
+<ul>
+<li>Technical documentation</li>
+</ul>
+</li>
+<li><strong>masterthesis</strong>
+<ul>
+<li>A Master's thesis</li>
+</ul>
+</li>
+<li><strong>misc</strong>
+<ul>
+<li>Something that doesn't fit in any other type</li>
+</ul>
+</li>
+<li><strong>phdthesis</strong>
+<ul>
+<li>A PhD thesis</li>
+</ul>
+</li>
+<li><strong>proceedings</strong>
+<ul>
+<li>The same as conference</li>
+</ul>
+</li>
+<li><strong>techreport</strong>
+<ul>
+<li>Report published by an institution</li>
+</ul>
+</li>
+<li><strong>unpublished</strong>
+<ul>
+<li>Document not formally published, with author and title</li>
+</ul>
+</li>
+</ul>

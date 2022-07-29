@@ -1,0 +1,52 @@
+<h1 id="loguru"><a aria-hidden="true" class="anchor-heading icon-link" href="#loguru"></a>Loguru</h1>
+<ul>
+<li>
+<p><a href="https://github.com/Delgan/loguru">GitHub</a></p>
+</li>
+<li>
+<p>import and send a log message straight to terminal</p>
+</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> loguru <span class="token keyword">import</span> logger
+
+logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"That's it, beautiful and simple logging!"</span><span class="token punctuation">)</span>
+
+</code></pre>
+<ul>
+<li>want to add a log file as well as sending to stdout? simply pass the path to the file and it will append or create if it doesnt exist</li>
+</ul>
+<pre class="language-python"><code class="language-python">logger<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">"app.log"</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>you can also use variable components:</li>
+</ul>
+<pre class="language-python"><code class="language-python">logger<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">"file_{time}.log"</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>Additionally handlers and criteria once this are filtered through this:</li>
+</ul>
+<pre class="language-python"><code class="language-python">logger<span class="token punctuation">.</span>add<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>stderr<span class="token punctuation">,</span> <span class="token builtin">format</span><span class="token operator">=</span><span class="token string">"{time} {level} {message}"</span><span class="token punctuation">,</span> <span class="token builtin">filter</span><span class="token operator">=</span><span class="token string">"my_module"</span><span class="token punctuation">,</span> level<span class="token operator">=</span><span class="token string">"INFO"</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>catch exceptions</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@logger<span class="token punctuation">.</span>catch</span>
+<span class="token keyword">def</span> <span class="token function">my_function</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token comment"># An error? It's caught anyway!</span>
+  <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span>x <span class="token operator">+</span> y <span class="token operator">+</span> z<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>back tracing and diagnosis of errors can also be added to a log file with a few additional kwargs:</li>
+</ul>
+<pre class="language-python"><code class="language-python">logger<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">"out.log"</span><span class="token punctuation">,</span> backtrace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> diagnose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>Add custom fields and bind them to values you desire and want to compute</li>
+</ul>
+<pre class="language-python"><code class="language-python">logger<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">"file.log"</span><span class="token punctuation">,</span> <span class="token builtin">format</span><span class="token operator">=</span><span class="token string">"{extra[ip]} {extra[user]} {message}"</span><span class="token punctuation">)</span>
+context_logger <span class="token operator">=</span> logger<span class="token punctuation">.</span>bind<span class="token punctuation">(</span>ip<span class="token operator">=</span><span class="token string">"192.168.0.1"</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">"someone"</span><span class="token punctuation">)</span>
+context_logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"Contextualize your logger easily"</span><span class="token punctuation">)</span>
+context_logger<span class="token punctuation">.</span>bind<span class="token punctuation">(</span>user<span class="token operator">=</span><span class="token string">"someone_else"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"Inline binding of extra attribute"</span><span class="token punctuation">)</span>
+context_logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"Use kwargs to add context during formatting: {user}"</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">"anybody"</span><span class="token punctuation">)</span>
+
+</code></pre>

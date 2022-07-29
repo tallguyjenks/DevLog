@@ -1,0 +1,14 @@
+<h1 id="findindex"><a aria-hidden="true" class="anchor-heading icon-link" href="#findindex"></a>Findindex</h1>
+<h2 id="arrayfindindex"><a aria-hidden="true" class="anchor-heading icon-link" href="#arrayfindindex"></a>Array.findIndex()</h2>
+<p>The <code>findIndex()</code> method returns the <strong>index</strong> of the first array element that passes a test function.</p>
+<p>This example finds the index of the first element that is larger than 18:</p>
+<h3 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h3>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
+<span class="token keyword">var</span> first <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token method function property-access">findIndex</span><span class="token punctuation">(</span>myFunction<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  
+<span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+  <span class="token keyword control-flow">return</span> value <span class="token operator">></span> <span class="token number">18</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+
+<span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>

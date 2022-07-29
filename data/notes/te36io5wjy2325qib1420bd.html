@@ -1,0 +1,15 @@
+<h1 id="enumerations"><a aria-hidden="true" class="anchor-heading icon-link" href="#enumerations"></a>Enumerations</h1>
+<p>enums are basically just numbers. In this instance </p>
+<p><code>FICTION = 0</code> and <code>NONFICTION = 1</code></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">enum</span> <span class="token class-name">BookType</span> <span class="token punctuation">{</span>FICTION<span class="token punctuation">,</span>NONFICTION<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>bookTypeStrings</code> are really just <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Include string (Private)</a> labels for the <code>BookType</code> enum as the enum in really is just numbers.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">static</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string bookTypeStrings<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"FICTION"</span><span class="token punctuation">,</span><span class="token string">"NONFICTION"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The enumumerated values are being used as an index for the label values:</p>
+<pre class="language-cpp"><code class="language-cpp">bookTypeStrings<span class="token punctuation">[</span>FICTION<span class="token punctuation">]</span> <span class="token comment">// returns the string: "FICTION"</span>
+bookTypeStrings<span class="token punctuation">[</span>NONFICTION<span class="token punctuation">]</span> <span class="token comment">// returns the string: "NONFICTION"</span>
+</code></pre>
+<p>The order of the strings does matter in this instance as the values default to a normal 0..1..n indexing unless manually set to specific values:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">enum</span> <span class="token class-name">light</span> <span class="token punctuation">{</span> RED <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> YELLOW <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> GREEN <span class="token operator">=</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>

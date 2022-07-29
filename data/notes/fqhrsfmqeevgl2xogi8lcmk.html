@@ -1,0 +1,15 @@
+<h1 id="encapsulate-variable"><a aria-hidden="true" class="anchor-heading icon-link" href="#encapsulate-variable"></a>Encapsulate Variable</h1>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// BEFORE</span>
+<span class="token keyword">let</span> defaultOwner <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">firstName</span><span class="token operator">:</span> <span class="token string">"Martin"</span><span class="token punctuation">,</span> <span class="token literal-property property">lastName</span><span class="token operator">:</span> <span class="token string">"Fowler"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// AFTER</span>
+<span class="token keyword">let</span> defaultOwnerData <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">firstName</span><span class="token operator">:</span> <span class="token string">"Martin"</span><span class="token punctuation">,</span> <span class="token literal-property property">lastName</span><span class="token operator">:</span> <span class="token string">"Fowler"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword module">export</span> <span class="token keyword">function</span> <span class="token function">defaultOwner</span><span class="token punctuation">(</span><span class="token punctuation">)</span>       <span class="token punctuation">{</span><span class="token keyword control-flow">return</span> defaultOwnerData<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token keyword module">export</span> <span class="token keyword">function</span> <span class="token function">setDefaultOwner</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>defaultOwnerData <span class="token operator">=</span> arg<span class="token punctuation">;</span><span class="token punctuation">}</span>
+</code></pre>
+<p>Access your data through functions so that updating the variable is as simple as changing a single function rather than every instance of a variable used.</p>
+<p>variables encapsulated by functinos are also testable</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/th1wtn5me6jli8ql2796v61">Rename Variable (DevLog)</a></li>
+</ul>

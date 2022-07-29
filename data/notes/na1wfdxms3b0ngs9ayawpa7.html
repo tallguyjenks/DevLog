@@ -1,0 +1,17 @@
+<h1 id="mutators"><a aria-hidden="true" class="anchor-heading icon-link" href="#mutators"></a>Mutators</h1>
+<h3 id="mutators-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#mutators-1"></a>Mutators</h3>
+<p>Modify / 'Mutate' the data members of a class (a setter, it sets the value of a data member by changing it)</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Public member function. Setter / Mutator</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token keyword">void</span> <span class="token function">SetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Mutator</span>
+
+<span class="token comment">// Private data member that users cant access</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	<span class="token keyword">int</span> player1PlayA<span class="token punctuation">;</span>
+
+<span class="token comment">// Function definition, get input value and set private data member</span>
+<span class="token comment">// value equal to that input</span>
+<span class="token keyword">void</span> <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   player1PlayA <span class="token operator">=</span> playScore<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

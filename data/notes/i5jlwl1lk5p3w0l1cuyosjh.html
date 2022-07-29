@@ -1,0 +1,163 @@
+<h1 id="raspberry-pi"><a aria-hidden="true" class="anchor-heading icon-link" href="#raspberry-pi"></a>Raspberry Pi</h1>
+<ul>
+<li>Raspberry Pi PLEX Home Media Server
+<ul>
+<li><a href="https://youtu.be/gyMpI8csWis">Main Resource</a></li>
+<li>KEY
+<ul>
+<li><strong>Noobs Install</strong></li>
+<li><em>ISO Install with Pi Installer</em></li>
+</ul>
+</li>
+<li><strong>Using Noobs install Raspberry Pi OS Lite</strong></li>
+<li><em>Burn Raspberry Pi OS Lite to the SD card</em>
+<ul>
+<li><em>In menu press <code>Shift + X</code> to open advanced settings and activate SSH, use Ethernet so DHCP auto assigns an IP Address to the Pi</em></li>
+</ul>
+</li>
+<li>update password <code>passwd</code></li>
+<li>Update and Upgrade everything: <code>sudo apt-get update &#x26;&#x26; sudo apt-get upgrade</code></li>
+<li><code>sudo apt-get install vim</code></li>
+<li>Try to install SSH: <code>sudo apt-get install openssh-server</code></li>
+<li>Create SSH file: <code>touch /boot/ssh</code></li>
+<li>Activate SSH: 
+<ul>
+<li><code>sudo raspi-config</code>
+<ul>
+<li>Interface Options</li>
+<li>Enable SSH</li>
+</ul>
+</li>
+<li>OR
+<ul>
+<li><code>sudo systemctl enable ssh</code></li>
+<li><code>sudo systemctl start ssh</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Figure out IP Address to SSH into: <code>hostname -i</code></li>
+<li><a href="https://wiki.geekworm.com/X735_V2.5_Software">Install software for Cooling fan</a>
+<ul>
+<li><code>sudo apt-get install -y python-smbus python</code></li>
+<li><code>sudo apt-get install -y pigpio python-pigpio python3-pigpio git</code></li>
+<li><code>git clone https://github.com/geekworm-com/x735-v2.5</code></li>
+<li><code>cd x735-v2.5</code></li>
+<li><code>sudo chmod +x *.sh</code></li>
+<li><code>sudo bash install.sh</code></li>
+<li><code>sudo reboot</code></li>
+</ul>
+</li>
+<li>update <code>.bash_aliases</code>
+<ul>
+<li><code>alias v='vim'</code></li>
+<li><code>alias '..'='cd ..'</code></li>
+<li><code>alias 'll'='ls -lA'</code></li>
+</ul>
+</li>
+<li>Update <code>.bashrc</code>
+<ul>
+<li>add this so that at startup fan always starts: <code>python /home/pi/x735-v2.5/pwm_fan_control.py &#x26;</code></li>
+</ul>
+</li>
+<li>Install OpenMediaVault: <code>wget -O - https://raw.githubusercontent.com/OpenMediaVault-Plugin-Developers/installScript/master/install | sudo bash</code></li>
+<li>Go to the web location using the IP address of the pi in the URL location</li>
+<li>OpenMediaVault (OMV) default creds:
+<ul>
+<li>username: admin</li>
+<li>password: openmediavault</li>
+</ul>
+</li>
+<li>Update OMV credentials
+<ul>
+<li>System > General Settings > Web Administrator Password	</li>
+</ul>
+</li>
+<li>Make sure disk/drive is listed
+<ul>
+<li>Storage > Disks</li>
+</ul>
+</li>
+<li>Then To mount the drive
+<ul>
+<li>Storage > File Systems</li>
+<li>Create</li>
+<li>Select your device, Label for it, and <code>EXT4</code></li>
+<li>Mount</li>
+</ul>
+</li>
+<li>Provisioning
+<ul>
+<li>Access Rights Management > Shared Folder</li>
+<li>Add</li>
+<li>Name it, select the drive, name the folder, default credentials</li>
+<li>Privileges
+<ul>
+<li>Make sure Pi (or any other user) can read/write</li>
+</ul>
+</li>
+<li>Apply</li>
+</ul>
+</li>
+<li>Now to set up some services
+<ul>
+<li>Services
+<ul>
+<li>SMB == Windows
+<ul>
+<li>Services > SMB > Settings > General Settings > Enable</li>
+<li>Services > SMB > Shares > Create
+<ul>
+<li>Can leave them all default or modify later, just choose folder and that's MVP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NFS == Linux/MacOS
+<ul>
+<li>Services > NFS > Settings > Enable</li>
+<li>Services > NFS > Shares > Create</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User Access
+<ul>
+<li>Access Rights Management > User</li>
+<li>Edit the Pi to use the same password as the system login</li>
+<li>Hit Save if/when you get an error, acknowledge and then hit Save again</li>
+</ul>
+</li>
+<li>Map the network drives on the various computers using SMB</li>
+<li>Starting Plex Server Setup
+<ul>
+<li><code>sudo apt-get install apt-transport-https</code></li>
+<li><code>curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -</code></li>
+<li><code>echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list</code></li>
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt install plexmediaserver</code>
+<ul>
+<li>When prompted for Which Repo version to use at around 40% completion, just say <code>N</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Go to the web address of your IP address plus port 32400/web to open Plex</li>
+<li>Make a free account with plex and follow the prompts to set up your account</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<h2 id="tags"><a aria-hidden="true" class="anchor-heading icon-link" href="#tags"></a>Tags:</h2>
+</li>
+<li>
+<h2 id="reference"><a aria-hidden="true" class="anchor-heading icon-link" href="#reference"></a>Reference:</h2>
+</li>
+<li>
+<h2 id="related"><a aria-hidden="true" class="anchor-heading icon-link" href="#related"></a>Related:</h2>
+</li>
+</ul>

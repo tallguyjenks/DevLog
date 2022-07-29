@@ -1,0 +1,5 @@
+
+```rst
+.. [CIT2002] Just like a footnote, except the label is
+   textual.
+```

@@ -1,0 +1,59 @@
+<h1 id="constructors"><a aria-hidden="true" class="anchor-heading icon-link" href="#constructors"></a>Constructors</h1>
+<p>Constructors initialize instances of a class. A best practice is to initialize all variables when declared (likely to keep them in the same memory location on the stack). </p>
+<p>Constructors share the same name as the class name:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">/*** ShopItem class definition ***/</span>
+<span class="token keyword">class</span> <span class="token class-name">ShopItem</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+   <span class="token keyword">void</span> <span class="token function">SetNameAndPrice</span><span class="token punctuation">(</span>string itemName<span class="token punctuation">,</span> <span class="token keyword">int</span> itemPrice<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">void</span> <span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   <span class="token function">ShopItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Default constructor</span>
+   
+<span class="token keyword">private</span><span class="token operator">:</span>
+   string name<span class="token punctuation">;</span>  <span class="token comment">// Ex: "Bag of salad"</span>
+   <span class="token keyword">int</span>    price<span class="token punctuation">;</span> <span class="token comment">// Price in cents. Ex: 199</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token class-name">ShopItem</span><span class="token double-colon punctuation">::</span><span class="token function">ShopItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// Default constructor</span>
+   name  <span class="token operator">=</span> <span class="token string">"NoName"</span><span class="token punctuation">;</span>    <span class="token comment">// Default name</span>
+   price <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>          <span class="token comment">// Default price</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">ShopItem</span><span class="token double-colon punctuation">::</span><span class="token function">SetNameAndPrice</span><span class="token punctuation">(</span>string itemName<span class="token punctuation">,</span> <span class="token keyword">int</span> itemPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   name  <span class="token operator">=</span> itemName<span class="token punctuation">;</span>
+   price <span class="token operator">=</span> itemPrice<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">ShopItem</span><span class="token double-colon punctuation">::</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Name: "</span>  <span class="token operator">&#x3C;&#x3C;</span> name  <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">", "</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Price: "</span> <span class="token operator">&#x3C;&#x3C;</span> price <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*** End definitions for ShopItem class ***/</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ShopItem item1<span class="token punctuation">;</span>  <span class="token comment">// Auto-calls default constructor</span>
+   
+   item1<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   item1<span class="token punctuation">.</span><span class="token function">SetNameAndPrice</span><span class="token punctuation">(</span><span class="token string">"Soap"</span><span class="token punctuation">,</span> <span class="token number">385</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   item1<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/zoy7hd76iedni9yleun1nxm">Constructor Overloading</a></li>
+<li><a href="/DevLog/notes/ubforui2h1rtdglkscomiur">Member Initialization</a></li>
+</ol>

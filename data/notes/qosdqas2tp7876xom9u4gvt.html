@@ -1,0 +1,35 @@
+<h1 id="setting-up-queries-for-ablation-testing"><a aria-hidden="true" class="anchor-heading icon-link" href="#setting-up-queries-for-ablation-testing"></a>Setting up Queries for Ablation Testing</h1>
+<blockquote>
+<p>Sometimes you write a complex SQL statement that doesn’t work, and you do not know why. The best way to figure out what is wrong is by ablation testing.
+Ablation testing is where you turn things off until you isolate the problem. In the case of SQL queries, this involves commenting out lines of a complex WHERE clause (or JOIN) until you find the thing that is not working as designed.
+However, if your WHERE clause starts with a filter, you have to move it so you can comment it out. If you start your WHERE clause with 1 = 1, which is always true, then you preserve syntax and can easily comment out your filters without having to rewrite your code.
+No matter how simple your SQL statement is, I recommend that you get in the habit of creating ablation testing ready SQL statements.</p>
+<p>-- <a href="https://tutorials.massstreet.net/v/transact-sql/solutions-to-real-world-problems/lesson-50.-setting-up-queries-for-ablation-testing">https://tutorials.massstreet.net/v/transact-sql/solutions-to-real-world-problems/lesson-50.-setting-up-queries-for-ablation-testing</a></p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> AdventureWorks2016
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Sales<span class="token punctuation">.</span>SalesOrderHeader soh
+<span class="token keyword">JOIN</span> Sales<span class="token punctuation">.</span>SalesOrderDetail sod <span class="token keyword">ON</span> soh<span class="token punctuation">.</span>SalesOrderID <span class="token operator">=</span> sod<span class="token punctuation">.</span>SalesOrderID
+<span class="token keyword">WHERE</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">1</span>
+</code></pre>
+<h2 id="an-example-of-ablation-testing"><a aria-hidden="true" class="anchor-heading icon-link" href="#an-example-of-ablation-testing"></a>An Example Of Ablation Testing</h2>
+<p>Here we suspect that two lines in the WHERE clause are causing our query to act up.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> AdventureWorks2016
+
+<span class="token keyword">SELECT</span>
+    CONCAT<span class="token punctuation">(</span>p<span class="token punctuation">.</span>FirstName<span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span>p<span class="token punctuation">.</span>LastName<span class="token punctuation">)</span> <span class="token keyword">AS</span> SalesPerson<span class="token punctuation">,</span>
+    DATEPART<span class="token punctuation">(</span><span class="token keyword">month</span><span class="token punctuation">,</span>soh<span class="token punctuation">.</span>OrderDate<span class="token punctuation">)</span> <span class="token keyword">AS</span> MonthOfSale<span class="token punctuation">,</span>
+    <span class="token function">SUM</span><span class="token punctuation">(</span>sod<span class="token punctuation">.</span>LineTotal<span class="token punctuation">)</span> <span class="token keyword">AS</span> TotalSales
+<span class="token keyword">FROM</span> Person<span class="token punctuation">.</span>Person p
+    <span class="token keyword">JOIN</span> Sales<span class="token punctuation">.</span>SalesPerson sp <span class="token keyword">ON</span> p<span class="token punctuation">.</span>BusinessEntityID <span class="token operator">=</span> sp<span class="token punctuation">.</span>BusinessEntityID
+    <span class="token keyword">JOIN</span> Sales<span class="token punctuation">.</span>SalesOrderHeader soh <span class="token keyword">ON</span> sp<span class="token punctuation">.</span>BusinessEntityID <span class="token operator">=</span> soh<span class="token punctuation">.</span>SalesPersonID
+    <span class="token keyword">JOIN</span> Sales<span class="token punctuation">.</span>SalesOrderDetail sod <span class="token keyword">ON</span> soh<span class="token punctuation">.</span>SalesOrderID <span class="token operator">=</span> sod<span class="token punctuation">.</span>SalesOrderDetailID
+<span class="token keyword">WHERE</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token operator">AND</span> sp<span class="token punctuation">.</span>Bonus <span class="token operator">BETWEEN</span> <span class="token number">3000.00</span> <span class="token operator">AND</span> <span class="token number">6000.00</span>
+    <span class="token comment">--AND sp.SalesYTD >= 2000000.00</span>
+    <span class="token comment">--AND sod.UnitPrice &#x3C; 2000</span>
+    <span class="token operator">AND</span> <span class="token punctuation">(</span><span class="token keyword">YEAR</span><span class="token punctuation">(</span>soh<span class="token punctuation">.</span>OrderDate<span class="token punctuation">)</span> <span class="token operator">BETWEEN</span> <span class="token number">2014</span> <span class="token operator">AND</span> <span class="token number">2013</span> <span class="token operator">OR</span> <span class="token keyword">YEAR</span><span class="token punctuation">(</span>soh<span class="token punctuation">.</span>OrderDate<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">2011</span><span class="token punctuation">)</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> p<span class="token punctuation">.</span>LastName<span class="token punctuation">,</span> p<span class="token punctuation">.</span>FirstName<span class="token punctuation">,</span> DATEPART<span class="token punctuation">(</span><span class="token keyword">month</span><span class="token punctuation">,</span>soh<span class="token punctuation">.</span>OrderDate<span class="token punctuation">)</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> p<span class="token punctuation">.</span>LastName<span class="token punctuation">,</span> p<span class="token punctuation">.</span>FirstName<span class="token punctuation">,</span> DATEPART<span class="token punctuation">(</span><span class="token keyword">month</span><span class="token punctuation">,</span>soh<span class="token punctuation">.</span>OrderDate<span class="token punctuation">)</span>
+</code></pre>

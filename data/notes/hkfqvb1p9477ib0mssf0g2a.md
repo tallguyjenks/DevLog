@@ -1,0 +1,5 @@
+
+
+```sql
+SELECT DATEPART(YEAR, GETDATE()) * 100 + DATEPART(MONTH, GETDATE()) AS 'YearMo'
+```

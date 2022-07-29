@@ -1,0 +1,16 @@
+<h1 id="case-modify"><a aria-hidden="true" class="anchor-heading icon-link" href="#case-modify"></a>Case Modify</h1>
+<h4 id="text-case-modification-in-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#text-case-modification-in-bash"></a>Text Case Modification In Bash</h4>
+<ul>
+<li>I realize that this is beside your point, but…don't shell out to <code>tr</code> like you did. It's really slow and Bash has built-in facilities for manipulating strings—especially case. Equivalent to your code <code>input=$(echo "$value" | tr '[:upper:]' '[:lower:]')</code> would be something like:</li>
+<li>input="$*"</li>
+<li>input="${input,,}"</li>
+<li>We are assigning a new value to the <code>bash</code> variable <code>input</code>.  The right-hand-side of the <code>=</code> is the new value. If we used <code>${input}</code>, that would just be the value already in variable <code>input</code> The magic is in those two commas <code>,,</code>. A <code>,</code> operator after the variable name downcases the first letter of the variable and leaves the rest of the value unchanged. The double-comma <code>,,</code> operator after the variable downcases every character in the value.</li>
+<li>You can use <code>^</code> and <code>==</code> for uppercasing.</li>
+<li>You could have done the same in a single line with <code>input="${*,,}"</code></li>
+<li>I ran the <code>tr</code> version as written above 1000 times and a "pure" Bash equivalent The <code>tr</code> version took 4.1 sec versus "pure" Bash's 0.04 sec (100 X faster).</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/fgxolm2zmgstia5ywsroi0n">Doc</a></li>
+</ol>

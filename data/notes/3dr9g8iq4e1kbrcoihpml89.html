@@ -1,0 +1,9 @@
+<h1 id="with-rollup"><a aria-hidden="true" class="anchor-heading icon-link" href="#with-rollup"></a>With Rollup</h1>
+<h3 id="the-rollup-sub-clause"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-rollup-sub-clause"></a>The 'RollUp' Sub-Clause</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Age<span class="token punctuation">,</span> Name<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>Name<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Person 
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Age <span class="token keyword">WITH ROLLUP</span>
+<span class="token keyword">HAVING</span> Age <span class="token operator">></span> <span class="token number">50</span>
+</code></pre>
+<p>Adds an additional record item of the results of the initial aggregation option.</p>
+<p>So: if you had a grouping of <code>COUNT()</code>'s for each <code>Age</code> already totaled up, the <code>ROLLUP</code> looks at all of those totals and aggregates them into a grand total.</p>

@@ -1,0 +1,8 @@
+<h1 id="having"><a aria-hidden="true" class="anchor-heading icon-link" href="#having"></a>Having</h1>
+<h3 id="the-having-clause"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-having-clause"></a>The 'HAVING' Clause</h3>
+<p>The having clause is like the <code>WHERE</code> clause except you can use aggregate functions like <code>COUNT()</code> and <code>SUM()</code> with it.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Age<span class="token punctuation">,</span> Name<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>Name<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Person 
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Age
+<span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>Name<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">50</span>
+</code></pre>

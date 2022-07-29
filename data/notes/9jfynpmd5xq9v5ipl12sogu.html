@@ -1,0 +1,10 @@
+<h1 id="documentation-tags"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation-tags"></a>Documentation Tags</h1>
+<p>Specifying tags in the router object makes the documentation for granularly
+defined and easier to read.</p>
+<pre class="language-python"><code class="language-python">router <span class="token operator">=</span> APIRouter<span class="token punctuation">(</span>
+    prefix<span class="token operator">=</span><span class="token string">'/posts'</span><span class="token punctuation">,</span>
+    tags<span class="token operator">=</span><span class="token string">'posts'</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>results in something like this:</p>
+<p><img src="/DevLog/assets/images/2022-01-11-10-22-42.png" alt="FastAPI tags"></p>

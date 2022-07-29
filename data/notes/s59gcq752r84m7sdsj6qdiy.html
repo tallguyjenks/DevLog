@@ -1,0 +1,33 @@
+<h1 id="25"><a aria-hidden="true" class="anchor-heading icon-link" href="#25"></a>25</h1>
+<ul>
+<li><a href="/DevLog/notes/7kfp3zptn2a7wkp5zeoa7wu">Devops</a> Extension for <a href="https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-XplatGenerateReleaseNotes&#x26;ssr=false#overview">Automatic Release Notes</a></li>
+<li><a href="/DevLog/notes/ku0abqmell3qfg5bvcvx7i0">T-SQL</a> <a href="/DevLog/notes/5oymml7bokzrnhln9n2ulo9">Redgate</a> <a href="https://youtu.be/mNXipSFbV0s">Version Control Demo With Git</a>
+<ul>
+<li><a href="/DevLog/notes/2v757989h14a59imxjv2gn1">Vscode</a> <code>https://github.com/microsoft/codetour</code> Code Tours to walk users through a code base</li>
+<li><a href="/DevLog/notes/8a6f5aineqilpmdmkc3lked">Bash</a> <code>printenv</code> prints out all current environmental variables</li>
+<li><a href="/DevLog/notes/l5qm96rv198yvd7xe2t5mm7">Powershell</a></li>
+<li>Making a powershell module i had to save the script file as a <code>.psm1</code> to the <code>$PSModulePath</code> which didnt work initially so i instead passed an absolute path for module import:</li>
+</ul>
+</li>
+</ul>
+<pre class="language-powershell"><code class="language-powershell"><span class="token function">Import-Module</span> <span class="token operator">-</span>Name <span class="token string">'C:\PathToModule'</span> <span class="token operator">-</span>Verbose
+</code></pre>
+<ul>
+<li>To utilize non-ascii characters to get the script to print output like the <code>tree</code> command i had to open the file in Notepad++ and convert the encoding to <code>utf8-BOM</code> for <code>Byte Order Mark</code> weird shenanigans
+<ul>
+<li><em>Related Links:</em>
+<ul>
+<li><a href="https://stackoverflow.com/questions/14482253/utf8-script-in-powershell-outputs-incorrect-characters">https://stackoverflow.com/questions/14482253/utf8-script-in-powershell-outputs-incorrect-characters</a></li>
+<li><a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7.1">https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7.1</a></li>
+<li><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path?view=powershell-7.1">https://docs.microsoft.com/en-us/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path?view=powershell-7.1</a></li>
+<li><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/importing-a-powershell-module?view=powershell-7.1">https://docs.microsoft.com/en-us/powershell/scripting/developer/module/importing-a-powershell-module?view=powershell-7.1</a></li>
+<li><a href="https://ss64.com/ps/import-module.html#:~:text=To%20import%20the%20module%20into,PowerShell%20modules%20in%20the%20PSSession">https://ss64.com/ps/import-module.html#:~:text=To%20import%20the%20module%20into,PowerShell%20modules%20in%20the%20PSSession</a>.
+<ul>
+<li>Ultimately to get a version of <a href="https://www.powershellgallery.com/packages/Show-Tree/1.0.0/Content/Show-Tree.ps1">This Script replicating the tree command</a> but with modifications so that it uses the non-ascii characters that the <code>tree</code> command used</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>

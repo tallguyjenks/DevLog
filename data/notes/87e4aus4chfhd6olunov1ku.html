@@ -1,0 +1,8 @@
+<h1 id="sub-string"><a aria-hidden="true" class="anchor-heading icon-link" href="#sub-string"></a>Sub String</h1>
+<h3 id="substr-index-len-"><a aria-hidden="true" class="anchor-heading icon-link" href="#substr-index-len-"></a>substr( index, len )</h3>
+<p>Returns substring starting at index and having len characters.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// userText is "http://google.com"</span>
+userText<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>                     <span class="token comment">// Returns "http://"</span>
+userText<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>                    <span class="token comment">// Returns ".com"</span>
+userText<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>userText<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment">// Last 4: ".com"</span>
+</code></pre>

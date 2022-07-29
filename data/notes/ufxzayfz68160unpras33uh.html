@@ -1,0 +1,33 @@
+<h1 id="router"><a aria-hidden="true" class="anchor-heading icon-link" href="#router"></a>Router</h1>
+<pre class="language-markdown"><code class="language-markdown">.
+└───app
+    │   database.py
+    │   utils.py
+    │   <span class="token bold"><span class="token punctuation">__</span><span class="token content">main</span><span class="token punctuation">__</span></span>.py
+    │
+    └───routers
+            post.py
+            user.py
+</code></pre>
+<p>using routers you can break apart your API code into separate modules</p>
+<h2 id="in-the-submodules"><a aria-hidden="true" class="anchor-heading icon-link" href="#in-the-submodules"></a>In the submodules</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> APIRouter
+
+router <span class="token operator">=</span> APIRouter<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># change the @app decorator from `@app` to `@router`</span>
+</code></pre>
+<h2 id="in-the-main-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#in-the-main-file"></a>In the main file</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> <span class="token punctuation">.</span>routers <span class="token keyword">import</span> post<span class="token punctuation">,</span> user
+
+app<span class="token punctuation">.</span>include_router<span class="token punctuation">(</span>post<span class="token punctuation">.</span>router<span class="token punctuation">)</span>
+</code></pre>
+<p>this is like a <a href="/DevLog/notes/yow8sjda933r6vtjc0p33if">Header File</a> where all the code gets dumped into
+that location. So this is a way of separating out the code to separate files
+cleanly.</p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/9jfynpmd5xq9v5ipl12sogu">Documentation Tags</a></li>
+<li><a href="/DevLog/notes/my0wcxtm99ktu4n5sb3so3g">Prefixes</a></li>
+</ol>

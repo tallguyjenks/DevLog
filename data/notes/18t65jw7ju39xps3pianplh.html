@@ -1,0 +1,17 @@
+<h1 id="anchor"><a aria-hidden="true" class="anchor-heading icon-link" href="#anchor"></a>Anchor</h1>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mailto:bryan@bryanjenks.dev?subject=mailto%20links<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Send Mail<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre>
+<ul>
+<li><code>mailto:</code> links have additional properties that can be set in <a href="/DevLog/notes/g8jz1e99nnpbzc83mxv264r">HTML</a> but also with Markdown</li>
+<li><a href="https://css-tricks.com/snippets/html/mailto-links/">Resource Link</a></li>
+<li>in markdown, to generate an email addressed to someone, with defined subjects line, body, and other addressees you use these pieces of text as part of the links remembering to escape spaces with <code>$20</code>:
+<ul>
+<li><code>?subject=</code> the subject line of the email. <code>?subject=My%20Subject</code></li>
+<li><code>?cc=</code> add carbon copy addressees <code>?cc=jonny.test@gmail.com</code></li>
+<li><code>?bcc=</code> blind carbon copy someone <code>?bcc=jonny.test@gmail.com</code></li>
+<li><code>?body=</code> your body text remembering to escape spaces with <code>%20</code></li>
+<li><code>?body=My%20lovely%20email%20body%20message</code></li>
+<li>If you only use 1 parameter after the email addressee then that parameter will start with a <code>?</code> like <code>?subject=</code> every parameter used after that will use a <code>&#x26;</code> such as <code>&#x26;cc=</code>, or <code>&#x26;bcc=</code>, etc.</li>
+</ul>
+</li>
+</ul>

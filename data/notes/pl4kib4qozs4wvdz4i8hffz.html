@@ -1,0 +1,93 @@
+<h1 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h1>
+<h3 id="example-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#example-1"></a>Example</h3>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">GameInfo</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token keyword">void</span> <span class="token function">SetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Mutator</span>
+      <span class="token keyword">void</span> <span class="token function">SetPlayer1PlayB</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Mutator</span>
+      <span class="token keyword">void</span> <span class="token function">SetPlayer2PlayA</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Mutator</span>
+      <span class="token keyword">void</span> <span class="token function">SetPlayer2PlayB</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Mutator</span>
+
+      <span class="token keyword">int</span>  <span class="token function">GetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>        <span class="token comment">// Accessor</span>
+      <span class="token keyword">int</span>  <span class="token function">GetPlayer1PlayB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>        <span class="token comment">// Accessor</span>
+      <span class="token keyword">int</span>  <span class="token function">GetPlayer2PlayA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>        <span class="token comment">// Accessor</span>
+      <span class="token keyword">int</span>  <span class="token function">GetPlayer2PlayB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>        <span class="token comment">// Accessor</span>
+
+      <span class="token keyword">int</span>  <span class="token function">GetPlayer1HighScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>    <span class="token comment">// Accessor</span>
+      <span class="token keyword">int</span>  <span class="token function">GetPlayer2HighScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>    <span class="token comment">// Accessor</span>
+
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      <span class="token keyword">int</span> player1PlayA<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> player1PlayB<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> player2PlayA<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> player2PlayB<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> <span class="token function">MaxOfPair</span><span class="token punctuation">(</span><span class="token keyword">int</span> num1<span class="token punctuation">,</span> <span class="token keyword">int</span> num2<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span> <span class="token comment">// Private helper fct</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   player1PlayA <span class="token operator">=</span> playScore<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetPlayer1PlayB</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   player1PlayB <span class="token operator">=</span> playScore<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetPlayer2PlayA</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   player2PlayA <span class="token operator">=</span> playScore<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetPlayer2PlayB</span><span class="token punctuation">(</span><span class="token keyword">int</span> playScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   player2PlayB <span class="token operator">=</span> playScore<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span>  <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> player1PlayA<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span>  <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetPlayer1PlayB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> player1PlayB<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span>  <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetPlayer2PlayA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> player2PlayA<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span>  <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetPlayer2PlayB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> player2PlayB<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetPlayer1HighScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token function">MaxOfPair</span><span class="token punctuation">(</span>player1PlayA<span class="token punctuation">,</span> player1PlayB<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetPlayer2HighScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token function">MaxOfPair</span><span class="token punctuation">(</span>player2PlayA<span class="token punctuation">,</span> player2PlayB<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">MaxOfPair</span><span class="token punctuation">(</span><span class="token keyword">int</span> num1<span class="token punctuation">,</span> <span class="token keyword">int</span> num2<span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>num1 <span class="token operator">></span> num2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> num1<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> num2<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   GameInfo funGame<span class="token punctuation">;</span>
+
+   funGame<span class="token punctuation">.</span><span class="token function">SetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token number">88</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   funGame<span class="token punctuation">.</span><span class="token function">SetPlayer1PlayB</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   funGame<span class="token punctuation">.</span><span class="token function">SetPlayer2PlayA</span><span class="token punctuation">(</span><span class="token number">74</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   funGame<span class="token punctuation">.</span><span class="token function">SetPlayer2PlayB</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Player1 playA: "</span> <span class="token operator">&#x3C;&#x3C;</span> funGame<span class="token punctuation">.</span><span class="token function">GetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Player1 max: "</span> <span class="token operator">&#x3C;&#x3C;</span> funGame<span class="token punctuation">.</span><span class="token function">GetPlayer1HighScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Player2 max: "</span> <span class="token operator">&#x3C;&#x3C;</span> funGame<span class="token punctuation">.</span><span class="token function">GetPlayer2HighScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

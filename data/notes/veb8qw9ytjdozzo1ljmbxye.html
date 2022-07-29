@@ -1,0 +1,64 @@
+<h1 id="black"><a aria-hidden="true" class="anchor-heading icon-link" href="#black"></a>Black</h1>
+<ul>
+<li><a href="https://calmcode.io/black/introduction.html">Calm Code</a></li>
+<li><code>.pre-commit-config.yaml</code></li>
+</ul>
+<pre class="language-yml"><code class="language-yml"><span class="token key atrule">repos</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span>   <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/asottile/seed<span class="token punctuation">-</span>isort<span class="token punctuation">-</span>config
+	<span class="token key atrule">rev</span><span class="token punctuation">:</span> v2.2.0
+	<span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> seed<span class="token punctuation">-</span>isort<span class="token punctuation">-</span>config
+<span class="token punctuation">-</span>   <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/pre<span class="token punctuation">-</span>commit/mirrors<span class="token punctuation">-</span>isort
+	<span class="token key atrule">rev</span><span class="token punctuation">:</span> v5.8.0
+	<span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> isort
+<span class="token punctuation">-</span> <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/psf/black
+  <span class="token key atrule">rev</span><span class="token punctuation">:</span> 21.6b0
+  <span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> black
+	<span class="token key atrule">language_version</span><span class="token punctuation">:</span> python3
+	<span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"Black: The uncompromising Python code formatter"</span>
+<span class="token punctuation">-</span>   <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//gitlab.com/pycqa/flake8
+	<span class="token key atrule">rev</span><span class="token punctuation">:</span> 3.9.2
+	<span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> flake8
+<span class="token punctuation">-</span>   <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/pre<span class="token punctuation">-</span>commit/pre<span class="token punctuation">-</span>commit<span class="token punctuation">-</span>hooks
+	<span class="token key atrule">rev</span><span class="token punctuation">:</span> v4.0.1
+	<span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> trailing<span class="token punctuation">-</span>whitespace
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> end<span class="token punctuation">-</span>of<span class="token punctuation">-</span>file<span class="token punctuation">-</span>fixer
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>docstring<span class="token punctuation">-</span>first
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>json
+		<span class="token key atrule">exclude</span><span class="token punctuation">:</span> .vscode/settings.json
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>added<span class="token punctuation">-</span>large<span class="token punctuation">-</span>files
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>yaml
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> debug<span class="token punctuation">-</span>statements
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> name<span class="token punctuation">-</span>tests<span class="token punctuation">-</span>test
+	<span class="token punctuation">-</span>   <span class="token key atrule">id</span><span class="token punctuation">:</span> requirements<span class="token punctuation">-</span>txt<span class="token punctuation">-</span>fixer
+
+</code></pre>
+<ul>
+<li>This will run all of the hooks before every commit ensuring code quality</li>
+</ul>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="/DevLog/notes/57lbaheveeut4jxg6jemosy">Pre Commit</a></li>
+</ul>
+</li>
+<li>Related:
+<ul>
+<li><a href="/DevLog/notes/2ryzhou6bz2rxhu4ld73wmd">Vulture</a></li>
+<li><a href="/DevLog/notes/jak8s12bepa7jt6n3pem8ro">Git</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/1wiwbdlnty47tsyagfqnccc">Tools (DevLog)</a></li>
+<li><a href="/DevLog/notes/zw81nnbrlopkdh0bkeougse">0 (DevLog)</a></li>
+<li><a href="/DevLog/notes/j30x4rtyrur01du27t81k2i">11 (DevLog)</a></li>
+<li><a href="/DevLog/notes/uwqai02bcvtp7tkwbfhjb8z">16 (DevLog)</a></li>
+</ul>

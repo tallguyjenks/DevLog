@@ -1,0 +1,12 @@
+<h1 id="heading-ids"><a aria-hidden="true" class="anchor-heading icon-link" href="#heading-ids"></a>Heading Ids</h1>
+<h2 id="syntax"><a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a>Syntax</h2>
+<p>Some Markdown processors support custom heading id's determined by this syntax:</p>
+<pre><code>### My Great Heading {#custom-id}
+</code></pre>
+<p>The HTML looks like this:</p>
+<pre><code>&#x3C;h3 id="custom-id">My Great Heading&#x3C;/h3>
+</code></pre>
+<h2 id="rmarkdown"><a aria-hidden="true" class="anchor-heading icon-link" href="#rmarkdown"></a>rmarkdown</h2>
+<p>In Rmarkdown next to the HTML headings you can input additional metadata within braces like this flexdashboard code:</p>
+<pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Page 1 {data-navmenu="Menu A" .hidden}</span>
+</code></pre>

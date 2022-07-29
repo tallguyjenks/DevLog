@@ -1,0 +1,9 @@
+<h1 id="group-by"><a aria-hidden="true" class="anchor-heading icon-link" href="#group-by"></a>Group By</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Age<span class="token punctuation">,</span> Name<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>Name<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Person 
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Age
+<span class="token keyword">HAVING</span> Age <span class="token operator">></span> <span class="token number">50</span>
+</code></pre>
+<p>The <code>GROUP BY</code> statement consolidates the records based on the aggregate function used. The aggregate function could be something like <code>COUNT()</code> or <code>SUM()</code> etc. and it says group by <code>Age</code>.</p>
+<p>So it will find each distinct <code>Age</code> and then group together a <code>COUNT()</code> or <code>SUM()</code> of all the records for each of those unique <code>Age</code>'s.</p>
+<p>The filtering occurs post-aggregation when <code>HAVING</code> is applied to not return the aggregates for any <code>Age</code>'s that are <em>> 50</em></p>

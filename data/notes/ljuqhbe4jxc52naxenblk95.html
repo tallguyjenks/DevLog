@@ -1,0 +1,24 @@
+<h1 id="files"><a aria-hidden="true" class="anchor-heading icon-link" href="#files"></a>Files</h1>
+<h3 id="file-handling"><a aria-hidden="true" class="anchor-heading icon-link" href="#file-handling"></a>File Handling</h3>
+<h4 id="using-temp-files-with-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#using-temp-files-with-bash"></a>Using Temp Files With Bash</h4>
+<ul>
+<li>Temp files are stored in the <code>/tmp/</code> directory and will need to be removed upon script completion. Why use a temp file or directory? Because it will make it easier to have a storing place of a file that holds some information you want to be read, or just act as an intermediary file/directory.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token comment">#  Documentation</span>
+<span class="token comment"># All temp files need those X's for randomization</span>
+<span class="token comment"># check out `man mktemp` for more details</span>
+<span class="token assign-left variable">tmpfile</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp /tmp/abc-script.XXXXXX<span class="token variable">)</span></span>
+
+<span class="token comment"># &#x3C;CODE></span>
+
+<span class="token function">rm</span> <span class="token string">"<span class="token variable">$tmpfile</span>"</span>
+</code></pre>
+<h5 id="documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a>Documentation</h5>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script">SO answer</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/y9grtg7n6poplsdq839zprv">Avoid Name Conflicts</a></li>
+</ol>

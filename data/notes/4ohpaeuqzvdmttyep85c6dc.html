@@ -1,0 +1,23 @@
+<h1 id="__main__"><a aria-hidden="true" class="anchor-heading icon-link" href="#__main__"></a>__main__</h1>
+<h2 id="the-__main__-function"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-__main__-function"></a>The __main__ Function</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> time
+
+<span class="token keyword">def</span> <span class="token function">useful_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I sweat I'm useful: {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">)</span>
+
+<span class="token comment"># This function call if un commented would make it so if the script was run</span>
+<span class="token comment"># on the CLI then it would execute the function code. However, if we want to </span>
+<span class="token comment"># Re-use the code as a module import and not have it run immediately on import</span>
+<span class="token comment"># Then you need the following logical construct</span>
+<span class="token comment"># useful_function()</span>
+
+<span class="token comment"># This code checks if the entry point to the current session is this file.</span>
+<span class="token comment"># i.e. did we run this file like a script? or are we importing from another </span>
+<span class="token comment"># location that is actually "__main__" and we're a sub process declaring</span>
+<span class="token comment"># variables, functions, and classes? Anything under this construct is ran and </span>
+<span class="token comment"># defined only if the script is executed as a stand alone script and not imported</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+	useful_function<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>

@@ -1,0 +1,163 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><title>Mastering Chaos a Netflix Guide to Microservices</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="Personal knowledge space"/><meta property="og:title" content="Mastering Chaos a Netflix Guide to Microservices"/><meta property="og:description" content="Personal knowledge space"/><meta property="og:url" content="https://{GITHUB_USERNAME}.github.io/DevLog/notes/6baoi76mio8md4unhxb0105/"/><meta property="og:type" content="article"/><meta property="article:published_time" content="7/6/2022"/><meta property="article:modified_time" content="7/6/2022"/><link rel="canonical" href="https://{GITHUB_USERNAME}.github.io/DevLog/notes/6baoi76mio8md4unhxb0105/"/><meta name="next-head-count" content="14"/><link rel="preload" href="/DevLog/_next/static/css/477fdc912058141b.css" as="style"/><link rel="stylesheet" href="/DevLog/_next/static/css/477fdc912058141b.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/DevLog/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/DevLog/_next/static/chunks/webpack-193abd745db5a977.js" defer=""></script><script src="/DevLog/_next/static/chunks/framework-bb5c596eafb42b22.js" defer=""></script><script src="/DevLog/_next/static/chunks/main-e26c16bc784f9179.js" defer=""></script><script src="/DevLog/_next/static/chunks/pages/_app-fbacaa7678b5d585.js" defer=""></script><script src="/DevLog/_next/static/chunks/78-13ae6acd5ce7ca5b.js" defer=""></script><script src="/DevLog/_next/static/chunks/373-2f3879190a46a3d9.js" defer=""></script><script src="/DevLog/_next/static/chunks/pages/notes/%5Bid%5D-69449972c2a725d8.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_buildManifest.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_ssgManifest.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><section class="ant-layout" style="width:100%;min-height:100%"><header class="ant-layout-header" style="position:fixed;isolation:isolate;z-index:1;width:100%;border-bottom:1px solid #d4dadf;height:64px;padding:0 24px 0 2px"><div class="ant-row ant-row-center" style="max-width:992px;justify-content:space-between;margin:0 auto"><div style="display:flex" class="ant-col ant-col-xs-20 ant-col-sm-4"></div><div class="ant-col gutter-row ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19"><div class="ant-select ant-select-lg ant-select-auto-complete ant-select-single ant-select-allow-clear ant-select-show-search" style="width:100%"><div class="ant-select-selector"><span class="ant-select-selection-search"><input type="search" autoComplete="off" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="undefined_list" aria-autocomplete="list" aria-controls="undefined_list" aria-activedescendant="undefined_list_0" value=""/></span><span class="ant-select-selection-placeholder">For full text search please use the &#x27;?&#x27; prefix. e.g. ? Onboarding</span></div></div></div><div style="display:none;align-items:center;justify-content:center" class="ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0"><span role="img" aria-label="menu" style="font-size:24px" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div></div></header><section class="ant-layout site-layout" style="margin-top:64px"><section class="ant-layout site-layout"><div class="site-layout-sidebar" style="flex:0 0 auto;width:calc(max((100% - 992px) / 2, 0px) + 200px);min-width:200px;padding-left:calc((100% - 992px) / 2)"><aside class="ant-layout-sider ant-layout-sider-dark" style="position:fixed;overflow:auto;height:calc(100vh - 64px);background-color:transparent;flex:0 0 200px;max-width:200px;min-width:200px;width:200px"><div class="ant-layout-sider-children"></div></aside></div><section class="ant-layout side-layout-main" style="max-width:1200px;display:initial"><main class="ant-layout-content main-content" role="main" style="padding:0 24px"><div class="ant-row"><div class="ant-col ant-col-24"><div class="ant-row" style="margin-left:-10px;margin-right:-10px"><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-24 ant-col-md-18"><div><h1 id="mastering-chaos-a-netflix-guide-to-microservices"><a aria-hidden="true" class="anchor-heading icon-link" href="#mastering-chaos-a-netflix-guide-to-microservices"></a>Mastering Chaos a Netflix Guide to Microservices</h1>
+<h2 id="challenges-and-solutions"><a aria-hidden="true" class="anchor-heading icon-link" href="#challenges-and-solutions"></a>Challenges and Solutions</h2>
+<h3 id="dependency"><a aria-hidden="true" class="anchor-heading icon-link" href="#dependency"></a>Dependency</h3>
+<h4 id="intra-service-requests"><a aria-hidden="true" class="anchor-heading icon-link" href="#intra-service-requests"></a>Intra-service Requests</h4>
+<ul>
+<li>Microservice A talking to Microservice B</li>
+<li>Problems
+<ul>
+<li>Network Latency, Congestion, failure</li>
+<li>Logical or Scaling failure</li>
+</ul>
+</li>
+<li>Solutions
+<ul>
+<li>Have a fallback service to call or at the very least a static response that allows the customer to carry on with their business</li>
+<li>fail fast, and return to the fallback or wait to recover</li>
+<li>(FIT) Fault Injection Testing
+<ul>
+<li>Synthetic Transactions</li>
+<li>Override by device or account</li>
+<li>% of live traffic up to 100% (test a launched service under load from live customers)</li>
+<li>Enforced thoughout the call</li>
+</ul>
+</li>
+<li>How do we contrain testing scope?
+<ul>
+<li>the most critical services are identified as a group for barest functionality and a FIT reciepe is made and blacklists all non-essential services</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="client-libraries"><a aria-hidden="true" class="anchor-heading icon-link" href="#client-libraries"></a>Client Libraries</h4>
+<h4 id="data-persistence"><a aria-hidden="true" class="anchor-heading icon-link" href="#data-persistence"></a>Data Persistence</h4>
+<ul>
+<li>CAP Theorem: "In the presence of a network partition, you much choose between consistency and availability."
+<ul>
+<li>If you have 1 service needing to write to 3 databases, what if one write fails?
+<ul>
+<li>Do you cancel the write? or do you write to what you can?</li>
+<li>you can aim for eventual consistency by writing to what databases you can and settle up later</li>
+<li>The client writes to one node which then orchestrates the writing to all the other nodes
+<ul>
+<li>"Local Quorum"</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="infrastructure"><a aria-hidden="true" class="anchor-heading icon-link" href="#infrastructure"></a>Infrastructure</h4>
+<ul>
+<li>Have redundant hosting across nodes to prevent catastrophic down time</li>
+</ul>
+<h3 id="scale"><a aria-hidden="true" class="anchor-heading icon-link" href="#scale"></a>Scale</h3>
+<h4 id="stateless-services"><a aria-hidden="true" class="anchor-heading icon-link" href="#stateless-services"></a>Stateless Services</h4>
+<ul>
+<li>Its not a cache or database</li>
+<li>frequently accessed metadata</li>
+<li>no instance affinity</li>
+<li>loss of a node is a non-event</li>
+<li>Autoscaling groups
+<ul>
+<li>Compute efficiency</li>
+<li>Node failure</li>
+<li>Traffic Spikes</li>
+<li>Performance Bugs</li>
+</ul>
+</li>
+<li>Chaos monkey tool test that when a node dies, the service continues to work</li>
+</ul>
+<h4 id="stateful-services"><a aria-hidden="true" class="anchor-heading icon-link" href="#stateful-services"></a>Stateful Services</h4>
+<ul>
+<li>databases and caches</li>
+<li>sometimes a custom app that holds large amounts of data (avoid storing business logic, and state within 1 application if you can avoid it)</li>
+<li>loss of a node is a notable event</li>
+<li>redundancy is fundemental</li>
+<li>EVCache -> difference nodes -> each node has multiple shard caches</li>
+<li>separate out systems used for batch versus real time transactions</li>
+<li>do request level caching</li>
+<li>have an encrypted token with the data to fall back on should the service be unavailable to updated the requested data</li>
+</ul>
+<h3 id="variance"><a aria-hidden="true" class="anchor-heading icon-link" href="#variance"></a>Variance</h3>
+<h4 id="operation-drift"><a aria-hidden="true" class="anchor-heading icon-link" href="#operation-drift"></a>Operation Drift</h4>
+<ul>
+<li>drift over time
+<ul>
+<li>alert thresholds</li>
+<li>timeouts, retries, fallbacks</li>
+<li>throughput (RPS)</li>
+</ul>
+</li>
+<li>Across microservices
+<ul>
+<li>Reliability best practices</li>
+</ul>
+</li>
+<li>Continious learning and automation
+<ul>
+<li>Incident --> Resolution --> Review --> Remediation --> Analysis --> Best Practices? --> Automation --> Adoption</li>
+</ul>
+</li>
+<li>Production Ready best practices
+<ul>
+<li>Alerts</li>
+<li>Apache &#x26; tomcat</li>
+<li>Automated canary Analysis</li>
+<li>Autoscaling</li>
+<li>Chaos</li>
+<li>Consistent naming</li>
+<li>ELB Config</li>
+<li>Healthcheck</li>
+<li>Immutable machine images</li>
+<li>Squeeze testing</li>
+<li>Staged, red/black deployments</li>
+<li>Timeouts, retries, fallbacks</li>
+</ul>
+</li>
+</ul>
+<h4 id="polyglot--containers"><a aria-hidden="true" class="anchor-heading icon-link" href="#polyglot--containers"></a>Polyglot &#x26; Containers</h4>
+<ul>
+<li>The Paved Road (do this for a smooth experience)
+<ul>
+<li>Stash</li>
+<li>Nebula/Gradle</li>
+<li>BaseAMI/Ubuntu</li>
+<li>Jenkins</li>
+<li>Spinnaker</li>
+<li>Runtime Platform</li>
+</ul>
+</li>
+<li>Cost of Variance
+<ul>
+<li>Productivity Tooling</li>
+<li>Insight &#x26; Triage Capabilities</li>
+<li>Base Image Fragmentation</li>
+<li>Node management</li>
+<li>Library/Platform duplication</li>
+<li>Learning curve - production expertise</li>
+</ul>
+</li>
+<li>Strategic Stance
+<ul>
+<li>Raise awareness of costs</li>
+<li>Constrain centralized support</li>
+<li>Prioritize by impact</li>
+<li>Seek reusable solutions</li>
+</ul>
+</li>
+</ul>
+<h3 id="change"><a aria-hidden="true" class="anchor-heading icon-link" href="#change"></a>Change</h3>
+<ul>
+<li>Integrated, Automated practices
+<ul>
+<li>Conformity checks</li>
+<li>Red/black pipelines</li>
+<li>Automated canaries</li>
+<li>Staged deployments</li>
+<li>Squeeze tests</li>
+</ul>
+</li>
+</ul></div></div><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-0 ant-col-md-6"><div><div class=""><div class="ant-anchor-wrapper dendron-toc" style="max-height:calc(100vh - 64px);z-index:1"><div class="ant-anchor"><div class="ant-anchor-ink"><span class="ant-anchor-ink-ball"></span></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#challenges-and-solutions" title="Challenges and Solutions">Challenges and Solutions</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#dependency" title="Dependency">Dependency</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#intra-service-requests" title="Intra-service Requests">Intra-service Requests</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#client-libraries" title="Client Libraries">Client Libraries</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#data-persistence" title="Data Persistence">Data Persistence</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#infrastructure" title="Infrastructure">Infrastructure</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#scale" title="Scale">Scale</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#stateless-services" title="Stateless Services">Stateless Services</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#stateful-services" title="Stateful Services">Stateful Services</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#variance" title="Variance">Variance</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#operation-drift" title="Operation Drift">Operation Drift</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#polyglot--containers" title="Polyglot &amp; Containers">Polyglot &amp; Containers</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#change" title="Change">Change</a></div></div></div></div></div></div></div></div></div></main><div class="ant-divider ant-divider-horizontal" role="separator"></div><footer class="ant-layout-footer" style="padding:0 24px 24px"></footer></section></section></section></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"id":"6baoi76mio8md4unhxb0105","title":"Mastering Chaos a Netflix Guide to Microservices","desc":"","updated":1657144390650,"created":1657139845632,"url":"https://youtu.be/CZ3wIuvmHeM","custom":{"url":"https://youtu.be/CZ3wIuvmHeM"},"fname":"r.+.2022.07.06.mastering-chaos-a-netflix-guide-to-microservices","type":"note","vault":{"fsPath":"DevLog"},"contentHash":"cb522d90569d5597b3e2bc28b17c3946","links":[],"anchors":{"challenges-and-solutions":{"type":"header","text":"Challenges and Solutions","value":"challenges-and-solutions","line":9,"column":0,"depth":2},"dependency":{"type":"header","text":"Dependency","value":"dependency","line":11,"column":0,"depth":3},"intra-service-requests":{"type":"header","text":"Intra-service Requests","value":"intra-service-requests","line":13,"column":0,"depth":4},"client-libraries":{"type":"header","text":"Client Libraries","value":"client-libraries","line":30,"column":0,"depth":4},"data-persistence":{"type":"header","text":"Data Persistence","value":"data-persistence","line":32,"column":0,"depth":4},"infrastructure":{"type":"header","text":"Infrastructure","value":"infrastructure","line":41,"column":0,"depth":4},"scale":{"type":"header","text":"Scale","value":"scale","line":45,"column":0,"depth":3},"stateless-services":{"type":"header","text":"Stateless Services","value":"stateless-services","line":47,"column":0,"depth":4},"stateful-services":{"type":"header","text":"Stateful Services","value":"stateful-services","line":60,"column":0,"depth":4},"variance":{"type":"header","text":"Variance","value":"variance","line":71,"column":0,"depth":3},"operation-drift":{"type":"header","text":"Operation Drift","value":"operation-drift","line":73,"column":0,"depth":4},"polyglot--containers":{"type":"header","text":"Polyglot \u0026 Containers","value":"polyglot--containers","line":97,"column":0,"depth":4},"change":{"type":"header","text":"Change","value":"change","line":119,"column":0,"depth":3}},"children":[],"parent":"p6hffm3ptxx9esrk6z3wokl","data":{}},"body":"\u003ch1 id=\"mastering-chaos-a-netflix-guide-to-microservices\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#mastering-chaos-a-netflix-guide-to-microservices\"\u003e\u003c/a\u003eMastering Chaos a Netflix Guide to Microservices\u003c/h1\u003e\n\u003ch2 id=\"challenges-and-solutions\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#challenges-and-solutions\"\u003e\u003c/a\u003eChallenges and Solutions\u003c/h2\u003e\n\u003ch3 id=\"dependency\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#dependency\"\u003e\u003c/a\u003eDependency\u003c/h3\u003e\n\u003ch4 id=\"intra-service-requests\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#intra-service-requests\"\u003e\u003c/a\u003eIntra-service Requests\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eMicroservice A talking to Microservice B\u003c/li\u003e\n\u003cli\u003eProblems\n\u003cul\u003e\n\u003cli\u003eNetwork Latency, Congestion, failure\u003c/li\u003e\n\u003cli\u003eLogical or Scaling failure\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eSolutions\n\u003cul\u003e\n\u003cli\u003eHave a fallback service to call or at the very least a static response that allows the customer to carry on with their business\u003c/li\u003e\n\u003cli\u003efail fast, and return to the fallback or wait to recover\u003c/li\u003e\n\u003cli\u003e(FIT) Fault Injection Testing\n\u003cul\u003e\n\u003cli\u003eSynthetic Transactions\u003c/li\u003e\n\u003cli\u003eOverride by device or account\u003c/li\u003e\n\u003cli\u003e% of live traffic up to 100% (test a launched service under load from live customers)\u003c/li\u003e\n\u003cli\u003eEnforced thoughout the call\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eHow do we contrain testing scope?\n\u003cul\u003e\n\u003cli\u003ethe most critical services are identified as a group for barest functionality and a FIT reciepe is made and blacklists all non-essential services\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"client-libraries\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#client-libraries\"\u003e\u003c/a\u003eClient Libraries\u003c/h4\u003e\n\u003ch4 id=\"data-persistence\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#data-persistence\"\u003e\u003c/a\u003eData Persistence\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eCAP Theorem: \"In the presence of a network partition, you much choose between consistency and availability.\"\n\u003cul\u003e\n\u003cli\u003eIf you have 1 service needing to write to 3 databases, what if one write fails?\n\u003cul\u003e\n\u003cli\u003eDo you cancel the write? or do you write to what you can?\u003c/li\u003e\n\u003cli\u003eyou can aim for eventual consistency by writing to what databases you can and settle up later\u003c/li\u003e\n\u003cli\u003eThe client writes to one node which then orchestrates the writing to all the other nodes\n\u003cul\u003e\n\u003cli\u003e\"Local Quorum\"\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"infrastructure\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#infrastructure\"\u003e\u003c/a\u003eInfrastructure\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eHave redundant hosting across nodes to prevent catastrophic down time\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"scale\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#scale\"\u003e\u003c/a\u003eScale\u003c/h3\u003e\n\u003ch4 id=\"stateless-services\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#stateless-services\"\u003e\u003c/a\u003eStateless Services\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eIts not a cache or database\u003c/li\u003e\n\u003cli\u003efrequently accessed metadata\u003c/li\u003e\n\u003cli\u003eno instance affinity\u003c/li\u003e\n\u003cli\u003eloss of a node is a non-event\u003c/li\u003e\n\u003cli\u003eAutoscaling groups\n\u003cul\u003e\n\u003cli\u003eCompute efficiency\u003c/li\u003e\n\u003cli\u003eNode failure\u003c/li\u003e\n\u003cli\u003eTraffic Spikes\u003c/li\u003e\n\u003cli\u003ePerformance Bugs\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eChaos monkey tool test that when a node dies, the service continues to work\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"stateful-services\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#stateful-services\"\u003e\u003c/a\u003eStateful Services\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003edatabases and caches\u003c/li\u003e\n\u003cli\u003esometimes a custom app that holds large amounts of data (avoid storing business logic, and state within 1 application if you can avoid it)\u003c/li\u003e\n\u003cli\u003eloss of a node is a notable event\u003c/li\u003e\n\u003cli\u003eredundancy is fundemental\u003c/li\u003e\n\u003cli\u003eEVCache -\u003e difference nodes -\u003e each node has multiple shard caches\u003c/li\u003e\n\u003cli\u003eseparate out systems used for batch versus real time transactions\u003c/li\u003e\n\u003cli\u003edo request level caching\u003c/li\u003e\n\u003cli\u003ehave an encrypted token with the data to fall back on should the service be unavailable to updated the requested data\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"variance\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#variance\"\u003e\u003c/a\u003eVariance\u003c/h3\u003e\n\u003ch4 id=\"operation-drift\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#operation-drift\"\u003e\u003c/a\u003eOperation Drift\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003edrift over time\n\u003cul\u003e\n\u003cli\u003ealert thresholds\u003c/li\u003e\n\u003cli\u003etimeouts, retries, fallbacks\u003c/li\u003e\n\u003cli\u003ethroughput (RPS)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eAcross microservices\n\u003cul\u003e\n\u003cli\u003eReliability best practices\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eContinious learning and automation\n\u003cul\u003e\n\u003cli\u003eIncident --\u003e Resolution --\u003e Review --\u003e Remediation --\u003e Analysis --\u003e Best Practices? --\u003e Automation --\u003e Adoption\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eProduction Ready best practices\n\u003cul\u003e\n\u003cli\u003eAlerts\u003c/li\u003e\n\u003cli\u003eApache \u0026#x26; tomcat\u003c/li\u003e\n\u003cli\u003eAutomated canary Analysis\u003c/li\u003e\n\u003cli\u003eAutoscaling\u003c/li\u003e\n\u003cli\u003eChaos\u003c/li\u003e\n\u003cli\u003eConsistent naming\u003c/li\u003e\n\u003cli\u003eELB Config\u003c/li\u003e\n\u003cli\u003eHealthcheck\u003c/li\u003e\n\u003cli\u003eImmutable machine images\u003c/li\u003e\n\u003cli\u003eSqueeze testing\u003c/li\u003e\n\u003cli\u003eStaged, red/black deployments\u003c/li\u003e\n\u003cli\u003eTimeouts, retries, fallbacks\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"polyglot--containers\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#polyglot--containers\"\u003e\u003c/a\u003ePolyglot \u0026#x26; Containers\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eThe Paved Road (do this for a smooth experience)\n\u003cul\u003e\n\u003cli\u003eStash\u003c/li\u003e\n\u003cli\u003eNebula/Gradle\u003c/li\u003e\n\u003cli\u003eBaseAMI/Ubuntu\u003c/li\u003e\n\u003cli\u003eJenkins\u003c/li\u003e\n\u003cli\u003eSpinnaker\u003c/li\u003e\n\u003cli\u003eRuntime Platform\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eCost of Variance\n\u003cul\u003e\n\u003cli\u003eProductivity Tooling\u003c/li\u003e\n\u003cli\u003eInsight \u0026#x26; Triage Capabilities\u003c/li\u003e\n\u003cli\u003eBase Image Fragmentation\u003c/li\u003e\n\u003cli\u003eNode management\u003c/li\u003e\n\u003cli\u003eLibrary/Platform duplication\u003c/li\u003e\n\u003cli\u003eLearning curve - production expertise\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eStrategic Stance\n\u003cul\u003e\n\u003cli\u003eRaise awareness of costs\u003c/li\u003e\n\u003cli\u003eConstrain centralized support\u003c/li\u003e\n\u003cli\u003ePrioritize by impact\u003c/li\u003e\n\u003cli\u003eSeek reusable solutions\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"change\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#change\"\u003e\u003c/a\u003eChange\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eIntegrated, Automated practices\n\u003cul\u003e\n\u003cli\u003eConformity checks\u003c/li\u003e\n\u003cli\u003eRed/black pipelines\u003c/li\u003e\n\u003cli\u003eAutomated canaries\u003c/li\u003e\n\u003cli\u003eStaged deployments\u003c/li\u003e\n\u003cli\u003eSqueeze tests\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e","noteIndex":{"id":"root","title":"root","desc":"","updated":1641013093667,"created":1595961348801,"stub":false,"custom":{"stub":false,"nav_order":0,"permalink":"/"},"fname":"root","type":"note","vault":{"fsPath":"DevLog"},"contentHash":"b0b26527a2962dbb8bd5fb9a53ad702f","links":[],"anchors":{},"children":["rzqe5mjn3q2zfscw1roxr20","Bl9NeJmftBQJyJA3X4a6u","inm1S24v2GcN3Quf7gzDb","fmx7cfcdzale0ezna61yq5z","q6tr8q7gahfijix2ktlhcu3","yah6spesmpstech2ue2k3lq","6pxwlugphnw6vm4t8kn0j5p","i17wi8y2hgivywe08h6q6it","1st35wikvph2aew8aana21u","mijr0wvj3qz0mt9pv9xo1jv","qaf8v120h0ffvbowysjxw50","sh4851li2rsrhx47wwsirgv","fwqjigvqyfxiyl3pbpjvgdw","pxdvvln974xhe8w0alh0hoy","n6yddb1smrac5ll3l1y6wbd","g5dllyqoqkenoiz3opalzu6","kbwt8ucy0yh6bo8fl0kv9iw","beykavbe22agsufmm03hu0c","2uvuqa3c15o5r4j7sqadqvr","yr6gzhx0bhzyec6f52y66vf","4no90tcdswtuwmjm0bxnetx"],"parent":null,"data":{},"body":"\nThe hyperfixated rabbit hole diving knowledge base that is my brain looking at technology.\n"},"collectionChildren":null,"customHeadContent":null,"config":{"version":5,"dev":{"enablePreviewV2":true},"commands":{"lookup":{"note":{"selectionMode":"extract","confirmVaultOnCreate":true,"leaveTrace":false,"bubbleUpCreateNew":true,"fuzzThreshold":0.2,"vaultSelectionModeOnCreate":"smart"}},"randomNote":{},"insertNote":{"initialValue":"templates"},"insertNoteLink":{"aliasMode":"none","enableMultiSelect":false},"insertNoteIndex":{"enableMarker":false},"copyNoteLink":{},"templateHierarchy":"template"},"workspace":{"vaults":[{"fsPath":"sterkere","visibility":"private"},{"fsPath":"Norsk","visibility":"private"},{"fsPath":"DevLog"}],"journal":{"dailyDomain":"log","name":"daily","dateFormat":"yyyy.MM.dd","addBehavior":"childOfCurrent"},"scratch":{"name":"scratch","dateFormat":"yyyy.MM.dd.HHmmss","addBehavior":"asOwnDomain"},"task":{"todoIntegration":true,"name":"task","dateFormat":"yyyy.MM.dd","addBehavior":"asOwnDomain","statusSymbols":{"":" ","wip":"wip","done":"x","assigned":"a","moved":"m","blocked":"b","delegated":"l","dropped":"d","pending":"y"},"prioritySymbols":{"H":"high","M":"medium","L":"low"},"createTaskSelectionType":"selection2link","taskCompleteStatus":["done","x"]},"graph":{"zoomSpeed":1,"createStub":false},"enableAutoCreateOnDefinition":false,"enableXVaultWikiLink":false,"enableRemoteVaultInit":true,"enableUserTags":true,"enableHashTags":true,"workspaceVaultSyncMode":"noCommit","enableAutoFoldFrontmatter":false,"enableEditorDecorations":true,"maxPreviewsCached":10,"maxNoteLength":204800,"dendronVersion":"0.95.1","enableFullHierarchyNoteTitle":false,"enableHandlebarTemplates":false,"templateHierarchy":"template","enableSmartRefs":false},"preview":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enableMermaid":true,"enablePrettyRefs":true,"enableKatex":true,"automaticallyShowPreview":false,"enableFrontmatterTags":true,"enableHashesForFMTags":false},"publishing":{"theme":"custom","enableFMTitle":true,"enableNoteTitleForLink":true,"enableMermaid":true,"enablePrettyRefs":true,"enableKatex":true,"assetsPrefix":"/DevLog","copyAssets":true,"siteHierarchies":["root"],"enableSiteLastModified":true,"siteRootDir":"docs","siteUrl":"https://{GITHUB_USERNAME}.github.io","enableFrontmatterTags":true,"enableHashesForFMTags":false,"enableRandomlyColoredTags":true,"duplicateNoteBehavior":{"action":"useVault","payload":["DevLog"]},"writeStubs":false,"seo":{"title":"Dendron","description":"Personal knowledge space"},"github":{"enableEditLink":true,"editLinkText":"Edit this page on GitHub","editBranch":"master","editViewMode":"tree"},"enablePrettyLinks":true,"enableTaskNotes":true,"siteFaviconPath":"favicon.ico","siteIndex":"root"}}},"__N_SSG":true},"page":"/notes/[id]","query":{"id":"6baoi76mio8md4unhxb0105"},"buildId":"1h5ulSjjsPnt_rJPFXOd4","assetPrefix":"/DevLog","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

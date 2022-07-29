@@ -1,0 +1,17 @@
+<h1 id="strcmp"><a aria-hidden="true" class="anchor-heading icon-link" href="#strcmp"></a>Strcmp</h1>
+<h2 id="strcmp-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#strcmp-1"></a>strcmp()</h2>
+<p><code>strchr(sourceStr, searchChar)</code></p>
+<p>Returns <code>NULL</code> if <code>searchChar</code> does not exist in <code>sourceStr</code>. (Else, returns address of first occurrence, discussed elsewhere).
+<code>NULL</code> is defined in the cstring library.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Given:</span>
+<span class="token keyword">char</span> orgName<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"United Nations"</span><span class="token punctuation">;</span> 
+<span class="token keyword">char</span> userText<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"UNICEF"</span><span class="token punctuation">;</span> 
+<span class="token keyword">char</span> targetText<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strchr</span><span class="token punctuation">(</span>orgName<span class="token punctuation">,</span> <span class="token char">'U'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 'U' exists in orgName?</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token comment">// 'U' exists in "United Nations", branch taken</span>
+<span class="token punctuation">}</span>  
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strchr</span><span class="token punctuation">(</span>orgName<span class="token punctuation">,</span> <span class="token char">'u'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 'u' exists in orgName?</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token comment">// 'u' doesn't exist (case matters), branch not taken</span>
+<span class="token punctuation">}</span>
+</code></pre>

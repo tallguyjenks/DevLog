@@ -1,0 +1,16 @@
+<h1 id="question-extractor"><a aria-hidden="true" class="anchor-heading icon-link" href="#question-extractor"></a>Question Extractor</h1>
+<h2 id="projects"><a aria-hidden="true" class="anchor-heading icon-link" href="#projects"></a>Projects</h2>
+<p><strong>Question Extractor Written In Bash</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> -e <span class="token variable">$1</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+<span class="token assign-left variable">filename</span><span class="token operator">=</span><span class="token string">"Questions <span class="token variable">$1</span>"</span>
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> -Fc <span class="token string">'**Q**'</span> <span class="token string">"<span class="token variable">$1</span>"</span><span class="token variable">)</span></span>
+<span class="token assign-left variable">report</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$count</span> Questions extracted from <span class="token variable">$filename</span>"</span>
+<span class="token builtin class-name">printf</span> <span class="token string">"# <span class="token variable">$report</span> <span class="token entity" title="\n">\n</span> <span class="token entity" title="\n">\n</span>"</span> <span class="token operator">></span> <span class="token string">"./<span class="token variable">$filename</span>"</span>
+<span class="token function">grep</span> -Fn <span class="token string">'**Q**'</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> -e <span class="token string">'s/\*\*Q:*\*\*:*//g'</span> <span class="token operator">|</span> <span class="token function">sed</span> -e <span class="token string">'s/^/- /'</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$filename</span>"</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$report</span>
+<span class="token keyword">else</span>
+<span class="token builtin class-name">echo</span> Provide a <span class="token function">file</span> as an argument
+<span class="token keyword">fi</span>
+</code></pre>
+<p>This script will take a file as an input argument and then any lines it finds the text <code>**Q**</code> on it will extract into a list of questions in a new file called <code>questions_&#x3C;input file name></code> and also report in the CLI how many questions were extracted</p>

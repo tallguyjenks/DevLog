@@ -1,0 +1,16 @@
+<h1 id="defer"><a aria-hidden="true" class="anchor-heading icon-link" href="#defer"></a>Defer</h1>
+<h3 id="defer-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#defer-1"></a>Defer</h3>
+<p>with defer it will defer javascript execution until all the parsing is done, this way all the content is loaded and prepared before javascript begins to act upon them</p>
+<p>![[95397383-e9d4b200-08b7-11eb-9075-2acd110eb0a1.png)</p>
+<p>defer will run your deferred code before the document <code>onReady()</code> event. and it will stay in order and run when the page is done being parsed.</p>
+<p>To imitate the behavior of <code>defer</code> people commonly put their script tags in the end of the <code>&#x3C;/body></code> tag, with the <code>defer</code> keyword now though we can put the javascript files back in the <code>&#x3C;head></code> so they are easier to find but still have the same behavior as leaving them at the bottom.</p>
+<hr>
+<p>Defer is more reliable as it is ordered and you know when it will run. Async can be useful if you have small files that don't depend on anything that you want to have loaded whenever.</p>
+<hr>
+<pre class="language-html"><code class="language-html">// Normal
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+// Async
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">async</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+// Defer
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>

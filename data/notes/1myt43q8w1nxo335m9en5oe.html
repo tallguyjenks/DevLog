@@ -1,0 +1,161 @@
+<h1 id="ggplot2"><a aria-hidden="true" class="anchor-heading icon-link" href="#ggplot2"></a>Ggplot2</h1>
+<pre class="language-r"><code class="language-r"><span class="token comment">#### engine size / highway MPG ####</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> 
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# Play with changing color to size </span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> <span class="token comment">#-------------------------------# (discrete variable "class" to ordered aesthetic "Size" not advised)</span>
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   size <span class="token operator">=</span> class<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# Transparancy of the points</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   alpha <span class="token operator">=</span> class<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# Shape of the points</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   shape <span class="token operator">=</span> class<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# Add Colors by class and add this to the aesthetic layer</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   color <span class="token operator">=</span> class<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span> 
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# change color of the points</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+			 color <span class="token operator">=</span> <span class="token string">"blue"</span>
+			 <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# change size and color to continious variables and shape to a categorical variable</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   color <span class="token operator">=</span> year<span class="token punctuation">,</span> 
+						   size <span class="token operator">=</span> cyl<span class="token punctuation">,</span> 
+						   shape <span class="token operator">=</span> drv<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# Making the save variable cover multiple fields</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   color <span class="token operator">=</span> cyl<span class="token punctuation">,</span> 
+						   size <span class="token operator">=</span> cyl<span class="token punctuation">,</span> 
+						   shape <span class="token operator">=</span> drv<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# testing the "stroke" argument</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   color <span class="token operator">=</span> cyl<span class="token punctuation">,</span> 
+						   size <span class="token operator">=</span> cyl<span class="token punctuation">,</span> 
+						   shape <span class="token operator">=</span> drv<span class="token punctuation">,</span> 
+						   stroke <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>   
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# passing a condition into a aesthetic argument instead of the straight variable</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   color <span class="token operator">=</span> displ <span class="token operator">&#x3C;</span> <span class="token number">5</span><span class="token punctuation">,</span> 
+						   size <span class="token operator">=</span> cyl<span class="token punctuation">,</span> 
+						   shape <span class="token operator">=</span> drv<span class="token punctuation">,</span> 
+						   stroke <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>   
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# Highway MPg / Engine Cylinders</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> cyl<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# Type of car / What "Wheel Drive" the car is (F,B,4)</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> class<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> drv<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span>
+
+
+<span class="token comment">#### Facets on descrete variables ####</span>
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> 
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span> <span class="token operator">+</span>
+  facet_wrap<span class="token punctuation">(</span><span class="token operator">~</span> class<span class="token punctuation">,</span> nrow <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">#-------------------------------------# the tilda "~" means a formula not akin to an equation</span>
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# testing facet grid</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span>
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span> <span class="token operator">+</span>
+  facet_grid<span class="token punctuation">(</span>drv <span class="token operator">~</span> cyl<span class="token punctuation">)</span> 
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# testing facet grid 2</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span> <span class="token operator">+</span>
+  facet_grid<span class="token punctuation">(</span>. <span class="token operator">~</span> cyl<span class="token punctuation">)</span> <span class="token comment">#-----------------------------------------------# puts cyl facet into columns since argument is (r,c)</span>
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# testing facet grid 3</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span> <span class="token operator">+</span>
+  facet_grid<span class="token punctuation">(</span>drv <span class="token operator">~</span> .<span class="token punctuation">)</span> <span class="token comment">#-----------------------------------------------# puts drv facet into rows since argument is (r,c)</span>
+
+
+
+<span class="token comment">#### Changing Geoms ####</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> 
+  geom_smooth<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+							y <span class="token operator">=</span> hwy<span class="token punctuation">)</span>
+			  <span class="token punctuation">)</span> <span class="token comment">#-----------------------------------------------------# from point to smooth</span>
+
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# line type based on a variable</span>
+  geom_smooth<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+							y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+							linetype <span class="token operator">=</span> drv<span class="token punctuation">)</span>
+			  <span class="token punctuation">)</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">#--------------------------------------------------# line type based on a variable with points and colors to show the seperation</span>
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   color <span class="token operator">=</span> drv<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span> <span class="token operator">+</span> 
+  geom_smooth<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+							y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+							linetype <span class="token operator">=</span> drv<span class="token punctuation">,</span> 
+							color <span class="token operator">=</span> drv<span class="token punctuation">)</span>
+			  <span class="token punctuation">)</span>
+
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">,</span> mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span>
+							   y <span class="token operator">=</span> hwy<span class="token punctuation">)</span>
+	 <span class="token punctuation">)</span> <span class="token operator">+</span> 
+  geom_point<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_smooth<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> 
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_smooth<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+							y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+							linetype <span class="token operator">=</span> drv<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+			  show.legend <span class="token operator">=</span> F
+			  <span class="token punctuation">)</span>
+
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> mpg<span class="token punctuation">)</span> <span class="token operator">+</span> 
+  geom_point<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+						   y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+						   color <span class="token operator">=</span> drv<span class="token punctuation">)</span>
+			 <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_smooth<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> displ<span class="token punctuation">,</span> 
+							y <span class="token operator">=</span> hwy<span class="token punctuation">,</span> 
+							linetype <span class="token operator">=</span> drv<span class="token punctuation">,</span> 
+							color <span class="token operator">=</span> drv<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+			  show.legend <span class="token operator">=</span> F
+			  <span class="token punctuation">)</span>
+
+
+<span class="token comment">#### Bar Plots ####</span>
+
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> diamonds<span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_bar<span class="token punctuation">(</span>mapping <span class="token operator">=</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> cut<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+</code></pre>

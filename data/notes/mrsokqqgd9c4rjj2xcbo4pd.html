@@ -1,0 +1,9 @@
+<h1 id="mutate"><a aria-hidden="true" class="anchor-heading icon-link" href="#mutate"></a>Mutate</h1>
+<h3 id="mutate-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#mutate-1"></a>Mutate</h3>
+<pre class="language-r"><code class="language-r">mutate<span class="token punctuation">(</span>flights_small<span class="token punctuation">,</span> 
+gain <span class="token operator">=</span> arr_delay <span class="token operator">-</span> dep_delay<span class="token punctuation">,</span> <span class="token comment">#----------------------# Usage of "=" instead of &#x3C;- because its assigning that value to the variable</span>
+speed <span class="token operator">=</span> distance <span class="token operator">/</span> air_time <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token comment">#------------------# we're saying that this variable is "=" to this equation</span>
+hours <span class="token operator">=</span> air_time <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token comment">#-----------------------------# Not that we're assigning these valus to a vector</span>
+gain_per_hour <span class="token operator">=</span> gain <span class="token operator">/</span> hours <span class="token comment">#-----------------------# Can even use new variables made within mutate to create new variables</span>
+<span class="token punctuation">)</span> <span class="token comment">#--------------------------------------------------# if we had used "&#x3C;-" then it displayed the operator in the variable name </span>
+</code></pre>

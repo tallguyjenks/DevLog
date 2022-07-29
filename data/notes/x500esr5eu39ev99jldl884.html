@@ -1,0 +1,95 @@
+<h1 id="docker-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#docker-file"></a>Docker File</h1>
+<h2 id="tips"><a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a>Tips</h2>
+<ul>
+<li>consider each line of the docker a layer of the abstraction this comes into play in the next example.</li>
+<li>Docker files MUST start with <code>FROM</code> but after that you can also add data like:</li>
+</ul>
+<pre class="language-docker"><code class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> python:3.9.7</span>
+<span class="token instruction"><span class="token keyword">MAINTAINER</span> Bryan Jenks bryan@bryanjenks.dev</span>
+</code></pre>
+<ul>
+<li>When you build your docker image from a docker file with <a href="/DevLog/notes/wtaaf7vcd3pqwqxf9r6cwdr">Build</a> each command in the file create a new image and the layers are plastered on top, but each layer is cached so when you change things iteratively, only the changed items onward get re-ran. Essentially lazy loading.</li>
+</ul>
+<h2 id="base-example-of-having-to-install-all-your-dependencies-and-everything"><a aria-hidden="true" class="anchor-heading icon-link" href="#base-example-of-having-to-install-all-your-dependencies-and-everything"></a>Base example of having to install all your dependencies and everything</h2>
+<p>Negates the utility of docker if the image is not just "good to go" but here's how to do this</p>
+<hr>
+<pre class="language-docker"><code class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> python:3.9.7</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /usr/src/app</span>
+<span class="token instruction"><span class="token keyword">COPY</span> requirements.txt ./</span>
+<span class="token instruction"><span class="token keyword">RUN</span> pip install --no-cache-dir -r requirements.txt</span>
+<span class="token instruction"><span class="token keyword">COPY</span> . .</span>
+<span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">"uvicorn"</span>, <span class="token string">"app.main:app"</span>, <span class="token string">"--host"</span>, <span class="token string">"0.0.0.0"</span>, <span class="token string">"--port"</span>, <span class="token string">"8000"</span>]</span>
+</code></pre>
+<hr>
+<ul>
+<li><code>FROM python:3.9.7</code>
+<ul>
+<li>Specify what python version to run in the base image</li>
+<li>"python" is the image</li>
+<li>"3.9.7" is the version of that image</li>
+</ul>
+</li>
+<li><code>WORKDIR /usr/src/app</code>
+<ul>
+<li>"/usr/src" is a valid path in the image</li>
+<li>"/app" is the path we want to tack on and create for our app code</li>
+</ul>
+</li>
+<li><code>COPY requirements.txt ./</code>
+<ul>
+<li>Grab the requirements file into the image</li>
+</ul>
+</li>
+<li><code>RUN pip install --no-cache-dir -r requirements.txt</code>
+<ul>
+<li>Install dependencies</li>
+</ul>
+</li>
+<li><code>COPY . .</code>
+<ul>
+<li>"." first dot is current directory, second "." is <code>WORKDIR</code></li>
+<li>Move our source code into the image</li>
+<li>This is where layering comes into play, when you change source code files
+<ul>
+<li>The only thing that changed was source code so this step and below is what gets re-ran</li>
+</ul>
+</li>
+<li>Each layers results are cached, so when you change something it only re-runs steps where something has changed compared to the cached image layers.
+<ul>
+<li>Only changed source code? then only re-run the step where we copy over source code files</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]</code>
+<ul>
+<li>The array of commands to run once the image is spun up</li>
+<li>each array items is either a switch or a param</li>
+<li>essentially any time you have a space between anything in the command that is when you make a separate item in the array for it.</li>
+</ul>
+</li>
+</ul>
+<p>At this point you can now create the image using <a href="/DevLog/notes/wtaaf7vcd3pqwqxf9r6cwdr">Build</a></p>
+<h2 id="security"><a aria-hidden="true" class="anchor-heading icon-link" href="#security"></a>Security</h2>
+<p>Specify a <code>USER</code> in the docker file like <code>USER 1000</code> so that processes do not run as root and prevent potential security risk</p>
+<h2 id="multi-stage"><a aria-hidden="true" class="anchor-heading icon-link" href="#multi-stage"></a>Multi-Stage</h2>
+<p>Reduce container size by not building on top of a big image</p>
+<pre class="language-docker"><code class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> golang:1.14.2-alpine3.11 <span class="token keyword">AS</span> builder</span>
+<span class="token instruction"><span class="token keyword">ENV</span> GOPATH /go</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /<span class="token variable">$GOPATH</span>/src/croc-hunter/</span>
+<span class="token instruction"><span class="token keyword">COPY</span> croc-hunter.go /go/src/croc-hunter/</span>
+<span class="token instruction"><span class="token keyword">RUN</span> go get -d -v</span>
+<span class="token instruction"><span class="token keyword">RUN</span> go build -o /go/bin/croc-hunter</span>
+
+<span class="token instruction"><span class="token keyword">FROM</span> alpine:3.11 <span class="token keyword">AS</span> runtime</span>
+<span class="token instruction"><span class="token keyword">USER</span> 1000</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /app</span>
+<span class="token instruction"><span class="token keyword">COPY</span> static/ static/</span>
+<span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">builder</span></span> /go/bin/croc-hunter /app/croc-hunter</span>
+<span class="token instruction"><span class="token keyword">EXPOSE</span> 8080</span>
+<span class="token instruction"><span class="token keyword">CMD</span> [ <span class="token string">"/app/croc-hunter"</span> ]</span>
+</code></pre>
+<h2 id="dynamic-port-exposure"><a aria-hidden="true" class="anchor-heading icon-link" href="#dynamic-port-exposure"></a>Dynamic Port exposure</h2>
+<p>you can set the docker file to use <code>EXPOSE ${PORT}</code> in the docker file and then pass in that value during the <code>docker run</code> command. It also helps to have the deployed code rely on the environmental variable as well so everything is dynamic based on the arguments fed to the container:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run -e <span class="token assign-left variable">PORT</span><span class="token operator">=</span><span class="token number">3000</span> -p <span class="token number">3000</span>:3000 --name croc-hunter croc-hunter-port:1
+</code></pre>

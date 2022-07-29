@@ -1,0 +1,53 @@
+<h1 id="drop"><a aria-hidden="true" class="anchor-heading icon-link" href="#drop"></a>Drop</h1>
+<p><code>DROP TABLE</code> lets us Delete a table from a data base not just its data like <a href="/DevLog/notes/5buxn1k28igv61ytb6hteqh">T-SQL TRUNCATE</a> or <a href="/DevLog/notes/0hb1xgk1gqv1732u5tdkgpb">T-SQL DELETE</a>. Can add <code>IF EXISTS</code> starting from SQL Server 2016. cannot drop a table that is referenced by a foreign key constraint.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">TABLE</span> My_Table
+<span class="token comment">-- OR</span>
+<span class="token keyword">drop</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> My_Table
+</code></pre>
+<p>Similar to <a href="/DevLog/notes/wvrcd4y7atffap1akrr1tjv">Temp Tables</a> dropping where <code>IF NOT NULL</code> is similar to <code>IF EXISTS</code>:</p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Temp Tables</span></div>
+<a href="/DevLog/notes/wvrcd4y7atffap1akrr1tjv" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="temporary-tables"><a aria-hidden="true" class="anchor-heading icon-link" href="#temporary-tables"></a>Temporary Tables</h2>
+<p>Temp Tables are result sets that are stored in memory for the live of the connection session. There are two types:</p>
+<h3 id="local"><a aria-hidden="true" class="anchor-heading icon-link" href="#local"></a>Local</h3>
+<ul>
+<li>Only available for the session that created them.</li>
+<li>Deleted once the session is terminated.</li>
+<li>Denoted with a <code>#</code> prepended to the table name.</li>
+</ul>
+<h3 id="global"><a aria-hidden="true" class="anchor-heading icon-link" href="#global"></a>Global</h3>
+<ul>
+<li>Available for all sessions and users.</li>
+<li>Not deleted until the last session using them is terminated</li>
+<li>CAN be explicitly deleted</li>
+<li>Denoted with <code>##</code> prepended to the table name</li>
+</ul>
+<h2 id="benefits"><a aria-hidden="true" class="anchor-heading icon-link" href="#benefits"></a>Benefits</h2>
+<ul>
+<li>Stored in memory and are FAST</li>
+<li>Helps to modularize your code instead of monolithic queries</li>
+</ul>
+<h2 id="usage"><a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a>Usage</h2>
+<p>You CAN simply just create the new table but to use the tables iteratively while testing they need to be explicitly deleted for re-use. The best method for this is the following code:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">IF</span> OBJECT_ID<span class="token punctuation">(</span><span class="token string">'Tempdb.dbo.#table'</span><span class="token punctuation">)</span> <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token comment">#table</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">INTO</span> <span class="token comment">#table</span>
+<span class="token keyword">FROM</span> other_table
+<span class="token keyword">WHERE</span> Age <span class="token operator">></span> <span class="token number">55</span>
+</code></pre>
+<p>Template Version</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">IF</span> OBJECT_ID<span class="token punctuation">(</span><span class="token string">'Tempdb.dbo.#&#x3C;Temp Table Name, Table,>'</span><span class="token punctuation">)</span> <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token comment">#&#x3C;Temp Table Name, Table,></span>
+</code></pre></div></div><p></p><p></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/c3bo64ilgxhjfevf3ettvz2">Data Definition Language (DevLog)</a></li>
+</ul>

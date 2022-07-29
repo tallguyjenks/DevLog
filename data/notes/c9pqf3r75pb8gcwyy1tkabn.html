@@ -1,0 +1,22 @@
+<h1 id="title"><a aria-hidden="true" class="anchor-heading icon-link" href="#title"></a>Title</h1>
+<h2 id="title-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#title-1"></a>Title</h2>
+<p><code>\title{My {\LaTeX} R\'esum\'e}</code></p>
+<p>your title is defined in the title command but this is outsize of your document body, inside the document body you actually call:</p>
+<p><code>\maketitle</code></p>
+<p>to render your title onto the document</p>
+<p>you can customize the title with the <a href="/DevLog/notes/vx9hw5pk1wmfoaikopx8f6q">LaTeX Titling</a> package and the renewcommand command like so:</p>
+<pre class="language-latex"><code class="language-latex"><span class="token function selector">\renewcommand</span><span class="token punctuation">{</span><span class="token function selector">\maketitle</span><span class="token punctuation">}</span><span class="token punctuation">{</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">center</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token function selector">\huge</span><span class="token function selector">\bfseries</span>
+<span class="token function selector">\theauthor</span><span class="token punctuation">}</span>
+<span class="token function selector">\vspace</span><span class="token punctuation">{</span>.25em<span class="token punctuation">}</span>
+
+my email --- https://www.bryanjenks.xyz
+
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">center</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token comment">% first new arg from titling package</span>
+</code></pre>
+<h2 id="documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a>Documentation</h2>
+<ul>
+<li><a href="https://mirrors.concertpass.com/tex-archive/macros/latex/contrib/titlesec/titlesec.pdf">titlesec</a></li>
+</ul>

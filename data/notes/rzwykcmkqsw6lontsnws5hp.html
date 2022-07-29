@@ -1,0 +1,13 @@
+<h1 id="order-matters"><a aria-hidden="true" class="anchor-heading icon-link" href="#order-matters"></a>Order Matters</h1>
+<h2 id="order-matters-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#order-matters-1"></a>Order matters</h2>
+<p>If your API function has a path parameter then your other more specific paths need to come before it so that it doesnt think part of the path is the expected input parameter</p>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/posts/latest"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_latest_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    post <span class="token operator">=</span> my_posts<span class="token punctuation">[</span><span class="token builtin">len</span><span class="token punctuation">(</span>my_posts<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"detail"</span><span class="token punctuation">:</span> post<span class="token punctuation">}</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/posts/{id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_post</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    post <span class="token operator">=</span> find_post<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"post_detail"</span><span class="token punctuation">:</span> post<span class="token punctuation">}</span>
+</code></pre>

@@ -1,0 +1,49 @@
+<h1 id="static-methods"><a aria-hidden="true" class="anchor-heading icon-link" href="#static-methods"></a>Static Methods</h1>
+<h2 id="before"><a aria-hidden="true" class="anchor-heading icon-link" href="#before"></a>Before</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Calendar</span><span class="token punctuation">:</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>year <span class="token operator">=</span> date<span class="token punctuation">.</span>year
+        self<span class="token punctuation">.</span>month <span class="token operator">=</span> date<span class="token punctuation">.</span>month
+        self<span class="token punctuation">.</span>day <span class="token operator">=</span> date<span class="token punctuation">.</span>day
+        self<span class="token punctuation">.</span>weekday <span class="token operator">=</span> date<span class="token punctuation">.</span>weekday<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    
+    <span class="token keyword">def</span> <span class="token function">is_leap_year</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">or</span> 
+               <span class="token punctuation">(</span>self<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> self<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    
+    
+    <span class="token keyword">def</span> <span class="token function">is_weekend</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>weekday <span class="token operator">></span> <span class="token number">4</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/Pasted_image_20211213151355.png" alt="alt"></p>
+<p>We want to decouple the <code>is_weekend</code> and <code>is_leap_year</code> from the calendar class instance because they relate to any date not just that class instance.</p>
+<h2 id="after"><a aria-hidden="true" class="anchor-heading icon-link" href="#after"></a>After</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Calendar</span><span class="token punctuation">:</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>year <span class="token operator">=</span> date<span class="token punctuation">.</span>year
+        self<span class="token punctuation">.</span>month <span class="token operator">=</span> date<span class="token punctuation">.</span>month
+        self<span class="token punctuation">.</span>day <span class="token operator">=</span> date<span class="token punctuation">.</span>day
+        self<span class="token punctuation">.</span>weekday <span class="token operator">=</span> date<span class="token punctuation">.</span>weekday<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">is_leap_year</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> date<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">or</span> 
+        <span class="token punctuation">(</span>date<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> date<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    
+    
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">is_weekend</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> date<span class="token punctuation">.</span>weekday<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">4</span>
+</code></pre>
+<p>Ok, the changes are:</p>
+<ol>
+<li>Add the decorator <code>@staticmethod</code>;</li>
+<li>Rename the expected parameter to be a date object;</li>
+<li>Adjust the is_weekend function to get weekday as function and not variable.</li>
+</ol>
+<p>Usage:</p>
+<p><img src="/DevLog/assets/images/Pasted_image_20211213151513.png" alt="alt"></p>

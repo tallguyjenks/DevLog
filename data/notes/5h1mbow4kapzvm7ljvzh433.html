@@ -1,0 +1,19 @@
+<h1 id="copy-assignment-operator"><a aria-hidden="true" class="anchor-heading icon-link" href="#copy-assignment-operator"></a>Copy Assignment Operator</h1>
+<h2 id="copy-assignment-operator-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#copy-assignment-operator-1"></a>Copy Assignment Operator</h2>
+<blockquote>
+<p>The problem is that the assignment of <code>classObj2 = classObj1;</code> merely copied the pointer for <code>dataObj</code>, resulting in <code>classObj1's dataObj</code> and <code>classObj2's dataObj</code> members both pointing to the same memory location. Printing <code>classObj2</code> prints 9 but for the wrong reason, and if <code>classObj1's dataObj</code> value was later changed, <code>classObj2's dataObj</code> value would seemingly magically change too. Additionally, destroying <code>classObj1</code> frees that <code>dataObj's</code> memory; destroying <code>classObj2</code> then tries to free that same memory, causing a program crash. Furthermore, a memory leak has occurred because neither <code>dataObj</code> is pointing at location 81.
+.
+The solution is to overload the "<code>=</code>" operator by defining a new function, known as the <code>copy assignment operator</code> or sometimes just the <code>assignment operator</code>, that copies one class object to another. Such a function is typically defined as:</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+      MyClass<span class="token operator">&#x26;</span> <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> MyClass<span class="token operator">&#x26;</span> objToCopy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/5jr8tq2oaa2s17ru35cqt1z">Implementation</a></li>
+</ol>

@@ -1,0 +1,11 @@
+
+- [[p.doing.homelab.services.proxmox.lxe.mssql]]
+  - mailer service
+    - Setup DB mail profile for the mailer service
+    - made the table and objects
+    - Created the SQL agent job
+  - Create METRICS database and a heartbeat dashboard
+  - Add SSIS metrics tables to METRICS database under schema `ssis`
+- [[p.doing.homelab.services.proxmox.vm.win10-visualstudio]]
+  - spin up new VM to run Visual Studio
+    - Install SQL Server Data Tools

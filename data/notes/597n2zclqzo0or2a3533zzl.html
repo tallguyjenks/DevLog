@@ -1,0 +1,28 @@
+<h1 id="html-email-query-results"><a aria-hidden="true" class="anchor-heading icon-link" href="#html-email-query-results"></a>HTML Email Query Results</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@tableHTML</span> NVARCHAR<span class="token punctuation">(</span>MAX<span class="token punctuation">)</span> <span class="token operator">=</span>
+    N<span class="token string">'&#x3C;h1>Kells Monthly Invoice&#x3C;/h1>'</span> <span class="token operator">+</span> 
+    N<span class="token string">'&#x3C;table border="1">'</span> <span class="token operator">+</span> 
+        N<span class="token string">'&#x3C;tr>'</span> <span class="token operator">+</span>
+            N<span class="token string">'&#x3C;th>Date&#x3C;/th>'</span> <span class="token operator">+</span> 
+            N<span class="token string">'&#x3C;th>Source_Account&#x3C;/th>'</span> <span class="token operator">+</span> 
+            N<span class="token string">'&#x3C;th>Category&#x3C;/th>'</span> <span class="token operator">+</span> 
+            N<span class="token string">'&#x3C;th>Cashflow_In&#x3C;/th>'</span> <span class="token operator">+</span>
+            N<span class="token string">'&#x3C;th>Comment&#x3C;/th>'</span> <span class="token operator">+</span> 
+        N<span class="token string">'&#x3C;/tr>'</span>
+<span class="token keyword">SET</span> <span class="token variable">@tableHTML</span> <span class="token operator">=</span> <span class="token variable">@tableHTML</span> <span class="token operator">+</span> CAST<span class="token punctuation">(</span><span class="token punctuation">(</span>
+    <span class="token keyword">SELECT</span>
+    td <span class="token operator">=</span> <span class="token function">FORMAT</span><span class="token punctuation">(</span>GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'yyyy-MM'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    td <span class="token operator">=</span> Source_Account<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    td <span class="token operator">=</span> Category<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    td <span class="token operator">=</span> CAST<span class="token punctuation">(</span>Cashflow_In <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    td <span class="token operator">=</span> <span class="token keyword">Comment</span><span class="token punctuation">,</span> <span class="token string">''</span>
+	<span class="token keyword">FROM</span> <span class="token operator">&#x3C;</span><span class="token keyword">table</span><span class="token operator">></span>
+    <span class="token keyword">FOR</span> XML PATH<span class="token punctuation">(</span><span class="token string">'tr'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">TYPE</span> 
+<span class="token punctuation">)</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span>MAX<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@total</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">=</span> CAST<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">SUM</span><span class="token punctuation">(</span>Cashflow_In<span class="token punctuation">)</span> <span class="token keyword">FROM</span> <span class="token operator">&#x3C;</span><span class="token keyword">table</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">)</span>
+
+<span class="token keyword">SET</span> <span class="token variable">@tableHTML</span> <span class="token operator">=</span> <span class="token variable">@tableHTML</span> <span class="token operator">+</span> <span class="token string">'&#x3C;tr>&#x3C;td colspan="3" style="text-align:right;">TOTAL: &#x3C;/td>&#x3C;td>'</span> <span class="token operator">+</span> <span class="token variable">@total</span> <span class="token operator">+</span> <span class="token string">'&#x3C;/td>&#x3C;td>&#x3C;/td>&#x3C;/tr>'</span>
+
+<span class="token keyword">SET</span> <span class="token variable">@tableHTML</span> <span class="token operator">=</span> <span class="token variable">@tableHTML</span> <span class="token operator">+</span> <span class="token string">'&#x3C;/table>'</span>
+</code></pre>

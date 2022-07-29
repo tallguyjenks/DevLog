@@ -1,0 +1,12 @@
+<h1 id="get"><a aria-hidden="true" class="anchor-heading icon-link" href="#get"></a>Get</h1>
+<h3 id="get-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#get-1"></a>Get</h3>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/posts'</span><span class="token punctuation">)</span> <span class="token comment"># in this instance this data gets returned to the user at 127.0.0.1:8000/posts</span>
+<span class="token comment"># Due to granularity for the paths in the decorators if there are duplicates then the first one that matches is chosen</span>
+<span class="token keyword">def</span> <span class="token function">get_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"data"</span><span class="token punctuation">:</span> <span class="token string">"this is your posts"</span><span class="token punctuation">}</span>
+</code></pre>
+<h4 id="get-without-comments"><a aria-hidden="true" class="anchor-heading icon-link" href="#get-without-comments"></a>Get Without Comments</h4>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/posts'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"data"</span><span class="token punctuation">:</span> <span class="token string">"this is your posts"</span><span class="token punctuation">}</span>
+</code></pre>

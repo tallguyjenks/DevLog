@@ -1,0 +1,51 @@
+<h1 id="try-catch"><a aria-hidden="true" class="anchor-heading icon-link" href="#try-catch"></a>Try Catch</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">BEGIN</span> TRY
+<span class="token comment">--Process that may create an error</span>
+<span class="token keyword">END</span> TRY
+<span class="token keyword">BEGIN</span> CATCH
+<span class="token comment">--Process to handle error</span>
+<span class="token keyword">END</span> CATCH
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function Name</th><th>Function Definition</th></tr></thead><tbody><tr><td><code>ERROR_LINE</code></td><td>The line number the error occurred on.</td></tr><tr><td><code>ERROR_MESSAGE</code></td><td>Plain language description of the error.</td></tr><tr><td><code>ERROR_NUMBER</code></td><td>The number of the error.</td></tr><tr><td><code>ERROR_PROCEDURE</code></td><td>The name of the function or stored procedure that produced the error.</td></tr><tr><td><code>ERROR_SEVERITY</code></td><td>The severity value of the error.</td></tr><tr><td><code>ERROR_STATE</code></td><td>The state number of the error.</td></tr></tbody></table>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> demo
+
+<span class="token keyword">BEGIN</span> TRY
+<span class="token keyword">Print</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span>
+<span class="token keyword">END</span> TRY
+<span class="token keyword">BEGIN</span> CATCH
+<span class="token keyword">PRINT</span> <span class="token string">'Error '</span><span class="token operator">+</span>CAST<span class="token punctuation">(</span>ERROR_NUMBER<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">' '</span><span class="token operator">+</span>ERROR_MESSAGE<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">END</span> CATCH
+</code></pre>

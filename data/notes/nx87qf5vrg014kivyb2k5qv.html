@@ -1,0 +1,69 @@
+<h1 id="why-you-need-to-use-staticmethod-in-your-python-code-and-the-benefits-of-it"><a aria-hidden="true" class="anchor-heading icon-link" href="#why-you-need-to-use-staticmethod-in-your-python-code-and-the-benefits-of-it"></a>Why You Need to Use Staticmethod in Your Python Code and the Benefits of It</h1>
+<ul>
+<li><code>Author:</code> Felipe Florencio Garcia</li>
+<li><code>Link:</code> <a href="https://medium.com/dev-today/why-you-need-to-use-staticmethod-in-your-python-code-and-the-benefits-of-it-f777a5f21de6">https://medium.com/dev-today/why-you-need-to-use-staticmethod-in-your-python-code-and-the-benefits-of-it-f777a5f21de6</a></li>
+<li><code>Publish Date:</code> 2021.11.28</li>
+<li><code>Reviewed Date:</code> <a href="/DevLog/notes/5uubmv4lnzczsef1acdm232">13</a></li>
+</ul>
+<hr>
+<h2 id="before"><a aria-hidden="true" class="anchor-heading icon-link" href="#before"></a>Before</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Calendar</span><span class="token punctuation">:</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>year <span class="token operator">=</span> date<span class="token punctuation">.</span>year
+        self<span class="token punctuation">.</span>month <span class="token operator">=</span> date<span class="token punctuation">.</span>month
+        self<span class="token punctuation">.</span>day <span class="token operator">=</span> date<span class="token punctuation">.</span>day
+        self<span class="token punctuation">.</span>weekday <span class="token operator">=</span> date<span class="token punctuation">.</span>weekday<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    
+    <span class="token keyword">def</span> <span class="token function">is_leap_year</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">or</span> 
+               <span class="token punctuation">(</span>self<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> self<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    
+    
+    <span class="token keyword">def</span> <span class="token function">is_weekend</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>weekday <span class="token operator">></span> <span class="token number">4</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/Pasted_image_20211213151355.png" alt="alt"></p>
+<p>We want to decouple the <code>is_weekend</code> and <code>is_leap_year</code> from the calendar class instance because they relate to any date not just that class instance.</p>
+<h2 id="after"><a aria-hidden="true" class="anchor-heading icon-link" href="#after"></a>After</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Calendar</span><span class="token punctuation">:</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>year <span class="token operator">=</span> date<span class="token punctuation">.</span>year
+        self<span class="token punctuation">.</span>month <span class="token operator">=</span> date<span class="token punctuation">.</span>month
+        self<span class="token punctuation">.</span>day <span class="token operator">=</span> date<span class="token punctuation">.</span>day
+        self<span class="token punctuation">.</span>weekday <span class="token operator">=</span> date<span class="token punctuation">.</span>weekday<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">is_leap_year</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> date<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">or</span> 
+        <span class="token punctuation">(</span>date<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> date<span class="token punctuation">.</span>year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    
+    
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">is_weekend</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> date<span class="token punctuation">.</span>weekday<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">4</span>
+</code></pre>
+<p>Ok, the changes are:</p>
+<ol>
+<li>Add the decorator <code>@staticmethod</code>;</li>
+<li>Rename the expected parameter to be a date object;</li>
+<li>Adjust the is_weekend function to get weekday as function and not variable.</li>
+</ol>
+<p>Usage:</p>
+<p><img src="/DevLog/assets/images/Pasted_image_20211213151513.png" alt="alt"></p>
+<h2 id="benefits"><a aria-hidden="true" class="anchor-heading icon-link" href="#benefits"></a>Benefits</h2>
+<blockquote>
+<p><strong>The benefits of using it and when to use it.</strong>
+The most important to take from this decorator is the purpose of using it.
+You should consider this decorator when writing any function that you believe is connected to the “subject” or the class that you are using but do not necessarily need that “subject” or class where you created the function.
+By doing this you can decouple the function itself, but still, keep it organized and with a clear meaning for which purpose can be used.
+From now on, any piece of code that you want to be reusable, but, at the same time you want to make it clear the “meaning” of when or how it could be used you should consider using this decorator.</p>
+</blockquote>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/5uubmv4lnzczsef1acdm232">13 (DevLog)</a></li>
+</ul>

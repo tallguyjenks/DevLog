@@ -1,0 +1,11 @@
+<h1 id="between-predicate"><a aria-hidden="true" class="anchor-heading icon-link" href="#between-predicate"></a>Between Predicate</h1>
+<p>The <code>BETWEEN</code> predicate is used to signify an <strong>inclusive</strong> range of values for a condition. You use <code>BETWEEN</code> in conjunction with the <code>AND</code> operator to mark the 2 ranges your result values should fall between.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Age
+<span class="token keyword">FROM</span> Person
+<span class="token keyword">WHERE</span> Age <span class="token operator">BETWEEN</span> <span class="token number">55</span> <span class="token operator">AND</span> <span class="token number">65</span> <span class="token comment">-- This includes both the ages 55 and 65 as it is inclusive</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/gl3bs2qi7gyd62zksq9hiqw">The in Predicate (DevLog)</a></li>
+</ul>

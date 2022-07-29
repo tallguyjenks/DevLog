@@ -1,0 +1,48 @@
+<h1 id="schedule"><a aria-hidden="true" class="anchor-heading icon-link" href="#schedule"></a>Schedule</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> schedule
+<span class="token keyword">import</span> time
+
+<span class="token keyword">def</span> <span class="token function">job</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I'm working..."</span><span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>seconds<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>minutes<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hour<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>day<span class="token punctuation">.</span>at<span class="token punctuation">(</span><span class="token string">"10:30"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>minutes<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>monday<span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>wednesday<span class="token punctuation">.</span>at<span class="token punctuation">(</span><span class="token string">"13:15"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+schedule<span class="token punctuation">.</span>every<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>minute<span class="token punctuation">.</span>at<span class="token punctuation">(</span><span class="token string">":17"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>do<span class="token punctuation">(</span>job<span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+  schedule<span class="token punctuation">.</span>run_pending<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>
+<p>The package includes many other actions available from the main API including:</p>
+<ul>
+<li>Use a decorator to schedule a job</li>
+<li>Pass arguments to a job schedule.every(2).seconds.do(greet, name="Alice")</li>
+<li>Cancel a job</li>
+<li>Run a job once</li>
+<li>Get all jobs</li>
+<li>Cancel all jobs</li>
+<li>Get several jobs, filtered by tags</li>
+<li>Cancel several jobs, filtered by tags</li>
+<li>Run a job at random intervals</li>
+<li>Run a job until a certain time</li>
+<li>Time until the next execution</li>
+<li>Run all jobs now, regardless of their scheduling</li>
+</ul>
+</li>
+<li>
+<p>Reference:</p>
+<ul>
+<li><a href="/DevLog/notes/he19m0ch9o60rru3kco9yty">An Extremely Simple Way to Schedule Programs with Python on Windows</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/he19m0ch9o60rru3kco9yty">An Extremely Simple Way to Schedule Programs with Python on Windows (DevLog)</a></li>
+</ul>

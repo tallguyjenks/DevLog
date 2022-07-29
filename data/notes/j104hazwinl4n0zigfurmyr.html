@@ -1,0 +1,9 @@
+<h1 id="rank-over-partition"><a aria-hidden="true" class="anchor-heading icon-link" href="#rank-over-partition"></a>Rank over Partition</h1>
+<pre class="language-sql"><code class="language-sql">RANK <span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span> <span class="token punctuation">[</span> partition_by_clause <span class="token punctuation">]</span> order_by_clause <span class="token punctuation">)</span>
+</code></pre>
+<p>From <a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/rank-transact-sql?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/t-sql/functions/rank-transact-sql?view=sql-server-ver15</a> </p>
+<p><strong>Example:</strong></p>
+<pre class="language-sql"><code class="language-sql">RANK<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> PersonID <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> createdDate <span class="token keyword">DESC</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'Rank'</span>
+</code></pre>
+<p>Partition records based on <code>personID</code> this means for each <code>personID</code> each record set will be grouped by that then operated on as groupings.</p>
+<p>Order by <code>createdDate</code> date means that for each <code>personID</code> group starting at 1 each record will be ranked in descending order based on the <code>createdDate</code></p>

@@ -1,0 +1,22 @@
+<h1 id="dockerfile-tutorial-by-example-basics-and-best-practices-2018"><a aria-hidden="true" class="anchor-heading icon-link" href="#dockerfile-tutorial-by-example-basics-and-best-practices-2018"></a>Dockerfile Tutorial by Example Basics and Best Practices 2018</h1>
+<ul>
+<li>
+<p><code>URL:</code> <a href="https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/">https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/</a></p>
+<ul>
+<li><a href="https://youtu.be/6Er8MAvTWlI">https://youtu.be/6Er8MAvTWlI</a></li>
+<li><a href="https://youtu.be/ZcMr4G5DH7c">https://youtu.be/ZcMr4G5DH7c</a></li>
+</ul>
+</li>
+<li>
+<p><code>Author:</code> Márk Takács</p>
+</li>
+<li>
+<p>Docker files MUST start with <code>FROM</code> but after that you can also add data like:</p>
+</li>
+</ul>
+<pre class="language-docker"><code class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> python:3.9.7</span>
+<span class="token instruction"><span class="token keyword">MAINTAINER</span> Bryan Jenks bryan@bryanjenks.dev</span>
+</code></pre>
+<ul>
+<li>When you build your docker image from a docker file with <a href="/DevLog/notes/wtaaf7vcd3pqwqxf9r6cwdr">Build</a> each command in the file create a new image and the layers are plastered on top, but each layer is cached so when you change things iteratively, only the changed items onward get re-ran. Essentially lazy loading.</li>
+</ul>

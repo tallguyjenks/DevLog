@@ -1,0 +1,13 @@
+<h1 id="qrcode"><a aria-hidden="true" class="anchor-heading icon-link" href="#qrcode"></a>Qrcode</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> qrcode
+img <span class="token operator">=</span> qrcode<span class="token punctuation">.</span>make<span class="token punctuation">(</span><span class="token string">'https://www.bryanjenks.dev'</span><span class="token punctuation">)</span>
+img<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">"some_file.png"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>had to <code>pip install qrcode</code>  and also a package dependency <code>pip install Image</code>
+produced this image, which when scanned goes to the the URL:</p>
+<p><img src="/DevLog/assets/images/Pasted_image_20211103105409.png" alt="alt"></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/wlchweuztn6xealvcvj7xnm">03 (DevLog)</a></li>
+</ul>

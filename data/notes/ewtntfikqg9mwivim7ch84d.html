@@ -1,0 +1,134 @@
+<h1 id="classes-with-vectors"><a aria-hidden="true" class="anchor-heading icon-link" href="#classes-with-vectors"></a>Classes with Vectors</h1>
+<h2 id="classes-with-vectors-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#classes-with-vectors-1"></a>Classes with vectors</h2>
+<h3 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h3>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;vector></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">/*** Seat class definition ***/</span>
+<span class="token keyword">class</span> <span class="token class-name">Seat</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+   <span class="token keyword">void</span> <span class="token function">Reserve</span><span class="token punctuation">(</span>string resfirstName<span class="token punctuation">,</span> string resLastName<span class="token punctuation">,</span> <span class="token keyword">int</span> resAmountPaid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">void</span> <span class="token function">MakeEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">bool</span> <span class="token function">IsEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   <span class="token keyword">void</span> <span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   
+<span class="token keyword">private</span><span class="token operator">:</span>
+   string firstName<span class="token punctuation">;</span>
+   string lastName<span class="token punctuation">;</span>
+   <span class="token keyword">int</span>    amountPaid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token class-name">Seat</span><span class="token double-colon punctuation">::</span><span class="token function">Reserve</span><span class="token punctuation">(</span>string resfirstName<span class="token punctuation">,</span> string resLastName<span class="token punctuation">,</span> <span class="token keyword">int</span> resAmountPaid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   firstName  <span class="token operator">=</span> resfirstName<span class="token punctuation">;</span>
+   lastName   <span class="token operator">=</span> resLastName<span class="token punctuation">;</span>
+   amountPaid <span class="token operator">=</span> resAmountPaid<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">Seat</span><span class="token double-colon punctuation">::</span><span class="token function">MakeEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   firstName  <span class="token operator">=</span> <span class="token string">"empty"</span><span class="token punctuation">;</span>
+   lastName   <span class="token operator">=</span> <span class="token string">"empty"</span><span class="token punctuation">;</span>
+   amountPaid <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">bool</span> <span class="token class-name">Seat</span><span class="token double-colon punctuation">::</span><span class="token function">IsEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span><span class="token punctuation">(</span>firstName <span class="token operator">==</span> <span class="token string">"empty"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">Seat</span><span class="token double-colon punctuation">::</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> firstName <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" "</span> <span class="token operator">&#x3C;&#x3C;</span> lastName  <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">", "</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Paid: "</span>  <span class="token operator">&#x3C;&#x3C;</span> amountPaid <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*** End definitions for Seat class ***/</span>
+
+
+<span class="token comment">/*** Functions for vector of Seat objects ***/</span>
+<span class="token keyword">void</span> <span class="token function">SeatsMakeEmpty</span><span class="token punctuation">(</span>vector<span class="token operator">&#x3C;</span>Seat<span class="token operator">></span><span class="token operator">&#x26;</span> seats<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">unsigned</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> seats<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      seats<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MakeEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">SeatsPrint</span><span class="token punctuation">(</span>vector<span class="token operator">&#x3C;</span>Seat<span class="token operator">></span> seats<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">unsigned</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> seats<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> i <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">": "</span><span class="token punctuation">;</span>
+      seats<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">SeatsCreateReservation</span><span class="token punctuation">(</span>vector<span class="token operator">&#x3C;</span>Seat<span class="token operator">></span><span class="token operator">&#x26;</span> seats<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   string firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> amountPaid <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token keyword">unsigned</span> <span class="token keyword">int</span> seatNum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   Seat seat<span class="token punctuation">;</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter seat number (0.."</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> seats<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"): "</span><span class="token punctuation">;</span>
+   cin  <span class="token operator">>></span> seatNum<span class="token punctuation">;</span>
+   
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>seatNum <span class="token operator">></span> <span class="token punctuation">(</span>seats<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Seat number too large."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span><span class="token punctuation">(</span>seats<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span>seatNum<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">IsEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Seat already occupied."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter first name: "</span><span class="token punctuation">;</span>
+      cin <span class="token operator">>></span> firstName<span class="token punctuation">;</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter last name: "</span><span class="token punctuation">;</span>
+      cin <span class="token operator">>></span> lastName<span class="token punctuation">;</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter amount paid: "</span><span class="token punctuation">;</span>
+      cin <span class="token operator">>></span> amountPaid<span class="token punctuation">;</span>
+      
+      seat<span class="token punctuation">.</span><span class="token function">Reserve</span><span class="token punctuation">(</span>firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">,</span> amountPaid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      seats<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span>seatNum<span class="token punctuation">)</span> <span class="token operator">=</span> seat<span class="token punctuation">;</span>
+      
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Completed."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*** End functions for vector of Seat objs ***/</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">char</span>   userKey <span class="token operator">=</span> <span class="token char">'-'</span><span class="token punctuation">;</span>
+   vector<span class="token operator">&#x3C;</span>Seat<span class="token operator">></span> <span class="token function">seats</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token function">SeatsMakeEmpty</span><span class="token punctuation">(</span>seats<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">while</span> <span class="token punctuation">(</span>userKey <span class="token operator">!=</span> <span class="token char">'q'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> endl <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter command (p/r/q): "</span><span class="token punctuation">;</span>
+      cin <span class="token operator">>></span> userKey<span class="token punctuation">;</span>
+      
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>userKey <span class="token operator">==</span> <span class="token char">'p'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Print seats</span>
+         <span class="token function">SeatsPrint</span><span class="token punctuation">(</span>seats<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userKey <span class="token operator">==</span> <span class="token char">'r'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Reserve seat</span>
+         <span class="token function">SeatsCreateReservation</span><span class="token punctuation">(</span>seats<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userKey <span class="token operator">==</span> <span class="token char">'q'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Quit</span>
+         cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Quitting."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">else</span> <span class="token punctuation">{</span>
+         cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Invalid command."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

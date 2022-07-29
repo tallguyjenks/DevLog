@@ -1,0 +1,68 @@
+<h1 id="funcs"><a aria-hidden="true" class="anchor-heading icon-link" href="#funcs"></a>Funcs</h1>
+<h4 id="functions-in-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#functions-in-bash"></a>Functions In Bash</h4>
+<ul>
+<li><a href="/DevLog/notes/l09l80ykmy6wps89tpllouv">Vars</a> assigned outside of functions can be overwritten in functions and display aberrant results if local isn't used.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">foo</span><span class="token operator">=</span><span class="token string">"bar"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"top level: <span class="token variable">$foo</span>"</span>
+
+<span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token assign-left variable">foo</span><span class="token operator">=</span><span class="token string">"func bar"</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">"func <span class="token variable">$foo</span>"</span>
+<span class="token punctuation">}</span>
+main
+<span class="token builtin class-name">echo</span> <span class="token string">"end <span class="token variable">$foo</span>"</span>
+
+<span class="token comment"># OUTPUT:</span>
+<span class="token comment">#> top level: bar</span>
+<span class="token comment">#> func func bar</span>
+<span class="token comment">#> end func bar</span>
+
+<span class="token comment">#===#===#===#===#===#===#</span>
+
+<span class="token assign-left variable">foo</span><span class="token operator">=</span><span class="token string">"bar"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"top level: <span class="token variable">$foo</span>"</span>
+
+<span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token builtin class-name">local</span> <span class="token assign-left variable">foo</span><span class="token operator">=</span><span class="token string">"func bar"</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">"func <span class="token variable">$foo</span>"</span>
+<span class="token punctuation">}</span>
+main
+<span class="token builtin class-name">echo</span> <span class="token string">"end <span class="token variable">$foo</span>"</span>
+
+<span class="token comment"># OUTPUT:</span>
+<span class="token comment">#> top level: bar</span>
+<span class="token comment">#> func func bar</span>
+<span class="token comment">#> end bar</span>
+</code></pre>
+<ul>
+<li>Do not use the function keyword, it reduces compatibility with older versions of bash.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Right.</span>
+<span class="token function-name function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment"># ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Wrong.</span>
+<span class="token keyword">function</span> <span class="token function-name function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment"># ...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Current function.</span>
+<span class="token string">"<span class="token variable">${FUNCNAME<span class="token punctuation">[</span>0<span class="token punctuation">]</span>}</span>"</span>
+
+<span class="token comment"># Parent function.</span>
+<span class="token string">"<span class="token variable">${FUNCNAME<span class="token punctuation">[</span>1<span class="token punctuation">]</span>}</span>"</span>
+
+<span class="token comment"># So on and so forth.</span>
+<span class="token string">"<span class="token variable">${FUNCNAME<span class="token punctuation">[</span>2<span class="token punctuation">]</span>}</span>"</span>
+<span class="token string">"<span class="token variable">${FUNCNAME<span class="token punctuation">[</span>3<span class="token punctuation">]</span>}</span>"</span>
+
+<span class="token comment"># All functions including parents.</span>
+<span class="token string">"<span class="token variable">${FUNCNAME<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/vf6x9qplh6e3drbivl462q2">Cmd List (DevLog)</a></li>
+</ul>

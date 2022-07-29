@@ -1,0 +1,102 @@
+<h1 id="in-oop"><a aria-hidden="true" class="anchor-heading icon-link" href="#in-oop"></a>In Oop</h1>
+<h3 id="in-oop-code"><a aria-hidden="true" class="anchor-heading icon-link" href="#in-oop-code"></a>In OOP Code</h3>
+<blockquote>
+<p>items can have their operations, <code>__add__</code> == <code>( + )</code> have their operations of arithmatic assignments <code>__iadd__</code> == <code>( += )</code> and If one of those methods does not support the operation with the supplied arguments, it should return <code>NotImplemented</code> == <code>__radd__</code>.</p>
+</blockquote>
+<ul>
+<li><code>__add__</code> == <code>( + )</code> <a href="/DevLog/notes/twkesp6sjz42887rxak1irq">__add__</a></li>
+<li><code>__sub__</code> == <code>( - )</code></li>
+<li><code>__mul__</code> == <code>( * )</code></li>
+<li><code>__matmul__</code> == <code>( @ )</code></li>
+<li><code>__truediv__</code> == <code>( \ )</code></li>
+<li><code>__floordiv__</code> == <code>( \\ )</code></li>
+<li><code>__mod__</code> == <code>( % )</code></li>
+<li><code>__divmod__</code> == <code>divmod()</code></li>
+<li><code>__pow__</code> == <code>( ** )</code></li>
+<li><code>__lshift__</code> == <code>( &#x3C;&#x3C; )</code></li>
+<li><code>__rshift__</code> == <code>( >> )</code></li>
+<li><code>__and__</code> == <code>( &#x26; )</code></li>
+<li><code>__xor__</code> == <code>( ^ )</code></li>
+<li><code>__or__</code> == <code>( | )</code></li>
+<li><code>__lt__</code> == <code>( &#x3C; )</code></li>
+<li><code>__le__</code> == <code>( &#x3C;= )</code></li>
+<li><code>__eq__</code> == <code>( == )</code></li>
+<li><code>__ne__</code> == <code>( != )</code></li>
+<li><code>__gt__</code> == <code>( > )</code></li>
+<li><code>__ge__</code> == <code>( >= )</code></li>
+<li><code>__neg__</code> == <code>( - )</code></li>
+<li><code>__pos__</code> == <code>( + )</code></li>
+<li><code>__abs__</code> == <code>abs()</code></li>
+<li><code>__invert__</code> == <code>( ~ )</code></li>
+<li><code>__complex__</code> == <code>complex()</code></li>
+<li><code>__int__</code> == <code>int()</code></li>
+<li><code>__float__</code> == <code>float()</code></li>
+<li><code>__index__</code> <a href="https://docs.python.org/3/reference/datamodel.html#object.__index__">https://docs.python.org/3/reference/datamodel.html#object.__index__</a></li>
+<li><code>__round__</code> == <code>round()</code></li>
+<li><code>__trunc__</code> == <code>math.trunc()</code></li>
+<li><code>__floor__</code> == <code>math.floor()</code></li>
+<li><code>__ceil__</code> == <code>math.ceil()</code></li>
+<li><a href="/DevLog/notes/rxc3ivxk2vs6v6mv9tvgfio">Dictionary Dunders</a>
+<ul>
+<li><code>__setitem__</code> When assigning values in a dictionary</li>
+<li><code>__getitem__</code> Executed when we run the <code>dict['key']</code> type of operation</li>
+<li><code>__delitem__</code> ran when deleting a dictionary value <code>del dict['key']</code></li>
+<li><code>__contains__</code> Executed when we run the <code>in</code> operator <code>if item in class_instance:</code></li>
+<li><code>__len__</code> Is called if we ran a <code>len()</code> operation on our class instance </li>
+</ul>
+</li>
+<li><code>__call__</code> if <code>instance = Class()</code> then <code>__call__</code> is ran when we do: <code>instance()</code> right after</li>
+<li><code>__init__</code> init function is run as soon as a class instance is generated. It's the constructor.</li>
+<li><code>__post_init__</code> used in <a href="/DevLog/notes/z8z79s4uyfj2a9glnx3903p">Data Classes</a> for after <code>__init__</code> as thats overwritten by data class</li>
+<li><code>__getattr__</code> Called when the default attribute access fails with an AttributeError</li>
+<li><code>__getattribute__</code> Called unconditionally to implement attribute accesses for instances of the class. 
+<ul>
+<li>If the class also defines <code>__getattr__()</code>, the latter will not be called unless 
+<ul>
+<li><code>__getattribute__()</code> either calls it explicitly or raises an AttributeError.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>__setattr__</code> Called when an attribute assignment is attempted. 
+<ul>
+<li>This is called instead of the normal mechanism (i.e. store the value in the instance dictionary).</li>
+</ul>
+</li>
+<li><code>__delattr__</code> Like <code>__setattr__()</code> but for attribute deletion instead of assignment. 
+<ul>
+<li>This should only be implemented if <code>del obj.name</code> is meaningful for the object.</li>
+</ul>
+</li>
+<li><code>__dir__</code> Called when <code>dir()</code> is called on the object. A sequence must be returned. 
+<ul>
+<li>dir() converts the returned sequence to a list and sorts it.</li>
+</ul>
+</li>
+<li><code>__format__</code> when the class is being formatted in an fstring for with <code>.format()</code></li>
+<li><code>__bool__</code> <a href="https://docs.python.org/3/reference/datamodel.html#object.__bool__">https://docs.python.org/3/reference/datamodel.html#object.__bool__</a></li>
+<li><code>__del__</code> The destructor of the class and what runs when attempting to <code>del instance</code></li>
+<li><code>__bytes__</code> Computes a byte-string representation of an object. This should return a bytes object.</li>
+<li><code>__format__</code> produces a “formatted” string representation of an object.</li>
+<li><code>__hash__</code> <a href="https://docs.python.org/3/reference/datamodel.html#object.__hash__">https://docs.python.org/3/reference/datamodel.html#object.__hash__</a></li>
+<li><code>__repr__</code> Returns a representation of an object instance as a string <a href="/DevLog/notes/ld4pbjywez2frk1gs389ciy">__repr__</a></li>
+<li><code>__str__</code> when not defined it calls <code>__repr__</code> by default to represent the instance as a string <a href="/DevLog/notes/clkz5qctm2lnzuxalz2hath">__str__</a></li>
+<li><code>__unicode__</code> New preferred method compared to <code>__str__</code> in python 2
+<ul>
+<li>Python 3 uses unicode and therefore defaults to the <code>__str__</code> method </li>
+</ul>
+</li>
+<li><code>__enter__</code> Enter the runtime context related to this object using the <code>with</code> statement</li>
+<li><code>__exit__</code> Exit the runtime context related to this object</li>
+<li><code>__reversed__</code> not used with slice <code>[::-1]</code> but rather with <code>reversed()</code></li>
+<li><code>__slots__</code> <a href="https://medium.com/@stephenjayakar/a-quick-dive-into-pythons-slots-72cdc2d334e">https://medium.com/@stephenjayakar/a-quick-dive-into-pythons-slots-72cdc2d334e</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/rxc3ivxk2vs6v6mv9tvgfio">Dictionary Dunders</a></li>
+<li><a href="/DevLog/notes/twkesp6sjz42887rxak1irq">__add__</a></li>
+<li><a href="/DevLog/notes/lg4jt42uq8r0q47uok8w4kv">__new__</a></li>
+<li><a href="/DevLog/notes/ld4pbjywez2frk1gs389ciy">__repr__</a></li>
+<li><a href="/DevLog/notes/clkz5qctm2lnzuxalz2hath">__str__</a></li>
+</ol>

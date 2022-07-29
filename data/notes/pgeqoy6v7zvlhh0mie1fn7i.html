@@ -1,0 +1,50 @@
+<h1 id="decorators"><a aria-hidden="true" class="anchor-heading icon-link" href="#decorators"></a>Decorators</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">hello_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		result <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+		<span class="token keyword">return</span> result
+<span class="token keyword">return</span> wrapper
+
+<span class="token decorator annotation punctuation">@hello_decorator</span>
+<span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">return</span> a <span class="token operator">+</span> b 
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+	output <span class="token operator">=</span> add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/Pasted_image_20210916111645.png" alt="alt"></p>
+<ul>
+<li><a href="https://youtu.be/r7Dtus7N4pI">Python Decorators in 15 Minutes</a> | <a href="https://calmcode.io/decorators/introduction.html">Calm Code Decorators</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">#💻️/⭐ (Private)</a> </li>
+<li><a href="https://sureshdsk.dev/python-decorators-101">Decorators 101</a></li>
+<li><a href="https://sureshdsk.dev/python-decorators-201">Decorators 201</a>
+<ul>
+<li>To get the correct doc strings and indicate that wrapping has occurred on the given function we can use the <a href="/DevLog/notes/1diy2pbnwi7mbwpjub9gens">Functools</a> module with the <code>wraps</code> function</li>
+</ul>
+</li>
+<li><a href="https://sureshdsk.dev/python-decorators-with-parameters">Decorators with params</a>
+<ul>
+<li>Useful with using Classes so the extra param passing boiler plate can be avoided</li>
+</ul>
+</li>
+<li><a href="https://betterprogramming.pub/3-essential-decorators-in-python-you-need-to-know-654650bd5c36">3 Essential Decorators in Python You Need To Know</a></li>
+<li>Can use logging decorators with <a href="/DevLog/notes/1diy2pbnwi7mbwpjub9gens">Functools</a> to log data changes:</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+<span class="token keyword">import</span> datetime <span class="token keyword">as</span> dt
+
+<span class="token keyword">def</span> <span class="token function">log_step</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token decorator annotation punctuation">@wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+  <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	  tic <span class="token operator">=</span> dt<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	  result <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+	  time_taken <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>dt<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> tic<span class="token punctuation">)</span>
+	  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"just ran step </span><span class="token interpolation"><span class="token punctuation">{</span>func<span class="token punctuation">.</span>__name__<span class="token punctuation">}</span></span><span class="token string"> shape=</span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">.</span>shape<span class="token punctuation">}</span></span><span class="token string"> took </span><span class="token interpolation"><span class="token punctuation">{</span>time_taken<span class="token punctuation">}</span></span><span class="token string">s"</span></span><span class="token punctuation">)</span>
+	  <span class="token keyword">return</span> result
+  <span class="token keyword">return</span> wrapper
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/rcymyutvngehlnmawjnz6un">Wrapper Functions (DevLog)</a></li>
+</ul>

@@ -1,0 +1,25 @@
+<h1 id="nslookup"><a aria-hidden="true" class="anchor-heading icon-link" href="#nslookup"></a>Nslookup</h1>
+<h2 id="details"><a aria-hidden="true" class="anchor-heading icon-link" href="#details"></a>Details</h2>
+<p>In a Windows environment, you can troubleshoot <a href="/DevLog/notes/84pi5u7op8dg5x5x008k304">DNS</a> with the <code>nslookup</code> command, either interactively or from the command prompt.</p>
+<pre class="language-powershell"><code class="language-powershell">nslookup <span class="token operator">-</span>Option Host Server
+</code></pre>
+<h2 id="usage"><a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a>Usage</h2>
+<pre class="language-powershell"><code class="language-powershell">nslookup <span class="token operator">-</span><span class="token function">type</span>=mx widget<span class="token punctuation">.</span>com 8<span class="token punctuation">.</span>8<span class="token punctuation">.</span>8<span class="token punctuation">.</span>8
+</code></pre>
+<h2 id="powershell-dns-resolution"><a aria-hidden="true" class="anchor-heading icon-link" href="#powershell-dns-resolution"></a>Powershell DNS resolution</h2>
+<h3 id="resolve-host"><a aria-hidden="true" class="anchor-heading icon-link" href="#resolve-host"></a>Resolve Host</h3>
+<pre class="language-powershell"><code class="language-powershell"><span class="token function">Resolve-DnsName</span> host
+</code></pre>
+<h3 id="resolve-host-using-the-same-method-as-the-windows-client"><a aria-hidden="true" class="anchor-heading icon-link" href="#resolve-host-using-the-same-method-as-the-windows-client"></a>Resolve host using the same method as the Windows client</h3>
+<pre class="language-powershell"><code class="language-powershell"><span class="token function">Resolve-DnsName</span> host <span class="token operator">-</span>NoHostsFile
+</code></pre>
+<h3 id="resolve-host-but-without-using-any-entries-from-the-hosts-file-in-the-local-cache"><a aria-hidden="true" class="anchor-heading icon-link" href="#resolve-host-but-without-using-any-entries-from-the-hosts-file-in-the-local-cache"></a>Resolve host but without using any entries from the HOSTS file in the local cache</h3>
+<pre class="language-powershell"><code class="language-powershell"><span class="token function">Resolve-DnsName</span> host <span class="token operator">-</span>DnsOnly
+</code></pre>
+<h3 id="resolve-host-using-only-the-dns-server"><a aria-hidden="true" class="anchor-heading icon-link" href="#resolve-host-using-only-the-dns-server"></a>Resolve host using only the DNS server</h3>
+<pre class="language-powershell"><code class="language-powershell"><span class="token operator">-</span>Server IPofDNSserver
+</code></pre>
+<h2 id="additional"><a aria-hidden="true" class="anchor-heading icon-link" href="#additional"></a>Additional</h2>
+<p>It is also possible to search DNS for records other than <a href="/DevLog/notes/yr3p6bdowqu1apq53soc3m0">A</a> or <a href="/DevLog/notes/iylukv51arpntiszmk6dgfl">Aaaa</a> records. For example, to show only Mail Exchange records in a specific domain, use the cmdlet:</p>
+<pre class="language-powershell"><code class="language-powershell"><span class="token function">Resolve-DnsName</span> domain-<span class="token function">Type</span> MX
+</code></pre>

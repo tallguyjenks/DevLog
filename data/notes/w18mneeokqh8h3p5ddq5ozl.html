@@ -1,0 +1,21 @@
+<h1 id="destructuring"><a aria-hidden="true" class="anchor-heading icon-link" href="#destructuring"></a>Destructuring</h1>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Before:</span>
+<span class="token keyword">var</span> width <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> height <span class="token operator">=</span> <span class="token number">400</span><span class="token punctuation">;</span>
+
+<span class="token comment">// After:</span>
+<span class="token keyword">let</span> <span class="token punctuation">[</span>width<span class="token punctuation">,</span> height<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// before: </span>
+<span class="token keyword">const</span> <span class="token function-variable function">calculateArea</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">areaParameters</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> areaParameters<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> areaParameters<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token function">calculateArea</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// or for better naming in older functions:</span>
+<span class="token keyword">const</span> <span class="token function-variable function">calculateArea</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>width<span class="token punctuation">,</span> height<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> width <span class="token operator">*</span> height
+<span class="token function">calculateArea</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/z7ttjzpaawtowwhofdvag95">Ecmascript 2015 (DevLog)</a></li>
+</ul>

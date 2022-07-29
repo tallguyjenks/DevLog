@@ -1,0 +1,58 @@
+<h1 id="while"><a aria-hidden="true" class="anchor-heading icon-link" href="#while"></a>While</h1>
+<h2 id="syntax"><a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a>Syntax</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">WHILE</span> CONDITION
+<span class="token keyword">BEGIN</span>
+   CODE
+   <span class="token keyword">BREAK</span> <span class="token comment">--Optional</span>
+   <span class="token keyword">CONTINUE</span> <span class="token comment">--Optional</span>
+<span class="token keyword">END</span>
+</code></pre>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">WHILE</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token punctuation">[</span>OrderQty<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">FROM</span> <span class="token comment">#SalesOrderDetail ) &#x3C; 300000</span>
+<span class="token keyword">BEGIN</span> 
+   <span class="token keyword">UPDATE</span> <span class="token comment">#SalesOrderDetail SET [OrderQty] = [OrderQty] + 1000</span>
+ 
+   <span class="token keyword">IF</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">MAX</span><span class="token punctuation">(</span>OrderQty<span class="token punctuation">)</span> <span class="token keyword">FROM</span> <span class="token comment">#SalesOrderDetail) > 3000</span>
+      <span class="token keyword">BREAK</span>
+   <span class="token keyword">ELSE</span>
+      <span class="token keyword">CONTINUE</span>
+<span class="token keyword">END</span>
+</code></pre>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@counter</span> <span class="token keyword">INT</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">WHILE</span> <span class="token punctuation">(</span> <span class="token variable">@counter</span> <span class="token operator">&#x3C;=</span> <span class="token number">5</span> <span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+	<span class="token keyword">PRINT</span> <span class="token string">'Too much for the market to bear'</span>
+	<span class="token keyword">PRINT</span> <span class="token string">'@counter value is:'</span> <span class="token operator">+</span> CAST<span class="token punctuation">(</span><span class="token variable">@counter</span> <span class="token keyword">AS</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">)</span>
+	<span class="token keyword">SET</span> <span class="token variable">@counter</span> <span class="token operator">=</span> <span class="token variable">@counter</span> <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token keyword">END</span> <span class="token punctuation">;</span>
+</code></pre>
+<h2 id="while-example"><a aria-hidden="true" class="anchor-heading icon-link" href="#while-example"></a>While Example</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@count</span> <span class="token keyword">smallint</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">WHILE</span> <span class="token variable">@count</span><span class="token operator">&#x3C;</span><span class="token number">100</span>
+<span class="token keyword">BEGIN</span>
+  <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token comment">#email VALUES(@count,CONCAT('user',FLOOR(RAND()*1000),'@outlook.com'))</span>
+  <span class="token keyword">SET</span> <span class="token variable">@count</span><span class="token operator">=</span><span class="token variable">@count</span><span class="token operator">+</span><span class="token number">1</span>
+<span class="token keyword">END</span>
+</code></pre>
+<p><code>WHILE</code> is not as efficient as <a href="/DevLog/notes/3o34ak88zde0pwjwvzdy992">Common Table Expressions</a></p>
+<h2 id="cte-example"><a aria-hidden="true" class="anchor-heading icon-link" href="#cte-example"></a>CTE Example</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">WITH</span> numbergenerator <span class="token punctuation">(</span>id<span class="token punctuation">,</span> email<span class="token punctuation">)</span> <span class="token keyword">AS</span>
+<span class="token punctuation">(</span>
+   <span class="token keyword">SELECT</span> <span class="token number">1</span> <span class="token keyword">AS</span> id<span class="token punctuation">,</span> CONCAT<span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span>floor<span class="token punctuation">(</span><span class="token number">1000</span><span class="token operator">*</span>RAND<span class="token punctuation">(</span>CHECKSUM<span class="token punctuation">(</span>NEWID<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'@outlook.com'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> email
+   <span class="token keyword">UNION</span> <span class="token keyword">ALL</span>
+   <span class="token keyword">SELECT</span> ng<span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token number">1</span>  <span class="token keyword">AS</span> id<span class="token punctuation">,</span> CONCAT<span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span>floor<span class="token punctuation">(</span><span class="token number">1000</span><span class="token operator">*</span>RAND<span class="token punctuation">(</span>CHECKSUM<span class="token punctuation">(</span>NEWID<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'@outlook.com'</span><span class="token punctuation">)</span>
+   <span class="token keyword">FROM</span> numbergenerator ng
+   <span class="token keyword">WHERE</span> ng<span class="token punctuation">.</span>id <span class="token operator">&#x3C;</span> <span class="token number">100</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span>  <span class="token operator">*</span>
+<span class="token keyword">INTO</span> <span class="token comment">#numbergenerator</span>
+<span class="token keyword">FROM</span> numbergenerator ng<span class="token punctuation">;</span>
+GO
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/f6wx02gwrpmg9job7qwdbjt">2022-01-10 (DevLog)</a></li>
+<li><a href="/DevLog/notes/p763tkl7akzozhdhdlp3dcs">For (DevLog)</a></li>
+</ul>

@@ -1,0 +1,32 @@
+<h1 id="sqlite3"><a aria-hidden="true" class="anchor-heading icon-link" href="#sqlite3"></a>Sqlite3</h1>
+<ul>
+<li><a href="https://devdocs.io/python~3.9/library/sqlite3">https://devdocs.io/python~3.9/library/sqlite3</a></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> sqlite3
+conn <span class="token operator">=</span> sqlite3<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">"example.db"</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'create table Persons (id int, name text, city text)'</span><span class="token punctuation">)</span>
+c<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'insert into Persons VALUES (1, "smith", "dallas")'</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> sqlite3
+conn <span class="token operator">=</span> sqlite3<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">'example.db'</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+x <span class="token operator">=</span> c<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"select * from Persons"</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">u'smith'</span><span class="token punctuation">,</span> <span class="token string">u'dallas'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/3bdozm7cneyn6qdm36x2t1a">CLI</a></li>
+<li><a href="/DevLog/notes/oc8enfobe5f3ack25dcnle5">Tools</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/77x7bz5t145jchqt2b0hdcq">25 (DevLog)</a></li>
+<li><a href="/DevLog/notes/ugjs02wgibmfucwbfgbnj1g">28 (DevLog)</a></li>
+<li><a href="/DevLog/notes/sgz9e7xxiy63kurq5uej64r">Sql Alchemy (DevLog)</a></li>
+</ul>

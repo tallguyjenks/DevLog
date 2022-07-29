@@ -1,0 +1,67 @@
+<h1 id="vectors"><a aria-hidden="true" class="anchor-heading icon-link" href="#vectors"></a>Vectors</h1>
+<h2 id="vectors-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#vectors-1"></a>Vectors</h2>
+<pre class="language-r"><code class="language-r"><span class="token comment">#vectors ----</span>
+<span class="token comment">#5 types</span>
+<span class="token comment"># Logical</span>
+<span class="token comment"># Integer</span>
+<span class="token comment"># Numeric 'value greater than 7 digits will always be converted to the exponential format</span>
+<span class="token comment"># Complex</span>
+<span class="token comment"># Character</span>
+
+<span class="token comment">#============#</span>
+<span class="token comment">#  EXAMPLES  #----</span>
+<span class="token comment">#============#</span>
+
+<span class="token comment">#Logical</span>
+vtr1 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token boolean">TRUE</span><span class="token punctuation">,</span><span class="token boolean">FALSE</span><span class="token punctuation">)</span>
+
+<span class="token comment">#Numeric</span>
+vtr2 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">85.674954</span><span class="token punctuation">,</span><span class="token number">999999</span><span class="token punctuation">)</span>
+
+<span class="token comment">#Integer requires "L" after number to treat as integer</span>
+vtr3 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">35L</span><span class="token punctuation">,</span><span class="token number">58L</span><span class="token punctuation">,</span><span class="token number">146L</span><span class="token punctuation">)</span>
+
+<span class="token comment">#Integer with decemals converted with warning to numeric</span>
+vtr4 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">85.64L</span><span class="token punctuation">)</span>
+
+<span class="token comment">#Wrong data types passed to vector</span>
+vtr5 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token boolean">TRUE</span><span class="token punctuation">,</span><span class="token number">35L</span><span class="token punctuation">,</span><span class="token number">3.14</span><span class="token punctuation">)</span> <span class="token comment">#TRUE will be converted to Boolean 1 if put into a Numeric/Integer Vector</span>
+
+<span class="token comment">#now incude a character string</span>
+vtr6 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token boolean">TRUE</span><span class="token punctuation">,</span><span class="token number">35L</span><span class="token punctuation">,</span><span class="token number">3.14</span><span class="token punctuation">,</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+
+<span class="token comment">#===========#</span>
+<span class="token comment">#  Results  #----</span>
+<span class="token comment">#===========#</span>
+
+class<span class="token punctuation">(</span>vtr1<span class="token punctuation">)</span>
+vtr1
+class<span class="token punctuation">(</span>vtr2<span class="token punctuation">)</span>
+vtr2
+class<span class="token punctuation">(</span>vtr3<span class="token punctuation">)</span>
+vtr3
+class<span class="token punctuation">(</span>vtr4<span class="token punctuation">)</span>
+vtr4
+class<span class="token punctuation">(</span>vtr5<span class="token punctuation">)</span>
+vtr5
+class<span class="token punctuation">(</span>vtr6<span class="token punctuation">)</span>
+vtr6
+
+<span class="token comment"># Vector Math ----</span>
+
+numbers <span class="token operator">&#x3C;-</span> c<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">)</span>
+numbers <span class="token operator">*</span> <span class="token number">2</span>
+
+<span class="token comment"># Subsetting Vectors ----</span>
+
+days <span class="token operator">&#x3C;-</span> c<span class="token punctuation">(</span><span class="token string">"mon"</span><span class="token punctuation">,</span> <span class="token string">"tue"</span><span class="token punctuation">,</span> <span class="token string">"wed"</span><span class="token punctuation">,</span> <span class="token string">"thurs"</span><span class="token punctuation">,</span> <span class="token string">"fri"</span><span class="token punctuation">)</span>
+days
+<span class="token comment"># to return a specific value of a vector in square brackets after its object holding the vector</span>
+<span class="token comment"># use square brackets and the index of the value to pull out a subset of a vector</span>
+days<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment"># square brackets are ALWAYS for subsetting the parens "()" are for functions</span>
+days<span class="token punctuation">[</span>c<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment">#vector within the sub setting brackets to pull out specific values</span>
+days<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token comment">#if you wanted everything except monday</span>
+days<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token comment">#basically saying "give me everything except what's in index 5" or in this case "Friday</span>
+
+</code></pre>

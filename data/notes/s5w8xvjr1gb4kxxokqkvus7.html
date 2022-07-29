@@ -1,0 +1,27 @@
+<h1 id="includes"><a aria-hidden="true" class="anchor-heading icon-link" href="#includes"></a>Includes()</h1>
+<center>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/R8rmfD9Y5-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<p>Given data:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Bike'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">100</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'TV'</span><span class="token punctuation">,</span>       <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">200</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Album'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">10</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Book'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">5</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Phone'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">500</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Computer'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Keyboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">25</span>   <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="includes-method"><a aria-hidden="true" class="anchor-heading icon-link" href="#includes-method"></a>Includes Method</h2>
+<p>When you have a simple array and you just want to find out where a value is contained within it. Simple question, simple answer.</p>
+<hr>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> includesTwo <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>includesTwo<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Result:</strong></p>
+<blockquote>
+<p>true</p>
+</blockquote>

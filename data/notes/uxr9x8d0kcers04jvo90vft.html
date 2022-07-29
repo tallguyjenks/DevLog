@@ -1,0 +1,38 @@
+<h1 id="json"><a aria-hidden="true" class="anchor-heading icon-link" href="#json"></a>Json</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> json
+
+<span class="token comment"># json.load(f) load json from a file or file like object</span>
+<span class="token comment"># json.loads(s) load json data from a string</span>
+<span class="token comment"># json.dump(j, f) write json objects to file or file like object</span>
+<span class="token comment"># json.dumps(j) output json object as string</span>
+
+json_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"sample.json"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+
+movie <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>json_file<span class="token punctuation">)</span>
+json_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>movie<span class="token punctuation">)</span>
+
+<span class="token builtin">type</span><span class="token punctuation">(</span>movie<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>movie<span class="token punctuation">[</span><span class="token string">"title"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+value <span class="token operator">=</span> <span class="token triple-quoted-string string">"""{
+  "title":"Tron: Legacy",
+  "release_year":2010,
+  "won_oscar":false,
+  "actors": null,
+  "budget":170000000,
+  "composer":"Daft Punk"
+  }"""</span>
+tron <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>tron<span class="token punctuation">)</span>
+
+json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>movie<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>movie<span class="token punctuation">)</span><span class="token punctuation">)</span>
+`
+
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/4mcn5po13rxmj1t3onywtjd">Guidelines (DevLog)</a></li>
+</ul>

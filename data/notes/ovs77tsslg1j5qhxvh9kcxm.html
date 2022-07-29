@@ -1,0 +1,59 @@
+<h1 id="if-else"><a aria-hidden="true" class="anchor-heading icon-link" href="#if-else"></a>If Else</h1>
+<h2 id="single-branch"><a aria-hidden="true" class="anchor-heading icon-link" href="#single-branch"></a>Single-Branch</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Statements that execute before the branches</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>expression<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment">// Statements to execute when the expression is true (first branch)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   <span class="token comment">// Statements to execute when the expression is false (second branch)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Statements that execute after the branches</span>
+</code></pre>
+<h2 id="multi-branch"><a aria-hidden="true" class="anchor-heading icon-link" href="#multi-branch"></a>Multi-Branch</h2>
+<p>The more branches you add to an If-Statement the more it becomes advantageous to just use a case statement^[<a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Case Statements (Private)</a>]</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span>expr1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>expr2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>exprN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="short-circuit-evaluation"><a aria-hidden="true" class="anchor-heading icon-link" href="#short-circuit-evaluation"></a>Short Circuit Evaluation</h2>
+<blockquote>
+<p>A logical operator evaluates operands from left to right. <strong>Short circuit evaluation</strong> skips evaluating later operands if the result of the logical operator can already be determined.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Operator</th><th>Example</th><th>Short Circuit Evaluation</th></tr></thead><tbody><tr><td>operand1 &#x26;&#x26; operand2</td><td>true &#x26;&#x26; operand2</td><td>If the first operand evaluates to true, operand2 is evaluated.</td></tr><tr><td>operand1 &#x26;&#x26; operand2</td><td>false &#x26;&#x26; operand2</td><td>If the first operand evaluates to false, the result of the AND operation is always false, so operand2 is not evaluated.</td></tr><tr><td>operand1 || operand2</td><td>true || operand2</td><td>If the first operand evaluates to true, the result of the OR operation is always true, so operand2 is not evaluated.</td></tr><tr><td>operand1 || operand2</td><td>false ||operand2</td><td>If the first operand evaluates to false, operand2 is evaluated.</td></tr></tbody></table>

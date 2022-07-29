@@ -1,0 +1,14 @@
+<h1 id="root"><a aria-hidden="true" class="anchor-heading icon-link" href="#root"></a>Root</h1>
+<h3 id="api-root"><a aria-hidden="true" class="anchor-heading icon-link" href="#api-root"></a>API Root</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># This is a path operation / or also called a route</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token comment"># this actually converts this function into an API end point that the user can access</span>
+<span class="token comment">#    │   └──── The path operation, this is what happens when the users goes to the root, it path was `/login` then the user would only get here if they went to our site and `/login`</span>
+<span class="token comment">#   └───────── The GET HTTP method is used to retrieve data from a server</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">root</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"Hello from my API"</span><span class="token punctuation">}</span> <span class="token comment"># fastapi automatically converts to JSON</span>
+</code></pre>
+<h4 id="root-without-comments"><a aria-hidden="true" class="anchor-heading icon-link" href="#root-without-comments"></a>Root Without Comments</h4>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">root</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"Hello from my API"</span><span class="token punctuation">}</span>
+</code></pre>

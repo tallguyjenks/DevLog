@@ -1,0 +1,25 @@
+<h1 id="pipe"><a aria-hidden="true" class="anchor-heading icon-link" href="#pipe"></a>Pipe</h1>
+<h2 id="pandas-pipe"><a aria-hidden="true" class="anchor-heading icon-link" href="#pandas-pipe"></a>Pandas Pipe</h2>
+<hr>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'https://calmcode.io/datasets/bigmac.csv'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">set_dtypes</span><span class="token punctuation">(</span>dataf<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>dataf
+		  <span class="token punctuation">.</span>assign<span class="token punctuation">(</span>date<span class="token operator">=</span><span class="token keyword">lambda</span> d<span class="token punctuation">:</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>d<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		  <span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'currency_code'</span><span class="token punctuation">,</span> <span class="token string">'date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">remove_outliers</span><span class="token punctuation">(</span>dataf<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  min_row_country<span class="token operator">=</span><span class="token number">32</span>
+  countries <span class="token operator">=</span> <span class="token punctuation">(</span>dataf
+			  <span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'currency_code'</span><span class="token punctuation">)</span>
+			  <span class="token punctuation">.</span>agg<span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'count'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			  <span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token keyword">lambda</span> d<span class="token punctuation">:</span> d<span class="token punctuation">[</span><span class="token string">'n'</span><span class="token punctuation">]</span> <span class="token operator">>=</span> min_row_country<span class="token punctuation">]</span>
+			  <span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>dataf
+		  <span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token keyword">lambda</span> d<span class="token punctuation">:</span> d<span class="token punctuation">[</span><span class="token string">'currency_code'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span>countries<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+df<span class="token punctuation">.</span>pipe<span class="token punctuation">(</span>set_dtypes<span class="token punctuation">)</span><span class="token punctuation">.</span>pipe<span class="token punctuation">(</span>remove_outliers<span class="token punctuation">)</span>
+</code></pre>
+<hr>

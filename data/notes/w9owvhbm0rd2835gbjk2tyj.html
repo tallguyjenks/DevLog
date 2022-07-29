@@ -1,0 +1,15 @@
+<h1 id="fabs"><a aria-hidden="true" class="anchor-heading icon-link" href="#fabs"></a>Fabs</h1>
+<h2 id="fabs-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#fabs-1"></a>fabs()</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">double</span> bodyTemp <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+
+cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter body temperature in Fahrenheit: "</span><span class="token punctuation">;</span>
+cin <span class="token operator">>></span> bodyTemp<span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">fabs</span><span class="token punctuation">(</span>bodyTemp <span class="token operator">-</span> <span class="token number">98.6</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;</span> <span class="token number">0.0001</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Temperature is exactly normal."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>bodyTemp <span class="token operator">></span> <span class="token number">98.6</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Temperature is above normal."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Temperature is below normal."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

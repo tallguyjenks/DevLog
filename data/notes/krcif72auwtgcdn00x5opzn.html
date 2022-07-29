@@ -1,0 +1,17 @@
+<h1 id="scope-resolution-operator"><a aria-hidden="true" class="anchor-heading icon-link" href="#scope-resolution-operator"></a>Scope Resolution Operator</h1>
+<h2 id="scope-resolution-operator-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#scope-resolution-operator-1"></a>Scope Resolution Operator</h2>
+<p>in the class we may declare member functions but if there is a lot of logic we don't want to crowd the class so we may take advantage of the <code>Scope Resolution Operator</code>: <code>::</code>. Similar to how <code>R</code> code uses <code>::</code> to access functions from specific packages. We do this by putting a Functions in the class declaration and then the Functions below which houses all the logic:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">void</span>   <span class="token function">SetTime</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeRunSecs<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Time run in seconds</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// end of the class declaration</span>
+
+<span class="token comment">// "RunnerInfo::" means SetTime is a RunnerInfo member function</span>
+<span class="token keyword">void</span> <span class="token class-name">RunnerInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetTime</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeRunSecs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   timeRun <span class="token operator">=</span> timeRunSecs<span class="token punctuation">;</span>  <span class="token comment">// timeRun refers to data member</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>If a member function has the word <code>const</code> after its declaration like: </p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">double</span> <span class="token function">GetSpeedMph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>            <span class="token comment">// Speed in miles/hour</span>
+</code></pre>
+<p>from the Example above, then this means that this member function cannot change the value of any data member or else an error is thrown.</p>

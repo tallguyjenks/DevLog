@@ -1,0 +1,28 @@
+<h1 id="create"><a aria-hidden="true" class="anchor-heading icon-link" href="#create"></a>Create</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">Database</span><span class="token punctuation">.</span><span class="token keyword">schema</span><span class="token punctuation">.</span>table_name
+<span class="token punctuation">(</span>	ID <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token keyword">IDENTITY</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	Name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ 	Misc <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>The primary key here is using the <a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/identity-function-transact-sql?view=sql-server-ver15">Identity()</a> function.</p>
+<p>The default setting is that this table will have a Clustered index</p>
+<p>we can override this explicitly with:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">Database</span><span class="token punctuation">.</span><span class="token keyword">schema</span><span class="token punctuation">.</span>table_name
+<span class="token punctuation">(</span>	ID <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">IDENTITY</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	Name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ 	Misc <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+ 	<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token keyword">NONCLUSTERED</span>
+ 	<span class="token punctuation">(</span>
+		ID <span class="token keyword">ASC</span>
+	<span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p><a href="https://docs.microsoft.com/en-us/sql/relational-databases/indexes/create-clustered-indexes?view=sql-server-ver15">MSDN Docs</a> recommend that most situations unless explicitly defined should just use clustered indexes</p>
+<h3 id="script-new-table"><a aria-hidden="true" class="anchor-heading icon-link" href="#script-new-table"></a>Script new table</h3>
+<p>If creating a new table with similar structure to an existing one, right click the existing table in SSMS <code>SCRIPT TABLE AS</code> --> <code>CREATE TO</code> --> <code>NEW QUERY EDITOR WINDOW</code></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/c3bo64ilgxhjfevf3ettvz2">Data Definition Language (DevLog)</a></li>
+</ul>

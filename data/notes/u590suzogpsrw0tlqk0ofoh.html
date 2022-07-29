@@ -1,0 +1,56 @@
+<h1 id="level-up-your-python-code-with-abstract-classes"><a aria-hidden="true" class="anchor-heading icon-link" href="#level-up-your-python-code-with-abstract-classes"></a>Level up Your Python Code with Abstract Classes</h1>
+<ul>
+<li><code>Link:</code> <a href="https://python.plainenglish.io/level-up-your-python-code-with-abstract-classes-7f7f6bdcbb5c">https://python.plainenglish.io/level-up-your-python-code-with-abstract-classes-7f7f6bdcbb5c</a></li>
+<li><code>Publish Date:</code> 2021-10-17</li>
+<li><code>Reviewed Date:</code> <a href="/DevLog/notes/hud6uw8wwi8ndecwedow0w4">10</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>you should use abstract classes to specify which methods must be implemented by the child classes. The abc module "make sure" that you implement all those methods before being able to instantiate the objects.</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">animate</span><span class="token punctuation">(</span>animal<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>animal<span class="token punctuation">.</span>get_sound<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> leg <span class="token keyword">in</span> animal<span class="token punctuation">.</span>legs_number<span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Moving leg"</span><span class="token punctuation">,</span> leg<span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Moved!"</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> abc <span class="token keyword">import</span> ABC<span class="token punctuation">,</span> abstractmethod
+
+<span class="token keyword">class</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span>ABC<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	
+	<span class="token decorator annotation punctuation">@abstractmethod</span>
+	<span class="token keyword">def</span> <span class="token function">get_sound</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+		<span class="token keyword">pass</span>
+	
+	<span class="token decorator annotation punctuation">@property</span> <span class="token comment">#  you need to add the @propertydecorator both in the abstract class and in every sub-class.</span>
+	<span class="token decorator annotation punctuation">@abstractmethod</span>
+	<span class="token keyword">def</span> <span class="token function">legs_number</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+		<span class="token keyword">pass</span>
+
+<span class="token comment"># >>>a = Animal()</span>
+<span class="token comment"># Traceback (most recent call last):</span>
+<span class="token comment">#   File "c:\abstract_class.py", line 9, in &#x3C;module></span>
+<span class="token comment">#     a = Animal()</span>
+<span class="token comment"># TypeError: Can't instantiate abstract class Animal with abstract method get_sound</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span>Animal<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	
+	<span class="token keyword">def</span> <span class="token function">get_sound</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> <span class="token string">"Meow"</span>
+	
+	<span class="token decorator annotation punctuation">@property</span> <span class="token comment">#  you need to add the @propertydecorator both in the abstract class and in every sub-class.</span>
+	<span class="token keyword">def</span> <span class="token function">legs_number</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+  		<span class="token keyword">return</span> <span class="token number">4</span>
+
+<span class="token comment"># >>> a = Cat()</span>
+<span class="token comment"># >>> a.get_sound()</span>
+<span class="token comment"># Meow</span>
+
+</code></pre>
+<p><img src="/DevLog/assets/images/Pasted_image_20211105215356.png" alt="alt"></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/0ushp6ag5sstfb2ntakuej5">0 (DevLog)</a></li>
+<li><a href="/DevLog/notes/v7i96kp105u0du2q9tz97ta">Abstract Base Classes (DevLog)</a></li>
+</ul>

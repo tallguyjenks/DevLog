@@ -1,0 +1,85 @@
+<h1 id="pyarrow"><a aria-hidden="true" class="anchor-heading icon-link" href="#pyarrow"></a>Pyarrow</h1>
+<ul>
+<li>Pyarrow for faster data reads
+<ul>
+<li><code>pip install pyarrow</code></li>
+</ul>
+</li>
+<li>video format of this article <a href="https://youtu.be/gFd4I1oXG8E">https://youtu.be/gFd4I1oXG8E</a></li>
+</ul>
+<p><img src="/DevLog/assets/images/Pasted_image_20211101091818.png" alt="alt"></p>
+<p><img src="/DevLog/assets/images/Pasted_image_20211101091826.png" alt="alt"></p>
+<p><img src="/DevLog/assets/images/Pasted_image_20211101091836.png" alt="alt"></p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Create a dummy dataset:</span>
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> string
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> pyarrow <span class="token keyword">as</span> pa
+<span class="token keyword">import</span> pyarrow<span class="token punctuation">.</span>csv <span class="token keyword">as</span> csv
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
+
+<span class="token keyword">def</span> <span class="token function">gen_random_string</span><span class="token punctuation">(</span>length<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>random<span class="token punctuation">.</span>choices<span class="token punctuation">(</span>
+        string<span class="token punctuation">.</span>ascii_uppercase <span class="token operator">+</span> string<span class="token punctuation">.</span>digits<span class="token punctuation">,</span> k<span class="token operator">=</span>length<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+dt <span class="token operator">=</span> pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span>
+    start<span class="token operator">=</span>datetime<span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    end<span class="token operator">=</span>datetime<span class="token punctuation">(</span><span class="token number">2021</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    freq<span class="token operator">=</span><span class="token string">'min'</span>
+<span class="token punctuation">)</span>
+
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed <span class="token operator">=</span> <span class="token number">42</span>
+df_size <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>dt<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'Dataset length: </span><span class="token interpolation"><span class="token punctuation">{</span>df_size<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">'date'</span><span class="token punctuation">:</span> dt<span class="token punctuation">,</span>
+    <span class="token string">'a'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>df_size<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'b'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>df_size<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'c'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>df_size<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'d'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>df_size<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'e'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>df_size<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'str1'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>gen_random_string<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>df_size<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'str2'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>gen_random_string<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>df_size<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment"># 1 test baseline speed of pandas</span>
+<span class="token comment">## even being kind by using the compression parameter</span>
+
+df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'csv_pandas.csv.gz'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> compression<span class="token operator">=</span><span class="token string">'gzip'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Check read times</span>
+
+df1 <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'csv_pandas.csv'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># **NOTE:** Here’s a thing you should know about PyArrow — it can’t handle datetime columns. You’ll have to convert the date attribute to a timestamp. Here’s how:</span>
+
+df_pa <span class="token operator">=</span> df<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df_pa<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df_pa<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values<span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>int64<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">10</span> <span class="token operator">**</span> <span class="token number">9</span>
+df_pa_table <span class="token operator">=</span> pa<span class="token punctuation">.</span>Table<span class="token punctuation">.</span>from_pandas<span class="token punctuation">(</span>df_pa<span class="token punctuation">)</span>
+csv<span class="token punctuation">.</span>write_csv<span class="token punctuation">(</span>df_pa_table<span class="token punctuation">,</span> <span class="token string">'csv_pyarrow.csv'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Adding compression</span>
+
+<span class="token keyword">with</span> pa<span class="token punctuation">.</span>CompressedOutputStream<span class="token punctuation">(</span><span class="token string">'csv_pyarrow.csv.gz'</span><span class="token punctuation">,</span> <span class="token string">'gzip'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> out<span class="token punctuation">:</span>
+    csv<span class="token punctuation">.</span>write_csv<span class="token punctuation">(</span>df_pa_table<span class="token punctuation">,</span> out<span class="token punctuation">)</span>
+
+<span class="token comment"># You can read both compressed and uncompressed dataset with the csv.read_csv() function:</span>
+
+df_pa_1 <span class="token operator">=</span> csv<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'csv_pyarrow.csv'</span><span class="token punctuation">)</span>
+df_pa_2 <span class="token operator">=</span> csv<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'csv_pyarrow.csv.gz'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Both will be read in the pyarrow.Table format, so use the following command to convert them to a Pandas DataFrame:</span>
+
+df_pa_1 <span class="token operator">=</span> df_pa_1<span class="token punctuation">.</span>to_pandas<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="/DevLog/notes/fvjp3k8cyciowzz8fkn855b">Write Data This Alternative Is 7 Times Faster</a></li>
+</ul>
+</li>
+</ul>

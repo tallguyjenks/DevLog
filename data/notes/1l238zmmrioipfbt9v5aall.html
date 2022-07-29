@@ -1,0 +1,56 @@
+<h1 id="stored-procedures"><a aria-hidden="true" class="anchor-heading icon-link" href="#stored-procedures"></a>Stored Procedures</h1>
+<p>A <u>stored procedure</u> is a group of SQL statements that have been created and stored in the database. A stored procedure will accept input parameters like <code>@dates</code> or <code>@Name</code>.</p>
+<p>Run a stored procedure with <code>exec DB.DBO.tbl</code></p>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- ================================================</span>
+<span class="token comment">-- Template generated from Template Explorer using:</span>
+<span class="token comment">-- Create Procedure (New Menu).SQL</span>
+<span class="token comment">--</span>
+<span class="token comment">-- Use the Specify Values for Template Parameters</span>
+<span class="token comment">-- command (Ctrl-Shift-M) to fill in the parameter</span>
+<span class="token comment">-- values below.</span>
+<span class="token comment">--</span>
+<span class="token comment">-- This block of comments will not be included in</span>
+<span class="token comment">-- the definition of the procedure.</span>
+<span class="token comment">-- ================================================</span>
+<span class="token keyword">SET</span> ANSI_NULLS <span class="token keyword">ON</span>
+GO
+<span class="token keyword">SET</span> QUOTED_IDENTIFIER <span class="token keyword">ON</span>
+GO
+<span class="token comment">-- =============================================</span>
+<span class="token comment">-- Author:           &#x3C;Author,,Name></span>
+<span class="token comment">-- Create date: &#x3C;Create Date,,></span>
+<span class="token comment">-- Description:      &#x3C;Description,,></span>
+<span class="token comment">-- =============================================</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> <span class="token operator">&#x3C;</span>Procedure_Name<span class="token punctuation">,</span> sysname<span class="token punctuation">,</span> ProcedureName<span class="token operator">></span>
+       <span class="token comment">-- Add the parameters for the stored procedure here</span>
+       <span class="token operator">&#x3C;</span><span class="token variable">@Param1</span><span class="token punctuation">,</span> sysname<span class="token punctuation">,</span> <span class="token variable">@p1</span><span class="token operator">></span> <span class="token operator">&#x3C;</span>Datatype_For_Param1<span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token operator">&#x3C;</span>Default_Value_For_Param1<span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">></span><span class="token punctuation">,</span>
+       <span class="token operator">&#x3C;</span><span class="token variable">@Param2</span><span class="token punctuation">,</span> sysname<span class="token punctuation">,</span> <span class="token variable">@p2</span><span class="token operator">></span> <span class="token operator">&#x3C;</span>Datatype_For_Param2<span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token operator">&#x3C;</span>Default_Value_For_Param2<span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">></span>
+<span class="token keyword">AS</span>
+<span class="token keyword">BEGIN</span>
+       <span class="token comment">-- SET NOCOUNT ON added to prevent extra result sets from</span>
+       <span class="token comment">-- interfering with SELECT statements.</span>
+       <span class="token keyword">SET</span> NOCOUNT <span class="token keyword">ON</span><span class="token punctuation">;</span>
+ 
+    <span class="token comment">-- Insert statements for procedure here</span>
+       <span class="token keyword">SELECT</span> <span class="token operator">&#x3C;</span><span class="token variable">@Param1</span><span class="token punctuation">,</span> sysname<span class="token punctuation">,</span> <span class="token variable">@p1</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&#x3C;</span><span class="token variable">@Param2</span><span class="token punctuation">,</span> sysname<span class="token punctuation">,</span> <span class="token variable">@p2</span><span class="token operator">></span>
+<span class="token keyword">END</span>
+GO
+</code></pre>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/return-data-from-a-stored-procedure?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/return-data-from-a-stored-procedure?view=sql-server-ver15</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/n1zg5hb19q94un9ulcolgim">Returning Data</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/i1nuzha0osie1281chy266a">The Use Statement (DevLog)</a></li>
+</ul>

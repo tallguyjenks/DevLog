@@ -1,0 +1,21 @@
+<h1 id="globbing-vs-ls"><a aria-hidden="true" class="anchor-heading icon-link" href="#globbing-vs-ls"></a>Globbing Vs Ls</h1>
+<h5 id="use-globbing-instead-of--ls"><a aria-hidden="true" class="anchor-heading icon-link" href="#use-globbing-instead-of--ls"></a>Use globbing instead of  ls</h5>
+<p>Instead of using <code>ls -l &#x3C;pattern></code> to return a wildcard glob, use the wildcard as it is and avoid <code>ls</code></p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment">#  Documentation</span>
+<span class="token assign-left variable">pattern</span><span class="token operator">=</span><span class="token string">"ex*"</span>
+
+<span class="token builtin class-name">printf</span> <span class="token string">'%s\n'</span> <span class="token variable">$pattern</span>   <span class="token comment"># not ``ls -1 $pattern''</span>
+<span class="token comment"># > file1.txt</span>
+<span class="token comment"># > file_other.txt</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">file</span> <span class="token keyword">in</span> <span class="token variable">$pattern</span><span class="token punctuation">;</span> <span class="token keyword">do</span>  <span class="token comment"># definitely, definitely not ``for file in $(ls $pattern)''</span>
+	<span class="token builtin class-name">printf</span> <span class="token string">'Found file: %s\n'</span> <span class="token string">"<span class="token variable">$file</span>"</span>
+<span class="token keyword">done</span>
+<span class="token comment"># > Found file: file1.txt</span>
+<span class="token comment"># > Found file: file_other.txt</span>
+</code></pre>
+<h6 id="documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a>Documentation</h6>
+<ul>
+<li><a href="https://mywiki.wooledge.org/ParsingLs">parsing file globs with ls</a></li>
+<li><a href="https://superuser.com/questions/31464/looping-through-ls-results-in-bash-shell-script#31466">https://superuser.com/questions/31464/looping-through-ls-results-in-bash-shell-script#31466</a></li>
+</ul>

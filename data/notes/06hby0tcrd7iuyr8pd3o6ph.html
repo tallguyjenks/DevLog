@@ -1,0 +1,42 @@
+<h1 id="2019"><a aria-hidden="true" class="anchor-heading icon-link" href="#2019"></a>2019</h1>
+<h2 id="2019-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#2019-1"></a>2019</h2>
+<pre class="language-bash"><code class="language-bash">timedatectl set-ntp <span class="token boolean">true</span>
+<span class="token function">ping</span> lukesmith.xyz
+wifi-menu
+<span class="token function">fdisk</span> /dev/sda
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/sda4
+<span class="token function">mkswap</span> /dev/sda2
+<span class="token function">swapon</span> /dev/sda2
+<span class="token function">mount</span> /dev/sda3 /mnt
+<span class="token function">mkdir</span> /mnt/home
+<span class="token function">mkdir</span> /mnt/boot
+<span class="token function">mount</span> /dev/sda1 /mnt/boot
+<span class="token function">mount</span> /dev/sda4 /mnt/home
+pacstrap /mnt base base-devel <span class="token function">vim</span>
+genfstab /mnt
+genfstab -U /mnt <span class="token operator">>></span> /mnt/etc/fstab
+<span class="token function">vim</span> /mnt/etc/fstab
+arch-chroot /mnt
+pacman -S networkmanager
+systemctl <span class="token builtin class-name">enable</span> NetworkManager
+pacman -S grub
+grub-install --target<span class="token operator">=</span>i386-pc /dev/sda
+<span class="token function">grub-mkconfig</span> -o /boot/grub/grub.cfg
+<span class="token function">passwd</span>
+<span class="token function">vim</span> /etc/locale.gen <span class="token comment">#uncomment the en_US items</span>
+locale-gen
+<span class="token function">vim</span> /etc/locale.conf <span class="token comment"># add: "LANG=en_US.UTF-8"</span>
+<span class="token function">ln</span> -sf /usr/share/zoneinfo/America/los-angelas /etc/localtime
+<span class="token function">vim</span> /etc/hostname <span class="token comment"># put name of machine here</span>
+<span class="token builtin class-name">exit</span>
+<span class="token function">umount</span> -R /mnt
+<span class="token function">reboot</span>
+
+<span class="token comment">#~=============================~</span>
+<span class="token comment">#AFTER LARBS NETWORK MANAGEMENT</span>
+<span class="token comment">#~=============================~</span>
+
+sysctl net.ipv4.tcp_ecn<span class="token operator">=</span><span class="token number">0</span>
+</code></pre>

@@ -1,0 +1,53 @@
+<h1 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h1>
+<h1 id="example-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#example-1"></a>Example</h1>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">RunnerInfo</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>                                <span class="token comment">// The class' public functions</span>
+      <span class="token keyword">void</span>   <span class="token function">SetTime</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeRunSecs<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Time run in seconds</span>
+      <span class="token keyword">void</span>   <span class="token function">SetDist</span><span class="token punctuation">(</span><span class="token keyword">double</span> distRunMiles<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Distance run in miles</span>
+      <span class="token keyword">double</span> <span class="token function">GetSpeedMph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>            <span class="token comment">// Speed in miles/hour</span>
+   <span class="token keyword">private</span><span class="token operator">:</span>  <span class="token comment">// The class' private internal data members</span>
+      <span class="token keyword">int</span>    timeRun<span class="token punctuation">;</span>
+      <span class="token keyword">double</span> distRun<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// "RunnerInfo::" means SetTime is a RunnerInfo member function</span>
+<span class="token keyword">void</span> <span class="token class-name">RunnerInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetTime</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeRunSecs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   timeRun <span class="token operator">=</span> timeRunSecs<span class="token punctuation">;</span>  <span class="token comment">// timeRun refers to data member</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">RunnerInfo</span><span class="token double-colon punctuation">::</span><span class="token function">SetDist</span><span class="token punctuation">(</span><span class="token keyword">double</span> distRunMiles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   distRun <span class="token operator">=</span> distRunMiles<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">double</span> <span class="token class-name">RunnerInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetSpeedMph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> distRun <span class="token operator">/</span> <span class="token punctuation">(</span>timeRun <span class="token operator">/</span> <span class="token number">3600.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// miles / (secs / (hrs / 3600 secs))</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   RunnerInfo runner1<span class="token punctuation">;</span> <span class="token comment">// User-created object of class type RunnerInfo</span>
+   RunnerInfo runner2<span class="token punctuation">;</span> <span class="token comment">// A second object</span>
+
+   runner1<span class="token punctuation">.</span><span class="token function">SetTime</span><span class="token punctuation">(</span><span class="token number">360</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   runner1<span class="token punctuation">.</span><span class="token function">SetDist</span><span class="token punctuation">(</span><span class="token number">1.2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   runner2<span class="token punctuation">.</span><span class="token function">SetTime</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   runner2<span class="token punctuation">.</span><span class="token function">SetDist</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Runner1's speed in MPH: "</span> <span class="token operator">&#x3C;&#x3C;</span> runner1<span class="token punctuation">.</span><span class="token function">GetSpeedMph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Runner2's speed in MPH: "</span> <span class="token operator">&#x3C;&#x3C;</span> runner2<span class="token punctuation">.</span><span class="token function">GetSpeedMph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">ClassName</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token comment">// Public member functions</span>
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      <span class="token comment">// Private data members</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>

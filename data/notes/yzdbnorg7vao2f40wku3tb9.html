@@ -1,0 +1,9 @@
+<h1 id="import-non-default-things"><a aria-hidden="true" class="anchor-heading icon-link" href="#import-non-default-things"></a>Import Non Default Things</h1>
+<h3 id="to-import-non-default-things"><a aria-hidden="true" class="anchor-heading icon-link" href="#to-import-non-default-things"></a>To import non-default things</h3>
+<p>if we want the functions we defined in the <code>user.js</code> file and also exported, we can also import them with the following syntax:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token constant">U</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> printName<span class="token punctuation">,</span> printAge <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'/user.js'</span>
+</code></pre>
+<p>basically, the default import can just be declared as <code>U</code> in this instance, where as non default imports have to be imported with the brace syntax. We can also change the name of those items too in this following was: </p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token constant">U</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> printName <span class="token keyword module">as</span> printUsername<span class="token punctuation">,</span> printAge <span class="token keyword module">as</span> printUserAge <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'/user.js'</span>
+</code></pre>
+<p>For more browser support a common method of dealing with imports is to use the <code>babel</code> tool to convert these newer features into older and supported javascript code</p>

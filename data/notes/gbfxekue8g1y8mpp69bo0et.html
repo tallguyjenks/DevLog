@@ -1,0 +1,91 @@
+<h1 id="toggle-all-sql-server-agent-jobs"><a aria-hidden="true" class="anchor-heading icon-link" href="#toggle-all-sql-server-agent-jobs"></a>Toggle All Sql Server Agent Jobs</h1>
+<h2 id="disable"><a aria-hidden="true" class="anchor-heading icon-link" href="#disable"></a>Disable</h2>
+<h3 id="blanket-disable"><a aria-hidden="true" class="anchor-heading icon-link" href="#blanket-disable"></a>Blanket Disable</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> MSDB<span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@job_id</span> uniqueidentifier
+
+<span class="token keyword">DECLARE</span> job_cursor <span class="token keyword">CURSOR</span> READ_ONLY <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> job_id <span class="token keyword">FROM</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sysjobs <span class="token keyword">WHERE</span> enabled <span class="token operator">=</span> <span class="token number">1</span>
+
+<span class="token keyword">OPEN</span> job_cursor
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> job_cursor <span class="token keyword">INTO</span> <span class="token variable">@job_id</span>
+
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+   <span class="token keyword">EXEC</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sp_update_job <span class="token variable">@job_id</span> <span class="token operator">=</span> <span class="token variable">@job_id</span><span class="token punctuation">,</span> <span class="token variable">@enabled</span> <span class="token operator">=</span> <span class="token number">0</span>
+   <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> job_cursor <span class="token keyword">INTO</span> <span class="token variable">@job_id</span>
+<span class="token keyword">END</span>
+
+<span class="token keyword">CLOSE</span> job_cursor
+<span class="token keyword">DEALLOCATE</span> job_cursor
+</code></pre>
+<h3 id="disable-by-name"><a aria-hidden="true" class="anchor-heading icon-link" href="#disable-by-name"></a>Disable by name</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> MSDB<span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@job_id</span> uniqueidentifier
+
+<span class="token keyword">DECLARE</span> job_cursor <span class="token keyword">CURSOR</span> READ_ONLY <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> job_id <span class="token keyword">FROM</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sysjobs <span class="token keyword">WHERE</span> enabled <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">AND</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">like</span> N<span class="token string">'Admin%'</span>
+
+<span class="token keyword">OPEN</span> job_cursor
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> job_cursor <span class="token keyword">INTO</span> <span class="token variable">@job_id</span>
+
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+   <span class="token keyword">EXEC</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sp_update_job <span class="token variable">@job_id</span> <span class="token operator">=</span> <span class="token variable">@job_id</span><span class="token punctuation">,</span> <span class="token variable">@enabled</span> <span class="token operator">=</span> <span class="token number">0</span>
+   <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> job_cursor <span class="token keyword">INTO</span> <span class="token variable">@job_id</span>
+<span class="token keyword">END</span>
+
+<span class="token keyword">CLOSE</span> job_cursor
+<span class="token keyword">DEALLOCATE</span> job_cursor
+</code></pre>
+<h3 id="disable-jobs-by-job-category"><a aria-hidden="true" class="anchor-heading icon-link" href="#disable-jobs-by-job-category"></a>Disable Jobs By Job Category</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> MSDB<span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@job_id</span> uniqueidentifier
+
+<span class="token keyword">DECLARE</span> job_cursor <span class="token keyword">CURSOR</span> READ_ONLY <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> SJ<span class="token punctuation">.</span>job_id
+<span class="token keyword">FROM</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sysjobs SJ
+   <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>syscategories <span class="token keyword">AS</span> SC
+      <span class="token keyword">ON</span> SJ<span class="token punctuation">.</span>category_id <span class="token operator">=</span> SC<span class="token punctuation">.</span>category_id
+<span class="token keyword">WHERE</span> SJ<span class="token punctuation">.</span>enabled <span class="token operator">=</span> <span class="token number">1</span>
+   <span class="token operator">AND</span> SC<span class="token punctuation">.</span><span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> N<span class="token string">'Database Maintenance'</span>
+
+<span class="token keyword">OPEN</span> job_cursor
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> job_cursor <span class="token keyword">INTO</span> <span class="token variable">@job_id</span>
+
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+   <span class="token keyword">EXEC</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sp_update_job <span class="token variable">@job_id</span> <span class="token operator">=</span> <span class="token variable">@job_id</span><span class="token punctuation">,</span> <span class="token variable">@enabled</span> <span class="token operator">=</span> <span class="token number">0</span>
+   <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> job_cursor <span class="token keyword">INTO</span> <span class="token variable">@job_id</span>
+<span class="token keyword">END</span>
+
+<span class="token keyword">CLOSE</span> job_cursor
+<span class="token keyword">DEALLOCATE</span> job_cursor
+</code></pre>
+<h2 id="enable"><a aria-hidden="true" class="anchor-heading icon-link" href="#enable"></a>Enable</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> MSDB<span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@job_id</span> uniqueidentifier
+
+<span class="token keyword">DECLARE</span> job_cursor <span class="token keyword">CURSOR</span> READ_ONLY <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> job_id <span class="token keyword">FROM</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sysjobs <span class="token keyword">WHERE</span> enabled <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">OPEN</span> job_cursor
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> job_cursor <span class="token keyword">INTO</span> <span class="token variable">@job_id</span>
+
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+   <span class="token keyword">EXEC</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sp_update_job <span class="token variable">@job_id</span> <span class="token operator">=</span> <span class="token variable">@job_id</span><span class="token punctuation">,</span> <span class="token variable">@enabled</span> <span class="token operator">=</span> <span class="token number">1</span>
+   <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> job_cursor <span class="token keyword">INTO</span> <span class="token variable">@job_id</span>
+<span class="token keyword">END</span>
+
+<span class="token keyword">CLOSE</span> job_cursor
+<span class="token keyword">DEALLOCATE</span> job_cursor
+</code></pre>

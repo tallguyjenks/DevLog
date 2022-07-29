@@ -1,0 +1,79 @@
+<h1 id="before-and-after-example"><a aria-hidden="true" class="anchor-heading icon-link" href="#before-and-after-example"></a>Before and after Example</h1>
+<h2 id="before-etl-process"><a aria-hidden="true" class="anchor-heading icon-link" href="#before-etl-process"></a>Before ETL Process:</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> requests
+
+<span class="token keyword">def</span> <span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">dict</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""Use the Open Weather Map API to fetch Boston weather data.
+  Returns:
+	  dict: a JSON response of many wheather measurements.
+  """</span>
+
+  url <span class="token operator">=</span> <span class="token string">"https://api.openweathermap.org/data/2.5/weather"</span>
+
+  <span class="token comment">#  Use a real API key. You can get a free one from https://openweathermap.org/</span>
+  response <span class="token operator">=</span> requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span>
+	  <span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"q"</span><span class="token punctuation">:</span> <span class="token string">"Boston"</span><span class="token punctuation">,</span> <span class="token string">"appid"</span><span class="token punctuation">:</span> <span class="token string">"e5ecbcc49e3debeead24d0fe012fb46e"</span><span class="token punctuation">}</span>
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">transform</span><span class="token punctuation">(</span>response<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">float</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""Process the response and extract windspeed information
+  Args:
+	  response (dict): Response JSON from extract task
+  Returns:
+	  float: Current wind speed
+  """</span>
+  <span class="token keyword">return</span> response<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"wind"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"speed"</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">load</span><span class="token punctuation">(</span>speed<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""Append data to file
+  Args:
+	  speed (float): Windspeed from transform task
+  """</span>
+
+  <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"windspeed.txt"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+	  f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>speed<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+  <span class="token comment"># Execute tasks in the right order.</span>
+  response <span class="token operator">=</span> extract<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  windspeed <span class="token operator">=</span> transform<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+  load<span class="token punctuation">(</span>windspeed<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="after-prefect-turning-functions-into-tasks-and-making-sure-they-retry-and-on-intervals-for-success"><a aria-hidden="true" class="anchor-heading icon-link" href="#after-prefect-turning-functions-into-tasks-and-making-sure-they-retry-and-on-intervals-for-success"></a>After prefect, turning functions into tasks and making sure they retry and on intervals for success:</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> requests
+
+<span class="token comment"># Importing Prefect task, Flow and Python timdelta</span>
+<span class="token keyword">from</span> prefect <span class="token keyword">import</span> task<span class="token punctuation">,</span> Flow
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> timedelta
+
+<span class="token comment"># decorater specifying how many times to retry and it's iterval.</span>
+<span class="token decorator annotation punctuation">@task</span><span class="token punctuation">(</span>max_retries<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> retry_delay<span class="token operator">=</span>timedelta<span class="token punctuation">(</span>minutes<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">dict</span><span class="token punctuation">:</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+
+<span class="token decorator annotation punctuation">@task</span>
+<span class="token keyword">def</span> <span class="token function">transform</span><span class="token punctuation">(</span>response<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">float</span><span class="token punctuation">:</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token decorator annotation punctuation">@task</span><span class="token punctuation">(</span>max_retries<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> retry_delay<span class="token operator">=</span>timedelta<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">load</span><span class="token punctuation">(</span>speed<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+
+<span class="token comment"># Create a Prefect flow</span>
+<span class="token keyword">with</span> Flow<span class="token punctuation">(</span><span class="token string">"Windspeed Tracker"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> flow<span class="token punctuation">:</span>
+  <span class="token comment"># Execute tasks in the right order.</span>
+  response <span class="token operator">=</span> extract<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  windspeed <span class="token operator">=</span> transform<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+  load<span class="token punctuation">(</span>windspeed<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+  <span class="token comment"># Execute the flow</span>
+  flow<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>

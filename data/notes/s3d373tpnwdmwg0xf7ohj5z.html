@@ -1,0 +1,29 @@
+<h1 id="pivots"><a aria-hidden="true" class="anchor-heading icon-link" href="#pivots"></a>Pivots</h1>
+<h2 id="pivoting"><a aria-hidden="true" class="anchor-heading icon-link" href="#pivoting"></a>Pivoting</h2>
+<p>the Pivot is like a transcribe operator in excel. You take the top left point, anchor it and then flips the axis' and their values.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Name
+	<span class="token punctuation">,</span>pvt<span class="token punctuation">.</span>Low
+	<span class="token punctuation">,</span>pvt<span class="token punctuation">.</span>Med
+	<span class="token punctuation">,</span>pvt<span class="token punctuation">.</span>High
+	<span class="token punctuation">,</span>pvt<span class="token punctuation">.</span>Ultra
+<span class="token keyword">FROM</span> Person
+<span class="token keyword">PIVOT</span>
+	<span class="token punctuation">(</span><span class="token function">SUM</span><span class="token punctuation">(</span>Total<span class="token punctuation">)</span> <span class="token keyword">FOR</span> <span class="token keyword">Level</span> <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>Low<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Med<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>High<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Ultra<span class="token punctuation">]</span><span class="token punctuation">)</span>
+	<span class="token punctuation">)</span> <span class="token keyword">AS</span> pvt
+</code></pre>
+<h2 id="un-pivoting"><a aria-hidden="true" class="anchor-heading icon-link" href="#un-pivoting"></a>UN-pivoting</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Name
+	<span class="token punctuation">,</span>upvt<span class="token punctuation">.</span><span class="token keyword">Level</span>
+	<span class="token punctuation">,</span>upvt<span class="token punctuation">.</span>Total
+<span class="token keyword">FROM</span> Person
+<span class="token keyword">UNPIVOT</span>
+	<span class="token punctuation">(</span>Total <span class="token keyword">FOR</span> <span class="token keyword">Level</span> <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>Low<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Med<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>High<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Ultra<span class="token punctuation">]</span><span class="token punctuation">)</span>
+	<span class="token punctuation">)</span> <span class="token keyword">AS</span> upvt
+</code></pre>
+<h2 id="advanced-pivoting"><a aria-hidden="true" class="anchor-heading icon-link" href="#advanced-pivoting"></a>Advanced Pivoting</h2>
+<p><a href="https://www.mssqltips.com/sqlservertip/7167/sql-pivot-grouping-sets-advanced-reporting/">https://www.mssqltips.com/sqlservertip/7167/sql-pivot-grouping-sets-advanced-reporting/</a></p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/1fc30pmv2ea63lwhgiqv41y">Example</a></li>
+</ol>

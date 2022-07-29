@@ -1,0 +1,14 @@
+<h1 id="square-brackets"><a aria-hidden="true" class="anchor-heading icon-link" href="#square-brackets"></a>Square Brackets</h1>
+<h4 id="brackets"><a aria-hidden="true" class="anchor-heading icon-link" href="#brackets"></a>Brackets</h4>
+<p><a href="http://wiki.bash-hackers.org/scripting/obsolete">http://wiki.bash-hackers.org/scripting/obsolete</a></p>
+<pre class="language-shell"><code class="language-shell"><span class="token keyword">if</span> <span class="token punctuation">[</span> CONDITION <span class="token punctuation">]</span>    <span class="token comment"># Test construct</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> CONDITION <span class="token punctuation">]</span><span class="token punctuation">]</span>  <span class="token comment"># Extended test construct</span>
+Array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>element1   <span class="token comment"># Array initialization</span>
+<span class="token punctuation">[</span>a-z<span class="token punctuation">]</span>               <span class="token comment"># Range of characters within a Regular Expression</span>
+$<span class="token punctuation">[</span> expression <span class="token punctuation">]</span>     <span class="token comment"># A non-standard &#x26; obsolete version of $(( expression )) </span>
+</code></pre>
+<p>Single brackets are also used for array indices:</p>
+<pre class="language-shell"><code class="language-shell">array<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"hello"</span>
+
+<span class="token assign-left variable">element</span><span class="token operator">=</span><span class="token variable">${array<span class="token punctuation">[</span>index<span class="token punctuation">]</span>}</span>
+</code></pre>

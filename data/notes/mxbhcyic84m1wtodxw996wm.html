@@ -1,0 +1,96 @@
+<h1 id="sql-server-cte-vs-temp-table-vs-table-variable-performance-test"><a aria-hidden="true" class="anchor-heading icon-link" href="#sql-server-cte-vs-temp-table-vs-table-variable-performance-test"></a>Sql Server Cte Vs Temp Table Vs Table Variable Performance Test</h1>
+<h2 id="link"><a aria-hidden="true" class="anchor-heading icon-link" href="#link"></a>Link</h2>
+<p><a href="https://www.mssqltips.com/sqlservertip/5118/sql-server-cte-vs-temp-table-vs-table-variable-performance-test/">https://www.mssqltips.com/sqlservertip/5118/sql-server-cte-vs-temp-table-vs-table-variable-performance-test/</a></p>
+<h2 id="related"><a aria-hidden="true" class="anchor-heading icon-link" href="#related"></a>Related</h2>
+<p>It appears that <a href="/DevLog/notes/3o34ak88zde0pwjwvzdy992">CTE's</a> are the most efficient and fastest of the temporary result set options and even <a href="/DevLog/notes/wvrcd4y7atffap1akrr1tjv">Temp Tables</a> are better than <a href="/DevLog/notes/7hanwbehk5bvvqeb2ouiptu">Table Variables</a></p>
+<h2 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- CTE</span>
+<span class="token keyword">WITH</span> t <span class="token punctuation">(</span>customerid<span class="token punctuation">,</span> lastorderdate<span class="token punctuation">)</span> <span class="token keyword">AS</span> 
+ <span class="token punctuation">(</span><span class="token keyword">SELECT</span> customerid<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span> 
+  <span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>SalesOrderHeader
+  <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> customerid<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>salesorderheader soh
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> t <span class="token keyword">ON</span> soh<span class="token punctuation">.</span>customerid<span class="token operator">=</span>t<span class="token punctuation">.</span>customerid <span class="token operator">AND</span> soh<span class="token punctuation">.</span>orderdate<span class="token operator">=</span>t<span class="token punctuation">.</span>lastorderdate
+GO
+
+<span class="token comment">-- Temporary table</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token comment">#temptable (customerid [int] NOT NULL PRIMARY KEY, lastorderdate [datetime] NULL);</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token comment">#temptable</span>
+<span class="token keyword">SELECT</span> customerid<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span> <span class="token keyword">as</span> lastorderdate 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>SalesOrderHeader
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> customerid<span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>salesorderheader soh
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> <span class="token comment">#temptable t ON soh.customerid=t.customerid AND soh.orderdate=t.lastorderdate</span>
+
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token comment">#temptable</span>
+GO
+
+<span class="token comment">-- Table variable</span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@tablevariable</span> <span class="token keyword">TABLE</span> <span class="token punctuation">(</span>customerid <span class="token punctuation">[</span><span class="token keyword">int</span><span class="token punctuation">]</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span> lastorderdate <span class="token punctuation">[</span><span class="token keyword">datetime</span><span class="token punctuation">]</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token variable">@tablevariable</span>
+<span class="token keyword">SELECT</span> customerid<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span> <span class="token keyword">as</span> lastorderdate 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>SalesOrderHeader
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> customerid<span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>salesorderheader soh
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> <span class="token variable">@tablevariable</span> t <span class="token keyword">ON</span> soh<span class="token punctuation">.</span>customerid<span class="token operator">=</span>t<span class="token punctuation">.</span>customerid <span class="token operator">AND</span> soh<span class="token punctuation">.</span>orderdate<span class="token operator">=</span>t<span class="token punctuation">.</span>lastorderdate
+GO
+</code></pre>
+<hr>
+<p><img src="/DevLog/assets/images/2022-03-03-12-49-56.png" alt="sql profiler"></p>
+<hr>
+<p>Here are the updated queries which add a WHERE clause to each statement we tested above.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- CTE</span>
+<span class="token keyword">WITH</span> t <span class="token punctuation">(</span>customerid<span class="token punctuation">,</span> lastorderdate<span class="token punctuation">)</span> <span class="token keyword">AS</span> 
+ <span class="token punctuation">(</span><span class="token keyword">SELECT</span> customerid<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span> 
+  <span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>SalesOrderHeader
+  <span class="token keyword">WHERE</span> customerid<span class="token operator">=</span><span class="token number">27604</span> 
+  <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> customerid<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>salesorderheader soh
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> t <span class="token keyword">ON</span> soh<span class="token punctuation">.</span>customerid<span class="token operator">=</span>t<span class="token punctuation">.</span>customerid <span class="token operator">AND</span> soh<span class="token punctuation">.</span>orderdate<span class="token operator">=</span>t<span class="token punctuation">.</span>lastorderdate
+GO
+
+<span class="token comment">--Temp table</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token comment">#temptable (customerid [int] NOT NULL PRIMARY KEY, lastorderdate [datetime] NULL);</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token comment">#temptable</span>
+<span class="token keyword">SELECT</span> customerid<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span> <span class="token keyword">as</span> lastorderdate 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>SalesOrderHeader
+<span class="token keyword">WHERE</span> customerid<span class="token operator">=</span><span class="token number">27604</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> customerid<span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>salesorderheader soh
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> <span class="token comment">#temptable t ON soh.customerid=t.customerid AND soh.orderdate=t.lastorderdate</span>
+
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token comment">#temptable</span>
+GO
+
+<span class="token comment">--Table variable</span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@tablevariable</span> <span class="token keyword">TABLE</span> <span class="token punctuation">(</span>customerid <span class="token punctuation">[</span><span class="token keyword">int</span><span class="token punctuation">]</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span> lastorderdate <span class="token punctuation">[</span><span class="token keyword">datetime</span><span class="token punctuation">]</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token variable">@tablevariable</span>
+<span class="token keyword">SELECT</span> customerid<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span> <span class="token keyword">as</span> lastorderdate 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>SalesOrderHeader
+<span class="token keyword">WHERE</span> customerid<span class="token operator">=</span><span class="token number">27604</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> customerid<span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>salesorderheader soh
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> <span class="token variable">@tablevariable</span> t <span class="token keyword">ON</span> soh<span class="token punctuation">.</span>customerid<span class="token operator">=</span>t<span class="token punctuation">.</span>customerid <span class="token operator">AND</span> soh<span class="token punctuation">.</span>orderdate<span class="token operator">=</span>t<span class="token punctuation">.</span>lastorderdate
+GO
+</code></pre>
+<hr>
+<p><img src="/DevLog/assets/images/2022-03-03-12-50-45.png" alt="sql profiler 2"></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/09s1m81lxifmup1so6qi7u6">2022-03-03 (DevLog)</a></li>
+</ul>

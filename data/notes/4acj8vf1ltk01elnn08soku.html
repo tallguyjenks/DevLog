@@ -1,0 +1,145 @@
+<h1 id="cool-yaml-features-you-probably-didnt-know-about"><a aria-hidden="true" class="anchor-heading icon-link" href="#cool-yaml-features-you-probably-didnt-know-about"></a>Cool Yaml Features You Probably Didn’t Know About</h1>
+<p><a href="https://faun.pub/cool-yaml-features-you-probably-didnt-know-cb15e8112576">https://faun.pub/cool-yaml-features-you-probably-didnt-know-cb15e8112576</a></p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Tips Tricks</span></div>
+<a href="/DevLog/notes/gtst414bw7fdibzs3ssddxx" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div>
+</div></div><p></p>
+<p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Anchors</span></div>
+<a href="/DevLog/notes/vledjeekqu562yjqq1fi2d5" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="anchors"><a aria-hidden="true" class="anchor-heading icon-link" href="#anchors"></a>Anchors</h2>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">man</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> Utibe
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">alien</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kal<span class="token punctuation">-</span>el
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">10000000</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">names</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Utibe
+  <span class="token punctuation">-</span> kal<span class="token punctuation">-</span>el
+</code></pre>
+<blockquote>
+<p>As you can see, we have a names key that lists the <code>names</code> of both <code>man</code> and <code>alien</code>.
+However, this is not ideal as we are writing out the names multiple times and if the name changes we have to change each reference to it.
+YAML has a feature known as anchors that allows us to reference a value. Here’s how it works</p>
+</blockquote>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">man</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;man</span> Utibe
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">alien</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;alien</span> kal<span class="token punctuation">-</span>el
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">10000000</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">names</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token important">*man</span>
+  <span class="token punctuation">-</span> <span class="token important">*alien</span>
+</code></pre>
+<h3 id="remove-redundancy-with-anchors"><a aria-hidden="true" class="anchor-heading icon-link" href="#remove-redundancy-with-anchors"></a>Remove Redundancy With Anchors</h3>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">metadata</span><span class="token punctuation">:</span> <span class="token important">&#x26;metadata</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> milky<span class="token punctuation">-</span>way
+  <span class="token key atrule">dinosaursExist</span><span class="token punctuation">:</span> no
+<span class="token key atrule">man</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;man</span> Utibe
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">&#x3C;&#x3C;</span><span class="token punctuation">:</span> <span class="token important">*metadata</span>
+<span class="token key atrule">alien</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;alien</span> kal<span class="token punctuation">-</span>el
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">10000000</span>
+  <span class="token key atrule">&#x3C;&#x3C;</span><span class="token punctuation">:</span> <span class="token important">*metadata</span>
+<span class="token key atrule">names</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token important">*man</span>
+  <span class="token punctuation">-</span> <span class="token important">*alien</span>
+</code></pre>
+<p>And to overide standard template metadata in this example with specific values simply overwrite at the end as if the last thing read is what happens like in <a href="/DevLog/notes/xtwe2e10czog2dhozs86g3f">CSS</a></p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">man</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token important">&#x26;man</span> Utibe
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+  <span class="token key atrule">&#x3C;&#x3C;</span><span class="token punctuation">:</span> <span class="token important">*metadata</span>
+  <span class="token key atrule">galaxy</span><span class="token punctuation">:</span> another<span class="token punctuation">-</span>galaxy
+</code></pre></div></div><p></p>
+<p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Explicit Tags</span></div>
+<a href="/DevLog/notes/u74tstc1bsl9za2q4zdxsxr" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="explicit-tags"><a aria-hidden="true" class="anchor-heading icon-link" href="#explicit-tags"></a>Explicit Tags</h2>
+<p>For data type casting</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">numbers</span><span class="token punctuation">:</span>
+    <span class="token key atrule">num1</span><span class="token punctuation">:</span> <span class="token tag">!!int</span> <span class="token number">1.0</span> <span class="token comment"># converted to 1</span>
+    <span class="token key atrule">num2</span><span class="token punctuation">:</span> <span class="token tag">!!float</span> <span class="token number">100</span> <span class="token comment"># converted to 100.0</span>
+    <span class="token key atrule">num3</span><span class="token punctuation">:</span> <span class="token tag">!!str</span> <span class="token number">150</span> <span class="token comment"># converted to "150"</span>
+</code></pre></div></div><p></p>
+<p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Multi Line Strings</span></div>
+<a href="/DevLog/notes/x7uw26gr8tfjxs1e9tk1ag6" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="multi-line-strings"><a aria-hidden="true" class="anchor-heading icon-link" href="#multi-line-strings"></a>Multi-line strings</h2>
+<h3 id="literal-block"><a aria-hidden="true" class="anchor-heading icon-link" href="#literal-block"></a>Literal Block</h3>
+<p>This preserves the <code>\n</code> character at the end of each line, such as in a list of executed CLI commands</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">script</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+    echo "hello world" > file.txt
+    cat file.txt
+    sed s/hello/Hello/g file.txt > file2.txt
+    mv file2.txt file.txt</span>
+</code></pre>
+<h3 id="folded-block-approach"><a aria-hidden="true" class="anchor-heading icon-link" href="#folded-block-approach"></a>Folded Block Approach</h3>
+<p>This treats the text as a single run on sentance with no new lines akin to: </p>
+<p><code>script: Hello there This is some text but will be on the same line as the previous text</code></p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">script</span><span class="token punctuation">:</span> <span class="token punctuation">></span><span class="token scalar string">
+    Hello there
+    This is some text
+    but will be on the same line as the previous text</span>
+</code></pre></div></div><p></p>
+<p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Multiple Docs in Single File</span></div>
+<a href="/DevLog/notes/c1h4zbzqkb50wpdpc5pmvga" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="multiple-yaml-docs-in-a-single-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#multiple-yaml-docs-in-a-single-file"></a>Multiple YAML Docs in a single file</h2>
+<p>In YAML the compile sees <code>---</code> as a separator between 2 different YAML documents</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">"File one"</span>
+<span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token string">"one day"</span>
+<span class="token key atrule">planet</span><span class="token punctuation">:</span> <span class="token string">"earth"</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">"File two"</span>
+<span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token string">"two billion light years"</span>
+<span class="token key atrule">planet</span><span class="token punctuation">:</span> <span class="token string">"Jupiter"</span>
+</code></pre></div></div><p></p><p></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x6qarznuyyyjttcfb3k8b7f">2022-02-17 (DevLog)</a></li>
+</ul>

@@ -1,0 +1,36 @@
+<h1 id="enumerate"><a aria-hidden="true" class="anchor-heading icon-link" href="#enumerate"></a>Enumerate</h1>
+<h2 id="replace-len-with-enumerate"><a aria-hidden="true" class="anchor-heading icon-link" href="#replace-len-with-enumerate"></a>Replace len() with enumerate()</h2>
+<h3 id="before"><a aria-hidden="true" class="anchor-heading icon-link" href="#before"></a>Before</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Define a collection, such as list:</span>
+names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Nik'</span><span class="token punctuation">,</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span> <span class="token string">'Katie'</span><span class="token punctuation">,</span> <span class="token string">'Jim'</span><span class="token punctuation">,</span> <span class="token string">'Luke'</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Using the range(len(collection)) method, you'd write:</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> names<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Using enumerate, you can define this by writing:</span>
+<span class="token keyword">for</span> idx<span class="token punctuation">,</span> name <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>idx<span class="token punctuation">,</span> name<span class="token punctuation">)</span>
+
+<span class="token comment"># Both ways of doing this return:</span>
+<span class="token comment"># 0 Nik</span>
+<span class="token comment"># 1 Jane</span>
+<span class="token comment"># 2 Katie</span>
+<span class="token comment"># 3 Jim</span>
+<span class="token comment"># 4 Luke</span>
+</code></pre>
+<h3 id="after"><a aria-hidden="true" class="anchor-heading icon-link" href="#after"></a>After</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Define a collection, such as list:</span>
+names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Nik'</span><span class="token punctuation">,</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span> <span class="token string">'Katie'</span><span class="token punctuation">,</span> <span class="token string">'Jim'</span><span class="token punctuation">,</span> <span class="token string">'Luke'</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Using enumerate, you can define this by writing:</span>
+<span class="token keyword">for</span> idx<span class="token punctuation">,</span> name <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>names<span class="token punctuation">,</span> start<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>idx<span class="token punctuation">,</span> name<span class="token punctuation">)</span>
+
+<span class="token comment"># This returns:</span>
+<span class="token comment"># 1 Nik</span>
+<span class="token comment"># 2 Jane</span>
+<span class="token comment"># 3 Katie</span>
+<span class="token comment"># 4 Jim</span>
+<span class="token comment"># 5 Luke</span>
+</code></pre>

@@ -1,0 +1,39 @@
+<h1 id="promises"><a aria-hidden="true" class="anchor-heading icon-link" href="#promises"></a>Promises</h1>
+<h2 id="promises-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#promises-1"></a>Promises</h2>
+<blockquote>
+<p>"Im going to give you the best video on promises"</p>
+</blockquote>
+<hr>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'Success'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'Failed'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> 
+</code></pre>
+<p>1+1 will always = 2 so the <code>resolve()</code> method is called.</p>
+<p>so if the promise is going to be resolved and we keep our promise of delivering a great video, <strong>THEN</strong> we resolve the promise.</p>
+<p>this is also basically a try catch block but without the finally</p>
+<pre class="language-js"><code class="language-js">p<span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">message</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'This is in the then'</span> <span class="token operator">+</span> message<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword control-flow">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">message</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'This is in the catch'</span> <span class="token operator">+</span> message<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Promises are things you want to happen in the background but that take a long time.
+like downloading an image in a server and not making other things wait for it.</p>
+<hr>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/j19aveek5ydrav8aqw5arle">Batching Promise Execution</a></li>
+<li><a href="/DevLog/notes/1vi51zma4jgqphq75l6o4v2">Callbacks</a></li>
+<li><a href="/DevLog/notes/rdqlfrr8r8u6n3leq8b8knz">Return Quickest Completed Item</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/z7ttjzpaawtowwhofdvag95">Ecmascript 2015 (DevLog)</a></li>
+</ul>

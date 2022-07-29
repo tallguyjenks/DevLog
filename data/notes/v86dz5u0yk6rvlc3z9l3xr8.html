@@ -1,0 +1,70 @@
+<h1 id="design-patterns"><a aria-hidden="true" class="anchor-heading icon-link" href="#design-patterns"></a>Design Patterns</h1>
+<h2 id="creational"><a aria-hidden="true" class="anchor-heading icon-link" href="#creational"></a>Creational</h2>
+<blockquote>
+<p>How objects are created</p>
+</blockquote>
+<h3 id="singleton"><a aria-hidden="true" class="anchor-heading icon-link" href="#singleton"></a>Singleton</h3>
+<ul>
+<li>a type of object that can only be instantiated once</li>
+</ul>
+<h3 id="prototype"><a aria-hidden="true" class="anchor-heading icon-link" href="#prototype"></a>Prototype</h3>
+<ul>
+<li>cloning and inheritance. </li>
+</ul>
+<h3 id="builder"><a aria-hidden="true" class="anchor-heading icon-link" href="#builder"></a>Builder</h3>
+<ul>
+<li>Method chaining and instead of passing all arguments at instantiation it can be used to have setter methods that are called with method chaining so the object that gets returned after each method is progressively built up into its final form</li>
+</ul>
+<h3 id="factory"><a aria-hidden="true" class="anchor-heading icon-link" href="#factory"></a>Factory</h3>
+<ul>
+<li>instead of using <code>new</code> keywords to instantiate an object you use a function to do it for you</li>
+</ul>
+<h2 id="structural"><a aria-hidden="true" class="anchor-heading icon-link" href="#structural"></a>Structural</h2>
+<blockquote>
+<p>How objects relate to each other</p>
+</blockquote>
+<h3 id="facade"><a aria-hidden="true" class="anchor-heading icon-link" href="#facade"></a>Facade</h3>
+<ul>
+<li>a simplified API to hide other low level details in your code while still implementing them</li>
+</ul>
+<p><img src="/DevLog/assets/images/2022-07-05-18-23-04.png" alt="facade pattern"></p>
+<h3 id="proxy"><a aria-hidden="true" class="anchor-heading icon-link" href="#proxy"></a>Proxy</h3>
+<ul>
+<li>using a stand in object in place of the original that can also contain side effects and additional behavior</li>
+</ul>
+<h2 id="behavioral"><a aria-hidden="true" class="anchor-heading icon-link" href="#behavioral"></a>Behavioral</h2>
+<blockquote>
+<p>How objects behave with each other</p>
+</blockquote>
+<h3 id="iterator"><a aria-hidden="true" class="anchor-heading icon-link" href="#iterator"></a>Iterator</h3>
+<p><img src="/DevLog/assets/images/2022-07-05-18-28-20.png" alt="iterator"></p>
+<h3 id="observer"><a aria-hidden="true" class="anchor-heading icon-link" href="#observer"></a>Observer</h3>
+<ul>
+<li>allows many objects to intercept events broadcasted by other objects.</li>
+<li>It's a one to many relationship (like a radio tower and several receivers)</li>
+</ul>
+<p><img src="/DevLog/assets/images/2022-07-05-18-30-52.png" alt="Observer"></p>
+<h3 id="mediator"><a aria-hidden="true" class="anchor-heading icon-link" href="#mediator"></a>Mediator</h3>
+<ul>
+<li>middle man or broker</li>
+<li>like runways and airplanes (is the runway clear for the airplane to land)
+<ul>
+<li>Instead of having all the objects talking to each other via a many to many relationship</li>
+</ul>
+</li>
+<li>mediator is like an air traffic controller coordinating between airplanes and runways</li>
+</ul>
+<h3 id="state"><a aria-hidden="true" class="anchor-heading icon-link" href="#state"></a>State</h3>
+<ul>
+<li>where an object behaves a specific way based on a finite number of states</li>
+</ul>
+<p><img src="/DevLog/assets/images/2022-07-05-18-34-52.png" alt="bad, switch hell"></p>
+<p><img src="/DevLog/assets/images/2022-07-05-18-35-17.png" alt="state machine implementation"></p>
+<p><img src="/DevLog/assets/images/2022-07-05-18-35-41.png" alt="implemented methods"></p>
+<p><img src="/DevLog/assets/images/2022-07-05-18-36-02.png" alt="when state changes. object will behave in a completely different way"></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/fpe5zcdgqjbmn2exx1ibpfz">05 (DevLog)</a></li>
+<li><a href="/DevLog/notes/nw9oi8xh7oid0xvi81lx3fk">10 Design Patterns Explained in 10 Minutes (DevLog)</a></li>
+</ul>

@@ -1,0 +1,28 @@
+<h1 id="output"><a aria-hidden="true" class="anchor-heading icon-link" href="#output"></a>Output</h1>
+<h3 id="output-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#output-1"></a>Output</h3>
+<p><code>ofstream</code> = Output File Stream</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;fstream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ofstream outFS<span class="token punctuation">;</span> <span class="token comment">// Output file stream</span>
+   
+   <span class="token comment">// Open file</span>
+   outFS<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"myoutfile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>outFS<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Could not open file myoutfile.txt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token comment">// Write to file</span>
+   outFS <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Hello"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   outFS <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"1 2 3"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Done with file, so close it</span>
+   outFS<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

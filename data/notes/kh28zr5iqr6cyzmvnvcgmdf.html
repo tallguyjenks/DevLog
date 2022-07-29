@@ -1,0 +1,44 @@
+<h1 id="a-cheat-sheet-for-working-with-json-in-sql-server"><a aria-hidden="true" class="anchor-heading icon-link" href="#a-cheat-sheet-for-working-with-json-in-sql-server"></a>A Cheat Sheet for Working with Json in Sql Server</h1>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/json/json-data-sql-server?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/relational-databases/json/json-data-sql-server?view=sql-server-ver15</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/json/solve-common-issues-with-json-in-sql-server?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/relational-databases/json/solve-common-issues-with-json-in-sql-server?view=sql-server-ver15</a></li>
+</ul>
+<p>There are a few key functions for working with JSON in SQL Server.</p>
+<ul>
+<li><code>OPENJSON</code> — open a JSON string into a query-able object</li>
+<li><code>FOR</code> JSON — format data back into a JSON String</li>
+<li><code>ISJSON</code> — check if a string is a valid JSON format</li>
+<li><code>JSON_VALUE</code> — extract a specific value from a JSON object</li>
+<li><code>JSON_QUERY</code> — extract embedded objects and lists from a JSON object</li>
+<li><code>JSON_MODIFY</code> — update values in a JSON object</li>
+</ul>
+<p><img src="/DevLog/assets/images/2022-03-16-13-14-59.png" alt="function graphic"></p>
+<h2 id="json-to-varchar"><a aria-hidden="true" class="anchor-heading icon-link" href="#json-to-varchar"></a>JSON to VARCHAR</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@json</span> NVARCHAR<span class="token punctuation">(</span>MAX<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">SET</span> <span class="token variable">@json</span> <span class="token operator">=</span> N<span class="token string">'{JSON:HERE}'</span>
+</code></pre>
+<h2 id="path-expressions"><a aria-hidden="true" class="anchor-heading icon-link" href="#path-expressions"></a>Path Expressions</h2>
+<p>We write JSON “Path Expressions” to get data out of objects with either the <code>JSON_VALUE</code> or <code>JSON_QUERY</code> Functions.
+The Path Expressions allow for the following patterns.</p>
+<p><img src="/DevLog/assets/images/2022-03-16-13-16-34.png" alt="json path"></p>
+<h2 id="querying-json-objects"><a aria-hidden="true" class="anchor-heading icon-link" href="#querying-json-objects"></a>Querying JSON Objects</h2>
+<p><img src="/DevLog/assets/images/2022-03-16-13-17-49.png" alt="querying"></p>
+<p><img src="/DevLog/assets/images/2022-03-16-13-18-42.png" alt="querying with some json retained"></p>
+<h2 id="rename-values-on-selection"><a aria-hidden="true" class="anchor-heading icon-link" href="#rename-values-on-selection"></a>Rename Values on Selection</h2>
+<pre class="language-sql"><code class="language-sql">JSON_MODIFY<span class="token punctuation">(</span><span class="token operator">&#x3C;</span>json object<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&#x3C;</span>path <span class="token keyword">to</span> <span class="token keyword">select</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&#x3C;</span>new <span class="token keyword">value</span><span class="token operator">></span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-16-13-19-45.png" alt="json modify"></p>
+<h2 id="lax-vs-strict-mode"><a aria-hidden="true" class="anchor-heading icon-link" href="#lax-vs-strict-mode"></a>Lax vs Strict mode</h2>
+<blockquote>
+<p>JSON queries can also use a lax or strict mode to help control the behavior when data does not exist or when fields are not found.
+Specifying the mode at the beginning of a query string will enforce the mode.</p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> OPENJSON<span class="token punctuation">(</span><span class="token variable">@json</span><span class="token punctuation">,</span> N<span class="token string">'lax $.info'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-16-13-20-44.png" alt="info"></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/0rgjv56vireevabq0w3ca3t">Working with Json (DevLog)</a></li>
+</ul>

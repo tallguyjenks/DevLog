@@ -1,0 +1,77 @@
+<h1 id="argparse"><a aria-hidden="true" class="anchor-heading icon-link" href="#argparse"></a>Argparse</h1>
+<h2 id="information"><a aria-hidden="true" class="anchor-heading icon-link" href="#information"></a>Information</h2>
+<ul>
+<li><a href="https://realpython.com/command-line-interfaces-python-argparse/">https://realpython.com/command-line-interfaces-python-argparse/</a></li>
+<li>The Python <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">argparse (Private)</a> library:
+<ul>
+<li>Allows the use of positional arguments</li>
+<li>Allows the customization of the prefix chars</li>
+<li>Supports variable numbers of parameters for a single option</li>
+<li>Supports subcommands (A main command line parser can use other command line parsers depending on some arguments.)</li>
+</ul>
+</li>
+</ul>
+<h2 id="examples"><a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a>Examples</h2>
+<pre class="language-python"><code class="language-python"><span class="token comment"># myls.py</span>
+<span class="token comment"># Import the argparse library</span>
+<span class="token keyword">import</span> argparse
+
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> sys
+
+my_parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span>prog<span class="token operator">=</span><span class="token string">'myls'</span><span class="token punctuation">,</span>
+								  usage<span class="token operator">=</span><span class="token string">'%(prog)s [options] path'</span><span class="token punctuation">,</span>
+								  description<span class="token operator">=</span><span class="token string">'List the content of a folder'</span><span class="token punctuation">)</span>
+
+my_parser<span class="token punctuation">.</span>version <span class="token operator">=</span> <span class="token string">'1.0'</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-a'</span><span class="token punctuation">,</span>
+					 action<span class="token operator">=</span><span class="token string">'store'</span><span class="token punctuation">,</span>
+					 choices<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'head'</span><span class="token punctuation">,</span> <span class="token string">'tail'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+					 <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'set the user choice to head or tail'</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-b'</span><span class="token punctuation">,</span>
+					 action<span class="token operator">=</span><span class="token string">'store_const'</span><span class="token punctuation">,</span>
+					 const<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">,</span>
+					 <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-c'</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">'store_true'</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-d'</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">'store_false'</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-e'</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">'append'</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-f'</span><span class="token punctuation">,</span>
+					 action<span class="token operator">=</span><span class="token string">'append_const'</span><span class="token punctuation">,</span>
+					 const<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">,</span>
+					 <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-g'</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-i'</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">'help'</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-j'</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">'version'</span><span class="token punctuation">)</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-k'</span><span class="token punctuation">,</span>
+					 action<span class="token operator">=</span><span class="token string">'store'</span><span class="token punctuation">,</span>
+					 <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">,</span>
+					 choices<span class="token operator">=</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+my_group <span class="token operator">=</span> my_parser<span class="token punctuation">.</span>add_mutually_exclusive_group<span class="token punctuation">(</span>required<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+my_group<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-v'</span><span class="token punctuation">,</span> <span class="token string">'--verbose'</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">'store_true'</span><span class="token punctuation">)</span>
+my_group<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-s'</span><span class="token punctuation">,</span> <span class="token string">'--silent'</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">'store_true'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Add the arguments</span>
+my_parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'Path'</span><span class="token punctuation">,</span>
+					 metavar<span class="token operator">=</span><span class="token string">'path'</span><span class="token punctuation">,</span>
+					 <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">,</span>
+					 <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'the path to list'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Execute the parse_args() method</span>
+args <span class="token operator">=</span> my_parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+input_path <span class="token operator">=</span> args<span class="token punctuation">.</span>Path
+
+<span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>input_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The path specified does not exist'</span><span class="token punctuation">)</span>
+  sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>input_path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/4mcn5po13rxmj1t3onywtjd">Guidelines (DevLog)</a></li>
+<li><a href="/DevLog/notes/i8kmgzifkfjd0ihc51yhb20">07 (DevLog)</a></li>
+</ul>

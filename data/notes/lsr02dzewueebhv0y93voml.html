@@ -1,0 +1,107 @@
+<h1 id="tikz"><a aria-hidden="true" class="anchor-heading icon-link" href="#tikz"></a>Tikz</h1>
+<h2 id="flow-chart"><a aria-hidden="true" class="anchor-heading icon-link" href="#flow-chart"></a>Flow Chart</h2>
+<pre class="language-latex"><code class="language-latex"><span class="token comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="token comment">%</span>
+<span class="token comment">% Welcome to Overleaf --- just edit your LaTeX on the left,</span>
+<span class="token comment">% and we'll compile it for you on the right. If you open the</span>
+<span class="token comment">% 'Share' menu, you can invite other users to edit at the same</span>
+<span class="token comment">% time. See www.overleaf.com/learn for more info. Enjoy!</span>
+<span class="token comment">%</span>
+<span class="token comment">% Note: you can export the pdf to see the result at full</span>
+<span class="token comment">% resolution.</span>
+<span class="token comment">%</span>
+<span class="token comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="token comment">% Decision tree</span>
+<span class="token comment">% Author: Stefan Kottwitz</span>
+<span class="token comment">% https://www.packtpub.om/hardware-and-creative/latex-cookbook</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">[</span>border=10pt<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">standalone</span><span class="token punctuation">}</span>
+<span class="token comment">%%%&#x3C;</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">verbatim</span><span class="token punctuation">}</span>
+<span class="token comment">%%%></span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">comment</span><span class="token punctuation">}</span>
+:Title: Decision tree
+:Tags: Trees;Cookbook
+:Author: Stefan Kottwitz
+:Slug: decision-tree
+
+A horizontal tree, growing to the right.
+I created a basic style for tree nodes, and
+derived styles for specific kinds of nodes.
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">comment</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">tikz</span><span class="token punctuation">}</span>
+<span class="token function selector">\tikzset</span><span class="token punctuation">{</span>
+  treenode/.style = <span class="token punctuation">{</span>shape=rectangle, rounded corners,
+                     draw, align=center,
+                     top color=white, bottom color=blue!20<span class="token punctuation">}</span>,
+  root/.style     = <span class="token punctuation">{</span>treenode, font=<span class="token function selector">\Large</span>, bottom color=red!30<span class="token punctuation">}</span>,
+  env/.style      = <span class="token punctuation">{</span>treenode, font=<span class="token function selector">\ttfamily</span><span class="token function selector">\normalsize</span><span class="token punctuation">}</span>,
+  dummy/.style    = <span class="token punctuation">{</span>circle,draw<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span>
+  <span class="token punctuation">[</span>
+    grow                    = right,
+    sibling distance        = 6em,
+    level distance          = 10em,
+    edge from parent/.style = <span class="token punctuation">{</span>draw, -latex<span class="token punctuation">}</span>,
+    every node/.style       = <span class="token punctuation">{</span>font=<span class="token function selector">\footnotesize</span><span class="token punctuation">}</span>,
+    sloped
+  <span class="token punctuation">]</span>
+  <span class="token function selector">\node</span> <span class="token punctuation">[</span>root<span class="token punctuation">]</span> <span class="token punctuation">{</span>Formula<span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">[</span>env<span class="token punctuation">]</span> <span class="token punctuation">{</span>equation<span class="token punctuation">}</span>
+      edge from parent node <span class="token punctuation">[</span>below<span class="token punctuation">]</span> <span class="token punctuation">{</span>single-line?<span class="token punctuation">}</span> <span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">[</span>dummy<span class="token punctuation">]</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      child <span class="token punctuation">{</span> node <span class="token punctuation">[</span>dummy<span class="token punctuation">]</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        child <span class="token punctuation">{</span> node <span class="token punctuation">[</span>env<span class="token punctuation">]</span> <span class="token punctuation">{</span>align<span class="token function selector">\\</span>flalign<span class="token punctuation">}</span>
+          edge from parent node <span class="token punctuation">[</span>below<span class="token punctuation">]</span> <span class="token punctuation">{</span>at relation sign?<span class="token punctuation">}</span> <span class="token punctuation">}</span>
+        child <span class="token punctuation">{</span> node <span class="token punctuation">[</span>env<span class="token punctuation">]</span> <span class="token punctuation">{</span>alignat<span class="token punctuation">}</span>
+          edge from parent node <span class="token punctuation">[</span>above<span class="token punctuation">]</span> <span class="token punctuation">{</span>at several<span class="token punctuation">}</span>
+                           node <span class="token punctuation">[</span>below<span class="token punctuation">]</span> <span class="token punctuation">{</span>places?<span class="token punctuation">}</span> <span class="token punctuation">}</span>
+        child <span class="token punctuation">{</span> node <span class="token punctuation">[</span>env<span class="token punctuation">]</span> <span class="token punctuation">{</span>gather<span class="token punctuation">}</span>
+                edge from parent node <span class="token punctuation">[</span>above<span class="token punctuation">]</span> <span class="token punctuation">{</span>centered?<span class="token punctuation">}</span> <span class="token punctuation">}</span>
+        edge from parent node <span class="token punctuation">[</span>below<span class="token punctuation">]</span> <span class="token punctuation">{</span>aligned?<span class="token punctuation">}</span> <span class="token punctuation">}</span>
+      child <span class="token punctuation">{</span> node <span class="token punctuation">[</span>env<span class="token punctuation">]</span> <span class="token punctuation">{</span>multline<span class="token punctuation">}</span>
+              edge from parent node <span class="token punctuation">[</span>above, align=center<span class="token punctuation">]</span>
+                <span class="token punctuation">{</span>first left,<span class="token function selector">\\</span>centered,<span class="token punctuation">}</span>
+              node <span class="token punctuation">[</span>below<span class="token punctuation">]</span> <span class="token punctuation">{</span>last right<span class="token punctuation">}</span><span class="token punctuation">}</span>
+              edge from parent node <span class="token punctuation">[</span>above<span class="token punctuation">]</span> <span class="token punctuation">{</span>multi-line?<span class="token punctuation">}</span> <span class="token punctuation">}</span>;
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">tikz</span><span class="token punctuation">}</span>
+<span class="token function selector">\usetikzlibrary</span><span class="token punctuation">{</span>shapes.geometric, arrows<span class="token punctuation">}</span>
+
+
+    <span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>startstop<span class="token punctuation">}</span> = <span class="token punctuation">[</span>rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30<span class="token punctuation">]</span>
+    <span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>io<span class="token punctuation">}</span> = <span class="token punctuation">[</span>trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30<span class="token punctuation">]</span>
+    <span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>process<span class="token punctuation">}</span> = <span class="token punctuation">[</span>rectangle, text width=3cm, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30<span class="token punctuation">]</span>
+    <span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>decision<span class="token punctuation">}</span> = <span class="token punctuation">[</span>diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30<span class="token punctuation">]</span>
+    <span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>arrow<span class="token punctuation">}</span> = <span class="token punctuation">[</span>thick,->,>=stealth<span class="token punctuation">]</span>
+
+
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span><span class="token punctuation">[</span>node distance=2cm<span class="token punctuation">]</span>
+        <span class="token function selector">\node</span> (start) <span class="token punctuation">[</span>startstop<span class="token punctuation">]</span> <span class="token punctuation">{</span>start<span class="token punctuation">}</span>;
+        <span class="token function selector">\node</span> (in1) <span class="token punctuation">[</span>io, below of=start<span class="token punctuation">]</span> <span class="token punctuation">{</span>Input<span class="token punctuation">}</span>;
+        <span class="token function selector">\node</span> (pro1) <span class="token punctuation">[</span>process, below of=in1<span class="token punctuation">]</span> <span class="token punctuation">{</span>Process 1<span class="token punctuation">}</span>;
+        <span class="token function selector">\node</span> (dec1) <span class="token punctuation">[</span>decision, below of=pro1, yshift=-0.5cm<span class="token punctuation">]</span> <span class="token punctuation">{</span>Decision 1<span class="token punctuation">}</span>;
+        <span class="token function selector">\node</span> (pro2a) <span class="token punctuation">[</span>process, below of=dec1, yshift=-0.5cm<span class="token punctuation">]</span> <span class="token punctuation">{</span>Process 2a<span class="token punctuation">}</span>;
+        <span class="token function selector">\node</span> (pro2b) <span class="token punctuation">[</span>process, right of=dec1, xshift=2cm<span class="token punctuation">]</span> <span class="token punctuation">{</span>Process 2b<span class="token punctuation">}</span>;
+        <span class="token function selector">\node</span> (out1) <span class="token punctuation">[</span>io, below of=pro2a<span class="token punctuation">]</span> <span class="token punctuation">{</span>Output<span class="token punctuation">}</span>;
+        <span class="token function selector">\node</span> (stop) <span class="token punctuation">[</span>startstop, below of=out1<span class="token punctuation">]</span> <span class="token punctuation">{</span>See Step <span class="token function selector">\textbf</span><span class="token punctuation">{</span><span class="token function selector">\ref</span><span class="token punctuation">{</span><span class="token keyword">test</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span>;
+
+        <span class="token function selector">\draw</span> <span class="token punctuation">[</span>arrow<span class="token punctuation">]</span> (start) -- (in1);
+        <span class="token function selector">\draw</span> <span class="token punctuation">[</span>arrow<span class="token punctuation">]</span> (in1) -- (pro1);
+        <span class="token function selector">\draw</span> <span class="token punctuation">[</span>arrow<span class="token punctuation">]</span> (pro1) -- (dec1);
+        <span class="token function selector">\draw</span> <span class="token punctuation">[</span>arrow<span class="token punctuation">]</span> (dec1) -- node<span class="token punctuation">[</span>anchor=east<span class="token punctuation">]</span> <span class="token punctuation">{</span>yes<span class="token punctuation">}</span> (pro2a);
+        <span class="token function selector">\draw</span> <span class="token punctuation">[</span>arrow<span class="token punctuation">]</span> (dec1) -- node<span class="token punctuation">[</span>anchor=south<span class="token punctuation">]</span> <span class="token punctuation">{</span>no<span class="token punctuation">}</span> (pro2b);
+        <span class="token function selector">\draw</span> <span class="token punctuation">[</span>arrow<span class="token punctuation">]</span> (pro2b) |- (pro1);
+        <span class="token function selector">\draw</span> <span class="token punctuation">[</span>arrow<span class="token punctuation">]</span> (pro2a) -- (out1);
+        <span class="token function selector">\draw</span> <span class="token punctuation">[</span>arrow<span class="token punctuation">]</span> (out1) -- (stop);
+    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span>
+</code></pre>
+<h2 id="documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a>Documentation</h2>
+<ul>
+<li><a href="http://texdoc.net/texmf-dist/doc/generic/pgf/pgfmanual.pdf">Tikz Documentations</a></li>
+<li><a href="https://cremeronline.com/LaTeX/minimaltikz.pdf">Short Intro To Tikz</a></li>
+</ul>

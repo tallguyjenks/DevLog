@@ -1,0 +1,13 @@
+<h1 id="return-quickest-completed-item"><a aria-hidden="true" class="anchor-heading icon-link" href="#return-quickest-completed-item"></a>Return Quickest Completed Item</h1>
+<h2 id="return-the-quickest-completed-item"><a aria-hidden="true" class="anchor-heading icon-link" href="#return-the-quickest-completed-item"></a>Return the Quickest Completed item</h2>
+<p><code>promise.all</code> waits for all of the promises to finish execution before returning results
+where as
+<code>promise.race</code> returns as soon as anything finishes and will return that first completed item in the <code>.then</code> so that an array isnt returned only a single result value of the quickest item because its a <code>.race</code></p>
+<pre class="language-js"><code class="language-js"><span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">race</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    recordVideoOne<span class="token punctuation">,</span>
+    recordVideoTwo<span class="token punctuation">,</span>
+    recordVideoThree
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">message</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>

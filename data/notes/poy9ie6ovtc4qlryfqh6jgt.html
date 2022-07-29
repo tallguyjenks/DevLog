@@ -1,0 +1,91 @@
+<h1 id="arrow-functions"><a aria-hidden="true" class="anchor-heading icon-link" href="#arrow-functions"></a>Arrow Functions</h1>
+<p>Arrow functions do not have their own <code>this</code>. They are not well suited for defining <strong>object methods</strong>.</p>
+<p>Arrow functions are not hoisted. They must be defined <strong>before</strong> they are used.</p>
+<p>Using <code>const</code> is safer than using <code>var</code>, because a function expression is always a constant value.</p>
+<p>You can only omit the <code>return</code> keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">/*
+    Source: https://youtu.be/h33Srr5J9nY?list=PLZlA0Gpn_vH-0FlQnruw2rd1HuiYJHHkm
+*/</span>
+
+<span class="token comment">// Normal function</span>
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+
+<span class="token comment">// if it can fit on 1 line these make the code more concise and legible</span>
+<span class="token keyword">let</span> <span class="token function-variable function">sum2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> a <span class="token operator">+</span> b
+
+<span class="token doc-comment comment">/**************************************************************************************/</span>
+<span class="token keyword">function</span> <span class="token function">isPositive</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> number <span class="token operator">>=</span> <span class="token number">0</span> 
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Single parameter functions dont need parens on their args</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isPositive</span> <span class="token operator">=</span> <span class="token parameter">number</span> <span class="token arrow operator">=></span> number <span class="token operator">>=</span> <span class="token number">0</span>
+
+<span class="token doc-comment comment">/**************************************************************************************/</span>
+
+<span class="token keyword">function</span> <span class="token function">randomNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token property-access">random</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// No parameter functions need the parens to exist though</span>
+<span class="token keyword">let</span> <span class="token function-variable function">randomNumber</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token property-access">random</span>
+
+<span class="token doc-comment comment">/**************************************************************************************/</span>
+
+<span class="token comment">// arrow functions really useful for anonymous functions</span>
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// is exactly the same as </span>
+
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token doc-comment comment">/**************************************************************************************/</span>
+<span class="token comment">/* 
+    The real power of arrow functions is the redeffinition of the the 'this' keyword
+    within them
+*/</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">name</span> <span class="token operator">=</span> name
+    <span class="token punctuation">}</span>
+    <span class="token function">printNameArrow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+            <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Arrow: '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token function">printNameFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Arrow: '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'Bob'</span><span class="token punctuation">)</span>
+person<span class="token punctuation">.</span><span class="token method function property-access">printNameArrow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// acts like most other programming langs</span>
+person<span class="token punctuation">.</span><span class="token method function property-access">printNameFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// prints nothing because in normal functions the 'this' is defined based on WHERE the function is called</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span> <span class="token comment">// also returns nothing as 'this' is not defined in the global scope</span>
+
+<span class="token comment">/*
+    Normal functions redefine 'this' to what ever scope you function in and that is the global scope in this instance
+    Arrow functions treat the scoping of the 'this' keyword like most other programming language now 
+    its preferable now to use arrow function over normal functions unless explicitly necessary to use normal functions
+*/</span>
+</code></pre>
+<h3 id="default-parameter-values"><a aria-hidden="true" class="anchor-heading icon-link" href="#default-parameter-values"></a>Default Parameter Values</h3>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+  <span class="token comment">// y is 10 if not passed or undefined  </span>
+  <span class="token keyword control-flow">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+<span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// will return 15</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/z7ttjzpaawtowwhofdvag95">Ecmascript 2015 (DevLog)</a></li>
+</ul>

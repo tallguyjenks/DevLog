@@ -1,0 +1,30 @@
+<h1 id="installation"><a aria-hidden="true" class="anchor-heading icon-link" href="#installation"></a>Installation</h1>
+<h2 id="step-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#step-1"></a>Step 1</h2>
+<p>Installation of pgAdmin 4</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> pgadmin4 pgadmin4-apache
+</code></pre>
+<h2 id="step-2"><a aria-hidden="true" class="anchor-heading icon-link" href="#step-2"></a>Step 2</h2>
+<p>Creation of plpgsql procedural language if not defined</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> TRUSTED PROCEDURAL <span class="token keyword">LANGUAGE</span> <span class="token string">'plpgsql'</span>
+<span class="token keyword">HANDLER</span> plpgsql_call_ <span class="token keyword">handler</span>
+<span class="token keyword">HANDLER</span> plpgsql validator<span class="token punctuation">;</span>
+</code></pre>
+<h2 id="step-3"><a aria-hidden="true" class="anchor-heading icon-link" href="#step-3"></a>Step 3</h2>
+<p>Installation of pgAgent</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> pgagent
+</code></pre>
+<h2 id="step-4"><a aria-hidden="true" class="anchor-heading icon-link" href="#step-4"></a>Step 4</h2>
+<p>Creation of the pgagent extension</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> EXTENSION pageant
+</code></pre>
+<p>In order to define a new job, it's only necessary select "Create" using the right
+button on "pgAgent Jobs", and it'll insert a designation for this job and define the
+steps to execute it:</p>
+<p><img src="/DevLog/assets/images/2022-01-14-23-43-37.png" alt="pgagent"></p>
+<p><img src="/DevLog/assets/images/2022-01-14-23-44-04.png" alt="job"></p>
+<p><img src="/DevLog/assets/images/2022-01-14-23-44-19.png" alt="schedules"></p>
+<h2 id="step-5"><a aria-hidden="true" class="anchor-heading icon-link" href="#step-5"></a>Step 5</h2>
+<p>Finally, to have the agent running in the background it's necessary to launch the
+following process manually:</p>
+<pre class="language-bash"><code class="language-bash">/usr/bin/pgagent <span class="token assign-left variable">host</span><span class="token operator">=</span>localhost <span class="token assign-left variable">dbname</span><span class="token operator">=</span>postgres <span class="token assign-left variable">user</span><span class="token operator">=</span>postgres <span class="token assign-left variable">port</span><span class="token operator">=</span><span class="token number">5432</span> -l <span class="token number">1</span>
+</code></pre>

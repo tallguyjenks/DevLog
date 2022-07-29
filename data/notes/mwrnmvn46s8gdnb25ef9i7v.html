@@ -1,0 +1,27 @@
+<h1 id="ifs"><a aria-hidden="true" class="anchor-heading icon-link" href="#ifs"></a>Ifs</h1>
+<h3 id="internal-field-separator---ifs"><a aria-hidden="true" class="anchor-heading icon-link" href="#internal-field-separator---ifs"></a>Internal Field Separator - IFS</h3>
+<p><code>IFS</code> = Internal Field Separator.</p>
+<p>Unbelievable as it may seem, <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">POSIX (Private)</a> requires the treatment of IFS as a field terminator, rather than a field separator. What this means in our example is that if there's an empty field at the end of the input line, it will be discarded:</p>
+<pre class="language-shell"><code class="language-shell">
+<span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span>, <span class="token builtin class-name">read</span> -ra fields <span class="token operator">&#x3C;&#x3C;&#x3C;</span> <span class="token string">"a,b,"</span>
+<span class="token builtin class-name">declare</span> -p fields
+<span class="token comment">#> declare -a fields='([0]="a" [1]="b")'</span>
+
+</code></pre>
+<p>Where did the empty field go? It was eaten for historical reasons ("because it's always been that way"). This behavior is not unique to bash; all conforming shells do it. A non-empty field is properly scanned:</p>
+<pre class="language-shell"><code class="language-shell">
+<span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span>, <span class="token builtin class-name">read</span> -ra fields <span class="token operator">&#x3C;&#x3C;&#x3C;</span> <span class="token string">"a,b,c"</span>
+<span class="token builtin class-name">declare</span> -p fields
+<span class="token comment">#> declare -a fields='([0]="a" [1]="b" [2]="c")'</span>
+
+</code></pre>
+<p>So, how do we work around this nonsense? As it turns out, appending an <code>IFS</code> character to the end of the input string will force the scanning to work. If there was a trailing empty field, the extra <code>IFS</code> character "terminates" it so that it gets scanned. If there was a trailing non-empty field, the <code>IFS</code> &#x3C;character creates a new, empty field that gets dropped.</p>
+<pre class="language-shell"><code class="language-shell">
+<span class="token assign-left variable">input</span><span class="token operator">=</span><span class="token string">"a,b,"</span>
+<span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span>, <span class="token builtin class-name">read</span> -ra fields <span class="token operator">&#x3C;&#x3C;&#x3C;</span> <span class="token string">"<span class="token variable">$input</span>,"</span>
+<span class="token builtin class-name">declare</span> -p fields
+<span class="token comment">#> declare -a fields='([0]="a" [1]="b" [2]="")'</span>
+
+</code></pre>
+<p><a href="https://mywiki.wooledge.org/BashPitfalls">https://mywiki.wooledge.org/BashPitfalls</a>
+<a href="https://mywiki.wooledge.org/IFS">https://mywiki.wooledge.org/IFS</a></p>

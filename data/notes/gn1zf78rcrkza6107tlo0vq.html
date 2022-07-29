@@ -1,0 +1,10 @@
+<h1 id="find"><a aria-hidden="true" class="anchor-heading icon-link" href="#find"></a>Find</h1>
+<h3 id="find-item-index-"><a aria-hidden="true" class="anchor-heading icon-link" href="#find-item-index-"></a>find( item, index )</h3>
+<p>Starts at a 0 index and returns index position of your input. Optional 2nd argument can tell you which index to start at so as to skip the first occurrence of something.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// userText is "Help me!"</span>
+userText<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token char">'p'</span><span class="token punctuation">)</span>    <span class="token comment">// Returns 3 </span>
+userText<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token char">'e'</span><span class="token punctuation">)</span>    <span class="token comment">// Returns 1 (first occurrence of e only) </span>
+userText<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token char">'z'</span><span class="token punctuation">)</span>    <span class="token comment">// Returns string::npos </span>
+userText<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"me"</span><span class="token punctuation">)</span>   <span class="token comment">// Returns 5</span>
+userText<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token char">'e'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// Returns 6 (starts at index 2)</span>
+</code></pre>

@@ -1,0 +1,22 @@
+<h1 id="enums"><a aria-hidden="true" class="anchor-heading icon-link" href="#enums"></a>Enums</h1>
+<h2 id="enums-with-the-enum-module"><a aria-hidden="true" class="anchor-heading icon-link" href="#enums-with-the-enum-module"></a>enums with the <a href="/DevLog/notes/2vakk48y4zpjk9tawr3iyyf">Enum</a> module</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> enum <span class="token keyword">import</span> Enum
+Season <span class="token operator">=</span> Enum<span class="token punctuation">(</span><span class="token string">'Season'</span><span class="token punctuation">,</span> <span class="token string">'winter summer spring autumn'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Season<span class="token punctuation">.</span>summer<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Season<span class="token punctuation">.</span>summer<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+
+<span class="token comment">#using class</span>
+<span class="token keyword">class</span> <span class="token class-name">Season</span><span class="token punctuation">(</span>Enum<span class="token punctuation">)</span><span class="token punctuation">:</span>
+winter <span class="token operator">=</span> <span class="token number">1</span>
+summer <span class="token operator">=</span> <span class="token number">2</span>
+spring <span class="token operator">=</span> <span class="token number">3</span>
+autumn <span class="token operator">=</span> <span class="token number">4</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Season<span class="token punctuation">.</span>winter<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Season<span class="token punctuation">.</span>winter<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+
+<span class="token comment"># Output:</span>
+<span class="token comment"># summer</span>
+<span class="token comment"># 2</span>
+<span class="token comment"># winter</span>
+<span class="token comment"># 1</span>
+</code></pre>

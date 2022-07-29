@@ -1,0 +1,62 @@
+<h1 id="param"><a aria-hidden="true" class="anchor-heading icon-link" href="#param"></a>Param</h1>
+<h4 id="parameter-what-does-it-do"><a aria-hidden="true" class="anchor-heading icon-link" href="#parameter-what-does-it-do"></a>Parameter What does it do?</h4>
+<pre class="language-shell"><code class="language-shell"><span class="token variable">${VAR<span class="token operator">^</span>}</span>     <span class="token comment"># Uppercase first character.</span>
+<span class="token variable">${VAR==}</span>    <span class="token comment"># Uppercase all characters.</span>
+<span class="token variable">${VAR<span class="token operator">,</span>}</span>     <span class="token comment"># Lowercase first character.</span>
+<span class="token variable">${VAR<span class="token operator">,,</span>}</span>    <span class="token comment"># Lowercase all characters.</span>
+<span class="token variable">${VAR~}</span>     <span class="token comment"># Reverse case of first character.</span>
+<span class="token variable">${VAR~~}</span>    <span class="token comment"># Reverse case of all characters.</span>
+</code></pre>
+<pre class="language-shell"><code class="language-shell"><span class="token shebang important">#!/usr/bin/env bash</span>
+
+<span class="token function-name function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token builtin class-name">local</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">"The Quick Brown FOX Jumped over The Lazy Dog."</span>
+
+	<span class="token builtin class-name">local</span> -i <span class="token assign-left variable">loopCount</span><span class="token operator">=</span><span class="token number">1000</span>
+	<span class="token builtin class-name">local</span> -i <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span>
+	<span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> loopCount<span class="token punctuation">;</span> <span class="token operator">++</span>i <span class="token punctuation">))</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+		<span class="token builtin class-name">local</span> <span class="token assign-left variable">newVal</span><span class="token operator">=</span><span class="token string">""</span>
+		<span class="token assign-left variable">newVal</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${value<span class="token operator">,</span>}</span>"</span>
+		<span class="token builtin class-name">printf</span> <span class="token string">"%s<span class="token entity" title="\n">\n</span>"</span> <span class="token string">"<span class="token variable">$newVal</span>"</span>
+	<span class="token keyword">done</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token function-name function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token builtin class-name">local</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">"The Quick Brown FOX Jumped over The Lazy Dog."</span>
+
+	<span class="token builtin class-name">local</span> -i <span class="token assign-left variable">loopCount</span><span class="token operator">=</span><span class="token number">1000</span>
+	<span class="token builtin class-name">local</span> -i <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span>
+	<span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> loopCount<span class="token punctuation">;</span> <span class="token operator">++</span>i <span class="token punctuation">))</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+		<span class="token comment"># shellcheck disable=SC2155</span>
+		<span class="token builtin class-name">local</span> <span class="token assign-left variable">newVal</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$value</span>"</span> <span class="token operator">|</span> <span class="token function">tr</span> <span class="token string">'[:upper:]'</span> <span class="token string">'[:lower:]'</span><span class="token variable">)</span></span>
+		<span class="token builtin class-name">printf</span> <span class="token string">"%s<span class="token entity" title="\n">\n</span>"</span> <span class="token string">"<span class="token variable">$newVal</span>"</span>
+	<span class="token keyword">done</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">baz</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token builtin class-name">local</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$*</span>"</span>
+
+	<span class="token builtin class-name">printf</span> <span class="token string">"%s<span class="token entity" title="\n">\n</span>"</span> <span class="token string">"<span class="token variable">${value<span class="token operator">,,</span>}</span>"</span>
+<span class="token punctuation">}</span>
+
+foo
+bar
+baz
+
+<span class="token comment"># Lower Case Conversion</span>
+<span class="token function-name function">lower</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment"># Usage: lower "string"</span>
+	<span class="token builtin class-name">printf</span> <span class="token string">'%s\n'</span> <span class="token string">"<span class="token variable">${1<span class="token operator">,,</span>}</span>"</span>
+<span class="token punctuation">}</span>
+<span class="token comment"># Upper Case Conversion</span>
+<span class="token function-name function">upper</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment"># Usage: upper "string"</span>
+	<span class="token builtin class-name">printf</span> <span class="token string">'%s\n'</span> <span class="token string">"<span class="token variable">${1==}</span>"</span>
+<span class="token punctuation">}</span>
+<span class="token comment"># Reverse Case Conversion</span>
+<span class="token function-name function">reverse_case</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment"># Usage: reverse_case "string"</span>
+	<span class="token builtin class-name">printf</span> <span class="token string">'%s\n'</span> <span class="token string">"<span class="token variable">${1~~}</span>"</span>
+<span class="token punctuation">}</span>
+</code></pre>

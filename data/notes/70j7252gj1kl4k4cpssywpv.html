@@ -1,0 +1,85 @@
+<h1 id="dataframe"><a aria-hidden="true" class="anchor-heading icon-link" href="#dataframe"></a>Dataframe</h1>
+<h2 id="data-frame"><a aria-hidden="true" class="anchor-heading icon-link" href="#data-frame"></a>Data Frame</h2>
+<pre class="language-r"><code class="language-r"><span class="token comment"># PART 1 ----</span>
+
+<span class="token comment"># Data Frames</span>
+<span class="token comment"># A Table or a 2-dimensional array-like structure in which each column contains </span>
+<span class="token comment"># values of one variable and each row contains one set of values from each column</span>
+<span class="token comment"># Syntax: data.frame(data)</span>
+
+<span class="token comment">#============#</span>
+<span class="token comment">#  EXAMPLES  #</span>
+<span class="token comment">#============#</span>
+
+RowCount <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">)</span>
+PeopleNames <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"Bryan"</span><span class="token punctuation">,</span><span class="token string">"Jude"</span><span class="token punctuation">,</span><span class="token string">"kelly"</span><span class="token punctuation">,</span><span class="token string">"janelle"</span><span class="token punctuation">,</span><span class="token string">"Rosa"</span><span class="token punctuation">)</span>
+Values <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">145</span><span class="token punctuation">,</span><span class="token number">74</span><span class="token punctuation">)</span>
+
+df <span class="token operator">&#x3C;-</span> data.frame<span class="token punctuation">(</span>RowCount<span class="token punctuation">,</span>PeopleNames<span class="token punctuation">,</span>Values<span class="token punctuation">)</span>
+df
+<span class="token comment"># This alone will display the valeus of the data frame each vector in the frame</span>
+<span class="token comment"># represents a vertical column of values that each contibue a value to each row</span>
+
+data.frame<span class="token punctuation">(</span>airquality<span class="token punctuation">)</span> 
+<span class="token comment"># Built in sample data table, can also import Excel files</span>
+
+
+<span class="token comment"># PART 2 ----</span>
+
+myDataFrame <span class="token operator">&#x3C;-</span> read.csv<span class="token punctuation">(</span><span class="token string">"20190208 RC Registry.csv"</span><span class="token punctuation">)</span>
+myDataFrame <span class="token operator">&#x3C;-</span> myDataFrame<span class="token punctuation">[</span>myDataFrame<span class="token operator">$</span>Medical..Screening.Due.Date <span class="token operator">&#x3C;</span>date<span class="token punctuation">,</span> c<span class="token punctuation">(</span><span class="token string">"CDCR"</span><span class="token punctuation">,</span> <span class="token string">"Medical..Screening.Due.Date"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+myDataFrame
+
+
+<span class="token comment"># PART 3 ----</span>
+
+<span class="token comment"># setting up the data frame vectors</span>
+id <span class="token operator">&#x3C;-</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">200</span>
+group <span class="token operator">&#x3C;-</span> c<span class="token punctuation">(</span>rep<span class="token punctuation">(</span><span class="token string">"Vehicle"</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	   rep<span class="token punctuation">(</span><span class="token string">"Drug"</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+response <span class="token operator">&#x3C;-</span> c<span class="token punctuation">(</span>rnorm<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span>mean <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">,</span> sd <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		  rnorm<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span>mean <span class="token operator">=</span> <span class="token number">23</span><span class="token punctuation">,</span> sd<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+age <span class="token operator">&#x3C;-</span> round<span class="token punctuation">(</span>rnorm<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#compiling the data frame</span>
+myData <span class="token operator">&#x3C;-</span> data.frame<span class="token punctuation">(</span>Patient <span class="token operator">=</span> id<span class="token punctuation">,</span>
+				 Patient.Age <span class="token operator">=</span> age<span class="token punctuation">,</span>
+				 Treatment <span class="token operator">=</span> group<span class="token punctuation">,</span>
+				 Response <span class="token operator">=</span> response<span class="token punctuation">)</span>
+
+myData
+head<span class="token punctuation">(</span>myData<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+tail<span class="token punctuation">(</span>myData<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+dim<span class="token punctuation">(</span>myData<span class="token punctuation">)</span>
+str<span class="token punctuation">(</span>myData<span class="token punctuation">)</span>
+summary<span class="token punctuation">(</span>myData<span class="token punctuation">)</span>
+
+<span class="token comment"># subsetting Data.frames ----</span>
+
+myData<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+myData<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+myData<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token comment"># first 20 rows with columns 2 &#x26; 3 present</span>
+myData<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token comment"># returns 20 rows and all columns if left blank</span>
+myData<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># returns everythingh in the first column only</span>
+myData<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token string">"Response"</span><span class="token punctuation">]</span> <span class="token comment"># returns just the columns values for the column named "Response"</span>
+myData<span class="token operator">$</span>Response <span class="token comment">#the Dollar sign $ after the name of the data frame will return the entire column without quotes or brackets</span>
+
+myData<span class="token punctuation">[</span>myData<span class="token operator">$</span>Response<span class="token operator">></span><span class="token number">26</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token comment"># give me the rows and all columns for every row that meets the criteria</span>
+<span class="token comment"># of Response > 26</span>
+
+<span class="token comment">#perform a calculation and then add values to a new column of the data frame</span>
+myData<span class="token operator">$</span>Positive <span class="token operator">&#x3C;-</span> myData<span class="token operator">$</span>Response<span class="token operator">&#x3C;</span><span class="token number">26</span>
+write.csv<span class="token punctuation">(</span>myData<span class="token punctuation">[</span>myData<span class="token operator">$</span>Response<span class="token operator">></span><span class="token number">26</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">,</span>file <span class="token operator">=</span> <span class="token string">"testData.csv"</span><span class="token punctuation">,</span> row.names <span class="token operator">=</span> F<span class="token punctuation">)</span> <span class="token comment"># write a CSV file to the current working directory</span>
+
+<span class="token comment"># multiple filter criteria and then assigned</span>
+<span class="token comment"># to a new object for ease of exporting to CSV</span>
+CSVMyData <span class="token operator">&#x3C;-</span> myData<span class="token punctuation">[</span>myData<span class="token operator">$</span>Treatment <span class="token operator">==</span> <span class="token string">"Vehicle"</span>
+				<span class="token operator">&#x26;</span> myData<span class="token operator">$</span>Response<span class="token operator">></span><span class="token number">26</span> <span class="token operator">&#x26;</span>
+					myData<span class="token operator">$</span>Patient.Age <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token punctuation">]</span> 
+
+
+write.csv<span class="token punctuation">(</span>CSVMyData<span class="token punctuation">,</span>file <span class="token operator">=</span> <span class="token string">"testData.csv"</span><span class="token punctuation">,</span> row.names <span class="token operator">=</span> F<span class="token punctuation">)</span>
+
+head<span class="token punctuation">(</span>CSVMyData<span class="token punctuation">)</span>
+
+</code></pre>

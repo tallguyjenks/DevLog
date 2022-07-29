@@ -1,0 +1,9 @@
+<h1 id="concat_ws"><a aria-hidden="true" class="anchor-heading icon-link" href="#concat_ws"></a>Concat_ws</h1>
+<p>Instead of eplicitly adding each separator</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> CONCAT<span class="token punctuation">(</span>first_name<span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> last_name<span class="token punctuation">)</span> <span class="token keyword">FROM</span> person_table<span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p><code>CONCAT_WS(&#x3C;separator>, &#x3C;data>)</code></p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> CONCAT_WS<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> first_name<span class="token punctuation">,</span> middle_name<span class="token punctuation">,</span> last_name<span class="token punctuation">)</span> <span class="token keyword">FROM</span> person_table<span class="token punctuation">;</span>
+</code></pre>

@@ -1,0 +1,24 @@
+<h1 id="__repr__"><a aria-hidden="true" class="anchor-heading icon-link" href="#__repr__"></a>__repr__</h1>
+<pre class="language-python"><code class="language-python"><span class="token comment"># A simple Person class</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+    <span class="token keyword">def</span> <span class="token function">__repr__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        rep <span class="token operator">=</span> <span class="token string">'Person('</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">','</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">')'</span>
+        <span class="token keyword">return</span> rep
+
+
+<span class="token comment"># Let's make a Person object and print the results of repr()</span>
+
+person <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"John"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">repr</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># >>> Person(John,20)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x1pe7g0d0wgazcl4oemzoy4">In Oop (DevLog)</a></li>
+</ul>

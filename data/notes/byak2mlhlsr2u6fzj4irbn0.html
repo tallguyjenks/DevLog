@@ -1,0 +1,7 @@
+<h1 id="output-as-file-arg"><a aria-hidden="true" class="anchor-heading icon-link" href="#output-as-file-arg"></a>Output as File Arg</h1>
+<h3 id="use-the-output-of-another-command-as-a-file-argument"><a aria-hidden="true" class="anchor-heading icon-link" href="#use-the-output-of-another-command-as-a-file-argument"></a>Use the output of another command as a file argument</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">wc</span> file1 <span class="token operator">&#x3C;</span><span class="token punctuation">(</span><span class="token builtin class-name">echo</span> “hello world”<span class="token punctuation">)</span> file2
+</code></pre>
+<blockquote>
+<p>When you wrap a command with <code>&#x3C;(...)</code> bash generate a temporal file in a path like <code>/dev/fd/64</code>, then execute your wrapped command, put the output in this temporal file, and finally replace <code>&#x3C;(...)</code> with the filename of the temporal file, in this case, <code>/dev/fd/64</code></p>
+</blockquote>

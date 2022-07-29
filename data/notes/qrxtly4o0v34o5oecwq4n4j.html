@@ -1,0 +1,31 @@
+<h1 id="cursors"><a aria-hidden="true" class="anchor-heading icon-link" href="#cursors"></a>Cursors</h1>
+<blockquote>
+<p>Cursors are a really inefficient way to loop, so they should only be used in those cases where your process is so inefficient that a cursor is the only thing less efficient than your process. A good example of this is loading large amounts of data between tables.</p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> demo
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@Year</span> <span class="token keyword">INT</span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@Month</span> <span class="token keyword">INT</span>
+
+<span class="token keyword">DECLARE</span> BatchingCursor <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> <span class="token keyword">YEAR</span><span class="token punctuation">(</span><span class="token punctuation">[</span>SomeDateField<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">MONTH</span><span class="token punctuation">(</span><span class="token punctuation">[</span>SomeDateField<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> <span class="token punctuation">[</span>Sometable<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">OPEN</span> BatchingCursor<span class="token punctuation">;</span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> BatchingCursor <span class="token keyword">INTO</span> <span class="token variable">@Year</span><span class="token punctuation">,</span> <span class="token variable">@Month</span><span class="token punctuation">;</span>
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+
+<span class="token keyword">BEGIN</span> <span class="token keyword">TRANSACTION</span>
+<span class="token comment">--All logic goes in here</span>
+<span class="token comment">--Any select statements from [Sometable] need to be suffixed with:</span>
+<span class="token comment">--WHERE Year([SomeDateField])=@Year AND Month([SomeDateField])=@Month   </span>
+<span class="token keyword">COMMIT</span> <span class="token keyword">TRANSACTION</span>
+
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> BatchingCursor <span class="token keyword">INTO</span> <span class="token variable">@Year</span><span class="token punctuation">,</span> <span class="token variable">@Month</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+<span class="token keyword">CLOSE</span> BatchingCursor<span class="token punctuation">;</span>
+<span class="token keyword">DEALLOCATE</span> BatchingCursor<span class="token punctuation">;</span>
+GO
+</code></pre>

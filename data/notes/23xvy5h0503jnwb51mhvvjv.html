@@ -1,0 +1,180 @@
+<h1 id="configuration"><a aria-hidden="true" class="anchor-heading icon-link" href="#configuration"></a>Configuration</h1>
+<h2 id="link-aggregation"><a aria-hidden="true" class="anchor-heading icon-link" href="#link-aggregation"></a>Link Aggregation</h2>
+<p><a href="/DevLog/notes/fwjx7xn19e8qrsl25esxsxl">Link Aggregation</a> / <a href="/DevLog/notes/lgl3co3ibveuv4ejvn2yso6">LACP</a></p>
+<p>in the console follow the prompts to add all current interfaces to a <code>lagg</code> using <a href="/DevLog/notes/lgl3co3ibveuv4ejvn2yso6">LACP</a>, Then configure the aggregation for <a href="/DevLog/notes/qbu54lobmtwan4ce77nlwni">Dhcp</a></p>
+<p>Now the web console should be available at a listed IP Address</p>
+<h2 id="configure-smart-tests"><a aria-hidden="true" class="anchor-heading icon-link" href="#configure-smart-tests"></a>Configure SMART Tests</h2>
+<ul>
+<li><code>Tasks > S.M.A.R.T Test > Add</code></li>
+</ul>
+<pre class="language-txt"><code class="language-txt">All Disks
+Type: LONG
+Description: Long SMART test
+Schedule: Monthly (0 0 1 * *) on the first day of the month at 00:00 (12:00 AM)
+SAVE
+</code></pre>
+<h2 id="hardening"><a aria-hidden="true" class="anchor-heading icon-link" href="#hardening"></a>Hardening</h2>
+<ul>
+<li><a href="https://www.truenas.com/docs/scale/communityrecommends/hardened-backup-repository-for-veeam/#configure-smart-tests">https://www.truenas.com/docs/scale/communityrecommends/hardened-backup-repository-for-veeam/#configure-smart-tests</a></li>
+</ul>
+<ol>
+<li>Use Fixed IP Address not DHCP</li>
+<li>Disable Service Announcement
+<ul>
+<li>NetBIOS-NS</li>
+<li>mDNS</li>
+<li>WS-Discovery</li>
+</ul>
+</li>
+<li>use well known DNS servers
+<ul>
+<li><code>1.1.1.1</code></li>
+<li><code>8.8.8.8</code></li>
+</ul>
+</li>
+<li>Keep 1 interface for management layer and 3 interfaces in <a href="/DevLog/notes/lgl3co3ibveuv4ejvn2yso6">LACP</a> for data</li>
+<li><code>System > General > web interface address</code>
+<ul>
+<li>use <a href="/DevLog/notes/5rx5t4vplx50p3u31dpbqnr">HTTPS</a> redirect</li>
+</ul>
+</li>
+<li>make <a href="/DevLog/notes/sy0ripvrs9z5vlf7lsdgj4l">SSH</a> NOT start automatically.
+<ul>
+<li>And in the advanced settings <code>ssh > pencil icon > advanced > auxillary parameters</code>
+<ul>
+<li>add <code>AllowUsers root@#.#.#.#</code> where <code>#.#.#.#</code> is the IP Address of the computer you want to be able to <a href="/DevLog/notes/sy0ripvrs9z5vlf7lsdgj4l">SSH</a> from</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Give root an email for those important notifications (destination)
+<ul>
+<li>configure the notifications: <code>system > email</code></li>
+<li>use the gmail OAuth and my service account email</li>
+</ul>
+</li>
+<li>Periodic snapshots: <code>tasks > periodic snapshots</code>
+<ul>
+<li><a href="https://www.truenas.com/docs/scale/communityrecommends/hardened-backup-repository-for-veeam/#configure-zfs-periodic-snapshots">https://www.truenas.com/docs/scale/communityrecommends/hardened-backup-repository-for-veeam/#configure-zfs-periodic-snapshots</a>
+<ul>
+<li>hourly, daily, and weekly</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Configure <a href="/DevLog/notes/sy0ripvrs9z5vlf7lsdgj4l">SSH</a> rules</li>
+</ol>
+<h2 id="configure-users-and-groups-for-shared-volumes"><a aria-hidden="true" class="anchor-heading icon-link" href="#configure-users-and-groups-for-shared-volumes"></a>Configure Users and groups for shared volumes</h2>
+<ul>
+<li>
+<p><a href="https://www.truenas.com/community/threads/how-to-set-up-truenas-from-beginning-to-end-including-secure-remote-access-to-files-and-web-gui.89229/">https://www.truenas.com/community/threads/how-to-set-up-truenas-from-beginning-to-end-including-secure-remote-access-to-files-and-web-gui.89229/</a></p>
+</li>
+<li>
+<p>To create shared volumes you can access through connection to your local network, see the following instructions.</p>
+<ul>
+<li>Go to accounts on the left panel.
+<ul>
+<li>Click on groups.</li>
+<li>Click add.</li>
+<li>Enter a group name (you can leave the GID as it is).</li>
+<li>Enable permit sudo and samba authentication.</li>
+<li>Submit.</li>
+<li>Go to accounts on the left panel.</li>
+<li>Click on users.</li>
+<li>Click add.</li>
+<li>Fill in all the empty field under Identification</li>
+<li>Uncheck new primary group.</li>
+<li>Choose the group you made previously from the drop down menu in primary groups.</li>
+<li>Go ahead and check all of the boxes under Home Directory Permissions.</li>
+<li>Under Authentication check permit sudo and Samba authentication.</li>
+<li>Submit.</li>
+<li>Go to Storage -> Pools</li>
+<li>Click add.
+<ul>
+<li>Select create new pool then click create pool.</li>
+</ul>
+</li>
+<li>Go back to Storage -> Pools</li>
+<li>You should see the name of your new pool pop up.</li>
+<li>Click on the three dots on the right side of that name.
+<ul>
+<li>Click add Zvol (this must be done!)</li>
+<li>Put in a name and select a size for the Zvol (for a 1TB drive I used 1 GB, this is block device mainly used for VMs, so you can use less if you don't plan on using VMs on your NAS, more if you do).</li>
+<li>Click submit.</li>
+</ul>
+</li>
+<li>Click on the three dots on the right side of the pool once again.
+<ul>
+<li>Click add dataset.</li>
+<li>Type in a name and click submit.</li>
+</ul>
+</li>
+<li>Now you should be able to see the name of that dataset underneath your pool in Storage -> Pools</li>
+<li>Click on the three dots on the right side of the name of the dataset.
+<ul>
+<li>Click on permissions.</li>
+<li>Set the user under owner to www and group to www.</li>
+<li>Click apply user and apply group.</li>
+<li>Under access mode, check all of the boxes.</li>
+<li>Click apply permissions recursively under advanced.</li>
+<li>Click save.</li>
+</ul>
+</li>
+<li>Click on the three dots on the right side of the name of the dataset.
+<ul>
+<li>Click on permissions.</li>
+<li>Click on ACL manager.</li>
+<li>Click on the preset open under the dropdown menu.</li>
+<li>Set the user under owner to www and group to www.</li>
+<li>Click apply user and apply group.</li>
+<li>Click apply permissions recursively under advanced.</li>
+<li>Click save</li>
+</ul>
+</li>
+<li>Go to Services
+<ul>
+<li>Enable SMB and click on start automatically.</li>
+</ul>
+</li>
+<li>Go to Sharing -> Windows Shares (SMB)
+<ul>
+<li>Click add.
+<ul>
+<li>Select the path to your dataset.</li>
+<li>Click submit.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now to access this folder from your Windows machine on your local network.
+<ul>
+<li>Go to file explorer -> network</li>
+<li>Click on the top field and enter the IP address of your TrueNAS machine in this fashion (should be the same as the IP address you used to connect to your WebGUI)
+<ul>
+<li><code>\\youripaddress</code></li>
+</ul>
+</li>
+<li>When it asks for username and password, use the username of the new account you created in the WebGUI and its password.</li>
+<li>If you see your folder, great! If not, refer back to the previous steps to see if you did anything wrong.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="snapshots"><a aria-hidden="true" class="anchor-heading icon-link" href="#snapshots"></a>snapshots</h2>
+<p>Snapshots only store the differential of the change so if data is 100GB and i add 1GB the snapshot is only 1GB</p>
+<h2 id="setup-iperf3-on-the-server"><a aria-hidden="true" class="anchor-heading icon-link" href="#setup-iperf3-on-the-server"></a>Setup iperf3 on the server</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> iperf3
+</code></pre>
+<p>In the <code>~/.profile</code> file, add this line:</p>
+<pre class="language-bash"><code class="language-bash">iperf3 -s <span class="token operator">&#x26;</span>
+</code></pre>
+<p>this will make it so upon server startup iperf3 will be run as an independant process that can can gather data from.</p>
+<p>By default it listens on port <a href="/DevLog/notes/wk5g6n5tw8vwawhgm2laj88">5021</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/2sgfr1r4i6jbwoma8b84913">TrueNAS (DevLog)</a></li>
+</ul>

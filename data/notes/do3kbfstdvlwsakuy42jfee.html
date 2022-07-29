@@ -1,0 +1,46 @@
+<h1 id="tcp"><a aria-hidden="true" class="anchor-heading icon-link" href="#tcp"></a>TCP</h1>
+<p><code>T</code>ransmission <code>C</code>ontrol <code>P</code>rotocol</p>
+<h2 id="initiation"><a aria-hidden="true" class="anchor-heading icon-link" href="#initiation"></a>Initiation</h2>
+<p>Operates through a 3 way opening handshake</p>
+<ul>
+<li>Client <a href="/DevLog/notes/awtek1j6lvd26g6q0ok6jhi">Syn</a> --> Server</li>
+<li>Server <a href="/DevLog/notes/awtek1j6lvd26g6q0ok6jhi">Syn</a>-<a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> --> Client</li>
+<li>Client <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> --> Server</li>
+</ul>
+<hr>
+<ol>
+<li>The client sends a <a href="/DevLog/notes/awtek1j6lvd26g6q0ok6jhi">Syn</a> segment to the server with a randomly generated sequence number. The client enters
+the <a href="/DevLog/notes/awtek1j6lvd26g6q0ok6jhi">Syn</a> state.</li>
+<li>The server, currently in the LISTEN state (assuming it is online), responds with a <a href="/DevLog/notes/awtek1j6lvd26g6q0ok6jhi">Syn</a>/<a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> segment, containing its own randomly generated sequence number. The server enters the <a href="/DevLog/notes/awtek1j6lvd26g6q0ok6jhi">Syn</a> state.</li>
+<li>The client responds with an <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> segment. The client assumes the connection is ESTABLISHED.</li>
+<li>The server opens a connection with the client and enters the ESTABLISHED state.</li>
+</ol>
+<h2 id="termination---abrupt"><a aria-hidden="true" class="anchor-heading icon-link" href="#termination---abrupt"></a>Termination - Abrupt</h2>
+<p>Terminates communication abruptly with an <a href="/DevLog/notes/oqkc1rd1swd52nwcr3977by">Rst</a> segment</p>
+<h2 id="termination---graceful"><a aria-hidden="true" class="anchor-heading icon-link" href="#termination---graceful"></a>Termination - Graceful</h2>
+<p>Graceful exit to the connection is done through a 4-way handshake consisting of:</p>
+<ul>
+<li>Client <a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin</a> (enters <a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin</a>-WAIT1 state) --> Server</li>
+<li>Server <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> (enters CLOSE-WAIT state) --> Client</li>
+<li>Client (Receives <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> and enters <a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin</a>-WAIT2 state) --> Server</li>
+<li>Server <a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin</a> (enters LAST-<a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> state) --> Client</li>
+<li>Client <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> (enters TIME-WAIT state) --> Server</li>
+</ul>
+<hr>
+<ol>
+<li>The client sends a <a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin</a> segment to the server and enters the <a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin</a>-WAIT1 state.</li>
+<li>The server responds with an <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> segment and enters the CLOSE-WAIT state.</li>
+<li>The client receives the <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> segment and enters the <a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin</a>-WAIT2 state. The server sends its own <a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin</a> segment
+to the client and goes to the LAST-<a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> state.</li>
+<li>The client responds with an <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> and enters the TIME-WAIT state. After a defined period, the client closes its connection.</li>
+<li>The server closes the connection when it receives the <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> from the client.</li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/f20gricnu8t0bjwc1sk7e7d">Fin (DevLog)</a></li>
+<li><a href="/DevLog/notes/oqkc1rd1swd52nwcr3977by">Rst (DevLog)</a></li>
+<li><a href="/DevLog/notes/f45h7mj4fnlisenryu5ocqo">Netstat (DevLog)</a></li>
+<li><a href="/DevLog/notes/qqf5tbpq7m7jskr785qgdcn">Nmap (DevLog)</a></li>
+<li><a href="/DevLog/notes/f6wx02gwrpmg9job7qwdbjt">2022-01-10 (DevLog)</a></li>
+</ul>

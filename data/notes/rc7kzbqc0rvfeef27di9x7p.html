@@ -1,0 +1,43 @@
+<h1 id="20"><a aria-hidden="true" class="anchor-heading icon-link" href="#20"></a>20</h1>
+<ul>
+<li><a href="/DevLog/notes/ku0abqmell3qfg5bvcvx7i0">T-SQL</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">SSIS (Private)</a>
+<ul>
+<li>Can use variables within visual elements</li>
+<li>Can call scripts and other files like <a href="/DevLog/notes/g51azg3v0ndyqbp65hswfsn">C</a></li>
+<li>Can run processes in loops and have automation steps that send email reports</li>
+</ul>
+</li>
+<li><a href="/DevLog/notes/g8jz1e99nnpbzc83mxv264r">HTML</a>
+<ul>
+<li>Using <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@Andy Matuschak (Private)</a>'s Mnemonic Medium we can make web pages that add items to your "<a href="https://withorbit.com/">Orbit</a>" | <a href="https://github.com/andymatuschak/orbit">Orbit Code</a> | <a href="https://docs.withorbit.com/">Orbit Docs</a></li>
+<li>These components are driven by <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">JavaScript (Private)</a> embedded into <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">HTML 1 (Private)</a> web pages with this code:
+<pre class="language-html"><code class="language-html">			  <span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">HTML</span><span class="token punctuation">></span></span>
+			  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span><span class="token punctuation">></span></span>
+			    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+			      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://js.withorbit.com/orbit-web-component.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+			    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+			    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+			      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>orbit-reviewarea</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brown<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>orbit-prompt</span>
+			          <span class="token attr-name">question</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>What<span class="token punctuation">'</span>s the working name for Andy<span class="token punctuation">'</span>s experimental mnemonic medium platform?<span class="token punctuation">"</span></span>
+			          <span class="token attr-name">answer</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Orbit<span class="token punctuation">"</span></span>
+			        <span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>orbit-prompt</span><span class="token punctuation">></span></span>
+			        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>orbit-prompt</span>
+			          <span class="token attr-name">question</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>What<span class="token punctuation">'</span>s the new-ish web technology used to embed Orbit prompts into web pages?<span class="token punctuation">"</span></span>
+			          <span class="token attr-name">answer</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Web components<span class="token punctuation">"</span></span>
+			        <span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>orbit-prompt</span><span class="token punctuation">></span></span>
+			        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>orbit-prompt</span>
+			          <span class="token attr-name">question</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Given a right triangle with legs of length $a$ and $b$, what is the length of hypotenuse $c$?<span class="token punctuation">"</span></span>
+			          <span class="token attr-name">answer</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$$c = \sqrt{a^2 + b^2}$$<span class="token punctuation">"</span></span>
+			        <span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>orbit-prompt</span><span class="token punctuation">></span></span>
+			      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>orbit-reviewarea</span><span class="token punctuation">></span></span>
+			    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+			  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+			  ```
+-
+</code></pre>
+</li>
+</ul>
+<pre><code></code></pre>
+</li>
+</ul>

@@ -1,0 +1,5 @@
+
+```rst
+.. [1] A footnote contains body elements, consistently
+   indented by at least 3 spaces.
+```

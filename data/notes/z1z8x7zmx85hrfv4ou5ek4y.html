@@ -1,0 +1,27 @@
+<h1 id="boost-performance-when-calling-a-stored-proc-from-ssis"><a aria-hidden="true" class="anchor-heading icon-link" href="#boost-performance-when-calling-a-stored-proc-from-ssis"></a>Boost Performance When Calling a Stored Proc from Ssis</h1>
+<blockquote>
+<p>If you are calling a proc from an SSIS package, there is no need to get the row count of the records impacted by your query. By setting NOCOUNT to ON, you can significantly boost performance due to the drop in network traffic.</p>
+<p>-- <a href="https://tutorials.massstreet.net/v/transact-sql/solutions-to-real-world-problems/lesson-49.-boost-performance-when-calling-a-stored-proc-from-ssis">https://tutorials.massstreet.net/v/transact-sql/solutions-to-real-world-problems/lesson-49.-boost-performance-when-calling-a-stored-proc-from-ssis</a></p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> AdventureWorks2016
+
+<span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> dbo<span class="token punctuation">.</span>usp_NoCountExample
+GO
+
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> dbo<span class="token punctuation">.</span>usp_NoCountExample
+
+<span class="token keyword">AS</span>
+<span class="token keyword">BEGIN</span>
+
+<span class="token keyword">SET</span> NOCOUNT <span class="token keyword">ON</span><span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Sales<span class="token punctuation">.</span>SalesOrderHeader soh
+<span class="token keyword">JOIN</span> Sales<span class="token punctuation">.</span>SalesOrderDetail sod
+<span class="token keyword">ON</span> soh<span class="token punctuation">.</span>SalesOrderID <span class="token operator">=</span> sod<span class="token punctuation">.</span>SalesOrderID
+
+<span class="token keyword">SET</span> NOCOUNT <span class="token keyword">OFF</span><span class="token punctuation">;</span>
+
+<span class="token keyword">END</span>
+GO
+</code></pre>

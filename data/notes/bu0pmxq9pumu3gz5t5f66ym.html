@@ -1,0 +1,22 @@
+<h1 id="array"><a aria-hidden="true" class="anchor-heading icon-link" href="#array"></a>Array</h1>
+<h2 id="array-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#array-1"></a>Array</h2>
+<pre class="language-r"><code class="language-r"><span class="token comment"># Array</span>
+<span class="token comment"># The R Objects which can store data in more than 2 dimensions</span>
+<span class="token comment"># Syntax: array(data, dim, dimnames)</span>
+
+<span class="token comment">#============#</span>
+<span class="token comment">#  EXAMPLES  #</span>
+<span class="token comment">#============#</span>
+
+arr <span class="token operator">=</span> array<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">:</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">,</span>dim <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#this makes the array = 0-15</span>
+<span class="token comment">#the dimension makes the 0-15 display in a 4x4 grid</span>
+<span class="token comment">#the other dimension makes it a 3d array by making 4 copies of the array in a </span>
+<span class="token comment">#2x2 grid of arrays</span>
+arr
+
+arr2 <span class="token operator">=</span> array<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span>dim <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+arr2
+
+</code></pre>

@@ -1,0 +1,26 @@
+<h1 id="pass-by-ref"><a aria-hidden="true" class="anchor-heading icon-link" href="#pass-by-ref"></a>Pass by Ref</h1>
+<h3 id="data-structures-are-passed-by-reference-not-value"><a aria-hidden="true" class="anchor-heading icon-link" href="#data-structures-are-passed-by-reference-not-value"></a>Data Structures are passed by reference not value</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Data structures are passed by reference, not by value.</span>
+<span class="token comment"># So the dictionary can be passed into a class instance, operated upon, and then when the class is over the data itself is mutated</span>
+<span class="token comment"># making it so classes dont need to play hot potato with data. and just just be called and manipulate data at the global state level.</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Mutator</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>data <span class="token operator">=</span> data  <span class="token comment"># Grab a reference to the data for the class to use internally</span>
+
+    <span class="token keyword">def</span> <span class="token function">mutate</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token string">"fname"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"John"</span>  <span class="token comment"># Manipulate the data in the class</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">F"After function call within class instance:\n\t</span><span class="token interpolation"><span class="token punctuation">{</span>data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>  <span class="token comment"># Show result of manipulation</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"fname"</span><span class="token punctuation">:</span> <span class="token string">"Bryan"</span><span class="token punctuation">,</span>
+        <span class="token string">"lname"</span><span class="token punctuation">:</span> <span class="token string">"Jenks"</span><span class="token punctuation">,</span>
+        <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">29</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">F"Before function call and at global scope:\n\t</span><span class="token interpolation"><span class="token punctuation">{</span>data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>  <span class="token comment"># show original data in before manipulation</span>
+    m <span class="token operator">=</span> Mutator<span class="token punctuation">(</span>data<span class="token punctuation">)</span>  <span class="token comment"># Pass the data into the class</span>
+    m<span class="token punctuation">.</span>mutate<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># Manipulate the data</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">F"After class instance, and at global scope:\n\t</span><span class="token interpolation"><span class="token punctuation">{</span>data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>  <span class="token comment"># Show result of manipulation at global scope level (not in class)</span>
+</code></pre>

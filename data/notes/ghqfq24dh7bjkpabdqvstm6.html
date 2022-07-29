@@ -1,0 +1,156 @@
+<h1 id="configuration"><a aria-hidden="true" class="anchor-heading icon-link" href="#configuration"></a>Configuration</h1>
+<h2 id="updates-repository"><a aria-hidden="true" class="anchor-heading icon-link" href="#updates-repository"></a>Updates Repository</h2>
+<p>For regular updates and to avoid errors set the updates repository from the enterprise proxmox repo (subscription required) to the <code>pve-no-subscription</code> repo.</p>
+<p><img src="/DevLog/assets/images/2022-01-25-23-37-43.png" alt="repos"></p>
+<ol start="0">
+<li><code>pve node > updates > repositories</code></li>
+<li>disable the enterprise repo</li>
+<li><code>[Add]</code></li>
+<li><code>pve-no-subscription</code></li>
+<li>run <code>apt-get update; apt dist-upgrade; reboot</code></li>
+</ol>
+<h2 id="enable-iommu"><a aria-hidden="true" class="anchor-heading icon-link" href="#enable-iommu"></a>Enable IOMMU</h2>
+<!-- markdownlint-disable MD031-->
+<p>Enable <a href="/DevLog/notes/0xbcevuqumdxife2dxgb30y">iommu</a> so VM's can access hardware not made for virtualization (GPU's etc.)</p>
+<ol>
+<li>you can do this but updating the <code>/etc/default/grub</code> file
+<ul>
+<li>change <code>GRUB_CMDLINE_LINUX_ DEFAULT="quiet"</code></li>
+<li>to: <code>GRUB_CMDLINE LINUX DEFAULT="quiet intel iommu=on"</code></li>
+</ul>
+</li>
+<li>Then run <code>update-grub</code></li>
+<li>Then edit <code>/etc/modules</code> Add these 4 lines to it:</li>
+<li>
+<pre class="language-txt"><code class="language-txt">`vfio`
+`vfio_iommu_typel`
+`vfio_pci`
+`vfio_virqfd`
+</code></pre>
+</li>
+<li>Then run <code>update-initramfs -u -k all</code></li>
+<li>reboot</li>
+</ol>
+<!-- markdownlint-enable MD031-->
+<h2 id="make-proxmox-vlan-aware"><a aria-hidden="true" class="anchor-heading icon-link" href="#make-proxmox-vlan-aware"></a>Make Proxmox VLAN aware</h2>
+<ol>
+<li>go to <code>pve node > System > Network</code></li>
+<li>"Edit" your Linux bridge</li>
+<li>check the box for <code>VLAN aware:</code></li>
+<li>Click <code>Apply Configuration</code></li>
+</ol>
+<p>This will update <code>/etc/network/interfaces</code> with new settings and where it says <code>bridge-vids</code> you can change the default <code>2-4094</code> to be a single number for the <a href="/DevLog/notes/v9s04fmtizuk86nxjpv6354">VLAN</a> of the server, or do that for individual virtual machines</p>
+<h2 id="setup-linux-bridge-for-virtual-machines-separate-from-management-layer"><a aria-hidden="true" class="anchor-heading icon-link" href="#setup-linux-bridge-for-virtual-machines-separate-from-management-layer"></a>Setup Linux Bridge for Virtual Machines Separate from management Layer</h2>
+<ol>
+<li><code>pve node > System > Network > Create > Linux Bond</code></li>
+<li><code>bond0</code></li>
+<li>List all the bridge ports in a space separated list except the 1 used for the management layer</li>
+<li>choose <a href="/DevLog/notes/051ngzwl2msbgfmws2hj4eq">3ad</a> mode for <a href="/DevLog/notes/lgl3co3ibveuv4ejvn2yso6">LACP</a></li>
+<li>Add Comment</li>
+<li>after finished creating modify switch side settings for <a href="/DevLog/notes/lgl3co3ibveuv4ejvn2yso6">LACP</a> for those ports</li>
+</ol>
+<h3 id="make-network-bridge-for-virtual-machines"><a aria-hidden="true" class="anchor-heading icon-link" href="#make-network-bridge-for-virtual-machines"></a>Make Network Bridge for Virtual Machines</h3>
+<ul>
+<li><a href="https://youtu.be/qTbeHpdHcqs">https://youtu.be/qTbeHpdHcqs</a></li>
+</ul>
+<ol>
+<li><code>pve node > System > Network > Create > Linux Bridge</code></li>
+<li><code>vmbr1</code> is fine</li>
+<li>Give it a IPV4 address like <code>10.10.10.0/24</code></li>
+<li>make it <code>VLAN aware:</code></li>
+<li>List all the bridge ports in a space separated list (the <a href="/DevLog/notes/lgl3co3ibveuv4ejvn2yso6">LACP</a> <code>bond0</code> you made)</li>
+<li>Add Comment</li>
+</ol>
+<h2 id="setup-nfs-for-backups"><a aria-hidden="true" class="anchor-heading icon-link" href="#setup-nfs-for-backups"></a>Setup NFS for backups</h2>
+<ol start="0">
+<li>You need to have the <a href="/DevLog/notes/q4aac4wbg964ofeb5d6ytv6">Network File System</a> share already setup so <a href="/DevLog/notes/82umkyemhjtdlkjgew0a2km">Fafnir</a> needs to already be setup and mounted to the proxmox instance?</li>
+<li><code>Datacenter node > storage > add > nfs</code></li>
+<li><code>ID</code> ==> "Backups"</li>
+<li>Server IPV4 address (address to <a href="/DevLog/notes/82umkyemhjtdlkjgew0a2km">Fafnir</a>?)</li>
+<li>Export <code>/mnt/storage &#x3C;++></code></li>
+</ol>
+<h3 id="schedule-backups"><a aria-hidden="true" class="anchor-heading icon-link" href="#schedule-backups"></a>Schedule Backups</h3>
+<ol>
+<li><code>Datacenter node > backup > add</code></li>
+<li>Select Node to backup</li>
+<li>Select storage share to send backups to</li>
+<li>Schedule Backups</li>
+<li>Email notification Settings</li>
+<li>Compression level (ZSTD)</li>
+<li>mode == snapshot</li>
+<li>test it
+<ol>
+<li>make a backup immediately</li>
+</ol>
+</li>
+</ol>
+<h2 id="download-windows-virtio-drivers"><a aria-hidden="true" class="anchor-heading icon-link" href="#download-windows-virtio-drivers"></a>Download Windows VirtIO drivers</h2>
+<ol>
+<li>Go To <a href="https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers">This page</a></li>
+<li>Click the link under <code>Installation</code> for downloading latest stable release</li>
+<li>upload iso to proxmox iso's in <code>local > ISO images > Upload</code></li>
+</ol>
+<h2 id="configure-email-notifications"><a aria-hidden="true" class="anchor-heading icon-link" href="#configure-email-notifications"></a>Configure Email notifications</h2>
+<p>Change <code>/etc/postfix/main.cf</code> to include/change these lines:</p>
+<pre class="language-txt"><code class="language-txt">relayhost = [smtp.gmail.com]:587
+smtp_use_tls = yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+
+#mydestination = $myhostname, localhost.$mydomain, localhost
+</code></pre>
+<p>Be sure there are no dupes as the <code>main.cf</code> may have <code>smtp_sasl_security_options = {}</code> , and <code>relayhost = {}</code>. Just delete or comment those lines.</p>
+<p>Create an <code>/etc/postfix/sasl_passwd</code> file with:</p>
+<pre class="language-txt"><code class="language-txt">[smtp.gmail.com]:587    testmehere@gmail.com:PASSWD
+</code></pre>
+<p>run</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">chmod</span> <span class="token number">600</span> /etc/postfix/sasl_passwd
+postmap /etc/postfix/sasl_passwd
+</code></pre>
+<p>install for passwd support:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> libsasl2-modules
+</code></pre>
+<p>Restart service:</p>
+<pre class="language-bash"><code class="language-bash">systemctl restart postfix.service
+</code></pre>
+<p>Test:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"Test mail from postfix"</span> <span class="token operator">|</span> mail -s <span class="token string">"Test Postfix"</span> test@test.com
+</code></pre>
+<p>Test from PVE:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"test"</span> <span class="token operator">|</span> /usr/bin/pvemailforward
+</code></pre>
+<h2 id="setup-port-forwarding-for-rdp-to-windows-vms-and-make-vms-visible-on-the-internal-network"><a aria-hidden="true" class="anchor-heading icon-link" href="#setup-port-forwarding-for-rdp-to-windows-vms-and-make-vms-visible-on-the-internal-network"></a>Setup port forwarding for RDP to windows VM's and make VM's visible on the internal network:</h2>
+<ol>
+<li>Start a shell from the web console</li>
+<li>edit <code>/etc/network/interfaces</code></li>
+<li>make it look like:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">auto vmbr1
+iface vmbr1 inet static
+        address <span class="token number">10.1</span>.10.0/24
+        bridge-ports bond0
+        bridge-stp off
+        bridge-fd <span class="token number">0</span>
+        bridge-vlan-aware <span class="token function">yes</span>
+        bridge-vids <span class="token number">20</span>
+        post-up <span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">></span> /proc/sys/net/ipv4/ip_forward
+        post-up iptables -t nat -A POSTROUTING -s <span class="token string">'192.168.0.0/24'</span> -o vmbr0 -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING -s <span class="token string">'192.168.0.0/24'</span> -o vmbr0 -j MASQUERADE    
+        iptables -t nat -A PREROUTING -i bond0 -p tcp --dport <span class="token number">13389</span> -j DNAT --to <span class="token number">192.168</span>.3.15:3389
+<span class="token comment">#VM Net</span>
+</code></pre>
+<h2 id="setup-iperf3-on-the-server"><a aria-hidden="true" class="anchor-heading icon-link" href="#setup-iperf3-on-the-server"></a>Setup iperf3 on the server</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> iperf3
+</code></pre>
+<p>In the <code>~/.profile</code> file, add this line:</p>
+<pre class="language-bash"><code class="language-bash">iperf3 -s <span class="token operator">&#x26;</span>
+</code></pre>
+<p>this will make it so upon server startup iperf3 will be run as an independant process that can can gather data from.</p>
+<p>By default it listens on port <a href="/DevLog/notes/wk5g6n5tw8vwawhgm2laj88">5021</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/p4mog8mu5oi3u7tg97iwjb4">Setup (DevLog)</a></li>
+</ul>

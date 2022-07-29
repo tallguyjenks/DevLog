@@ -1,0 +1,26 @@
+<h1 id="task-lists"><a aria-hidden="true" class="anchor-heading icon-link" href="#task-lists"></a>Task Lists</h1>
+<p>Using the <a href="/DevLog/notes/p6oegluq976sl9o14fji32s">Markdown Lists</a> feature, tasks are just an additional syntax on top of the list syntax</p>
+<h2 id="syntax"><a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a>Syntax</h2>
+<pre><code>- an uncompleted task
+- [x] a completed task
+	- an indented uncompleted task
+	- [x] an indented completed task
+</code></pre>
+<p>In some processors completing the parent task to children tasks causes formatting such as strike through on sub items of the completed parent:</p>
+<ul class="contains-task-list">
+<li>an <code>uncompleted</code> task</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> a completed task
+<ul class="contains-task-list">
+<li>THIS IS UNCOMPLETED BUT IT'S PARENT IS COMPLETED</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> an indented completed task</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Related:
+<ul>
+<li><a href="/DevLog/notes/rba3pn2zuwamd1r8g9nz9qi">Markdown Definition Lists</a></li>
+</ul>
+</li>
+</ul>

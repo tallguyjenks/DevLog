@@ -1,0 +1,70 @@
+<h1 id="__str__"><a aria-hidden="true" class="anchor-heading icon-link" href="#__str__"></a>__str__</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyClass</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> <span class="token number">0</span>
+    y <span class="token operator">=</span> <span class="token string">""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> anyNumber<span class="token punctuation">,</span> anyString<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>x <span class="token operator">=</span> anyNumber
+        self<span class="token punctuation">.</span>y <span class="token operator">=</span> anyString
+
+myObject <span class="token operator">=</span> MyClass<span class="token punctuation">(</span><span class="token number">12345</span><span class="token punctuation">,</span> <span class="token string">"Hello"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">.</span>__str__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">.</span>__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">)</span>
+
+<span class="token comment"># >>> &#x3C;__main__.MyClass object at 0x7f75d994f1f0></span>
+<span class="token comment"># >>> &#x3C;__main__.MyClass object at 0x7f75d994f1f0></span>
+<span class="token comment"># >>> &#x3C;__main__.MyClass object at 0x7f75d994f1f0></span>
+
+<span class="token comment">#==========================================================================#</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyClass</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> <span class="token number">0</span>
+    y <span class="token operator">=</span> <span class="token string">""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> anyNumber<span class="token punctuation">,</span> anyString<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>x <span class="token operator">=</span> anyNumber
+        self<span class="token punctuation">.</span>y <span class="token operator">=</span> anyString
+    <span class="token keyword">def</span> <span class="token function">__str__</span> <span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'MyClass(x='</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' ,y='</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>y <span class="token operator">+</span> <span class="token string">')'</span>
+myObject <span class="token operator">=</span> MyClass<span class="token punctuation">(</span><span class="token number">12345</span><span class="token punctuation">,</span> <span class="token string">"Hello"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">.</span>__str__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>myObject<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">.</span>__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># >>> MyClass(x=12345 ,y=Hello)</span>
+<span class="token comment"># >>> MyClass(x=12345 ,y=Hello)</span>
+<span class="token comment"># >>> MyClass(x=12345 ,y=Hello)</span>
+<span class="token comment"># >>> &#x3C;__main__.MyClass object at 0x7f8f023ef1f0></span>
+
+<span class="token comment">#==========================================================================#</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyClass</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> <span class="token number">0</span>
+    y <span class="token operator">=</span> <span class="token string">""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> anyNumber<span class="token punctuation">,</span> anyString<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>x <span class="token operator">=</span> anyNumber
+        self<span class="token punctuation">.</span>y <span class="token operator">=</span> anyString
+    <span class="token keyword">def</span> <span class="token function">__repr__</span> <span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'MyClass(x='</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' ,y='</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>y <span class="token operator">+</span> <span class="token string">')'</span>
+myObject <span class="token operator">=</span> MyClass<span class="token punctuation">(</span><span class="token number">12345</span><span class="token punctuation">,</span> <span class="token string">"Hello"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">.</span>__str__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>myObject<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myObject<span class="token punctuation">.</span>__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># >>> MyClass(x=12345 ,y=Hello)</span>
+<span class="token comment"># >>> MyClass(x=12345 ,y=Hello)</span>
+<span class="token comment"># >>> MyClass(x=12345 ,y=Hello)</span>
+<span class="token comment"># >>> MyClass(x=12345 ,y=Hello)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x1pe7g0d0wgazcl4oemzoy4">In Oop (DevLog)</a></li>
+</ul>

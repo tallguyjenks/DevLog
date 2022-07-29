@@ -1,0 +1,21 @@
+<h1 id="multiprocessing-in-bash-scripts"><a aria-hidden="true" class="anchor-heading icon-link" href="#multiprocessing-in-bash-scripts"></a>Multiprocessing in Bash Scripts</h1>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token keyword">function</span> <span class="token function-name function">task1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"Running task1..."</span>
+    <span class="token function">sleep</span> <span class="token number">5</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function-name function">task2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"Running task2..."</span>
+    <span class="token function">sleep</span> <span class="token number">5</span>
+<span class="token punctuation">}</span>
+task1 <span class="token operator">&#x26;</span>
+task2 <span class="token operator">&#x26;</span>
+<span class="token function">wait</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"All done!"</span>
+</code></pre>
+<p>the <code>wait</code> builtin makes sure that all background processes have completed before carrying on</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/o71rv4ceuqozrwkogybwukm">5 Modern Bash Scripting Techniques That Only a Few Programmers Know (DevLog)</a></li>
+</ul>

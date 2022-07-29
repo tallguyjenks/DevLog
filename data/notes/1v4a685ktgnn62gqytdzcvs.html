@@ -1,0 +1,74 @@
+<h1 id="changelog-database"><a aria-hidden="true" class="anchor-heading icon-link" href="#changelog-database"></a>Changelog Database</h1>
+<h2 id="process"><a aria-hidden="true" class="anchor-heading icon-link" href="#process"></a>Process</h2>
+<p>To track WHO is changing things (basically the source control <code>Last Changed By</code> column) We needed a change log database</p>
+<p><a href="https://documentation.red-gate.com/soc7/configuring/log-changes-to-shared-databases">Guide</a></p>
+<ol>
+<li>
+<p>Running the following code to create the database</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> master <span class="token keyword">EXECUTE</span> <span class="token punctuation">(</span><span class="token string">'CREATE DATABASE ChangeLog'</span><span class="token punctuation">)</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> ANSI_NULL_DEFAULT <span class="token keyword">OFF</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> ANSI_NULLS <span class="token keyword">OFF</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> ANSI_PADDING <span class="token keyword">OFF</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> ANSI_WARNINGS <span class="token keyword">OFF</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> ARITHABORT <span class="token keyword">OFF</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> AUTO_CLOSE <span class="token keyword">OFF</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> AUTO_CREATE_STATISTICS <span class="token keyword">ON</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> AUTO_SHRINK <span class="token keyword">OFF</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> AUTO_UPDATE_STATISTICS <span class="token keyword">ON</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> READ_WRITE
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> RECOVERY <span class="token keyword">SIMPLE</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> MULTI_USER
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> PAGE_VERIFY CHECKSUM
+<span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> ChangeLog <span class="token keyword">SET</span> DB_CHAINING <span class="token keyword">ON</span>
+<span class="token keyword">EXECUTE</span> <span class="token punctuation">(</span><span class="token string">'USE ChangeLog IF NOT EXISTS (SELECT * FROM sys.sysusers WHERE name=''guest'') EXECUTE sp_grantdbaccess guest'</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<ul>
+<li>Close <a href="/DevLog/notes/177i0t66czpvlw3r8v86wvw">Ssms</a></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Navigate to <code>%localappdata%\Red Gate\SQL Source Control 7</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Open <code>RedGate_SQLSourceControl_Engine_EngineOptions.xml</code> in a text editor</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Below the <code>EngineOptions version</code> line, add:</li>
+</ul>
+<ol>
+<li>
+<ul>
+<li><code>&#x3C;TraceCacheDatabase>ChangeLog&#x3C;/TraceCacheDatabase></code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><strong>The above is case sensative</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<ul>
+<li>Save and close the file.</li>
+</ul>
+</li>
+</ol>
+<h2 id="important-points"><a aria-hidden="true" class="anchor-heading icon-link" href="#important-points"></a>Important Points</h2>
+<ul>
+<li>Each developer <strong>must</strong> have <code>dbo_owner</code> permissions for the change log database.</li>
+<li>You can delete the change log database, <strong>but history about changes will be permanently deleted</strong>.</li>
+<li>SQL Source Control <strong>will only use the change log database to save information about changes to linked databases</strong>. It won't be used for any other purpose.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/vt2uvnxhvp6t1y95vdepuq1">Implementation Notes (DevLog)</a></li>
+</ul>

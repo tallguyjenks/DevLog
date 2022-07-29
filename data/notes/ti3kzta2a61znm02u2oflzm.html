@@ -1,0 +1,18 @@
+<h1 id="pop-back"><a aria-hidden="true" class="anchor-heading icon-link" href="#pop-back"></a>Pop Back</h1>
+<h4 id="pop_back"><a aria-hidden="true" class="anchor-heading icon-link" href="#pop_back"></a>pop_back()</h4>
+<p>Just like <code>pop()</code> in Javascript, this removes the last element from the vector. </p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// playersList is 55, 99, 44 (size 3)</span>
+
+playersList<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// Removes last element</span>
+
+<span class="token comment">// playersList now 55, 99    (size 2)</span>
+
+cout <span class="token operator">&#x3C;&#x3C;</span> playersList<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Common combination of back() </span>
+
+playersList<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// followed by pop_back()</span>
+
+<span class="token comment">// Prints 99. playersList becomes just 55</span>
+
+cout <span class="token operator">&#x3C;&#x3C;</span> playersList<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Common error </span>
+                                <span class="token comment">// pop_back() returns void</span>
+</code></pre>

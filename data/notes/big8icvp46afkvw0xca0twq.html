@@ -1,0 +1,36 @@
+<h1 id="find"><a aria-hidden="true" class="anchor-heading icon-link" href="#find"></a>Find</h1>
+<h2 id="arrayfind"><a aria-hidden="true" class="anchor-heading icon-link" href="#arrayfind"></a>Array.find()</h2>
+<p>The <code>find()</code> method returns the <strong>value</strong> of the first array element that passes a test function.</p>
+<p>This example finds (returns the value of ) the first element that is larger than 18:</p>
+<h3 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h3>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
+<span class="token keyword">var</span> first <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token method function property-access">find</span><span class="token punctuation">(</span>myFunction<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  
+<span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+ <span class="token keyword control-flow">return</span> value <span class="token operator">></span> <span class="token number">18</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+
+<span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// TRUE</span>
+</code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Bike'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">100</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'TV'</span><span class="token punctuation">,</span>       <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">200</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Album'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">10</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Book'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">5</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Phone'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">500</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Computer'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Keyboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">25</span>   <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> foundItem <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token method function property-access">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> item<span class="token punctuation">.</span><span class="token property-access">name</span> <span class="token operator">===</span> <span class="token string">'Book'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>foundItem<span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>{name: "Book", price: 5}</p>
+<p>name: "Book"</p>
+<p>price: 5</p>
+<p><strong>proto</strong>: Object</p>
+</blockquote>

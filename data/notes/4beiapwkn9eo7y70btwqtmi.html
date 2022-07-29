@@ -1,0 +1,83 @@
+<h1 id="13"><a aria-hidden="true" class="anchor-heading icon-link" href="#13"></a>13</h1>
+<ul>
+<li><a href="/DevLog/notes/ku0abqmell3qfg5bvcvx7i0">T-SQL</a> Comparing Sub queries and CTE's there's no real difference.
+<ul>
+<li>CTE's care recursive whereas sub queries are not</li>
+<li>CTE's only live for the duration of the execution. If you need that data for multiple queries and it is used in multiple places then you're likely better off using temporary tables.</li>
+</ul>
+</li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">WITH</span> myFirstCTE
+<span class="token keyword">AS</span>
+<span class="token punctuation">(</span>
+	<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+	<span class="token keyword">FROM</span> BOA_BAICodes
+<span class="token punctuation">)</span><span class="token punctuation">,</span> mySecondCTE
+<span class="token keyword">AS</span>
+<span class="token punctuation">(</span>
+	<span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token number">100</span> <span class="token operator">*</span>
+	<span class="token keyword">FROM</span> myFirstCTE
+	<span class="token keyword">WHERE</span> BAI_Code <span class="token operator">></span> <span class="token number">100</span>
+<span class="token punctuation">)</span>
+	<span class="token keyword">SELECT</span> <span class="token function">SUM</span><span class="token punctuation">(</span>CAST<span class="token punctuation">(</span>BAI_CODE <span class="token keyword">AS</span> <span class="token keyword">INT</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> mySum
+	<span class="token keyword">FROM</span> mySecondCTE
+	<span class="token keyword">WHERE</span> BAI_Code <span class="token operator">></span> <span class="token number">200</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> notes <span class="token function">add</span> -m <span class="token string">'Tested-by: Johannes Sixt &#x3C;j6t@kdbg.org>'</span> 72a144e2
+<span class="token function">git</span> show -s 72a144e
+<span class="token comment">#> [...]</span>
+<span class="token comment">#>    Signed-off-by: Junio C Hamano &#x3C;gitster@pobox.com></span>
+<span class="token comment">#></span>
+<span class="token comment">#> Notes:</span>
+<span class="token comment">#>    Tested-by: Johannes Sixt &#x3C;j6t@kdbg.org></span>
+</code></pre>
+<ul>
+<li>
+<p>Add notes to particular commits and then show them afterwards</p>
+<ul>
+<li>Git hooks
+<ul>
+<li>Basically they're triggers that run on certain commands and execute scripts</li>
+<li><a href="https://medium.com/@f3igao/get-started-with-git-hooks-5a489725c639">Getting started with git hooks</a></li>
+<li><a href="https://pypi.org/project/git-pre-commit-hook/">git hooks</a> </li>
+<li><a href="https://www.omerkatz.com/blog/2013/5/23/git-hooks-part-2-implementing-git-hooks-using-python">More python git hooks</a> </li>
+<li><a href="https://pre-commit.com/">even more</a></li>
+<li><a href="https://github.com/aitemr/awesome-git-hooks">awesome git hooks</a></li>
+<li>azure devops <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops">Branch policies</a> are kind of like hard stop checklist items like a merge conflict to be resolved before merge</li>
+<li><a href="/DevLog/notes/7kfp3zptn2a7wkp5zeoa7wu">Devops</a> Pipelines like <a href="/DevLog/notes/9i8qg5rb8wy8sf5fa8qst8c">GitHub Actions</a> are automated <a href="/DevLog/notes/aer25byo6srulq7i050vz16">CI CD</a> tools driven by <a href="/DevLog/notes/vrla5vq98eivr4c47f1env9">Yaml</a> files. This is the pipeline for a super linter:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="language-yaml"><code class="language-yaml"><span class="token comment"># Starter pipeline</span>
+<span class="token comment"># Start with a minimal pipeline that you can customize to build and deploy your code.</span>
+<span class="token comment"># Add steps that build, run tests, deploy, and more:</span>
+<span class="token comment"># https://aka.ms/yaml</span>
+		
+<span class="token comment"># This code src: https://www.meziantou.net/running-github-super-linter-in-azure-pipelines.html</span>
+<span class="token comment"># referenced docker container script: https://github.com/github/super-linter</span>
+<span class="token key atrule">trigger</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token string">'*'</span>
+		
+<span class="token comment"># Use multiple jobs, so the linter can work in parallel to the build.</span>
+<span class="token comment"># This also allows to run the Linter on Linux whereas you build can run on Windows or Mac.</span>
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">job</span><span class="token punctuation">:</span> lint
+<span class="token key atrule">pool</span><span class="token punctuation">:</span>
+<span class="token key atrule">vmImage</span><span class="token punctuation">:</span> <span class="token string">'ubuntu-20.04'</span>
+<span class="token key atrule">steps</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">script</span><span class="token punctuation">:</span> docker pull github/super<span class="token punctuation">-</span>linter<span class="token punctuation">:</span>latest
+	<span class="token key atrule">displayName</span><span class="token punctuation">:</span> Pull GitHub Super<span class="token punctuation">-</span>Linter image
+<span class="token punctuation">-</span> <span class="token key atrule">script</span><span class="token punctuation">:</span> <span class="token punctuation">></span><span class="token punctuation">-</span>
+	docker run \
+	<span class="token punctuation">-</span>e RUN_LOCAL=true \
+	<span class="token punctuation">-</span>v $(System.DefaultWorkingDirectory)<span class="token punctuation">:</span>/tmp/lint \
+	github/super<span class="token punctuation">-</span>linter
+<span class="token key atrule">displayName</span><span class="token punctuation">:</span> <span class="token string">'Run GitHub Super-Linter'</span>
+</code></pre>
+<ul>
+<li>This pipeline will run the same Markdown Lint as the <a href="/DevLog/notes/2v757989h14a59imxjv2gn1">Vscode</a> extension, sample <a href="https://github.com/github/super-linter/blob/master/TEMPLATES/.markdown-lint.yml">config file here</a></li>
+<li><a href="https://www.meziantou.net/running-github-super-linter-in-azure-pipelines.htm">Link to the super linter yaml file</a></li>
+<li><a href="https://blog.tyang.org/2020/06/27/use-github-super-linter-in-azure-pipelines/">In two separate places for source material</a></li>
+</ul>

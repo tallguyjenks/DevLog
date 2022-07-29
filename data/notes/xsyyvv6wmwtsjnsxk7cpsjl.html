@@ -1,0 +1,42 @@
+<h1 id="pointers"><a aria-hidden="true" class="anchor-heading icon-link" href="#pointers"></a>Pointers</h1>
+<h2 id="pointers-in-c"><a aria-hidden="true" class="anchor-heading icon-link" href="#pointers-in-c"></a>Pointers in C++</h2>
+<blockquote>
+<p>A <strong>pointer</strong> is a variable that contains a memory address, rather than containing data like most variables</p>
+</blockquote>
+<h2 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> usrInt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// User defined int value</span>
+   <span class="token keyword">int</span><span class="token operator">*</span> myPtr <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span> <span class="token comment">// Pointer to the user defined int value</span>
+   
+   <span class="token comment">// Prompt user for input</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter any number: "</span><span class="token punctuation">;</span>
+   cin <span class="token operator">>></span> usrInt<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Output int value and address</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"We wrote your number into variable usrInt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"The content of usrInt is: "</span> <span class="token operator">&#x3C;&#x3C;</span> usrInt <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"usrInt's memory address is: "</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token operator">&#x26;</span>usrInt <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"We can store that address into pointer variable myPtr."</span>
+        <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Grab address storing user value</span>
+   myPtr <span class="token operator">=</span> <span class="token operator">&#x26;</span>usrInt<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Output pointer value and value at pointer address</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"The content of myPtr is: "</span> <span class="token operator">&#x3C;&#x3C;</span> myPtr <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"The content of what myPtr points to is: "</span>
+        <span class="token operator">&#x3C;&#x3C;</span> <span class="token operator">*</span>myPtr <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/vuv0dtzu9tr3iyrnolz8t3i">Operators</a></li>
+<li><a href="/DevLog/notes/cpcmnbirc53qw8wzpafofrp">Symbol Usage</a></li>
+<li><a href="/DevLog/notes/ernsq96pcf7nx3eens6p870">Using Pointers</a></li>
+</ol>

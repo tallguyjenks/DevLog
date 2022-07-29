@@ -1,0 +1,13 @@
+<h1 id="strchr"><a aria-hidden="true" class="anchor-heading icon-link" href="#strchr"></a>Strchr</h1>
+<h2 id="strchr-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#strchr-1"></a>strchr()</h2>
+<p><code>size_t strlen(sourceStr)</code></p>
+<p>Returns number of characters in <code>sourceStr</code> up to, but not including, first null character. <code>size_t</code> is integer type.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Given:</span>
+<span class="token keyword">char</span> orgName<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"United Nations"</span><span class="token punctuation">;</span> 
+<span class="token keyword">char</span> userText<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"UNICEF"</span><span class="token punctuation">;</span> 
+<span class="token keyword">char</span> targetText<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+x <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>orgName<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Assigns 14 to x </span>
+x <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>userText<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Assigns 6 to x</span>
+x <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>targetText<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Error: targetText may lack null char</span>
+</code></pre>

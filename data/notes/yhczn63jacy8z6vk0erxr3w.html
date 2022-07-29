@@ -1,0 +1,19 @@
+<h1 id="ilo"><a aria-hidden="true" class="anchor-heading icon-link" href="#ilo"></a>iLO</h1>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="https://youtu.be/LxdCzfF77t4">https://youtu.be/LxdCzfF77t4</a></li>
+</ul>
+<h2 id="using-ilo"><a aria-hidden="true" class="anchor-heading icon-link" href="#using-ilo"></a>Using iLO</h2>
+<h3 id="from-scratch"><a aria-hidden="true" class="anchor-heading icon-link" href="#from-scratch"></a>From scratch</h3>
+<ul>
+<li>enter iLO menu with <code>F8</code> after POST</li>
+<li>in the <code>[file]</code> option there is a reset to default settings</li>
+<li>as long as the above points are handled then you can get a new <a href="/DevLog/notes/qbu54lobmtwan4ce77nlwni">Dhcp</a> DORA process going so that you can use intelligent provisioning via <code>F10</code> to boot from an <code>.iso</code> on the remote machine.</li>
+<li><strong>NOTE:</strong> to use the virtual media install you need an iLO license, a trial license should work just fine</li>
+</ul>
+<h3 id="caveats-and-gotchyas"><a aria-hidden="true" class="anchor-heading icon-link" href="#caveats-and-gotchyas"></a>Caveats and Gotchyas</h3>
+<ul>
+<li>Make sure the iLO port is connected to a port on the switch that is on the same VLAN as the remote device attempting to connect to it.</li>
+<li>you can let <a href="/DevLog/notes/qbu54lobmtwan4ce77nlwni">Dhcp</a> handle DORA and configuration and then boot from virtual media via iLO</li>
+<li>Booting from virtual media is an option in the <code>F9</code> menu that needs to be enabled before attempting iLO boot</li>
+</ul>

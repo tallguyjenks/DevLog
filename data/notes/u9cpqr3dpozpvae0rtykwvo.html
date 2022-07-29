@@ -1,0 +1,101 @@
+<h1 id="the-interface-segregation-principle"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-interface-segregation-principle"></a>The Interface Segregation Principle</h1>
+<blockquote>
+<p>“Many client-specific interfaces are better than one general-purpose interface”
+<br>
+In the contest of classes, an interface is considered, all the methods and properties “<strong>exposed</strong>”, thus, everything that a user can interact with that belongs to that class.
+<br>
+In this sense, the The Interface Segregation Principle tell us that a class should only have the interface needed (<a href="/DevLog/notes/77as5fo1z0tumngaml2rxip">the-single-responsibility-principle</a>) and avoid methods that won’t work or that have no reason to be part of that class.
+<br>
+This problem arises, primarily, when, a subclass inherits methods from a base class that it does not need.</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> abc <span class="token keyword">import</span> ABC<span class="token punctuation">,</span> abstractmethod
+
+<span class="token keyword">class</span> <span class="token class-name">Mammals</span><span class="token punctuation">(</span>ABC<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">swim</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Can Swim"</span><span class="token punctuation">)</span> 
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Can Walk"</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">class</span> <span class="token class-name">Human</span><span class="token punctuation">(</span>Mammals<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">swim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Humans can swim"</span><span class="token punctuation">)</span> 
+
+    <span class="token keyword">def</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Humans can walk"</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">class</span> <span class="token class-name">Whale</span><span class="token punctuation">(</span>Mammals<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">swim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Whales can swim"</span><span class="token punctuation">)</span> 
+	
+<span class="token comment"># ========================================= #</span>
+Human<span class="token punctuation">.</span>swim<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Human<span class="token punctuation">.</span>walk<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+Whale<span class="token punctuation">.</span>swim<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Whale<span class="token punctuation">.</span>walk<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Humans can swim</span>
+<span class="token comment"># Humans can walk</span>
+<span class="token comment"># Whales can swim</span>
+<span class="token comment"># Can Walk</span>
+</code></pre>
+<p>The sub-class whale can still invoke the method “walk” but it shouldn’t, and we must avoid it.</p>
+<p>The way suggested by <code>ISP</code> is to create more client-specific interfaces rather than one general-purpose interface. So, our code example becomes:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> abc <span class="token keyword">import</span> ABC<span class="token punctuation">,</span> abstractmethod
+
+<span class="token keyword">class</span> <span class="token class-name">Walker</span><span class="token punctuation">(</span>ABC<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token decorator annotation punctuation">@abstractmethod</span>
+  <span class="token keyword">def</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Can Walk"</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">class</span> <span class="token class-name">Swimmer</span><span class="token punctuation">(</span>ABC<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token decorator annotation punctuation">@abstractmethod</span>
+  <span class="token keyword">def</span> <span class="token function">swim</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Can Swim"</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">class</span> <span class="token class-name">Human</span><span class="token punctuation">(</span>Walker<span class="token punctuation">,</span> Swimmer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Humans can walk"</span><span class="token punctuation">)</span> 
+  <span class="token keyword">def</span> <span class="token function">swim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Humans can swim"</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">class</span> <span class="token class-name">Whale</span><span class="token punctuation">(</span>Swimmer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">swim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Whales can swim"</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+  Human<span class="token punctuation">.</span>walk<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  Human<span class="token punctuation">.</span>swim<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  Whale<span class="token punctuation">.</span>swim<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  Whale<span class="token punctuation">.</span>walk<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Humans can walk</span>
+<span class="token comment"># Humans can swim</span>
+<span class="token comment"># Whales can swim</span>
+</code></pre>
+<hr>
+<ul>
+<li>
+<h2 id="tags"><a aria-hidden="true" class="anchor-heading icon-link" href="#tags"></a>Tags:</h2>
+</li>
+<li>Reference:
+<ul>
+<li><a href="/DevLog/notes/9knz69r6nooffoynnm56e9h">SOLID Coding in Python</a></li>
+</ul>
+</li>
+<li>Related:
+<ul>
+<li><a href="/DevLog/notes/v7i96kp105u0du2q9tz97ta">Python Abstract Base Classes</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/9knz69r6nooffoynnm56e9h">Solid Coding in Python (DevLog)</a></li>
+</ul>

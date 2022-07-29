@@ -1,0 +1,43 @@
+<h1 id="input-groups"><a aria-hidden="true" class="anchor-heading icon-link" href="#input-groups"></a>Input Groups</h1>
+<h2 id="input-groups-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#input-groups-1"></a>Input Groups</h2>
+<pre class="language-python"><code class="language-python"><span class="token comment">#!/usr/bin/env python</span>
+
+<span class="token keyword">from</span> pywebio<span class="token punctuation">.</span><span class="token builtin">input</span> <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> pywebio<span class="token punctuation">.</span>output <span class="token keyword">import</span> <span class="token operator">*</span>
+
+data <span class="token operator">=</span> input_group<span class="token punctuation">(</span>
+  <span class="token string">"User data"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span>
+	  <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"What is your Name?"</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span>TEXT<span class="token punctuation">)</span><span class="token punctuation">,</span>
+	  <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Input your age"</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"age"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span>NUMBER<span class="token punctuation">)</span><span class="token punctuation">,</span>
+	  radio<span class="token punctuation">(</span>
+		  <span class="token string">"Which Continent?"</span><span class="token punctuation">,</span>
+		  name<span class="token operator">=</span><span class="token string">"continent"</span><span class="token punctuation">,</span>
+		  options<span class="token operator">=</span><span class="token punctuation">[</span>
+			  <span class="token string">"Africa"</span><span class="token punctuation">,</span>
+			  <span class="token string">"Asia"</span><span class="token punctuation">,</span>
+			  <span class="token string">"Australia"</span><span class="token punctuation">,</span>
+			  <span class="token string">"Europe"</span><span class="token punctuation">,</span>
+			  <span class="token string">"North America"</span><span class="token punctuation">,</span>
+			  <span class="token string">"South America"</span><span class="token punctuation">,</span>
+		  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+	  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+	  checkbox<span class="token punctuation">(</span>
+		  <span class="token string">"User Term"</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"agreement"</span><span class="token punctuation">,</span> options<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"I agree to terms and conditions"</span><span class="token punctuation">]</span>
+	  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># Output functions</span>
+
+put_text<span class="token punctuation">(</span><span class="token string">"The output in a table:"</span><span class="token punctuation">)</span>
+
+put_table<span class="token punctuation">(</span>
+  <span class="token punctuation">[</span>
+	  <span class="token punctuation">[</span><span class="token string">"Name"</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	  <span class="token punctuation">[</span><span class="token string">"Age"</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token string">"age"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	  <span class="token punctuation">[</span><span class="token string">"Continent"</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token string">"continent"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	  <span class="token punctuation">[</span><span class="token string">"Agreement"</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token string">"agreement"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+</code></pre>

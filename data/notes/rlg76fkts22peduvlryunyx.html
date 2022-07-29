@@ -1,0 +1,15 @@
+<h1 id="case-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#case-statements"></a>Case Statements</h1>
+<h2 id="case-statement"><a aria-hidden="true" class="anchor-heading icon-link" href="#case-statement"></a>Case Statement</h2>
+<ul>
+<li>Python 3.10 added Match Case statements</li>
+</ul>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token string">"hello"</span> 
+
+<span class="token keyword">match</span> x<span class="token punctuation">:</span>
+	<span class="token keyword">case</span> <span class="token string">"hello"</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+	<span class="token keyword">case</span> <span class="token string">"hi"</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
+	<span class="token keyword">case</span> <span class="token keyword">_</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"default case"</span><span class="token punctuation">)</span>
+</code></pre>

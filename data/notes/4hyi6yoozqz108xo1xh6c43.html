@@ -1,0 +1,9 @@
+<h1 id="reset"><a aria-hidden="true" class="anchor-heading icon-link" href="#reset"></a>Reset</h1>
+<h2 id="open-a-cloned-repository-from-a-particular-commit"><a aria-hidden="true" class="anchor-heading icon-link" href="#open-a-cloned-repository-from-a-particular-commit"></a>Open a cloned repository from a particular commit</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/3555107/git-clone-particular-version-of-remote-repository">SO</a></li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token punctuation">[</span>remote_address_here<span class="token punctuation">]</span> my_repo
+<span class="token builtin class-name">cd</span> my_repo
+<span class="token function">git</span> reset --hard <span class="token punctuation">[</span>ENTER HERE THE COMMIT HASH YOU WANT<span class="token punctuation">]</span>
+</code></pre>

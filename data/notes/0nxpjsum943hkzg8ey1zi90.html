@@ -1,0 +1,71 @@
+<h1 id="implementation"><a aria-hidden="true" class="anchor-heading icon-link" href="#implementation"></a>Implementation</h1>
+<h3 id="implementation-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#implementation-1"></a>Implementation</h3>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+   <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token keyword">const</span> MyClass<span class="token operator">&#x26;</span> origClass<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Copy constructor</span>
+   <span class="token operator">~</span><span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token comment">// Set member value dataObj</span>
+   <span class="token keyword">void</span> <span class="token function">SetDataObj</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> setVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token operator">*</span>dataObj <span class="token operator">=</span> setVal<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token comment">// Return member value dataObj</span>
+   <span class="token keyword">int</span> <span class="token function">GetDataObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token operator">*</span>dataObj<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+   <span class="token keyword">int</span><span class="token operator">*</span> dataObj<span class="token punctuation">;</span><span class="token comment">// Data member</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Default constructor</span>
+<span class="token class-name">MyClass</span><span class="token double-colon punctuation">::</span><span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Constructor called."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   dataObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span> <span class="token comment">// Allocate mem for data</span>
+   <span class="token operator">*</span>dataObj <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Copy constructor</span>
+<span class="token class-name">MyClass</span><span class="token double-colon punctuation">::</span><span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token keyword">const</span> MyClass<span class="token operator">&#x26;</span> origClass<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Copy constructor called."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   dataObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span> <span class="token comment">// Allocate sub-object</span>
+   <span class="token operator">*</span>dataObj <span class="token operator">=</span> <span class="token operator">*</span><span class="token punctuation">(</span>origClass<span class="token punctuation">.</span>dataObj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Destructor</span>
+<span class="token class-name">MyClass</span><span class="token double-colon punctuation">::</span><span class="token operator">~</span><span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Destructor called."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token keyword">delete</span> dataObj<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">SomeFunction</span><span class="token punctuation">(</span>MyClass localObj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment">// Do something with localObj</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   MyClass tempClassObj<span class="token punctuation">;</span> <span class="token comment">// Create object of type MyClass</span>
+   
+   <span class="token comment">// Set and print data member value</span>
+   tempClassObj<span class="token punctuation">.</span><span class="token function">SetDataObj</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Before: "</span> <span class="token operator">&#x3C;&#x3C;</span> tempClassObj<span class="token punctuation">.</span><span class="token function">GetDataObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Calls SomeFunction(), tempClassObj is passed by value</span>
+   <span class="token function">SomeFunction</span><span class="token punctuation">(</span>tempClassObj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token comment">// Print data member value</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"After: "</span> <span class="token operator">&#x3C;&#x3C;</span> tempClassObj<span class="token punctuation">.</span><span class="token function">GetDataObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

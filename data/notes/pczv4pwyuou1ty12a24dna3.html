@@ -1,0 +1,8 @@
+<h1 id="stdin-as-arg"><a aria-hidden="true" class="anchor-heading icon-link" href="#stdin-as-arg"></a>Stdin as Arg</h1>
+<h3 id="stdin-as-a-file-argument"><a aria-hidden="true" class="anchor-heading icon-link" href="#stdin-as-a-file-argument"></a>Stdin as a file argument</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Command expects a file:</span>
+<span class="token function">wc</span> file1 file2
+<span class="token comment"># Instead of making a temp file to read in a little text use this to pass in</span>
+<span class="token comment"># text as a temp file to STDIN</span>
+<span class="token function">wc</span> file1 - file2 <span class="token comment"># waits for you to type input and you complete this process by using `CTRL+D` which inserts the EOF character</span>
+</code></pre>

@@ -1,0 +1,23 @@
+<h1 id="requests"><a aria-hidden="true" class="anchor-heading icon-link" href="#requests"></a>Requests</h1>
+<ul>
+<li><a href="https://docs.python-requests.org/en/master/">Docs</a></li>
+<li><a href="https://github.com/psf/requests">GitHub</a></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> requests
+
+<span class="token comment"># Get API Request from Azure DevOps</span>
+
+r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"https://dev.azure.com/</span><span class="token interpolation"><span class="token punctuation">{</span>organization<span class="token punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token punctuation">{</span>project<span class="token punctuation">}</span></span><span class="token string">/_apis/wit/workitems?ids=</span><span class="token interpolation"><span class="token punctuation">{</span>ids<span class="token punctuation">}</span></span><span class="token string">&#x26;api-version=6.1-preview.3"</span></span><span class="token punctuation">,</span> auth<span class="token operator">=</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> token<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#['Body'].read().decode('utf-8-sig')</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'content-type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>encoding<span class="token punctuation">)</span>
+<span class="token comment"># print(r.text)</span>
+<span class="token comment"># r.json()["value"]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>r<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/ouyjuvjg0oiwociu0bza2f3">19 (DevLog)</a></li>
+</ul>

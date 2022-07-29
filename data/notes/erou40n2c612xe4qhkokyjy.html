@@ -1,0 +1,25 @@
+<h1 id="structs"><a aria-hidden="true" class="anchor-heading icon-link" href="#structs"></a>Structs</h1>
+<h2 id="structs-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#structs-1"></a>Structs</h2>
+<blockquote>
+<p>a <strong>struct</strong> is nearly identical to a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Classes (Private)</a>. The difference is that if a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Classes#Class Member Function (Private)</a> appears before a label of private or public, then by default, in a struct the member is public while in a class the member is private. Some programmers suggest a good practice is to use struct for simple data grouping with that data being public, while using class for objects (having data and functions, with data private).
+.
+However, some C++ programmers argue that good practice is to only use class, abandoning struct entirely</p>
+</blockquote>
+<p><a href="https://www.guru99.com/cpp-structures.html">https://www.guru99.com/cpp-structures.html</a></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Declaration</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">Person</span>  
+<span class="token punctuation">{</span>  
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
+     <span class="token keyword">int</span> citizenship<span class="token punctuation">;</span>  
+     <span class="token keyword">int</span> age<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Instantiation</span>
+Person p<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/4j6uwaodenmhn1ss8ii3exb">Data Management (DevLog)</a></li>
+</ul>

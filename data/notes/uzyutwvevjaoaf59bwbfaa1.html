@@ -1,0 +1,60 @@
+<h1 id="rowcount"><a aria-hidden="true" class="anchor-heading icon-link" href="#rowcount"></a>Rowcount</h1>
+<h2 id="usage"><a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a>Usage</h2>
+<p><code>SELECT @@ROWCOUNT</code> in the same execution block to get the result back</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> dbo<span class="token punctuation">.</span>Customer<span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> @<span class="token variable">@ROWCOUNT</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This returns the query results and the count of how many rows from that result set</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> @<span class="token variable">@ROWCOUNT</span><span class="token punctuation">;</span>
+</code></pre>
+<p>executed by itself only returns a count of 1 record (itself).</p>
+<h2 id="error-handling-and-business-rules"><a aria-hidden="true" class="anchor-heading icon-link" href="#error-handling-and-business-rules"></a>Error Handling and Business Rules</h2>
+<blockquote>
+<p>Using SQL Server <code>@@ROWCOUNT</code> for Error Handling and Checking a Business Rule</p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">BEGIN</span> <span class="token keyword">TRAN</span>
+
+<span class="token keyword">UPDATE</span> <span class="token punctuation">[</span>Sales<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>SalesOrderHeader<span class="token punctuation">]</span>
+<span class="token keyword">SET</span> <span class="token punctuation">[</span>SubTotal<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>SubTotal<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">1.1</span><span class="token punctuation">;</span> <span class="token comment">-- 10% increase</span>
+
+<span class="token keyword">IF</span> @<span class="token variable">@ROWCOUNT</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">PRINT</span> <span class="token string">'Something went wrong!'</span>
+<span class="token keyword">ELSE</span> <span class="token keyword">PRINT</span> <span class="token string">'Rows were updated...'</span>
+
+<span class="token comment">--COMMIT</span>
+<span class="token keyword">ROLLBACK</span>
+</code></pre>
+<h2 id="instances-of-large-rowcount"><a aria-hidden="true" class="anchor-heading icon-link" href="#instances-of-large-rowcount"></a>Instances of Large ROWCOUNT</h2>
+<p>SQL Server <code>ROWCOUNT_BIG</code> function</p>
+<p>The data type of <code>@@ROWCOUNT</code> is integer. In the cases where a higher number of rows are affected than an integer can handle (meaning more than 2,147,483,647 rows!), you need to use the ROWCOUNT_BIG function. This function returns the data type <code>bigint</code>.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> dbo<span class="token punctuation">.</span>Customer<span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> ROWCOUNT_BIG<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="utilizing-rowcount-with-try-catch-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#utilizing-rowcount-with-try-catch-statements"></a>Utilizing ROWCOUNT with Try Catch Statements</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">BEGIN</span> TRY
+    <span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token number">100</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">[</span>AdventureWorks2017<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>Person<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>Person<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span> TRY
+<span class="token keyword">BEGIN</span> CATCH
+    <span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token number">50</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">[</span>AdventureWorks2017<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>Person<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>Person<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span> CATCH
+<span class="token keyword">SELECT</span> @<span class="token variable">@ROWCOUNT</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+
+@@ROWCOUNT returns zero! This is because the last statement is not the SELECT statement from the TRY block (which has been executed), it’s also not the one from the TRY block as it’s the last SELECT in the script. It’s the TRY/CATCH block itself! @@ROWCOUNT returns the affected rows from any statement, even if it’s not DML or a SELECT query.
+
+To avoid this kind of scenario, you can store the row count in a local variable. The script would then look like this:
+
+*/</span>
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@rowcount</span> <span class="token keyword">INT</span><span class="token punctuation">;</span>
+<span class="token keyword">BEGIN</span> TRY
+    <span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token number">100</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">[</span>AdventureWorks2017<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>Person<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>Person<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">SET</span> <span class="token variable">@rowcount</span> <span class="token operator">=</span> @<span class="token variable">@ROWCOUNT</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span> TRY
+<span class="token keyword">BEGIN</span> CATCH
+    <span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token number">50</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">[</span>AdventureWorks2017<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>Person<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>Person<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">SET</span> <span class="token variable">@rowcount</span> <span class="token operator">=</span> @<span class="token variable">@ROWCOUNT</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span> CATCH
+<span class="token keyword">SELECT</span> <span class="token variable">@rowcount</span><span class="token punctuation">;</span>
+</code></pre>

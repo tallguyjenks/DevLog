@@ -1,0 +1,61 @@
+<h1 id="the-single-responsibility-principle"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-single-responsibility-principle"></a>The Single Responsibility Principle</h1>
+<blockquote>
+<p>“A class should have one, and only one, reason to change”</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token keyword">def</span> <span class="token function">math_operations</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Compute Average</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"the mean is </span><span class="token interpolation"><span class="token punctuation">{</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token comment"># Compute Max</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"the max is </span><span class="token interpolation"><span class="token punctuation">{</span>np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> 
+
+math_operations<span class="token punctuation">(</span>list_ <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># the mean is 3.0</span>
+<span class="token comment"># the max is 5</span>
+</code></pre>
+<p>Having a single function do all the work is a bad approach</p>
+<p>split the function <code>math_operations</code> into atomic functions</p>
+<p>Make a single function (or class), generically named, "main". This will call all the other functions one-by-one in a step-to-step process.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_mean</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''Compute Mean'''</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"the mean is </span><span class="token interpolation"><span class="token punctuation">{</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> 
+
+<span class="token keyword">def</span> <span class="token function">get_max</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''Compute Max'''</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"the max is </span><span class="token interpolation"><span class="token punctuation">{</span>np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> 
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token comment"># Compute Average</span>
+    get_mean<span class="token punctuation">(</span>list_<span class="token punctuation">)</span>
+    <span class="token comment"># Compute Max</span>
+    get_max<span class="token punctuation">(</span>list_<span class="token punctuation">)</span>
+
+main<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># the mean is 3.0</span>
+<span class="token comment"># the max is 5</span>
+</code></pre>
+<p>The result of this simple action is that now:</p>
+<ul>
+<li>It is easier to localize errors. Any error in execution will point out to a smaller section of your code, accelerating your debug phase.</li>
+<li>Any part of the code is reusable in other section of your code.</li>
+<li>Moreover and, often overlooked, is that it is easier to create testing for each function of your code. 
+<ul>
+<li><em>Side note on testing:</em> You should write tests before you actually write the script. But, this is often ignored in favor of creating some nice result to be shown to the stakeholders instead.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="/DevLog/notes/9knz69r6nooffoynnm56e9h">SOLID Coding in Python</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/u9cpqr3dpozpvae0rtykwvo">The Interface Segregation Principle (DevLog)</a></li>
+<li><a href="/DevLog/notes/9knz69r6nooffoynnm56e9h">Solid Coding in Python (DevLog)</a></li>
+</ul>

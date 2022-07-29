@@ -1,0 +1,8 @@
+<h1 id="parenthesized-context-managers"><a aria-hidden="true" class="anchor-heading icon-link" href="#parenthesized-context-managers"></a>Parenthesized Context Managers</h1>
+<h3 id="parenthesized-context-managers-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#parenthesized-context-managers-1"></a>Parenthesized Context Managers</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">with</span> <span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'file1.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fin<span class="token punctuation">,</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'file2.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fout<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	fout<span class="token punctuation">.</span>write<span class="token punctuation">(</span>fin<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span class="token comment"># In essence: cat file1.txt > file2.txt </span>
+<span class="token comment"># if file2 were in append mode 'a' then it would be like: </span>
+<span class="token comment"># cat file1.txt >> file2.txt</span>
+</code></pre>

@@ -1,0 +1,29 @@
+<h1 id="tablib"><a aria-hidden="true" class="anchor-heading icon-link" href="#tablib"></a>Tablib</h1>
+<blockquote>
+<p>Tablib: format-agnostic tabular dataset library</p>
+</blockquote>
+<pre class="language-python"><code class="language-python">data <span class="token operator">=</span> tablib<span class="token punctuation">.</span>Dataset<span class="token punctuation">(</span>headers<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'First Name'</span><span class="token punctuation">,</span> <span class="token string">'Last Name'</span><span class="token punctuation">,</span> <span class="token string">'Age'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'Kenneth'</span><span class="token punctuation">,</span> <span class="token string">'Reitz'</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'Bessie'</span><span class="token punctuation">,</span> <span class="token string">'Monke'</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+  data<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>export<span class="token punctuation">(</span><span class="token string">'json'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># [{"Last Name": "Reitz", "First Name": "Kenneth", "Age": 22}, {"Last Name": "Monke", "First Name": "Bessie", "Age": 21}]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>export<span class="token punctuation">(</span><span class="token string">'yaml'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># {Age: 22, First Name: Kenneth, Last Name: Reitz}</span>
+<span class="token comment"># {Age: 21, First Name: Bessie, Last Name: Monke}</span>
+
+data<span class="token punctuation">.</span>export<span class="token punctuation">(</span><span class="token string">'xlsx'</span><span class="token punctuation">)</span>
+<span class="token comment"># &#x3C;redacted binary data></span>
+
+data<span class="token punctuation">.</span>export<span class="token punctuation">(</span><span class="token string">'df'</span><span class="token punctuation">)</span>
+<span class="token comment">#   First Name Last Name  Age</span>
+<span class="token comment"># 0    Kenneth     Reitz   22</span>
+<span class="token comment"># 1     Bessie     Monke   21</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/gokijpxezs67k8od3no3drl">Resources</a></li>
+</ol>

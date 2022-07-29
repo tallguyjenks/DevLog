@@ -1,0 +1,54 @@
+<h1 id="triggers"><a aria-hidden="true" class="anchor-heading icon-link" href="#triggers"></a>Triggers</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span>FN_Clean_Data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">RETURNS</span> <span class="token keyword">trigger</span> <span class="token keyword">LANGUAGE</span> <span class="token string">'plpgsql'</span> <span class="token keyword">AS</span> $$
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> rpt<span class="token punctuation">.</span>report_data_clean
+    <span class="token keyword">SELECT</span> DATE_PART<span class="token punctuation">(</span><span class="token string">'year'</span><span class="token punctuation">,</span> payment_date<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">Year</span>
+         <span class="token punctuation">,</span> address <span class="token keyword">AS</span> Location
+         <span class="token punctuation">,</span> CAST<span class="token punctuation">(</span>amount <span class="token keyword">AS</span> money<span class="token punctuation">)</span> <span class="token keyword">AS</span> Revenue
+    <span class="token keyword">FROM</span> rpt<span class="token punctuation">.</span>report_data<span class="token punctuation">;</span>
+    <span class="token keyword">RETURN</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+$$<span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span>FN_Clean_Data<span class="token punctuation">(</span><span class="token punctuation">)</span> OWNER <span class="token keyword">TO</span> postgres<span class="token punctuation">;</span>
+<span class="token keyword">COMMENT</span> <span class="token keyword">ON</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span>FN_Clean_Data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">IS</span> <span class="token string">'New data in rpt.report_data gets cleaned and inserted into rpt.report_data_clean'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> TR_ETL <span class="token keyword">AFTER</span> <span class="token keyword">INSERT</span> <span class="token keyword">ON</span> rpt<span class="token punctuation">.</span>report_data
+    <span class="token keyword">FOR</span> STATEMENT
+    <span class="token keyword">EXECUTE</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span>FN_Clean_Data<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">COMMENT</span> <span class="token keyword">ON</span> <span class="token keyword">TRIGGER</span> TR_ETL <span class="token keyword">ON</span> rpt<span class="token punctuation">.</span>report_data
+<span class="token operator">IS</span> <span class="token string">'Update reports when new data is added to the rpt.report_data table'</span><span class="token punctuation">;</span>
+<span class="token comment">/*========================================================================*/</span>
+<span class="token keyword">CREATE</span> <span class="token operator">OR</span> <span class="token keyword">REPLACE</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span>FN_ETL<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">RETURNS</span> <span class="token keyword">trigger</span> <span class="token keyword">LANGUAGE</span> <span class="token string">'plpgsql'</span> <span class="token keyword">AS</span> $$
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span> rpt<span class="token punctuation">.</span>location_trended<span class="token punctuation">;</span>
+    <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> rpt<span class="token punctuation">.</span>location_trended
+    <span class="token keyword">SELECT</span> <span class="token string">"Year"</span><span class="token punctuation">,</span> <span class="token string">"Location"</span><span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token string">"Revenue"</span><span class="token punctuation">)</span>
+    <span class="token keyword">FROM</span> rpt<span class="token punctuation">.</span>report_data_clean
+    <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token string">"Year"</span><span class="token punctuation">,</span> <span class="token string">"Location"</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span> rpt<span class="token punctuation">.</span>location_top<span class="token punctuation">;</span>
+    <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> rpt<span class="token punctuation">.</span>location_top
+    <span class="token keyword">SELECT</span> <span class="token string">"Year"</span><span class="token punctuation">,</span> <span class="token string">"Location"</span><span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token string">"Revenue"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">,</span> RANK<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span><span class="token punctuation">(</span><span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token string">"Year"</span> <span class="token keyword">DESC</span><span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token string">"Revenue"</span><span class="token punctuation">)</span> <span class="token keyword">DESC</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">"Rank"</span>
+    <span class="token keyword">FROM</span> rpt<span class="token punctuation">.</span>report_data_clean
+    <span class="token keyword">WHERE</span> <span class="token string">"Year"</span> <span class="token operator">IN</span> <span class="token punctuation">(</span>
+        <span class="token comment">--   CAST(DATE_PART('year', NOW()) AS INT)     -- Current Year</span>
+        <span class="token comment">-- , CAST(DATE_PART('year', NOW()) AS INT) - 1 -- Prior Year</span>
+          <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">MAX</span><span class="token punctuation">(</span><span class="token string">"Year"</span><span class="token punctuation">)</span> <span class="token keyword">FROM</span> rpt<span class="token punctuation">.</span>report_data_clean<span class="token punctuation">)</span>
+        <span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">MAX</span><span class="token punctuation">(</span><span class="token string">"Year"</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token keyword">FROM</span> rpt<span class="token punctuation">.</span>report_data_clean<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+    <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token string">"Year"</span><span class="token punctuation">,</span> <span class="token string">"Location"</span><span class="token punctuation">;</span>
+    <span class="token keyword">RETURN</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span>
+$$<span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span>FN_ETL<span class="token punctuation">(</span><span class="token punctuation">)</span> OWNER <span class="token keyword">TO</span> postgres<span class="token punctuation">;</span>
+<span class="token keyword">COMMENT</span> <span class="token keyword">ON</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span>FN_ETL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">IS</span> <span class="token string">'New data in rpt.report_data_clean so update all reports'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> TR_Update_Reports <span class="token keyword">AFTER</span> <span class="token keyword">INSERT</span> <span class="token keyword">ON</span> rpt<span class="token punctuation">.</span>report_data_clean
+<span class="token keyword">FOR</span> STATEMENT
+<span class="token keyword">EXECUTE</span> <span class="token keyword">FUNCTION</span> rpt<span class="token punctuation">.</span>FN_ETL<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">COMMENT</span> <span class="token keyword">ON</span> <span class="token keyword">TRIGGER</span> TR_Update_Reports <span class="token keyword">ON</span> rpt<span class="token punctuation">.</span>report_data_clean
+<span class="token operator">IS</span> <span class="token string">'Update reports when new data is added to the rpt.report_data_clean table'</span><span class="token punctuation">;</span>
+</code></pre>

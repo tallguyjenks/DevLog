@@ -1,0 +1,50 @@
+<h1 id="specify-dependency-targets"><a aria-hidden="true" class="anchor-heading icon-link" href="#specify-dependency-targets"></a>Specify Dependency Targets</h1>
+<h2 id="specifying-dependency-targets"><a aria-hidden="true" class="anchor-heading icon-link" href="#specifying-dependency-targets"></a>Specifying dependency targets</h2>
+<pre class="language-make"><code class="language-make">final_target: sub_target final_target.c
+	Recipe_to_create_final_target
+
+sub_target: sub_target.c
+	Recipe_to_create_sub_target
+</code></pre>
+<pre class="language-make"><code class="language-make">say_hello:
+	echo "Hello World"
+</code></pre>
+<ul>
+<li><code>say_hello:</code> == <em>The Target</em></li>
+<li><em>prerequisites</em> or <em>dependencies</em> follow the target</li>
+<li><code>echo "Hello World"</code> == <em>The Recipe</em></li>
+<li>The <em>target</em>, <em>prerequisites</em>, and <em>recipes</em> together make a <em>rule</em>.</li>
+<li><strong>Suppress command</strong> text and only show output with <code>@</code> like <code>@echo "hello world"</code></li>
+</ul>
+<pre class="language-make"><code class="language-make">say_hello:
+	  @echo "Hello World"
+
+generate:
+	  @echo "Creating empty text files..."
+	  touch file-{1..10}.txt
+
+clean:
+	  @echo "Cleaning up..."
+	  rm *.txt
+</code></pre>
+<ul>
+<li>This will only run the <code>say_hello</code> function because it's the default target ( the first thing )</li>
+<li>to hard code the default target, include this at beginning of file: <code>.DEFAULT_GOAL := generate</code>
+<ul>
+<li>To instead run all targets the target <code>all</code> is used to call all other targets</li>
+</ul>
+</li>
+</ul>
+<pre class="language-make"><code class="language-make">all: say_hello generate
+
+say_hello:
+	  @echo "Hello World"
+
+generate:
+	  @echo "Creating empty text files..."
+	  touch file-{1..10}.txt
+
+clean:
+	  @echo "Cleaning up..."
+	  rm *.txt
+</code></pre>

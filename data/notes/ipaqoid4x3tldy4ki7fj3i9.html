@@ -1,0 +1,58 @@
+<h1 id="schedule-tasks"><a aria-hidden="true" class="anchor-heading icon-link" href="#schedule-tasks"></a>Schedule Tasks</h1>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">How to Create Scheduled Tasks with Command Prompt on Windows 10</span></div>
+<a href="/DevLog/notes/1ll7k9lu0q8bs2c5za87ch2" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="link"><a aria-hidden="true" class="anchor-heading icon-link" href="#link"></a>Link</h2>
+<p><a href="https://www.windowscentral.com/how-create-task-using-task-scheduler-command-prompt">https://www.windowscentral.com/how-create-task-using-task-scheduler-command-prompt</a></p>
+<h2 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h2>
+<p>CLI way to schedule tasks akin to Task Scheduler functionality</p>
+<h3 id="syntax"><a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a>Syntax</h3>
+<p>For more info</p>
+<pre class="language-powershell"><code class="language-powershell">SCHTASKS <span class="token operator">/</span>CREATE <span class="token operator">/</span>?
+SCHTASKS <span class="token operator">/</span>CHANGE <span class="token operator">/</span>?
+SCHTASKS <span class="token operator">/</span>DELETE <span class="token operator">/</span>?
+</code></pre>
+<hr>
+<pre class="language-powershell"><code class="language-powershell">SCHTASKS <span class="token operator">/</span>CREATE <span class="token operator">/</span><span class="token function">SC</span> DAILY <span class="token operator">/</span>TN <span class="token string">"FOLDERPATH\TASKNAME"</span> <span class="token operator">/</span>TR <span class="token string">"C:\SOURCE\FOLDER\APP-OR-SCRIPT"</span> <span class="token operator">/</span>ST HH:MM
+</code></pre>
+<ul>
+<li><code>/CREATE</code> — specifies that you want to create a new an automated routine.</li>
+<li><code>/SC</code> — defines the schedule for the task. Options available, include MINUTE, HOURLY, DAILY, WEEKLY, MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, and ONEVENT.</li>
+<li><code>/D</code> — specifies the day of the week to execute the task. Options available, include MON, TUE, WED, THU, FRI, SAT, and SUN. If you're using the MONTHLY option, then you can use 1 - 31 for the days of the month. Also, there's the wildcard "*" that specifies all days.</li>
+<li><code>/TN</code> — specifies the task name and location. The "MyTasks\Notepad task" uses the "Notepad task" as the name and stores the task in the "MyTasks" folder. If the folder isn't available, it'll be created automatically.</li>
+<li><code>/TR</code> — specifies the location and the name of the task that you want to run. You can select an app or custom script.</li>
+<li><code>/ST</code> — defines the time to run the task (in 24 hours format).</li>
+<li><code>/QUERY</code> — displays all the system tasks.</li>
+<li><code>/RU</code> — specifies the task to run under a specific user account.</li>
+</ul>
+<h3 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h3>
+<h4 id="create-task"><a aria-hidden="true" class="anchor-heading icon-link" href="#create-task"></a>Create Task</h4>
+<pre class="language-powershell"><code class="language-powershell">SCHTASKS <span class="token operator">/</span>CREATE <span class="token operator">/</span><span class="token function">SC</span> DAILY <span class="token operator">/</span>TN <span class="token string">"MyTasks\Notepad task"</span> <span class="token operator">/</span>TR <span class="token string">"C:\Windows\System32\notepad.exe"</span> <span class="token operator">/</span>ST 17:45
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-03-17-45-22.png" alt="created task"></p>
+<h4 id="change-task"><a aria-hidden="true" class="anchor-heading icon-link" href="#change-task"></a>Change Task</h4>
+<ul>
+<li><code>/CHANGE</code> — specifies that you want to edit an existing task.</li>
+<li><code>/TN</code> — specifies the name and location of the task that you want to modify.</li>
+<li><code>/ST</code> — defines the new time to run the automated routine.</li>
+<li><code>/DISABLE</code> — disables the task.</li>
+</ul>
+<pre class="language-powershell"><code class="language-powershell">SCHTASKS <span class="token operator">/</span>CHANGE <span class="token operator">/</span>TN <span class="token string">"MyTasks\Notepad task"</span> <span class="token operator">/</span>ST 09:00
+</code></pre>
+<h4 id="disable-a-task"><a aria-hidden="true" class="anchor-heading icon-link" href="#disable-a-task"></a>Disable a Task</h4>
+<p>And the inverse of this is just replace <code>/DISABLE</code> with <code>/ENABLE</code></p>
+<pre class="language-powershell"><code class="language-powershell">SCHTASKS <span class="token operator">/</span>CHANGE <span class="token operator">/</span>TN <span class="token string">"FOLDERPATH\TASKNAME"</span> <span class="token operator">/</span>DISABLE
+</code></pre>
+<h4 id="delete-task"><a aria-hidden="true" class="anchor-heading icon-link" href="#delete-task"></a>Delete Task</h4>
+<ul>
+<li><code>/DELETE</code> — specifies that you want to delete an existing task.</li>
+<li><code>/TN</code> — specifies the name and location of the task that you want to delete.</li>
+</ul>
+<pre class="language-powershell"><code class="language-powershell">SCHTASKS <span class="token operator">/</span>DELETE <span class="token operator">/</span>TN <span class="token string">"MyTasks\Notepad task"</span>
+</code></pre></div></div><p></p><p></p>

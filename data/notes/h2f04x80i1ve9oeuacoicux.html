@@ -1,0 +1,6 @@
+<h1 id="convert-video-formats"><a aria-hidden="true" class="anchor-heading icon-link" href="#convert-video-formats"></a>Convert Video Formats</h1>
+<pre class="language-bash"><code class="language-bash">ffmpeg -i input.mkv -c copy output.m4v
+</code></pre>
+<h2 id="loop-through-a-directory-and-convert-all-files-of-one-type-to-the-other"><a aria-hidden="true" class="anchor-heading icon-link" href="#loop-through-a-directory-and-convert-all-files-of-one-type-to-the-other"></a>loop through a directory and convert all files of one type to the other</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">file</span> <span class="token keyword">in</span> *.mkv<span class="token punctuation">;</span> <span class="token keyword">do</span> ffmpeg -i <span class="token string">"<span class="token variable">${file}</span>"</span> -c copy <span class="token string">"<span class="token variable">${file<span class="token operator">/</span><span class="token operator">/</span>.mkv<span class="token operator">/</span>.mp4}</span>"</span><span class="token punctuation">;</span> <span class="token keyword">done</span>
+</code></pre>

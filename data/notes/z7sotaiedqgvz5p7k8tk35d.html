@@ -1,0 +1,23 @@
+<h1 id="testclient"><a aria-hidden="true" class="anchor-heading icon-link" href="#testclient"></a>Testclient</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
+<span class="token keyword">from</span> fastapi<span class="token punctuation">.</span>testclient <span class="token keyword">import</span> TestClient
+<span class="token keyword">from</span> app<span class="token punctuation">.</span>main <span class="token keyword">import</span> ap
+<span class="token keyword">import</span> pytest
+
+client <span class="token operator">=</span> TestClient<span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">test_root</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    result <span class="token operator">=</span> client<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">assert</span> result<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Hello World'</span>
+    <span class="token keyword">assert</span> result<span class="token punctuation">.</span>status_code <span class="token operator">==</span> <span class="token number">200</span>
+    <span class="token comment"># return {"msg": "Hello World"}</span>
+
+<span class="token keyword">def</span> <span class="token function">test_create_user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    result <span class="token operator">=</span> client<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">"/users/"</span><span class="token punctuation">,</span> json<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"john.doe@gmail.com"</span><span class="token punctuation">,</span><span class="token string">"password"</span><span class="token punctuation">:</span> <span class="token string">"password123"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment"># print(result.json().get('message'))</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">assert</span> result<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'email'</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"john.doe@gmail.com"</span>
+    <span class="token keyword">assert</span> result<span class="token punctuation">.</span>status_code <span class="token operator">==</span> <span class="token number">201</span>
+
+</code></pre>

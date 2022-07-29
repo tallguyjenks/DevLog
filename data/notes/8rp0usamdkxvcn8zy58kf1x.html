@@ -1,0 +1,33 @@
+<h1 id="code-formatting"><a aria-hidden="true" class="anchor-heading icon-link" href="#code-formatting"></a>Code Formatting</h1>
+<h2 id="syntax"><a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a>Syntax</h2>
+<p>In Markdown inline code can be formatted with backticks `code`</p>
+<p><code>code</code></p>
+<p>and multi line code can be done with fenced code areas</p>
+<pre><code>```
+Multi
+line
+code
+```
+</code></pre>
+<p>when you want to display code inline is one back tick</p>
+<p><code>`incline`</code></p>
+<p>when you want to show the backticks in formatted code its 2 backticks</p>
+<p><code>`` some `code` in line with backticks``</code></p>
+<p>when you want to display a code fenced block including back ticks you sandwich the 3 backtick code fence inside of a 4 backtick fence:</p>
+<pre><code>````
+```
+code fence
+```
+````
+</code></pre>
+<p>and to keep showing more levels of backtick sandwiches just keep increasing the amount of backticks, the code for the above image is:</p>
+<p><img src="/DevLog/assets/images/Pasted_image_20201207031806.png" alt="alt"></p>
+<h2 id="rmarkdown"><a aria-hidden="true" class="anchor-heading icon-link" href="#rmarkdown"></a>RMarkdown</h2>
+<p>in rmarkdown you can have r code executed inline with the following syntax:</p>
+<pre><code>`r mean(5,10)`
+</code></pre>
+<p>In Rmarkdown the fenced code chunks have a slightly different syntax to allow for control options and meta-processing options:</p>
+<pre><code>```r{ control_option}
+x &#x3C;- 7
+```
+</code></pre>

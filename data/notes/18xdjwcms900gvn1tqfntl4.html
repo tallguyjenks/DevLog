@@ -1,0 +1,13 @@
+<h1 id="check-current-staus-of-sql-agent-jobs"><a aria-hidden="true" class="anchor-heading icon-link" href="#check-current-staus-of-sql-agent-jobs"></a>Check Current Staus of Sql Agent Jobs</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> job_id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> enabled <span class="token keyword">FROM</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sysjobs
+
+<span class="token comment">-- or this version</span>
+
+<span class="token keyword">SELECT</span> SJ<span class="token punctuation">.</span>job_id
+     <span class="token punctuation">,</span> SJ<span class="token punctuation">.</span>name
+     <span class="token punctuation">,</span> SJ<span class="token punctuation">.</span>enabled
+     <span class="token punctuation">,</span> SC<span class="token punctuation">.</span>name <span class="token keyword">AS</span> category
+<span class="token keyword">FROM</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sysjobs <span class="token keyword">AS</span> SJ
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>syscategories <span class="token keyword">AS</span> SC
+    <span class="token keyword">ON</span> SJ<span class="token punctuation">.</span>category_id <span class="token operator">=</span> SC<span class="token punctuation">.</span>category_id
+</code></pre>

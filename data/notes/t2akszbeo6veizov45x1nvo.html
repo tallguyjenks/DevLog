@@ -1,0 +1,16 @@
+<h1 id="return-statement"><a aria-hidden="true" class="anchor-heading icon-link" href="#return-statement"></a>Return Statement</h1>
+<h3 id="return-statement-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#return-statement-1"></a>Return Statement</h3>
+<p>A function can only return one item, no more. The return statement is what value you want the function to return to you.</p>
+<p>If your function <a href="/DevLog/notes/9pbfl810rt62zbyvrp20xmh#return-type">Funcs</a> is <code>void</code> then you are returning nothing and you will just use the keyword by itself: <code>return;</code></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">Square</span> <span class="token punctuation">(</span> <span class="token keyword">int</span> num1<span class="token punctuation">,</span> <span class="token keyword">int</span> num2 <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> num1 <span class="token operator">*</span> num2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span> myNum <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+	
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">Square</span><span class="token punctuation">(</span>myNum<span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//#> 49</span>
+</code></pre>

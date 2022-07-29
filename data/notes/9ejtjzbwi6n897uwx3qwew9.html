@@ -1,0 +1,19 @@
+<h1 id="16"><a aria-hidden="true" class="anchor-heading icon-link" href="#16"></a>16</h1>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/nfd4qf0z5sqvuhzjkp42pfz">Docker</a> <a href="https://scaffoldy.io/">scaffoldy</a> service to make the generation of docker template files easier
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> 3.10 case statements <a href="https://youtu.be/PeJNU339WHc">Structural Pattern Matching - Exciting New Python Feature 3.10</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="new-case-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#new-case-statements"></a>New case statements</h2>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token string">"hello"</span>
+
+<span class="token keyword">match</span> x<span class="token punctuation">:</span>
+  <span class="token keyword">case</span> <span class="token string">"hello"</span><span class="token punctuation">:</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">"hi"</span><span class="token punctuation">:</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">_</span><span class="token punctuation">:</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"default case"</span><span class="token punctuation">)</span>
+</code></pre>

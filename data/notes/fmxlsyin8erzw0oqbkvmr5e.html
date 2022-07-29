@@ -1,0 +1,13 @@
+<h1 id="select-data-into-json"><a aria-hidden="true" class="anchor-heading icon-link" href="#select-data-into-json"></a>Select Data into Json</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span> <span class="token operator">*</span>
+  <span class="token keyword">FROM</span> <span class="token punctuation">[</span><span class="token keyword">DataBase</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span><span class="token keyword">schema</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span><span class="token keyword">table</span><span class="token punctuation">]</span> <span class="token keyword">AS</span> t
+  <span class="token keyword">FOR</span> JSON PATH<span class="token punctuation">,</span> ROOT<span class="token punctuation">(</span><span class="token string">'RootNode'</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/json/format-query-results-as-json-with-for-json-sql-server?view=sql-server-ver15">Reference Docs</a></li>
+</ul>
+</li>
+</ul>

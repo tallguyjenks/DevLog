@@ -1,0 +1,23 @@
+<h1 id="query-tuning-with-explain"><a aria-hidden="true" class="anchor-heading icon-link" href="#query-tuning-with-explain"></a>Query Tuning with Explain</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">EXPLAIN</span><span class="token punctuation">(</span>FORMAT JSON<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> <span class="token keyword">public</span><span class="token punctuation">.</span>test
+<span class="token keyword">WHERE</span> hello <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> hello <span class="token keyword">FROM</span> <span class="token keyword">public</span><span class="token punctuation">.</span>test <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> hello <span class="token keyword">DESC</span> <span class="token keyword">LIMIT</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-01-26-10-01-27.png" alt="query plan"></p>
+<p>Using <code>EXPLAIN(ANALYZE)</code> and then pasting the output of the plan into this tool gives like a flame graph:</p>
+<p><a href="https://explain.depesz.com/">https://explain.depesz.com/</a></p>
+<p><img src="/DevLog/assets/images/2022-01-26-10-09-32.png" alt="flame graph"></p>
+<p>This tool is also amazing for displaying graphics on a plan</p>
+<p><a href="https://explain.dalibo.com/">https://explain.dalibo.com/</a></p>
+<p><img src="/DevLog/assets/images/2022-01-26-10-30-43.png" alt="query plan"></p>
+<p>Setting EXPLAIN to be done automatically (must be a super user to load the module)</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">LOAD</span> <span class="token string">'auto_explain'</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>Explain</code> will just provide the plan calculations</p>
+<p>Running <code>Analyze</code> as well will actually execute the statement so if running on a <code>DELETE</code> statement be careful if just testing</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/55ardlvgz9rynhcihd1wyqj">Postgres Can Do That (DevLog)</a></li>
+</ul>

@@ -1,0 +1,21 @@
+<h1 id="variables-aka-macros"><a aria-hidden="true" class="anchor-heading icon-link" href="#variables-aka-macros"></a>Variables Aka Macros</h1>
+<h2 id="variable-aka-macros"><a aria-hidden="true" class="anchor-heading icon-link" href="#variable-aka-macros"></a>Variable aka Macros</h2>
+<blockquote>
+<p>are like variable replacement in makefiles</p>
+</blockquote>
+<pre class="language-make"><code class="language-make"># ==================
+# USING VARIABLES (aka macros)
+# ==================
+# VARIABLENAME = VALUE OF VARIABLE
+# they expand using the syntax $(VARIABLENAME)
+
+
+TMP = tester1.txt
+OUTPUT = tester2.txt
+
+$(OUTPUT): $(TMP)
+cat $(TMP) > $(OUTPUT)
+
+$(TMP):
+echo "this is a test" > $(TMP)
+</code></pre>

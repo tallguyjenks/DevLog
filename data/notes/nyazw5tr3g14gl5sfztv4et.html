@@ -1,0 +1,37 @@
+<h1 id="polymorphism"><a aria-hidden="true" class="anchor-heading icon-link" href="#polymorphism"></a>Polymorphism</h1>
+<h2 id="function-name-overloading"><a aria-hidden="true" class="anchor-heading icon-link" href="#function-name-overloading"></a>Function Name Overloading</h2>
+<blockquote>
+<p>Sometimes a program has two functions with the same name but differing in the number or types of parameters, known as <strong>function name overloading</strong> or just <strong>function overloading</strong>.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+			<span class="token comment">// int			int			   int</span>
+<span class="token keyword">void</span> <span class="token function">DatePrint</span><span class="token punctuation">(</span><span class="token keyword">int</span> currDay<span class="token punctuation">,</span> <span class="token keyword">int</span> currMonth<span class="token punctuation">,</span> <span class="token keyword">int</span> currYear<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> currMonth <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"/"</span> <span class="token operator">&#x3C;&#x3C;</span> currDay <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"/"</span> <span class="token operator">&#x3C;&#x3C;</span> currYear<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+			<span class="token comment">// int			string			  int</span>
+<span class="token keyword">void</span> <span class="token function">DatePrint</span><span class="token punctuation">(</span><span class="token keyword">int</span> currDay<span class="token punctuation">,</span> string currMonth<span class="token punctuation">,</span> <span class="token keyword">int</span> currYear<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> currMonth <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" "</span> <span class="token operator">&#x3C;&#x3C;</span> currDay <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">", "</span> <span class="token operator">&#x3C;&#x3C;</span> currYear<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   
+   <span class="token function">DatePrint</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">2012</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token function">DatePrint</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token string">"July"</span><span class="token punctuation">,</span> <span class="token number">2012</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/2avtydyc7ku7lb2x5cokyw7">Operator Overloading (DevLog)</a></li>
+</ul>

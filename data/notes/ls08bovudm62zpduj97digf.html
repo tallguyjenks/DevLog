@@ -1,0 +1,82 @@
+<h1 id="asyncio"><a aria-hidden="true" class="anchor-heading icon-link" href="#asyncio"></a>Asyncio</h1>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="https://youtu.be/t5Bo1Je9EmE">Python Asynchronous Programming - AsyncIO &#x26; Async/Await</a></li>
+</ul>
+<h2 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Bryan'</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+
+asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#>>> Bryan</span>
+</code></pre>
+<h3 id="async"><a aria-hidden="true" class="anchor-heading icon-link" href="#async"></a>async</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Bryan'</span><span class="token punctuation">)</span>
+
+asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="await"><a aria-hidden="true" class="anchor-heading icon-link" href="#await"></a>await</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Bryan'</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+
+asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#>>> Bryan</span>
+</code></pre>
+<h3 id="gather"><a aria-hidden="true" class="anchor-heading icon-link" href="#gather"></a>gather</h3>
+<p>Run several functions in parallel</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main0</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Bryan'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'John'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Jane'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">testing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>gather<span class="token punctuation">(</span>
+            main0<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            main1<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            main2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>testing<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="structure-parallelism-and-sequential-execution-elegantly"><a aria-hidden="true" class="anchor-heading icon-link" href="#structure-parallelism-and-sequential-execution-elegantly"></a>Structure parallelism and sequential execution elegantly</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">run_sequence</span><span class="token punctuation">(</span><span class="token operator">*</span>functions<span class="token punctuation">:</span> Awaitable<span class="token punctuation">[</span>Any<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> function <span class="token keyword">in</span> functions<span class="token punctuation">:</span>
+        <span class="token keyword">await</span> function
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">run_parallel</span><span class="token punctuation">(</span><span class="token operator">*</span>functions<span class="token punctuation">:</span> Awaitable<span class="token punctuation">[</span>Any<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>gather<span class="token punctuation">(</span><span class="token operator">*</span>functions<span class="token punctuation">)</span>
+
+</code></pre>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="/DevLog/notes/qfdeitrjtwmbnkpa7iqjac9">how-to-easily-do-asynchronous-programming-with-asyncio-in-python</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/c7dmdhkm9og7br61epcfln7">14 (DevLog)</a></li>
+</ul>

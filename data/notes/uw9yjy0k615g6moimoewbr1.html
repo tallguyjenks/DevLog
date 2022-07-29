@@ -1,0 +1,10 @@
+<h1 id="tuple"><a aria-hidden="true" class="anchor-heading icon-link" href="#tuple"></a>Tuple</h1>
+<h3 id="tuple-type"><a aria-hidden="true" class="anchor-heading icon-link" href="#tuple-type"></a>Tuple Type:</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Tuple
+
+<span class="token comment"># This is an error because the tuple can contain items of differing types </span>
+<span class="token comment"># so you need to specify the type of each item within it</span>
+x<span class="token punctuation">:</span> Tuple<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> 
+
+x<span class="token punctuation">:</span> Tuple<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre>

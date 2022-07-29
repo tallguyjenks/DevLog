@@ -1,0 +1,65 @@
+<h1 id="dplyr"><a aria-hidden="true" class="anchor-heading icon-link" href="#dplyr"></a>Dplyr</h1>
+<pre class="language-r"><code class="language-r">knitr<span class="token operator">::</span>opts_chunk<span class="token operator">$</span>set<span class="token punctuation">(</span>echo <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span> results <span class="token operator">=</span> <span class="token string">'hide'</span><span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>tidyverse<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>nycflights13<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="initial-items"><a aria-hidden="true" class="anchor-heading icon-link" href="#initial-items"></a>Initial Items</h2>
+<pre class="language-r"><code class="language-r">nycflights13<span class="token operator">::</span>flights
+
+airlines <span class="token comment">#--------------------------------------------------# not just a data frame but a tibble</span>
+view<span class="token punctuation">(</span>flights<span class="token punctuation">)</span> <span class="token comment">#---------------------------------------------# opens the viewer on the tibble so we can observe data in tabular format</span>
+filter<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> month <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">,</span> day <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">#---------------------# prints the result of the filter</span>
+jan1 <span class="token operator">&#x3C;-</span> filter<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> month <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">,</span> day <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">#-------------# assigns the result of the filter to a dataframe</span>
+<span class="token punctuation">(</span>dec25 <span class="token operator">&#x3C;-</span> filter<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> month <span class="token operator">==</span> <span class="token number">12</span><span class="token punctuation">,</span> day <span class="token operator">==</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#--------# wrapped parenthese both assigns and prints out the dataframe</span>
+sqrt<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">2</span> <span class="token comment">#------------------------------------------# False as its approximate and not exact, use near() to get around this</span>
+<span class="token number">1</span><span class="token operator">/</span><span class="token number">49</span> <span class="token operator">*</span> <span class="token number">49</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token comment">#--------------------------------------------# also false</span>
+near<span class="token punctuation">(</span>sqrt<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">#---------------------------------------# Returns True as it should</span>
+near<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">49</span> <span class="token operator">*</span> <span class="token number">49</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">#-----------------------------------------# Returns True as it should</span>
+nov_dec <span class="token operator">&#x3C;-</span> filter<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> month <span class="token percent-operator operator">%in%</span> c<span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#----------# will select rows where x is one of the values in y</span>
+</code></pre>
+<h3 id="more-exercises"><a aria-hidden="true" class="anchor-heading icon-link" href="#more-exercises"></a>More Exercises</h3>
+<pre class="language-r"><code class="language-r"><span class="token comment"># Exercise 1</span>
+transmute<span class="token punctuation">(</span>flights<span class="token punctuation">,</span>
+  dep_time<span class="token punctuation">,</span>
+  dep_hours <span class="token operator">=</span> dep_time <span class="token percent-operator operator">%/%</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  dep_minutes <span class="token operator">=</span> dep_time <span class="token percent-operator operator">%%</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  sched_dep_time<span class="token punctuation">,</span>
+  sched_dep_hours <span class="token operator">=</span> sched_dep_time <span class="token percent-operator operator">%/%</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  sched_dep_minutes <span class="token operator">=</span> sched_dep_time <span class="token percent-operator operator">%%</span> <span class="token number">100</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># Exercise 2</span>
+newFlights <span class="token operator">&#x3C;-</span> transmute<span class="token punctuation">(</span>flights<span class="token punctuation">,</span>
+  air_time<span class="token punctuation">,</span>
+  realTime <span class="token operator">=</span> arr_time <span class="token operator">-</span> dep_time<span class="token punctuation">,</span>
+  accuracy <span class="token operator">=</span> air_time <span class="token operator">==</span> realTime
+<span class="token punctuation">)</span>
+accurateFlights <span class="token operator">&#x3C;-</span> filter<span class="token punctuation">(</span>newFlights<span class="token punctuation">,</span> accuracy <span class="token operator">==</span> T<span class="token punctuation">)</span> <span class="token comment">#------# 0.36% Accuracy of AirTime</span>
+
+<span class="token comment"># Exercise 3</span>
+flightsDelay <span class="token operator">&#x3C;-</span> transmute<span class="token punctuation">(</span>flights<span class="token punctuation">,</span>
+  dep_delay<span class="token punctuation">,</span>
+  realDelay <span class="token operator">=</span> dep_time <span class="token operator">-</span> sched_dep_time<span class="token punctuation">,</span>
+  accurate <span class="token operator">=</span> dep_delay <span class="token operator">==</span> realDelay
+<span class="token punctuation">)</span>
+accurateDelays <span class="token operator">&#x3C;-</span> filter<span class="token punctuation">(</span>flightsDelay<span class="token punctuation">,</span> accurate <span class="token operator">==</span> T<span class="token punctuation">)</span> <span class="token comment">#-----# 67.9% Accuracy of delay times</span>
+
+<span class="token comment"># Exercise 4</span>
+min_rank<span class="token punctuation">(</span>flightsDelay<span class="token operator">$</span>realDelay<span class="token punctuation">)</span>
+subset <span class="token operator">&#x3C;-</span> sort<span class="token punctuation">(</span>flightsDelay<span class="token operator">$</span>realDelay<span class="token punctuation">,</span>decreasing <span class="token operator">=</span> T<span class="token punctuation">)</span>
+subset<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token percent-operator operator">%>%</span> mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Exercise 5</span>
+subset<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">+</span>subset<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">]</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/pg9iu2xai32baffukas8941">Arrange</a></li>
+<li><a href="/DevLog/notes/0g3i8tjaec4o9bghlyknxou">Filters</a></li>
+<li><a href="/DevLog/notes/ae8s80jd3junwpile52qb5k">Modular Arithmatic</a></li>
+<li><a href="/DevLog/notes/mrsokqqgd9c4rjj2xcbo4pd">Mutate</a></li>
+<li><a href="/DevLog/notes/ro21urp95zz9s190t6at148">Select</a></li>
+<li><a href="/DevLog/notes/83miw26y48c7cziyi2cllat">Summarize</a></li>
+<li><a href="/DevLog/notes/d9tb3mirsub7fpjuxa8189w">Transmute</a></li>
+</ol>

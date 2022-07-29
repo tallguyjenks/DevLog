@@ -1,0 +1,209 @@
+<h1 id="sklearn"><a aria-hidden="true" class="anchor-heading icon-link" href="#sklearn"></a>Sklearn</h1>
+<h2 id="kaggle-ml-course"><a aria-hidden="true" class="anchor-heading icon-link" href="#kaggle-ml-course"></a>Kaggle ML Course</h2>
+<h3 id="reading-and-looking-at-the-shape-of-the-data"><a aria-hidden="true" class="anchor-heading icon-link" href="#reading-and-looking-at-the-shape-of-the-data"></a>Reading and looking at the shape of the data</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+melbourne_file_path <span class="token operator">=</span> <span class="token string">'../input/melbourne-housing-snapshot/melb_data.csv'</span>
+melbourne_data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>melbourne_file_path<span class="token punctuation">)</span> 
+melbourne_data<span class="token punctuation">.</span>columns
+<span class="token comment"># The Melbourne data has some missing values (some houses for which some variables weren't recorded.)</span>
+<span class="token comment"># We'll learn to handle missing values in a later tutorial.  </span>
+<span class="token comment"># Your Iowa data doesn't have missing values in the columns you use. </span>
+<span class="token comment"># So we will take the simplest option for now, and drop houses from our data. </span>
+<span class="token comment"># Don't worry about this much for now, though the code is:</span>
+
+<span class="token comment"># dropna drops missing values (think of na as "not available")</span>
+melbourne_data <span class="token operator">=</span> melbourne_data<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment"># Seleting the target prediction</span>
+y <span class="token operator">=</span> melbourne_data<span class="token punctuation">.</span>Price
+<span class="token comment"># Choosing features to help you predict the target</span>
+melbourne_features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Rooms'</span><span class="token punctuation">,</span> <span class="token string">'Bathroom'</span><span class="token punctuation">,</span> <span class="token string">'Landsize'</span><span class="token punctuation">,</span> <span class="token string">'Lattitude'</span><span class="token punctuation">,</span> <span class="token string">'Longtitude'</span><span class="token punctuation">]</span>
+<span class="token comment"># Concention is that the data is called X</span>
+X <span class="token operator">=</span> melbourne_data<span class="token punctuation">[</span>melbourne_features<span class="token punctuation">]</span>
+X<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span>
+X<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre>
+<h3 id="define-the-model"><a aria-hidden="true" class="anchor-heading icon-link" href="#define-the-model"></a>Define the Model</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>tree <span class="token keyword">import</span> DecisionTreeRegressor
+
+<span class="token comment"># Define model. Specify a number for random_state to ensure same results each run</span>
+melbourne_model <span class="token operator">=</span> DecisionTreeRegressor<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Fit model</span>
+melbourne_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Making predictions for the following 5 houses:"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>X<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The predictions are"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>melbourne_model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+</code></pre>
+<h3 id="mean-absolute-error"><a aria-hidden="true" class="anchor-heading icon-link" href="#mean-absolute-error"></a>Mean Absolute Error</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> mean_absolute_error
+
+predicted_home_prices <span class="token operator">=</span> melbourne_model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+mean_absolute_error<span class="token punctuation">(</span>y<span class="token punctuation">,</span> predicted_home_prices<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="split-data-into-test-and-validation-sets"><a aria-hidden="true" class="anchor-heading icon-link" href="#split-data-into-test-and-validation-sets"></a>Split data into test and validation sets</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+<span class="token comment"># split data into training and validation data, for both features and target</span>
+<span class="token comment"># The split is based on a random number generator. Supplying a numeric value to</span>
+<span class="token comment"># the random_state argument guarantees we get the same split every time we</span>
+<span class="token comment"># run this script.</span>
+train_X<span class="token punctuation">,</span> val_X<span class="token punctuation">,</span> train_y<span class="token punctuation">,</span> val_y <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> random_state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment"># Define model</span>
+melbourne_model <span class="token operator">=</span> DecisionTreeRegressor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># Fit model</span>
+melbourne_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_X<span class="token punctuation">,</span> train_y<span class="token punctuation">)</span>
+
+<span class="token comment"># get predicted prices on validation data</span>
+val_predictions <span class="token operator">=</span> melbourne_model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>val_X<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mean_absolute_error<span class="token punctuation">(</span>val_y<span class="token punctuation">,</span> val_predictions<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="be-careful-and-consider-the-effects-of-both-overunderfitting"><a aria-hidden="true" class="anchor-heading icon-link" href="#be-careful-and-consider-the-effects-of-both-overunderfitting"></a>Be careful and consider the effects of both over/underfitting</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Code you have previously used to load data</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> mean_absolute_error
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>tree <span class="token keyword">import</span> DecisionTreeRegressor
+
+
+<span class="token comment"># Path of the file to read</span>
+iowa_file_path <span class="token operator">=</span> <span class="token string">'../input/home-data-for-ml-course/train.csv'</span>
+
+home_data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>iowa_file_path<span class="token punctuation">)</span>
+<span class="token comment"># Create target object and call it y</span>
+y <span class="token operator">=</span> home_data<span class="token punctuation">.</span>SalePrice
+<span class="token comment"># Create X</span>
+features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'LotArea'</span><span class="token punctuation">,</span> <span class="token string">'YearBuilt'</span><span class="token punctuation">,</span> <span class="token string">'1stFlrSF'</span><span class="token punctuation">,</span> <span class="token string">'2ndFlrSF'</span><span class="token punctuation">,</span> <span class="token string">'FullBath'</span><span class="token punctuation">,</span> <span class="token string">'BedroomAbvGr'</span><span class="token punctuation">,</span> <span class="token string">'TotRmsAbvGrd'</span><span class="token punctuation">]</span>
+X <span class="token operator">=</span> home_data<span class="token punctuation">[</span>features<span class="token punctuation">]</span>
+
+<span class="token comment"># Split into validation and training data</span>
+train_X<span class="token punctuation">,</span> val_X<span class="token punctuation">,</span> train_y<span class="token punctuation">,</span> val_y <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Specify Model</span>
+iowa_model <span class="token operator">=</span> DecisionTreeRegressor<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment"># Fit Model</span>
+iowa_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_X<span class="token punctuation">,</span> train_y<span class="token punctuation">)</span>
+
+<span class="token comment"># Make validation predictions and calculate mean absolute error</span>
+val_predictions <span class="token operator">=</span> iowa_model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>val_X<span class="token punctuation">)</span>
+val_mae <span class="token operator">=</span> mean_absolute_error<span class="token punctuation">(</span>val_predictions<span class="token punctuation">,</span> val_y<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Validation MAE: {:,.0f}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>val_mae<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Set up code checking</span>
+<span class="token keyword">from</span> learntools<span class="token punctuation">.</span>core <span class="token keyword">import</span> binder
+binder<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token builtin">globals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> learntools<span class="token punctuation">.</span>machine_learning<span class="token punctuation">.</span>ex5 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\nSetup complete"</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_mae</span><span class="token punctuation">(</span>max_leaf_nodes<span class="token punctuation">,</span> train_X<span class="token punctuation">,</span> val_X<span class="token punctuation">,</span> train_y<span class="token punctuation">,</span> val_y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  model <span class="token operator">=</span> DecisionTreeRegressor<span class="token punctuation">(</span>max_leaf_nodes<span class="token operator">=</span>max_leaf_nodes<span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+	model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_X<span class="token punctuation">,</span> train_y<span class="token punctuation">)</span>
+	preds_val <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>val_X<span class="token punctuation">)</span>
+	mae <span class="token operator">=</span> mean_absolute_error<span class="token punctuation">(</span>val_y<span class="token punctuation">,</span> preds_val<span class="token punctuation">)</span>
+	<span class="token keyword">return</span><span class="token punctuation">(</span>mae<span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Here is a short solution with a dict comprehension.</span>
+<span class="token comment"># The lesson gives an example of how to do this with an explicit loop.</span>
+scores <span class="token operator">=</span> <span class="token punctuation">{</span>leaf_size<span class="token punctuation">:</span> get_mae<span class="token punctuation">(</span>leaf_size<span class="token punctuation">,</span> train_X<span class="token punctuation">,</span> val_X<span class="token punctuation">,</span> train_y<span class="token punctuation">,</span> val_y<span class="token punctuation">)</span> <span class="token keyword">for</span> leaf_size <span class="token keyword">in</span> candidate_max_leaf_nodes<span class="token punctuation">}</span>
+best_tree_size <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>scores<span class="token punctuation">,</span> key<span class="token operator">=</span>scores<span class="token punctuation">.</span>get<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="fit-model-using-all-data"><a aria-hidden="true" class="anchor-heading icon-link" href="#fit-model-using-all-data"></a>Fit Model Using All Data</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Fit the model with best_tree_size. Fill in argument to make optimal size</span>
+final_model <span class="token operator">=</span> DecisionTreeRegressor<span class="token punctuation">(</span>max_leaf_nodes<span class="token operator">=</span>best_tree_size<span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment"># fit the final model</span>
+final_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><code>sklearn.metrics.mean_absolute_error</code></li>
+<li><code>sklearn.tree.DecisionTreeRegressor</code>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html">https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html</a></li>
+</ul>
+</li>
+<li><code>sklearn.ensemble.RandomForestRegressor</code></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># Load data</span>
+melbourne_file_path <span class="token operator">=</span> <span class="token string">'../input/melbourne-housing-snapshot/melb_data.csv'</span>
+melbourne_data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>melbourne_file_path<span class="token punctuation">)</span> 
+<span class="token comment"># Filter rows with missing values</span>
+melbourne_data <span class="token operator">=</span> melbourne_data<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment"># Choose target and features</span>
+y <span class="token operator">=</span> melbourne_data<span class="token punctuation">.</span>Price
+melbourne_features <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Rooms'</span><span class="token punctuation">,</span> <span class="token string">'Bathroom'</span><span class="token punctuation">,</span> <span class="token string">'Landsize'</span><span class="token punctuation">,</span> <span class="token string">'BuildingArea'</span><span class="token punctuation">,</span> 
+					  <span class="token string">'YearBuilt'</span><span class="token punctuation">,</span> <span class="token string">'Lattitude'</span><span class="token punctuation">,</span> <span class="token string">'Longtitude'</span><span class="token punctuation">]</span>
+X <span class="token operator">=</span> melbourne_data<span class="token punctuation">[</span>melbourne_features<span class="token punctuation">]</span>
+
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+<span class="token comment"># split data into training and validation data, for both features and target</span>
+<span class="token comment"># The split is based on a random number generator. Supplying a numeric value to</span>
+<span class="token comment"># the random_state argument guarantees we get the same split every time we</span>
+<span class="token comment"># run this script.</span>
+train_X<span class="token punctuation">,</span> val_X<span class="token punctuation">,</span> train_y<span class="token punctuation">,</span> val_y <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span>random_state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> RandomForestRegressor
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> mean_absolute_error
+
+forest_model <span class="token operator">=</span> RandomForestRegressor<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+forest_model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_X<span class="token punctuation">,</span> train_y<span class="token punctuation">)</span>
+melb_preds <span class="token operator">=</span> forest_model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>val_X<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mean_absolute_error<span class="token punctuation">(</span>val_y<span class="token punctuation">,</span> melb_preds<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><code>sklearn.impute.SimpleImputer</code>
+<ul>
+<li>Inserting the mean value of the column into the <code>NA</code> values so that it can lend itself to modeling purposes still without generating outliers or skewing the probability curve with anything other than the mean</li>
+</ul>
+</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>impute <span class="token keyword">import</span> SimpleImputer
+
+<span class="token comment"># Imputation</span>
+my_imputer <span class="token operator">=</span> SimpleImputer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+imputed_X_train <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>my_imputer<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span><span class="token punctuation">)</span>
+imputed_X_valid <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>my_imputer<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_valid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Imputation removed column names; put them back</span>
+imputed_X_train<span class="token punctuation">.</span>columns <span class="token operator">=</span> X_train<span class="token punctuation">.</span>columns
+imputed_X_valid<span class="token punctuation">.</span>columns <span class="token operator">=</span> X_valid<span class="token punctuation">.</span>columns
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"MAE from Approach 2 (Imputation):"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>score_dataset<span class="token punctuation">(</span>imputed_X_train<span class="token punctuation">,</span> imputed_X_valid<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_valid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>Better yet than just imputing is to track which values were imputed by row/column reference so that you can see the model differences by including and excluding those values</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Make copy to avoid changing original data (when imputing)</span>
+X_train_plus <span class="token operator">=</span> X_train<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+X_valid_plus <span class="token operator">=</span> X_valid<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Make new columns indicating what will be imputed</span>
+<span class="token keyword">for</span> col <span class="token keyword">in</span> cols_with_missing<span class="token punctuation">:</span>
+	X_train_plus<span class="token punctuation">[</span>col <span class="token operator">+</span> <span class="token string">'_was_missing'</span><span class="token punctuation">]</span> <span class="token operator">=</span> X_train_plus<span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	X_valid_plus<span class="token punctuation">[</span>col <span class="token operator">+</span> <span class="token string">'_was_missing'</span><span class="token punctuation">]</span> <span class="token operator">=</span> X_valid_plus<span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Imputation</span>
+my_imputer <span class="token operator">=</span> SimpleImputer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+imputed_X_train_plus <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>my_imputer<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>X_train_plus<span class="token punctuation">)</span><span class="token punctuation">)</span>
+imputed_X_valid_plus <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>my_imputer<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_valid_plus<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Imputation removed column names; put them back</span>
+imputed_X_train_plus<span class="token punctuation">.</span>columns <span class="token operator">=</span> X_train_plus<span class="token punctuation">.</span>columns
+imputed_X_valid_plus<span class="token punctuation">.</span>columns <span class="token operator">=</span> X_valid_plus<span class="token punctuation">.</span>columns
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"MAE from Approach 3 (An Extension to Imputation):"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>score_dataset<span class="token punctuation">(</span>imputed_X_train_plus<span class="token punctuation">,</span> imputed_X_valid_plus<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_valid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Shape of training data (num_rows, num_columns)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>X_train<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+
+<span class="token comment"># Number of missing values in each column of training data</span>
+missing_val_count_by_column <span class="token operator">=</span> <span class="token punctuation">(</span>X_train<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>missing_val_count_by_column<span class="token punctuation">[</span>missing_val_count_by_column <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>

@@ -1,0 +1,30 @@
+<h1 id="map"><a aria-hidden="true" class="anchor-heading icon-link" href="#map"></a>Map()</h1>
+<center>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/R8rmfD9Y5-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<p>Given data:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Bike'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">100</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'TV'</span><span class="token punctuation">,</span>       <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">200</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Album'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">10</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Book'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">5</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Phone'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">500</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Computer'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Keyboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">25</span>   <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="map-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#map-1"></a>Map</h2>
+<p>Map will let you take an array and turn it into an entirely new array while also allowing you to perform operations upon it</p>
+<hr>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> itemPrice <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> item<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">+</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>in other languages map always reminded me of applying a function to each item in an array/vector so in this case it is</p>
+<ul>
+<li>take each item in items</li>
+<li>pass to arrow functions (the surgical table)</li>
+<li>operate upon it (add 100 to the item)</li>
+<li>build the return array</li>
+<li>assign the return array to the <code>itemPrices</code> constant which consists of the original array with each element having had its prices increased by 100</li>
+</ul>

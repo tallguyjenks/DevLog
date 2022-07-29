@@ -1,0 +1,35 @@
+<h1 id="post-script-images"><a aria-hidden="true" class="anchor-heading icon-link" href="#post-script-images"></a>Post Script Images</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Groff cmd</th><th align="center">LaTeX cmd</th><th align="center">markdown</th><th align="center">What it is</th></tr></thead><tbody><tr><td align="center"><code>.PSPIC</code> "file"</td><td align="center"><code>\includegraphics{</code>filepath<code>}</code></td><td align="center">![ ] ( )</td><td align="center">insert images</td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table>
+<p><code>.PSPIC</code> - [CLR] options for image alignment/ center default</p>
+<p>I option for indent image followed by num and unit</p>
+<p><code>.PSPIC</code> - I 1i "img" 4i 2i</p>
+<p>Indents = indent, Width Height</p>
+<p>grab a screenshot image</p>
+<p><code>:!screenshot -ws &#x3C;filename></code></p>
+<p>convert captured image to postscript for import</p>
+<p><code>:!convert &#x3C;inputfile> &#x3C;outputfile.eps></code></p>
+<p>Compile to see images</p>
+<p>also script a key to open the preview in external viewer</p>

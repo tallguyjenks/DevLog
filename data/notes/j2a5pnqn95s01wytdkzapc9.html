@@ -1,0 +1,46 @@
+<h1 id="filter"><a aria-hidden="true" class="anchor-heading icon-link" href="#filter"></a>Filter()</h1>
+<center>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/R8rmfD9Y5-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<p>Given data:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Bike'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">100</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'TV'</span><span class="token punctuation">,</span>       <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">200</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Album'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">10</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Book'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">5</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Phone'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">500</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Computer'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Keyboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">25</span>   <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="filtering-items"><a aria-hidden="true" class="anchor-heading icon-link" href="#filtering-items"></a>Filtering items</h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> filteredItems <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token method function property-access">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> item<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">&#x3C;=</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>filteredItems<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Result:</strong></p>
+<blockquote>
+<p>.
+(3) ["Video 1 Recorded", "Video 2 Recorded", "Video 3 Recorded"]
+0: "Video 1 Recorded"
+1: "Video 2 Recorded"
+2: "Video 3 Recorded"
+length: 3
+<strong>proto</strong>: Array(0)</p>
+</blockquote>
+<p>Reading this like English, </p>
+<ul>
+<li>The immutable variable <code>filteredItems</code> receives the following value(s). </li>
+<li>The array of objects has the filter method applied
+<ul>
+<li>The filter uses an arrow function #2 that takes a single parameter <code>(item)</code></li>
+<li>The arrow function says "for each item in items, pass each item into my function body and operate upon it"</li>
+<li>Inside the function body the items price attribute is operated on with basic arithmetic to determine if it meets the condition <code>&#x3C;=</code> </li>
+<li>If true, the data is returned with all other valid data that met the condition as the <code>.filter</code> method is an array method and likely returns an array as a result</li>
+<li>Each item that met the condition is then added to the resulting returned array </li>
+</ul>
+</li>
+<li>The returned array is then assigned to the constant variable <code>filteredItems</code></li>
+</ul>

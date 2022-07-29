@@ -1,0 +1,59 @@
+<h1 id="how-to-use-these-six-unusual-sql-functions"><a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-use-these-six-unusual-sql-functions"></a>How to Use These Six Unusual Sql Functions</h1>
+<h2 id="sign"><a aria-hidden="true" class="anchor-heading icon-link" href="#sign"></a>Sign</h2>
+<p>The <code>SIGN()</code> function returns a value depending on whether the column it's given is positive or negative.</p>
+<ul>
+<li>If a number is > 0, it returns 1.</li>
+<li>If a number is &#x3C; 0, it returns -1.</li>
+<li>If the number is = 0, it returns 0.</li>
+</ul>
+<p>This function will only work on columns that are of a number data type.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
+      customer_name
+    <span class="token punctuation">,</span> amount
+<span class="token keyword">FROM</span> bank_statements
+<span class="token keyword">WHERE</span> SIGN<span class="token punctuation">(</span>amount<span class="token punctuation">)</span> <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="lead"><a aria-hidden="true" class="anchor-heading icon-link" href="#lead"></a>Lead</h2>
+<p>The <code>LEAD()</code> function saves you from needing to do a confusing, messy join to another table.
+It allows you to access the values in the rows after the row you are currently looking at.
+It makes comparison super easy.</p>
+<p>In a grocery store, there are multiple different checkout lanes 1–10.
+Then, within each checkout lane are different customers.
+Whoever arrived first is first in line and whoever arrived last is last in line.</p>
+<p><img src="/DevLog/assets/images/2022-03-16-13-38-16.png" alt="customers"></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
+   customer_name<span class="token punctuation">,</span>
+   LEAD<span class="token punctuation">(</span>customer_name<span class="token punctuation">)</span> <span class="token keyword">OVER</span><span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> line_number <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> arrived_at <span class="token keyword">ASC</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> next_in_line
+<span class="token keyword">FROM</span> grocery_customers
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-16-13-38-41.png" alt="output"></p>
+<h2 id="lag"><a aria-hidden="true" class="anchor-heading icon-link" href="#lag"></a>Lag</h2>
+<p>Opposite from the <code>LEAD()</code> function, <code>LAG()</code> allows you to compare your current row to the rows before it, rather than those after it.
+It is still used for comparison, it just serves a bit of a different purpose.
+Similarly, with <code>LEAD()</code>, you choose the column you wish to output from the rows before your current row and partition based on how you wish to separate out your columns.
+Then, the most important part is <code>ORDER BY</code>.
+This will determine whether you’re getting the value you want or not.
+If you choose <code>ASC</code> or <code>DESC</code> values, that can change your whole query.
+Just be sure it fits the context of your problem and what you’re trying to solve.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
+   customer_name<span class="token punctuation">,</span>
+   LAG<span class="token punctuation">(</span>Name<span class="token punctuation">)</span> <span class="token keyword">OVER</span><span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> line_number <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> arrived_at <span class="token keyword">ASC</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> ahead_in_line
+<span class="token keyword">FROM</span> grocery_customers
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-16-13-40-28.png" alt="lag results"></p>
+<h2 id="iif"><a aria-hidden="true" class="anchor-heading icon-link" href="#iif"></a>IIF</h2>
+<p>It’s essentially a simpler <code>CASE</code> statement. The <code>IIF()</code> function tests a condition and returns a specified value if the condition is TRUE and another specified value if the condition is FALSE.</p>
+<p>in essence it acts like the excel IF function</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
+  iif<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'TRUE'</span><span class="token punctuation">,</span><span class="token string">'FALSE'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'T'</span>
+<span class="token punctuation">,</span> iif<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">'TRUE'</span><span class="token punctuation">,</span><span class="token string">'FALSE'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'F'</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-16-13-46-43.png" alt="RESULTS"></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/lhhyhvc9owx88l2qyraw3ae">Iif (DevLog)</a></li>
+<li><a href="/DevLog/notes/wja5sysy9oed3lhlx104jxv">Lag (DevLog)</a></li>
+<li><a href="/DevLog/notes/ajxvy66nhdn5ebpsjtmoeik">Lead (DevLog)</a></li>
+<li><a href="/DevLog/notes/xhiihbdgmatle8mx9hx6y2e">Sign (DevLog)</a></li>
+</ul>

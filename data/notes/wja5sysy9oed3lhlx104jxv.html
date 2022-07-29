@@ -1,0 +1,32 @@
+<h1 id="lag"><a aria-hidden="true" class="anchor-heading icon-link" href="#lag"></a>Lag</h1>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">How to Use These Six Unusual Sql Functions</span></div>
+<a href="/DevLog/notes/yv8u2glsn7ph09gyv7zezho" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="lag-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#lag-1"></a>Lag</h2>
+<p>Opposite from the <code>LEAD()</code> function, <code>LAG()</code> allows you to compare your current row to the rows before it, rather than those after it.
+It is still used for comparison, it just serves a bit of a different purpose.
+Similarly, with <code>LEAD()</code>, you choose the column you wish to output from the rows before your current row and partition based on how you wish to separate out your columns.
+Then, the most important part is <code>ORDER BY</code>.
+This will determine whether you’re getting the value you want or not.
+If you choose <code>ASC</code> or <code>DESC</code> values, that can change your whole query.
+Just be sure it fits the context of your problem and what you’re trying to solve.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
+   customer_name<span class="token punctuation">,</span>
+   LAG<span class="token punctuation">(</span>Name<span class="token punctuation">)</span> <span class="token keyword">OVER</span><span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> line_number <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> arrived_at <span class="token keyword">ASC</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> ahead_in_line
+<span class="token keyword">FROM</span> grocery_customers
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-16-13-40-28.png" alt="lag results"></p>
+<h2 id="iif"><a aria-hidden="true" class="anchor-heading icon-link" href="#iif"></a>IIF</h2>
+<p>It’s essentially a simpler <code>CASE</code> statement. The <code>IIF()</code> function tests a condition and returns a specified value if the condition is TRUE and another specified value if the condition is FALSE.</p>
+<p>in essence it acts like the excel IF function</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
+  iif<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'TRUE'</span><span class="token punctuation">,</span><span class="token string">'FALSE'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'T'</span>
+<span class="token punctuation">,</span> iif<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">'TRUE'</span><span class="token punctuation">,</span><span class="token string">'FALSE'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token string">'F'</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-16-13-46-43.png" alt="RESULTS"></p></div></div><p></p><p></p>

@@ -1,0 +1,39 @@
+<h1 id="update"><a aria-hidden="true" class="anchor-heading icon-link" href="#update"></a>Update</h1>
+<p><code>UPDATE</code> Allows us to update a set of data in a table that can be specified by the <code>WHERE</code> criteria.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">UPDATE</span> My_Table
+<span class="token keyword">SET</span> <span class="token operator">&#x3C;</span>Column1<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span>updated_value1<span class="token punctuation">]</span>
+	<span class="token punctuation">,</span><span class="token operator">&#x3C;</span>Column2<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span>updated_value2<span class="token punctuation">]</span>
+	<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+<span class="token keyword">WHERE</span> <span class="token operator">&#x3C;</span>filter<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">></span> <span class="token punctuation">(</span>Optional<span class="token punctuation">)</span>
+</code></pre>
+<p>So in essence:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">BEGIN</span> <span class="token keyword">TRAN</span>
+<span class="token keyword">UPDATE</span> <span class="token keyword">database</span><span class="token punctuation">.</span><span class="token keyword">schema</span><span class="token punctuation">.</span><span class="token keyword">table</span>
+<span class="token keyword">SET</span> Misc <span class="token operator">=</span> <span class="token string">'Fourth'</span>
+OUTPUT Inserted<span class="token punctuation">.</span><span class="token operator">*</span>
+<span class="token keyword">WHERE</span> ID <span class="token operator">=</span> <span class="token number">4</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token keyword">database</span><span class="token punctuation">.</span><span class="token keyword">schema</span><span class="token punctuation">.</span><span class="token keyword">table</span>
+<span class="token keyword">ROLLBACK</span> <span class="token keyword">COMMIT</span>
+</code></pre>
+<ul>
+<li>Uses elements:
+<ul>
+<li><a href="/DevLog/notes/5wcign6ufgt2t4krkayul8z">Begin Transaction</a></li>
+<li><a href="/DevLog/notes/5xcb7opallqepqj0br1eoca">T-SQL Rollback</a></li>
+<li><a href="/DevLog/notes/59j60o486vc59s9efk90rk3">T-SQL Commit</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql?view=sql-server-ver15">OUTPUT</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/yl9d8mkb7tiq8wi3ynr0c5h">Example</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/3o34ak88zde0pwjwvzdy992">Common Table Expressions (DevLog)</a></li>
+<li><a href="/DevLog/notes/1fh7l8osaohd8d3f5s5blm9">Data Manipulation Language (DevLog)</a></li>
+</ul>

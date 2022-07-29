@@ -1,0 +1,16 @@
+<h1 id="casting"><a aria-hidden="true" class="anchor-heading icon-link" href="#casting"></a>Casting</h1>
+<p>unlike <a href="/DevLog/notes/ku0abqmell3qfg5bvcvx7i0">T-SQL</a> casting doesnt require the <code>CAST(column AS TYPE)</code> function. Instead, within postgres you can cast datatypes like <code>column::datatype</code> using the double colon syntax <code>::</code></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> product_id
+     <span class="token punctuation">,</span> model
+     <span class="token punctuation">,</span> <span class="token keyword">year</span>::<span class="token keyword">TEXT</span>
+     <span class="token punctuation">,</span> product_type
+     <span class="token punctuation">,</span> base_msrp
+     <span class="token punctuation">,</span> production_start_date
+     <span class="token punctuation">,</span> production_end_date
+<span class="token keyword">FROM</span> products<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/kyeu3h5pym90eziek8pjn4n">Sql_for_data_analytics_perform_fast_and_efficient (DevLog)</a></li>
+</ul>

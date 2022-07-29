@@ -1,0 +1,9 @@
+<h1 id="braces"><a aria-hidden="true" class="anchor-heading icon-link" href="#braces"></a>Braces</h1>
+<h4 id="curly-braces"><a aria-hidden="true" class="anchor-heading icon-link" href="#curly-braces"></a>Curly Braces</h4>
+<pre class="language-shell"><code class="language-shell"><span class="token variable">${variable}</span>                             <span class="token comment"># Parameter substitution</span>
+<span class="token variable">${<span class="token operator">!</span>variable}</span>                            <span class="token comment"># Indirect variable reference</span>
+<span class="token punctuation">{</span> command1<span class="token punctuation">;</span> command2<span class="token punctuation">;</span> <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span> commandN<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment"># Block of code</span>
+<span class="token punctuation">{</span>string1,string2,string3,<span class="token punctuation">..</span>.<span class="token punctuation">}</span>           <span class="token comment"># Brace expansion</span>
+<span class="token punctuation">{</span>a<span class="token punctuation">..</span>z<span class="token punctuation">}</span>                                  <span class="token comment"># Extended brace expansion</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>                                      <span class="token comment"># Text replacement, after find and xargs</span>
+</code></pre>

@@ -1,0 +1,7 @@
+<h1 id="nesting"><a aria-hidden="true" class="anchor-heading icon-link" href="#nesting"></a>Nesting</h1>
+<h2 id="functions-can-be-nested"><a aria-hidden="true" class="anchor-heading icon-link" href="#functions-can-be-nested"></a>Functions Can Be Nested</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+	<span class="token keyword">def</span> <span class="token function">inner_func</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> x<span class="token operator">*</span>x<span class="token operator">*</span>x 
+	<span class="token keyword">return</span> inner_func<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> inner_func<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+</code></pre>

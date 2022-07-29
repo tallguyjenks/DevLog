@@ -1,0 +1,4 @@
+<h1 id="calculate-age"><a aria-hidden="true" class="anchor-heading icon-link" href="#calculate-age"></a>Calculate Age</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- The '365.25' uses .25 to account for leap year</span>
+FLOOR<span class="token punctuation">(</span>DATEDIFF<span class="token punctuation">(</span><span class="token keyword">DAY</span><span class="token punctuation">,</span> <span class="token operator">&#x3C;</span>birthdate<span class="token operator">></span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">365.25</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Age
+</code></pre>

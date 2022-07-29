@@ -1,0 +1,77 @@
+<h1 id="using-hashbytes-to-compare-character-strings"><a aria-hidden="true" class="anchor-heading icon-link" href="#using-hashbytes-to-compare-character-strings"></a>Using Hashbytes to Compare Character Strings</h1>
+<blockquote>
+<p>If you have to compare string values on a regular basis, and especially if you have to compare more than one column at a time, instead of comparing the columns directly, hash the columns first. Hashing creates a string based on the encryption algorithm you select. You can pass in concatenated string values. The ultimate benefit is that all the algorithms generate a value that is a set number of characters. This comes in handy for storing this value when it comes time for loading junk dimensions into data warehouses.
+You cannot use <code>HASHBYTES()</code> on <code>NVARCHAR(MAX)</code> in SQL Server. <code>HASHBYTES</code> has a 4,000-character limit for <code>NVARCHAR</code>. Technically, you can get around this programmatically, but if your data is longer than 4,000 characters, I’d suggest looking for another way to identify the record.</p>
+<p>-- <a href="https://tutorials.massstreet.net/v/transact-sql/solutions-to-real-world-problems/lesson-63.-using-hashbytes-to-compare-character-strings">https://tutorials.massstreet.net/v/transact-sql/solutions-to-real-world-problems/lesson-63.-using-hashbytes-to-compare-character-strings</a></p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@Statement1</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@Statement2</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+
+<span class="token keyword">SET</span> <span class="token variable">@Statement1</span> <span class="token operator">=</span> <span class="token string">'Army And Navy Play For Second'</span>
+<span class="token keyword">SET</span> <span class="token variable">@Statement2</span> <span class="token operator">=</span> <span class="token string">'Rock Chalk Jayhawk'</span>
+
+<span class="token keyword">PRINT</span> <span class="token function">LEN</span><span class="token punctuation">(</span><span class="token variable">@Statement1</span><span class="token punctuation">)</span>
+<span class="token keyword">PRINT</span> <span class="token function">LEN</span><span class="token punctuation">(</span><span class="token variable">@Statement2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">PRINT</span> HASHBYTES<span class="token punctuation">(</span><span class="token string">'MD5'</span><span class="token punctuation">,</span> <span class="token variable">@Statement1</span><span class="token punctuation">)</span>
+<span class="token keyword">PRINT</span> HASHBYTES<span class="token punctuation">(</span><span class="token string">'MD5'</span><span class="token punctuation">,</span> <span class="token variable">@Statement2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">PRINT</span> <span class="token function">LEN</span><span class="token punctuation">(</span>HASHBYTES<span class="token punctuation">(</span><span class="token string">'MD5'</span><span class="token punctuation">,</span> <span class="token variable">@Statement1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">PRINT</span> <span class="token function">LEN</span><span class="token punctuation">(</span>HASHBYTES<span class="token punctuation">(</span><span class="token string">'MD5'</span><span class="token punctuation">,</span> <span class="token variable">@Statement2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">-- 29</span>
+<span class="token comment">-- 18</span>
+<span class="token comment">-- 0x9A6A731EB1D5FE8F3B93A576A9740E3E</span>
+<span class="token comment">-- 0xFDEFE8D5B2FF212060E733A0A01A1A7F</span>
+<span class="token comment">-- 16</span>
+<span class="token comment">-- 16</span>
+</code></pre>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@Statement1</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@Statement2</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+
+<span class="token keyword">SET</span> <span class="token variable">@Statement1</span> <span class="token operator">=</span> <span class="token string">'WalMart'</span>
+<span class="token keyword">SET</span> <span class="token variable">@Statement2</span> <span class="token operator">=</span> <span class="token string">'walmart'</span>
+
+
+<span class="token keyword">PRINT</span> HASHBYTES<span class="token punctuation">(</span><span class="token string">'MD5'</span><span class="token punctuation">,</span> <span class="token variable">@Statement1</span><span class="token punctuation">)</span> <span class="token comment">--0xDE2E98EE55B1B249B711300DE7047C75</span>
+<span class="token keyword">PRINT</span> HASHBYTES<span class="token punctuation">(</span><span class="token string">'MD5'</span><span class="token punctuation">,</span> <span class="token variable">@Statement2</span><span class="token punctuation">)</span> <span class="token comment">--0xC48604C9A656E09D87E99B820499D430</span>
+</code></pre>
+<h2 id="using-pipe-to-hash-multiple-columns-for-matching"><a aria-hidden="true" class="anchor-heading icon-link" href="#using-pipe-to-hash-multiple-columns-for-matching"></a>Using Pipe To Hash Multiple Columns For Matching</h2>
+<p><a href="https://tutorials.massstreet.net/v/transact-sql/solutions-to-real-world-problems/lesson-64.-using-pipe-to-hash-multiple-columns-for-matching">https://tutorials.massstreet.net/v/transact-sql/solutions-to-real-world-problems/lesson-64.-using-pipe-to-hash-multiple-columns-for-matching</a></p>
+<blockquote>
+<p>When using the <code>HASHBYTES()</code> function in SQL Server to hash multiple columns for matching, use <code>CONCAT()</code> and separate values with a pipe.
+Usually, the values in columns are disparate enough that you really do not have to worry. For example, it was years before I actually discovered an edge case. However, I did discover at least one scenario where concatenating the columns was not enough to develop a unique record. This occurred in a table with few columns and small amounts of data.
+A better approach is to just <code>CONCAT()</code> columns with a pipe between values. Since this character is rarely used, it lowers the probability of having different values hash the same.</p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@SampleStageTable</span> <span class="token keyword">AS</span> <span class="token keyword">TABLE</span><span class="token punctuation">(</span>ID <span class="token keyword">INT</span><span class="token punctuation">,</span> VALUE1 NVARCHAR<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> VALUE2 NVARCHAR<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token variable">@SampleStageTable</span><span class="token punctuation">(</span>ID<span class="token punctuation">,</span> VALUE1<span class="token punctuation">,</span> VALUE2<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'012'</span><span class="token punctuation">,</span><span class="token string">'345'</span>
+<span class="token keyword">UNION</span>
+<span class="token keyword">SELECT</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'01'</span><span class="token punctuation">,</span><span class="token string">'2345'</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token variable">@SampleStageTable</span>
+<span class="token comment">-------------------------------------------------------------------------------------</span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@SampleStageTable</span> <span class="token keyword">AS</span> <span class="token keyword">TABLE</span><span class="token punctuation">(</span>ID <span class="token keyword">INT</span><span class="token punctuation">,</span> VALUE1 NVARCHAR<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> VALUE2 NVARCHAR<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token variable">@SampleStageTable</span><span class="token punctuation">(</span>ID<span class="token punctuation">,</span> VALUE1<span class="token punctuation">,</span> VALUE2<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'012'</span><span class="token punctuation">,</span><span class="token string">'345'</span>
+<span class="token keyword">UNION</span>
+<span class="token keyword">SELECT</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'01'</span><span class="token punctuation">,</span><span class="token string">'2345'</span>
+
+
+<span class="token keyword">SELECT</span> ID<span class="token punctuation">,</span> VALUE1<span class="token punctuation">,</span> VALUE2<span class="token punctuation">,</span> HASHBYTES<span class="token punctuation">(</span><span class="token string">'MD5'</span><span class="token punctuation">,</span> CONCAT<span class="token punctuation">(</span>VALUE1<span class="token punctuation">,</span> VALUE2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> ROWHASH
+<span class="token keyword">FROM</span> <span class="token variable">@SampleStageTable</span>
+</code></pre>
+<p>So separate columns with a <code>|</code></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@SampleStageTable</span> <span class="token keyword">AS</span> <span class="token keyword">TABLE</span><span class="token punctuation">(</span>ID <span class="token keyword">INT</span><span class="token punctuation">,</span> VALUE1 NVARCHAR<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> VALUE2 NVARCHAR<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token variable">@SampleStageTable</span><span class="token punctuation">(</span>ID<span class="token punctuation">,</span> VALUE1<span class="token punctuation">,</span> VALUE2<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'012'</span><span class="token punctuation">,</span><span class="token string">'345'</span>
+<span class="token keyword">UNION</span>
+<span class="token keyword">SELECT</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'01'</span><span class="token punctuation">,</span><span class="token string">'2345'</span>
+
+
+<span class="token keyword">SELECT</span> ID<span class="token punctuation">,</span> VALUE1<span class="token punctuation">,</span> VALUE2<span class="token punctuation">,</span> HASHBYTES<span class="token punctuation">(</span><span class="token string">'MD5'</span><span class="token punctuation">,</span> CONCAT<span class="token punctuation">(</span>VALUE1<span class="token punctuation">,</span><span class="token string">'|'</span><span class="token punctuation">,</span> VALUE2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> ROWHASH
+<span class="token keyword">FROM</span> <span class="token variable">@SampleStageTable</span>
+</code></pre>

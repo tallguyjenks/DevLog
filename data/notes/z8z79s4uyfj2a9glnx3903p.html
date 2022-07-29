@@ -1,0 +1,76 @@
+<h1 id="data-classes"><a aria-hidden="true" class="anchor-heading icon-link" href="#data-classes"></a>Data Classes</h1>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> <a href="https://youtu.be/vRVVyl9uaZc">If you're not using Python DATA CLASSES yet, you should 🚀</a></li>
+<li><a href="https://youtu.be/CvQ7e6yUtnw">https://youtu.be/CvQ7e6yUtnw</a></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Regular classes</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+	name<span class="token punctuation">:</span> <span class="token builtin">str</span>
+	job<span class="token punctuation">:</span> <span class="token builtin">str</span>
+	age<span class="token punctuation">:</span> <span class="token builtin">int</span>
+	
+	<span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> job<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+		self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+		self<span class="token punctuation">.</span>job <span class="token operator">=</span> job
+		self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+		
+person1 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Geralt"</span><span class="token punctuation">,</span> <span class="token string">"Witcher"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span>
+person2 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Yennefer"</span><span class="token punctuation">,</span> <span class="token string">"Sorceress"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span>
+person3 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Yennefer"</span><span class="token punctuation">,</span> <span class="token string">"Sorceress"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>person2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>person3<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>person1<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>person3 <span class="token operator">==</span> person2<span class="token punctuation">)</span>
+
+<span class="token comment"># Data Class</span>
+<span class="token keyword">from</span> dataclasses <span class="token keyword">import</span> dataclass<span class="token punctuation">,</span> field
+
+<span class="token decorator annotation punctuation">@dataclass</span><span class="token punctuation">(</span>order<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>frozen<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    sort_index<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> field<span class="token punctuation">(</span>init<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token builtin">repr</span><span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    name<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    job<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    age<span class="token punctuation">:</span> <span class="token builtin">int</span>
+    strength<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">100</span>
+
+    <span class="token keyword">def</span> <span class="token function">__post_init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">object</span><span class="token punctuation">.</span>__setattr__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token string">'sort_index'</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>strength<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>job<span class="token punctuation">}</span></span><span class="token string"> (</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>age<span class="token punctuation">}</span></span><span class="token string">)'</span></span>
+
+
+person1 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Geralt"</span><span class="token punctuation">,</span> <span class="token string">"Witcher"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">)</span>
+person2 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Yennefer"</span><span class="token punctuation">,</span> <span class="token string">"Sorceress"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span>
+person3 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Yennefer"</span><span class="token punctuation">,</span> <span class="token string">"Sorceress"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>person1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>person2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>person3<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>person3 <span class="token operator">==</span> person2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>person1 <span class="token operator">></span> person2<span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@dataclass</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    name<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    address<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    active<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+    email_addresses<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> field<span class="token punctuation">(</span>default_factory<span class="token operator">=</span><span class="token builtin">list</span><span class="token punctuation">)</span>
+    <span class="token builtin">id</span><span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> field <span class="token punctuation">(</span>init<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> default_factory<span class="token operator">=</span>generate_id<span class="token punctuation">)</span>
+    _search_string<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> field<span class="token punctuation">(</span>init<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">__post_init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span> _search_string <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f" </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>address<span class="token punctuation">}</span></span><span class="token string">"</span></span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/0vclnouj6pq14st3wbxwmjq">Pydantic Type Hints</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/iy9c3tjnx1g2pz81kmm747o">Oop (DevLog)</a></li>
+<li><a href="/DevLog/notes/x1pe7g0d0wgazcl4oemzoy4">In Oop (DevLog)</a></li>
+</ul>

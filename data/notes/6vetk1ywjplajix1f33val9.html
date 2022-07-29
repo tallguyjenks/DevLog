@@ -1,0 +1,50 @@
+<h1 id="2021"><a aria-hidden="true" class="anchor-heading icon-link" href="#2021"></a>2021</h1>
+<h2 id="2021-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#2021-1"></a>2021</h2>
+<ul>
+<li>Download Arch ISO from <a href="https://archlinux.org/download/">Archlinux.org</a></li>
+<li>On a Windows machine download <a href="https://rufus.ie/en/">Rufus</a>
+<ul>
+<li>Use Rufus to burn the ISO to a USB</li>
+<li>This makes a bootable disk for bootstrapping the system</li>
+<li>Settings as of 2021-10-25
+<ul>
+<li><img src="/DevLog/assets/images/Pasted_image_20211025015639.png" alt="Alt"></li>
+<li><img src="/DevLog/assets/images/Pasted_image_20211025015715.png" alt="Alt"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>insert USB into machine</li>
+<li><a href="https://wiki.archlinux.org/title/Installation_guide">Helpful installation guide</a></li>
+<li>in the computer setup menu change the boot order to boot from the USB as first priority</li>
+<li>Ensure UEFI mode is active and prefered, verify once on the CLI with: <code>ls /sys/firmware/efi/efivars</code></li>
+<li>Connect over wifi using <code>iwctl</code> 
+<ul>
+<li>Interactive Mode (These menus have Tab completion)
+<ul>
+<li>First, if you do not know your wireless device name, list all Wi-Fi devices: <code>[iwd]# device list</code></li>
+<li>Then, to scan for networks: <code>[iwd]# station &#x3C;device> scan</code></li>
+<li>You can then list all available networks: <code>[iwd]# station &#x3C;device> get-networks</code></li>
+<li>Finally, to connect to a network: <code>[iwd]# station &#x3C;device> connect &#x3C;SSID></code></li>
+</ul>
+</li>
+<li>Single Command with passed values: <code>iwctl --passphrase &#x3C;passphrase> station &#x3C;device> connect &#x3C;SSID></code></li>
+</ul>
+</li>
+<li><strong>AT THIS STAGE YOU CAN JUST RUN THE ARCHINSTALL SCRIPT AND CALL IT DONE AFTERWARDS</strong>
+<ul>
+<li>no need to stay in chroot afterwards</li>
+<li>restart computer and log back in using user account</li>
+</ul>
+</li>
+<li>installed <code>netctl</code> and <code>dialog</code> to use <code>wifi-menu</code>
+<ul>
+<li>also got connected to internet via <code>nmcli device wifi connect SSID_or_BSSID password password</code> nmcli comes from the NetworkManager program</li>
+</ul>
+</li>
+<li><strong>AT THIS POINT IT WOULD BE IDEAL TO LAUNCH A BOOT STRAPPING SCRIPT FOR ALL THE USER SETTINGS AND PACKAGES FOR THE DESKTOP ENVIRONMENT</strong>
+<ul>
+<li>such as <a href="https://github.com/tallguyjenks/LARBS/blob/master/larbs.sh">LARBS</a> but repurposed for my own usage</li>
+</ul>
+</li>
+</ul>

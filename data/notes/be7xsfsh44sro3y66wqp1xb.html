@@ -1,0 +1,58 @@
+<h1 id="path-def-api-endpoints"><a aria-hidden="true" class="anchor-heading icon-link" href="#path-def-api-endpoints"></a>Path Def API Endpoints</h1>
+<h2 id="path-definitions-for-api-end-points"><a aria-hidden="true" class="anchor-heading icon-link" href="#path-definitions-for-api-end-points"></a>Path definitions for API End Points</h2>
+<p><a href="https://calmcode.io/til/fastapi-two-decorators.html">https://calmcode.io/til/fastapi-two-decorators.html</a></p>
+<blockquote>
+<p>Let's consider a very basic FastAPI app that has a health endpoint.</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
+
+app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/health"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_health</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"status"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">}</span>
+
+</code></pre>
+<blockquote>
+<p>This <code>/health</code> endpoint has one job: to return a response with status 200. It can serve as a signal that the service is healthy and this is typically used by cloud providers as a indication that a service might need a restart.</p>
+<p>Some services however, don't use <code>/health</code> but <code>/healthz</code> instead. So how might you implement this? You could add another route.</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
+
+app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/health"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_health</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"status"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">}</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/healthz"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_health</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"status"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">}</span>
+
+</code></pre>
+<blockquote>
+<p>But there's a simpler way, you can also just do this:</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
+
+app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/health"</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/healthz"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_health</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"status"</span><span class="token punctuation">:</span> <span class="token string">"alive"</span><span class="token punctuation">}</span>
+
+</code></pre>
+<blockquote>
+<p>You can totally stack decorators in Python, and FastAPI will just consider it another route that needs to be added.</p>
+<p>So you only need a single line of code. Neat!</p>
+</blockquote>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/nijlvgchynrk2smxnpghn76">Delete</a></li>
+<li><a href="/DevLog/notes/laasvkrkl9wzw87t0neasup">Get</a></li>
+<li><a href="/DevLog/notes/d49eitpewxr9ls4u08206ah">Post</a></li>
+<li><a href="/DevLog/notes/rvleefabx15hy69635bnpky">Put</a></li>
+<li><a href="/DevLog/notes/znslwrtvjnv9caikp733zdf">Root</a></li>
+</ol>

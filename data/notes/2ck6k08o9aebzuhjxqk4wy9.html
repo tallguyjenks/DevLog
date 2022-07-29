@@ -1,0 +1,63 @@
+<h1 id="what_is_api_idempotency_and_why_is_it_important"><a aria-hidden="true" class="anchor-heading icon-link" href="#what_is_api_idempotency_and_why_is_it_important"></a>What_is_api_idempotency_and_why_is_it_important</h1>
+<h2 id="metadata"><a aria-hidden="true" class="anchor-heading icon-link" href="#metadata"></a>Metadata</h2>
+<p><a href="https://youtu.be/I08syTslan8">https://youtu.be/I08syTslan8</a></p>
+<hr>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/I08syTslan8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<hr>
+<h2 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h2>
+<ul>
+<li><a href="/DevLog/notes/xfvil9t7nqt4trgmlunqykf">Idempotent</a> <a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a>'s should not duplicate an outcome despite duplicating requests
+<ul>
+<li>should a server not respond to a request then if we send more requests the outcome should not result in multiple events or side effects</li>
+</ul>
+</li>
+<li>Resilient <a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a>'s use built-in client retries, client generated tokens to guarantee <a href="/DevLog/notes/xfvil9t7nqt4trgmlunqykf">Idempotent</a>cy, and return identical responses to support predictable client behavior</li>
+<li>Approaches
+<ul>
+<li><img src="/DevLog/assets/images/2022-02-24-13-36-48.png" alt="attempt1">
+<ul>
+<li>Client makes request</li>
+<li><a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a> Arguments are sent to the Resource server</li>
+<li>A hash function on the arguments is generated and creates a request token</li>
+<li>The request token is then stored in a stateStore database in the resource server</li>
+<li>The resources server then fulfills the request</li>
+<li>If a duplicate request is sent, the first thing that happens is the stateStore is checked for this request and if it has already been fulfilled then it can kick back an error response and not crash.
+<ul>
+<li>The token's uniqueness could be the hash, on several items, the timestamp, the user, the actual request content, and several other things to make it easily unique
+<ul>
+<li>downside is, what if we actually WANTED to have multiple requests granted?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="/DevLog/assets/images/2022-02-24-13-50-53.png" alt="A better way">
+<ul>
+<li>Instead of resource server inspecting the resource arguments to determine if this is a repeat request or a duplicate, or retry we put the onus on the Client</li>
+<li>as part of the <a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a> contract, you (the user) need to provide a <a href="/DevLog/notes/dc7lbz323j3wob8aznc335q">uuid</a> as part of sending a request</li>
+<li>this way the token from the client sent to the resource server is either duplicated for a retry or a duplicate action and can get processed or kicked back if appropriate</li>
+<li>but if the client sends a duplicate request but with a different <a href="/DevLog/notes/dc7lbz323j3wob8aznc335q">uuid</a> then the resources server can check the state store and determine that multiple requests need to be fulfilled.</li>
+<li>Important point is that for any requests that use the same token, the resource server but return syntactically identical responses
+<ul>
+<li>Why is this important?
+<ul>
+<li><img src="/DevLog/assets/images/2022-02-24-13-58-19.png" alt="Always Success"></li>
+<li>What if our first request made it through and our request was fulfilled, and we never got a response of success back</li>
+<li>We then send a retry which is now a duplicate request in the stateStore.</li>
+<li>Do we send an error message back that a duplicate operation is occurring?</li>
+<li>No, we should just send a <code>Success</code> response back for the duplicate request because the request has already been fulfilled so ultimately the duplicate is trying to do something that was already done so in this case the user receives success</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API (DevLog)</a></li>
+</ul>

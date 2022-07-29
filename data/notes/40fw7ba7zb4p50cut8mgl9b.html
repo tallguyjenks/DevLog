@@ -1,0 +1,7 @@
+<h1 id="rename-objects"><a aria-hidden="true" class="anchor-heading icon-link" href="#rename-objects"></a>Rename Objects</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">[</span>Test1<span class="token punctuation">]</span> <span class="token keyword">MODIFY</span> NAME <span class="token operator">=</span> <span class="token punctuation">[</span>Test2<span class="token punctuation">]</span>
+<span class="token comment">--or</span>
+sp_renamedb <span class="token string">'Test1'</span> <span class="token punctuation">,</span> <span class="token string">'Test2
+--or
+sp_rename '</span>Test1<span class="token string">', '</span>Test2<span class="token string">', '</span><span class="token keyword">DATABASE</span>'<span class="token punctuation">;</span>
+</code></pre>

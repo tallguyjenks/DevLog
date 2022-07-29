@@ -1,0 +1,18 @@
+<h1 id="exist-status"><a aria-hidden="true" class="anchor-heading icon-link" href="#exist-status"></a>Exist Status</h1>
+<h3 id="exit-status-in-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#exit-status-in-bash"></a>Exit Status In Bash</h3>
+<ul>
+<li>You can check the exit status with the exit status variable:</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token string">"My script's exit status is '<span class="token variable">$?</span>'"</span>
+</code></pre>
+<ul>
+<li><code>$?</code> is only required if you need to retrieve the exact status of the previous command. If you only need to test for success or failure (any non-zero status), just test the command directly. e.g.:</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token keyword">if</span> cmd<span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token punctuation">..</span>.
+<span class="token keyword">fi</span>
+</code></pre>
+<h4 id="documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a>Documentation</h4>
+<ul>
+<li><a href="https://mywiki.wooledge.org/BashPitfalls">https://mywiki.wooledge.org/BashPitfalls</a></li>
+</ul>

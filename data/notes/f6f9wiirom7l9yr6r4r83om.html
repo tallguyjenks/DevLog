@@ -1,0 +1,44 @@
+<h1 id="dates"><a aria-hidden="true" class="anchor-heading icon-link" href="#dates"></a>Dates</h1>
+<h2 id="difference-between-datetime2-and-datetimeoffset"><a aria-hidden="true" class="anchor-heading icon-link" href="#difference-between-datetime2-and-datetimeoffset"></a>Difference Between datetime2 and datetimeoffset</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token comment">#DateTests (DateTime_2 DATETIME2(7), DateTime_Offset DATETIMEOFFSET(7));</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token comment">#DateTests VALUES (GETDATE(), GETDATE());</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token comment">#DateTests;</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-14-13-07-29.png" alt="offset"></p>
+<h2 id="how-to-add-a-valid-time-zone-to-a-datetime-value"><a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-add-a-valid-time-zone-to-a-datetime-value"></a>How to add a valid time zone to a datetime value</h2>
+<p><code>AT TIME ZONE</code> will assign a time zone offset to a <code>datetime</code>, <code>smalldatetime</code>, or <code>datetime2</code> value that otherwise would not include one.
+It works by simply adding the words <code>AT TIME ZONE</code> immediately after a <code>datetime</code> or <code>datetime2</code> value and then listing a valid time zone.
+This time zone is a <code>NVARCHAR(256)</code> type.
+Since this author is writing this tip from the Eastern Time zone in the US, that will be the time zone selected.</p>
+<p>The second option is to use the <code>GETUTCDATE()</code> function which will return the UTC date and time rather than the system date and time.
+This will be recorded with the correct time zone (+00:00) and will thus be accurate.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token comment">#DateTests;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token comment">#DateTests (DateTime_2 DATETIME2(7), DateTime_Offset DATETIMEOFFSET(7));</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token comment">#DateTests VALUES (GETDATE(), GETDATE() AT TIME ZONE N'US Eastern Standard Time');</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token comment">#DateTests VALUES (GETDATE(), GETUTCDATE());</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token comment">#DateTests;</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/2022-03-14-13-10-04.png" alt="output"></p>
+<h2 id="get-list-of-valid-time-zones"><a aria-hidden="true" class="anchor-heading icon-link" href="#get-list-of-valid-time-zones"></a>Get list of valid time zones</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>time_zone_info<span class="token punctuation">;</span>
+</code></pre>
+<h2 id="get-list-of-your-values-for-each-timezone"><a aria-hidden="true" class="anchor-heading icon-link" href="#get-list-of-your-values-for-each-timezone"></a>Get list of your values for each timezone</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
+    DateTime_Offset
+  <span class="token punctuation">,</span> tzi<span class="token punctuation">.</span>name
+  <span class="token punctuation">,</span> DateTime_Offset AT <span class="token keyword">TIME</span> ZONE tzi<span class="token punctuation">.</span>name <span class="token keyword">AS</span> ConvertedDateAndTime
+<span class="token keyword">FROM</span> <span class="token comment">#DateTests</span>
+<span class="token keyword">CROSS</span> <span class="token keyword">JOIN</span> sys<span class="token punctuation">.</span>time_zone_info tzi
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> tzi<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/4s8lc3817xjshcbdwrdt8qa">Understanding Time Zones in Sql Server (DevLog)</a></li>
+</ul>

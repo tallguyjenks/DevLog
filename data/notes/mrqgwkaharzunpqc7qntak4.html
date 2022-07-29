@@ -1,0 +1,17 @@
+<h1 id="syntax"><a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a>Syntax</h1>
+<ul>
+<li>One of the hallmarks of lisp is that the data resembles the code.</li>
+<li>Lisp is dynamically typed</li>
+<li>Parens. Parens everywhere.</li>
+</ul>
+<pre class="language-lisp"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">+</span> <span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment">;; 3</span>
+</code></pre>
+<pre class="language-lisp"><code class="language-lisp"><span class="token comment">;; VARIABLES</span>
+<span class="token punctuation">(</span><span class="token car">setf</span> foo <span class="token string">"hello world"</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">pprint</span> foo<span class="token punctuation">)</span>
+<span class="token comment">;; hello world</span>
+</code></pre>
+<pre class="language-lisp"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">pprint</span> <span class="token punctuation">(</span><span class="token car">string-upcase</span> foo<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">;; HELLO WORLD</span>
+</code></pre>

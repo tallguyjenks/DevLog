@@ -1,0 +1,21 @@
+<h1 id="encapsulate-record"><a aria-hidden="true" class="anchor-heading icon-link" href="#encapsulate-record"></a>Encapsulate Record</h1>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// BEFORE</span>
+organization <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Acme Gooseberries"</span><span class="token punctuation">,</span> <span class="token literal-property property">country</span><span class="token operator">:</span> <span class="token string">"GB"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// AFTER</span>
+<span class="token keyword">class</span> <span class="token class-name">Organization</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">_name</span> <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">_country</span> <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">country</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">get</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span><span class="token keyword control-flow">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">_name</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">set</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">_name</span> <span class="token operator">=</span> arg<span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">get</span> <span class="token function">country</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span><span class="token keyword control-flow">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">_country</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">set</span> <span class="token function">country</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">_country</span> <span class="token operator">=</span> arg<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/1w0zdvscgsr44zr68us9rli">Rename Field (DevLog)</a></li>
+</ul>

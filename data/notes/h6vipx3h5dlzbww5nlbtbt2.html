@@ -1,0 +1,23 @@
+<h1 id="wildcard-search-use-index"><a aria-hidden="true" class="anchor-heading icon-link" href="#wildcard-search-use-index"></a>Wildcard Search Use Index</h1>
+<p><img src="/DevLog/assets/images/2022-01-24-13-36-52.png" alt="sql-hack"></p>
+<p>You want to know the coolest SQL hack I learned this week?</p>
+<p>In SQL, we often need to search character fields using the percentage (<code>%</code>) wildcard. When I put the wildcard at the end of the search string (<code>String%</code>) it uses the index, but if I put it at the front (<code>%String</code>) it does a scan of the index.</p>
+<p>This significantly increases your run time!</p>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- Example:</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> <span class="token keyword">table</span>
+<span class="token keyword">WHERE</span> column1 <span class="token operator">LIKE</span> <span class="token string">'Some_string%'</span>
+
+<span class="token comment">-- vs.</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> <span class="token keyword">table</span>
+<span class="token keyword">WHERE</span> column1 <span class="token operator">LIKE</span> <span class="token string">'%Some_string'</span>
+</code></pre>
+<p>We say that option 1 is Sargable (Search ARGument ABLE), and option 2 is not Sargable, meaning option 2 could not leverage the index on the column.</p>
+<p>To ensure all your wildcard queries are Sargable and to significantly decrease your run time, do the following:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> <span class="token keyword">table</span>
+<span class="token keyword">WHERE</span> REVERSE<span class="token punctuation">(</span>column1<span class="token punctuation">)</span> <span class="token operator">LIKE</span> REVERSE<span class="token punctuation">(</span><span class="token string">'Some_string'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'%'</span>
+</code></pre>
+<p>And boom, your query runs much, much faster!</p>

@@ -1,0 +1,15 @@
+<h1 id="recursive"><a aria-hidden="true" class="anchor-heading icon-link" href="#recursive"></a>Recursive</h1>
+<h3 id="recursive-cte"><a aria-hidden="true" class="anchor-heading icon-link" href="#recursive-cte"></a>Recursive CTE</h3>
+<p>Useful when you dont have a defined number of iterations</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">WITH</span> CTE
+<span class="token keyword">AS</span>
+<span class="token punctuation">(</span>
+	<span class="token keyword">SELECT</span> <span class="token number">1</span> <span class="token keyword">AS</span> n <span class="token comment">-- Anchor Member</span>
+	<span class="token keyword">UNION</span> <span class="token keyword">ALL</span>
+	<span class="token keyword">SELECT</span> n <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment">-- Recursive Member</span>
+	<span class="token keyword">FROM</span> CTE
+	<span class="token keyword">WHERE</span> n <span class="token operator">&#x3C;</span> <span class="token number">50</span> <span class="token comment">-- Terminator</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> n 
+<span class="token keyword">FROM</span> CTE<span class="token punctuation">;</span>
+</code></pre>

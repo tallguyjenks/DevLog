@@ -1,0 +1,26 @@
+<h1 id="dictionary-access-with-get"><a aria-hidden="true" class="anchor-heading icon-link" href="#dictionary-access-with-get"></a>Dictionary Access with Get</h1>
+<h2 id="stop-using-square-brackets-to-get-dictionary-items--use-get"><a aria-hidden="true" class="anchor-heading icon-link" href="#stop-using-square-brackets-to-get-dictionary-items--use-get"></a>Stop Using Square Brackets To Get Dictionary Items — Use .get()</h2>
+<h3 id="before"><a aria-hidden="true" class="anchor-heading icon-link" href="#before"></a>Before</h3>
+<pre class="language-python"><code class="language-python">nik <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token string">'age'</span><span class="token punctuation">:</span><span class="token number">32</span><span class="token punctuation">,</span>
+<span class="token string">'gender'</span><span class="token punctuation">:</span><span class="token string">'male'</span><span class="token punctuation">,</span>
+<span class="token string">'employed'</span><span class="token punctuation">:</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>nik<span class="token punctuation">[</span><span class="token string">'location'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Returns:</span>
+<span class="token comment"># KeyError: 'location'</span>
+</code></pre>
+<h3 id="after"><a aria-hidden="true" class="anchor-heading icon-link" href="#after"></a>After</h3>
+<pre class="language-python"><code class="language-python">nik <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token string">'age'</span><span class="token punctuation">:</span><span class="token number">32</span><span class="token punctuation">,</span>
+<span class="token string">'gender'</span><span class="token punctuation">:</span><span class="token string">'male'</span><span class="token punctuation">,</span>
+<span class="token string">'employed'</span><span class="token punctuation">:</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>nik<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'location'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Returns:</span>
+<span class="token comment"># None</span>
+</code></pre>

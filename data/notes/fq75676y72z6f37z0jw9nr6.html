@@ -1,0 +1,139 @@
+<h1 id="classes-within-classes"><a aria-hidden="true" class="anchor-heading icon-link" href="#classes-within-classes"></a>Classes within Classes</h1>
+<h3 id="classes-within-classes-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#classes-within-classes-1"></a>Classes Within Classes</h3>
+<p><code>TeamPerson.h</code></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">TEAMPERSON_H</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TEAMPERSON_H</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TeamPerson</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token keyword">void</span>   <span class="token function">SetFullName</span><span class="token punctuation">(</span>string firstAndLastName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">void</span>   <span class="token function">SetAgeYears</span><span class="token punctuation">(</span><span class="token keyword">int</span> ageInYears<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      string <span class="token function">GetFullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span>    <span class="token function">GetAgeYears</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+      <span class="token keyword">void</span>   <span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      string fullName<span class="token punctuation">;</span>
+      <span class="token keyword">int</span>    ageYears<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+</code></pre>
+<p><code>TeamPerson.cpp</code></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"TeamPerson.h"</span></span>
+
+<span class="token keyword">void</span> <span class="token class-name">TeamPerson</span><span class="token double-colon punctuation">::</span><span class="token function">SetFullName</span><span class="token punctuation">(</span>string firstAndLastName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   fullName <span class="token operator">=</span> firstAndLastName<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">TeamPerson</span><span class="token double-colon punctuation">::</span><span class="token function">SetAgeYears</span><span class="token punctuation">(</span><span class="token keyword">int</span> ageInYears<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ageYears <span class="token operator">=</span> ageInYears<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+string <span class="token class-name">TeamPerson</span><span class="token double-colon punctuation">::</span><span class="token function">GetFullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> fullName<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token class-name">TeamPerson</span><span class="token double-colon punctuation">::</span><span class="token function">GetAgeYears</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> ageYears<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">TeamPerson</span><span class="token double-colon punctuation">::</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Full name: "</span>   <span class="token operator">&#x3C;&#x3C;</span> fullName <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Age (years): "</span> <span class="token operator">&#x3C;&#x3C;</span> ageYears <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><code>SoccerTeam.h</code></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">SOCCERTEAM_H</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">SOCCERTEAM_H</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"TeamPerson.h"</span></span>
+
+<span class="token keyword">class</span> <span class="token class-name">SoccerTeam</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token keyword">void</span> <span class="token function">SetHeadCoach</span><span class="token punctuation">(</span>TeamPerson teamPerson<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">void</span> <span class="token function">SetAssistantCoach</span> <span class="token punctuation">(</span>TeamPerson teamPerson<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      TeamPerson <span class="token function">GetHeadCoach</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+      TeamPerson <span class="token function">GetAssistantCoach</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">void</span> <span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      TeamPerson headCoach<span class="token punctuation">;</span>
+      TeamPerson assistantCoach<span class="token punctuation">;</span>
+      <span class="token comment">// Players omitted for brevity</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+</code></pre>
+<p><code>SoccerTeam.cpp</code></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"TeamPerson.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"SoccerTeam.h"</span></span>
+
+<span class="token keyword">void</span> <span class="token class-name">SoccerTeam</span><span class="token double-colon punctuation">::</span><span class="token function">SetHeadCoach</span><span class="token punctuation">(</span>TeamPerson teamPerson<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   headCoach <span class="token operator">=</span> teamPerson<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">SoccerTeam</span><span class="token double-colon punctuation">::</span><span class="token function">SetAssistantCoach</span><span class="token punctuation">(</span>TeamPerson teamPerson<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   assistantCoach <span class="token operator">=</span> teamPerson<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+TeamPerson <span class="token class-name">SoccerTeam</span><span class="token double-colon punctuation">::</span><span class="token function">GetHeadCoach</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> headCoach<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+TeamPerson <span class="token class-name">SoccerTeam</span><span class="token double-colon punctuation">::</span><span class="token function">GetAssistantCoach</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> assistantCoach<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">SoccerTeam</span><span class="token double-colon punctuation">::</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"HEAD COACH: "</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   headCoach<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"ASSISTANT COACH: "</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   assistantCoach<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><code>main.cpp</code></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"SoccerTeam.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"TeamPerson.h"</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   SoccerTeam teamCalifornia<span class="token punctuation">;</span>
+   TeamPerson headCoach<span class="token punctuation">;</span>
+   TeamPerson asstCoach<span class="token punctuation">;</span>
+
+   headCoach<span class="token punctuation">.</span><span class="token function">SetFullName</span><span class="token punctuation">(</span><span class="token string">"Mark Miwerds"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   headCoach<span class="token punctuation">.</span><span class="token function">SetAgeYears</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   teamCalifornia<span class="token punctuation">.</span><span class="token function">SetHeadCoach</span><span class="token punctuation">(</span>headCoach<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   asstCoach<span class="token punctuation">.</span><span class="token function">SetFullName</span><span class="token punctuation">(</span><span class="token string">"Stanley Lee"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   asstCoach<span class="token punctuation">.</span><span class="token function">SetAgeYears</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   teamCalifornia<span class="token punctuation">.</span><span class="token function">SetAssistantCoach</span><span class="token punctuation">(</span>asstCoach<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   teamCalifornia<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

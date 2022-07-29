@@ -1,0 +1,27 @@
+<h1 id="tqdm"><a aria-hidden="true" class="anchor-heading icon-link" href="#tqdm"></a>Tqdm</h1>
+<ul>
+<li><a href="https://github.com/tqdm/tqdm">GitHub Repo</a> | <a href="https://tqdm.github.io/">Docs</a> | <a href="https://calmcode.io/tqdm/making-a-progress-bar.html">Calm Code tqdm</a></li>
+<li>Wrap an itterable in the function for an aesthetic progress bar:</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> this
+<span class="token keyword">import</span> tqdm
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> tqdm<span class="token punctuation">.</span>tqdm<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> desc<span class="token operator">=</span><span class="token string">" first loop"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.02</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> tqdm<span class="token punctuation">.</span>tqdm<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> desc<span class="token operator">=</span><span class="token string">" second loop"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.02</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"done!"</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>Nested Loops</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> this
+<span class="token keyword">import</span> tqdm
+
+<span class="token keyword">for</span> outer <span class="token keyword">in</span> tqdm<span class="token punctuation">.</span>tqdm<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span> desc<span class="token operator">=</span><span class="token string">" outer"</span><span class="token punctuation">,</span> position<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">for</span> inner <span class="token keyword">in</span> tqdm<span class="token punctuation">.</span>tqdm<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>outer<span class="token punctuation">)</span><span class="token punctuation">,</span> desc<span class="token operator">=</span><span class="token string">" inner loop"</span><span class="token punctuation">,</span> position<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> leave<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	  time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.05</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"done!"</span><span class="token punctuation">)</span>
+</code></pre>

@@ -1,0 +1,19 @@
+<h1 id="where-are-docker-images-and-containers-stored-on-the-host"><a aria-hidden="true" class="anchor-heading icon-link" href="#where-are-docker-images-and-containers-stored-on-the-host"></a>Where Are Docker Images and Containers Stored on the Host</h1>
+<h2 id="the-difference-between-images-and-containers"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-difference-between-images-and-containers"></a>The Difference Between Images and Containers</h2>
+<blockquote>
+<p>Images are what you create when you run docker build; they’re stored in a container registry like the Docker Hub, and contain all the files and code to run an app. You can think of them like ISO files for a virtual machine operating system.</p>
+<p>Containers are created from images, and they’re like the actual virtual machine that runs the application. You might have multiple containers running in parallel off the same image. <strong>Each container will have its own file system, optionally created with “volume mounts” that bind data from the host to the container.</strong></p>
+</blockquote>
+<h2 id="images-stored-locally"><a aria-hidden="true" class="anchor-heading icon-link" href="#images-stored-locally"></a>Images stored locally</h2>
+<ul>
+<li><strong>Linux:</strong> <code>/var/lib/docker/</code></li>
+<li><strong>Windows:</strong> <code>C:\ProgramData\DockerDesktop</code></li>
+<li><strong>macOS:</strong> <code>~/Library/Containers/com.docker.docker/Data/vms/0/</code></li>
+</ul>
+<h2 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h2>
+<ul>
+<li><a href="/DevLog/notes/r4rwffyk7uvzst8g8cdf9bb">ls</a></li>
+<li><a href="/DevLog/notes/q3ltl8ux0ctsgxqyd7ghx7c">Prune</a></li>
+<li><a href="/DevLog/notes/alvm3f6izbhf3f7tc2kdurt">Inspect</a></li>
+<li><a href="/DevLog/notes/s5evywbm5fupovtg63tftzu">Modify Container Filesystem</a></li>
+</ul>

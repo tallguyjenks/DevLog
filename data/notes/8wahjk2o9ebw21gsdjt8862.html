@@ -1,0 +1,30 @@
+<h1 id="124-change-function-declaration"><a aria-hidden="true" class="anchor-heading icon-link" href="#124-change-function-declaration"></a>124 Change Function Declaration</h1>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">//FROM</span>
+<span class="token keyword">function</span> <span class="token function">circum</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">}</span>
+
+<span class="token comment">//TO</span>
+<span class="token keyword">function</span> <span class="token function">circumference</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">}</span>
+</code></pre>
+<p>If deprecating something like API code a useful way of accomplishing that easily might be to do something like this:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">//FROM</span>
+<span class="token keyword">function</span> <span class="token function">circum</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">*</span> radius<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//TO</span>
+<span class="token keyword">function</span> <span class="token function">circum</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"This function is deprecated, please use circumference()"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">return</span> <span class="token function">circumference</span><span class="token punctuation">(</span>radius<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">circumference</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">*</span> radius<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This also makes it easy to refactor in place and only change small things like what the contents are of <code>circum()</code> this way if it breaks code we can just handle it in our new function body and all references to <code>circum()</code> are intact until we're able to migrate everything to the new function declaration.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/4eafrbxrlb72fg1rg68qftr">Principles In Refactoring (DevLog)</a></li>
+<li><a href="/DevLog/notes/1w0zdvscgsr44zr68us9rli">Rename Field (DevLog)</a></li>
+</ul>

@@ -1,0 +1,21 @@
+<h1 id="table-variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#table-variables"></a>Table Variables</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- Table variable</span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@tablevariable</span> <span class="token keyword">TABLE</span> <span class="token punctuation">(</span>customerid <span class="token punctuation">[</span><span class="token keyword">int</span><span class="token punctuation">]</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span> lastorderdate <span class="token punctuation">[</span><span class="token keyword">datetime</span><span class="token punctuation">]</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token variable">@tablevariable</span>
+<span class="token keyword">SELECT</span> customerid<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span> <span class="token keyword">AS</span> lastorderdate
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>SalesOrderHeader
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> customerid<span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> sales<span class="token punctuation">.</span>salesorderheader <span class="token keyword">AS</span> soh
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> <span class="token variable">@tablevariable</span> <span class="token keyword">AS</span> t
+    <span class="token keyword">ON</span> soh<span class="token punctuation">.</span>customerid <span class="token operator">=</span> t<span class="token punctuation">.</span>customerid
+        <span class="token operator">AND</span> soh<span class="token punctuation">.</span>orderdate <span class="token operator">=</span> t<span class="token punctuation">.</span>lastorderdate
+GO
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/mxbhcyic84m1wtodxw996wm">Sql Server Cte Vs Temp Table Vs Table Variable Performance Test (DevLog)</a></li>
+</ul>

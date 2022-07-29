@@ -1,0 +1,39 @@
+<h1 id="apply-operator"><a aria-hidden="true" class="anchor-heading icon-link" href="#apply-operator"></a>Apply Operator</h1>
+<p><code>CROSS APPLY</code> = <a href="/DevLog/notes/5fcy6d3xfewb8jmo75lxre2">T-SQL Inner Join</a></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Department D
+<span class="token keyword">CROSS</span> <span class="token keyword">APPLY</span> <span class="token punctuation">(</span>
+    <span class="token keyword">SELECT</span> <span class="token operator">*</span>
+    <span class="token keyword">FROM</span> Employee E
+    <span class="token keyword">WHERE</span> E<span class="token punctuation">.</span>DepartmentID <span class="token operator">=</span> D<span class="token punctuation">.</span>DepartmentID
+<span class="token punctuation">)</span> A
+
+<span class="token comment">-- The result sets from these would have been identical</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Department D
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> Employee E
+  <span class="token keyword">ON</span> D<span class="token punctuation">.</span>DepartmentID <span class="token operator">=</span> E<span class="token punctuation">.</span>DepartmentID
+</code></pre>
+<p><code>OUTER APPLY</code> = <a href="/DevLog/notes/ahs5n2rskoyw7pwbti5gm3v">T-SQL Left Join</a></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Department D
+<span class="token keyword">OUTER</span> <span class="token keyword">APPLY</span> <span class="token punctuation">(</span>
+    <span class="token keyword">SELECT</span> <span class="token operator">*</span>
+    <span class="token keyword">FROM</span> Employee E
+    <span class="token keyword">WHERE</span> E<span class="token punctuation">.</span>DepartmentID <span class="token operator">=</span> D<span class="token punctuation">.</span>DepartmentID
+<span class="token punctuation">)</span> A
+
+
+<span class="token comment">-- The result sets from these would have been identical</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Department D
+<span class="token keyword">LEFT</span> <span class="token keyword">OUTER</span> <span class="token keyword">JOIN</span> Employee E
+  <span class="token keyword">ON</span> D<span class="token punctuation">.</span>DepartmentID <span class="token operator">=</span> E<span class="token punctuation">.</span>DepartmentID
+</code></pre>
+<p>Great uses for Apply</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/9275132/real-life-example-when-to-use-outer-cross-apply-in-sql">SO Examples for apply</a></li>
+<li><a href="https://riptutorial.com/sql/example/8323/cross-apply-and-outer-apply-basics">Examples of main use cases</a></li>
+</ul>

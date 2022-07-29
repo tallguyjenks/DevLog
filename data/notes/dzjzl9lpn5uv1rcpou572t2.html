@@ -1,0 +1,21 @@
+<h1 id="if-else"><a aria-hidden="true" class="anchor-heading icon-link" href="#if-else"></a>If Else</h1>
+<h5 id="bash-if-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#bash-if-statements"></a>Bash IF Statements</h5>
+<ul>
+<li>Many beginners have an incorrect intuition about <code>if</code> statements brought about by seeing the very common pattern of an if keyword followed immediately by a <code>[</code> or <code>[[</code>. This convinces people that the <code>[</code> is somehow part of the <code>if</code> statement's syntax, just like parentheses used in C's if statement.</li>
+<li>This is not the case! <code>if</code> takes a command. <code>[</code> is a command, not a syntax marker for the if statement. It's equivalent to the test command, except that the final argument must be a <code>]</code>. For example:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># POSIX</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token boolean">false</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span> <span class="token builtin class-name">echo</span> <span class="token string">"HELP"</span><span class="token punctuation">;</span> <span class="token keyword">fi</span>
+<span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token keyword">then</span> <span class="token builtin class-name">echo</span> <span class="token string">"HELP"</span><span class="token punctuation">;</span> <span class="token keyword">fi</span>
+</code></pre>
+<ul>
+<li>Are equivalent -- both checking that the argument "false" is non-empty. In both cases HELP will always be printed, to the surprise of programmers from other languages guessing about shell syntax.</li>
+<li>The syntax of an if statement is:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">if</span> COMMANDS
+<span class="token keyword">then</span> <span class="token operator">&#x3C;</span>COMMANDS<span class="token operator">></span>
+<span class="token keyword">elif</span> <span class="token operator">&#x3C;</span>COMMANDS<span class="token operator">></span> <span class="token comment"># optional</span>
+<span class="token keyword">then</span> <span class="token operator">&#x3C;</span>COMMANDS<span class="token operator">></span>
+<span class="token keyword">else</span> <span class="token operator">&#x3C;</span>COMMANDS<span class="token operator">></span> <span class="token comment"># optional</span>
+<span class="token keyword">fi</span> <span class="token comment"># required</span>
+</code></pre>

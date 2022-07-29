@@ -1,0 +1,24 @@
+<h1 id="0"><a aria-hidden="true" class="anchor-heading icon-link" href="#0"></a>0</h1>
+<ul>
+<li><a href="/DevLog/notes/ku0abqmell3qfg5bvcvx7i0">T-SQL</a> <a href="https://www.mssqltips.com/sqlservertip/1396/renaming-sql-server-database-objects-and-changing-object-owners/?utm_source=feedburner&#x26;utm_medium=feed&#x26;utm_campaign=Feed%3A+MSSQLTips-LatestSqlServerTips+%28MSSQLTips+-+Latest+SQL+Server+Tips%29">Renaming SQL Server database objects and changing object owners</a>
+<ul>
+<li>Rename a database with <code>sp_renamedb</code> or <code>sp_rename</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="example-rename-database-from-test1-to-test2"><a aria-hidden="true" class="anchor-heading icon-link" href="#example-rename-database-from-test1-to-test2"></a>Example: rename database from Test1 to Test2</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">[</span>Test1<span class="token punctuation">]</span> <span class="token keyword">MODIFY</span> NAME <span class="token operator">=</span> <span class="token punctuation">[</span>Test2<span class="token punctuation">]</span>
+<span class="token comment">--or</span>
+sp_renamedb <span class="token string">'Test1'</span> <span class="token punctuation">,</span> <span class="token string">'Test2
+--or
+sp_rename '</span>Test1<span class="token string">', '</span>Test2<span class="token string">', '</span><span class="token keyword">DATABASE</span>'<span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>This could be any object that exists with SQL Server table, stored procedure, trigger, etc.</li>
+</ul>
+<h2 id="example-rename-object-test1-to-test2"><a aria-hidden="true" class="anchor-heading icon-link" href="#example-rename-object-test1-to-test2"></a>Example: rename object Test1 to Test2.</h2>
+<pre class="language-sql"><code class="language-sql">sp_rename <span class="token string">'dbo.Test1'</span><span class="token punctuation">,</span> <span class="token string">'Test2'</span><span class="token punctuation">,</span> <span class="token string">'OBJECT'</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/nwqh6meqjjdb9rywwtqljxk">Mito</a> <a href="/DevLog/notes/jyxmijhv4rywxs0zbay5srz">Lux</a> <a href="https://medium.com/analytics-vidhya/3-python-packages-that-make-data-science-simple-40744de22592">3 Python Packages that make Data Science Simple</a></li>
+</ul>

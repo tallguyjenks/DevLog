@@ -1,0 +1,12 @@
+<h1 id="the-in-predicate"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-in-predicate"></a>The in Predicate</h1>
+<p>Similar to <a href="/DevLog/notes/fgdibswbaepsiao0wqje69e">Between Predicate</a>, the <code>IN</code> predicate denotes not a range between value A and B but any value in a list that doesnt lend itself to ranging like specific text values or disjointed numerical values:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Age
+<span class="token keyword">FROM</span> Person
+<span class="token keyword">WHERE</span> Age <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span> <span class="token comment">-- This matches only to those 3 listed numbers</span>
+
+<span class="token comment">-- OR</span>
+
+<span class="token keyword">SELECT</span> Name
+<span class="token keyword">FROM</span> Person
+<span class="token keyword">WHERE</span> Name <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Joe'</span><span class="token punctuation">,</span> <span class="token string">'Mary'</span><span class="token punctuation">,</span> <span class="token string">'Sue'</span><span class="token punctuation">)</span> <span class="token comment">-- matching on strings</span>
+</code></pre>

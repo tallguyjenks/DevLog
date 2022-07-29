@@ -1,0 +1,191 @@
+<h1 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h1>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
+
+<span class="token comment">#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=====Grab a field====="</span>
+<span class="token builtin class-name">read</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"hello world this is Bryan"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1,$5}'</span>
+<span class="token builtin class-name">read</span>
+<span class="token comment">#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=====Grab a column====="</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print}'</span> 
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $4}'</span> 
+<span class="token builtin class-name">read</span>
+
+<span class="token comment">#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=====Selectively output fields====="</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/manager/ {print}'</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token comment">#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=====Variables====="</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"\<span class="token variable">$0</span> -- The whole line"</span>
+<span class="token builtin class-name">read</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"Hello World"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $0}'</span>
+<span class="token builtin class-name">read</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"NR -- The Number of Records"</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print NR}'</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $NR}'</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $0}'</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"NF -- Number of Fields"</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print NF}'</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $NF}'</span> 
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1,NF}'</span> 
+<span class="token builtin class-name">read</span>
+
+<span class="token comment">#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=====Format some output====="</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print NR " - " $1}'</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token comment">#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=====BEGIN and END=====
+
+BEGIN and END are special conditions that only get triggered once per run
+
+BEGIN gets triggered before processing any line
+END gets triggered after all lines have been processed"</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"Using BEGIN on the data set:
+
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'BEGIN {print NR}'</span> 
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"Using END on the data set:"</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'END {print NR}'</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token comment">#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=====Setting a delimiter====="</span>
+<span class="token builtin class-name">read</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"ajay/manager/account/45000
+sunil/clerk/account/25000
+varun/manager/sales/50000
+amit/manager/account/47000
+tarun/peon/sales/15000
+deepak/clerk/sales/23000
+sunil/peon/sales/13000
+satvik/director/purchase/80000"</span> <span class="token operator">|</span> <span class="token function">awk</span> -F/ <span class="token string">'{print $1,$4}'</span> 
+<span class="token comment"># -F can take regex '[,-/]' to determine the delimiter, a `/` in this case</span>
+<span class="token builtin class-name">read</span>
+</code></pre>

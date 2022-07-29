@@ -1,0 +1,24 @@
+<h1 id="plex"><a aria-hidden="true" class="anchor-heading icon-link" href="#plex"></a>Plex</h1>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="https://support.plex.tv/articles/">Documentation</a></li>
+<li><a href="https://troypoint.com/plex-media-server-setup-guide/#Media">Full setup guide</a></li>
+</ul>
+<h2 id="troubleshooting"><a aria-hidden="true" class="anchor-heading icon-link" href="#troubleshooting"></a>Troubleshooting</h2>
+<p>If accessing plex from outside your network or if its virtualized on a <a href="/DevLog/notes/v9s04fmtizuk86nxjpv6354">VLAN</a> and youre accessing it from another <a href="/DevLog/notes/v9s04fmtizuk86nxjpv6354">VLAN</a> then you need to add a specific piece of text into the configuration file for plex through the TrueNAS CLI</p>
+<p><a href="https://www.truenas.com/community/threads/plex-not-authorized-you-do-not-have-access-to-this-server.96858/post-669513">https://www.truenas.com/community/threads/plex-not-authorized-you-do-not-have-access-to-this-server.96858/post-669513</a></p>
+<p>Resolved by adding an entry to Plex's <code>Preferences.xml</code>:</p>
+<pre class="language-xml"><code class="language-xml">allowedNetworks="#.#.#.#/255.255.255.0"
+</code></pre>
+<p>File located at: <code>/mnt/mimisbrunnr/iocage/jails/plex/root/Plex Media Server/Preferences.xml</code></p>
+<h2 id="configuration"><a aria-hidden="true" class="anchor-heading icon-link" href="#configuration"></a>configuration</h2>
+<ul>
+<li>File Naming Conventions
+<ul>
+<li><a href="https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/">Naming Movies</a></li>
+<li><a href="https://support.plex.tv/articles/naming-and-organizing-your-tv-show-files/">Naming TV Shows</a></li>
+<li><a href="https://support.plex.tv/articles/categories/your-media/naming-and-organizing-music-media/">Naming Music Files</a></li>
+<li><a href="https://support.plex.tv/articles/categories/your-media/naming-and-organizing-personal-media/">Naming Media Files</a></li>
+</ul>
+</li>
+</ul>

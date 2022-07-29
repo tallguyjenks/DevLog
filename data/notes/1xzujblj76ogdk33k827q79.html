@@ -1,0 +1,22 @@
+<h1 id="227-split-loop"><a aria-hidden="true" class="anchor-heading icon-link" href="#227-split-loop"></a>227 Split Loop</h1>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">//FROM</span>
+<span class="token keyword">let</span> averageAge <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> totalSalary <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> p <span class="token keyword">of</span> people<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    averageAge <span class="token operator">+=</span> p<span class="token punctuation">.</span><span class="token property-access">age</span><span class="token punctuation">;</span>
+    totalSalary <span class="token operator">+=</span> p<span class="token punctuation">.</span><span class="token property-access">salary</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+averageAge <span class="token operator">=</span> averageAge <span class="token operator">/</span> people<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span>
+
+<span class="token comment">//TO</span>
+<span class="token keyword">let</span> totalSalary <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> p <span class="token keyword">of</span> people<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    totalSalary <span class="token operator">+=</span> p<span class="token punctuation">.</span><span class="token property-access">salary</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> averageAge <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> p <span class="token keyword">of</span> people<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    averageAge <span class="token operator">+=</span> p<span class="token punctuation">.</span><span class="token property-access">age</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+averageAge <span class="token operator">=</span> averageAge <span class="token operator">/</span> people<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span>
+</code></pre>

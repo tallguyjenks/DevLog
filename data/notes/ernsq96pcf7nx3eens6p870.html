@@ -1,0 +1,22 @@
+<h1 id="using-pointers"><a aria-hidden="true" class="anchor-heading icon-link" href="#using-pointers"></a>Using Pointers</h1>
+<h2 id="using-pointers-example"><a aria-hidden="true" class="anchor-heading icon-link" href="#using-pointers-example"></a>Using Pointers Example</h2>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">double</span> vehicleMpg <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+   <span class="token keyword">double</span><span class="token operator">*</span> valPtr <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+   
+   valPtr <span class="token operator">=</span> <span class="token operator">&#x26;</span>vehicleMpg<span class="token punctuation">;</span>
+   
+   <span class="token operator">*</span>valPtr <span class="token operator">=</span> <span class="token number">29.6</span><span class="token punctuation">;</span> <span class="token comment">// Assigns the number to the variable</span>
+                   <span class="token comment">// POINTED TO by valPtr.</span>
+   
+   <span class="token comment">// vehicleMpg = 40;   // Uncomment this later</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Vehicle MPG = "</span> <span class="token operator">&#x3C;&#x3C;</span> vehicleMpg <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Vehicle MPG = "</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token operator">*</span>valPtr <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

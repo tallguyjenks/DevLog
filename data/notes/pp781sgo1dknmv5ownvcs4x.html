@@ -1,0 +1,56 @@
+<h1 id="shiny"><a aria-hidden="true" class="anchor-heading icon-link" href="#shiny"></a>Shiny</h1>
+<ul>
+<li>Shiny dashboards consist of 2 main elements the <code>ui</code> and the <code>server</code> files</li>
+<li>Shiny dashboards are not great for high user traffic but can still handle mutliple user sessions. Hosting on RStudio is an option but shiny server can be hosted on your own system or containers.</li>
+<li>A great practice is to store shiny dashboards as R Packages to be distributed for interactive reproducable analysis.</li>
+<li>Shinydashboard and shinydashboard+ are packages that build off the shiny package base to allow greater aesthetic elements and more functionality with the web app.</li>
+<li>For unit testing shiny applications there is shinytest
+and for load testing there is shinyloadtest</li>
+<li>for making sure shiny apps load quickly you can use <code>profvis</code> and other methods to tackle your bigger and slower processes, another is to not load csv data into shiny directly, if loading data like this do your ETL first and save data as feather files, feather is slower to write but faster to read than csv's</li>
+<li>another would be to implement plot caching if the plots are taking a while to load</li>
+<li>Great presentations of your shiny apps like a walk along tutorial: <a href="https://github.com/JohnCoene/cicerone">cicerone</a></li>
+</ul>
+<h2 id="documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a>Documentation</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wy3TY0gOmJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2 id="code"><a aria-hidden="true" class="anchor-heading icon-link" href="#code"></a>Code</h2>
+<pre class="language-r"><code class="language-r"><span class="token comment">########################################</span>
+<span class="token comment"># A basic example of a shiny dashboard #</span>
+<span class="token comment">########################################</span>
+library<span class="token punctuation">(</span>shiny<span class="token punctuation">)</span>
+
+<span class="token comment"># Define UI for application</span>
+shinyUI<span class="token punctuation">(</span>fluidPage<span class="token punctuation">(</span>
+<span class="token comment"># Application title</span>
+titlePanel<span class="token punctuation">(</span><span class="token string">"Old Faithful Geyser Data"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token comment"># Sidebar with input</span>
+sidebarLayout<span class="token punctuation">(</span>
+ sidebarPanel<span class="token punctuation">(</span>
+  sliderInput<span class="token punctuation">(</span><span class="token string">"bins"</span><span class="token punctuation">,</span>
+     <span class="token string">"Number of bins:"</span><span class="token punctuation">,</span>
+     min <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+     max <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">,</span>
+     value <span class="token operator">=</span> <span class="token number">30</span>
+  <span class="token punctuation">)</span><span class="token comment">#sliderInput</span>
+ <span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">#sidebarPanel</span>
+ <span class="token comment"># Show a plot of the generated distribution</span>
+ mainPanel<span class="token punctuation">(</span>
+  plotOutput<span class="token punctuation">(</span><span class="token string">"distPlot"</span><span class="token punctuation">)</span>
+ <span class="token punctuation">)</span><span class="token comment">#mainPanel</span>
+<span class="token punctuation">)</span><span class="token comment">#sidebarLayout</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#shinyUI(fluidPage(</span>
+
+<span class="token comment"># Define server logic required to draw a histogram</span>
+shinyServer<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> output<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+output<span class="token operator">$</span>distPlot <span class="token operator">&#x3C;-</span> renderPlot<span class="token punctuation">(</span><span class="token punctuation">{</span>
+
+ <span class="token comment"># generate bins based on input$bins from ui.R</span>
+ x    <span class="token operator">&#x3C;-</span> faithful<span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+ bins <span class="token operator">&#x3C;-</span> seq<span class="token punctuation">(</span>min<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> length.out <span class="token operator">=</span> input<span class="token operator">$</span>bins <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+ <span class="token comment"># draw the histogram with the specified number of bins</span>
+ hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> breaks <span class="token operator">=</span> bins<span class="token punctuation">,</span> col <span class="token operator">=</span> <span class="token string">'darkgray'</span><span class="token punctuation">,</span> border <span class="token operator">=</span> <span class="token string">'white'</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token comment">#renderPlot</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token comment">#shinyServer</span>
+</code></pre>

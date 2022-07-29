@@ -1,0 +1,18 @@
+<h1 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
+
+path <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">'/home/johndoe/Documents/pathlib.md'</span><span class="token punctuation">)</span>
+path<span class="token punctuation">.</span>touch<span class="token punctuation">(</span><span class="token punctuation">)</span>
+path<span class="token punctuation">.</span>name
+<span class="token comment">#>>> 'pathlib.md'</span>
+path<span class="token punctuation">.</span>stem
+<span class="token comment">#>>> pathlib</span>
+path<span class="token punctuation">.</span>suffix
+<span class="token comment">#>>> '.md'</span>
+path<span class="token punctuation">.</span>parent
+<span class="token comment">#>>> PosixPath('/home/johndoe/Documents')</span>
+path<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>parent
+<span class="token comment">#>>> PosixPath('/home/johndoe')</span>
+path<span class="token punctuation">.</span>anchor
+<span class="token comment">#>>> '/'</span>
+</code></pre>

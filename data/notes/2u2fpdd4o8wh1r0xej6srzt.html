@@ -1,0 +1,90 @@
+<h1 id="tips-tricks"><a aria-hidden="true" class="anchor-heading icon-link" href="#tips-tricks"></a>Tips Tricks</h1>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Five Powerful Tips for Bash Scripting</span></div>
+<a href="/DevLog/notes/01fdvgj9iekx2rlkklw5jvq" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="error-proof-your-variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#error-proof-your-variables"></a>Error-Proof Your Variables</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">somedir</span><span class="token operator">=</span><span class="token string">"/home/user/somedir"</span>
+<span class="token function">rm</span> -rf /<span class="token variable">$somedir</span>
+<span class="token comment"># IF $somedir is unset or null then it will wipe out root "/"</span>
+<span class="token comment">#</span>
+<span class="token comment"># The failsafe</span>
+<span class="token function">rm</span> -rf /<span class="token variable">${somedir<span class="token operator">:?</span>}</span>
+</code></pre>
+<h2 id="skip-the-long-if-else-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#skip-the-long-if-else-statements"></a>Skip the Long if-else Statements</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># INSTEAD of</span>
+
+<span class="token comment">#!/bin/bash</span>
+<span class="token function">rsync</span> -azP somefile server1:/tmp
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token variable">$?</span> -eq <span class="token number">0</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"error with rsync"</span>
+  <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"continuing next step"</span>
+
+<span class="token comment"># USE THIS</span>
+
+<span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token variable">$?</span> -eq <span class="token number">0</span> <span class="token punctuation">]</span> <span class="token operator">&#x26;&#x26;</span> <span class="token punctuation">{</span> <span class="token builtin class-name">echo</span> <span class="token string">"error with rsync"</span><span class="token punctuation">;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> 
+</code></pre>
+<p>The <code>{}</code> braces are basically your <code>then</code> statements separated by <code>;</code>.</p>
+<h2 id="dont-rely-on-passing-arguments"><a aria-hidden="true" class="anchor-heading icon-link" href="#dont-rely-on-passing-arguments"></a>Don’t Rely on Passing Arguments</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Instead of assuming the order of the values was provided as desired like `args` in python</span>
+<span class="token comment"># Rely on `"${@}"1 like kwargs in python</span>
+
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment">## reads in name and age, has boolean flag "--reset" which changes age to be 1</span>
+<span class="token builtin class-name">source</span> functions.sh
+get_params <span class="token string">"<span class="token variable">${@}</span>"</span>
+
+<span class="token comment"># Each of thuese results in the below</span>
+
+./main.sh --name joe --reset --age <span class="token number">25</span>
+./main.sh --age <span class="token number">25</span> --name joe --reset
+
+<span class="token comment">#> NAME="joe"</span>
+<span class="token comment">#> AGE="25"</span>
+<span class="token comment">#> RESET="true"</span>
+</code></pre>
+<h2 id="easily-check-your-positional-arguments"><a aria-hidden="true" class="anchor-heading icon-link" href="#easily-check-your-positional-arguments"></a>Easily Check Your Positional Arguments</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token variable">${1<span class="token operator">:?</span>"Error<span class="token operator">:</span> parameter missing Name"}</span>
+<span class="token assign-left variable">age</span><span class="token operator">=</span><span class="token variable">${2<span class="token operator">:?</span>"Error<span class="token operator">:</span> parameter missing Age"}</span>
+
+./main joe
+<span class="token comment">#> Error: parameter missing Age</span>
+</code></pre>
+<h2 id="create-a-default-value-for-a-variable"><a aria-hidden="true" class="anchor-heading icon-link" href="#create-a-default-value-for-a-variable"></a>Create a Default Value for a Variable</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"enter your name"</span>
+<span class="token builtin class-name">read</span> name
+<span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token variable">${name<span class="token operator">:-</span>Unknown}</span>
+</code></pre>
+<p>If a user enters blank, your $name will be set to Unknown. The dash after the colon provides a default fallback value.</p></div></div><p></p><p></p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/9dr75gfoek407hahhzkus0e">Color Output</a></li>
+<li><a href="/DevLog/notes/outshn4wfyjv8w3vvnflnjp">Create Default Variable Values</a></li>
+<li><a href="/DevLog/notes/i5100zsp2n6qkafmwk04on1">Create Loading Animations</a></li>
+<li><a href="/DevLog/notes/tg7ggg895gwd22vlbx6ifn8">Create a Directory and Change into It at the Same Time</a></li>
+<li><a href="/DevLog/notes/k1xgws8krw608i4gy2lxukt">Delete All Files in a Folder That Don't Match a Certain File Extension</a></li>
+<li><a href="/DevLog/notes/bv0x156h0li6iiiy10guwcp">Displaying Native Gui Notifications from Bash</a></li>
+<li><a href="/DevLog/notes/62lj8px9waj4ogsa6uct4we">Dont Rely on Positional Args</a></li>
+<li><a href="/DevLog/notes/edpef04p5a022f42xdlet9x">Error Proof Your Variables</a></li>
+<li><a href="/DevLog/notes/di58ib3sihg54t3zh4vptsb">Globbing Vs Ls</a></li>
+<li><a href="/DevLog/notes/o5dlsow714trtrj1b4seazp">Ignore First N Lines</a></li>
+<li><a href="/DevLog/notes/hm181qra1we28l5hxjr44lh">Multiprocessing in Bash Scripts</a></li>
+<li><a href="/DevLog/notes/byak2mlhlsr2u6fzj4irbn0">Output as File Arg</a></li>
+<li><a href="/DevLog/notes/yhcd8xzriuqas724an5usp5">Pipe Stdout and Stderr to Separate Commands</a></li>
+<li><a href="/DevLog/notes/oivsvqq92vghk5ftwesjuzi">Quickly Truncate a File</a></li>
+<li><a href="/DevLog/notes/jclad3h4i0khpd6clwtwr0u">Re Run Cmds</a></li>
+<li><a href="/DevLog/notes/yajvowf7o82s94uj991cohu">Re Use Cmd Args</a></li>
+<li><a href="/DevLog/notes/z38ie5j1080bot9snj8az5r">Redirect Stout and Stderr Each to Separate Files and Print Both to the Screen</a></li>
+<li><a href="/DevLog/notes/wbw47w3w6001fjojtsa1y4i">Shorten If Statements</a></li>
+<li><a href="/DevLog/notes/pczv4pwyuou1ty12a24dna3">Stdin as Arg</a></li>
+<li><a href="/DevLog/notes/a0gc2x2f66b89fx60ma9yeq">Track Content of File</a></li>
+</ol>

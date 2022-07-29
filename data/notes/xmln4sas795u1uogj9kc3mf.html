@@ -1,0 +1,18 @@
+<h1 id="number-formatting"><a aria-hidden="true" class="anchor-heading icon-link" href="#number-formatting"></a>Number Formatting</h1>
+<h2 id="number-formatting-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#number-formatting-1"></a>Number Formatting</h2>
+<h3 id="floats"><a aria-hidden="true" class="anchor-heading icon-link" href="#floats"></a>Floats</h3>
+<pre class="language-python"><code class="language-python">
+pi <span class="token operator">=</span> <span class="token number">3.1415926</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'Pi is approximately equal to </span><span class="token interpolation"><span class="token punctuation">{</span>pi<span class="token punctuation">:</span><span class="token format-spec">.2f</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># Pi is approximately equal to 3.14</span>
+</code></pre>
+<h3 id="integer"><a aria-hidden="true" class="anchor-heading icon-link" href="#integer"></a>Integer</h3>
+<pre class="language-python"><code class="language-python"><span class="token builtin">id</span> <span class="token operator">=</span> <span class="token number">1</span>  <span class="token comment"># need to print a 3-digit number</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The id is </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">id</span><span class="token punctuation">:</span><span class="token format-spec">03d</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token comment"># The id is 001</span>
+</code></pre>
+<h3 id="number-separator"><a aria-hidden="true" class="anchor-heading icon-link" href="#number-separator"></a>Number separator</h3>
+<pre class="language-python"><code class="language-python">N <span class="token operator">=</span> <span class="token number">1000000000</span>  <span class="token comment"># need to add separator</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'His networth is $</span><span class="token interpolation"><span class="token punctuation">{</span>N<span class="token punctuation">:</span><span class="token format-spec">,d</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># His networth is $1,000,000,000</span>
+</code></pre>

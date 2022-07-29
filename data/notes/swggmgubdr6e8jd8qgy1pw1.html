@@ -1,0 +1,29 @@
+<h1 id="window-functions"><a aria-hidden="true" class="anchor-heading icon-link" href="#window-functions"></a>Window Functions</h1>
+<p>Examples of window functions</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> {<span class="token keyword">columns</span>}
+     <span class="token punctuation">,</span> {window_func} <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> {partition_key} <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> {order_key}<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> table1<span class="token punctuation">;</span>
+</code></pre>
+<p>more realistic example:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> customer_id
+     <span class="token punctuation">,</span> title
+     <span class="token punctuation">,</span> first_name
+     <span class="token punctuation">,</span> last_name
+     <span class="token punctuation">,</span> gender
+     <span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> gender <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> customer_id<span class="token punctuation">)</span> <span class="token keyword">AS</span> total_customers
+     <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> title <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">THEN</span> <span class="token number">1</span> <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> gender <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> customer_id<span class="token punctuation">)</span> <span class="token keyword">AS</span> total_customers_title
+<span class="token keyword">FROM</span> customers
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> customer_id<span class="token punctuation">;</span>
+</code></pre>
+<p>The window Keyword:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> customer_id
+     <span class="token punctuation">,</span> title
+     <span class="token punctuation">,</span> first_name
+     <span class="token punctuation">,</span> last_name
+     <span class="token punctuation">,</span> gender
+     <span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> w <span class="token keyword">AS</span> total_customers<span class="token punctuation">,</span>
+     <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> title <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">THEN</span> <span class="token number">1</span> <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> w <span class="token keyword">AS</span> total_customers_title
+<span class="token keyword">FROM</span> customers
+     WINDOW w <span class="token keyword">AS</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> gender <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> customer_id<span class="token punctuation">)</span> <span class="token comment">-- Reduces typing and improves legibility</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> customer_id<span class="token punctuation">;</span>
+</code></pre>

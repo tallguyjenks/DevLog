@@ -1,0 +1,70 @@
+<h1 id="quoted-identifier"><a aria-hidden="true" class="anchor-heading icon-link" href="#quoted-identifier"></a>Quoted Identifier</h1>
+<p><a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/set-quoted-identifier-transact-sql?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/t-sql/statements/set-quoted-identifier-transact-sql?view=sql-server-ver15</a></p>
+<h2 id="using-the-quoted-identifier-setting-and-reserved-word-object-names"><a aria-hidden="true" class="anchor-heading icon-link" href="#using-the-quoted-identifier-setting-and-reserved-word-object-names"></a>Using the quoted identifier setting and reserved word object names</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SET</span> QUOTED_IDENTIFIER <span class="token keyword">OFF</span>
+GO
+
+<span class="token comment">-- Create statement fails.</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token string">"select"</span> <span class="token punctuation">(</span><span class="token string">"identity"</span> <span class="token keyword">INT</span> <span class="token keyword">IDENTITY</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token string">"order"</span> <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">SET</span> QUOTED_IDENTIFIER <span class="token keyword">ON</span><span class="token punctuation">;</span>
+GO
+
+<span class="token comment">-- Create statement succeeds.</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token string">"select"</span> <span class="token punctuation">(</span><span class="token string">"identity"</span> <span class="token keyword">INT</span> <span class="token keyword">IDENTITY</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token string">"order"</span> <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">SELECT</span> <span class="token string">"identity"</span><span class="token punctuation">,</span><span class="token string">"order"</span>
+<span class="token keyword">FROM</span> <span class="token string">"select"</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token string">"order"</span><span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token string">"SELECT"</span><span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">SET</span> QUOTED_IDENTIFIER <span class="token keyword">OFF</span><span class="token punctuation">;</span>
+GO
+</code></pre>
+<h2 id="using-the-quoted-identifier-setting-with-single-and-double-quotation-marks"><a aria-hidden="true" class="anchor-heading icon-link" href="#using-the-quoted-identifier-setting-with-single-and-double-quotation-marks"></a>Using the quoted identifier setting with single and double quotation marks</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SET</span> QUOTED_IDENTIFIER <span class="token keyword">OFF</span><span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>
+<span class="token keyword">IF</span> <span class="token keyword">EXISTS</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> TABLE_NAME <span class="token keyword">FROM</span> INFORMATION_SCHEMA<span class="token punctuation">.</span><span class="token keyword">TABLES</span>
+    <span class="token keyword">WHERE</span> TABLE_NAME <span class="token operator">=</span> <span class="token string">'Test'</span><span class="token punctuation">)</span>
+    <span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> dbo<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+GO
+<span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> dbo<span class="token punctuation">.</span>Test <span class="token punctuation">(</span>ID <span class="token keyword">INT</span><span class="token punctuation">,</span> String <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+GO
+
+<span class="token comment">-- Literal strings can be in single or double quotation marks.</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> dbo<span class="token punctuation">.</span>Test <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"'Text in single quotes'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> dbo<span class="token punctuation">.</span>Test <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'''Text in single quotes'''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> dbo<span class="token punctuation">.</span>Test <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'Text with 2 '''' single quotes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> dbo<span class="token punctuation">.</span>Test <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'"Text in double quotes"'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> dbo<span class="token punctuation">.</span>Test <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"""Text in double quotes"""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> dbo<span class="token punctuation">.</span>Test <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">"Text with 2 """" double quotes"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">SET</span> QUOTED_IDENTIFIER <span class="token keyword">ON</span><span class="token punctuation">;</span>
+GO
+
+<span class="token comment">-- Strings inside double quotation marks are now treated</span>
+<span class="token comment">-- as object names, so they cannot be used for literals.</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> dbo<span class="token punctuation">.</span><span class="token string">"Test"</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">'Text with a single '' quote'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+GO
+
+<span class="token comment">-- Object identifiers do not have to be in double quotation marks</span>
+<span class="token comment">-- if they are not reserved keywords.</span>
+<span class="token keyword">SELECT</span> ID<span class="token punctuation">,</span> String
+<span class="token keyword">FROM</span> dbo<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> dbo<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
+GO
+
+<span class="token keyword">SET</span> QUOTED_IDENTIFIER <span class="token keyword">OFF</span><span class="token punctuation">;</span>
+GO
+</code></pre>

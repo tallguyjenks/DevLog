@@ -1,0 +1,7 @@
+<h1 id="download-video-english-subs-burned-in"><a aria-hidden="true" class="anchor-heading icon-link" href="#download-video-english-subs-burned-in"></a>Download Video English Subs Burned In</h1>
+<h2 id="download-video-with-english-subs-written-to-the-video-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#download-video-with-english-subs-written-to-the-video-file"></a>Download video with english subs written to the video file</h2>
+<p>Might have to change <code>en</code> to the desired language such as when the language is listed as <code>english</code> for subtitles</p>
+<pre class="language-bash"><code class="language-bash">youtube-dl --write-sub --sub-lang en <span class="token operator">&#x3C;</span>URL<span class="token operator">></span>
+<span class="token comment"># Combine the video file and subtitles with ffmpeg:</span>
+ffmpeg -i input_video_file.mp4 -vf <span class="token assign-left variable">subtitles</span><span class="token operator">=</span>subtitled_file.english.srt output_file_name.mp4
+</code></pre>

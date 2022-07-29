@@ -1,0 +1,40 @@
+<h1 id="draft-watermark"><a aria-hidden="true" class="anchor-heading icon-link" href="#draft-watermark"></a>Draft Watermark</h1>
+<p><a href="https://tex.stackexchange.com/questions/118939/add-watermark-that-overlays-the-images">https://tex.stackexchange.com/questions/118939/add-watermark-that-overlays-the-images</a></p>
+<p>Figures overlay the watermark:</p>
+<pre class="language-latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>printwatermark<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">xwatermark</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">xcolor</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">graphicx</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">lipsum</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\newwatermark</span><span class="token punctuation">[</span>allpages,color=red!50,angle=45,scale=3,xpos=0,ypos=0<span class="token punctuation">]</span><span class="token punctuation">{</span>DRAFT<span class="token punctuation">}</span>
+
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\lipsum</span><span class="token punctuation">[</span>1-2<span class="token punctuation">]</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>!ht<span class="token punctuation">]</span>
+<span class="token function selector">\centering</span>
+<span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=3cm<span class="token punctuation">]</span><span class="token punctuation">{</span>example-image-a<span class="token punctuation">}</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span>
+<span class="token function selector">\lipsum</span><span class="token punctuation">[</span>1-2<span class="token punctuation">]</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+</code></pre>
+<p>Figures covered by watermark:</p>
+<pre class="language-latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>printwatermark<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">xwatermark</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">xcolor</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">graphicx</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">lipsum</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\newwatermark*</span><span class="token punctuation">[</span>allpages,color=red!50,angle=45,scale=3,xpos=0,ypos=0<span class="token punctuation">]</span><span class="token punctuation">{</span>DRAFT<span class="token punctuation">}</span>
+
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\lipsum</span><span class="token punctuation">[</span>1-2<span class="token punctuation">]</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>!ht<span class="token punctuation">]</span>
+<span class="token function selector">\centering</span>
+<span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width=3cm<span class="token punctuation">]</span><span class="token punctuation">{</span>example-image-a<span class="token punctuation">}</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span>
+<span class="token function selector">\lipsum</span><span class="token punctuation">[</span>1-2<span class="token punctuation">]</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+</code></pre>

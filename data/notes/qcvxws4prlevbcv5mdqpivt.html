@@ -1,0 +1,65 @@
+<h1 id="smtplib"><a aria-hidden="true" class="anchor-heading icon-link" href="#smtplib"></a>Smtplib</h1>
+<ul>
+<li><a href="https://www.courier.com/blog/three-ways-to-send-emails-using-python-with-code-tutorials">Article About Sending Emails</a></li>
+</ul>
+<blockquote>
+<p>To create a secure connection, you can either use <code>SMTP_SSL()</code> with 465 port or <code>.starttls()</code> with 587 port. The former creates an SMTP connection that is secured from the beginning. The latter creates an unsecured SMTP connection that is encrypted via <code>.starttls()</code>.</p>
+</blockquote>
+<ul>
+<li>To send email through <code>SMTP_SSL()</code>:</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> smtplib
+
+gmail_user <span class="token operator">=</span> <span class="token string">'your_email@gmail.com'</span>
+gmail_password <span class="token operator">=</span> <span class="token string">'your_password'</span>
+
+sent_from <span class="token operator">=</span> gmail_user
+to <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'person_a@gmail.com'</span><span class="token punctuation">,</span> <span class="token string">'person_b@gmail.com'</span><span class="token punctuation">]</span>
+subject <span class="token operator">=</span> <span class="token string">'Lorem ipsum dolor sit amet'</span>
+body <span class="token operator">=</span> <span class="token string">'consectetur adipiscing elit'</span>
+
+email_text <span class="token operator">=</span> <span class="token triple-quoted-string string">"""\
+From: %s
+To: %s
+Subject: %s
+
+%s
+"""</span> <span class="token operator">%</span> <span class="token punctuation">(</span>sent_from<span class="token punctuation">,</span> <span class="token string">", "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>to<span class="token punctuation">)</span><span class="token punctuation">,</span> subject<span class="token punctuation">,</span> body<span class="token punctuation">)</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+	smtp_server <span class="token operator">=</span> smtplib<span class="token punctuation">.</span>SMTP_SSL<span class="token punctuation">(</span><span class="token string">'smtp.gmail.com'</span><span class="token punctuation">,</span> <span class="token number">465</span><span class="token punctuation">)</span>
+	smtp_server<span class="token punctuation">.</span>ehlo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	smtp_server<span class="token punctuation">.</span>login<span class="token punctuation">(</span>gmail_user<span class="token punctuation">,</span> gmail_password<span class="token punctuation">)</span>
+	smtp_server<span class="token punctuation">.</span>sendmail<span class="token punctuation">(</span>sent_from<span class="token punctuation">,</span> to<span class="token punctuation">,</span> email_text<span class="token punctuation">)</span>
+	smtp_server<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"Email sent successfully!"</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> ex<span class="token punctuation">:</span>
+	<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"Something went wrong…."</span><span class="token punctuation">,</span>ex<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>To send email through <code>.starttls()</code>:</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> smtplib 
+<span class="token keyword">try</span><span class="token punctuation">:</span> 
+	<span class="token comment">#Create your SMTP session </span>
+	smtp <span class="token operator">=</span> smtplib<span class="token punctuation">.</span>SMTP<span class="token punctuation">(</span><span class="token string">'smtp.gmail.com'</span><span class="token punctuation">,</span> <span class="token number">587</span><span class="token punctuation">)</span> 
+
+	<span class="token comment">#Use TLS to add security </span>
+	smtp<span class="token punctuation">.</span>starttls<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+
+	<span class="token comment">#User Authentication </span>
+	smtp<span class="token punctuation">.</span>login<span class="token punctuation">(</span><span class="token string">"sender_email_id"</span><span class="token punctuation">,</span><span class="token string">"sender_email_id_password"</span><span class="token punctuation">)</span>
+
+	<span class="token comment">#Defining The Message </span>
+	message <span class="token operator">=</span> <span class="token string">"Message_you_need_to_send"</span> 
+
+	<span class="token comment">#Sending the Email</span>
+	smtp<span class="token punctuation">.</span>sendmail<span class="token punctuation">(</span><span class="token string">"sender_email_id"</span><span class="token punctuation">,</span> <span class="token string">"receiyer_email_id"</span><span class="token punctuation">,</span>message<span class="token punctuation">)</span> 
+
+	<span class="token comment">#Terminating the session </span>
+	smtp<span class="token punctuation">.</span>quit<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+	<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"Email sent successfully!"</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> ex<span class="token punctuation">:</span> 
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Something went wrong...."</span><span class="token punctuation">,</span>ex<span class="token punctuation">)</span> 
+</code></pre>

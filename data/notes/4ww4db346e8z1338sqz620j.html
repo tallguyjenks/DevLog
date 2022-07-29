@@ -1,0 +1,37 @@
+<h1 id="structural-pattern-matching"><a aria-hidden="true" class="anchor-heading icon-link" href="#structural-pattern-matching"></a>Structural Pattern Matching</h1>
+<h2 id="structural-pattern-matching-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#structural-pattern-matching-1"></a>Structural Pattern Matching</h2>
+<h4 id="from"><a aria-hidden="true" class="anchor-heading icon-link" href="#from"></a>From</h4>
+<pre class="language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token keyword">match</span> name<span class="token punctuation">:</span> 
+	<span class="token keyword">case</span> <span class="token string">"Misha"</span><span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token string">"Hello Misha"</span> 
+	<span class="token keyword">case</span> <span class="token string">"John"</span><span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token string">"Hello John"</span> 
+	<span class="token keyword">case</span> <span class="token keyword">_</span><span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token string">"Go away"</span>
+</code></pre>
+<h4 id="to"><a aria-hidden="true" class="anchor-heading icon-link" href="#to"></a>To</h4>
+<pre class="language-python"><code class="language-python"><span class="token keyword">match</span> name<span class="token punctuation">:</span> 
+	<span class="token keyword">case</span> <span class="token string">"Misha"</span> <span class="token operator">|</span> <span class="token string">"John"</span><span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"Hello </span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string">"</span></span> 
+	<span class="token keyword">case</span> <span class="token string">"Michelle"</span><span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token string">"Long time no see, Michelle"</span> 
+	<span class="token keyword">case</span> <span class="token keyword">_</span><span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token string">"Go away"</span>
+</code></pre>
+<ul>
+<li>Add Additional Conditions on matches with <code>if</code></li>
+</ul>
+<pre class="language-python"><code class="language-python">
+<span class="token keyword">def</span> <span class="token function">get_car_price</span><span class="token punctuation">(</span>make<span class="token punctuation">,</span> is_turbocharged<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+	<span class="token keyword">match</span> make<span class="token punctuation">:</span> 
+	<span class="token keyword">case</span> <span class="token string">"Subaru"</span> <span class="token keyword">if</span> is_turbocharged<span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token number">10000</span> 
+	<span class="token keyword">case</span> <span class="token string">"Toyota"</span> <span class="token keyword">if</span> <span class="token keyword">not</span> is_turbocharged<span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token number">7500</span> 
+	<span class="token keyword">case</span> <span class="token keyword">_</span><span class="token punctuation">:</span> 
+		<span class="token keyword">return</span> <span class="token number">2300</span>
+</code></pre>
+<ul>
+<li><a href="https://youtu.be/-79HGfWmH_w">Video on Pattern Matching</a></li>
+</ul>

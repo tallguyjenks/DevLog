@@ -1,0 +1,57 @@
+<h1 id="tips-tricks-hacks"><a aria-hidden="true" class="anchor-heading icon-link" href="#tips-tricks-hacks"></a>Tips Tricks Hacks</h1>
+<h2 id="tips"><a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a>Tips</h2>
+<p>In the Server view, the <code>Datacenter</code> option is for settings that affect all your nodes. In essence the "tree" view allows setting editing for all children under the parent item.</p>
+<h2 id="vm-templates"><a aria-hidden="true" class="anchor-heading icon-link" href="#vm-templates"></a>VM Templates</h2>
+<!-- markdownlint-disable MD031 -->
+<!-- markdownlint-disable MD003 -->
+<!-- markdownlint-disable MD022 -->
+<!-- markdownlint-disable MD023 -->
+<p>When you have a default VM config you like, power down the VM, right click, Convert to template.</p>
+<p>It can no longer be used as a VM but you can clone from that template</p>
+<ul>
+<li>Mode:
+<ul>
+<li>Linked clone: dependent child on the template with cascading downstream changes</li>
+<li>Full Clone: independent entity
+<ul>
+<li>After cloning these steps will reset important information
+<ul>
+<li>Change Hostname
+<ul>
+<li><code>sudo vim /etc/hostname</code></li>
+</ul>
+</li>
+<li>Change hosts file
+<ul>
+<li><code>sudo vim /etc/hosts</code></li>
+</ul>
+</li>
+<li>Reset Machine ID
+<ul>
+<li></li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">rm</span> -f /etc/machine-id /var/lib/dbus/machine-id
+dbus-uuidgen --ensure<span class="token operator">=</span>/etc/machine-id
+dbus-uuidgen --ensure
+</code></pre>
+</li>
+<li>Regenerate <a href="/DevLog/notes/sy0ripvrs9z5vlf7lsdgj4l">SSH</a> keys
+<ul>
+<li></li>
+</ul>
+<pre class="language-bash"><code class="language-bash">regen <span class="token function">ssh</span> keys
+<span class="token function">sudo</span> <span class="token function">rm</span> /etc/ssh/ssh_host_*
+<span class="token function">sudo</span> dpkg-reconfigure openssh-server
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- markdownlint-enable MD031 -->
+<!-- markdownlint-enable MD003 -->
+<!-- markdownlint-enable MD022 -->
+<!-- markdownlint-enable MD023 -->

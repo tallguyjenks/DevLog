@@ -1,0 +1,13 @@
+<h1 id="return-type"><a aria-hidden="true" class="anchor-heading icon-link" href="#return-type"></a>Return Type</h1>
+<h3 id="return-type-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#return-type-1"></a>Return type</h3>
+<p>Before each function <a href="/DevLog/notes/9pbfl810rt62zbyvrp20xmh#declaration">Funcs</a> you must have a return type for that function. The return type is the data type for what is returned by the function. Most of the data types you will use are in <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">C++ Variables and Datatypes (Private)</a> but one you will also use is <code>void</code> this is when the function will return nothing to you, but it may perform actions such as mutate data, or log things to the console, but no value is returned.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">SayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"hello world!"</span> <span class="token operator">&#x3C;&#x3C;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">SayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//#> "hello world!"</span>
+</code></pre>

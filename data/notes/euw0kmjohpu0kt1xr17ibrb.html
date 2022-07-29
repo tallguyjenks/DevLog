@@ -1,0 +1,38 @@
+<h1 id="prettytable"><a aria-hidden="true" class="anchor-heading icon-link" href="#prettytable"></a>Prettytable</h1>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="https://pypi.org/project/prettytable/">https://pypi.org/project/prettytable/</a></li>
+<li><a href="https://zetcode.com/python/prettytable/">https://zetcode.com/python/prettytable/</a></li>
+<li><a href="https://github.com/adamlamers/prettytable">https://github.com/adamlamers/prettytable</a></li>
+</ul>
+<h2 id="examples"><a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a>Examples</h2>
+<pre class="language-python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+
+<span class="token keyword">from</span> prettytable <span class="token keyword">import</span> PrettyTable
+
+x <span class="token operator">=</span> PrettyTable<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+x<span class="token punctuation">.</span>field_names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"City name"</span><span class="token punctuation">,</span> <span class="token string">"Area"</span><span class="token punctuation">,</span> <span class="token string">"Population"</span><span class="token punctuation">,</span> <span class="token string">"Annual Rainfall"</span><span class="token punctuation">]</span>
+
+x<span class="token punctuation">.</span>add_row<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Adelaide"</span><span class="token punctuation">,</span>  <span class="token number">1295</span><span class="token punctuation">,</span> <span class="token number">1158259</span><span class="token punctuation">,</span> <span class="token number">600.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>add_row<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Brisbane"</span><span class="token punctuation">,</span>  <span class="token number">5905</span><span class="token punctuation">,</span> <span class="token number">1857594</span><span class="token punctuation">,</span> <span class="token number">1146.4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>add_row<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Darwin"</span><span class="token punctuation">,</span>    <span class="token number">112</span><span class="token punctuation">,</span>  <span class="token number">120900</span><span class="token punctuation">,</span>  <span class="token number">1714.7</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>add_row<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Hobart"</span><span class="token punctuation">,</span>    <span class="token number">1357</span><span class="token punctuation">,</span> <span class="token number">205556</span><span class="token punctuation">,</span>  <span class="token number">619.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>add_row<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Sydney"</span><span class="token punctuation">,</span>    <span class="token number">2058</span><span class="token punctuation">,</span> <span class="token number">4336374</span><span class="token punctuation">,</span> <span class="token number">1214.8</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>add_row<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Melbourne"</span><span class="token punctuation">,</span> <span class="token number">1566</span><span class="token punctuation">,</span> <span class="token number">3806092</span><span class="token punctuation">,</span> <span class="token number">646.9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>add_row<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Perth"</span><span class="token punctuation">,</span>     <span class="token number">5386</span><span class="token punctuation">,</span> <span class="token number">1554769</span><span class="token punctuation">,</span> <span class="token number">869.4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>+-----------+------+------------+-----------------+
+| City name | Area | Population | Annual Rainfall |
++-----------+------+------------+-----------------+
+|  Adelaide | 1295 |  1158259   |      600.5      |
+|  Brisbane | 5905 |  1857594   |      1146.4     |
+|   Darwin  | 112  |   120900   |      1714.7     |
+|   Hobart  | 1357 |   205556   |      619.5      |
+|   Sydney  | 2058 |  4336374   |      1214.8     |
+| Melbourne | 1566 |  3806092   |      646.9      |
+|   Perth   | 5386 |  1554769   |      869.4      |
++-----------+------+------------+-----------------+
+</code></pre>

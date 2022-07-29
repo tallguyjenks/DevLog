@@ -1,0 +1,28 @@
+<h1 id="list"><a aria-hidden="true" class="anchor-heading icon-link" href="#list"></a>List</h1>
+<h2 id="list-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#list-1"></a>List</h2>
+<pre class="language-r"><code class="language-r"><span class="token comment"># List ----</span>
+<span class="token comment"># The R Objects which can contain elements of different types like </span>
+<span class="token comment"># Numbers, Strings, Vectors, and another List inside of it</span>
+<span class="token comment"># Syntax: list(data)</span>
+
+<span class="token comment">#============#</span>
+<span class="token comment">#  EXAMPLES  # ----</span>
+<span class="token comment">#============#</span>
+
+vtr1 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token string">'world'</span><span class="token punctuation">)</span>
+vtr2 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">24.6345</span><span class="token punctuation">,</span><span class="token number">3.6</span><span class="token punctuation">,</span><span class="token number">345.5678</span><span class="token punctuation">)</span>
+vtr3 <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">45L</span><span class="token punctuation">,</span><span class="token string">'hi'</span><span class="token punctuation">)</span>
+
+ls <span class="token operator">=</span> list<span class="token punctuation">(</span>vtr1<span class="token punctuation">,</span>vtr2<span class="token punctuation">,</span>vtr3<span class="token punctuation">)</span>
+ls
+
+<span class="token comment"># Within each list item/variable returned, it will not let seperate list items/variables</span>
+<span class="token comment"># Dictate the data type of the other items/variable</span>
+<span class="token comment"># It will allow this dictation if inside the variable itself it contains differing</span>
+<span class="token comment"># data types</span>
+
+<span class="token comment"># Nested Lists ----</span>
+list<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>list<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span>list<span class="token punctuation">(</span>T<span class="token punctuation">,</span>T<span class="token punctuation">,</span>F<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"hello"</span><span class="token punctuation">,</span>T<span class="token punctuation">)</span>
+<span class="token comment"># you can have lists within lists and it displays nested lists effectively in the console</span>
+
+</code></pre>

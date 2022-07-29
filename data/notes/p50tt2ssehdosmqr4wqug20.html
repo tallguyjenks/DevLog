@@ -1,0 +1,112 @@
+<h1 id="mssql"><a aria-hidden="true" class="anchor-heading icon-link" href="#mssql"></a>MSSQL</h1>
+<h2 id="initial-setup-script"><a aria-hidden="true" class="anchor-heading icon-link" href="#initial-setup-script"></a>Initial Setup Script</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">apt</span> update
+<span class="token function">apt</span> upgrade
+<span class="token comment"># Makes it so i can add a repository for SQL Server to get installed later</span>
+<span class="token function">apt</span> <span class="token function">install</span> software-properties-common
+</code></pre>
+<h2 id="install-sql-server"><a aria-hidden="true" class="anchor-heading icon-link" href="#install-sql-server"></a>Install SQL Server</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Register the package</span>
+<span class="token function">wget</span> -qO- https://packages.microsoft.com/keys/microsoft.asc <span class="token operator">|</span> <span class="token function">sudo</span> apt-key <span class="token function">add</span> -
+<span class="token comment"># Install SQL Server</span>
+<span class="token function">sudo</span> add-apt-repository <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">wget</span> -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list<span class="token variable">)</span></span>"</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> update
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y mssql-server
+<span class="token comment"># Setup SA user with Password</span>
+<span class="token function">sudo</span> /opt/mssql/bin/mssql-conf setup
+<span class="token comment"># 2 Developer Copy</span>
+<span class="token comment"># Yes to license agreement</span>
+<span class="token comment"># Password</span>
+<span class="token comment"># Verify Service is running</span>
+systemctl status mssql-server --no-pager
+</code></pre>
+<h2 id="install-sql-command-line-tools"><a aria-hidden="true" class="anchor-heading icon-link" href="#install-sql-command-line-tools"></a>Install SQL command line tools</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update 
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">curl</span>
+<span class="token comment">#Import the public repository GPG keys.</span>
+<span class="token function">curl</span> https://packages.microsoft.com/keys/microsoft.asc <span class="token operator">|</span> <span class="token function">sudo</span> apt-key <span class="token function">add</span> -
+<span class="token comment"># Register the Microsoft Ubuntu repository.</span>
+<span class="token function">curl</span> https://packages.microsoft.com/config/ubuntu/20.04/prod.list <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/msprod.list
+<span class="token comment"># Update the sources list and run the installation command with the unixODBC developer package.</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> update 
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> mssql-tools unixodbc-dev
+<span class="token comment"># Add /opt/mssql-tools/bin/ to your PATH environment variable in a bash shell.</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'export PATH="$PATH:/opt/mssql-tools/bin"'</span> <span class="token operator">>></span> ~/.bash_profile
+<span class="token comment"># To make sqlcmd/bcp accessible from the bash shell for interactive/non-login sessions, modify the PATH in the ~/.bashrc file with the following command:</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'export PATH="$PATH:/opt/mssql-tools/bin"'</span> <span class="token operator">>></span> ~/.bashrc
+<span class="token builtin class-name">source</span> ~/.bashrc
+</code></pre>
+<h2 id="enable-ssh-from-external-machines"><a aria-hidden="true" class="anchor-heading icon-link" href="#enable-ssh-from-external-machines"></a>Enable SSH from external machines</h2>
+<ul>
+<li><a href="https://pmsl.com.ng/ssh-into-a-proxmox-lxc-container/">https://pmsl.com.ng/ssh-into-a-proxmox-lxc-container/</a></li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># in proxmox shell</span>
+lxc-attach --name <span class="token number">109</span>
+<span class="token comment"># change the line `PermitRootLogin` without-password to `PermitRootLogin` yes</span>
+<span class="token function">vi</span> /etc/ssh/sshd_config
+<span class="token comment"># Restart the service</span>
+<span class="token function">service</span> <span class="token function">ssh</span> restart
+</code></pre>
+<h2 id="enable-the-sql-agent"><a aria-hidden="true" class="anchor-heading icon-link" href="#enable-the-sql-agent"></a>Enable the SQL Agent</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> /opt/mssql/bin/mssql-conf <span class="token builtin class-name">set</span> sqlagent.enabled <span class="token boolean">true</span> 
+<span class="token function">sudo</span> systemctl restart mssql-server
+</code></pre>
+<h2 id="set-timezone"><a aria-hidden="true" class="anchor-heading icon-link" href="#set-timezone"></a>Set timezone</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> timedatectl set-timezone America/Los_Angeles
+</code></pre>
+<h2 id="setup-odbc-driver-for-connectivity-to-this-server"><a aria-hidden="true" class="anchor-heading icon-link" href="#setup-odbc-driver-for-connectivity-to-this-server"></a>Setup ODBC Driver for connectivity to this server</h2>
+<ul>
+<li><a href="https://manjaro.site/how-to-connect-to-microsoft-sql-server-using-python-on-macos-catalina/">https://manjaro.site/how-to-connect-to-microsoft-sql-server-using-python-on-macos-catalina/</a></li>
+</ul>
+<pre class="language-bash"><code class="language-bash">brew update
+brew <span class="token function">install</span> unixodbc freetds <span class="token comment"># Install dependencies</span>
+<span class="token function">sudo</span> -H pip <span class="token function">install</span> pyodbc
+tsql -C <span class="token comment"># Find freetds conf file</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> nvim /usr/local/etc/freetds.conf <span class="token comment"># Add configuration information</span>
+</code></pre>
+<pre class="language-ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Ubuntu-Docker</span><span class="token punctuation">]</span></span> # &#x3C;-- Change this
+<span class="token key attr-name">host</span> <span class="token punctuation">=</span> <span class="token value attr-value">192.168.100.52 # &#x3C;-- Change this</span>
+<span class="token key attr-name">port</span> <span class="token punctuation">=</span> <span class="token value attr-value">1433</span>
+<span class="token key attr-name">tds version</span> <span class="token punctuation">=</span> <span class="token value attr-value">7.3</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash">tsql -S Ubuntu-Docker -U myUser -P myPassword <span class="token comment"># Test connection</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash">odbcinst -j <span class="token comment"># Edit DSN files</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> nvim /usr/etc/local/odbcinst.ini <span class="token comment"># Add configuration information</span>
+</code></pre>
+<pre class="language-ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">FreeTDS</span><span class="token punctuation">]</span></span>
+DescriptionFreeTDS Driver for Linux MSSOL
+Driver-/usr/local/lib/libtdsodbc.so
+Setup-/usr/local/lib/libtdsodbc.so
+<span class="token key attr-name">UsageCount</span><span class="token punctuation">=</span><span class="token value attr-value">1</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> nvim /usr/etc/local/odbc.ini <span class="token comment"># Add configuration information</span>
+</code></pre>
+<pre class="language-ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Ubuntu-Docker</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">Description</span> <span class="token punctuation">=</span> <span class="token value attr-value">SOL Server on Ubuntu Docker</span>
+<span class="token key attr-name">Driver</span> <span class="token punctuation">=</span> <span class="token value attr-value">FreeTDS</span>
+<span class="token key attr-name">Servername</span> <span class="token punctuation">=</span> <span class="token value attr-value">Ubuntu-Docker</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash">isql Ubuntu-Docker myUser myPassword <span class="token comment"># verify connectivity</span>
+</code></pre>
+<h3 id="pyodbc-connection-to-database"><a aria-hidden="true" class="anchor-heading icon-link" href="#pyodbc-connection-to-database"></a>pyodbc connection to database</h3>
+<blockquote>
+<p>Temporary issue with pyodbc <a href="https://stackoverflow.com/questions/71067094/pyodbc-deprecation-warning-when-printing">https://stackoverflow.com/questions/71067094/pyodbc-deprecation-warning-when-printing</a>
+work around: "set an environment variable named <code>PYTHONWARNINGS</code> to the value <code>ignore::DeprecationWarning</code> and then just run the script normally."</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pyodbc
+myconn <span class="token operator">=</span> pyodbc<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">'DSN-Ubuntu-Docker;UID-sa;PWD=mYPasswd.23'</span><span class="token punctuation">)</span>
+mycursor <span class="token operator">=</span> myconn<span class="token punctuation">.</span>cursor <span class="token punctuation">(</span><span class="token punctuation">)</span>
+myrows <span class="token operator">=</span> mycursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT @@VERSION"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myrows<span class="token punctuation">)</span>
+mycursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+myconn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/azokadmipj68p1l2sb5w23l">25 (DevLog)</a></li>
+<li><a href="/DevLog/notes/76y8i6jica7gfzoat0pqp4d">2022-05-14 (DevLog)</a></li>
+</ul>

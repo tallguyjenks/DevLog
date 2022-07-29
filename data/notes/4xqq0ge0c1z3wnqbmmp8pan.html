@@ -1,0 +1,9 @@
+<h1 id="distinct"><a aria-hidden="true" class="anchor-heading icon-link" href="#distinct"></a>Distinct</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> <span class="token operator">&#x3C;</span><span class="token keyword">COLUMN</span><span class="token operator">></span>
+<span class="token keyword">FROM</span> <span class="token operator">&#x3C;</span><span class="token keyword">TABLE</span><span class="token operator">></span>
+</code></pre>
+<p>Selects only unique values from that table. </p>
+<p>If there are multiple columns then its every unique pairing of all values in those 2 columns that occur and the same goes on for every additional column:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> <span class="token operator">&#x3C;</span><span class="token keyword">COLUMN</span> <span class="token number">1</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token keyword">COLUMN</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+<span class="token keyword">FROM</span> <span class="token operator">&#x3C;</span><span class="token keyword">TABLE</span><span class="token operator">></span>
+</code></pre>

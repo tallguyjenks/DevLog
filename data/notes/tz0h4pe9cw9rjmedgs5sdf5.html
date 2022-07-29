@@ -1,0 +1,4 @@
+<h1 id="make-gif-from-video"><a aria-hidden="true" class="anchor-heading icon-link" href="#make-gif-from-video"></a>Make Gif from Video</h1>
+<h2 id="making-a-gif-out-of-a-video-clip"><a aria-hidden="true" class="anchor-heading icon-link" href="#making-a-gif-out-of-a-video-clip"></a>Making a GIF out of a video clip:</h2>
+<pre class="language-shell"><code class="language-shell">ffmpeg -i <span class="token operator">&#x3C;</span>VIDEO FILE<span class="token operator">></span> -pix_fmt rgb8 -r <span class="token number">8</span> -vf <span class="token assign-left variable">scale</span><span class="token operator">=</span>-1:640 my-gif.gif
+</code></pre>

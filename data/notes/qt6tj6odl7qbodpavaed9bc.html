@@ -1,0 +1,15 @@
+<h1 id="like-predicate"><a aria-hidden="true" class="anchor-heading icon-link" href="#like-predicate"></a>Like Predicate</h1>
+<p>Used with <a href="/DevLog/notes/86sqn7ug1mdgfa2p1ldsrsb">T-SQL Wild Cards</a>, the <code>LIKE</code> predicate looks at a <a href="/DevLog/notes/86sqn7ug1mdgfa2p1ldsrsb">Wild Cards</a> string and runs the <a href="/DevLog/notes/lojiy17xp2w1my9mah7rslm">Regular Expressions</a> pattern matching operation.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Name
+<span class="token keyword">FROM</span> Person
+<span class="token keyword">WHERE</span> Name <span class="token operator">LIKE</span> <span class="token string">'Jo*'</span> <span class="token comment">-- wild card matching on strings</span>
+<span class="token comment">/*
+	Result would be any of these:
+	John
+	Jon
+	Johnny
+	Jonny
+	Etc.
+*/</span>
+
+</code></pre>

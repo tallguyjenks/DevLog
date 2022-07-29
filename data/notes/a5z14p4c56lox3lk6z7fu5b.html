@@ -1,0 +1,15 @@
+<h1 id="dictionary"><a aria-hidden="true" class="anchor-heading icon-link" href="#dictionary"></a>Dictionary</h1>
+<h3 id="dictionary-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#dictionary-1"></a>Dictionary</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># key value pairs, basically an object in javascript</span>
+my_dictionary <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"key"</span><span class="token punctuation">:</span><span class="token string">"my_key"</span><span class="token punctuation">,</span> <span class="token string">"value"</span><span class="token punctuation">:</span><span class="token number">666</span><span class="token punctuation">}</span>
+my_dictionary<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span>
+my_dictionary<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># to add more key value pairs after initialization to the dictionary use object name and brackets around the key and set equal to the value:</span>
+my_dictionary<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Bryan Jenks"</span>
+<span class="token comment"># with bracket method the key needs quotes around it but in the constructor function you DONT need quotes on the key names:</span>
+<span class="token builtin">dict</span><span class="token punctuation">(</span>message<span class="token operator">=</span><span class="token string">"test"</span><span class="token punctuation">,</span> language<span class="token operator">=</span><span class="token string">"english"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> my_dictionary<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"="</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+</code></pre>

@@ -1,0 +1,13 @@
+<h1 id="floating-point-comparison"><a aria-hidden="true" class="anchor-heading icon-link" href="#floating-point-comparison"></a>Floating Point Comparison</h1>
+<h2 id="good-enough-equality"><a aria-hidden="true" class="anchor-heading icon-link" href="#good-enough-equality"></a>'Good Enough' Equality</h2>
+<blockquote>
+<p>Floating-point numbers should not be compared using <code>==</code>. Ex: Avoid float1 <code>==</code> float2.
+.
+Reason: Some floating-point numbers cannot be exactly represented in the limited available memory bits like 64 bits. Floating-point numbers expected to be equal may be close but not exactly equal.
+.
+Floating-point numbers should be compared for <em>"close enough"</em> rather than exact equality.
+Ex: If <code>( x - y ) &#x3C; 0.0001</code>, x and y are deemed equal.
+Because the difference may be negative, the absolute value is used: <code>fabs(x - y) &#x3C; 0.0001</code>.
+.
+The difference threshold indicating that floating-point numbers are equal is often called the <code>epsilon</code>. Epsilon's value depends on the program's expected values, but 0.0001 is common.</p>
+</blockquote>

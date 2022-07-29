@@ -1,0 +1,49 @@
+<h1 id="sphinx"><a aria-hidden="true" class="anchor-heading icon-link" href="#sphinx"></a>Sphinx</h1>
+<p>Related: <a href="/DevLog/notes/4c4t6xvzfxixmtds4r511vv">Restructured Text</a></p>
+<ul>
+<li><a href="https://github.com/psf/black/blob/main/.github/workflows/doc.yml">Potential Azure Pipeline to run doc build</a></li>
+</ul>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Documentation Build
+
+<span class="token key atrule">on</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>push<span class="token punctuation">,</span> pull_request<span class="token punctuation">]</span>
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+<span class="token key atrule">build</span><span class="token punctuation">:</span>
+  <span class="token comment"># We want to run on external PRs, but not on our own internal PRs as they'll be run</span>
+  <span class="token comment"># by the push to the branch. Without this if check, checks are duplicated since</span>
+  <span class="token comment"># internal PRs match both the push and pull_request events.</span>
+  <span class="token key atrule">if</span><span class="token punctuation">:</span>
+	github.event_name == 'push' <span class="token punctuation">|</span><span class="token punctuation">|</span> github.event.pull_request.head.repo.full_name <span class="token tag">!=</span>
+	github.repository
+
+  <span class="token key atrule">strategy</span><span class="token punctuation">:</span>
+	<span class="token key atrule">fail-fast</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+	<span class="token key atrule">matrix</span><span class="token punctuation">:</span>
+	  <span class="token key atrule">os</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>ubuntu<span class="token punctuation">-</span>latest<span class="token punctuation">,</span> windows<span class="token punctuation">-</span>latest<span class="token punctuation">]</span>
+
+  <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> matrix.os <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+
+	<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Set up latest Python
+	  <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>python@v2
+
+	<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install dependencies
+	  <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+		python -m pip install --upgrade pip setuptools wheel
+		python -m pip install -e ".[d]"
+		python -m pip install -r "docs/requirements.txt"</span>
+
+	<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build documentation
+	  <span class="token key atrule">run</span><span class="token punctuation">:</span> sphinx<span class="token punctuation">-</span>build <span class="token punctuation">-</span>a <span class="token punctuation">-</span>b html <span class="token punctuation">-</span>W <span class="token punctuation">-</span><span class="token punctuation">-</span>keep<span class="token punctuation">-</span>going docs/ docs/_build
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/bg13zk1822ggekxny625qfj">Auto Documenting a Python Project Using Sphinx (DevLog)</a></li>
+<li><a href="/DevLog/notes/l5ye9lwfp39ll5s4znki5s0">Write Beautiful Python Documentation with Sphinx (DevLog)</a></li>
+<li><a href="/DevLog/notes/fxonnpiy5se3pzl4r6o8bui">Workflow (DevLog)</a></li>
+<li><a href="/DevLog/notes/j30x4rtyrur01du27t81k2i">11 (DevLog)</a></li>
+<li><a href="/DevLog/notes/8zfw5ea3j1gtv41cprrvm5n">20 (DevLog)</a></li>
+<li><a href="/DevLog/notes/hd9355x7vxsroa69i8vz9lo">Documentation (DevLog)</a></li>
+</ul>

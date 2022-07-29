@@ -1,0 +1,140 @@
+<h1 id="operator-overloading"><a aria-hidden="true" class="anchor-heading icon-link" href="#operator-overloading"></a>Operator Overloading</h1>
+<h2 id="operator-overloading-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#operator-overloading-1"></a>Operator Overloading</h2>
+<p>Related:</p>
+<ul>
+<li><a href="/DevLog/notes/nyazw5tr3g14gl5sfztv4et">Polymorphism</a></li>
+</ul>
+<p>If you have 2 integers and you add them with <code>+</code> then you used the <code>+</code> operator. If you want to add 2 private data members that are part of a class that are comprised of multiple parts, the <code>+</code> operator is not able to handle this unless we overload it:</p>
+<pre class="language-cpp"><code class="language-cpp">TimeHrMn <span class="token function">time1</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+TimeHrMn <span class="token function">time2</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+TimeHrMn timeTot<span class="token punctuation">;</span>
+
+timeTot <span class="token operator">=</span> time1 <span class="token operator">+</span> time2<span class="token punctuation">;</span>
+timeTot<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//#> H:5, M:72</span>
+</code></pre>
+<blockquote>
+<p>The + operator was somehow redefined to add TimeHrMn objects' hours and minutes fields separately (3 + 2 is 5, 22 + 50 is 72), leading to simple readable code.
+.
+Although <code>+</code> requires left and right operands as in <code>time1 + time2</code>, the member function only requires the <u>right operand</u> (rhs: right-hand-side) as the parameter, <u>because the left operand is the calling object</u>. In other words, <code>time1 + time2</code> is equivalent to the function call <code>time1.operator+(time2)</code>, which is valid syntax but almost never used.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp">
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TimeHrMn</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+   <span class="token function">TimeHrMn</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeHours <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">int</span> timeMinutes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">void</span> <span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   TimeHrMn <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span>TimeHrMn rhs<span class="token punctuation">)</span> <span class="token punctuation">;</span> <span class="token comment">// Overloaded `+` operator</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+   <span class="token keyword">int</span> hours<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> minutes<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Overload + operator for TimeHrMn</span>
+TimeHrMn TimeHrMn<span class="token double-colon punctuation">::</span><span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span>TimeHrMn rhs<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Definition of overload</span>
+   TimeHrMn timeTotal<span class="token punctuation">;</span>
+   
+   timeTotal<span class="token punctuation">.</span>hours   <span class="token operator">=</span> hours   <span class="token operator">+</span> rhs<span class="token punctuation">.</span>hours<span class="token punctuation">;</span>
+   timeTotal<span class="token punctuation">.</span>minutes <span class="token operator">=</span> minutes <span class="token operator">+</span> rhs<span class="token punctuation">.</span>minutes<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> timeTotal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">TimeHrMn</span><span class="token double-colon punctuation">::</span><span class="token function">TimeHrMn</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeHours<span class="token punctuation">,</span> <span class="token keyword">int</span> timeMinutes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   hours  <span class="token operator">=</span> timeHours<span class="token punctuation">;</span>
+   minutes <span class="token operator">=</span> timeMinutes<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">TimeHrMn</span><span class="token double-colon punctuation">::</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"H:"</span> <span class="token operator">&#x3C;&#x3C;</span> hours <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">", "</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"M:"</span> <span class="token operator">&#x3C;&#x3C;</span> minutes <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   TimeHrMn <span class="token function">time1</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   TimeHrMn <span class="token function">time2</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   TimeHrMn timeTot<span class="token punctuation">;</span>
+   
+   timeTot <span class="token operator">=</span> time1 <span class="token operator">+</span> time2<span class="token punctuation">;</span> <span class="token comment">// Implementation of overloaded operator</span>
+   timeTot<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>When an operator like <code>+</code> has been overloaded, the compiler determines which <code>+</code> operation to invoke based on the operand types. In <code>4 + 9</code>, the compiler sees two integer operands and thus applies the built-in <code>+</code> operation. In <code>time1 + time2</code>, where <code>time1</code> and <code>time2</code> are <code>TimeHrMn</code> objects, the compiler sees two <code>TimeHrMn</code> operands and thus invokes the programmer-defined function.
+.
+A programmer can define several functions that overload the same operator, as long as each involves different types so that the compiler can determine which to invoke.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TimeHrMn</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+   <span class="token function">TimeHrMn</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeHours <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">int</span> timeMinutes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">void</span> <span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   TimeHrMn <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span>TimeHrMn rhs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   TimeHrMn <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">int</span> rhsHours<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+   <span class="token keyword">int</span> hours<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> minutes<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Operands: TimeHrMn, TimeHrMn. Call this "A"</span>
+TimeHrMn TimeHrMn<span class="token double-colon punctuation">::</span><span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span>TimeHrMn rhs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   TimeHrMn timeTotal<span class="token punctuation">;</span>
+   
+   timeTotal<span class="token punctuation">.</span>hours   <span class="token operator">=</span> hours   <span class="token operator">+</span> rhs<span class="token punctuation">.</span>hours<span class="token punctuation">;</span>
+   timeTotal<span class="token punctuation">.</span>minutes <span class="token operator">=</span> minutes <span class="token operator">+</span> rhs<span class="token punctuation">.</span>minutes<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> timeTotal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Operands: TimeHrMn, int. Call this "B"</span>
+TimeHrMn TimeHrMn<span class="token double-colon punctuation">::</span><span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">int</span> rhsHours<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   TimeHrMn timeTotal<span class="token punctuation">;</span>
+   
+   timeTotal<span class="token punctuation">.</span>hours <span class="token operator">=</span> hours <span class="token operator">+</span> rhsHours<span class="token punctuation">;</span>
+   timeTotal<span class="token punctuation">.</span>minutes <span class="token operator">=</span> minutes<span class="token punctuation">;</span> <span class="token comment">// Stays same</span>
+   
+   <span class="token keyword">return</span> timeTotal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">TimeHrMn</span><span class="token double-colon punctuation">::</span><span class="token function">TimeHrMn</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeHours<span class="token punctuation">,</span> <span class="token keyword">int</span> timeMinutes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   hours  <span class="token operator">=</span> timeHours<span class="token punctuation">;</span>
+   minutes <span class="token operator">=</span> timeMinutes<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">TimeHrMn</span><span class="token double-colon punctuation">::</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"H:"</span> <span class="token operator">&#x3C;&#x3C;</span> hours <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">", "</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"M:"</span> <span class="token operator">&#x3C;&#x3C;</span> minutes <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   TimeHrMn <span class="token function">time1</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   TimeHrMn <span class="token function">time2</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   TimeHrMn timeTot<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">91</span><span class="token punctuation">;</span>
+   
+   timeTot <span class="token operator">=</span> time1 <span class="token operator">+</span> time2<span class="token punctuation">;</span> <span class="token comment">// Invokes "A"</span>
+   timeTot<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   timeTot <span class="token operator">=</span> time1 <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span>    <span class="token comment">// Invokes "B"</span>
+   timeTot<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> num <span class="token operator">+</span> <span class="token number">8</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span> <span class="token comment">// Invokes built-in add</span>
+   
+   <span class="token comment">// timeTot = 10 + time1; // ERROR: No (int, TimeHrMn)</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

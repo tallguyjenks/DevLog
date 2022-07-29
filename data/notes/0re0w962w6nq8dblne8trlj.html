@@ -1,0 +1,26 @@
+<h1 id="ellipses"><a aria-hidden="true" class="anchor-heading icon-link" href="#ellipses"></a>Ellipses</h1>
+<h2 id="for--else"><a aria-hidden="true" class="anchor-heading icon-link" href="#for--else"></a>For ... Else</h2>
+<pre class="language-python"><code class="language-python"><span class="token comment">#case 1</span>
+<span class="token keyword">for</span> letter <span class="token keyword">in</span> <span class="token string">'foo'</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>letter<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"All letters have been printed"</span><span class="token punctuation">)</span>
+
+<span class="token comment">#case 2</span>
+<span class="token keyword">for</span> letter <span class="token keyword">in</span> <span class="token string">'foo'</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>letter<span class="token punctuation">)</span>
+<span class="token keyword">if</span> letter <span class="token operator">==</span> <span class="token string">'o'</span><span class="token punctuation">:</span>
+<span class="token keyword">break</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Letters have been printed"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Output:</span>
+<span class="token comment"># case 1</span>
+<span class="token comment"># f</span>
+<span class="token comment"># o</span>
+<span class="token comment"># o</span>
+<span class="token comment"># All letters have been printed</span>
+<span class="token comment"># case 2</span>
+<span class="token comment"># f</span>
+<span class="token comment"># o</span>
+</code></pre>

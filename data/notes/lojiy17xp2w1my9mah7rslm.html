@@ -1,0 +1,117 @@
+<h1 id="regular-expressions"><a aria-hidden="true" class="anchor-heading icon-link" href="#regular-expressions"></a>Regular Expressions</h1>
+<p>Useful site for writing and testing regex</p>
+<ul>
+<li><a href="https://www.regexpal.com/">https://www.regexpal.com/</a></li>
+<li><a href="https://regex101.com/">https://regex101.com/</a></li>
+<li><a href="http://regextutorials.com/index.html">http://regextutorials.com/index.html</a></li>
+<li><a href="https://regexper.com/#%5E%28%5Ba-z%5D%2B%5Cd*_%5Ba-z%5Cd_%5D*%7C_%2B%5Ba-z%5Cd%5D%2B%5Ba-z%5Cd_%5D*%29%24">https://regexper.com/#%5E%28%5Ba-z%5D%2B%5Cd*_%5Ba-z%5Cd_%5D*%7C_%2B%5Ba-z%5Cd%5D%2B%5Ba-z%5Cd_%5D*%29%24</a></li>
+</ul>
+<p><img src="/DevLog/image_1626507098408_0.png" alt="image.png"></p>
+<p>Image Source: <a href="https://twitter.com/manekinekko/status/1335330878403260419">https://twitter.com/manekinekko/status/1335330878403260419</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">code</th><th align="center">Purpose</th></tr></thead><tbody><tr><td align="center"><code>\d</code></td><td align="center">represent any digit 0-9</td></tr><tr><td align="center"><code>[0-9]</code> or <code>[abc]</code></td><td align="center">matches a range or any specfic item in the brackets could find a,b, or c but will find all of them</td></tr><tr><td align="center"><code>\D</code></td><td align="center">match any NON-digit characters</td></tr><tr><td align="center"><code>[^0-9]</code> or <code>[^\d]</code></td><td align="center">says match all BUT these in which case this is digits</td></tr><tr><td align="center"><code>\w</code></td><td align="center">will match words, <code>\D</code> will match white space, punctuation, hyphens, etc. while <code>\w</code> does not. <code>\w</code> matches only letters and numbers, equivalently: <code>[a-zA-Z0-9]</code></td></tr><tr><td align="center"><code>\W</code></td><td align="center">to match a non word character. matches opposite of alphanumeric and is equivalent to <code>[^_a-zA-Z0-9]</code></td></tr><tr><td align="center"><code>\s</code></td><td align="center">match a space character</td></tr><tr><td align="center"><code>\n</code></td><td align="center">New line</td></tr><tr><td align="center"><code>\t</code></td><td align="center">a tab</td></tr><tr><td align="center"><code>\r</code></td><td align="center">carriage return</td></tr><tr><td align="center"><code>.</code></td><td align="center">match any single character</td></tr><tr><td align="center"><code>\b</code></td><td align="center">boundry, so for a word <code>\bA.{5}T\b</code> the boundries encompass words that start with 'A', end with 'T' and have 5 characters in the middle like ANCYENT or ANCIENT also akin to <code>\b\w{7}\b</code></td></tr><tr><td align="center"><code>^</code></td><td align="center">beginning of a line anchor</td></tr><tr><td align="center"><code>$</code></td><td align="center">end of a line anchor</td></tr><tr><td align="center"></td><td align="center">the pipe is an 'or' statement in brackets is saying 't' OR 'T' in a regex search</td></tr><tr><td align="center"><code>[0-3[4-5]]</code></td><td align="center">Union of 2 character sets, this would return 04, 05, 14, 15, 24, 25, 34, 35, this can also work with negation to use a set of 'NOT THESE' characters</td></tr></tbody></table>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Quantifier</th><th align="center">Description</th><th></th></tr></thead><tbody><tr><td><code>{8}</code></td><td align="center">quantifyer, same as linux CLI <code>.{8}</code> would match any 8 characters, this one matches the patter a specific number of times, 8 times.</td><td></td></tr><tr><td><code>{8,}</code></td><td align="center">the comma means it will match  or more occurances of the pattern</td><td></td></tr><tr><td><code>{2,4}</code></td><td align="center">will match the pattern anytime it ocurs 2-4 times any of those options are captured</td><td></td></tr></tbody></table>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/55ymo3uxol4vc47yjx8cbnh">06 (DevLog)</a></li>
+<li><a href="/DevLog/notes/qt6tj6odl7qbodpavaed9bc">Like Predicate (DevLog)</a></li>
+</ul>

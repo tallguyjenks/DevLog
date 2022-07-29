@@ -1,0 +1,108 @@
+<h1 id="variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#variables"></a>Variables</h1>
+<h2 id="vs-code-stanard-variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#vs-code-stanard-variables"></a>VS Code Stanard Variables</h2>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">https://code.visualstudio.com/docs/editor/userdefinedsnippets</a></li>
+</ul>
+<h2 id="template-variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#template-variables"></a>Template Variables</h2>
+<p>Dendron supports various template variables.</p>
+<ul>
+<li>For inserting the current date and time:
+<ul>
+<li>CURRENT_YEAR: The current year</li>
+<li>CURRENT_MONTH: The month as two digits (example '02')</li>
+<li>CURRENT_DAY: The day of the month as two digits (example '08')</li>
+<li>CURRENT_HOUR: The current hour in 24-hour clock format</li>
+<li>CURRENT_MINUTE: The current minute as two digits</li>
+<li>CURRENT_SECOND: The current second as two digits</li>
+</ul>
+</li>
+</ul>
+<h3 id="vs-code-default-variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#vs-code-default-variables"></a>VS Code default variables</h3>
+<p>The following variables can be used:</p>
+<ul>
+<li><code>TM_SELECTED_TEXT</code> The currently selected text or the empty string</li>
+<li><code>TM_CURRENT_LINE</code> The contents of the current line</li>
+<li><code>TM_CURRENT_WORD</code> The contents of the word under cursor or the empty string</li>
+<li><code>TM_LINE_INDEX</code> The zero-index based line number</li>
+<li><code>TM_LINE_NUMBER</code> The one-index based line number</li>
+<li><code>TM_FILENAME</code> The filename of the current document</li>
+<li><code>TM_FILENAME_BASE</code> The filename of the current document without its extensions</li>
+<li><code>TM_DIRECTORY</code> The directory of the current document</li>
+<li><code>TM_FILEPATH</code> The full file path of the current document</li>
+<li><code>RELATIVE_FILEPATH</code> The relative (to the opened workspace or folder) file path of the current document</li>
+<li><code>CLIPBOARD</code> The contents of your clipboard</li>
+<li><code>WORKSPACE_NAME</code> The name of the opened workspace or folder</li>
+<li><code>WORKSPACE_FOLDER</code> The path of the opened workspace or folder</li>
+</ul>
+<p>For inserting the current date and time:</p>
+<ul>
+<li><code>CURRENT_YEAR</code> The current year</li>
+<li><code>CURRENT_YEAR_SHORT</code> The current year's last two digits</li>
+<li><code>CURRENT_MONTH</code> The month as two digits (example '02')</li>
+<li><code>CURRENT_MONTH_NAME</code> The full name of the month (example 'July')</li>
+<li><code>CURRENT_MONTH_NAME_SHORT</code> The short name of the month (example 'Jul')</li>
+<li><code>CURRENT_DATE</code> The day of the month as two digits (example '08')</li>
+<li><code>CURRENT_DAY_NAME</code> The name of day (example 'Monday')</li>
+<li><code>CURRENT_DAY_NAME_SHORT</code> The short name of the day (example 'Mon')</li>
+<li><code>CURRENT_HOUR</code> The current hour in 24-hour clock format</li>
+<li><code>CURRENT_MINUTE</code> The current minute as two digits</li>
+<li><code>CURRENT_SECOND</code> The current second as two digits</li>
+<li><code>CURRENT_SECONDS_UNIX</code> The number of seconds since the Unix epoch</li>
+</ul>
+<h3 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h3>
+<pre class="language-md"><code class="language-md">Today is {{ CURRENT_YEAR }}.{{ CURRENT_MONTH }}.{{ CURRENT_DAY }},
+</code></pre>
+<p>output:</p>
+<blockquote>
+<p>Today is 2022.01.04</p>
+</blockquote>
+<h2 id="template-variable-replacement"><a aria-hidden="true" class="anchor-heading icon-link" href="#template-variable-replacement"></a>Template Variable replacement</h2>
+<p>For replacing the standard variables inside the dendron template files</p>
+<p><a href="https://wiki.dendron.so/notes/GelEQPZrSgr3CK9y10Nrg/#template-variables">https://wiki.dendron.so/notes/GelEQPZrSgr3CK9y10Nrg/#template-variables</a></p>
+<h2 id="vscode-snippet-tricks"><a aria-hidden="true" class="anchor-heading icon-link" href="#vscode-snippet-tricks"></a>VSCode Snippet Tricks</h2>
+<ol>
+<li>You can set a default value for a variable by using a colon (:).</li>
+</ol>
+<p>Example:</p>
+<ul>
+<li>The DUE: property in the below snippet defaults to the current current month, date, hour but can be edited fairly quick</li>
+</ul>
+<pre class="language-json"><code class="language-json"><span class="token property">"TODO"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"stodo"</span><span class="token punctuation">,</span>
+   <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"- [ ] ${1:Enter Task}"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **CAPTURED:**        ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}-08:00"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **DUE:**             ${CURRENT_YEAR}-${2:${CURRENT_MONTH}}-${3:${CURRENT_DATE}}T${4:${CURRENT_HOUR}}:${5:${CURRENT_MINUTE}}:00-08:00"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **PRIORITY:**        ${6|HIGH,MEDIUM,LOW|}"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **STATUS:**          ${7|TODO,WAITING,IN PROGRESS,DONE|}"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **NOTES:**           "</span><span class="token punctuation">,</span>
+    <span class="token string">"    - $0"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Capture new TODO"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol>
+<li>You can set dropdown values for a variable using a pipe (|).</li>
+</ol>
+<p>Example:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"Context Switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"scontext"</span><span class="token punctuation">,</span>
+   <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"- **TYPE:**          ${1|COMMS,SUPPORT,RESEARCH,MEETING,DEVELOPMENT,TESTING,VALIDATION,CI/CD,PROJECT MGMT,CONSULTING,DOCUMENTATION,ADMINISTRATION,TRAINING,BREAK|}"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **PROJECT:**       ${2|PROJ1,PROJ2|}"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **TOOLS:**         ${3|N/A,PYTHON,AZURE,POWER APPS,POWER AUTOMATE,POWER BI,SHAREPOINT,DENDRON|}"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **START:**         ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:{$CURRENT_MINUTE}:${CURRENT_SECOND}-08:00"</span><span class="token punctuation">,</span>
+    <span class="token string">"- **END:**           "</span><span class="token punctuation">,</span>
+    <span class="token string">"- **DURATION:**      "</span><span class="token punctuation">,</span>
+    <span class="token string">"- **NOTES:**         "</span><span class="token punctuation">,</span>
+    <span class="token string">"    - $0"</span><span class="token punctuation">,</span>
+    <span class="token string">"---"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Capture new context switch"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/f6wx02gwrpmg9job7qwdbjt">2022-01-10 (DevLog)</a></li>
+</ul>

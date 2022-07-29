@@ -1,0 +1,19 @@
+<h1 id="default-parameters"><a aria-hidden="true" class="anchor-heading icon-link" href="#default-parameters"></a>Default Parameters</h1>
+<h2 id="default-parameters-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#default-parameters-1"></a>Default Parameters</h2>
+<pre class="language-python"><code class="language-python"><span class="token comment"># In Python 3 you can use a bare "*" asterisk</span>
+<span class="token comment"># in function parameter lists to force the</span>
+<span class="token comment"># caller to use keyword arguments for certain</span>
+<span class="token comment"># parameters:</span>
+
+<span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'x'</span><span class="token punctuation">,</span> d<span class="token operator">=</span><span class="token string">'y'</span><span class="token punctuation">,</span> e<span class="token operator">=</span><span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">return</span> <span class="token string">'Hello'</span>
+
+<span class="token comment"># To pass the value for c, d, and e you</span>
+<span class="token comment"># will need to explicitly pass it as</span>
+<span class="token comment"># "key=value" named arguments:</span>
+f<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'p'</span><span class="token punctuation">,</span> <span class="token string">'q'</span><span class="token punctuation">,</span> <span class="token string">'v'</span><span class="token punctuation">)</span>
+<span class="token comment"># TypeError: "f() takes 2 positional arguments but 5 were given"</span>
+
+f<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'p'</span><span class="token punctuation">,</span> d<span class="token operator">=</span><span class="token string">'q'</span><span class="token punctuation">,</span>e<span class="token operator">=</span><span class="token string">'v'</span><span class="token punctuation">)</span>
+<span class="token string">'Hello'</span>
+</code></pre>

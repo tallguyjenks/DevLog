@@ -1,0 +1,13 @@
+<h1 id="named-tuples"><a aria-hidden="true" class="anchor-heading icon-link" href="#named-tuples"></a>Named Tuples</h1>
+<h2 id="named-tuples-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#named-tuples-1"></a>Named Tuples</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> collections <span class="token keyword">import</span> namedtuple
+
+Coordinate <span class="token operator">=</span> namedtuple<span class="token punctuation">(</span><span class="token string">"Coordinate"</span><span class="token punctuation">,</span> <span class="token string">"longitude latitude"</span><span class="token punctuation">)</span>
+location <span class="token operator">=</span> Coordinate<span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">37.5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"location:"</span><span class="token punctuation">,</span> location<span class="token punctuation">)</span> 
+<span class="token comment"># accessing attributes with dot notation</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>longitude<span class="token punctuation">,</span> location<span class="token punctuation">.</span>latitude<span class="token punctuation">)</span> 
+<span class="token comment"># Output: </span>
+<span class="token comment"># location: Coordinate(longitude=90, latitude=37.5) </span>
+<span class="token comment"># (90, 37.5) </span>
+</code></pre>

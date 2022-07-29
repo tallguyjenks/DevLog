@@ -1,0 +1,93 @@
+<h1 id="22"><a aria-hidden="true" class="anchor-heading icon-link" href="#22"></a>22</h1>
+<ul>
+<li>Mermaid on <a href="/DevLog/notes/7kfp3zptn2a7wkp5zeoa7wu">Devops</a> uses a different syntax for the diagram code fences. Instead of 3 backticks ```  they use colons <code>:::</code>
+<ul>
+<li>The diagrams will only render and preview on the DevOps wiki pages not the markdown pages or their previews.</li>
+<li>The diagrams will also no render in the preview pane of the pull request review section</li>
+<li>The only way of reviewing diagram code visually is the code <a href="/DevLog/notes/pa7nfwsmnfxlo0dgx7krkhn">Diff</a>, or by using a sample test wiki page to show preview renders of the diagrams</li>
+<li><code>mailto:</code> links have additional properties that can be set in <a href="/DevLog/notes/g8jz1e99nnpbzc83mxv264r">HTML</a> but also with Markdown
+<ul>
+<li><a href="https://css-tricks.com/snippets/html/mailto-links/">Resource Link</a></li>
+<li>in markdown, to generate an email addressed to someone, with defined subjects line, body, and other addressees you use these pieces of text as part of the links remembering to escape spaces with <code>$20</code>:
+<ul>
+<li><code>?subject=</code> the subject line of the email. <code>?subject=My%20Subject</code></li>
+<li><code>?cc=</code> add carbon copy addressees <code>?cc=jonny.test@gmail.com</code></li>
+<li><code>?bcc=</code> blind carbon copy someone <code>?bcc=jonny.test@gmail.com</code></li>
+<li><code>?body=</code> your body text remembering to escape spaces with <code>%20</code>
+<ul>
+<li><code>?body=My%20lovely%20email%20body%20message</code></li>
+</ul>
+</li>
+<li>If you only use 1 parameter after the email addressee then that parameter will start with a <code>?</code> like <code>?subject=</code> every parameter used after that will use a <code>&#x26;</code> such as <code>&#x26;cc=</code>, or <code>&#x26;bcc=</code>, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="all-together"><a aria-hidden="true" class="anchor-heading icon-link" href="#all-together"></a>All together:</h2>
+<pre class="language-markdown"><code class="language-markdown"><span class="token url">[<span class="token content">Send formatted email</span>](<span class="token url">mailto:bryan@bryanjenks.dev?cc=bryan@bryanjenks.dev&#x26;bcc=bryan@bryanjenks.dev&#x26;subject=My%20Subject%20Line&#x26;body=My%20lovely%20email%20body%20message</span>)</span>
+</code></pre>
+<p><a href="mailto:bryan@bryanjenks.dev?cc=bryan@bryanjenks.dev&#x26;bcc=bryan@bryanjenks.dev&#x26;subject=My%20Subject%20Line&#x26;body=My%20lovely%20email%20body%20message">Send formatted email</a></p>
+<ul>
+<li>The Git Stash command has some awesome options</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> stash push 
+</code></pre>
+<ul>
+<li>like an array method this will create a <em>Box</em> and put all your changes inside of it and shove that <em>box</em> in the corner of the room and give you a clean working tree.</li>
+<li>The <em>box</em> is now portable and you can switch to another branch and open the <em>box</em> there and take out all of the changes.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> stash pop
+</code></pre>
+<ul>
+<li>This opens the <em>box</em> and applies all those stashed changes to the current working tree.</li>
+<li>This is very useful for the situations where maybe you made a bunch of changes and you forgot to make a new branch and you're still on <code>master</code>/<code>main</code> and you want to move all those changes to the actual feature branch.</li>
+<li>markdown You can link to other markdown page headings from other documents</li>
+</ul>
+<pre class="language-markdown"><code class="language-markdown"><span class="token url">[<span class="token content">link</span>](<span class="token url">file-name.md#heading-with-dashes-for-spaces</span>)</span>
+</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> worktree <span class="token function">add</span> master
+</code></pre>
+<ul>
+<li>
+<p>Create a bare repo and start making new worktrees</p>
+<ul>
+<li>This means that a copy of the repo files is made for each worktree at the source commit that the bare repo was made from</li>
+<li>Worktrees make it easier to open multiple repo branches at once under a unified workspace for easy switching of work between multiple features</li>
+<li>Doesn't lend itself to easy updating.
+<ul>
+<li>The bare repo doesn't <code>git pull</code> itself but the worktrees after creation can use <code>git pull</code> but this is not ideal. The bare repo is basically frozen at a single commit for all new worktrees made.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>HL7</p>
+<ul>
+<li>HL7 terms to better understand what is HL7. There are four primary HL7 standard message types:</li>
+<li>Patient Administration (<a href="http://www.corepointhealth.com/resource-center/hl7-resources/hl7-adt">ADT</a>)</li>
+<li>Orders (<a href="http://www.corepointhealth.com/resource-center/hl7-resources/hl7-orm-message">ORM</a>'s)</li>
+<li>Results (<a href="http://www.corepointhealth.com/resource-center/hl7-resources/hl7-oru-message">ORU</a>'s)</li>
+<li>Charges (<a href="http://www.corepointhealth.com/resource-center/hl7-resources/hl7-dft-detail-financial-transaction">DFT</a>'s)</li>
+<li>Most commonly used HL7 message types include:
+<ul>
+<li><a href="https://corepointhealth.com/resource-center/hl7-resources/hl7-acknowledgement-ack">ACK</a> – General acknowledgement</li>
+<li><a href="https://corepointhealth.com/resource-center/hl7-resources/hl7-adt">ADT</a> – Admit, Discharge, Tranfser</li>
+<li>BAR – Add/change billing account</li>
+<li><a href="https://corepointhealth.com/resource-center/hl7-resources/hl7-dft-detail-financial-transaction">DFT</a> – Detailed financial transaction</li>
+<li><a href="https://corepointhealth.com/resource-center/hl7-resources/hl7-mdm-message">MDM</a> – Medical document management</li>
+<li>MFN – Master files notification</li>
+<li><a href="https://corepointhealth.com/resource-center/hl7-resources/hl7-orm-message">ORM</a> – Order (Pharmacy/treatment)</li>
+<li><a href="https://corepointhealth.com/resource-center/hl7-resources/hl7-oru-message">ORU</a> – Observation result (unsolicited)</li>
+<li>QRY – Query, original mode</li>
+<li>RAS – Pharmacy/treatment administration</li>
+<li><a href="https://corepointhealth.com/resource-center/hl7-resources/hl7-rde-message-pharmacy">RDE</a> – Pharmacy/treatment encoded order</li>
+<li>RGV – Pharmacy/treatment give</li>
+<li><a href="https://corepointhealth.com/resource-center/hl7-resources/hl7-siu-message">SIU</a> – Scheduling information unsolicited</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>

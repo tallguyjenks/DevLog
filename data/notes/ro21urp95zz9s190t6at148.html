@@ -1,0 +1,24 @@
+<h1 id="select"><a aria-hidden="true" class="anchor-heading icon-link" href="#select"></a>Select</h1>
+<h3 id="select-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#select-1"></a>Select</h3>
+<pre class="language-r"><code class="language-r">select<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> year<span class="token punctuation">,</span> month<span class="token punctuation">,</span> day<span class="token punctuation">)</span> <span class="token comment">#-------------------------# Selecting specific variables from the data set (variables = columns)</span>
+select<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> year<span class="token operator">:</span>day<span class="token punctuation">)</span> <span class="token comment">#---------------------------------# Selecting specific variables using colon (this to this)</span>
+select<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token punctuation">(</span>year<span class="token operator">:</span>day<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#------------------------------# selects all variables EXCEPT those in the parens with the minus sign operating on it</span>
+<span class="token comment"># functions to use with select</span>
+<span class="token comment"># starts_with</span>
+<span class="token comment"># ends_with</span>
+<span class="token comment"># contains</span>
+<span class="token comment"># matches</span>
+<span class="token comment"># num_range</span>
+select<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> origin<span class="token punctuation">,</span> dest<span class="token punctuation">,</span> everything<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#---------------# Puts selected columns at front of data set while keeping all variable in data set</span>
+select<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> tailnum<span class="token punctuation">,</span> tailnum<span class="token punctuation">)</span> <span class="token comment">#-------------------------# If same variable named twice, it is displayed only once</span>
+vars <span class="token operator">&#x3C;-</span> c<span class="token punctuation">(</span><span class="token string">"year"</span><span class="token punctuation">,</span><span class="token string">"month"</span><span class="token punctuation">,</span><span class="token string">"day"</span><span class="token punctuation">,</span><span class="token string">"dep_delay"</span><span class="token punctuation">,</span><span class="token string">"arr_delay"</span><span class="token punctuation">)</span> <span class="token comment">#---# Give character vector the variable names</span>
+select<span class="token punctuation">(</span>flights<span class="token punctuation">,</span>one_of<span class="token punctuation">(</span>vars<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#------------------------------# Use one_of function with character vector variable to grab variables from tibble that match</span>
+select<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> contains<span class="token punctuation">(</span><span class="token string">"TIME"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#-------------------------# Selects all tibble variables that contain substring "Time"</span>
+
+flights_small <span class="token operator">&#x3C;-</span> select<span class="token punctuation">(</span>flights<span class="token punctuation">,</span> <span class="token comment">#--------------------------# Selecting desired variables for a lean-er data set through various methods</span>
+			   year<span class="token operator">:</span>day<span class="token punctuation">,</span>
+			   ends_with<span class="token punctuation">(</span><span class="token string">"delay"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			   distance<span class="token punctuation">,</span>
+			   air_time
+			   <span class="token punctuation">)</span>
+</code></pre>

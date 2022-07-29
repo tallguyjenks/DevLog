@@ -1,0 +1,17 @@
+<h1 id="functions"><a aria-hidden="true" class="anchor-heading icon-link" href="#functions"></a>Functions</h1>
+<ul>
+<li>Using functions
+<ul>
+<li>pretty print function:</li>
+</ul>
+</li>
+</ul>
+<pre class="language-lisp"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">pprint</span> <span class="token string">"hello world"</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>Create Functions</li>
+</ul>
+<pre class="language-lisp"><code class="language-lisp"><span class="token punctuation">(</span><span class="token defun"><span class="token keyword">defun</span> <span class="token function">myPrinter</span> <span class="token punctuation">(</span><span class="token arguments"><span class="token argument variable">s</span></span><span class="token punctuation">)</span></span> <span class="token punctuation">(</span><span class="token car">pprint</span> s<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">myPrinter</span> <span class="token string">"Hello World"</span><span class="token punctuation">)</span>
+<span class="token comment">;; Hello World</span>
+</code></pre>

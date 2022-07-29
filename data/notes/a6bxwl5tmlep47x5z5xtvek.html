@@ -1,0 +1,20 @@
+<h1 id="cache"><a aria-hidden="true" class="anchor-heading icon-link" href="#cache"></a>Cache</h1>
+<h2 id="cache-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#cache-1"></a>Cache</h2>
+<ul>
+<li><a href="https://youtu.be/DnKxKFXB4NQ">https://youtu.be/DnKxKFXB4NQ</a>
+<ul>
+<li><a href="/DevLog/notes/yv3430dnw96bg4ig5yvin3w">Python Functools Lru_cache</a></li>
+</ul>
+</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> timeit
+<span class="token keyword">from</span> functools <span class="token keyword">import</span> cache
+<span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>setrecursionlimit<span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@cache</span>
+<span class="token keyword">def</span> <span class="token function">factorial</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> n <span class="token operator">*</span> factorial<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">if</span> n <span class="token keyword">else</span> <span class="token number">1</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>timeit<span class="token punctuation">.</span>timeit<span class="token punctuation">(</span><span class="token string">"factorial(100)"</span><span class="token punctuation">,</span> setup<span class="token operator">=</span><span class="token string">"from __main__ import factorial"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>

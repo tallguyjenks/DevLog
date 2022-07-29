@@ -1,0 +1,31 @@
+<h1 id="first-value"><a aria-hidden="true" class="anchor-heading icon-link" href="#first-value"></a>First Value</h1>
+<p>From</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">WITH</span>
+orders <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+    <span class="token keyword">SELECT</span> 
+        name<span class="token punctuation">,</span> 
+        model<span class="token punctuation">,</span>
+        <span class="token keyword">year</span><span class="token punctuation">,</span> 
+        date_at_lot
+        row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> model<span class="token punctuation">,</span> <span class="token keyword">year</span> <span class="token keyword">order</span> <span class="token keyword">by</span> date_at_lot <span class="token keyword">asc</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">order</span>
+    <span class="token keyword">FROM</span> cars 
+<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span>
+    name <span class="token keyword">AS</span> oldest_car_name<span class="token punctuation">,</span>
+    model<span class="token punctuation">,</span> 
+    <span class="token keyword">year</span>
+<span class="token keyword">FROM</span> orders
+<span class="token keyword">where</span> <span class="token keyword">order</span> <span class="token operator">=</span> <span class="token number">1</span> 
+</code></pre>
+<p>To</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> 
+    FIRST_VALUE<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token keyword">OVER</span><span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> model<span class="token punctuation">,</span> <span class="token keyword">year</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> date_at_lot <span class="token keyword">ASC</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> oldest_car_name
+    model<span class="token punctuation">,</span>
+    <span class="token keyword">year</span>
+<span class="token keyword">FROM</span> cars
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/t1dgr2wnxhhf46kca8uhhpm">Last Value (DevLog)</a></li>
+</ul>

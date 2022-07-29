@@ -1,0 +1,17 @@
+<h1 id="if-else-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#if-else-statements"></a>If Else Statements</h1>
+<p>Conditional operations. Useful with control <a href="/DevLog/notes/k2t6n0xghe8hn5kxc6plejy">T-SQL Variables</a>:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@retirement</span> <span class="token keyword">INT</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment">-- Using a binary flag</span>
+
+<span class="token keyword">if</span> <span class="token variable">@retirement</span> <span class="token operator">=</span> <span class="token number">1</span>
+	<span class="token keyword">BEGIN</span>
+		<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+		<span class="token keyword">FROM</span> My_Table
+		<span class="token keyword">WHERE</span> Retirement <span class="token operator">=</span> <span class="token number">1</span>
+	<span class="token keyword">END</span>
+<span class="token keyword">ELSE</span>
+	<span class="token keyword">BEGIN</span>
+		<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+		<span class="token keyword">FROM</span> My_Table
+		<span class="token keyword">WHERE</span> Retirement <span class="token operator">=</span> <span class="token number">0</span>
+	<span class="token keyword">END</span>
+</code></pre>

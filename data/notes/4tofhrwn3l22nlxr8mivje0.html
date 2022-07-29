@@ -1,0 +1,22 @@
+<h1 id="data-types--structs"><a aria-hidden="true" class="anchor-heading icon-link" href="#data-types--structs"></a>Data Types &#x26; Structs</h1>
+<ul>
+<li>Type checking</li>
+</ul>
+<pre class="language-lisp"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">typep</span> foo <span class="token quoted-symbol variable symbol">'string</span><span class="token punctuation">)</span>
+<span class="token comment">;; NIL</span>
+<span class="token punctuation">(</span><span class="token car">typep</span> foo <span class="token quoted-symbol variable symbol">'integer</span><span class="token punctuation">)</span>
+<span class="token comment">;; T</span>
+</code></pre>
+<ul>
+<li>The <code>'</code> is just short hand for: <code>(typep foo (quote string))</code>
+<ul>
+<li>the <code>quote</code> escapes the data to be literal text like:</li>
+</ul>
+</li>
+</ul>
+<pre class="language-lisp"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">quote</span> <span class="token punctuation">(</span><span class="token car">+</span> <span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">;; (+ 1 2)</span>
+
+<span class="token punctuation">'(</span><span class="token car">+</span> <span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment">;; (+ 1 2)</span>
+</code></pre>

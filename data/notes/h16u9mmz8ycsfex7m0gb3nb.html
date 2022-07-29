@@ -1,0 +1,13 @@
+<h1 id="strcopy"><a aria-hidden="true" class="anchor-heading icon-link" href="#strcopy"></a>Strcopy</h1>
+<h2 id="strcpy"><a aria-hidden="true" class="anchor-heading icon-link" href="#strcpy"></a>strcpy()</h2>
+<p><code>strcpy(destStr, sourceStr)</code></p>
+<blockquote>
+<p>Copies sourceStr (up to and including null character) to destStr.	</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">strcpy</span><span class="token punctuation">(</span>targetText<span class="token punctuation">,</span> userText<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Copies "UNICEF" + null char </span>
+                              <span class="token comment">// to targetText </span>
+<span class="token function">strcpy</span><span class="token punctuation">(</span>targetText<span class="token punctuation">,</span> orgName<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Error: "United Nations" </span>
+                              <span class="token comment">// has > 10 chars</span>
+targetText <span class="token operator">=</span> orgName<span class="token punctuation">;</span>         <span class="token comment">// Error: Strings can't be </span>
+                              <span class="token comment">// copied this way</span>
+</code></pre>

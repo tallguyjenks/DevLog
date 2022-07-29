@@ -1,0 +1,43 @@
+<h1 id="docker-compose"><a aria-hidden="true" class="anchor-heading icon-link" href="#docker-compose"></a>Docker Compose</h1>
+<h2 id="configuration-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#configuration-file"></a>Configuration File</h2>
+<p><code>docker-compose.yml</code></p>
+<pre class="language-yml"><code class="language-yml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">"3"</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">api</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> tallguyjneks/&#x3C;hub<span class="token punctuation">-</span>repo<span class="token punctuation">-</span>name<span class="token punctuation">></span><span class="token punctuation">:</span>&#x3C;optional<span class="token punctuation">-</span>tag<span class="token punctuation">-</span>name<span class="token punctuation">></span> <span class="token comment"># instead of build if this was a production env</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> . <span class="token comment"># where is the thing im building</span>
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span> <span class="token comment"># builds dependencies before main containers</span>
+      <span class="token punctuation">-</span> postgres
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 8000<span class="token punctuation">:</span><span class="token number">8000</span> <span class="token comment"># &#x3C;port on localhost>:&#x3C;port on container</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./app<span class="token punctuation">:</span>/usr/src/app<span class="token punctuation">:</span>ro <span class="token comment"># makes it so docker can be aware of changes between a linked directory and `ro` means read only so docker cant change the files</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> uvicorn app.main<span class="token punctuation">:</span>app <span class="token punctuation">-</span><span class="token punctuation">-</span>host 0.0.0.0 <span class="token punctuation">-</span><span class="token punctuation">-</span>port 8000 <span class="token punctuation">-</span><span class="token punctuation">-</span>reload <span class="token comment"># overrides default command for the image when ran</span>
+    <span class="token key atrule">env_file</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./.env
+    <span class="token comment"># ^^^ OR vvv</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> DATABASE_HOSTNAME=postgres <span class="token comment"># docker compose uses its own network dns so you can specify a name of another container instead of the ip address</span>
+      <span class="token punctuation">-</span> DATABASE_PORT=5432 <span class="token comment"># you can either list them out or point docker to a .env file</span>
+  <span class="token key atrule">postgres</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> POSTGRES_PASSWORD=password123
+      <span class="token punctuation">-</span> POSTGRES_DB=fastapi
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span> <span class="token comment"># data is transient in the image so you need to have a place to have permanently stored data</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">postgre-db</span><span class="token punctuation">:</span> /var/lib/postgresql/data
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">postgres-db</span><span class="token punctuation">:</span>
+</code></pre>
+<h2 id="tips"><a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a>Tips</h2>
+<ul>
+<li>having 2 files for a <strong>dev</strong> and a <strong>prod</strong> environment</li>
+<li>no using <code>--reload</code> in production code because the code shouldn't be changing</li>
+<li>port <a href="/DevLog/notes/2n91fci3wnkhza3apjy3wpl">80</a> on local host so that you can view in web browser</li>
+<li>on linux the <code>environment:</code> values can use linux variable accessors <code>${DATABASE_HOSTNAME}</code></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/aay3qx1ww5cs6hi0imb0m4k">Cmd</a></li>
+</ol>

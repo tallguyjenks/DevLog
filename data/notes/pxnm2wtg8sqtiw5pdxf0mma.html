@@ -1,0 +1,110 @@
+<h1 id="examples"><a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a>Examples</h1>
+<h2 id="examples-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#examples-1"></a>Examples</h2>
+<hr>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Libs</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># Instead of using CSV module this can make a dataframe out of your csv file</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># kind of like the skimr function in R to describe the dataset with common statistics</span>
+df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Preview of our data</span>
+df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Preview of our data</span>
+df<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Get the shape of the data frame (Rows, Columns)</span>
+<span class="token comment"># Attribute not a method so no parens needed</span>
+df<span class="token punctuation">.</span>shape
+
+<span class="token comment"># Get info about the data frame fields</span>
+<span class="token comment"># This is a method so parens are needed</span>
+<span class="token comment"># Object types are usually strings</span>
+df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># makes is so the printed dataframe above with the `df` call cell displays 85 total columns</span>
+pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.max_columns'</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">)</span>
+<span class="token comment"># makes is so the printed dataframe above with the `df` call cell displays 85 total rows</span>
+pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Load csv schema</span>
+schema_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data_schema.csv'</span><span class="token punctuation">)</span>
+
+schema_df
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token comment">#!/usr/bin/env python</span>
+<span class="token comment"># coding: utf-8</span>
+
+<span class="token comment"># # Pandas tutorial with Stackoverflow data</span>
+<span class="token comment"># </span>
+<span class="token comment"># > This tutorial is using data from the stack overflow developer survey that can be found at the following link:</span>
+<span class="token comment"># [Developer Survey List](https://insights.stackoverflow.com/survey)</span>
+<span class="token comment"># Libs</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token comment"># Instead of using CSV module this can make a dataframe out of your csv file</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>
+<span class="token comment"># Preview of our data</span>
+df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment"># Preview of our data</span>
+df<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment"># Get the shape of the data frame (Rows, Columns)</span>
+<span class="token comment"># Attribute not a method so no parens needed</span>
+df<span class="token punctuation">.</span>shape
+<span class="token comment"># Get info about the data frame fields</span>
+<span class="token comment"># This is a method so parens are needed</span>
+<span class="token comment"># Object types are usually strings</span>
+df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># makes is so the printed dataframe above with the `df` call cell displays 85 total columns</span>
+pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.max_columns'</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">)</span>
+<span class="token comment"># makes is so the printed dataframe above with the `df` call cell displays 85 total rows</span>
+pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">,</span><span class="token number">85</span><span class="token punctuation">)</span>
+<span class="token comment"># Load csv schema</span>
+schema_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data_schema.csv'</span><span class="token punctuation">)</span>
+schema_df
+df<span class="token punctuation">[</span><span class="token string">'Hobbyist'</span><span class="token punctuation">]</span>
+people <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">"first"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Corey"</span><span class="token punctuation">,</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span> <span class="token string">'John'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+  <span class="token string">"last"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Schafer"</span><span class="token punctuation">,</span> <span class="token string">'Doe'</span><span class="token punctuation">,</span> <span class="token string">'Doe'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+  <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"CoreyMSchafer@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">'JaneDoe@email.com'</span><span class="token punctuation">,</span> <span class="token string">'JohnDoe@email.com'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+people<span class="token punctuation">[</span><span class="token string">'email'</span><span class="token punctuation">]</span>
+peeps <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>people<span class="token punctuation">)</span>
+peeps
+peeps<span class="token punctuation">[</span><span class="token string">'email'</span><span class="token punctuation">]</span>
+peeps<span class="token punctuation">.</span>email
+peeps<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'last'</span><span class="token punctuation">,</span><span class="token string">'email'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+peeps<span class="token punctuation">.</span>columns
+<span class="token comment"># loc = location</span>
+<span class="token comment"># iloc = integer location</span>
+peeps<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment"># return the first and second record and only the 3rd field of those records</span>
+df<span class="token punctuation">[</span><span class="token string">'email'</span><span class="token punctuation">]</span>
+df<span class="token punctuation">.</span>Hobbyist<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># # Video #3</span>
+<span class="token comment"># ## Python Pandas Tutorial (Part 3): Indexes - How to Set, Reset, and Use Indexes</span>
+<span class="token comment"># </span>
+<span class="token comment">#[video3](https://youtu.be/W9XjRYFkkyw?list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS)</span>
+<span class="token comment"># </span>
+people <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">"first"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Corey"</span><span class="token punctuation">,</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span> <span class="token string">'John'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+  <span class="token string">"last"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Schafer"</span><span class="token punctuation">,</span> <span class="token string">'Doe'</span><span class="token punctuation">,</span> <span class="token string">'Doe'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+  <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"CoreyMSchafer@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">'JaneDoe@email.com'</span><span class="token punctuation">,</span> <span class="token string">'JohnDoe@email.com'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>people<span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>set_index<span class="token punctuation">(</span><span class="token string">'email'</span><span class="token punctuation">)</span>
+df
+df<span class="token punctuation">.</span>set_index<span class="token punctuation">(</span><span class="token string">'email'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment"># make it so changes overwrite the df</span>
+df
+df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">'CoreyMSchafer@gmail.com'</span><span class="token punctuation">]</span>
+df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+get_ipython<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>run_line_magic<span class="token punctuation">(</span><span class="token string">'lsmagic'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+get_ipython<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>run_cell_magic<span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'&#x3C;b>hello there&#x3C;/b>'</span><span class="token punctuation">)</span>
+get_ipython<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>run_cell_magic<span class="token punctuation">(</span><span class="token string">'bash'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'ls -la'</span><span class="token punctuation">)</span>
+get_ipython<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>run_line_magic<span class="token punctuation">(</span><span class="token string">'ls'</span><span class="token punctuation">,</span> <span class="token string">'-la'</span><span class="token punctuation">)</span>
+get_ipython<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>run_line_magic<span class="token punctuation">(</span><span class="token string">'ls'</span><span class="token punctuation">,</span> <span class="token string">'-la'</span><span class="token punctuation">)</span>
+get_ipython<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>run_line_magic<span class="token punctuation">(</span><span class="token string">'ls'</span><span class="token punctuation">,</span> <span class="token string">'-la'</span><span class="token punctuation">)</span>
+
+</code></pre>
+<hr>

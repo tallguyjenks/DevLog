@@ -1,0 +1,89 @@
+<h1 id="logging"><a aria-hidden="true" class="anchor-heading icon-link" href="#logging"></a>Logging</h1>
+<ul>
+<li><a href="https://towardsdatascience.com/the-reusable-python-logging-template-for-all-your-data-science-apps-551697c8540">article on logging for a python app</a></li>
+<li><a href="https://docs.python.org/3/library/logging.html#">Official Docs</a></li>
+<li>The level of the logger:</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Level</th><th>Numberic Value</th></tr></thead><tbody><tr><td>NOTSET</td><td>0</td></tr><tr><td>DEBUG</td><td>10</td></tr><tr><td>INFO</td><td>20</td></tr><tr><td>WARNING</td><td>30</td></tr><tr><td>ERROR</td><td>40</td></tr><tr><td>CRITICAL</td><td>50</td></tr></tbody></table>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> logging
+
+<span class="token builtin">dir</span><span class="token punctuation">(</span>logging<span class="token punctuation">)</span>
+<span class="token comment"># items in all caps are constants</span>
+<span class="token comment"># capitalized items are classes</span>
+<span class="token comment"># lowercase are methods</span>
+
+<span class="token comment"># create an configure logger</span>
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename <span class="token operator">=</span> <span class="token string">"~/py.log"</span><span class="token punctuation">)</span>
+logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Test the logger</span>
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"our first message."</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>logger<span class="token punctuation">.</span>level<span class="token punctuation">)</span> <span class="token comment"># Defaulted 30 so info and below is not shown</span>
+</code></pre>
+<ul>
+<li>From <a href="https://calmcode.io/logging/rich.html">Calm Code Rich Logging</a> only for the stream handler not the file handler</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> logging
+
+<span class="token keyword">from</span> rich<span class="token punctuation">.</span>logging <span class="token keyword">import</span> RichHandler
+
+logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token comment"># the handler determines where the logs go: stdout/file</span>
+shell_handler <span class="token operator">=</span> RichHandler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+file_handler <span class="token operator">=</span> logging<span class="token punctuation">.</span>FileHandler<span class="token punctuation">(</span><span class="token string">"debug.log"</span><span class="token punctuation">)</span>
+
+logger<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+shell_handler<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+file_handler<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+
+<span class="token comment"># the formatter determines what our logs will look like</span>
+fmt_shell <span class="token operator">=</span> <span class="token string">'%(message)s'</span>
+fmt_file <span class="token operator">=</span> <span class="token string">'%(levelname)s %(asctime)s [%(filename)s:%(funcName)s:%(lineno)d] %(message)s'</span>
+
+shell_formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span>fmt_shell<span class="token punctuation">)</span>
+file_formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span>fmt_file<span class="token punctuation">)</span>
+
+<span class="token comment"># here we hook everything together</span>
+shell_handler<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>shell_formatter<span class="token punctuation">)</span>
+file_handler<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>file_formatter<span class="token punctuation">)</span>
+
+logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>shell_handler<span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>file_handler<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>To have aesthetic logging output easily:</li>
+</ul>

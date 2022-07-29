@@ -1,0 +1,24 @@
+<h1 id="while"><a aria-hidden="true" class="anchor-heading icon-link" href="#while"></a>While</h1>
+<h2 id="while-loops"><a aria-hidden="true" class="anchor-heading icon-link" href="#while-loops"></a>While Loops</h2>
+<h3 id="eval-first-while-loop"><a aria-hidden="true" class="anchor-heading icon-link" href="#eval-first-while-loop"></a>Eval First While Loop</h3>
+<p>The condition is <strong>evaluated first</strong> before running any body code of the loop.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">while</span> <span class="token punctuation">(</span>expression<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// &#x3C;-- Loop expression</span>
+
+    <span class="token comment">// Loop body: Sub-statements that execute if the </span>
+    <span class="token comment">// expression evaluats to true </span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Statements that execute after the expression evaluates to false</span>
+<span class="token comment">// Or loop concludes</span>
+</code></pre>
+<h3 id="execute-then-eval-do-while-loop"><a aria-hidden="true" class="anchor-heading icon-link" href="#execute-then-eval-do-while-loop"></a>Execute Then Eval Do-While Loop</h3>
+<p>This condition will always <strong>execute the body</strong> code once before testing the expression for <code>true</code>. You can use this if you want the code executed at least once before the loop has a chance to break itself on its tested condition.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">do</span> <span class="token punctuation">{</span>
+   <span class="token comment">// Loop body</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>loopExpression<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/5xjtzvkudbn8j5pl6q0fjb1">For (DevLog)</a></li>
+</ul>

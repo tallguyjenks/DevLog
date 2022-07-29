@@ -1,0 +1,17 @@
+<h1 id="the-best-way-to-request-user-input-in-python"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-best-way-to-request-user-input-in-python"></a>The Best Way to Request User Input in Python</h1>
+<h2 id="installation"><a aria-hidden="true" class="anchor-heading icon-link" href="#installation"></a>Installation</h2>
+<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> pyinputplus
+</code></pre>
+<h2 id="usage"><a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a>Usage</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pyinputplus <span class="token keyword">as</span> pyinput
+
+prompt <span class="token operator">=</span> <span class="token string">'How old are you:'</span>
+age <span class="token operator">=</span> pyinput<span class="token punctuation">.</span>inputInt<span class="token punctuation">(</span>prompt<span class="token operator">=</span>prompt<span class="token punctuation">,</span> greaterThan<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="example-output"><a aria-hidden="true" class="anchor-heading icon-link" href="#example-output"></a>Example Output</h2>
+<pre class="language-markdown"><code class="language-markdown">How old are you:-1
+Number must be greater than 0.
+How old are you: 11.5
+'11.5' is not an integer.
+How old are you: 14
+</code></pre>

@@ -1,0 +1,172 @@
+<h1 id="input"><a aria-hidden="true" class="anchor-heading icon-link" href="#input"></a>Input</h1>
+<h3 id="input-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#input-1"></a>Input</h3>
+<blockquote>
+<p>Sometimes a program should get input from a file rather than from a user typing on a keyboard. To achieve this, a programmer can create a new input stream that comes from a file, rather than the predefined input stream <code>cin</code> that comes from the standard input (keyboard). That new input stream can then be used just like <code>cin</code>, as the following program illustrates. Assume a text file exists named <em>myfile.txt</em> with the contents shown (created for example using Notepad on a Windows computer or using TextEdit on a Mac computer).</p>
+</blockquote>
+<pre><code>myfile.txt with two integers:
+5
+10
+</code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;fstream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ifstream inFS<span class="token punctuation">;</span>     <span class="token comment">// Input file stream</span>
+   <span class="token keyword">int</span> fileNum1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// Data value from file</span>
+   <span class="token keyword">int</span> fileNum2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// Data value from file</span>
+   
+   <span class="token comment">// Try to open file</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Opening file myfile.txt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   inFS<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"myfile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>inFS<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Could not open file myfile.txt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 1 indicates error</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token comment">// Can now use inFS stream like cin stream</span>
+   <span class="token comment">// myfile.txt should contain two integers, else problems</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Reading two integers."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   inFS <span class="token operator">>></span> fileNum1<span class="token punctuation">;</span>
+   inFS <span class="token operator">>></span> fileNum2<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Closing file myfile.txt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   inFS<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Done with file, so close it</span>
+   
+   <span class="token comment">// Ouput values read from file</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num1: "</span> <span class="token operator">&#x3C;&#x3C;</span> fileNum1 <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num2: "</span> <span class="token operator">&#x3C;&#x3C;</span> fileNum2 <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num1 + num2: "</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token punctuation">(</span>fileNum1 <span class="token operator">+</span> fileNum2<span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><strong>Five</strong> lines are needed for the new input stream, highlighted above.
+.</p>
+<ul>
+<li>The <code>#include &#x3C;fstream></code> (for "<em>file stream</em>") enables use of the file stream class.</li>
+<li>A new stream variable has been declared: <code>ifstream inFS;</code>. <code>ifstream</code> is short for <em>input file stream</em>, and is derived from <code>istream</code>.</li>
+<li>The line <code>inFS.open("myfile.txt");</code> opens the file for reading and associates the file with the <code>inFS</code> stream. Because of the high likelihood that the open fails, usually because the file does not exist or is in use by another program, the program checks whether the open was successful using <code>if (!inFS.is_open())</code>.</li>
+<li>The successfully opened input stream can then be used just like the <code>cin</code> stream, e.g., using <code>inFS >> num1;</code> to read an integer into <code>num1</code>.</li>
+<li>Finally, when done using the stream, the program closes the file using <code>inFS.close()</code>.</li>
+<li>A common error is to type <code>cin >> num1;</code> when actually intending to get data from a file as in <code>inFS >> num1</code>. Another common error is a mismatch between the variable data type and the file data, e.g., if the data type is int but the file data is "Hello".</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>The <code>inFS.open(str)</code> function has a string parameter str, which can be a C++ string or a null-terminated C string. A program often uses a user-entered string as the filename, such as using <code>cin >> filename;</code>.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/* Given
+
+datafile.txt with two integers:
+72
+68
+
+*/</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;fstream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ifstream inFS<span class="token punctuation">;</span>        <span class="token comment">// Input file stream</span>
+   <span class="token keyword">int</span> fileNum1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>     <span class="token comment">// File data</span>
+   <span class="token keyword">int</span> fileNum2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>     <span class="token comment">// File data</span>
+   string filename <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment">// Input filename</span>
+   
+   <span class="token comment">// Prompt user for filename</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter filename: "</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cin <span class="token operator">>></span> filename<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Try to open file</span>
+   inFS<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>inFS<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Could not open file "</span> <span class="token operator">&#x3C;&#x3C;</span> filename <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token comment">// Get numbers. If too few, may encounter problems</span>
+   inFS <span class="token operator">>></span> fileNum1<span class="token punctuation">;</span>
+   inFS <span class="token operator">>></span> fileNum2<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Done with file, close it</span>
+   inFS<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token comment">// Ouput values read from file</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num1: "</span> <span class="token operator">&#x3C;&#x3C;</span> fileNum1 <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num2: "</span> <span class="token operator">&#x3C;&#x3C;</span> fileNum2 <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num1 + num2: "</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token punctuation">(</span>fileNum1 <span class="token operator">+</span> fileNum2<span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+	Enter filename: 
+	datafile.txt
+	num1: 72
+	num2: 68
+	num1 + num2: 140
+*/</span>
+</code></pre>
+<blockquote>
+<p>A program can read varying amounts of data in a file by using a loop that reads until the end of the file has been reached, as follows.
+.
+The <code>eof()</code> function returns true if the previous stream operation reached the end of the file. Errors may be encountered while attempting to read from a file, including end-of-file, corrupt data, etc. So, a program should check that each read was successful before using the variable to which the data read was assigned. The <code>good()</code> function returns true if the previous stream operation had no problems. Ex:  <code>if( inFS.good() ) {...} </code>checks that the previous read operation was successful.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/* Given:
+	myfile.txt with variable number of integers:
+	111
+	222
+	333
+	444
+	555
+*/</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;fstream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ifstream inFS<span class="token punctuation">;</span>   <span class="token comment">// Input file stream</span>
+   <span class="token keyword">int</span> fileNum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// File data</span>
+   
+   <span class="token comment">// Open file</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Opening file myfile.txt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   inFS<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"myfile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>inFS<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Could not open file myfile.txt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>      
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token comment">// Print read numbers to output</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Reading and printing numbers."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>inFS<span class="token punctuation">.</span><span class="token function">eof</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      inFS <span class="token operator">>></span> fileNum<span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span> inFS<span class="token punctuation">.</span><span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num: "</span> <span class="token operator">&#x3C;&#x3C;</span> fileNum <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Closing file myfile.txt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Done with file, so close it</span>
+   inFS<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+	Opening file myfile.txt.
+	Reading and printing numbers.
+	num: 111
+	num: 222
+	num: 333
+	num: 444
+	num: 555
+	Closing file myfile.txt.
+*/</span>
+</code></pre>

@@ -1,0 +1,32 @@
+<h1 id="via-a-parameter"><a aria-hidden="true" class="anchor-heading icon-link" href="#via-a-parameter"></a>Via a Parameter</h1>
+<h3 id="return-via-parameter"><a aria-hidden="true" class="anchor-heading icon-link" href="#return-via-parameter"></a>Return via parameter</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>  
+GO  
+<span class="token keyword">IF</span> OBJECT_ID<span class="token punctuation">(</span><span class="token string">'Sales.uspGetEmployeeSalesYTD'</span><span class="token punctuation">,</span> <span class="token string">'P'</span><span class="token punctuation">)</span> <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  
+    <span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span> Sales<span class="token punctuation">.</span>uspGetEmployeeSalesYTD<span class="token punctuation">;</span>  
+GO  
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> Sales<span class="token punctuation">.</span>uspGetEmployeeSalesYTD  
+<span class="token variable">@SalesPerson</span> nvarchar<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  
+<span class="token variable">@SalesYTD</span> money OUTPUT  
+<span class="token keyword">AS</span>    
+  
+    <span class="token keyword">SET</span> NOCOUNT <span class="token keyword">ON</span><span class="token punctuation">;</span>  
+    <span class="token keyword">SELECT</span> <span class="token variable">@SalesYTD</span> <span class="token operator">=</span> SalesYTD  
+    <span class="token keyword">FROM</span> Sales<span class="token punctuation">.</span>SalesPerson <span class="token keyword">AS</span> sp  
+    <span class="token keyword">JOIN</span> HumanResources<span class="token punctuation">.</span>vEmployee <span class="token keyword">AS</span> e <span class="token keyword">ON</span> e<span class="token punctuation">.</span>BusinessEntityID <span class="token operator">=</span> sp<span class="token punctuation">.</span>BusinessEntityID  
+    <span class="token keyword">WHERE</span> LastName <span class="token operator">=</span> <span class="token variable">@SalesPerson</span><span class="token punctuation">;</span>  
+<span class="token keyword">RETURN</span>  
+GO
+</code></pre>
+<p>or</p>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- Declare the variable to receive the output value of the procedure.  </span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@SalesYTDBySalesPerson</span> money<span class="token punctuation">;</span>  
+<span class="token comment">-- Execute the procedure specifying a last name for the input parameter  </span>
+<span class="token comment">-- and saving the output value in the variable @SalesYTDBySalesPerson  </span>
+<span class="token keyword">EXECUTE</span> Sales<span class="token punctuation">.</span>uspGetEmployeeSalesYTD  
+    N<span class="token string">'Blythe'</span><span class="token punctuation">,</span> <span class="token variable">@SalesYTD</span> <span class="token operator">=</span> <span class="token variable">@SalesYTDBySalesPerson</span> OUTPUT<span class="token punctuation">;</span>  
+<span class="token comment">-- Display the value returned by the procedure.  </span>
+<span class="token keyword">PRINT</span> <span class="token string">'Year-to-date sales for this employee is '</span> <span class="token operator">+</span>   
+    <span class="token keyword">convert</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token variable">@SalesYTDBySalesPerson</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+GO
+</code></pre>

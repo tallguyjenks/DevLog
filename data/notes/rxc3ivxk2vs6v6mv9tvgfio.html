@@ -1,0 +1,59 @@
+<h1 id="dictionary-dunders"><a aria-hidden="true" class="anchor-heading icon-link" href="#dictionary-dunders"></a>Dictionary Dunders</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">softwares</span><span class="token punctuation">:</span>
+    names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    versions <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+	
+	<span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> names<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"running init method"</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> names<span class="token punctuation">:</span>
+			self<span class="token punctuation">.</span>names <span class="token operator">=</span> names<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			<span class="token keyword">for</span> name <span class="token keyword">in</span> names<span class="token punctuation">:</span>
+				self<span class="token punctuation">.</span>versions<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+		<span class="token keyword">else</span><span class="token punctuation">:</span>
+			<span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"Please Enter the names"</span><span class="token punctuation">)</span>
+	
+	<span class="token keyword">def</span> <span class="token function">__setitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> version<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"running set item"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> name <span class="token keyword">in</span> self<span class="token punctuation">.</span>versions<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>versions<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> version
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"Software Name doesn't exist"</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"running get item"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> name <span class="token keyword">in</span> self<span class="token punctuation">.</span>versions<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>versions<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"Software Name doesn't exist"</span><span class="token punctuation">)</span>
+	<span class="token keyword">def</span> <span class="token function">__delitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"running del item"</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> name <span class="token keyword">in</span> self<span class="token punctuation">.</span>versions<span class="token punctuation">:</span>
+			<span class="token keyword">del</span> self<span class="token punctuation">.</span>versions<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+			self<span class="token punctuation">.</span>names<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+		<span class="token keyword">else</span><span class="token punctuation">:</span>
+			<span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"Software Name doesn't exist"</span><span class="token punctuation">)</span>
+	<span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    	<span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>names<span class="token punctuation">)</span>
+	<span class="token keyword">def</span> <span class="token function">__contains__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">if</span> name <span class="token keyword">in</span> self<span class="token punctuation">.</span>versions<span class="token punctuation">:</span>
+			<span class="token keyword">return</span> <span class="token boolean">True</span>
+		<span class="token keyword">else</span><span class="token punctuation">:</span>
+			<span class="token keyword">return</span> <span class="token boolean">False</span>
+<span class="token comment">#==========================================================================#</span>
+p <span class="token operator">=</span> softwares<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'S1'</span><span class="token punctuation">,</span><span class="token string">'S2'</span><span class="token punctuation">,</span><span class="token string">'S3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+p<span class="token punctuation">[</span><span class="token string">'S1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token comment"># assigning values to a dictionary is when the __setitem__ dunder is invoked</span>
+p<span class="token punctuation">[</span><span class="token string">'2'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token comment"># assigning values to a dictionary is when the __setitem__ dunder is invoked</span>
+ 
+<span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token string">'S1'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># using the brackets to access a dict value runes the __getitem__ method</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token string">'2'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># using the brackets to access a dict value runes the __getitem__ method</span>
+<span class="token comment"># print(p['1']) # throws exception</span>
+<span class="token keyword">del</span> p<span class="token punctuation">[</span><span class="token string">'S1'</span><span class="token punctuation">]</span>  <span class="token comment"># deleting a dictionary key/val pair runs the __delitem__ method</span>
+<span class="token builtin">len</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token comment"># runs the class's __len__ method</span>
+<span class="token keyword">if</span> <span class="token string">'S2'</span> <span class="token keyword">in</span> p<span class="token punctuation">:</span> <span class="token comment"># this usage of the `in` operator uses the __contains__ function</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'found!'</span><span class="token punctuation">)</span>
+	
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x1pe7g0d0wgazcl4oemzoy4">In Oop (DevLog)</a></li>
+</ul>

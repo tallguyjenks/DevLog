@@ -1,0 +1,72 @@
+<h1 id="if-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#if-statements"></a>If Statements</h1>
+<h2 id="efficient-usage"><a aria-hidden="true" class="anchor-heading icon-link" href="#efficient-usage"></a>Efficient Usage</h2>
+<p>The most classic form of the if-else statement looks really simple.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>someCondition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment">// 10 lines of code</span>
+<span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+   <span class="token comment">// More code..</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This is how we could use a return in order to get rid of the else block:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>someCondition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment">// 10 lines of code</span>
+   <span class="token keyword control-flow">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+<span class="token comment">// More code..</span>
+</code></pre>
+<p>If-else statements get used a lot to assign variables</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>someCondition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   number <span class="token operator">=</span> someNumber <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+   number <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>When you spot code like this, change it. The way to get rid of the else block is by assigning a default value.</p>
+<pre class="language-js"><code class="language-js">number <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>someCondition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   number <span class="token operator">=</span> someNumber <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>There’s a way to optimize this code even more. We could make this piece of code a one-liner by using the conditional operator:</p>
+<pre class="language-js"><code class="language-js">number <span class="token operator">=</span> someCondition <span class="token operator">?</span> someNumber <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre>
+<p><a href="/DevLog/notes/kb1lrmy6gyf9j7qkaoi4zfx">Guard Clauses</a> are also known as early-returns.</p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Guard Clauses</span></div>
+<a href="/DevLog/notes/kb1lrmy6gyf9j7qkaoi4zfx" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><p>The idea behind returning early is that you write functions that return the expected positive result at the end of the function.</p>
+<p>The rest of the code, in the function, should trigger the termination as soon as possible in case of divergence with the function’s purpose.</p>
+<p>An early return does exactly as its name implies. This is what an early return looks like:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">someFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>someCondition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+    <span class="token comment">// Do something</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="https://levelup.gitconnected.com/how-you-can-avoid-using-else-in-your-code-871197a1adbc">https://levelup.gitconnected.com/how-you-can-avoid-using-else-in-your-code-871197a1adbc</a></li>
+</ul>
+</li>
+</ul></div></div><p></p><p></p>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="https://levelup.gitconnected.com/how-you-can-avoid-using-else-in-your-code-871197a1adbc">https://levelup.gitconnected.com/how-you-can-avoid-using-else-in-your-code-871197a1adbc</a> </li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/lzfafv2nbukf10ylujzfrgt">Conditional Logic and Control Flow (DevLog)</a></li>
+</ul>

@@ -1,0 +1,38 @@
+<h1 id="functions"><a aria-hidden="true" class="anchor-heading icon-link" href="#functions"></a>Functions</h1>
+<h2 id="unit-testing"><a aria-hidden="true" class="anchor-heading icon-link" href="#unit-testing"></a>Unit Testing</h2>
+<p>Testing the behavior of your functions to ensure that they are working correctly and have no aberrant behavior.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;cassert></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">double</span> <span class="token function">HrMinToMin</span><span class="token punctuation">(</span><span class="token keyword">int</span> origHours<span class="token punctuation">,</span> <span class="token keyword">int</span> origMinutes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> totMinutes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// Resulting minutes</span>
+   
+   totMinutes <span class="token operator">=</span> <span class="token punctuation">(</span>origHours <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">)</span> <span class="token operator">+</span> origMinutes<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> origMinutes<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Testing started"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token function">HrMinToMin</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token function">HrMinToMin</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token function">HrMinToMin</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token function">HrMinToMin</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token operator">==</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token function">HrMinToMin</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token operator">==</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">assert</span><span class="token punctuation">(</span><span class="token function">HrMinToMin</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">150</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">// Many more test vectors would be typical...</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Testing completed"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/fnr491x79ffo1txd8vszxuj">Cassert (DevLog)</a></li>
+<li><a href="/DevLog/notes/hnvxz7myn4me89j42nwa76j">Unit Testing (DevLog)</a></li>
+</ul>

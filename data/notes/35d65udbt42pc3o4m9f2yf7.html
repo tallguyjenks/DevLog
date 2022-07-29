@@ -1,0 +1,90 @@
+<h1 id="sp_send_dbmail"><a aria-hidden="true" class="anchor-heading icon-link" href="#sp_send_dbmail"></a>sp_send_dbmail</h1>
+<h2 id="reference"><a aria-hidden="true" class="anchor-heading icon-link" href="#reference"></a>Reference</h2>
+<p><a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15</a></p>
+<blockquote>
+<p>"The parameters <code>@recipients</code>, <code>@copy_recipients</code>, and <code>@blind_copy_recipients</code> are semicolon-delimited lists of e-mail addresses. At least one of these parameters must be provided, or <code>sp_send_dbmail</code> returns an error."</p>
+</blockquote>
+<h2 id="setup"><a aria-hidden="true" class="anchor-heading icon-link" href="#setup"></a>Setup</h2>
+<ol>
+<li>in <a href="/DevLog/notes/177i0t66czpvlw3r8v86wvw">Ssms</a> expand the <code>Management</code> folder in the Object Explorer</li>
+<li>Right click on <code>Database Mail</code> > <code>Configure Database Mail</code> > <code>Next</code></li>
+<li><code>Manage Database Mail accounts and profiles</code> in the radio button selection list</li>
+<li><code>Next</code></li>
+<li><code>Create a new account</code> this is the email account that will actually be sending the emails for you
+<ul>
+<li>Gmail is great here because it can be used as a pass through thought you might need to enable additional access in the settings menu of gmail</li>
+<li>The outcome of this is that you receive emails from that Gmail account but in an automated fashion</li>
+</ul>
+</li>
+<li>New account details
+<ul>
+<li>Account name and description are just for your reference but use them in tandem with the Display name to use an account for each of your Services</li>
+<li>Email address is the service account email address</li>
+<li>Display name is what it looks like the email is actually from</li>
+<li>reply email is who the replies go to</li>
+<li>server name for gmail would be <code>smtp.gmail.com</code> with port number <a href="/DevLog/notes/7ir9k1egmd2zebski65j1zp">587</a></li>
+<li>The <a href="/DevLog/notes/wspzpkjj1tk9dfr7hguw6bu">Secure Socket Layer</a> checkbox should be ticked</li>
+<li>Use basic authentication (radio button)</li>
+<li>username is the service account email address</li>
+<li>password is the password for the service account email address</li>
+</ul>
+</li>
+<li><code>Create a new profile</code>, this is what will be holding the account(s) that send email</li>
+<li>Give it a name and description</li>
+<li>add your email account you made to it</li>
+<li>finish</li>
+<li>test <code>sp_send_dbmail</code></li>
+</ol>
+<h2 id="examples"><a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a>Examples</h2>
+<h3 id="simple-message"><a aria-hidden="true" class="anchor-heading icon-link" href="#simple-message"></a>Simple Message</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">EXEC</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sp_send_dbmail
+    <span class="token variable">@profile_name</span> <span class="token operator">=</span> <span class="token string">'Adventure Works Administrator'</span><span class="token punctuation">,</span>
+    <span class="token variable">@recipients</span> <span class="token operator">=</span> <span class="token string">'yourfriend@Adventure-Works.com'</span><span class="token punctuation">,</span>
+    <span class="token variable">@body</span> <span class="token operator">=</span> <span class="token string">'The stored procedure finished successfully.'</span><span class="token punctuation">,</span>
+    <span class="token variable">@subject</span> <span class="token operator">=</span> <span class="token string">'Automated Success Message'</span> <span class="token punctuation">;</span>
+</code></pre>
+<h3 id="email-message-with-the-results-of-a-query"><a aria-hidden="true" class="anchor-heading icon-link" href="#email-message-with-the-results-of-a-query"></a>Email message with the results of a query</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">EXEC</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sp_send_dbmail
+    <span class="token variable">@profile_name</span> <span class="token operator">=</span> <span class="token string">'Adventure Works Administrator'</span><span class="token punctuation">,</span>
+    <span class="token variable">@recipients</span> <span class="token operator">=</span> <span class="token string">'yourfriend@Adventure-Works.com'</span><span class="token punctuation">,</span>
+    <span class="token variable">@query</span> <span class="token operator">=</span> <span class="token string">'SELECT COUNT(1)
+              FROM AdventureWorks2012.Production.WorkOrder
+              WHERE 1 = 1
+              AND DueDate > ''2004-04-30''
+              AND  DATEDIFF(dd, ''2004-04-30'', DueDate) &#x3C; 2'</span> <span class="token punctuation">,</span>
+    <span class="token variable">@subject</span> <span class="token operator">=</span> <span class="token string">'Work Order Count'</span><span class="token punctuation">,</span>
+    <span class="token variable">@attach_query_result_as_file</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span>
+</code></pre>
+<h3 id="sending-html-email"><a aria-hidden="true" class="anchor-heading icon-link" href="#sending-html-email"></a>Sending HTML Email</h3>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@tableHTML</span>  NVARCHAR<span class="token punctuation">(</span>MAX<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+
+<span class="token keyword">SET</span> <span class="token variable">@tableHTML</span> <span class="token operator">=</span>
+    N<span class="token string">'&#x3C;H1>Work Order Report&#x3C;/H1>'</span> <span class="token operator">+</span>
+    N<span class="token string">'&#x3C;table border="1">'</span> <span class="token operator">+</span>
+    N<span class="token string">'&#x3C;tr>&#x3C;th>Work Order ID&#x3C;/th>&#x3C;th>Product ID&#x3C;/th>'</span> <span class="token operator">+</span>
+    N<span class="token string">'&#x3C;th>Name&#x3C;/th>&#x3C;th>Order Qty&#x3C;/th>&#x3C;th>Due Date&#x3C;/th>'</span> <span class="token operator">+</span>
+    N<span class="token string">'&#x3C;th>Expected Revenue&#x3C;/th>&#x3C;/tr>'</span> <span class="token operator">+</span>
+    CAST <span class="token punctuation">(</span> <span class="token punctuation">(</span> <span class="token keyword">SELECT</span>
+             td <span class="token operator">=</span> wo<span class="token punctuation">.</span>WorkOrderID<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+             td <span class="token operator">=</span> p<span class="token punctuation">.</span>ProductID<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+             td <span class="token operator">=</span> p<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+             td <span class="token operator">=</span> wo<span class="token punctuation">.</span>OrderQty<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+             td <span class="token operator">=</span> wo<span class="token punctuation">.</span>DueDate<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span>
+             td <span class="token operator">=</span> <span class="token punctuation">(</span>p<span class="token punctuation">.</span>ListPrice <span class="token operator">-</span> p<span class="token punctuation">.</span>StandardCost<span class="token punctuation">)</span> <span class="token operator">*</span> wo<span class="token punctuation">.</span>OrderQty
+             <span class="token keyword">FROM</span> AdventureWorks<span class="token punctuation">.</span>Production<span class="token punctuation">.</span>WorkOrder <span class="token keyword">AS</span> wo
+             <span class="token keyword">JOIN</span> AdventureWorks<span class="token punctuation">.</span>Production<span class="token punctuation">.</span>Product <span class="token keyword">AS</span> p <span class="token keyword">ON</span> wo<span class="token punctuation">.</span>ProductID <span class="token operator">=</span> p<span class="token punctuation">.</span>ProductID
+             <span class="token keyword">WHERE</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">1</span>
+             <span class="token operator">AND</span> DueDate <span class="token operator">></span> <span class="token string">'2004-04-30'</span>
+             <span class="token operator">AND</span> DATEDIFF<span class="token punctuation">(</span>dd<span class="token punctuation">,</span> <span class="token string">'2004-04-30'</span><span class="token punctuation">,</span> DueDate<span class="token punctuation">)</span> <span class="token operator">&#x3C;</span> <span class="token number">2</span>
+             <span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+             DueDate <span class="token keyword">ASC</span><span class="token punctuation">,</span>
+             <span class="token punctuation">(</span>p<span class="token punctuation">.</span>ListPrice <span class="token operator">-</span> p<span class="token punctuation">.</span>StandardCost<span class="token punctuation">)</span> <span class="token operator">*</span> wo<span class="token punctuation">.</span>OrderQty <span class="token keyword">DESC</span>
+             <span class="token keyword">FOR</span> XML PATH<span class="token punctuation">(</span><span class="token string">'tr'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">TYPE</span>
+    <span class="token punctuation">)</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span>MAX<span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token operator">+</span>
+    N<span class="token string">'&#x3C;/table>'</span> <span class="token punctuation">;</span>
+
+<span class="token keyword">EXEC</span> msdb<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sp_send_dbmail <span class="token variable">@recipients</span><span class="token operator">=</span><span class="token string">'yourfriend@Adventure-Works.com'</span><span class="token punctuation">,</span>
+    <span class="token variable">@subject</span> <span class="token operator">=</span> <span class="token string">'Work Order List'</span><span class="token punctuation">,</span>
+    <span class="token variable">@body</span> <span class="token operator">=</span> <span class="token variable">@tableHTML</span><span class="token punctuation">,</span>
+    <span class="token variable">@body_format</span> <span class="token operator">=</span> <span class="token string">'HTML'</span> <span class="token punctuation">;</span>
+</code></pre>

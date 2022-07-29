@@ -1,0 +1,36 @@
+<h1 id="object-destructuring"><a aria-hidden="true" class="anchor-heading icon-link" href="#object-destructuring"></a>Object Destructuring</h1>
+<h2 id="the-object-destructuring-assignment"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-object-destructuring-assignment"></a>The object destructuring assignment</h2>
+<p>In ES5 to extract the property values of an object we need to write something like this:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// ES5 syntax</span>
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Peter"</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> name <span class="token operator">=</span> person<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> age <span class="token operator">=</span> person<span class="token punctuation">.</span><span class="token property-access">age</span><span class="token punctuation">;</span>
+
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Peter</span>
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token string">"&#x3C;br>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 28</span>
+</code></pre>
+<p>But in ES6, you can extract object's property values and assign them to the variables easily like this:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// ES6 syntax</span>
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Peter"</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> <span class="token punctuation">{</span>name<span class="token punctuation">,</span> age<span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span> <span class="token comment">// Object destructuring assignment</span>
+
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Peter</span>
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token string">"&#x3C;br>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 28</span>
+</code></pre>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="https://www.tutorialrepublic.com/javascript-tutorial/javascript-es6-features.php">https://www.tutorialrepublic.com/javascript-tutorial/javascript-es6-features.php</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/z7ttjzpaawtowwhofdvag95">Ecmascript 2015 (DevLog)</a></li>
+</ul>

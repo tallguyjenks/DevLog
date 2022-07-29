@@ -1,0 +1,11 @@
+<h1 id="object_id"><a aria-hidden="true" class="anchor-heading icon-link" href="#object_id"></a>Object_id</h1>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?view=sql-server-ver15</a></li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>
+GO
+<span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> OBJECT_ID<span class="token punctuation">(</span>N<span class="token string">'dbo.AWBuildVersion'</span><span class="token punctuation">,</span> N<span class="token string">'U'</span><span class="token punctuation">)</span>
+    <span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> dbo<span class="token punctuation">.</span>AWBuildVersion<span class="token punctuation">;</span>
+GO
+</code></pre>
+<p>The additional types at the end can be found at the documentation link above</p>

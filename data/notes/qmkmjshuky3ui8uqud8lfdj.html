@@ -1,0 +1,59 @@
+<h1 id="python-f-strings-can-do-more-than-you-thought"><a aria-hidden="true" class="anchor-heading icon-link" href="#python-f-strings-can-do-more-than-you-thought"></a>Python F Strings Can Do More than You Thought</h1>
+<ul>
+<li><code>URL:</code> <a href="https://youtu.be/BxUxX1Ku1EQ">https://youtu.be/BxUxX1Ku1EQ</a></li>
+<li><code>Channel/Host:</code> mCoding</li>
+<li><code>Publish Date:</code> 2021.06.19</li>
+<li><code>Reviewed Date:</code> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">import.research.video.2021.11.18 (Private)</a></li>
+</ul>
+<hr>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/BxUxX1Ku1EQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<hr>
+<ul>
+<li>f strings that have a trailing <code>=</code> will print a statement like this:</li>
+</ul>
+<pre class="language-python"><code class="language-python">x<span class="token operator">=</span><span class="token number">7</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token operator">=</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> x=7</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x <span class="token operator">=</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> x =7</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> x = 7</span>
+</code></pre>
+<ul>
+<li>to print the repr of the value end the fstring with a <code>!r</code>:</li>
+</ul>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token string">"hello ✅"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token conversion-option punctuation">!r</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> "hello ✅"</span>
+</code></pre>
+<ul>
+<li>to print only ascii values end the fstring with a <code>!a</code>:</li>
+</ul>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token string">"hello ✅"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token conversion-option punctuation">!a</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> "hello \u2705"</span>
+</code></pre>
+<ul>
+<li>to print string values without quotes end the fstring with a <code>!s</code>:</li>
+</ul>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token string">"hello ✅"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token conversion-option punctuation">!a</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> hello ✅</span>
+</code></pre>
+<p><strong>Formatting</strong></p>
+<ul>
+<li>format fstrings with a colon in the brace and the format on the right hand side</li>
+</ul>
+<p><code>import datetime; print(f'{datetime.datetime.utcnow():%Y-%m-%d}')</code></p>
+<p><strong>Nested Formatting</strong></p>
+<pre class="language-python"><code class="language-python">num_value <span class="token operator">=</span> <span class="token number">123.456</span>
+nested_format <span class="token operator">=</span> <span class="token string">".2f"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>num_value<span class="token punctuation">:</span><span class="token punctuation">{</span>nested_format<span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> 123.46</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/rp2j7cg9q6o7yd4hzwxoe5g">17 (DevLog)</a></li>
+<li><a href="/DevLog/notes/umsp3llocjmsegtefodi3kr">On This Day... (DevLog)</a></li>
+</ul>

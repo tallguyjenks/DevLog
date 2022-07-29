@@ -1,0 +1,19 @@
+<h1 id="monitor"><a aria-hidden="true" class="anchor-heading icon-link" href="#monitor"></a>Monitor</h1>
+<p>Management software that provides a location from which you can oversee network activity. </p>
+<p>The monitor polls agents at regular intervals for information from their <a href="/DevLog/notes/9jtxndwq2loqj31f9023i4f">MIB</a>'s and displays the information for review. </p>
+<p>It also displays any trap operations as alerts for the network administrator to assess and act upon as necessary. </p>
+<p>The monitor can retrieve information from a device in two main ways:</p>
+<ul>
+<li><a href="/DevLog/notes/fw0euk7ym00sbqnr769534l">Get</a></li>
+<li><a href="/DevLog/notes/afy3fbvekpauh1ys9uorv47">Trap</a></li>
+</ul>
+<p>The monitor can be used to change certain variables using the <code>Set</code> command. </p>
+<p>It can also walk an <a href="/DevLog/notes/9jtxndwq2loqj31f9023i4f">MIB</a> subtree by using multiple <code>Get</code> and <code>Get Next</code> commands. </p>
+<p>This is used to discover the complete layout of an <a href="/DevLog/notes/9jtxndwq2loqj31f9023i4f">MIB</a>. </p>
+<p>Device queries take place over <a href="/DevLog/notes/7s9z8tfihz9m5ytqqjmjej0">UDP</a> port <a href="/DevLog/notes/zgsa435bw03kls77jsm230p">161</a>; traps are communicated over UDP port <a href="/DevLog/notes/h01vqzvwbyo7184mlhfauqt">162</a>.</p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/fw0euk7ym00sbqnr769534l">Get</a></li>
+<li><a href="/DevLog/notes/afy3fbvekpauh1ys9uorv47">Trap</a></li>
+</ol>

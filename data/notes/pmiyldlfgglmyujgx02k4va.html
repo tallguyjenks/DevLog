@@ -1,0 +1,29 @@
+<h1 id="parameters"><a aria-hidden="true" class="anchor-heading icon-link" href="#parameters"></a>Parameters</h1>
+<h3 id="parameters-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#parameters-1"></a>Parameters</h3>
+<p>Parameters passed to a function need to have their data types explicitly declared as well so the function knows what type of data it is receiving:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;string></span></span>
+
+<span class="token keyword">void</span> <span class="token function">SayHello</span> <span class="token punctuation">(</span> string name<span class="token punctuation">,</span> <span class="token keyword">int</span> age <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Hello "</span> <span class="token operator">&#x3C;&#x3C;</span> name 
+	<span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" you are: "</span> <span class="token operator">&#x3C;&#x3C;</span> age <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">" years old!"</span> <span class="token operator">&#x3C;&#x3C;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>	
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	string myName <span class="token operator">=</span> <span class="token string">"Bryan"</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> myAge <span class="token operator">=</span> <span class="token number">28</span><span class="token punctuation">;</span>
+	
+	<span class="token function">SayHello</span><span class="token punctuation">(</span> myName<span class="token punctuation">,</span> myAge <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//#> "Hello Bryan you are: 28 years old!"</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/lz1hmgl4drlrrzn6ivbkxjk">Default Parameters</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/5w4zrqtubq53jx3ilb1uz3i">Pass by Value (DevLog)</a></li>
+</ul>

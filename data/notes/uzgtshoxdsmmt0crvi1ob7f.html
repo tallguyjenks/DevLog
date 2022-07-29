@@ -1,0 +1,29 @@
+<h1 id="set"><a aria-hidden="true" class="anchor-heading icon-link" href="#set"></a>Set</h1>
+<h3 id="set-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#set-1"></a>Set</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># a set is like a hashtable, the order is not important and they are not ordered like an array</span>
+<span class="token comment"># sets cannot contain duplicate values</span>
+a <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+<span class="token comment"># methods</span>
+a<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># adds an item to the set</span>
+a<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># removes an existing item from the set</span>
+a<span class="token punctuation">.</span>discard<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># acts like remove but if item is not a part of the set, do nothing and throw no errors (remove quietly)</span>
+a<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># removes all items from the set and it becomes empty</span>
+<span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment"># lets you see how many items are in the set</span>
+<span class="token comment"># faster way of making a set is to pass an `[]` array to the set() function</span>
+
+a <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+a<span class="token punctuation">.</span>union<span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment"># = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</span>
+a<span class="token punctuation">.</span>intersection<span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token comment"># = 3, 5, 7</span>
+
+<span class="token number">2</span> <span class="token keyword">in</span> b <span class="token comment"># result is True</span>
+<span class="token number">9</span> <span class="token keyword">not</span> <span class="token keyword">in</span> a <span class="token comment"># Result is False 9 IS in the set of odd numbers</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/5avdgscxqmyjfxnk8w7qbiy">Frozen</a></li>
+</ol>

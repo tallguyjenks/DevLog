@@ -1,0 +1,23 @@
+<h1 id="classes"><a aria-hidden="true" class="anchor-heading icon-link" href="#classes"></a>Classes</h1>
+<p>JavaScript Classes are templates for JavaScript Objects.</p>
+<p>Use the keyword <code>class</code> to create a class.</p>
+<p>Always add a method named <code>constructor()</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Car</span> 
+<span class="token punctuation">{</span>  
+	<span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> year</span><span class="token punctuation">)</span> 
+	<span class="token punctuation">{</span>  
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">name</span> \<span class="token operator">=</span> name<span class="token punctuation">;</span>  
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">year</span> \<span class="token operator">=</span> year<span class="token punctuation">;</span>  
+	<span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<p>A JavaScript class is <strong>not</strong> an object.</p>
+<p>It is a <strong>template</strong> for JavaScript objects.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> myCar1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token string">"Ford"</span><span class="token punctuation">,</span> <span class="token number">2014</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token keyword">let</span> myCar2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token string">"Audi"</span><span class="token punctuation">,</span> <span class="token number">2019</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/z7ttjzpaawtowwhofdvag95">Ecmascript 2015 (DevLog)</a></li>
+</ul>

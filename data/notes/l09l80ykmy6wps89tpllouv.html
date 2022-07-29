@@ -1,0 +1,136 @@
+<h1 id="vars"><a aria-hidden="true" class="anchor-heading icon-link" href="#vars"></a>Vars</h1>
+<h3 id="variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#variables"></a>Variables</h3>
+<p>Variables in bash are assigned with a single <code>=</code>
+No spacing between the variable name, the <code>=</code> and the assigned value
+You can specify the variables scope with either <code>export</code> or <code>local</code> or
+an environmental variable with no explicit scope.</p>
+<p>Once declared in your script or environment etc, you can reference your
+variables by matching the exact casing of the variable name and pre-pending
+a <code>$</code> so my path variable for binaries to execute would be <code>$PATH</code>.</p>
+<p>When referencing your variables always quote them because of:
+"General rule: quote it if it can either be empty or contain spaces"
+"<code>$?</code> doesn't need quotes since it's a numeric value."</p>
+<pre class="language-shell"><code class="language-shell"><span class="token comment">## Variables</span>
+
+<span class="token comment">### Local vars</span>
+<span class="token builtin class-name">local</span> <span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token number">2</span>
+
+<span class="token comment">### Global Vars</span>
+<span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token number">2</span>
+
+<span class="token comment">### Environment</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token number">2</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$var</span>"</span>
+</code></pre>
+<p>"In short, quote everything where you do not require the shell to perform token
+splitting and wild card expansion."</p>
+<pre class="language-shell"><code class="language-shell">
+<span class="token comment">## Token Splitting</span>
+<span class="token assign-left variable">words</span><span class="token operator">=</span><span class="token string">"foo bar baz"</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">word</span> <span class="token keyword">in</span> <span class="token variable">$words</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$word</span>"</span>
+<span class="token keyword">done</span>
+<span class="token comment">#> foo</span>
+<span class="token comment">#> bar</span>
+<span class="token comment">#> baz</span>
+
+</code></pre>
+<p>Double quotes are suitable when variable interpolation is
+required. With suitable adaptations, it is also a good workaround when you need
+single quotes in the string. (There is no straightforward way to escape a
+single quote between single quotes, because there is no escape mechanism inside
+single quotes -- if there was, they would not quote completely verbatim.)</p>
+<p>No quotes are suitable when you specifically require the shell to perform token
+splitting and/or wild card expansion.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token comment">## Wildcard Expansion</span>
+
+<span class="token comment">### Literal Strings</span>
+<span class="token assign-left variable">pattern</span><span class="token operator">=</span><span class="token string">'file*.txt'</span>
+<span class="token function">ls</span> <span class="token variable">$pattern</span>
+<span class="token comment"># > file1.txt      file_other.txt</span>
+
+<span class="token comment">### Double Quotes</span>
+<span class="token function">ls</span> <span class="token string">"<span class="token variable">$pattern</span>"</span>
+<span class="token comment">#> ls: cannot access file*.txt: No such file or directory</span>
+<span class="token comment"># (There is no file named literally file*.txt.)</span>
+
+<span class="token function">ls</span> <span class="token string">'$pattern'</span>
+<span class="token comment">#> ls: cannot access $pattern: No such file or directory</span>
+<span class="token comment"># (There is no file named $pattern, either!)</span>
+</code></pre>
+<p>In more concrete terms, anything containing a filename should usually be quoted
+(because filenames can contain whitespace and other shell meta characters).
+Anything containing a URL should usually be quoted (because many URL's contain
+shell meta characters like <code>?</code> and <code>&#x26;</code>). Anything containing a regex should usually
+be quoted (ditto ditto). Anything containing significant whitespace other than
+single spaces between non-whitespace characters needs to be quoted (because
+otherwise, the shell will munge the whitespace into, effectively, single
+spaces, and trim any leading or trailing whitespace).</p>
+<p>When you know that a variable can only contain a value which contains no shell
+meta characters, quoting is optional. Thus, an unquoted <code>$?</code> is basically fine,
+because this variable can only ever contain a single number. However, <code>"$?"</code> is
+also correct, and recommended for general consistency and correctness (though
+this is my personal recommendation, not a widely recognized policy).</p>
+<p>Values which are not variables basically follow the same rules, though you
+could then also escape any meta characters instead of quoting them. For a common
+example, a URL with a &#x26; in it will be parsed by the shell as a background
+command unless the meta character is escaped or quoted.</p>
+<h4 id="meta-characters-with-variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#meta-characters-with-variables"></a>Meta characters with variables</h4>
+<p>The braces, in addition to delimiting a variable name are used for parameter expansion so you can do things like:</p>
+<p>Truncate the contents of a variable</p>
+<pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token string">"abcde"</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token variable">${var<span class="token operator">%</span>d*}</span>
+<span class="token comment">#> abc</span>
+</code></pre>
+<p>Make substitutions similar to sed</p>
+<pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token string">"abcde"</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token variable">${var<span class="token operator">/</span>de<span class="token operator">/</span>12}</span>
+<span class="token comment">#> abc12</span>
+</code></pre>
+<p>Use a default value</p>
+<pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">default</span><span class="token operator">=</span><span class="token string">"hello"</span><span class="token punctuation">;</span> <span class="token builtin class-name">unset</span> var<span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token variable">${var<span class="token operator">:-</span>$default}</span>
+<span class="token comment">#> hello</span>
+</code></pre>
+<p>and several more</p>
+<p>Also, brace expansions create lists of strings which are typically iterated over in loops:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> f<span class="token punctuation">{</span>oo,ee,a<span class="token punctuation">}</span>d
+<span class="token comment">#> food feed fad</span>
+
+<span class="token function">mv</span> error.log<span class="token punctuation">{</span>,.OLD<span class="token punctuation">}</span>
+<span class="token comment"># (error.log is renamed to error.log.OLD because the brace expression</span>
+<span class="token comment"># expands to "mv error.log error.log.OLD")</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">num</span> <span class="token keyword">in</span> <span class="token punctuation">{</span>000<span class="token punctuation">..</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$num</span>"</span><span class="token punctuation">;</span> <span class="token keyword">done</span>
+<span class="token comment">#> 000</span>
+<span class="token comment">#> 001</span>
+<span class="token comment">#> 002</span>
+
+<span class="token builtin class-name">echo</span> <span class="token punctuation">{</span>00<span class="token punctuation">..</span><span class="token number">8</span><span class="token punctuation">..</span><span class="token number">2</span><span class="token punctuation">}</span>
+<span class="token comment">#> 00 02 04 06 08</span>
+
+<span class="token builtin class-name">echo</span> <span class="token punctuation">{</span>D<span class="token punctuation">..</span>T<span class="token punctuation">..</span><span class="token number">4</span><span class="token punctuation">}</span>
+<span class="token comment">#> D H L P T</span>
+</code></pre>
+<h4 id="exporting-variables"><a aria-hidden="true" class="anchor-heading icon-link" href="#exporting-variables"></a>Exporting variables</h4>
+<p>Export variables for other programs to use in your shell environment with</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">export</span> <span class="token assign-left variable">var</span><span class="token operator">=</span>myvar
+</code></pre>
+<p>variable with</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">unset</span> myvar
+</code></pre>
+<p>Export copies variables to the environment, <code>declare -x</code> also does the same as export?</p>
+<p>Export functions with</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">export</span> -f myfunc
+</code></pre>
+<p>Just printing export will list all current environment variables</p>
+<p>Functions don’t get a copy of the variables in the environment, they share them and therefor can mutate them</p>
+<p>To see built-ins use</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">enable</span>
+</code></pre>
+<p>To see keywords use</p>
+<pre class="language-shell"><code class="language-shell">compgen -k
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/31nnsx6afp48kj8yh318w57">Funcs (DevLog)</a></li>
+</ul>

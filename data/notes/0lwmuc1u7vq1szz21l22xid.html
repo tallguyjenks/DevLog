@@ -1,0 +1,197 @@
+<h1 id="python-typing-type-hints-and-annotations"><a aria-hidden="true" class="anchor-heading icon-link" href="#python-typing-type-hints-and-annotations"></a>Python Typing Type Hints and Annotations</h1>
+<ul>
+<li><code>URL:</code> <a href="https://youtu.be/QORvB-_mbZ0">https://youtu.be/QORvB-_mbZ0</a></li>
+<li><code>Channel/Host:</code> Tech With Tim</li>
+<li><code>Reference:</code> <a href="/DevLog/notes/mathec967jfiul5dfe2uf6k">Typing</a></li>
+<li><code>Publish Date:</code> 2021.09.29</li>
+<li><code>Reviewed Date:</code> <a href="/DevLog/notes/kvu5aw79e46db2w3fwtw0c2">15</a></li>
+</ul>
+<hr>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/QORvB-_mbZ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<hr>
+<ul>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=560.036194">09:20</a> </p>
+<ul>
+<li>To do a type annotation for items in a list (a vector basically) you can pass the type like <code>list[int]</code> but this can also be used to pass things like a list of int lists: <code>list[list[int]]</code></li>
+<li>To use <code>List</code> as a type you need to <code>from typing import List</code> : <code>List[List[int]]</code></li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=631.544946">10:31</a></p>
+<ul>
+<li><code>from typing import Dict</code></li>
+<li>Dictionary typing: <code>x: Dict[str, str] = {"a": "b"}</code></li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=656.309631835968">10:56</a></p>
+<ul>
+<li><code>from typing import Set</code></li>
+<li>Set typing: <code>x: Set[str] = {"a", "b"}</code></li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=702.2289898435974">11:42</a>`</p>
+<ul>
+<li>
+<p>Custom Typing:</p>
+</li>
+<li>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> List
+
+Vector <span class="token operator">=</span> List<span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">]</span>	
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>v<span class="token punctuation">:</span> Vector<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Vector<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<p><img src="/DevLog/assets/images/Pasted_image_20211215085306.png" alt="alt"></p>
+</li>
+<li>
+<p>Can also use our own custom types like this: </p>
+</li>
+<li>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> List
+
+Vector <span class="token operator">=</span> List<span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">]</span>
+Vectors <span class="token operator">=</span> List<span class="token punctuation">[</span>Vector<span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>v<span class="token punctuation">:</span> Vectors<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Vectors<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=862.292403">14:22</a></p>
+<ul>
+<li>
+<p>Optional typing</p>
+</li>
+<li>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>output<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">bool</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=873.880233">14:33</a></p>
+<ul>
+<li>
+<p>Any Type is the same as not adding an annotation but more explicit</p>
+</li>
+<li>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Any
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>output<span class="token punctuation">:</span> Any<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=925.293389">15:25</a></p>
+<ul>
+<li>
+<p>Sequence Type</p>
+</li>
+<li>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Sequence
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>seq<span class="token punctuation">:</span> Sequence<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+foo<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span> <span class="token comment"># This is fine because a string is a sequence of characters</span>
+foo<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># a Tuple is an ordered and immutable indexed Object</span>
+foo<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># A list is an ordered and indexed object </span>
+foo<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment"># A set is hashed and not indexed or ordered so it cannot be a sequence</span>
+foo<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment">#>>> Last one throws an error because static analysis determines that it is an incompabile type</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=1031.02662">17:11</a></p>
+<ul>
+<li>
+<p>Tuple Type:</p>
+</li>
+<li>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Tuple
+
+<span class="token comment"># This is an error because the tuple can contain items of differing types </span>
+<span class="token comment"># so you need to specify the type of each item within it</span>
+x<span class="token punctuation">:</span> Tuple<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> 
+
+x<span class="token punctuation">:</span> Tuple<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=1096.941175">18:16</a></p>
+<ul>
+<li>
+<p>Callable Type:</p>
+</li>
+<li>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> <span class="token builtin">callable</span><span class="token punctuation">,</span> Optional
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>func<span class="token punctuation">:</span> Callable<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">,</span> Optional<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+	func<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+	<span class="token keyword">return</span> x <span class="token operator">+</span> y
+
+foo<span class="token punctuation">(</span>add<span class="token punctuation">)</span>
+
+<span class="token comment">#=================================================================#</span>
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Callable<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">,</span> Optional<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> x <span class="token operator">+</span> y
+	<span class="token keyword">return</span> add
+
+foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#=================================================================#</span>
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Callable<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	func<span class="token punctuation">:</span> Callable<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span> Lambda x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> x <span class="token operator">+</span> y
+	<span class="token keyword">return</span> func
+
+foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://youtu.be/QORvB-_mbZ0#t=1300.829273">21:40</a></p>
+<ul>
+<li>
+<p>Generics:</p>
+</li>
+<li>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> TypeVar<span class="token punctuation">,</span> List
+
+T <span class="token operator">=</span> TypeVar<span class="token punctuation">(</span><span class="token string">'T'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">get_item</span><span class="token punctuation">(</span>lst<span class="token punctuation">:</span> List<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> T<span class="token punctuation">:</span>
+	<span class="token keyword">return</span> lst<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/274q60euyipf63is3kcuidc">29 (DevLog)</a></li>
+<li><a href="/DevLog/notes/mathec967jfiul5dfe2uf6k">Typing (DevLog)</a></li>
+</ul>

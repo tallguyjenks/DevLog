@@ -1,0 +1,33 @@
+<h1 id="multi-list-iteration-with-zip"><a aria-hidden="true" class="anchor-heading icon-link" href="#multi-list-iteration-with-zip"></a>Multi List Iteration with Zip</h1>
+<h2 id="simplify-iterating-over-multiple-lists-with-zip"><a aria-hidden="true" class="anchor-heading icon-link" href="#simplify-iterating-over-multiple-lists-with-zip"></a>Simplify Iterating Over Multiple Lists With Zip()</h2>
+<h3 id="before"><a aria-hidden="true" class="anchor-heading icon-link" href="#before"></a>Before</h3>
+<pre class="language-python"><code class="language-python">
+names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Nik'</span><span class="token punctuation">,</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span> <span class="token string">'Melissa'</span><span class="token punctuation">,</span> <span class="token string">'Doug'</span><span class="token punctuation">]</span>
+ages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">37</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span>
+gender <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Male'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'Male'</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Old boring way:</span>
+for_looped <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+for_looped<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>names<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> ages<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> gender<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>for_looped<span class="token punctuation">)</span>
+
+<span class="token comment"># Returns:</span>
+<span class="token comment"># [('Nik', 32, 'Male'), ('Jane', 28, 'Female'), ('Melissa', 37, 'Female'), ('Doug', 53, 'Male')]</span>
+</code></pre>
+<h3 id="after"><a aria-hidden="true" class="anchor-heading icon-link" href="#after"></a>After</h3>
+<pre class="language-python"><code class="language-python">
+names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Nik'</span><span class="token punctuation">,</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span> <span class="token string">'Melissa'</span><span class="token punctuation">,</span> <span class="token string">'Doug'</span><span class="token punctuation">]</span>
+ages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">37</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span>
+gender <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Male'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'Male'</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Zipping through lists with zip()</span>
+zipped <span class="token operator">=</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>names<span class="token punctuation">,</span> ages<span class="token punctuation">,</span> gender<span class="token punctuation">)</span>
+zipped_list <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>zipped<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>zipped_list<span class="token punctuation">)</span>
+
+<span class="token comment"># Returns:</span>
+<span class="token comment"># [('Nik', 32, 'Male'), ('Jane', 28, 'Female'), ('Melissa', 37, 'Female'), ('Doug', 53, 'Male')]</span>
+</code></pre>

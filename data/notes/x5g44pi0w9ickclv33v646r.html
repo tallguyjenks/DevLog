@@ -1,0 +1,79 @@
+<h1 id="cctype"><a aria-hidden="true" class="anchor-heading icon-link" href="#cctype"></a>Cctype</h1>
+<p>💻️/C++
+publish: true
+aliases:</p>
+<ul>
+<li>null
+cssclass: null
+created: 2021-12-31 1945
+updated: 2022-01-01 2151</li>
+</ul>
+<hr>
+<hr>
+<h2 id="the-c-character-type-library"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-c-character-type-library"></a>The C Character Type Library</h2>
+<blockquote>
+<p>This header declares a set of functions to classify and transform individual characters.</p>
+</blockquote>
+<h3 id="isalpha-c-"><a aria-hidden="true" class="anchor-heading icon-link" href="#isalpha-c-"></a>isalpha( c )</h3>
+<p>true if alphabetic: a-z or A-Z</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">isalpha</span><span class="token punctuation">(</span><span class="token char">'x'</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+<span class="token function">isalpha</span><span class="token punctuation">(</span><span class="token char">'6'</span><span class="token punctuation">)</span> <span class="token comment">// false</span>
+<span class="token function">isalpha</span><span class="token punctuation">(</span><span class="token char">'!'</span><span class="token punctuation">)</span> <span class="token comment">// false</span>
+</code></pre>
+<h3 id="isdigit-c-"><a aria-hidden="true" class="anchor-heading icon-link" href="#isdigit-c-"></a>isdigit( c )</h3>
+<p>true if digit: 0-9.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">isdigit</span><span class="token punctuation">(</span><span class="token char">'x'</span><span class="token punctuation">)</span> <span class="token comment">// false</span>
+<span class="token function">isdigit</span><span class="token punctuation">(</span><span class="token char">'6'</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre>
+<h3 id="isalnum-c-"><a aria-hidden="true" class="anchor-heading icon-link" href="#isalnum-c-"></a>isalnum( c )</h3>
+<p>Returns true if c is alphabetic or a numeric digit. Thus, returns true if either <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">import.software.language.cpp.include-cctype (Private)</a> or <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">import.software.language.cpp.include-cctype (Private)</a> would return true.</p>
+<h3 id="isspace-c-"><a aria-hidden="true" class="anchor-heading icon-link" href="#isspace-c-"></a>isspace( c )</h3>
+<p>true if whitespace.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">isspace</span><span class="token punctuation">(</span><span class="token char">' '</span><span class="token punctuation">)</span>  <span class="token comment">// true</span>
+<span class="token function">isspace</span><span class="token punctuation">(</span><span class="token char">'\n'</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+<span class="token function">isspace</span><span class="token punctuation">(</span><span class="token char">'x'</span><span class="token punctuation">)</span>  <span class="token comment">// false</span>
+</code></pre>
+<h3 id="toupper-c-"><a aria-hidden="true" class="anchor-heading icon-link" href="#toupper-c-"></a>toupper( c )</h3>
+<p>Uppercase version</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">toupper</span><span class="token punctuation">(</span><span class="token char">'a'</span><span class="token punctuation">)</span>  <span class="token comment">// A</span>
+<span class="token function">toupper</span><span class="token punctuation">(</span><span class="token char">'A'</span><span class="token punctuation">)</span>  <span class="token comment">// A</span>
+<span class="token function">toupper</span><span class="token punctuation">(</span><span class="token char">'3'</span><span class="token punctuation">)</span>  <span class="token comment">// 3</span>
+</code></pre>
+<h3 id="tolower-c-"><a aria-hidden="true" class="anchor-heading icon-link" href="#tolower-c-"></a>tolower( c )</h3>
+<p>Lowercase version </p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">tolower</span><span class="token punctuation">(</span><span class="token char">'A'</span><span class="token punctuation">)</span>  <span class="token comment">// a</span>
+<span class="token function">tolower</span><span class="token punctuation">(</span><span class="token char">'a'</span><span class="token punctuation">)</span>  <span class="token comment">// a</span>
+<span class="token function">tolower</span><span class="token punctuation">(</span><span class="token char">'3'</span><span class="token punctuation">)</span>  <span class="token comment">// 3</span>
+</code></pre>
+<h3 id="isblank"><a aria-hidden="true" class="anchor-heading icon-link" href="#isblank"></a>isblank()</h3>
+<p>Returns true if character c is a blank character. Blank characters include spaces and tabs.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">isblank</span><span class="token punctuation">(</span>myString<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns true because that character is a space ' '.</span>
+<span class="token function">isblank</span><span class="token punctuation">(</span>myString<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns false because 'H' is not blank.</span>
+</code></pre>
+<h3 id="isxdigit"><a aria-hidden="true" class="anchor-heading icon-link" href="#isxdigit"></a>isxdigit()</h3>
+<p>Returns true if c is a hexadecimal digit: 0-9, a-f, A-F.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">isxdigit</span><span class="token punctuation">(</span>myString<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns true because '9' is a hexadecimal digit.</span>
+<span class="token function">isxdigit</span><span class="token punctuation">(</span>myString<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns true because 'e' is a hexadecimal digit.</span>
+<span class="token function">isxdigit</span><span class="token punctuation">(</span>myString<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns false because 'G' is not a hexadecimal digit.</span>
+</code></pre>
+<h3 id="ispunct"><a aria-hidden="true" class="anchor-heading icon-link" href="#ispunct"></a>ispunct()</h3>
+<p>Returns true if c is a punctuation character. Punctuation characters include: <code>!"#$%&#x26;'()*+,-./:;&#x3C;=>?@[\]^_{|}~</code></p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token function">ispunct</span><span class="token punctuation">(</span>myString<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns true because '!' is a punctuation character.</span>
+<span class="token function">ispunct</span><span class="token punctuation">(</span>myString<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns false because 'G' is not a punctuation character.</span>
+</code></pre>
+<h3 id="isprint"><a aria-hidden="true" class="anchor-heading icon-link" href="#isprint"></a>isprint()</h3>
+<p>Returns true if c is a printable character. Printable characters include alphanumeric, punctuation, and space characters.</p>
+<h3 id="iscntrl"><a aria-hidden="true" class="anchor-heading icon-link" href="#iscntrl"></a>iscntrl()</h3>
+<p> Returns true if c is a control character. Control characters are all characters that are not printable.</p>
+<hr>
+<ul>
+<li>
+<h2 id="tags"><a aria-hidden="true" class="anchor-heading icon-link" href="#tags"></a>Tags:</h2>
+</li>
+<li>
+<h2 id="reference"><a aria-hidden="true" class="anchor-heading icon-link" href="#reference"></a>Reference:</h2>
+</li>
+<li>
+<h2 id="related"><a aria-hidden="true" class="anchor-heading icon-link" href="#related"></a>Related:</h2>
+</li>
+</ul>

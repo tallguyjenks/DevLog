@@ -1,0 +1,44 @@
+<h1 id="substring-removal"><a aria-hidden="true" class="anchor-heading icon-link" href="#substring-removal"></a>Substring Removal</h1>
+<h4 id="sub-string-removal-in-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#sub-string-removal-in-bash"></a>Sub-String Removal In Bash</h4>
+<p>Removing substrings without <code>awk</code>/<code>cut</code> function calls</p>
+<pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">string</span><span class="token operator">=</span><span class="token string">"hello-world"</span>
+<span class="token assign-left variable">prefix</span><span class="token operator">=</span><span class="token string">"hell"</span>
+<span class="token assign-left variable">suffix</span><span class="token operator">=</span><span class="token string">"ld"</span>
+
+<span class="token assign-left variable">foo</span><span class="token operator">=</span><span class="token variable">${string<span class="token operator">#</span>"$prefix"}</span>
+<span class="token assign-left variable">foo</span><span class="token operator">=</span><span class="token variable">${foo<span class="token operator">%</span>"$suffix"}</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${foo}</span>"</span>
+<span class="token comment">#===#===#===#===#===#===#===#</span>
+<span class="token assign-left variable">string</span><span class="token operator">=</span><span class="token string">"hello-world"</span>
+<span class="token assign-left variable">prefix</span><span class="token operator">=</span><span class="token string">"hell"</span>
+<span class="token assign-left variable">suffix</span><span class="token operator">=</span><span class="token string">"ld"</span>
+
+<span class="token comment">#remove "hell" from "hello-world" if "hell" is found at the beginning.</span>
+<span class="token assign-left variable">prefix_removed_string</span><span class="token operator">=</span><span class="token variable">${string<span class="token operator">/</span><span class="token operator">#</span>$prefix}</span>
+
+<span class="token comment">#remove "ld" from "o-world" if "ld" is found at the end.</span>
+<span class="token assign-left variable">suffix_removed_String</span><span class="token operator">=</span><span class="token variable">${prefix_removed_string<span class="token operator">/</span><span class="token operator">%</span>$suffix}</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$suffix_removed_String</span>
+<span class="token comment">#> o-wor</span>
+
+<span class="token comment"># NOTES:</span>
+<span class="token comment"># `#$prefix` : adding `#` makes sure that substring "hell" is removed only if</span>
+<span class="token comment"># it is found in beginning.</span>
+<span class="token comment"># `%$suffix` : adding `%` makes sure that substring "ld" is removed only if it</span>
+<span class="token comment"># is found in end.</span>
+
+<span class="token comment"># Without these, the substrings "hell" and "ld" will get removed everywhere,</span>
+<span class="token comment"># even it is found in the middle.</span>
+
+<span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token string">"apple orange"</span>
+<span class="token comment"># this command will print 'apple'</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${var<span class="token operator">%%</span> *}</span>"</span>
+
+<span class="token comment"># This command will print 'orange'</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${var<span class="token operator">##</span>* }</span>"</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/55q1nbb8d4x9plgnb99l9pa">Doc</a></li>
+</ol>

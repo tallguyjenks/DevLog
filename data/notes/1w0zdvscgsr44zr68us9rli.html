@@ -1,0 +1,22 @@
+<h1 id="rename-field"><a aria-hidden="true" class="anchor-heading icon-link" href="#rename-field"></a>Rename Field</h1>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// BEFORE</span>
+<span class="token keyword">class</span> <span class="token class-name">Organization</span> <span class="token punctuation">{</span>
+  <span class="token keyword">get</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// AFTER</span>
+<span class="token keyword">class</span> <span class="token class-name">Organization</span> <span class="token punctuation">{</span>
+  <span class="token keyword">get</span> <span class="token function">title</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>If the record has limited scope, rename all accesses to the field and test; no need to do the rest of the mechanics.</li>
+<li>If the record isn't already encapsulated, apply <a href="/DevLog/notes/zx1aflg3vjqe9prowhw9ydx">Encapsulate Record</a></li>
+<li>Rename the private field inside the object, adjust internal methods to fit.</li>
+<li>If the constructor uses the name, apply <a href="/DevLog/notes/8wahjk2o9ebw21gsdjt8862">124 Change Function Declaration</a> to rename it.</li>
+<li>Apply <a href="/DevLog/notes/8wahjk2o9ebw21gsdjt8862">124 Change Function Declaration</a> to the accessors.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/tzms0ujpwfktqg4cnt0q19e">Bad Smells In Code (DevLog)</a></li>
+</ul>

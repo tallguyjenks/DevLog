@@ -1,0 +1,17 @@
+<h1 id="the-const-keyword"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-const-keyword"></a>The Const Keyword</h1>
+<p>The <code>CONST</code> keyword is a way to assign a value to an immutable variable that respects local scoping.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">// Here x is 10</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token comment">// Here x is 2</span>
+  x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token comment">// ERROR: value cannot be re-assigned	</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Here x is 10</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/wyqwf8fnqvhbl500itjyj13">Variable Assignment (DevLog)</a></li>
+</ul>

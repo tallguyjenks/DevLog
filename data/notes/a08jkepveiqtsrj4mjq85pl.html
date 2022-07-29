@@ -1,0 +1,20 @@
+<h1 id="text-blocks"><a aria-hidden="true" class="anchor-heading icon-link" href="#text-blocks"></a>Text Blocks</h1>
+<h4 id="text-blocks-in-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#text-blocks-in-bash"></a>Text Blocks In Bash</h4>
+<ul>
+<li>You can have blocks of formatted text in a script for use such as a help menu If you want some of the text to be dynamic you will need to wrap it in double quote. Also echo CAN work for this but its just better to use <code>cat</code> or <code>printf</code></li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">cat</span> <span class="token operator">&#x3C;&#x3C;</span><span class="token string">EOF
+Hello world
+How's it going?
+EOF</span>
+<span class="token comment"># Or use printf (also efficient, printf is built-in):</span>
+<span class="token builtin class-name">printf</span> %s <span class="token string">"\
+Hello world
+How's it going?
+"</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/aax0l7b69nbeiz15ytwtcr4">Doc</a></li>
+</ol>

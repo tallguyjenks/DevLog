@@ -1,0 +1,163 @@
+<h1 id="mastering-chaos-a-netflix-guide-to-microservices"><a aria-hidden="true" class="anchor-heading icon-link" href="#mastering-chaos-a-netflix-guide-to-microservices"></a>Mastering Chaos a Netflix Guide to Microservices</h1>
+<h2 id="challenges-and-solutions"><a aria-hidden="true" class="anchor-heading icon-link" href="#challenges-and-solutions"></a>Challenges and Solutions</h2>
+<h3 id="dependency"><a aria-hidden="true" class="anchor-heading icon-link" href="#dependency"></a>Dependency</h3>
+<h4 id="intra-service-requests"><a aria-hidden="true" class="anchor-heading icon-link" href="#intra-service-requests"></a>Intra-service Requests</h4>
+<ul>
+<li>Microservice A talking to Microservice B</li>
+<li>Problems
+<ul>
+<li>Network Latency, Congestion, failure</li>
+<li>Logical or Scaling failure</li>
+</ul>
+</li>
+<li>Solutions
+<ul>
+<li>Have a fallback service to call or at the very least a static response that allows the customer to carry on with their business</li>
+<li>fail fast, and return to the fallback or wait to recover</li>
+<li>(FIT) Fault Injection Testing
+<ul>
+<li>Synthetic Transactions</li>
+<li>Override by device or account</li>
+<li>% of live traffic up to 100% (test a launched service under load from live customers)</li>
+<li>Enforced thoughout the call</li>
+</ul>
+</li>
+<li>How do we contrain testing scope?
+<ul>
+<li>the most critical services are identified as a group for barest functionality and a FIT reciepe is made and blacklists all non-essential services</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="client-libraries"><a aria-hidden="true" class="anchor-heading icon-link" href="#client-libraries"></a>Client Libraries</h4>
+<h4 id="data-persistence"><a aria-hidden="true" class="anchor-heading icon-link" href="#data-persistence"></a>Data Persistence</h4>
+<ul>
+<li>CAP Theorem: "In the presence of a network partition, you much choose between consistency and availability."
+<ul>
+<li>If you have 1 service needing to write to 3 databases, what if one write fails?
+<ul>
+<li>Do you cancel the write? or do you write to what you can?</li>
+<li>you can aim for eventual consistency by writing to what databases you can and settle up later</li>
+<li>The client writes to one node which then orchestrates the writing to all the other nodes
+<ul>
+<li>"Local Quorum"</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="infrastructure"><a aria-hidden="true" class="anchor-heading icon-link" href="#infrastructure"></a>Infrastructure</h4>
+<ul>
+<li>Have redundant hosting across nodes to prevent catastrophic down time</li>
+</ul>
+<h3 id="scale"><a aria-hidden="true" class="anchor-heading icon-link" href="#scale"></a>Scale</h3>
+<h4 id="stateless-services"><a aria-hidden="true" class="anchor-heading icon-link" href="#stateless-services"></a>Stateless Services</h4>
+<ul>
+<li>Its not a cache or database</li>
+<li>frequently accessed metadata</li>
+<li>no instance affinity</li>
+<li>loss of a node is a non-event</li>
+<li>Autoscaling groups
+<ul>
+<li>Compute efficiency</li>
+<li>Node failure</li>
+<li>Traffic Spikes</li>
+<li>Performance Bugs</li>
+</ul>
+</li>
+<li>Chaos monkey tool test that when a node dies, the service continues to work</li>
+</ul>
+<h4 id="stateful-services"><a aria-hidden="true" class="anchor-heading icon-link" href="#stateful-services"></a>Stateful Services</h4>
+<ul>
+<li>databases and caches</li>
+<li>sometimes a custom app that holds large amounts of data (avoid storing business logic, and state within 1 application if you can avoid it)</li>
+<li>loss of a node is a notable event</li>
+<li>redundancy is fundemental</li>
+<li>EVCache -> difference nodes -> each node has multiple shard caches</li>
+<li>separate out systems used for batch versus real time transactions</li>
+<li>do request level caching</li>
+<li>have an encrypted token with the data to fall back on should the service be unavailable to updated the requested data</li>
+</ul>
+<h3 id="variance"><a aria-hidden="true" class="anchor-heading icon-link" href="#variance"></a>Variance</h3>
+<h4 id="operation-drift"><a aria-hidden="true" class="anchor-heading icon-link" href="#operation-drift"></a>Operation Drift</h4>
+<ul>
+<li>drift over time
+<ul>
+<li>alert thresholds</li>
+<li>timeouts, retries, fallbacks</li>
+<li>throughput (RPS)</li>
+</ul>
+</li>
+<li>Across microservices
+<ul>
+<li>Reliability best practices</li>
+</ul>
+</li>
+<li>Continious learning and automation
+<ul>
+<li>Incident --> Resolution --> Review --> Remediation --> Analysis --> Best Practices? --> Automation --> Adoption</li>
+</ul>
+</li>
+<li>Production Ready best practices
+<ul>
+<li>Alerts</li>
+<li>Apache &#x26; tomcat</li>
+<li>Automated canary Analysis</li>
+<li>Autoscaling</li>
+<li>Chaos</li>
+<li>Consistent naming</li>
+<li>ELB Config</li>
+<li>Healthcheck</li>
+<li>Immutable machine images</li>
+<li>Squeeze testing</li>
+<li>Staged, red/black deployments</li>
+<li>Timeouts, retries, fallbacks</li>
+</ul>
+</li>
+</ul>
+<h4 id="polyglot--containers"><a aria-hidden="true" class="anchor-heading icon-link" href="#polyglot--containers"></a>Polyglot &#x26; Containers</h4>
+<ul>
+<li>The Paved Road (do this for a smooth experience)
+<ul>
+<li>Stash</li>
+<li>Nebula/Gradle</li>
+<li>BaseAMI/Ubuntu</li>
+<li>Jenkins</li>
+<li>Spinnaker</li>
+<li>Runtime Platform</li>
+</ul>
+</li>
+<li>Cost of Variance
+<ul>
+<li>Productivity Tooling</li>
+<li>Insight &#x26; Triage Capabilities</li>
+<li>Base Image Fragmentation</li>
+<li>Node management</li>
+<li>Library/Platform duplication</li>
+<li>Learning curve - production expertise</li>
+</ul>
+</li>
+<li>Strategic Stance
+<ul>
+<li>Raise awareness of costs</li>
+<li>Constrain centralized support</li>
+<li>Prioritize by impact</li>
+<li>Seek reusable solutions</li>
+</ul>
+</li>
+</ul>
+<h3 id="change"><a aria-hidden="true" class="anchor-heading icon-link" href="#change"></a>Change</h3>
+<ul>
+<li>Integrated, Automated practices
+<ul>
+<li>Conformity checks</li>
+<li>Red/black pipelines</li>
+<li>Automated canaries</li>
+<li>Staged deployments</li>
+<li>Squeeze tests</li>
+</ul>
+</li>
+</ul>

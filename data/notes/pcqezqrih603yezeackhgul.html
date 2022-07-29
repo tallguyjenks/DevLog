@@ -1,0 +1,41 @@
+<h1 id="copy"><a aria-hidden="true" class="anchor-heading icon-link" href="#copy"></a>Copy</h1>
+<blockquote>
+<p>The COPY statement retrieves data from your database and dumps it in the file format of your choosing. For example, take the following statement:</p>
+</blockquote>
+<h2 id="data-to-stdout"><a aria-hidden="true" class="anchor-heading icon-link" href="#data-to-stdout"></a>Data To STDOUT</h2>
+<pre class="language-sql"><code class="language-sql">COPY <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> customers <span class="token keyword">LIMIT</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">TO</span> STDOUT <span class="token keyword">WITH</span> CSV HEADER<span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li><code>COPY</code> is simply the command used to transfer data to a file format.</li>
+<li><code>(SELECT * FROM customers LIMIT 5)</code> is the query that we want to copy.</li>
+<li><code>TO STDOUT</code> indicates that the results should be printed rather than saved to a file on the hard drive. "Standard Out" is the common term for displaying output in a command-line terminal environment.</li>
+<li><code>WITH</code> is an optional keyword used to separate the parameters that we will use in the database-to-file transfer.</li>
+<li><code>CSV</code> indicates that we will use the CSV file format. We could have also specified <code>BINARY</code> or left this out altogether and received the output in text format.</li>
+<li><code>HEADER</code> indicates that we want the header printed as well.</li>
+</ul>
+<h2 id="data-to-a-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#data-to-a-file"></a>Data to a file</h2>
+<pre class="language-sql"><code class="language-sql">COPY <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> customers <span class="token keyword">LIMIT</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">TO</span> <span class="token string">'/path/to/my_file.csv'</span> <span class="token keyword">WITH</span> CSV HEADER<span class="token punctuation">;</span>
+</code></pre>
+<h2 id="use-psql-cli-to-get-data-into-the-database"><a aria-hidden="true" class="anchor-heading icon-link" href="#use-psql-cli-to-get-data-into-the-database"></a>Use psql CLI to get data into the database</h2>
+<pre class="language-bash"><code class="language-bash">psql -h my_host -p <span class="token number">5432</span> -d my_database -U my_username
+<span class="token punctuation">\</span>copy <span class="token punctuation">(</span>SELECT * FROM customers LIMIT <span class="token number">5</span><span class="token punctuation">)</span> TO <span class="token string">'my_file.csv'</span> WITH CSV HEADER:
+</code></pre>
+<ul>
+<li><code>\copy</code> is invoking the Postgres <code>COPY</code> ... <code>TO STDOUT</code>... command to output the data.</li>
+<li><code>(SELECT * FROM customers LIMIT 5)</code> is the query that we want to copy.</li>
+<li><code>TO 'my_file.csv'</code> indicates that psql should save the output from standard into my_file.csv.</li>
+<li>The <code>WITH CSV HEADER</code> parameters operate the same as before.</li>
+</ul>
+<h3 id="configuring-the-copy-command"><a aria-hidden="true" class="anchor-heading icon-link" href="#configuring-the-copy-command"></a>Configuring the copy command</h3>
+<ul>
+<li><code>DELIMITER</code> 'delimiter_character' can be used to specify the delimiter character
+for CSV or text files (for example for CSV files, or '<code>|</code>' for pipe-separated files)</li>
+</ul>
+<h3 id="loading-data-into-a-table"><a aria-hidden="true" class="anchor-heading icon-link" href="#loading-data-into-a-table"></a>Loading data into a table</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token punctuation">\</span>copy customers FROM <span class="token string">'my_file.csv'</span> CSV HEADER DELIMITER
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/kyeu3h5pym90eziek8pjn4n">Sql_for_data_analytics_perform_fast_and_efficient (DevLog)</a></li>
+</ul>

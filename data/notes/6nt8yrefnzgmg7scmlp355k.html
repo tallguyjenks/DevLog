@@ -1,0 +1,34 @@
+<h1 id="flow"><a aria-hidden="true" class="anchor-heading icon-link" href="#flow"></a>Flow</h1>
+<h5 id="bash-test-conditionals"><a aria-hidden="true" class="anchor-heading icon-link" href="#bash-test-conditionals"></a>Bash Test Conditionals</h5>
+<ul>
+<li>Testing conditions is down to using square bracket syntax:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">3</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token number">2</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"yes!"</span>
+<span class="token keyword">fi</span>
+</code></pre>
+<ul>
+<li>To note, double brackets are a BASH-ism and not POSIX compliant.
+To test multiple conditions for the same evaluation do not use the
+internal <code>-a</code> for and or the <code>-o</code> for or like:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">3</span> -o <span class="token number">2</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"yes!"</span>
+<span class="token keyword">fi</span>
+</code></pre>
+<ul>
+<li>Instead separate the tests into separate commands with the <code>&#x26;&#x26;</code> operator.
+This way it will run each test as a separate command, AND it will only
+continue forward if the condition is true:</li>
+<li><code>&#x3C;this has to be true> &#x26;&#x26; "AND" &#x3C;this has to be true, to continue></code>.</li>
+<li>Double quote <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Bash Variables (Private)</a> use in the test condition unless you
+explicitly know and understand why they should be unquoted.</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/oazlwkvxlps4xizarii5zgl">Case</a></li>
+<li><a href="/DevLog/notes/dzjzl9lpn5uv1rcpou572t2">If Else</a></li>
+<li><a href="/DevLog/notes/d1m1iri3dz8qoj9yj4whfgb">Loops</a></li>
+<li><a href="/DevLog/notes/1prqx2gxhevatzqj9e1cqyj">Ternary Test</a></li>
+</ol>

@@ -1,0 +1,41 @@
+<h1 id="nmap"><a aria-hidden="true" class="anchor-heading icon-link" href="#nmap"></a>Nmap</h1>
+<h2 id="details"><a aria-hidden="true" class="anchor-heading icon-link" href="#details"></a>Details</h2>
+<p><a href="https://nmap.org/">https://nmap.org/</a></p>
+<p>Port scanning tool</p>
+<p><img src="/DevLog/assets/images/2022-01-10-22-18-19.png" alt="nmap"></p>
+<h2 id="usage"><a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a>Usage</h2>
+<pre><code>nmap &#x3C;IP subnet / address> [switches]
+</code></pre>
+<p>With no switches like this the default behavior of <a href="/DevLog/notes/qqf5tbpq7m7jskr785qgdcn">Nmap</a> is to <a href="/DevLog/notes/barv2olf0uo4jz2iraz318n">Ping</a> and send a <a href="/DevLog/notes/do3kbfstdvlwsakuy42jfee">TCP</a> <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a> packet to ports <a href="/DevLog/notes/2n91fci3wnkhza3apjy3wpl">80</a> and <a href="/DevLog/notes/34vua3gvosfon088a1k1n9i">443</a> to determine whether a host is present.</p>
+<p>If you want to perform only host discovery, you can use <code>nmap -sn</code> (or <code>-sP</code> in earlier versions) to suppress the port scan.</p>
+<h2 id="port-scanning"><a aria-hidden="true" class="anchor-heading icon-link" href="#port-scanning"></a>Port scanning</h2>
+<ul>
+<li><a href="/DevLog/notes/do3kbfstdvlwsakuy42jfee">TCP</a> <a href="/DevLog/notes/awtek1j6lvd26g6q0ok6jhi">Syn</a> (<code>-sS</code>)
+<ul>
+<li>This is a fast technique (also referred to as half-open scanning) as the scanning host requests a connection without acknowledging it. </li>
+<li>The target's response to the scan's <a href="/DevLog/notes/awtek1j6lvd26g6q0ok6jhi">Syn</a> packet identifies the port state.</li>
+</ul>
+</li>
+<li><a href="/DevLog/notes/do3kbfstdvlwsakuy42jfee">TCP</a> connect (<code>-sT</code>)
+<ul>
+<li>A half-open scan requires <a href="/DevLog/notes/qqf5tbpq7m7jskr785qgdcn">Nmap</a> to have privileged access to the network driver so that it can craft packets. </li>
+<li>If privileged access is not available, <a href="/DevLog/notes/qqf5tbpq7m7jskr785qgdcn">Nmap</a> must use the OS to attempt a full <a href="/DevLog/notes/do3kbfstdvlwsakuy42jfee">TCP</a> connection. </li>
+<li>This type of scan is less stealthy.</li>
+</ul>
+</li>
+<li><a href="/DevLog/notes/7s9z8tfihz9m5ytqqjmjej0">UDP</a> scans (<code>-sU</code>)
+<ul>
+<li>Scan <a href="/DevLog/notes/7s9z8tfihz9m5ytqqjmjej0">UDP</a> ports. </li>
+<li>As these do not use <a href="/DevLog/notes/i2id86bq15ygaqk4k9sl0kh">Ack</a>s, <a href="/DevLog/notes/qqf5tbpq7m7jskr785qgdcn">Nmap</a> needs to wait for a response or timeout to determine the port state, so <a href="/DevLog/notes/7s9z8tfihz9m5ytqqjmjej0">UDP</a> scanning can take a long time. </li>
+<li>A <a href="/DevLog/notes/7s9z8tfihz9m5ytqqjmjej0">UDP</a> scan can be combined with a <a href="/DevLog/notes/do3kbfstdvlwsakuy42jfee">TCP</a> scan.</li>
+</ul>
+</li>
+<li>Port range (<code>-p</code>)
+<ul>
+<li>By default, <a href="/DevLog/notes/qqf5tbpq7m7jskr785qgdcn">Nmap</a> scans 1,000 commonly used ports. </li>
+<li>Use the <code>-p</code> argument to specify a port range. </li>
+<li>You can also use <code>--top-ports</code> n, where n is the number of commonly used ports to scan. </li>
+<li>The frequency statistics for determining how commonly a port is used are stored in the <a href="/DevLog/notes/qqf5tbpq7m7jskr785qgdcn">Nmap</a>-services configuration file.</li>
+</ul>
+</li>
+</ul>

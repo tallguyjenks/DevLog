@@ -1,0 +1,24 @@
+<h1 id="parens"><a aria-hidden="true" class="anchor-heading icon-link" href="#parens"></a>Parens</h1>
+<h4 id="parentheses"><a aria-hidden="true" class="anchor-heading icon-link" href="#parentheses"></a>Parentheses</h4>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">(</span> command1<span class="token punctuation">;</span> command2 <span class="token punctuation">)</span>             <span class="token comment"># Command group executed within a subshell</span>
+<span class="token assign-left variable">Array</span><span class="token operator">=</span><span class="token punctuation">(</span>element1 element2 element3<span class="token punctuation">)</span> <span class="token comment"># Array initialization</span>
+<span class="token assign-left variable">result</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>COMMAND<span class="token variable">)</span></span>                  <span class="token comment"># Command substitution, new style</span>
+<span class="token operator">></span><span class="token punctuation">(</span>COMMAND<span class="token punctuation">)</span>                         <span class="token comment"># Process substitution</span>
+<span class="token operator">&#x3C;</span><span class="token punctuation">(</span>COMMAND<span class="token punctuation">)</span>                         <span class="token comment"># Process substitution</span>
+</code></pre>
+<h4 id="double-parentheses"><a aria-hidden="true" class="anchor-heading icon-link" href="#double-parentheses"></a>Double Parentheses</h4>
+<pre class="language-shell"><code class="language-shell"><span class="token variable"><span class="token punctuation">((</span> var <span class="token operator">=</span> <span class="token number">78</span> <span class="token punctuation">))</span></span>            <span class="token comment"># Integer arithmetic</span>
+<span class="token assign-left variable">var</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span> <span class="token number">20</span> <span class="token operator">+</span> <span class="token number">5</span> <span class="token variable">))</span></span>         <span class="token comment"># Integer arithmetic, with variable assignment</span>
+<span class="token variable"><span class="token punctuation">((</span> var<span class="token operator">++</span> <span class="token punctuation">))</span></span>               <span class="token comment"># C-style variable increment</span>
+<span class="token variable"><span class="token punctuation">((</span> var<span class="token operator">--</span> <span class="token punctuation">))</span></span>               <span class="token comment"># C-style variable decrement</span>
+<span class="token variable"><span class="token punctuation">((</span> var0 <span class="token operator">=</span> var1<span class="token operator">&#x3C;</span><span class="token number">98</span><span class="token operator">?</span><span class="token number">9</span><span class="token operator">:</span><span class="token number">21</span> <span class="token punctuation">))</span></span> <span class="token comment"># C-style ternary operation</span>
+</code></pre>
+<pre class="language-shell"><code class="language-shell"><span class="token variable"><span class="token punctuation">((</span>a<span class="token operator">++</span><span class="token punctuation">))</span></span>
+
+<span class="token variable"><span class="token punctuation">((</span>meaning <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">))</span></span>
+
+<span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&#x3C;</span><span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">))</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">$((</span>a <span class="token operator">+</span> b <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">14</span> <span class="token operator">*</span> c<span class="token variable">))</span></span><span class="token punctuation">)</span>
+</code></pre>
+<p>and they enable you to omit the dollar signs on integer and array variables and include spaces around operators for readability.</p>

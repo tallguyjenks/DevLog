@@ -1,0 +1,21 @@
+<h1 id="query-execution-order-of-operations"><a aria-hidden="true" class="anchor-heading icon-link" href="#query-execution-order-of-operations"></a>Query Execution Order of Operations</h1>
+<pre class="language-sql"><code class="language-sql"><span class="token punctuation">(</span> <span class="token number">5.1</span> <span class="token punctuation">)</span> <span class="token keyword">SELECT</span> 
+         <span class="token punctuation">(</span> <span class="token number">5.2</span> <span class="token punctuation">)</span> <span class="token keyword">DISTINCT</span> 
+         <span class="token punctuation">(</span> <span class="token number">7</span> <span class="token punctuation">)</span> <span class="token keyword">TOP</span> 
+<span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span> <span class="token keyword">FROM</span>  <span class="token operator">&#x3C;</span><span class="token keyword">tables</span><span class="token operator">></span>  <span class="token punctuation">[</span><span class="token keyword">JOIN</span><span class="token punctuation">,</span> <span class="token keyword">APPLY</span><span class="token punctuation">,</span> <span class="token keyword">PIVOT</span><span class="token punctuation">,</span> <span class="token keyword">UNPIVOT</span><span class="token punctuation">]</span>
+<span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span> <span class="token keyword">WHERE</span>
+<span class="token punctuation">(</span> <span class="token number">3</span> <span class="token punctuation">)</span> <span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+<span class="token punctuation">(</span> <span class="token number">4</span> <span class="token punctuation">)</span> <span class="token keyword">HAVING</span>
+<span class="token punctuation">(</span> <span class="token number">6</span> <span class="token punctuation">)</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+</code></pre>
+<ol>
+<li><code>FROM</code>:  The query process starts with the FROM clause. Beginning with the specified source tables, it processes table operators (join, apply, etc.) in written order from left to right.  </li>
+<li><code>WHERE</code>: This phase filters the rows based on the predicate in the WHERE clause. Only rows for which the predicate evaluates to TRUE are returned.</li>
+<li><code>GROUP BY</code>: This phase arranges the filtered rows in groups based on the set of expressions (aka, grouping set) specified in the GROUP BY clause. There will be one result row per qualifying group</li>
+<li><code>HAVING</code>: This phase filters the groups on the predicate that appears in the HAVING clause (similar to a WHERE clause but for groups). Only groups for which the predicate evaluates to TRUE are returned.</li>
+<li><code>SELECT</code></li>
+<li><code>Evaluate Expressions</code>: This phase evaluates the expressions in the SELECT list.</li>
+<li><code>DISTINCT</code>: This phase removes duplicate rows from the SELECT list results.</li>
+<li><code>ORDER BY </code>: This phase orders the rows according to the list in the ORDER BY clause.</li>
+<li><code>TOP</code>: This phase filters specified number of rows based on the ordering in the ORDER BY clause, or based on arbitrary order if there is no ORDER BY clause specified. </li>
+</ol>

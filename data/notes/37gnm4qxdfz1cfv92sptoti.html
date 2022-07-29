@@ -1,0 +1,102 @@
+<h1 id="venv"><a aria-hidden="true" class="anchor-heading icon-link" href="#venv"></a>Venv</h1>
+<ul>
+<li><strong>Python Virtual Environments</strong>
+<ul>
+<li><strong>What are they</strong>
+<ul>
+<li>a place to install packages that are specific to a certain project
+<ul>
+<li>also like <a href="/DevLog/notes/17scqb3t05mq7565iy6tsu0">Packrat</a> where you want to use a specific older version of a package in a snapshot</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>How to use them</strong>
+<ul>
+<li>A good module to use for this is the <code>venv</code> module</li>
+<li><code>python3 -m venv project_env</code>
+<ul>
+<li>make a new project in a virtual environment</li>
+</ul>
+</li>
+<li><code>python3 -m venv projects/env_name</code>
+<ul>
+<li>Makes multiple environments for different projects but all in a single overarching directory</li>
+</ul>
+</li>
+<li><code>source project_env/bin/activate</code>
+<ul>
+<li>activates it</li>
+<li>if on windows in power shell its <code>&#x26; project_env/scripts/activate.ps1</code></li>
+</ul>
+</li>
+<li><code>which python</code>
+<ul>
+<li>confirms usage by</li>
+</ul>
+</li>
+<li><code>pip list</code>
+<ul>
+<li>in the venv if you this command it will show you all the installed packages (only pip and setup tools) installed packages will now be stored here</li>
+</ul>
+</li>
+<li><code>pip freeze</code>
+<ul>
+<li>Gets a list of the packages to send for reproducible analysis</li>
+<li>and the output can go to <em>requirements.txt</em></li>
+</ul>
+</li>
+<li><code>deactivate</code>
+<ul>
+<li>to deactivate the venv</li>
+</ul>
+</li>
+<li><code>pip install -r requrirements.txt</code>
+<ul>
+<li>To take a new virtual environment and install a list of requirements that we exported above</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Package Management</strong>
+<ul>
+<li><code>python3 -m venv venv --system-site-packages</code>
+<ul>
+<li>Create a venv with access to the system global packages for python from within a virtual environment</li>
+<li>the difference is that now you copied your system packages to the venv but new installs will only go into the venv until you remove it</li>
+</ul>
+</li>
+<li><code>pip list --local</code>
+<ul>
+<li>to see packages that are only installed in the venv and not the system</li>
+</ul>
+</li>
+<li><code>pip freeze --local</code>
+<ul>
+<li>same logic as above</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Information</strong>
+<ul>
+<li>You can put your virtual environment into the project folder but you dont want to put your project files into the venv as the venv is just the place where execution is taking place, your working files should be in your project directory.</li>
+<li>the venv's are meant to be disposable and easy to throw away so no project files in them.</li>
+<li>Never commit your venv's to source control, put them in gitignore</li>
+<li>but what you would commit to source control is the <em>requirements.txt</em> doc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/dpdqe7ywyvz159joxvmdaz2">Virtualenv</a></li>
+<li><a href="/DevLog/notes/2ryzhou6bz2rxhu4ld73wmd">Vulture</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/mf06ulkdx70wdr1g2uvmjgq">Pyqt (DevLog)</a></li>
+</ul>

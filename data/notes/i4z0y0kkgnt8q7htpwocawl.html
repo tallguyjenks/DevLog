@@ -1,0 +1,62 @@
+<h1 id="linux-shell-tricks"><a aria-hidden="true" class="anchor-heading icon-link" href="#linux-shell-tricks"></a>Linux Shell Tricks</h1>
+<ul>
+<li><code>Author:</code> Sergio Daniel Cortez Chavez</li>
+<li><code>Link:</code> <a href="https://sergiocortez-37830.medium.com/linux-shell-tricks-2f34c5935b89">https://sergiocortez-37830.medium.com/linux-shell-tricks-2f34c5935b89</a></li>
+<li><code>Publish Date:</code> 2021.11.29</li>
+<li><code>Reviewed Date:</code> <a href="/DevLog/notes/g7nabkltbq6i1mowm945isw">On This Day...</a></li>
+</ul>
+<hr>
+<h2 id="stdin-as-a-file-argument"><a aria-hidden="true" class="anchor-heading icon-link" href="#stdin-as-a-file-argument"></a>Stdin as a file argument</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Command expects a file:</span>
+<span class="token function">wc</span> file1 file2
+<span class="token comment"># Instead of making a temp file to read in a little text use this to pass in</span>
+<span class="token comment"># text as a temp file to STDIN</span>
+<span class="token function">wc</span> file1 - file2 <span class="token comment"># waits for you to type input and you complete this process by using `CTRL+D` which inserts the EOF character</span>
+</code></pre>
+<h2 id="use-the-output-of-another-command-as-a-file-argument"><a aria-hidden="true" class="anchor-heading icon-link" href="#use-the-output-of-another-command-as-a-file-argument"></a>Use the output of another command as a file argument</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">wc</span> file1 <span class="token operator">&#x3C;</span><span class="token punctuation">(</span><span class="token builtin class-name">echo</span> “hello world”<span class="token punctuation">)</span> file2
+</code></pre>
+<blockquote>
+<p>When you wrap a command with <code>&#x3C;(...)</code> bash generate a temporal file in a path like <code>/dev/fd/64</code>, then execute your wrapped command, put the output in this temporal file, and finally replace <code>&#x3C;(...)</code> with the filename of the temporal file, in this case, <code>/dev/fd/64</code></p>
+</blockquote>
+<h2 id="avoid-conflicts-with-filenames-that-start-with-a-dash"><a aria-hidden="true" class="anchor-heading icon-link" href="#avoid-conflicts-with-filenames-that-start-with-a-dash"></a>Avoid conflicts with filenames that start with a dash</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># -- indicates the end of the options section</span>
+<span class="token comment"># -myFile.txt uses a dash after the options section to avoid conflicts</span>
+<span class="token function">cat</span> -- -myFile.txt
+</code></pre>
+<h2 id="re-run-commands"><a aria-hidden="true" class="anchor-heading icon-link" href="#re-run-commands"></a>Re-run commands</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># of course there's</span>
+<span class="token function">sudo</span> <span class="token operator">!</span><span class="token operator">!</span>
+<span class="token comment"># but you can also do</span>
+<span class="token operator">!</span>-N <span class="token comment"># where N is the Nth command (Relative)</span>
+<span class="token comment"># or</span>
+<span class="token operator">!</span>N <span class="token comment"># for the N command in your history (Absolute)</span>
+</code></pre>
+<h2 id="re-use-command-arguments"><a aria-hidden="true" class="anchor-heading icon-link" href="#re-use-command-arguments"></a>Re-use command arguments</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> very-large-directory-name
+<span class="token builtin class-name">cd</span> very-large-directory-name
+<span class="token comment"># Instead of duplicating the argument of the mkdir command, you can use !$ for retrieve the last argument of the last command, the result is:</span>
+<span class="token function">mkdir</span> very-large-directory-name
+<span class="token builtin class-name">cd</span> <span class="token operator">!</span>$ <span class="token comment"># == cd very-large-directory-name</span>
+</code></pre>
+<h2 id="ignore-the-first-n-lines"><a aria-hidden="true" class="anchor-heading icon-link" href="#ignore-the-first-n-lines"></a>Ignore the first N lines</h2>
+<blockquote>
+<p>By default, the tail command will show the last n rows, but if you specified the option -n with a number that starts with the + symbol, like +5 , the first 5 lines are going to be skipped.</p>
+</blockquote>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># In this example, the tail command is going to skip the first 10 lines and print the rest of the file content.</span>
+<span class="token function">tail</span> -n +10 dataset.csv
+</code></pre>
+<h2 id="track-the-content-of-a-log-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#track-the-content-of-a-log-file"></a>Track the content of a log file</h2>
+<blockquote>
+<p>See the contents of a file in real time</p>
+</blockquote>
+<pre class="language-bash"><code class="language-bash"><span class="token function">watch</span> <span class="token function">cat</span> log.txt
+</code></pre>
+<blockquote>
+<p>Although this command does the job, it is not the best option. You can use the tail command with the -f option to track only the new lines that are appended to the file,</p>
+</blockquote>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/g7nabkltbq6i1mowm945isw">On This Day... (DevLog)</a></li>
+</ul>

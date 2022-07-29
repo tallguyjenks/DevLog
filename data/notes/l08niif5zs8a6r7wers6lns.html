@@ -1,0 +1,70 @@
+<h1 id="new"><a aria-hidden="true" class="anchor-heading icon-link" href="#new"></a>New</h1>
+<h3 id="the-new-operator"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-new-operator"></a>The 'New' Operator</h3>
+<blockquote>
+<p>Sometimes memory should be allocated while a program is running and should persist independently of any particular function. The <strong>new</strong> operator allocates memory for the given type and returns a pointer (i.e., the address) to that allocated memory.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp">
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span><span class="token operator">*</span> myPtr <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"myPtr: "</span>  <span class="token operator">&#x3C;&#x3C;</span> myPtr <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// Next line would cause error because myPtr is null</span>
+   <span class="token comment">// cout &#x3C;&#x3C; "*myPtr: " &#x3C;&#x3C; *myPtr &#x3C;&#x3C; endl; // ERROR</span>
+   
+   <span class="token comment">// new allocates int, returns pointer</span>
+   myPtr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span> 
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"myPtr: "</span>  <span class="token operator">&#x3C;&#x3C;</span> myPtr <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"*myPtr: "</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token operator">*</span>myPtr <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token operator">*</span>myPtr <span class="token operator">=</span> <span class="token number">555</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"*myPtr: "</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token operator">*</span>myPtr <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>The new operator is commonly used with class types, as in <code>new SimpleItem;</code> where <code>SimpleItem</code> is a class name. After new allocates memory for a class object, the object's constructor is called. Arguments may be provided after the class name to call a non-default constructor.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SimpleItem</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+   <span class="token keyword">void</span> <span class="token function">PrintNums</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">SimpleItem</span><span class="token punctuation">(</span><span class="token keyword">int</span> initVa1 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">int</span> initVal2 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+   <span class="token keyword">int</span> num1<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> num2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token class-name">SimpleItem</span><span class="token double-colon punctuation">::</span><span class="token function">SimpleItem</span><span class="token punctuation">(</span><span class="token keyword">int</span> initVal1<span class="token punctuation">,</span> <span class="token keyword">int</span> initVal2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   num1 <span class="token operator">=</span> initVal1<span class="token punctuation">;</span>
+   num2 <span class="token operator">=</span> initVal2<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">SimpleItem</span><span class="token double-colon punctuation">::</span><span class="token function">PrintNums</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num1: "</span> <span class="token operator">&#x3C;&#x3C;</span> num1 <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num2: "</span> <span class="token operator">&#x3C;&#x3C;</span> num2 <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   SimpleItem<span class="token operator">*</span> myItemPtr1 <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+   SimpleItem<span class="token operator">*</span> myItemPtr2 <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+   
+   myItemPtr1 <span class="token operator">=</span> <span class="token keyword">new</span> SimpleItem<span class="token punctuation">;</span>
+   <span class="token punctuation">(</span><span class="token operator">*</span>myItemPtr1<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">PrintNums</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   myItemPtr2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">SimpleItem</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">(</span><span class="token operator">*</span>myItemPtr2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">PrintNums</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

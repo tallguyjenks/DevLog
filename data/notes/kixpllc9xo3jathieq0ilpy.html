@@ -1,0 +1,13 @@
+<h1 id="deleting-a-large-table-iteratively"><a aria-hidden="true" class="anchor-heading icon-link" href="#deleting-a-large-table-iteratively"></a>Deleting a Large Table Iteratively</h1>
+<p>Neat way to use TOP to delete / truncate</p>
+<p>Deleting a large table takes a lot of resources and causes a lot of locks</p>
+<p>Looping query that deletes 100k rows per iteration until 0 rows remain</p>
+<p>When using TOP with a DELETE statement, you have to use the new syntax - using "( )" parenthesis</p>
+<p>Allows us to delete a very large table without using a lot of peak resources</p>
+<p>Deletes in chunks, allows parts to be deleted, very handy technique</p>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- do delete in chunks to minimize max lock/resources</span>
+updateMore:
+<span class="token keyword">DELETE</span> <span class="token keyword">TOP</span><span class="token punctuation">(</span><span class="token number">100000</span><span class="token punctuation">)</span> DB<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>big_table
+<span class="token keyword">IF</span> @<span class="token variable">@rowcount</span> <span class="token operator">!=</span><span class="token number">0</span>
+<span class="token keyword">goto</span> updateMore<span class="token punctuation">;</span>
+</code></pre>

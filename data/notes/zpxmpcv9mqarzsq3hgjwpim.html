@@ -1,0 +1,58 @@
+<h1 id="non-clustered-index"><a aria-hidden="true" class="anchor-heading icon-link" href="#non-clustered-index"></a>Non Clustered Index</h1>
+<blockquote>
+<p>A non-clustered index doesn’t sort the physical data inside the table. In fact, a non-clustered index is stored at one place and table data is stored in another place. This is similar to a textbook where the book content is located in one place and the index is located in another. This allows for more than one non-clustered index per table.
+<br>
+It is important to mention here that inside the table the data will be sorted by a clustered index. However, inside the non-clustered index data is stored in the specified order. The index contains column values on which the index is created and the address of the record that the column value belongs to.
+<br>
+When a query is issued against a column on which the index is created, the database will first go to the index and look for the address of the corresponding row in the table. It will then go to that row address and fetch other column values. <strong>It is due to this additional step that non-clustered indexes are slower than <a href="/DevLog/notes/tieeobcp5pasmlsrlie54vy">TSQL Clustered Index</a>.</strong></p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> schooldb
+          
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> student <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span> <span class="token comment">-- &#x3C;==</span>
+    name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    gender <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    DOB <span class="token keyword">datetime</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    total_score <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    city <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">--------------------------------</span>
+<span class="token keyword">USE</span> schooldb
+          
+<span class="token keyword">EXECUTE</span> sp_helpindex student
+</code></pre>
+<p>The above query will return this result:</p>
+<p><img src="/DevLog/assets/images/Pasted_image_20211201134834.png" alt="alt"></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> schooldb
+          
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> student
+ 
+<span class="token keyword">VALUES</span>  
+<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">'Kate'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'03-JAN-1985'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">'Liverpool'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'Jon'</span><span class="token punctuation">,</span> <span class="token string">'Male'</span><span class="token punctuation">,</span> <span class="token string">'02-FEB-1974'</span><span class="token punctuation">,</span> <span class="token number">545</span><span class="token punctuation">,</span> <span class="token string">'Manchester'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token string">'Wise'</span><span class="token punctuation">,</span> <span class="token string">'Male'</span><span class="token punctuation">,</span> <span class="token string">'11-NOV-1987'</span><span class="token punctuation">,</span> <span class="token number">499</span><span class="token punctuation">,</span> <span class="token string">'Manchester'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'Sara'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'07-MAR-1988'</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">,</span> <span class="token string">'Leeds'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Jolly'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'12-JUN-1989'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">'London'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'Laura'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'22-DEC-1981'</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">,</span> <span class="token string">'Liverpool'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">'Joseph'</span><span class="token punctuation">,</span> <span class="token string">'Male'</span><span class="token punctuation">,</span> <span class="token string">'09-APR-1982'</span><span class="token punctuation">,</span> <span class="token number">643</span><span class="token punctuation">,</span> <span class="token string">'London'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  
+<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'Alan'</span><span class="token punctuation">,</span> <span class="token string">'Male'</span><span class="token punctuation">,</span> <span class="token string">'29-JUL-1993'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">'London'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token string">'Mice'</span><span class="token punctuation">,</span> <span class="token string">'Male'</span><span class="token punctuation">,</span> <span class="token string">'16-AUG-1974'</span><span class="token punctuation">,</span> <span class="token number">543</span><span class="token punctuation">,</span> <span class="token string">'Liverpool'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">'Elis'</span><span class="token punctuation">,</span> <span class="token string">'Female'</span><span class="token punctuation">,</span> <span class="token string">'28-OCT-1990'</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">,</span> <span class="token string">'Leeds'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- NOTE id's in random order upon insertion</span>
+
+<span class="token comment">--------------------------------</span>
+<span class="token keyword">USE</span> schooldb
+          
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> student
+</code></pre>
+<p><img src="/DevLog/assets/images/Pasted_image_20211201134934.png" alt="alt"></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">use</span> schooldb
+ 
+<span class="token keyword">CREATE</span> <span class="token keyword">NONCLUSTERED</span> <span class="token keyword">INDEX</span> IX_tblStudent_Name
+<span class="token keyword">ON</span> student<span class="token punctuation">(</span>name <span class="token keyword">ASC</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>The above script creates a non-clustered index on the “name” column of the student table. The index sorts by name in ascending order. As we said earlier, the table data and index will be stored in different places. The table records will be sorted by a clustered index if there is one. The index will be sorted according to its definition and will be stored separately from the table.</p>
+</blockquote>
+<p><img src="/DevLog/assets/images/Pasted_image_20211201135410.png" alt="alt"></p>

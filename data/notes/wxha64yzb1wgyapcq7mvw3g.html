@@ -1,0 +1,35 @@
+<h1 id="variable-names"><a aria-hidden="true" class="anchor-heading icon-link" href="#variable-names"></a>Variable Names</h1>
+<h3 id="variable-names-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#variable-names-1"></a>Variable Names</h3>
+<ul>
+<li>Name a private identifier with a leading underscore ( <code>_username</code>)
+<ul>
+<li>These items are not meant to be part of the public interface</li>
+<li>They may just be managing some part of internal state</li>
+<li><strong>CAN</strong> be accessed via <code>obj._method_</code> but items flow to the bottom of the suggestions</li>
+</ul>
+</li>
+<li>Name a strongly private identifier with two leading underscores (<code>__password</code>)
+<ul>
+<li>when viewing objects <code>dir(obj)</code> these methods are not depicted as
+<ul>
+<li><code>__method</code></li>
+</ul>
+</li>
+<li>But rather as <code>_obj__method</code>
+<ul>
+<li>This prevents collisions when in a subclass from <code>obj</code> wanting to re-use the <code>__method</code>name</li>
+</ul>
+</li>
+<li><strong>CANNOT</strong> be accessed via <code>obj.__method</code> an AttributeError will be thrown and cant be found
+<ul>
+<li>Only way to find it is with the mangled name: <code>instance._obj__method</code> but not recommended</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Special identifiers in Python end with two leading underscores.
+<ul>
+<li><em>A.K.A. Dunder methods (double under-score)</em> <code>__main__</code></li>
+</ul>
+</li>
+</ul>

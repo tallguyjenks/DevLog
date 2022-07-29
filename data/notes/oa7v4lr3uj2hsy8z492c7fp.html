@@ -1,0 +1,8 @@
+<h1 id="for"><a aria-hidden="true" class="anchor-heading icon-link" href="#for"></a>For</h1>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">filename</span> <span class="token keyword">in</span> *<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token string">"put <span class="token variable">${filename}</span>"</span><span class="token punctuation">;</span> <span class="token keyword">done</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">file</span> <span class="token keyword">in</span> *<span class="token punctuation">;</span> <span class="token keyword">do</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span> 
+        <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$file</span>"</span> 
+    <span class="token keyword">fi</span> 
+</code></pre>

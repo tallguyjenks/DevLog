@@ -1,0 +1,21 @@
+<h1 id="execute-python-script-on-sql-server-agent-job"><a aria-hidden="true" class="anchor-heading icon-link" href="#execute-python-script-on-sql-server-agent-job"></a>Execute Python Script on Sql Server Agent Job</h1>
+<h2 id="execute-python-script-on-sql-server-agent-job-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#execute-python-script-on-sql-server-agent-job-1"></a>Execute Python Script On SQL Server Agent Job</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/54680105/how-to-execute-python-script-as-administrator-in-sql-server-agent-job">https://stackoverflow.com/questions/54680105/how-to-execute-python-script-as-administrator-in-sql-server-agent-job</a></li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">execute</span> sp_execute_external_script 
+<span class="token variable">@language</span> <span class="token operator">=</span> N<span class="token string">'Python'</span><span class="token punctuation">,</span> 
+<span class="token variable">@script</span> <span class="token operator">=</span> N<span class="token string">'
+a = 1
+b = 2
+c = a/b
+d = a*b
+print(c, d)
+'</span>
+</code></pre>
+<p>OR</p>
+<blockquote>
+<p>I was able to solve the problem to my question by adding a credential/proxy account, assigning it to the Run as in the step, and then altering the Command to look like this:
+<br>
+<code>C:\Windows\System32\cmd.exe /C python "C:\PythonScripts\myPython.py"</code></p>
+</blockquote>

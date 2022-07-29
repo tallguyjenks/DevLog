@@ -1,0 +1,298 @@
+<h1 id="guidelines"><a aria-hidden="true" class="anchor-heading icon-link" href="#guidelines"></a>Guidelines</h1>
+<ul>
+<li><strong>The Basics</strong>
+<ul>
+<li><em>Use a command-line argument parsing library where you can.</em>
+<ul>
+<li>Go: Cobra, cli</li>
+<li>Java: picocli</li>
+<li>Node: oclif</li>
+<li>PHP: console</li>
+<li>Python: <a href="/DevLog/notes/75nq1823h8t9wwpvjwnbvzj">click</a>, Typer, <a href="/DevLog/notes/umt86hh0cz8vuht90qd0kxb">argparse</a></li>
+<li>Ruby: TTY</li>
+<li>Rust: clap, structopt</li>
+<li>Swift: swift-argument-parser</li>
+</ul>
+</li>
+<li><em>Return zero exit code on success, non-zero on failure</em></li>
+<li><em>Send output to stdout.</em></li>
+<li><em>Send messaging to stderr.</em></li>
+</ul>
+</li>
+<li><strong>Help</strong>
+<ul>
+<li><em>Display help text when passed no options, the -h flag, or the --help flag.</em></li>
+<li><em>Display a concise help text by default.</em></li>
+<li><em>Show full help when -h and --help is passed.</em></li>
+<li><em>Provide a support path for feedback and issues.</em></li>
+<li><em>In help text, link to the web version of the documentation.</em></li>
+<li><em>Lead with examples.</em></li>
+<li><em>If you’ve got loads of examples, put them somewhere else</em></li>
+<li><em>Display the most common flags and commands at the start of the help text.</em></li>
+<li><em>Use formatting in your help text.</em></li>
+<li><em>If the user did something wrong and you can guess what they meant, suggest it.</em></li>
+<li><em>If your command is expecting to have something piped to it and stdin is an interactive terminal, display help immediately and quit.</em></li>
+</ul>
+</li>
+<li><strong>Documentation</strong>
+<ul>
+<li><em>Provide web-based documentation.</em></li>
+<li><em>Provide terminal-based documentation.</em></li>
+<li><em>Consider providing man pages.</em></li>
+</ul>
+</li>
+<li><strong>Output</strong>
+<ul>
+<li><em>Human-readable output is paramount.</em></li>
+<li><em>Have machine-readable output where it does not impact usability</em></li>
+<li><em>If human-readable output breaks machine-readable output, use --plain to display output in plain, tabular text format for integration with tools like <a href="/DevLog/notes/mmspzrb8xurbr4ooir435bo">grep</a> or <a href="/DevLog/notes/9mz5a655nqwq2vt42ftsllx">awk</a>.</em></li>
+<li><em>Display output as formatted <a href="/DevLog/notes/uxr9x8d0kcers04jvo90vft">JSON</a> if --json is passed.</em></li>
+<li><em>Display output on success, but keep it brief.</em></li>
+<li><em>If you change state, tell the user.</em></li>
+<li><em>Make it easy to see the current state of the system.</em></li>
+<li><em>Suggest commands the user should run.</em></li>
+<li><em>Actions crossing the boundary of the program’s internal world should usually be explicit.</em></li>
+<li><em>Increase information density—with ASCII art!</em></li>
+<li><em>Use color with intention.</em></li>
+<li><em>Disable color if your program is not in a terminal or the user requested it.</em>
+<ul>
+<li><code>stdout</code> or <code>stderr</code> is not an interactive terminal (a TTY). It’s best to individually check—if you’re piping <code>stdout</code> to another program, it’s still useful to get colors on stderr. The <code>NO_COLOR</code> environment variable is set. The <code>TERM</code> environment variable has the value <code>dumb</code>. The user passes the option <code>--no-color</code>. You may also want to add a <code>MYAPP_NO_COLOR</code> environment variable in case users want to disable color specifically for your program.</li>
+</ul>
+</li>
+<li><em>If stdout is not an interactive terminal, don’t display any animations.</em></li>
+<li><em>Use symbols and emoji where it makes things clearer.</em></li>
+<li><em>By default, don’t output information that’s only understandable by the creators of the software.</em></li>
+<li><em>Don’t treat <code>stderr</code> like a log file, at least not by default.</em></li>
+<li><em>Use a pager (e.g. <code>less</code>) if you are outputting a lot of text.</em>
+<ul>
+<li><a href="/DevLog/notes/6oach0hil3rzb16e1k1r0rc">pypager</a> in <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">python (Private)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Errors</strong>
+<ul>
+<li><em>Catch errors and rewrite them for humans.</em></li>
+<li><em>Signal-to-noise ratio is crucial.</em></li>
+<li><em>Consider where the user will look first.</em></li>
+<li><em>If there is an unexpected or inexplicable error, provide debug and traceback information, and instructions on how to submit a bug.</em></li>
+<li><em>Make it effortless to submit bug reports.</em></li>
+</ul>
+</li>
+<li><strong>Arguments and flags</strong>
+<ul>
+<li><em>Prefer flags to args.</em></li>
+<li><em>Have full-length versions of all flags.</em></li>
+<li><em>Only use one-letter flags for commonly used flags</em></li>
+<li><em>Multiple arguments are fine for simple actions against multiple files.</em></li>
+<li><em>If you’ve got two or more arguments for different things, you’re probably doing something wrong.</em></li>
+<li><em>Use standard names for flags, if there is a standard.</em>
+<ul>
+<li><code>-a</code>, <code>--all</code>: All. For example, <code>ps</code>, <code>fetchmail</code>.
+<ul>
+<li><code>-d</code>, <code>--debug</code>: Show debugging output.</li>
+<li><code>-f</code>, <code>--force</code>: Force. For example, <code>rm -f</code> will force the removal of files, even if it thinks it does not have permission to do it. This is also useful for commands which are doing something destructive that usually require user confirmation, but you want to force it to do that destructive action in a script.</li>
+<li><code>--json</code>: Display JSON output. See the output section.</li>
+<li><code>-h</code>, <code>--help</code>: Help. This should only mean help. See the help section.</li>
+<li><code>--no-input</code>: See the interactivity section.</li>
+<li><code>-o</code>, <code>--output</code>: Output file. For example, <code>sort</code>, <code>gcc</code>.</li>
+<li><code>-p</code>, <code>--port</code>: Port. For example, <code>psql</code>, <code>ssh</code>.</li>
+<li><code>-q</code>, <code>--quiet</code>: Quiet. Display less output. This is particularly useful when displaying output for humans that you might want to hide when running in a script.</li>
+<li><code>-u</code>, <code>--user</code>: User. For example, <code>ps</code>, <code>ssh</code>.</li>
+<li><code>--version</code>: Version.</li>
+<li><code>-v</code>: This can often mean either verbose or version. You might want to use -d for verbose and this for version, or for nothing to avoid confusion.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Make the default the right thing for most users.</em></li>
+<li><em>Prompt for user input.</em></li>
+<li><em>Never require a prompt.</em></li>
+<li><em>Confirm before doing anything dangerous.</em></li>
+<li><em>If a flag can accept an optional value, allow a special word like "none."</em></li>
+<li><em>If possible, make arguments, flags and subcommands order-independent.</em></li>
+<li>❗ <em>Do not read secrets directly from flags.</em></li>
+<li><em>If input or output is a file, support <code>-</code> to read from <code>stdin</code> or write to <code>stdout</code>.</em></li>
+</ul>
+</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> https://example.com/something.tar.gz <span class="token operator">|</span> <span class="token function">tar</span> xvf -
+</code></pre>
+<ul>
+<li><strong>Interactivity</strong>
+<ul>
+<li><em>Only use prompts or interactive elements if stdin is an interactive terminal (a TTY).</em></li>
+<li><em>If <code>--no-input</code> is passed, don’t prompt or do anything interactive.</em></li>
+<li><em>If you’re prompting for a password, don’t print it as the user types.</em></li>
+<li><em>Let the user escape.</em></li>
+</ul>
+</li>
+<li><strong>Subcommands</strong>
+<ul>
+<li><em>Be consistent across subcommands.</em></li>
+<li><em>Use consistent names for multiple levels of subcommand.</em></li>
+<li><em>Don’t have ambiguous or similarly-named commands.</em></li>
+</ul>
+</li>
+<li><strong>Robustness</strong>
+<ul>
+<li><em>Validate user input.</em></li>
+<li><em>Responsive is more important than fast.</em></li>
+<li><em>Show progress if something takes a long time.</em></li>
+<li><em>Do stuff in parallel where you can, but be thoughtful about it.</em></li>
+<li><em>Make things time out.</em></li>
+<li><em>Make it idempotent.</em></li>
+<li><em>Make it crash-only.</em></li>
+<li><em>People are going to misuse your program.</em></li>
+</ul>
+</li>
+<li><strong>Future-proofing</strong>
+<ul>
+<li><em>Keep changes additive where you can.</em></li>
+<li><em>Warn before you make a non-additive change.</em></li>
+<li><em>Changing output for humans is usually OK.</em></li>
+<li><em>Don’t have a catch-all subcommand.</em></li>
+<li><em>Don’t allow arbitrary abbreviations of subcommands.</em></li>
+<li><em>Don’t create a "time bomb."</em></li>
+</ul>
+</li>
+<li><strong>Signals and control characters</strong>
+<ul>
+<li><em>If a user hits Ctrl-C (the INT signal), exit as soon as possible.</em></li>
+<li><em>If a user hits Ctrl-C during clean-up operations that might take a long time, skip them.</em></li>
+</ul>
+</li>
+<li><strong>Configuration</strong>
+<ul>
+<li>Command-line tools have lots of different types of configuration, and lots of different ways to supply it (flags, environment variables, project-level config files). The best way to supply each piece of configuration depends on a few factors, chief among them specificity, stability and complexity.
+<ul>
+<li>Configuration generally falls into a few categories:
+<ul>
+<li><strong>Likely to vary from one invocation of the command to the next.</strong>
+<ul>
+<li>Examples:
+<ul>
+<li>Setting the level of debugging output
+Enabling a safe mode or dry run of a program</li>
+<li><code>Recommendation</code>: Use flags. Environment variables may or may not be useful as well.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Generally stable from one invocation to the next, but not always. Might vary between projects. Definitely varies between different users working on the same project.</strong>
+<ul>
+<li>This type of configuration is often specific to an individual computer.</li>
+<li>Examples:
+<ul>
+<li>Providing a non-default path to items needed for a program to start
+Specifying how or whether color should appear in output
+Specifying an HTTP proxy server to route all requests through</li>
+<li><code>Recommendation</code>: Use flags and probably environment variables too. Users may want to set the variables in their shell profile so they apply globally, or in .env for a particular project.</li>
+<li>If this configuration is sufficiently complex, it may warrant a configuration file of its own, but environment variables are usually good enough.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Stable within a project, for all users.</strong>
+<ul>
+<li>This is the type of configuration that belongs in version control. Files like Makefile, package.json and docker-compose.yml are all examples of this.</li>
+<li><code>Recommendation</code>: Use a command-specific, version-controlled file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Follow the XDG-spec.</em></li>
+<li><em>If you automatically modify configuration that is not your program’s, ask the user for consent and tell them exactly what you’re doing.</em></li>
+<li><em>Apply configuration parameters in order of precedence.</em>
+<ul>
+<li>Here is the precedence for config parameters, from highest to lowest:
+<ul>
+<li>Flags
+<ul>
+<li>The running shell’s environment variables</li>
+<li>Project-level configuration (eg. <code>.env</code>)</li>
+<li>User-level configuration</li>
+<li>System wide configuration</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Environment variables</strong>
+<ul>
+<li><em>Environment variables are for behavior that varies with the context in which a command is run.</em></li>
+<li><em>For maximum portability, environment variable names must only contain uppercase letters, numbers, and underscores (and mustn’t start with a number).</em></li>
+<li><em>Aim for single-line environment variable values.</em></li>
+<li><em>Avoid commandeering widely used names.</em>
+<ul>
+<li><a href="https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap08.html">https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap08.html</a></li>
+</ul>
+</li>
+<li><em>Check general-purpose environment variables for configuration values when possible:</em>
+<ul>
+<li><code>NO_COLOR</code>, to disable color (see Output)
+<ul>
+<li><code>DEBUG</code>, to enable more verbose output</li>
+<li><code>EDITOR</code>, if you need to prompt the user to edit a file or input more than a single line</li>
+<li><code>HTTP_PROXY</code>, <code>HTTPS_PROXY</code>, <code>ALL_PROXY</code> and <code>NO_PROXY</code>, if you’re going to perform network operations (The HTTP library you’re using might already check for these.)</li>
+<li><code>SHELL</code>, if you need to open up an interactive session of the user’s preferred shell (If you need to execute a shell script, use a specific interpreter like <code>/bin/sh</code>)</li>
+<li><code>TERM</code>, <code>TERMINFO</code> and <code>TERMCAP</code>, if you’re going to use terminal-specific escape sequences</li>
+<li><code>TMPDIR</code>, if you’re going to create temporary files</li>
+<li><code>HOME</code>, for locating configuration files</li>
+<li><code>PAGER</code>, if you want to automatically page output</li>
+<li><code>LINES</code> and <code>COLUMNS</code>, for output that’s dependent on screen size (e.g. tables)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Read environment variables from .env where appropriate.</em></li>
+<li><em>Don’t use .env as a substitute for a proper configuration file.</em>
+<ul>
+<li>A <code>.env</code> file is not commonly stored in source control</li>
+<li>(Therefore, any configuration stored in it has no history)</li>
+<li>It has only one data type: string</li>
+<li>It lends itself to being poorly organized</li>
+<li>It makes encoding issues easy to introduce</li>
+<li>It often contains sensitive credentials &#x26; key material that would be better stored more securely</li>
+</ul>
+</li>
+<li><em>Do not read secrets from environment variables.</em>
+<ul>
+<li>While environment variables may be convenient for storing secrets, they have proven too prone to leakage:</li>
+<li>Exported environment variables are sent to every process, and from there can easily leak into logs or be exfiltrated
+<ul>
+<li>Shell substitutions like <code>curl -H "Authorization: Bearer $BEARER_TOKEN"</code> will leak into globally-readable process state. (cURL offers the <code>-H @filename</code> alternative for reading sensitive headers from a file.)</li>
+<li><a href="/DevLog/notes/nfd4qf0z5sqvuhzjkp42pfz">Docker</a> container environment variables can be viewed by anyone with Docker daemon access via docker inspect</li>
+<li>Environment variables in <a href="/DevLog/notes/gxvd8urs1e8f7p47nuuf3gu">Systemd</a> units are globally readable via <code>systemctl show</code></li>
+<li>Secrets should only be accepted via credential files, pipes, <code>AF_UNIX</code> sockets, secret management services, or another IPC mechanism.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Naming</strong>
+<ul>
+<li><em>Make it a simple, memorable word.</em></li>
+<li><em>Use only lowercase letters, and dashes if you really need to</em></li>
+<li><em>Keep it short.</em></li>
+<li><em>Make it easy to type.</em></li>
+</ul>
+</li>
+<li><strong>Distribution</strong>
+<ul>
+<li><em>If possible, distribute as a single binary.</em></li>
+<li><em>Make it easy to uninstall.</em></li>
+</ul>
+</li>
+<li><strong>Analytics</strong>
+<ul>
+<li><em>Do not phone home usage or crash data without consent.</em></li>
+</ul>
+</li>
+</ul>

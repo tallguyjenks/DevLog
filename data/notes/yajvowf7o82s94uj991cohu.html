@@ -1,0 +1,8 @@
+<h1 id="re-use-cmd-args"><a aria-hidden="true" class="anchor-heading icon-link" href="#re-use-cmd-args"></a>Re Use Cmd Args</h1>
+<h3 id="re-use-command-arguments"><a aria-hidden="true" class="anchor-heading icon-link" href="#re-use-command-arguments"></a>Re-use command arguments</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> very-large-directory-name
+<span class="token builtin class-name">cd</span> very-large-directory-name
+<span class="token comment"># Instead of duplicating the argument of the mkdir command, you can use !$ for retrieve the last argument of the last command, the result is:</span>
+<span class="token function">mkdir</span> very-large-directory-name
+<span class="token builtin class-name">cd</span> <span class="token operator">!</span>$ <span class="token comment"># == cd very-large-directory-name</span>
+</code></pre>

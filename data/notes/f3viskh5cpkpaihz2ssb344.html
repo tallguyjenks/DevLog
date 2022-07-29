@@ -1,0 +1,18 @@
+<h1 id="list"><a aria-hidden="true" class="anchor-heading icon-link" href="#list"></a>List</h1>
+<h3 id="list-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#list-1"></a>List</h3>
+<pre class="language-python"><code class="language-python"><span class="token comment"># basically an array as you understand them</span>
+
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+a<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">17</span><span class="token punctuation">)</span> <span class="token comment"># adds a new item to the end of the list</span>
+a<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span> <span class="token comment"># adds a new item to the end of the list</span>
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">]</span>
+
+a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># shows the item at the end of the list by wrapping around</span>
+<span class="token comment"># you can only wrap around completely, once, otherwise you will get an error.</span>
+
+a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token comment"># this slices out a smaller list. the starting index number element is included and the ending index number is not included so indexes returned will be 2, 3, 4 but not 5</span>
+
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span>
+a <span class="token operator">+</span> b <span class="token comment"># = [1, 2, 3, 4, 5, 17, 19, 'a', 'b', 'c']</span>
+<span class="token comment"># adding lists together causes concatenation</span>
+</code></pre>

@@ -1,0 +1,12 @@
+<h1 id="rest-parameters"><a aria-hidden="true" class="anchor-heading icon-link" href="#rest-parameters"></a>Rest Parameters</h1>
+<h2 id="the-rest-parameters"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-rest-parameters"></a>The Rest Parameters</h2>
+<p>This is similar to the function ellipsis parameter in <a href="/DevLog/notes/pxdvvln974xhe8w0alh0hoy">R</a> where the number of inputs in variable and you want to accept them all as a variable size <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Python Data Structures (Private)</a>/Array.</p>
+<p>The rest parameter (<code>...</code>) allows a function to treat an indefinite number of arguments as an array:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter"><span class="token spread operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+ <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  
+ <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> arg <span class="token keyword">of</span> args<span class="token punctuation">)</span> sum <span class="token operator">+=</span> arg<span class="token punctuation">;</span>  
+ <span class="token keyword control-flow">return</span> sum<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+  
+<span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">66</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>

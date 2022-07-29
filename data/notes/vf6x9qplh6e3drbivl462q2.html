@@ -1,0 +1,26 @@
+<h1 id="cmd-list"><a aria-hidden="true" class="anchor-heading icon-link" href="#cmd-list"></a>Cmd List</h1>
+<h4 id="command-lists"><a aria-hidden="true" class="anchor-heading icon-link" href="#command-lists"></a>Command Lists</h4>
+<ul>
+<li><code>{ [command list]; }</code></li>
+<li>Execute the list of commands in the current shell as though they were one command.</li>
+<li>Command grouping on its own isn't very useful. However, it comes into play wherever Bash syntax accepts only one command while you need to execute multiple.</li>
+<li>For example, you may want to pass output of multiple commands via a pipe to another command's input:</li>
+<li></li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token function">ls</span> <span class="token builtin class-name">.</span><span class="token punctuation">;</span> <span class="token function">ls</span> <span class="token punctuation">..</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token function">grep</span> file-name
+</code></pre>
+<ul>
+<li>Or you may want to execute multiple commands after a || operator:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">rm</span> <span class="token function">file</span> <span class="token operator">||</span> <span class="token punctuation">{</span> <span class="token builtin class-name">echo</span> <span class="token string">"Removal failed, aborting."</span><span class="token punctuation">;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>It is also used for <a href="/DevLog/notes/31nnsx6afp48kj8yh318w57">Funcs</a> bodies. Technically, this can also be used for loop bodies though this is undocumented, not portable and we normally prefer <code>do ...; done</code> for this):</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">digit</span> <span class="token keyword">in</span> <span class="token number">1</span> <span class="token number">9</span> <span class="token number">7</span><span class="token punctuation">;</span> <span class="token punctuation">{</span> <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$digit</span>"</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>       <span class="token comment"># non-portable, undocumented, unsupported</span>
+- <span class="token keyword">for</span> <span class="token for-or-select variable">digit</span> <span class="token keyword">in</span> <span class="token number">1</span> <span class="token number">9</span> <span class="token number">7</span><span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$digit</span>"</span><span class="token punctuation">;</span> <span class="token keyword">done</span>   <span class="token comment"># preferred</span>
+</code></pre>
+<ul>
+<li><strong>*Note</strong>: You need a <code>;</code> before the closing <code>}</code> (or it must be on a new line).</li>
+<li>Command Lists are similar but not identical to</li>
+</ul>

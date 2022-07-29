@@ -1,0 +1,13 @@
+<h1 id="table-aliasing"><a aria-hidden="true" class="anchor-heading icon-link" href="#table-aliasing"></a>Table Aliasing</h1>
+<p>Aliasing a table is to reduce the amount of typing needed for a query. This allows for something like <code>A_REALLY_LONG_TABLE_NAME</code> to be reduced to <code>T</code> by using an alias:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> T<span class="token punctuation">.</span>Age
+<span class="token keyword">FROM</span> A_REALLY_LONG_TABLE_NAME <span class="token keyword">AS</span> T
+<span class="token keyword">WHERE</span> T<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">55</span>
+</code></pre>
+<p>Aliasing allows you to include fields with the same name but different tables:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> M<span class="token punctuation">.</span>Age<span class="token punctuation">,</span> F<span class="token punctuation">.</span>Age <span class="token comment">-- 2 Columns called 'Age' are returned because of the alias prefix</span>
+<span class="token keyword">FROM</span> MENS_AGES <span class="token keyword">AS</span> M
+	<span class="token keyword">JOIN</span> WOMENS_AGES <span class="token keyword">AS</span> F
+		<span class="token keyword">ON</span> F<span class="token punctuation">.</span>Marriage_ID <span class="token operator">=</span> M<span class="token punctuation">.</span>Marriage_ID
+<span class="token keyword">WHERE</span> M<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">55</span> <span class="token operator">AND</span> F<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">55</span>
+</code></pre>

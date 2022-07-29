@@ -1,0 +1,80 @@
+<h1 id="xp_readerrorlog"><a aria-hidden="true" class="anchor-heading icon-link" href="#xp_readerrorlog"></a>Xp_readerrorlog</h1>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">How to Read Log File in Sql Server Using Tsql</span></div>
+<a href="/DevLog/notes/lbzkjygshz0wtctzpwon2yv" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><p><a href="https://www.mssqltips.com/sqlservertip/1476/how-to-read-log-file-in-sql-server-using-tsql/">https://www.mssqltips.com/sqlservertip/1476/how-to-read-log-file-in-sql-server-using-tsql/</a></p>
+<h2 id="how-to-read-log-file-in-sql-server-using-tsql"><a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-read-log-file-in-sql-server-using-tsql"></a>How to Read Log File in SQL Server using TSQL</h2>
+<h3 id="problem"><a aria-hidden="true" class="anchor-heading icon-link" href="#problem"></a>Problem</h3>
+<blockquote>
+<p>One of the issues I have is that the SQL Server Error Log is quite large and it is not always easy to view the contents with the Log File Viewer. In a previous tip "Simple way to find errors in SQL Server error log" you discussed a method of searching the error log. Are there any other ways to search and find errors in the error log files?</p>
+</blockquote>
+<h3 id="solution"><a aria-hidden="true" class="anchor-heading icon-link" href="#solution"></a>Solution</h3>
+<blockquote>
+<p>SQL Server offers an undocumented system stored procedure <code>sp_readerrorlog</code>. This SP allows you to read the contents of the SQL Server error log files directly from a query window and also allows you to search for certain keywords when reading the error file.</p>
+<p>This is a sample of the stored procedure that already exists in the master database. You will see that when this gets called it calls an extended stored procedure <code>xp_readerrorlog</code>.</p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">/*
+This procedure takes four parameters:
+
+1. Value of error log file you want to read: 0 = current, 1 = Archive #1, 2 = Archive #2, etc...
+2. Log file type: 1 or NULL = error log, 2 = SQL Agent log
+3. Search string 1: String one you want to search for
+4. Search string 2: String two you want to search for to further refine the results
+
+If you do not pass any parameters this will return the contents of the current error log.
+*/</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">PROC</span> <span class="token punctuation">[</span>sys<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>sp_readerrorlog<span class="token punctuation">]</span><span class="token punctuation">(</span>
+   <span class="token variable">@p1</span> <span class="token keyword">INT</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+   <span class="token variable">@p2</span> <span class="token keyword">INT</span> <span class="token operator">=</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+   <span class="token variable">@p3</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+   <span class="token variable">@p4</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span>
+<span class="token keyword">AS</span>
+<span class="token keyword">BEGIN</span>
+
+   <span class="token keyword">IF</span> <span class="token punctuation">(</span><span class="token operator">NOT</span> IS_SRVROLEMEMBER<span class="token punctuation">(</span>N<span class="token string">'securityadmin'</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+   <span class="token keyword">BEGIN</span>
+      <span class="token keyword">RAISERROR</span><span class="token punctuation">(</span><span class="token number">15003</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> N<span class="token string">'securityadmin'</span><span class="token punctuation">)</span>
+      <span class="token keyword">RETURN</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+   <span class="token keyword">END</span>
+
+   <span class="token keyword">IF</span> <span class="token punctuation">(</span><span class="token variable">@p2</span> <span class="token operator">IS</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span>
+       <span class="token keyword">EXEC</span> sys<span class="token punctuation">.</span>xp_readerrorlog <span class="token variable">@p1</span>
+   <span class="token keyword">ELSE</span>
+       <span class="token keyword">EXEC</span> sys<span class="token punctuation">.</span>xp_readerrorlog <span class="token variable">@p1</span><span class="token punctuation">,</span><span class="token variable">@p2</span><span class="token punctuation">,</span><span class="token variable">@p3</span><span class="token punctuation">,</span><span class="token variable">@p4</span>
+<span class="token keyword">END</span>
+</code></pre>
+<p>The above is basically a copy of <code>xp_readerrorlog</code> but only using 4 of the parameters</p>
+<p>The actual extended procedure <code>xp_readerrorlog</code> can take up to 7 parameters</p>
+<ol>
+<li>Value of error log file you want to read: 0 = current, 1 = Archive #1, 2 = Archive #2, etc...</li>
+<li>Log file type: 1 or NULL = error log, 2 = SQL Agent log</li>
+<li>Search string 1: String one you want to search for</li>
+<li>Search string 2: String two you want to search for to further refine the results</li>
+<li>Search from start time</li>
+<li>Search to end time</li>
+<li>Sort order for results: N'asc' = ascending, N'desc' = descending</li>
+</ol>
+<p>Here is are some examples:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">EXEC</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>xp_readerrorlog <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'2005'</span><span class="token punctuation">,</span> <span class="token string">'exec'</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> N<span class="token string">'desc'</span>
+<span class="token keyword">EXEC</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>xp_readerrorlog <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'2005'</span><span class="token punctuation">,</span> <span class="token string">'exec'</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> N<span class="token string">'asc'</span>
+</code></pre>
+<h2 id="potential-pitfalls"><a aria-hidden="true" class="anchor-heading icon-link" href="#potential-pitfalls"></a>Potential pitfalls</h2>
+<blockquote>
+<p>for later versions of SQL Server you may need to use double quotes or you might get this error.</p>
+</blockquote>
+<p><code>Msg 22004, Level 12, State 1, Line 0 Error executing extended stored procedure: Invalid Parameter Type</code></p>
+<p>Try this instead.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">EXEC</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>xp_readerrorlog <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"backup"</span><span class="token punctuation">,</span> <span class="token string">"failed"</span><span class="token punctuation">,</span> <span class="token string">"2017-01-02"</span><span class="token punctuation">,</span> <span class="token string">"2017-02-02"</span><span class="token punctuation">,</span> <span class="token string">"desc"</span>
+<span class="token keyword">EXEC</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>xp_readerrorlog <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"2005"</span><span class="token punctuation">,</span> <span class="token string">"exec"</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token string">"asc"</span>
+</code></pre>
+<p>Or try this, putting N before each parameter.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">EXEC</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>xp_readerrorlog <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> N<span class="token string">'backup'</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> N<span class="token string">'2017-01-02'</span><span class="token punctuation">,</span> N<span class="token string">'2017-02-02'</span><span class="token punctuation">,</span> N<span class="token string">'desc'</span>
+<span class="token keyword">EXEC</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>xp_readerrorlog <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> N<span class="token string">'backup'</span><span class="token punctuation">,</span> N<span class="token string">'failed'</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> N<span class="token string">'asc'</span>
+</code></pre></div></div><p></p><p></p>

@@ -1,0 +1,155 @@
+<h1 id="stream-errors"><a aria-hidden="true" class="anchor-heading icon-link" href="#stream-errors"></a>Stream Errors</h1>
+<h3 id="stream-errors-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#stream-errors-1"></a>Stream Errors</h3>
+<blockquote>
+<p>A <strong>stream error</strong> occurs when insertion or extraction fails, causing the stream to enter an error state.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> num1 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// Initial value -1 for demo purposes.</span>
+   <span class="token keyword">int</span> num2 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter a number: "</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cin  <span class="token operator">>></span> num1<span class="token punctuation">;</span> <span class="token comment">// Stream error state entered here.</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter a second number:"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cin  <span class="token operator">>></span> num2<span class="token punctuation">;</span> <span class="token comment">// Stream already in error state, so extraction skipped.</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num1: "</span> <span class="token operator">&#x3C;&#x3C;</span> num1 <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"num2: "</span> <span class="token operator">&#x3C;&#x3C;</span> num2 <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+	Enter a number:
+	six
+	Enter a second number:
+	num1: 0
+	num2: -1
+*/</span>
+
+</code></pre>
+<blockquote>
+<p>A stream's error state can be checked with a function. Ex: <code>cin.good() </code>returns true if <code>cin</code> is not in an error state. Otherwise, false is returned. A stream internally uses several 1-bit error flags to track the state of the stream.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Flag</th><th align="left">Meaning</th><th align="left">Function</th></tr></thead><tbody><tr><td align="left"><code>goodbit</code></td><td align="left">Indicates no error flags are set and the stream is good.</td><td align="left"><code>good()</code> returns true if no stream errors have occurred.</td></tr><tr><td align="left"><code>eofbit</code></td><td align="left">Indicates if end-of-file reached on extraction.</td><td align="left"><code>eof()</code> returns value of eofbit, if end-of-file reached on extraction.</td></tr><tr><td align="left"><code>failbit</code></td><td align="left">Indicates a logical error for the previous extraction or insertion operation.</td><td align="left"><code>fail()</code> returns true if either failbit or badbit is set, indicating an error for the previous stream operation.</td></tr><tr><td align="left"><code>badbit</code></td><td align="left">Indicates an error occurred reading or writing the stream, and the stream is bad. Further operations on the stream will fail.</td><td align="left"><code>bad()</code> returns true if badbit is set, indicating the stream is bad.</td></tr></tbody></table>
+<blockquote>
+<p>A stream's error state is cleared using <code>clear()</code>. Ex: <code>cin.clear()</code> clears the error state from <code>cin</code>.
+.
+The function <code>ignore(maxToIgnore, stopChar)</code> ignores characters in the stream buffer. Ex: <code>cin.ignore(10, '\n') </code>ignores up to 10 characters in the stream buffer, or until a '<code>\n</code>' character is encountered.
+.
+Commonly, a program needs to wait until a '<code>\n</code>' character is found, in which case set <code>maxToIgnore</code> to the maximum size of a stream: <code>numeric_limits&#x3C;streamsize>::max()</code>.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Read user input until a number is entered</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;limits></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Enter a number: "</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cin <span class="token operator">>></span> number<span class="token punctuation">;</span>
+   
+   <span class="token keyword">while</span> <span class="token punctuation">(</span>cin<span class="token punctuation">.</span><span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Clear error state</span>
+      cin<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Ignore characters in stream until newline</span>
+      cin<span class="token punctuation">.</span><span class="token function">ignore</span><span class="token punctuation">(</span><span class="token class-name">numeric_limits</span><span class="token operator">&#x3C;</span>streamsize<span class="token operator">></span><span class="token double-colon punctuation">::</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token char">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Try again: "</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      cin  <span class="token operator">>></span> number<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"You entered: "</span> <span class="token operator">&#x3C;&#x3C;</span> number <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>A program may need to check for errors during file reading.
+One approach is to check whether end-of-file was reached after the file reading ends. If end-of-file was not reached, then an error in file reading occurred.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/* Given:
+	myfile.txt:
+	5
+	8
+	six
+	4
+	6
+*/</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;fstream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ifstream inFS<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> fileNumber <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// Number in file</span>
+   
+   inFS<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"myfile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>inFS<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Could not open file myfile.txt."</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token comment">// Read file until end-of-file or an error</span>
+   <span class="token keyword">while</span> <span class="token punctuation">(</span>inFS<span class="token punctuation">.</span><span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       inFS <span class="token operator">>></span> fileNumber<span class="token punctuation">;</span>
+       cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"File number: "</span> <span class="token operator">&#x3C;&#x3C;</span> fileNumber <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token comment">// If end-of-file not reached, then an error occurred</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>inFS<span class="token punctuation">.</span><span class="token function">eof</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Error reading myfile.txt"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+      
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   inFS<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+	File number: 5
+	File number: 8
+	File number: 0
+	Error reading myfile.txt
+*/</span>
+</code></pre>

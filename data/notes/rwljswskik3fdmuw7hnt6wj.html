@@ -1,0 +1,21 @@
+<h1 id="case-statements"><a aria-hidden="true" class="anchor-heading icon-link" href="#case-statements"></a>Case Statements</h1>
+<p>With case statements in T-SQL you can in essence insert a bunch of logic and calculation into a multi-faceted case statement with the output being a single result field</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> P<span class="token punctuation">.</span>Age
+		<span class="token punctuation">,</span><span class="token keyword">CASE</span>
+			<span class="token keyword">WHEN</span> P<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">55</span>	<span class="token keyword">THEN</span> <span class="token number">1</span>
+			<span class="token keyword">ELSE</span> <span class="token number">0</span>
+		<span class="token keyword">END</span> <span class="token keyword">AS</span> <span class="token string">'RetirementAge'</span>
+<span class="token keyword">FROM</span> Person <span class="token keyword">AS</span> P
+</code></pre>
+<p>This case statement examines the <code>Age</code> field and asks if each value i <code>> 55</code> if it is, the result field is assigned a <code>1</code> if <code>Age</code> is not <code>> 55</code> then the <code>ELSE</code> statement is executed and the result field receives the value of <code>0</code>. </p>
+<p>The ultimate of this being a boolean flag column indicating if each individual is at <code>RetirementAge</code> or not. </p>
+<p>You can also nest several <code>WHEN ... THEN</code> statements for a multi faceted Case statement:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> P<span class="token punctuation">.</span>Age
+		<span class="token punctuation">,</span><span class="token keyword">CASE</span>
+			<span class="token keyword">WHEN</span> P<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">65</span>	<span class="token keyword">THEN</span> <span class="token string">'Senior Citizen'</span>
+			<span class="token keyword">WHEN</span> P<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">55</span>	<span class="token keyword">THEN</span> <span class="token string">'Mature Adult'</span>
+			<span class="token keyword">WHEN</span> P<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">40</span>	<span class="token keyword">THEN</span> <span class="token string">'Mid-Life Crisis'</span>
+			<span class="token keyword">ELSE</span> <span class="token string">'No Discount'</span>
+		<span class="token keyword">END</span> <span class="token keyword">AS</span> <span class="token string">'DiscountLevel'</span>
+<span class="token keyword">FROM</span> Person <span class="token keyword">AS</span> P
+</code></pre>

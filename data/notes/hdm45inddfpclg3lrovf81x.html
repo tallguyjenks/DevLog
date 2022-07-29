@@ -1,0 +1,36 @@
+<h1 id="secret-features-in-your-unix-shell-cdpath"><a aria-hidden="true" class="anchor-heading icon-link" href="#secret-features-in-your-unix-shell-cdpath"></a>Secret Features in Your Unix Shell Cdpath</h1>
+<h2 id="link"><a aria-hidden="true" class="anchor-heading icon-link" href="#link"></a>Link</h2>
+<p><a href="https://medium.com/@symflower/secret-features-in-your-unix-shell-cdpath-cd0fe29f52cf">https://medium.com/@symflower/secret-features-in-your-unix-shell-cdpath-cd0fe29f52cf</a></p>
+<h2 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h2>
+<blockquote>
+<p>When you pass a relative path to <code>cd</code>, then the directories in <code>$CDPATH</code> will be used as base directories.</p>
+</blockquote>
+<h2 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> places-to-be
+<span class="token function">mkdir</span> places-to-be/hogwarts
+<span class="token function">mkdir</span> places-to-be/narnia
+<span class="token function">mkdir</span> places-to-be/the-shire
+tree places-to-be
+<span class="token comment"># places-to-be/</span>
+<span class="token comment"># ├── hogwarts</span>
+<span class="token comment"># ├── narnia</span>
+<span class="token comment"># └── the-shire</span>
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CDPATH</span><span class="token operator">=</span><span class="token variable">$CDPATH</span><span class="token builtin class-name">:</span><span class="token environment constant">$PWD</span>/places-to-be
+
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
+<span class="token builtin class-name">pwd</span>
+/Users/
+<span class="token builtin class-name">cd</span> narnia
+~/places-to-be/narnia
+<span class="token builtin class-name">pwd</span>
+~/places-to-be/narnia
+
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/r8tv5jpqr3qgog1u0rzcfsv">Cdp (DevLog)</a></li>
+<li><a href="/DevLog/notes/09s1m81lxifmup1so6qi7u6">2022-03-03 (DevLog)</a></li>
+</ul>

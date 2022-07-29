@@ -1,0 +1,11 @@
+<h1 id="accessors"><a aria-hidden="true" class="anchor-heading icon-link" href="#accessors"></a>Accessors</h1>
+<h3 id="accessors-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#accessors-1"></a>Accessors</h3>
+<p>Accessors can let the user access the values of the private data members:</p>
+<blockquote>
+<p>Accessor functions usually are defined as const, to enforce that they do not change data members. The keyword <strong>const</strong> after a member function's declaration and definition causes the compiler to report an error if the function modifies a data member. <strong><u>If a const member function calls another member function, that function must also be const.</u></strong></p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">int</span>  <span class="token function">GetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>        <span class="token comment">// Accessor</span>
+<span class="token keyword">int</span>  <span class="token class-name">GameInfo</span><span class="token double-colon punctuation">::</span><span class="token function">GetPlayer1PlayA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> player1PlayA<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

@@ -1,0 +1,182 @@
+<h1 id="win10-ssms"><a aria-hidden="true" class="anchor-heading icon-link" href="#win10-ssms"></a>Win10 SSMS</h1>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<p>Guide Used: <a href="https://youtu.be/6c-6xBkD2J4">https://youtu.be/6c-6xBkD2J4</a></p>
+<h2 id="instructions"><a aria-hidden="true" class="anchor-heading icon-link" href="#instructions"></a>Instructions</h2>
+<ol>
+<li>Download <a href="https://www.microsoft.com/en-us/software-download/windows10ISO">Windows 10 iso</a> (64bit)</li>
+<li>Download the Latest <a href="https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html">virtio-win iso</a></li>
+<li>upload the iso's to <a href="/DevLog/notes/scila6vssybq401kzsq1d5b">Proxmox</a></li>
+<li>Create new VM in Proxmox
+<ol>
+<li>General
+<ol>
+<li>Give it a name</li>
+<li><img src="/DevLog/assets/images/2022-03-12-16-52-44.png" alt="General"></li>
+</ol>
+</li>
+<li>OS
+<ol>
+<li>Select windows iso</li>
+<li>guest type to windows</li>
+<li>version 10</li>
+<li><img src="/DevLog/assets/images/2022-03-12-16-53-32.png" alt="OS"></li>
+</ol>
+</li>
+<li>System
+<ol>
+<li>Turn on QEMU Agent</li>
+<li><img src="/DevLog/assets/images/2022-03-12-16-54-16.png" alt="System"></li>
+</ol>
+</li>
+<li>Hard Disk
+<ol>
+<li>Bus/Device --> SCSI</li>
+<li>Storage --> your choice</li>
+<li>Disk Size --> 60GB?</li>
+<li>!!<strong>Cache --> Write back</strong>!!</li>
+<li><img src="/DevLog/assets/images/2022-03-12-16-56-29.png" alt="hard disk"></li>
+</ol>
+</li>
+<li>CPU
+<ol>
+<li>Cores --> 24?</li>
+<li><img src="/DevLog/assets/images/2022-03-12-16-57-19.png" alt="CPU"></li>
+</ol>
+</li>
+<li>Memory
+<ol>
+<li>Ballooning (use minimum 1GB max 8GB)</li>
+<li>Memory (MiB) --> 8192</li>
+<li>Minimum memory (MiB) --> 1024</li>
+<li><img src="/DevLog/assets/images/2022-03-12-16-58-55.png" alt="Memory"></li>
+</ol>
+</li>
+<li>Network
+<ol>
+<li>Model --> VirtIO (paravirtualized)</li>
+<li><img src="/DevLog/assets/images/2022-03-12-16-59-42.png" alt="Network"></li>
+</ol>
+</li>
+<li>Confirm
+<ol>
+<li>Click Finish but do not start VM yet you need to configure 1 more thing</li>
+</ol>
+</li>
+<li>VirtIO Virtual Disk
+<ol>
+<li>We need to install the virtIO drivers to this VM</li>
+<li>therefore need to give the VM a disk drive to load the virtual disk into</li>
+<li>Select the VM in the proxmox panel</li>
+<li>Select the <code>Hardware</code> sub menu</li>
+<li>Click <code>Add > CD/DVD Drive</code></li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-02-41.png" alt="add drive"></li>
+<li>Bus/Device --> IDE and 1</li>
+<li>Storage --> your choice</li>
+<li>Select the VirtIO iso file</li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-03-46.png" alt="virtual disk"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Click on the <code>VM > Console</code></li>
+<li>Right click <code>VM > Start</code></li>
+<li>follow allow with the normal installation of windows</li>
+<li>can continue on without product key for reduced functionality mode
+<ul>
+<li>If you want to RDP onto the machine it needs to be a windows 10 Pro version</li>
+</ul>
+</li>
+<li>Select Custom install
+<ol>
+<li>No hard drives found to install windows onto, need to load drivers from virtio</li>
+<li>Click <code>Load Driver</code></li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-06-28.png" alt="load driver"></li>
+<li>click <code>Browse</code></li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-07-09.png" alt="browse"></li>
+<li>Go to virtio disk and expand</li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-07-35.png" alt="expand"></li>
+<li>First install vioscsi</li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-08-39.png" alt="vioscsi"></li>
+<li><code>vioscsi > w10 > amd64 > OK</code></li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-09-22.png" alt="amd64"></li>
+<li>Click <code>Next</code></li>
+<li>Now we can see the hard drive</li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-10-06.png" alt="hard drive"></li>
+<li>Click <code>Load Driver</code></li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-06-28.png" alt="load driver"></li>
+<li>click <code>Browse</code></li>
+<li>Go to virtio disk and expand</li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-07-35.png" alt="expand"></li>
+<li><code>NetKVM > w10 > amd64</code>
+<ol>
+<li>downloads network adapter drivers so we can get upgrades while installing</li>
+</ol>
+</li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-15-03.png" alt="netkvm"></li>
+<li>Click <code>Next</code></li>
+<li>Click <code>Load Driver</code></li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-06-28.png" alt="load driver"></li>
+<li>click <code>Browse</code></li>
+<li>Go to virtio disk and expand</li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-07-35.png" alt="expand"></li>
+<li><code>Balloon > w10 > amd64</code></li>
+<li><img src="/DevLog/assets/images/2022-03-12-17-17-15.png" alt="balloon"></li>
+<li>Click <code>Next</code></li>
+</ol>
+</li>
+<li>Now ready to continue with windows installation</li>
+<li>Click <code>Next</code></li>
+<li>choose location</li>
+<li>keyboard layout</li>
+<li>personal use</li>
+<li>offline account</li>
+<li>name the pc</li>
+<li>password</li>
+<li>security questions</li>
+<li>choose privacy settings (uncheck everything)</li>
+<li>windows is running</li>
+<li>go to <code>Device Manager</code></li>
+<li>Double click missing driver under <code>Other Devices</code>
+<ol>
+<li><img src="/DevLog/assets/images/2022-03-12-17-20-23.png" alt="Other Devices"></li>
+<li>Click <code>Update Driver...</code></li>
+<li>Browse my computer for driver software</li>
+<li>Browse to the virtio disk and select it</li>
+<li>Click <code>OK</code></li>
+<li>When prompted click <code>Install</code> to install the driver</li>
+</ol>
+</li>
+<li>Need to install the Guest Agent
+<ol>
+<li>Go to <code>This PC</code></li>
+<li>Enter the <code>virtio disk > guest-agent</code></li>
+<li>Execute <code>qemu-ga-x86_64</code></li>
+<li>Click <code>Yes</code> to install</li>
+<li>reboot</li>
+</ol>
+</li>
+<li>Click on <code>VM > Summary</code> See that guest agent isn't running because windows hasn't booted yet</li>
+<li>Enter the Console</li>
+<li>Boot the VM</li>
+<li>once booted check on the guest-agent has an IP</li>
+<li>Install <a href="/DevLog/notes/6qr9lzmzbkr3s4xwqxow04y">Ssms</a></li>
+<li>Done!</li>
+<li>BONUS
+<ol>
+<li>For faster performance can activate Remote Desktop and just RDP onto the VM for near native performance</li>
+<li>On mac use <a href="https://apps.apple.com/us/app/microsoft-remote-desktop-10/id1295203466?mt=12">this app</a>
+<ul>
+<li>Username from the VM (Microsoft account email)</li>
+<li>Pass for that Microsoft account</li>
+<li>Destination is IP of the VM</li>
+<li>Gateway ignoring internal traffic is the gateway IP for the VLAN the VM's are on</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/azokadmipj68p1l2sb5w23l">25 (DevLog)</a></li>
+</ul>

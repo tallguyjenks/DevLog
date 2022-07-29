@@ -1,0 +1,16 @@
+<h1 id="displaying-native-gui-notifications-from-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#displaying-native-gui-notifications-from-bash"></a>Displaying Native Gui Notifications from Bash</h1>
+<h2 id="linux"><a aria-hidden="true" class="anchor-heading icon-link" href="#linux"></a>Linux</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token function">sleep</span> <span class="token number">10</span>
+<span class="token function">notify-send</span> <span class="token string">"notify.sh"</span> <span class="token string">"Task #1 was completed successfully"</span>
+</code></pre>
+<p>OSX</p>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token function">sleep</span> <span class="token number">10</span>
+osascript -e <span class="token string">"display notification <span class="token entity" title="\&#x22;">\"</span>Task #1 was completed successfully<span class="token entity" title="\&#x22;">\"</span> with title <span class="token entity" title="\&#x22;">\"</span>notify.sh<span class="token entity" title="\&#x22;">\"</span>"</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/o71rv4ceuqozrwkogybwukm">5 Modern Bash Scripting Techniques That Only a Few Programmers Know (DevLog)</a></li>
+</ul>

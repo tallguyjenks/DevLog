@@ -1,0 +1,14 @@
+<h1 id="231-replace-loop-with-pipeline"><a aria-hidden="true" class="anchor-heading icon-link" href="#231-replace-loop-with-pipeline"></a>231 Replace Loop with Pipeline</h1>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">//FROM</span>
+<span class="token keyword">const</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> i <span class="token keyword">of</span> input<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token property-access">job</span> <span class="token operator">===</span> <span class="token string">"programmer"</span><span class="token punctuation">)</span>
+        names<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//TO</span>
+<span class="token keyword">const</span> names <span class="token operator">=</span> input
+    <span class="token punctuation">.</span><span class="token method function property-access">filter</span><span class="token punctuation">(</span><span class="token parameter">i</span> <span class="token arrow operator">=></span> i<span class="token punctuation">.</span><span class="token property-access">job</span> <span class="token operator">===</span> <span class="token string">"programmer"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">i</span> <span class="token arrow operator">=></span> i<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span>
+<span class="token punctuation">;</span>
+</code></pre>

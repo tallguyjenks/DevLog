@@ -1,0 +1,53 @@
+<h1 id="sp_executesql"><a aria-hidden="true" class="anchor-heading icon-link" href="#sp_executesql"></a>Sp_executesql</h1>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Introduction to the Sp_executesql Stored Procedure with Examples</span></div>
+<a href="/DevLog/notes/ocud51rffi6p77kkp4fhe9q" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="link"><a aria-hidden="true" class="anchor-heading icon-link" href="#link"></a>Link</h2>
+<p><a href="https://www.sqlshack.com/introduction-to-sp_executesql-stored-procedure-with-examples/">https://www.sqlshack.com/introduction-to-sp_executesql-stored-procedure-with-examples/</a></p>
+<h2 id="syntax"><a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a>Syntax</h2>
+<pre class="language-sql"><code class="language-sql">sp_executesql <span class="token variable">@stmt</span> <span class="token punctuation">,</span>N<span class="token string">'@parametername1_datatype,@parametername2_datatype,@parameternameN_datatype'</span>
+<span class="token punctuation">,</span><span class="token variable">@parametername1</span><span class="token operator">=</span><span class="token string">'Value1'</span> <span class="token punctuation">,</span><span class="token variable">@parametername2</span><span class="token operator">=</span><span class="token string">'Value2'</span><span class="token punctuation">,</span><span class="token variable">@parameternameN</span><span class="token operator">=</span><span class="token string">'ValueN'</span>
+</code></pre>
+<ul>
+<li><code>@stmt</code> parameter is used to specify dynamically generated SQL statement or batch. The data type of this parameter must be Unicode strings, for this reason, we have to add N prefix for the direct text usage or have to use nvarchar or nchar data typed variables.</li>
+<li><code>@parameternameN_datatype</code> defines the parameter’s name and data type that has been used in the dynamically constructed SQL statements.</li>
+<li>With the help of the <code>@parameternameN=’ValueN’</code> expression, we can assign a value to the defined parameters which are placed in the SQL statement. In the following sections of the article, we will explore the usage details with examples from easy to difficult.</li>
+</ul>
+<h2 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span>  <span class="token variable">@SqlStatment</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token keyword">DECLARE</span>  <span class="token variable">@ColNames</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+
+<span class="token keyword">SET</span> <span class="token variable">@ColNames</span> <span class="token operator">=</span> N<span class="token string">'FirstName , MiddleName , LastName'</span><span class="token punctuation">;</span>
+<span class="token keyword">SET</span> <span class="token variable">@SqlStatment</span> <span class="token operator">=</span> <span class="token string">'SELECT '</span> <span class="token operator">+</span> <span class="token variable">@ColNames</span> <span class="token operator">+</span> <span class="token string">' FROM Person.Person WHERE Persontype=@PerType'</span>
+
+<span class="token keyword">EXECUTE</span> sp_executesql <span class="token variable">@SqlStatment</span> <span class="token punctuation">,</span> N<span class="token string">'@PerType nchar(2)'</span><span class="token punctuation">,</span><span class="token variable">@PerType</span><span class="token operator">=</span><span class="token string">'EM'</span>
+</code></pre>
+<h3 id="getting-sp_executesql-result-with-output-parameter"><a aria-hidden="true" class="anchor-heading icon-link" href="#getting-sp_executesql-result-with-output-parameter"></a>Getting sp_executesql result with output parameter</h3>
+<blockquote>
+<p><code>sp_executesql</code> provides to return execution result of the dynamically constructed SQL statement or batch. The <code>OUTPUT</code> parameter plays a key role to resolve this case. In this example, we will count the row number of the PersonPhone table and then we will set the return value to a variable with the <code>OUTPUT</code> parameter. The trick of this usage is to indicate the <code>@RowNumber</code> parameter as an <code>OUTPUT</code> parameter and then we assigned this internal parameter value to the <code>@Result</code> parameter:</p>
+</blockquote>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span>  <span class="token variable">@SqlStatment</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token keyword">DECLARE</span>  <span class="token variable">@PhoneIdType</span> <span class="token keyword">AS</span> <span class="token keyword">INT</span>
+<span class="token keyword">DECLARE</span>  <span class="token variable">@Result</span> <span class="token keyword">AS</span> <span class="token keyword">INT</span>
+
+<span class="token keyword">SET</span> <span class="token variable">@SqlStatment</span><span class="token operator">=</span><span class="token string">'SELECT @RowNumber= COUNT(PhoneNumber) from Person.PersonPhone WHERE PhoneNumberTypeID=@PhoneType'</span>
+<span class="token keyword">SET</span> <span class="token variable">@PhoneIdType</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">EXEC</span> sp_executesql <span class="token variable">@SqlStatment</span> <span class="token punctuation">,</span> N<span class="token string">'@PhoneType INT,@RowNumber INT OUTPUT'</span> <span class="token punctuation">,</span> <span class="token variable">@PhoneType</span><span class="token operator">=</span><span class="token variable">@PhoneIdType</span> <span class="token punctuation">,</span><span class="token variable">@RowNumber</span><span class="token operator">=</span><span class="token variable">@Result</span> OUTPUT
+
+<span class="token keyword">SELECT</span> <span class="token variable">@Result</span> <span class="token keyword">AS</span> <span class="token punctuation">[</span>TableRowNumber<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="sp_executesql-vs-exec-statement"><a aria-hidden="true" class="anchor-heading icon-link" href="#sp_executesql-vs-exec-statement"></a>sp_executesql vs EXEC statement</h2>
+<p>Useful but <code>sp_executesql</code> has the ability to reuse the cached query plans</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span>  <span class="token variable">@SqlStatment</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+    <span class="token keyword">DECLARE</span>  <span class="token variable">@ColNames</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token keyword">DECLARE</span> <span class="token variable">@Persontype</span> <span class="token keyword">AS</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">=</span> <span class="token string">'EM'</span>
+    <span class="token keyword">SET</span> <span class="token variable">@ColNames</span> <span class="token operator">=</span> N<span class="token string">'FirstName , MiddleName , LastName'</span><span class="token punctuation">;</span>
+    <span class="token keyword">SET</span> <span class="token variable">@SqlStatment</span> <span class="token operator">=</span> <span class="token string">'SELECT '</span> <span class="token operator">+</span> <span class="token variable">@ColNames</span> <span class="token operator">+</span> <span class="token string">' FROM Person.Person WHERE Persontype=  '''</span> <span class="token operator">+</span> <span class="token variable">@Persontype</span> <span class="token operator">+</span> <span class="token string">''''</span>
+    <span class="token keyword">EXEC</span><span class="token punctuation">(</span><span class="token variable">@SqlStatment</span><span class="token punctuation">)</span>
+</code></pre></div></div><p></p><p></p>

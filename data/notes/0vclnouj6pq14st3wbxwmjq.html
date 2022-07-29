@@ -1,0 +1,40 @@
+<h1 id="pydantic-type-hints"><a aria-hidden="true" class="anchor-heading icon-link" href="#pydantic-type-hints"></a>Pydantic Type Hints</h1>
+<h2 id="pydantic-for-data-class-type-hints"><a aria-hidden="true" class="anchor-heading icon-link" href="#pydantic-for-data-class-type-hints"></a>Pydantic for Data Class Type Hints</h2>
+<blockquote>
+<p><a href="https://youtu.be/Vj-iU-8_xLs">Do we still need dataclasses? // PYDANTIC tutorial</a>
+Source: <a href="https://pydantic-docs.helpmanual.io/">https://pydantic-docs.helpmanual.io/</a></p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
+<span class="token keyword">from</span> typing <span class="token keyword">import</span> List<span class="token punctuation">,</span> Optional
+<span class="token keyword">from</span> pydantic <span class="token keyword">import</span> BaseModel
+
+
+<span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">id</span><span class="token punctuation">:</span> <span class="token builtin">int</span>
+    name <span class="token operator">=</span> <span class="token string">'John Doe'</span>
+    signup_ts<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>datetime<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
+    friends<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+
+external_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'id'</span><span class="token punctuation">:</span> <span class="token string">'123'</span><span class="token punctuation">,</span>
+    <span class="token string">'signup_ts'</span><span class="token punctuation">:</span> <span class="token string">'2019-06-01 12:22'</span><span class="token punctuation">,</span>
+    <span class="token string">'friends'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+user <span class="token operator">=</span> User<span class="token punctuation">(</span><span class="token operator">**</span>external_data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+<span class="token comment">#> 123</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">repr</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>signup_ts<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#> datetime.datetime(2019, 6, 1, 12, 22)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>friends<span class="token punctuation">)</span>
+<span class="token comment">#> [1, 2, 3]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+{
+    'id': 123,
+    'signup_ts': datetime.datetime(2019, 6, 1, 12, 22),
+    'friends': [1, 2, 3],
+    'name': 'John Doe',
+}
+"""</span>
+</code></pre>

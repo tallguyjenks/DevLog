@@ -1,0 +1,29 @@
+<h1 id="common-table-expressions"><a aria-hidden="true" class="anchor-heading icon-link" href="#common-table-expressions"></a>Common Table Expressions</h1>
+<p>A <code>CTE</code> is a temporary result set that you can reference within another <code>SELECT</code>, <a href="/DevLog/notes/rqg3dipq9eb4hg19cnl8k5x">Insert Into</a>, <a href="/DevLog/notes/b5r287mgun7e7pljwbn2tdn">T-SQL UPDATE</a>, or <a href="/DevLog/notes/0hb1xgk1gqv1732u5tdkgpb">T-SQL DELETE</a> statement.</p>
+<p>A <code>CTE</code> always returns a result set. They are used to simplify queries, like eliminating a derived table from the main query body:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">WITH</span> My_Table <span class="token punctuation">(</span>Age<span class="token punctuation">,</span> Counts<span class="token punctuation">)</span>
+<span class="token keyword">AS</span>
+<span class="token punctuation">(</span>
+	<span class="token keyword">SELECT</span> Age<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>Name<span class="token punctuation">)</span> <span class="token keyword">AS</span> Counts
+	<span class="token keyword">FROM</span> Source_Table
+	<span class="token keyword">WHERE</span> Age <span class="token operator">></span> <span class="token number">55</span>
+	<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Age
+<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> My_Table
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> Age
+GO
+</code></pre>
+<p>No <a href="/DevLog/notes/wvrcd4y7atffap1akrr1tjv">Temp Tables</a> assignment, no need to make an intermediary table. I like to this of <code>CTE</code>'s like Rice paddy fields where the data like the water just flows downward into the next query or <code>CTE</code>.</p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/duka4l9oyrtjgolzyhy5tay">Chaining</a></li>
+<li><a href="/DevLog/notes/ncncsbe8ay8kg3kgvrbbiwt">Recursive</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/mxbhcyic84m1wtodxw996wm">Sql Server Cte Vs Temp Table Vs Table Variable Performance Test (DevLog)</a></li>
+<li><a href="/DevLog/notes/p1t7oubr8326hgmkoocabup">While (DevLog)</a></li>
+</ul>

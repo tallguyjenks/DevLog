@@ -1,0 +1,19 @@
+<h1 id="default-imports"><a aria-hidden="true" class="anchor-heading icon-link" href="#default-imports"></a>Default Imports</h1>
+<h2 id="you-can-only-default-export-one-thing-so-it-will-likely-be-the-class-you-are-defining-if-you-are-defining-a-class-in-your-file"><a aria-hidden="true" class="anchor-heading icon-link" href="#you-can-only-default-export-one-thing-so-it-will-likely-be-the-class-you-are-defining-if-you-are-defining-a-class-in-your-file"></a>You can only default export one thing so it will likely be the class you are defining if you are defining a class in your file</h2>
+<p>Now in a new file we can <code>import</code> your <code>exported</code> items paying attention to your file paths in the import statements</p>
+<p><code>import User from '/user.js'</code></p>
+<p>this alone will throw an error, in your HTML where you source your javascript files you need to change the <code>script</code> tag to use ES6 modules:</p>
+<p><code>&#x3C;script src="main.js">&#x3C;/script></code></p>
+<p><code>&#x3C;script type="module" src="main.js">&#x3C;/script></code></p>
+<p>a tip for the module import <code>&#x3C;script></code> tag was the <code>defer</code> keyword. Child issue: #6 </p>
+<p>so now in a <code>*.js</code> file that does not have the User class declared in it, i can make and use the User class: </p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">'Bryan Jenks'</span><span class="token punctuation">,</span> <span class="token number">999</span><span class="token punctuation">)</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Result:</strong></p>
+<blockquote>
+<p>User {name: "Bryan Jenks", age: 999}
+age: 999
+name: "Bryan Jenks"
+<strong>proto</strong>: Object</p>
+</blockquote>

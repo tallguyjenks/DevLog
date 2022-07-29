@@ -1,0 +1,126 @@
+<h1 id="reduce-your-python-code-complexity-with-this-simple-trick"><a aria-hidden="true" class="anchor-heading icon-link" href="#reduce-your-python-code-complexity-with-this-simple-trick"></a>Reduce Your Python Code Complexity with This Simple Trick</h1>
+<ul>
+<li><code>Author:</code> ran-isenberg</li>
+<li><code>Link:</code> <a href="https://isenberg-ran.medium.com/reduce-your-python-code-complexity-with-this-simple-trick-7046b7c54e7a">https://isenberg-ran.medium.com/reduce-your-python-code-complexity-with-this-simple-trick-7046b7c54e7a</a></li>
+<li><code>Publish Date:</code> 2021.07.01</li>
+<li><code>Reviewed Date:</code> <a href="/DevLog/notes/kccu634o0y7wio7iojt5qnp">30</a></li>
+</ul>
+<hr>
+<ul>
+<li>A customer management system receives requests.</li>
+<li><img src="/DevLog/assets/images/Pasted_image_20211130095653.png" alt="alt"></li>
+<li>Each request type is a Python dictionary and all 4 are handled uniquely
+<ul>
+<li><img src="/DevLog/assets/images/Pasted_image_20211130095905.png" alt="alt"></li>
+</ul>
+</li>
+</ul>
+<pre class="language-python"><code class="language-python">request1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"action"</span><span class="token punctuation">:</span> <span class="token string">"create"</span><span class="token punctuation">,</span>
+    <span class="token string">"customer"</span><span class="token punctuation">:</span> <span class="token string">"customer1"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+request2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"action"</span><span class="token punctuation">:</span> <span class="token string">"activate"</span><span class="token punctuation">,</span>
+    <span class="token string">"customer"</span><span class="token punctuation">:</span> <span class="token string">"customer2"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+request3 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"action"</span><span class="token punctuation">:</span> <span class="token string">"suspend"</span><span class="token punctuation">,</span>
+    <span class="token string">"customer"</span><span class="token punctuation">:</span> <span class="token string">"customer2"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+request4 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"action"</span><span class="token punctuation">:</span> <span class="token string">"delete"</span><span class="token punctuation">,</span>
+    <span class="token string">"customer"</span><span class="token punctuation">:</span> <span class="token string">"customer2"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">def</span> <span class="token function">function_handler</span><span class="token punctuation">(</span>request<span class="token punctuation">:</span> Dict<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># handle request</span>
+</code></pre>
+<p>90e9dc</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Any<span class="token punctuation">,</span> Dict
+
+
+<span class="token keyword">def</span> <span class="token function">function_handler</span><span class="token punctuation">(</span>request<span class="token punctuation">:</span> Dict<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    action <span class="token operator">=</span> request<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"action"</span><span class="token punctuation">)</span>
+    customer_name <span class="token operator">=</span> request<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"customer"</span><span class="token punctuation">)</span>
+    <span class="token comment"># validate input</span>
+    
+    <span class="token keyword">if</span> action <span class="token operator">==</span> <span class="token string">"create"</span><span class="token punctuation">:</span>
+        _handle_create_request<span class="token punctuation">(</span>customer_name<span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> action <span class="token operator">==</span> <span class="token string">"activate"</span><span class="token punctuation">:</span>
+        _handle_activate_request<span class="token punctuation">(</span>customer_name<span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> action <span class="token operator">==</span> <span class="token string">"suspend"</span><span class="token punctuation">:</span>
+        _handle_suspend_suspend<span class="token punctuation">(</span>customer_name<span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> action <span class="token operator">==</span> <span class="token string">"delete"</span><span class="token punctuation">:</span>
+        _handle_delete_request<span class="token punctuation">(</span>customer_name<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_create_request</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something related to create</span>
+    <span class="token keyword">return</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_activate_request</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something related to activate</span>
+    <span class="token keyword">return</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_suspend_suspend</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something related to suspend</span>
+    <span class="token keyword">return</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_delete_request</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something related to delete</span>
+    <span class="token keyword">return</span>
+</code></pre>
+<p>df2a07</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Any<span class="token punctuation">,</span> Dict
+
+ACTION_MAPPING <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"create"</span><span class="token punctuation">:</span> _handle_create_request<span class="token punctuation">,</span>
+    <span class="token string">"activate"</span><span class="token punctuation">:</span> _handle_activate_request<span class="token punctuation">,</span>
+    <span class="token string">"suspend"</span><span class="token punctuation">:</span> _handle_suspend_suspend<span class="token punctuation">,</span>
+    <span class="token string">"delete"</span><span class="token punctuation">:</span> _handle_delete_request<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">def</span> <span class="token function">function_handler</span><span class="token punctuation">(</span>request<span class="token punctuation">:</span> Dict<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    action <span class="token operator">=</span> request<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"action"</span><span class="token punctuation">)</span>
+    customer_name <span class="token operator">=</span> request<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"customer"</span><span class="token punctuation">)</span>
+    <span class="token comment"># validate input</span>
+    _handle_request<span class="token punctuation">(</span>action<span class="token punctuation">,</span> customer_name<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_request</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    action_handler <span class="token operator">=</span> ACTION_MAPPING<span class="token punctuation">.</span>get<span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+    <span class="token comment"># handle action</span>
+    action_handler<span class="token punctuation">(</span>customer_name<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_create_request</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something related to create</span>
+    <span class="token keyword">return</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_activate_request</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something related to activate</span>
+    <span class="token keyword">return</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_suspend_suspend</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something related to suspend</span>
+    <span class="token keyword">return</span>
+
+
+<span class="token keyword">def</span> <span class="token function">_handle_delete_request</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something related to delete</span>
+    <span class="token keyword">return</span>
+</code></pre>
+<p>c90001</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/kccu634o0y7wio7iojt5qnp">30 (DevLog)</a></li>
+</ul>

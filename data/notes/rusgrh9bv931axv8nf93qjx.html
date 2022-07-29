@@ -1,0 +1,13 @@
+<h1 id="variable-name-reuse"><a aria-hidden="true" class="anchor-heading icon-link" href="#variable-name-reuse"></a>Variable Name Reuse</h1>
+<h2 id="reuse-variable-name"><a aria-hidden="true" class="anchor-heading icon-link" href="#reuse-variable-name"></a>Reuse variable name</h2>
+<ul>
+<li>f strings that have a trailing <code>=</code> will print a statement like this:</li>
+</ul>
+<pre class="language-python"><code class="language-python">x<span class="token operator">=</span><span class="token number">7</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token operator">=</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> x=7</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x <span class="token operator">=</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> x =7</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> x = 7</span>
+</code></pre>

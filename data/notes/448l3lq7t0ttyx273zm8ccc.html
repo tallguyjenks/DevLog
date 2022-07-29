@@ -1,0 +1,24 @@
+<h1 id="02"><a aria-hidden="true" class="anchor-heading icon-link" href="#02"></a>02</h1>
+<ul>
+<li>Great bash config for using git from <a href="https://thoughtbot.com/upcase/videos/git-customizing">this thoughtbot article</a></li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># No arguments: `git status`</span>
+<span class="token comment"># With arguments: acts like `git`</span>
+<span class="token function-name function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$#</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+	<span class="token function">git</span> <span class="token variable">$@</span>
+<span class="token keyword">else</span>
+	<span class="token function">git</span> status
+<span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Complete g like git</span>
+compdef <span class="token assign-left variable">g</span><span class="token operator">=</span>git
+</code></pre>
+<ul>
+<li>A great tip to update your master branch return to the original branch you left and then merge changes. this is made as a git alias.</li>
+<li><code>!git checkout master &#x26;&#x26; git pull &#x26;&#x26; git fetch --prune &#x26;&#x26; git checkout - &#x26;&#x26; git merge master</code></li>
+<li>Aliased as <code>mup</code> for <em>"Master Up"</em></li>
+<li>The <code>!</code> is running it as a shell command as git aliases can only run 1 command. So this way we're still chaining commands</li>
+<li>Removing a file from git history from <a href="https://stackoverflow.com/questions/307828/how-do-you-fix-a-bad-merge-and-replay-your-good-commits-onto-a-fixed-merge/15729420#15729420">this SO article</a></li>
+</ul>

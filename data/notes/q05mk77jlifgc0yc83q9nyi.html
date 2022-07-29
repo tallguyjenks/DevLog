@@ -1,0 +1,21 @@
+<h1 id="text-repl"><a aria-hidden="true" class="anchor-heading icon-link" href="#text-repl"></a>Text Repl</h1>
+<h4 id="text-replacement-in-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#text-replacement-in-bash"></a>Text Replacement In Bash</h4>
+<ul>
+<li>Bash tip: instead of spawning an instance of <code>sed</code>, you can do text replacement in "pure" Bash like <code>status="${status//,/}"</code>. Breaking that down:</li>
+<li><code>status=</code>   # assign a new value to the Bash variable <code>status</code>.</li>
+<li><code>status="${ … }"</code> # I just always use double quotes when doing parameter (and command) substitution.</li>
+<li><code>status="${status … }"</code> # the new value I am assigning to <code>status</code> is the expansion of (value of) <code>status</code>, BUT first we alter that value…</li>
+<li><code>status="${status//PATTERN/STRING}"</code> # the <code>//</code> means "globally replace" (a single <code>/</code> would replace the first occurrence of PATTERN)</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">status</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${status<span class="token operator">/</span><span class="token operator">/</span><span class="token operator">,</span><span class="token operator">/</span>}</span>"</span>
+<span class="token assign-left variable">status</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${status<span class="token operator">/</span><span class="token operator">/</span>PATTERN<span class="token operator">/</span>STRING}</span>"</span>
+
+<span class="token assign-left variable">firstString</span><span class="token operator">=</span><span class="token string">"I love Suzi and Marry, but Suzi Most"</span>
+<span class="token assign-left variable">secondString</span><span class="token operator">=</span><span class="token string">"Sara"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${firstString<span class="token operator">/</span>Suzi<span class="token operator">/</span>$secondString}</span>"</span>    <span class="token comment"># prints 'I love Sara and Marry'</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/fcfuzcgefzlafuqzj7qgatl">Doc</a></li>
+</ol>

@@ -1,0 +1,23 @@
+<h1 id="pyqt"><a aria-hidden="true" class="anchor-heading icon-link" href="#pyqt"></a>Pyqt</h1>
+<blockquote>
+<p>Create GUI apps</p>
+</blockquote>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="https://realpython.com/qt-designer-python/">Real Python Article</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt/pyqt_qpixmap_class.htm">Tutorials Point Course</a></li>
+<li>Using a GUI designer to spit out code for you to use:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> pyqt5 pyqt5-tools pyqt-builder 
+</code></pre>
+<ul>
+<li>open the app builder from <a href="/DevLog/notes/l5qm96rv198yvd7xe2t5mm7">Powershell</a>: <code>pyqt5-tools.exe designer</code></li>
+<li>Quick <a href="/DevLog/notes/37gnm4qxdfz1cfv92sptoti">Venv</a> setup workflow with the designer:</li>
+</ul>
+<pre class="language-powershell"><code class="language-powershell">pip install venv
+python <span class="token operator">-</span>m venv my_virtual_env
+cd my_virtual_env
+&#x26; scripts\activate<span class="token punctuation">.</span>ps1
+pip install pyqt5 pyqt5-tools pyqt-builder
+pyqt5-tools<span class="token punctuation">.</span>exe designer
+</code></pre>

@@ -1,0 +1,34 @@
+<h1 id="this-implicit-parameter"><a aria-hidden="true" class="anchor-heading icon-link" href="#this-implicit-parameter"></a>This Implicit Parameter</h1>
+<blockquote>
+<p>Within a member function, the implicitly-passed object pointer is accessible via the name this. In particular, a member can be accessed as <code>this->member</code>. The <code>-></code> is the member access operator for a pointer, similar to the <code>.</code> operator for non-pointers.</p>
+</blockquote>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ShapeSquare</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span><span class="token operator">:</span>
+      <span class="token keyword">void</span>   <span class="token function">SetSideLength</span><span class="token punctuation">(</span><span class="token keyword">double</span> sideLength<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">double</span> <span class="token function">GetArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+   <span class="token keyword">private</span><span class="token operator">:</span>
+      <span class="token keyword">double</span> sideLength<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token class-name">ShapeSquare</span><span class="token double-colon punctuation">::</span><span class="token function">SetSideLength</span><span class="token punctuation">(</span><span class="token keyword">double</span> sideLength<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token operator">-></span>sideLength <span class="token operator">=</span> sideLength<span class="token punctuation">;</span> <span class="token comment">// Refer to data member with same</span>
+   <span class="token comment">// Data member      Parameter  // name as the passed in parameter</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">double</span> <span class="token class-name">ShapeSquare</span><span class="token double-colon punctuation">::</span><span class="token function">GetArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">{</span>
+   <span class="token keyword">return</span> sideLength <span class="token operator">*</span> sideLength<span class="token punctuation">;</span> <span class="token comment">// Both refer to data member</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ShapeSquare square1<span class="token punctuation">;</span>
+
+   square1<span class="token punctuation">.</span><span class="token function">SetSideLength</span><span class="token punctuation">(</span><span class="token number">1.2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Square's area: "</span> <span class="token operator">&#x3C;&#x3C;</span> square1<span class="token punctuation">.</span><span class="token function">GetArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

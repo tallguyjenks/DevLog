@@ -1,0 +1,83 @@
+<h1 id="ci-cd"><a aria-hidden="true" class="anchor-heading icon-link" href="#ci-cd"></a>CI CD</h1>
+<p><code>C</code>ontinuous <code>I</code>ntegration - <code>C</code>ontinuous <code>D</code>evelopment</p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">The Ideal CI CD Pipeline Concepts Overview</span></div>
+<a href="/DevLog/notes/e445isyiviwgz0zs1yq7xdh" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><center><iframe width="560" height="315" src="https://www.youtube.com/embed/OPwU3UWCxhw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<p><img src="/DevLog/assets/images/2022-02-22-17-35-55.png" alt="Ideal Pipeline"></p>
+<ul>
+<li><strong>Source</strong> 
+<ul>
+<li><a href="/DevLog/notes/jak8s12bepa7jt6n3pem8ro">Git</a> version control</li>
+<li>Require <code>X</code> reviewers</li>
+<li>Independent Dev DB and any dependencies are replicated for Dev copies</li>
+</ul>
+</li>
+<li><strong>Build</strong>
+<ul>
+<li>Should be Toggle-able for when you dont want something to run through the gamut</li>
+<li>Compile Source and Dependencies</li>
+<li>Unit tests</li>
+<li>Coverage > 90%</li>
+</ul>
+</li>
+<li><strong>Test</strong>
+<ul>
+<li>Independent Test DB</li>
+<li>Should be Toggle-able for when you dont want something to run through the gamut</li>
+<li>Integration tests
+<ul>
+<li>If you have an <a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a> then test a POST request followed by a GET request</li>
+<li>If you have external service dependencies, test them too</li>
+<li>In essence, test the core functionality of your app so that changed behavior will easily show up</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Prod</strong> (1box)
+<ul>
+<li>Independent Prod DB</li>
+<li>1 Box (have incremental roll out to a single machine or a small fraction of them so impacts are smaller and more readily identified and rolled back)</li>
+<li>Alarms on Errors, Latency, and Key business Metrics can indicate a needed rollback
+<ul>
+<li>Robust system can monitor these and run an automated rollback</li>
+</ul>
+</li>
+<li>Bake Period (24hrs)
+<ul>
+<li>Testing that the change is still good live in prod</li>
+<li>Anomaly Detection or Error counts + Latency Breaches over the time period</li>
+</ul>
+</li>
+<li>Canary (in a coal mine)
+<ul>
+<li>Have a cron job test the <a href="/DevLog/notes/4o39vh8m0vty3puchj4ebxr">API</a> at a regular interval (POST/GET/UPDATE/DELETE etc.)</li>
+<li>Should the cron job fail then it can be an alarm.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Prod</strong>
+<ul>
+<li>The other 90% of the traffic</li>
+<li>Also has all the Alarms, canary, etc. from the 1box too</li>
+<li>Traffic split through <a href="/DevLog/notes/84pi5u7op8dg5x5x008k304">DNS</a>?</li>
+</ul>
+</li>
+</ul>
+</div></div><p></p><p></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/dhcx1r59z6h0wlrqd6iyemj">How to Scan a Container for Vulnerabilities and Publish Results as a Part of Azure Devops CI CD Pipeline (DevLog)</a></li>
+<li><a href="/DevLog/notes/4beiapwkn9eo7y70btwqtmi">13 (DevLog)</a></li>
+<li><a href="/DevLog/notes/th8lahn2ljzaowwo22z8thg">17 (DevLog)</a></li>
+<li><a href="/DevLog/notes/f6wx02gwrpmg9job7qwdbjt">2022-01-10 (DevLog)</a></li>
+<li><a href="/DevLog/notes/4eafrbxrlb72fg1rg68qftr">Principles In Refactoring (DevLog)</a></li>
+</ul>

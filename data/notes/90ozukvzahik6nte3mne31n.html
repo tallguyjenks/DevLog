@@ -1,0 +1,16 @@
+<h1 id="with-const"><a aria-hidden="true" class="anchor-heading icon-link" href="#with-const"></a>With Const</h1>
+<h5 id="pass-by-references-with-const"><a aria-hidden="true" class="anchor-heading icon-link" href="#pass-by-references-with-const"></a>Pass By References with Const</h5>
+<p>In <a href="/DevLog/notes/9pbfl810rt62zbyvrp20xmh#pass-by-references">Funcs</a> the <code>inputVector</code> was passed by reference which means any changes made to the vector inside the function body would result in mutation of the original vector as we referred to the original vector.</p>
+<p>To prevent mutation of the original vector but take advantage of a pass by reference for efficiency we can prepend <code>const</code> to our input parameter so that we wont accidentally be able to mutate that pass by reference value.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">MyFunction</span><span class="token punctuation">(</span> <span class="token keyword">const</span> vector<span class="token operator">&#x3C;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&#x26;</span> inputVector <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// References my vector but doesnt copy it into the function</span>
+	<span class="token comment">// body scope taking up an identical amount of memory.</span>
+	cout <span class="token operator">&#x3C;&#x3C;</span> inputVector<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">16345</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	vector<span class="token operator">&#x3C;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">myVector</span><span class="token punctuation">(</span><span class="token number">785746353</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token function">MyFunction</span><span class="token punctuation">(</span>myVector<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>

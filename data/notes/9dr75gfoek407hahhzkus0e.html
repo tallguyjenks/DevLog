@@ -1,0 +1,80 @@
+<h1 id="color-output"><a aria-hidden="true" class="anchor-heading icon-link" href="#color-output"></a>Color Output</h1>
+<h5 id="colorized-output-in-bash"><a aria-hidden="true" class="anchor-heading icon-link" href="#colorized-output-in-bash"></a>Colorized Output In Bash</h5>
+<ul>
+<li>Using ANSI escape codes you can make your terminal display colored output</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Color</th><th align="center">Code</th><th align="center">Color</th><th align="center">Code</th></tr></thead><tbody><tr><td align="center">Black</td><td align="center">'\033[0;30m'</td><td align="center">Dark Gray</td><td align="center">'\033[1;30m'</td></tr><tr><td align="center">Red</td><td align="center">'\033[0;31m'</td><td align="center">Light Red</td><td align="center">'\033[1;31m'</td></tr><tr><td align="center">Green</td><td align="center">'\033[0;32m'</td><td align="center">Light Green</td><td align="center">'\033[1;32m'</td></tr><tr><td align="center">Brown/Orange</td><td align="center">'\033[0;33m'</td><td align="center">Yellow</td><td align="center">'\033[1;33m'</td></tr><tr><td align="center">Blue</td><td align="center">'\033[0;34m'</td><td align="center">Light Blue</td><td align="center">'\033[1;34m'</td></tr><tr><td align="center">Purple</td><td align="center">'\033[0;35m'</td><td align="center">Light Purple</td><td align="center">'\033[1;35m'</td></tr><tr><td align="center">Cyan</td><td align="center">'\033[0;36m'</td><td align="center">Light Cyan</td><td align="center">'\033[1;36m'</td></tr><tr><td align="center">Light Gray</td><td align="center">'\033[0;37m'</td><td align="center">White</td><td align="center">'\033[1;37m'</td></tr></tbody></table>
+<ul>
+<li><code>RED='\033[0;31m'</code></li>
+<li>30-37 sets foreground color</li>
+<li>40-47 sets background color</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">RED</span><span class="token operator">=</span><span class="token string">'\033[0;31m'</span>
+<span class="token assign-left variable">NC</span><span class="token operator">=</span><span class="token string">'\033[0m'</span>
+
+<span class="token builtin class-name">echo</span> -e <span class="token string">"<span class="token variable">${LRED}</span>Hard<span class="token variable">${NC}</span> [1]   <span class="token variable">${RED}</span>Difficult<span class="token variable">${NC}</span> [2]   <span class="token variable">${YELLOW}</span>Normal<span class="token variable">${NC}</span> [3]   <span class="token variable">${GREEN}</span>Mild<span class="token variable">${NC}</span> [4]   <span class="token variable">${LGREEN}</span>Easy<span class="token variable">${NC}</span> [5]"</span>
+</code></pre>
+<h6 id="documentation"><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a>Documentation</h6>
+<ul>
+<li><a href="https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux#5947802">SO answer</a></li>
+<li><a href="https://misc.flogisoft.com/bash/tip_colors_and_formatting">more documentation</a></li>
+</ul>

@@ -1,0 +1,19 @@
+<h1 id="custom"><a aria-hidden="true" class="anchor-heading icon-link" href="#custom"></a>Custom</h1>
+<h3 id="custom-typing"><a aria-hidden="true" class="anchor-heading icon-link" href="#custom-typing"></a>Custom Typing:</h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> List
+
+Vector <span class="token operator">=</span> List<span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">]</span>	
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>v<span class="token punctuation">:</span> Vector<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Vector<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/Pasted_image_20211215085306.png" alt="alt"></p>
+<p>Can also use our own custom types like this: </p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> List
+
+Vector <span class="token operator">=</span> List<span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">]</span>
+Vectors <span class="token operator">=</span> List<span class="token punctuation">[</span>Vector<span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>v<span class="token punctuation">:</span> Vectors<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Vectors<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+</code></pre>

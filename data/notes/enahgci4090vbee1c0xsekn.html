@@ -1,0 +1,81 @@
+<h1 id="ftp-file-transfer-application"><a aria-hidden="true" class="anchor-heading icon-link" href="#ftp-file-transfer-application"></a>Ftp File Transfer Application</h1>
+<ul>
+<li><a href="https://medium.com/geekculture/build-your-own-file-transfer-app-using-python-within-5-minutes-56adffc7906b">Article On This Project</a></li>
+<li>Uses: <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">os (Private)</a>, <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">socket (Private)</a>, <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">tqdm (Private)</a></li>
+</ul>
+<h2 id="server"><a aria-hidden="true" class="anchor-heading icon-link" href="#server"></a>Server:</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> socket
+<span class="token keyword">import</span> tqdm
+<span class="token keyword">import</span> os
+
+SERVER_HOST <span class="token operator">=</span> <span class="token string">"0.0.0.0"</span>
+SERVER_PORT <span class="token operator">=</span> <span class="token number">5001</span>
+BUFFER_SIZE <span class="token operator">=</span> <span class="token number">4096</span>
+SEPARATOR <span class="token operator">=</span> <span class="token string">"&#x3C;SEPARATOR>"</span>
+
+s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span>SERVER_HOST<span class="token punctuation">,</span> SERVER_PORT<span class="token punctuation">)</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"[*] Listening as </span><span class="token interpolation"><span class="token punctuation">{</span>SERVER_HOST<span class="token punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token punctuation">{</span>SERVER_PORT<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Waiting for the client to connect... "</span><span class="token punctuation">)</span>
+client_socket<span class="token punctuation">,</span> address <span class="token operator">=</span> s<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"[+] </span><span class="token interpolation"><span class="token punctuation">{</span>address<span class="token punctuation">}</span></span><span class="token string"> is connected."</span></span><span class="token punctuation">)</span>
+received <span class="token operator">=</span> client_socket<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>BUFFER_SIZE<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+filename<span class="token punctuation">,</span> filesize <span class="token operator">=</span> received<span class="token punctuation">.</span>split<span class="token punctuation">(</span>SEPARATOR<span class="token punctuation">)</span>
+filename <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>basename<span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+filesize <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>filesize<span class="token punctuation">)</span>
+progress <span class="token operator">=</span> tqdm<span class="token punctuation">.</span>tqdm<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>filesize<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"Receiving </span><span class="token interpolation"><span class="token punctuation">{</span>filename<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> unit<span class="token operator">=</span><span class="token string">"B"</span><span class="token punctuation">,</span> unit_scale<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> unit_divisor<span class="token operator">=</span><span class="token number">1024</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+  <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+	  bytes_read <span class="token operator">=</span> client_socket<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>BUFFER_SIZE<span class="token punctuation">)</span>
+	  <span class="token keyword">if</span> <span class="token keyword">not</span> bytes_read<span class="token punctuation">:</span>
+		  <span class="token keyword">break</span>
+	  f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>bytes_read<span class="token punctuation">)</span>
+	  progress<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>bytes_read<span class="token punctuation">)</span><span class="token punctuation">)</span>
+client_socket<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="client"><a aria-hidden="true" class="anchor-heading icon-link" href="#client"></a>Client:</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> socket
+<span class="token keyword">import</span> tqdm
+<span class="token keyword">import</span> os
+
+SEPARATOR <span class="token operator">=</span> <span class="token string">"&#x3C;SEPARATOR>"</span>
+BUFFER_SIZE <span class="token operator">=</span> <span class="token number">4096</span>
+
+s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+host <span class="token operator">=</span> <span class="token string">"192.168.1.109"</span>
+port <span class="token operator">=</span> <span class="token number">5001</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"[+] Connecting to </span><span class="token interpolation"><span class="token punctuation">{</span>host<span class="token punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token punctuation">{</span>port<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[+] Connected to "</span><span class="token punctuation">,</span> host<span class="token punctuation">)</span>
+filename <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"File to Transfer : "</span><span class="token punctuation">)</span>
+filesize <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>getsize<span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>filename<span class="token punctuation">}</span></span><span class="token interpolation"><span class="token punctuation">{</span>SEPARATOR<span class="token punctuation">}</span></span><span class="token interpolation"><span class="token punctuation">{</span>filesize<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#file = open(filename, 'wb') </span>
+
+progress <span class="token operator">=</span> tqdm<span class="token punctuation">.</span>tqdm<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>filesize<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"Sending </span><span class="token interpolation"><span class="token punctuation">{</span>filename<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> unit<span class="token operator">=</span><span class="token string">"B"</span><span class="token punctuation">,</span> unit_scale<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> unit_divisor<span class="token operator">=</span><span class="token number">1024</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+  <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+	  bytes_read <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span>BUFFER_SIZE<span class="token punctuation">)</span>
+	  <span class="token keyword">if</span> <span class="token keyword">not</span> bytes_read<span class="token punctuation">:</span>
+		  <span class="token keyword">break</span>
+	  s<span class="token punctuation">.</span>sendall<span class="token punctuation">(</span>bytes_read<span class="token punctuation">)</span>
+	  progress<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>bytes_read<span class="token punctuation">)</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="tips"><a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a>Tips:</h2>
+<blockquote>
+<p>You can extend this code by adding more features to meet your own needs. These are only a few of them:</p>
+</blockquote>
+<ul>
+<li>Enable the server to receive multiple files from multiple clients at the same time using threads.</li>
+<li>Compress the file before sending it.</li>
+<li>Encrypt the file before sending it to ensure no one intercepting it will read it.</li>
+<li>To make sure we sent the files properly, use secure hashing algorithms. It will check the checksums of both files — the original sender file and the received file.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/3fwe4gbvr2o4z43a4c95d14">Proj (DevLog)</a></li>
+</ul>

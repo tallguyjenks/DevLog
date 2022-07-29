@@ -1,0 +1,30 @@
+<h1 id="for-of-loop"><a aria-hidden="true" class="anchor-heading icon-link" href="#for-of-loop"></a>For of Loop</h1>
+<h2 id="the-forof-loop"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-forof-loop"></a>The <code>for...of</code> Loop</h2>
+<p>The new <code>for...of</code> loop allows us to iterate over arrays or other iterable objects very easily. </p>
+<p>Also, the code inside the loop is executed for each element of the iterable object. Here's an example:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Iterating over array </span>
+<span class="token keyword">let</span> letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">,</span> <span class="token string">"e"</span><span class="token punctuation">,</span> <span class="token string">"f"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+
+<span class="token keyword control-flow">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> letter <span class="token keyword">of</span> letters<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>letter<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// a,b,c,d,e,f </span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Iterating over string </span>
+<span class="token keyword">let</span> greet <span class="token operator">=</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span> 
+
+<span class="token keyword control-flow">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> character <span class="token keyword">of</span> greet<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>character<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// H,e,l,l,o, ,W,o,r,l,d,! </span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="https://www.tutorialrepublic.com/javascript-tutorial/javascript-es6-features.php">https://www.tutorialrepublic.com/javascript-tutorial/javascript-es6-features.php</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/z7ttjzpaawtowwhofdvag95">Ecmascript 2015 (DevLog)</a></li>
+</ul>

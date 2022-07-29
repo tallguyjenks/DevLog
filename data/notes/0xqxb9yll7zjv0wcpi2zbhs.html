@@ -1,0 +1,10 @@
+<h1 id="install-on-windows"><a aria-hidden="true" class="anchor-heading icon-link" href="#install-on-windows"></a>Install on Windows</h1>
+<h2 id="installation-on-windows"><a aria-hidden="true" class="anchor-heading icon-link" href="#installation-on-windows"></a>Installation on Windows</h2>
+<ul>
+<li>Install from <a href="http://gnuwin32.sourceforge.net/packages/make.htm">Here</a></li>
+<li>Run <code>C:\MinGW\bin\mingw-get.exe</code> to install the Make tools</li>
+<li>Add <code>C:\MinGW\bin</code> to your <code>$PATH</code></li>
+<li>make <a href="/DevLog/notes/l5qm96rv198yvd7xe2t5mm7">Powershell</a> alias of <code>mingw32-make.exe</code> to <code>make</code></li>
+</ul>
+<pre class="language-powershell"><code class="language-powershell"><span class="token function">New-Alias</span> <span class="token operator">-</span>Name make <span class="token operator">-</span>Value mingw32-make<span class="token punctuation">.</span>exe
+</code></pre>

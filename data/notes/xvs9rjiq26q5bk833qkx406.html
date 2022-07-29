@@ -1,0 +1,23 @@
+<h1 id="printing-ascii"><a aria-hidden="true" class="anchor-heading icon-link" href="#printing-ascii"></a>Printing Ascii</h1>
+<h2 id="printing-ascii-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#printing-ascii-1"></a>Printing Ascii</h2>
+<ul>
+<li>to print the repr of the value end the fstring with a <code>!r</code>:</li>
+</ul>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token string">"hello ✅"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token conversion-option punctuation">!r</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> "hello ✅"</span>
+</code></pre>
+<ul>
+<li>to print only ascii values end the fstring with a <code>!a</code>:</li>
+</ul>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token string">"hello ✅"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token conversion-option punctuation">!a</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> "hello \u2705"</span>
+</code></pre>
+<ul>
+<li>to print string values without quotes end the fstring with a <code>!s</code>:</li>
+</ul>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token string">"hello ✅"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token conversion-option punctuation">!a</span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># >>> hello ✅</span>
+</code></pre>

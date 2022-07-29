@@ -1,0 +1,47 @@
+<h1 id="23"><a aria-hidden="true" class="anchor-heading icon-link" href="#23"></a>23</h1>
+<ul>
+<li><a href="/DevLog/notes/ku0abqmell3qfg5bvcvx7i0">T-SQL</a> 
+<ul>
+<li>Databases can live in a single <code>.db</code> file</li>
+<li>queries have to end with a <code>;</code></li>
+<li>The syntax is similar to other SQL's but it of course has it differences and functionalities that it lacks</li>
+<li>Cant seem to find a way to do a string split cross apply with SQLite to take a single column with a string of values comma separated to split them then cross apply them to list and then filter/aggregate them.
+<ul>
+<li>This is making me rely more of more tables in the relational model v.s. robust functions.</li>
+</ul>
+</li>
+</ul>
+<h2 id="current-er-diagram-looking-like-this"><a aria-hidden="true" class="anchor-heading icon-link" href="#current-er-diagram-looking-like-this"></a>Current ER diagram looking like this:</h2>
+</li>
+</ul>
+<div class="mermaid">
+  erDiagram
+        PERSON }|--|| LOCATION : "Lives In"
+        PERSON }|--o{ SUBJECT : Studies
+        PERSON ||--o{ TAGS : Has
+        PERSON }|--o| PROFESSION : "Works As"
+        PERSON }|--|| CONNECTION : Met
+
+</div>
+<ul>
+<li>csv</li>
+<li>clojure
+<ul>
+<li>looked at clojure a little bit but immediately decided against looking into it further since apparently it's meant to run on a JVM or java Virtual Machine.</li>
+<li>I have no intention of looking into Java right now so that was a quick foray into the weird looking syntax of Clojure. maybe something like lisp/elisp for emacs will be more interesting and applicable for me.</li>
+</ul>
+</li>
+<li>markdown markdown hyperlinks when separated by declaration and definition, they can be re-used!</li>
+</ul>
+<pre class="language-markdown"><code class="language-markdown"><span class="token url">[<span class="token content">link text</span>][<span class="token variable">1</span>]</span>
+
+<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> https://www.bryanjenks.dev</span>
+
+<span class="token url">[<span class="token content">but I can also re-use the link here!</span>][<span class="token variable">1</span>]</span>
+
+And this will work all throughout a markdown document
+</code></pre>
+<ul>
+<li>CompTIA A+ Core2 1002 completed <a href="https://www.udemy.com/course/comptia-220-1002-exam/">this udemy course</a> to prep for the exam.</li>
+<li><a href="/DevLog/notes/jak8s12bepa7jt6n3pem8ro">Git</a> Found <a href="https://learngitbranching.js.org/">this GREAT graphical walkthrough tool</a> for learning git</li>
+</ul>

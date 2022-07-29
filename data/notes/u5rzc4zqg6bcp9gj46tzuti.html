@@ -1,0 +1,97 @@
+<h1 id="text"><a aria-hidden="true" class="anchor-heading icon-link" href="#text"></a>Text</h1>
+<h4 id="text-formatting"><a aria-hidden="true" class="anchor-heading icon-link" href="#text-formatting"></a>Text Formatting</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Manipulator</th><th align="left">Description</th><th align="left">Example (for item "Amy")</th><th></th></tr></thead><tbody><tr><td align="left">setw(n)</td><td align="left">Sets the number of characters for the next output item only (does not persist, in contrast to other manipulators). By default, the item will be right-aligned, and filled with spaces. From <code>&#x3C;iomanip></code></td><td align="left">For n=7: "Amy"</td><td></td></tr><tr><td align="left">setfill(c)</td><td align="left">Sets the fill to character c. From <code>&#x3C;iomanip></code></td><td align="left">For c='*': ""****Amy""</td><td>"</td></tr><tr><td align="left">left</td><td align="left">Changes to left alignment. From <code>&#x3C;ios></code></td><td align="left">"Amy "</td><td></td></tr><tr><td align="left">right</td><td align="left">Changes to right alignment. From <code>&#x3C;ios></code></td><td align="left">" Amy"</td><td></td></tr></tbody></table>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;ios></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;iomanip></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Dog age in human years (dogyears.com)"</span> <span class="token operator">&#x3C;&#x3C;</span> endl <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// set num char for each column, set alignment</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> left  <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Dog age"</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"|"</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> right <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"Human age"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"------------------------------"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> left  <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"2 months"</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"|"</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> right <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"14 months"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> left  <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"6 months"</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"|"</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> right <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"5 years"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token comment">// set fill character, num char for each column, set alignment</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setfill</span><span class="token punctuation">(</span><span class="token char">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> left  <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"8 months"</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"|"</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> right <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"9 years"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> left  <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"1 year"</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"|"</span><span class="token punctuation">;</span>
+   
+   <span class="token comment">// change fill character, num char for each column, set alignment</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setfill</span><span class="token punctuation">(</span><span class="token char">'.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> right <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">"15 years"</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+
+   <span class="token comment">// change fill character, num char for each column</span>
+   cout <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setfill</span><span class="token punctuation">(</span><span class="token char">'*'</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token function">setw</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string">""</span> <span class="token operator">&#x3C;&#x3C;</span> endl<span class="token punctuation">;</span>
+   
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>Of particular interest is how the <code>setw()</code> and <code>setfill()</code> manipulators are used in the last few lines. Note how they are used to create a line of 30 asterisks, without having to type 30 asterisks.
+.
+Most manipulators are persistent, meaning they change the state of the stream for all subsequent output. The exception is <code>setw()</code>, which <u>only affects the next output item</u>, defined that way likely because programmers usually only want to set the width of the next item and not all subsequent items.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Manipulator</th><th align="left">Description</th><th></th></tr></thead><tbody><tr><td align="center"><code>endl</code></td><td align="left">Inserts a newline character '\n' into the output buffer, and informs the system to flush the buffer.</td><td>From <code>&#x3C;iostream></code></td></tr><tr><td align="center"><code>flush</code></td><td align="left">Informs the system to flush the buffer. From <code>&#x3C;iostream></code></td><td></td></tr></tbody></table>

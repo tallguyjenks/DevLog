@@ -1,0 +1,19 @@
+<h1 id="kwargs"><a aria-hidden="true" class="anchor-heading icon-link" href="#kwargs"></a>Kwargs</h1>
+<h2 id="kwargs-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#kwargs-1"></a>Kwargs</h2>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Python 3.5+ allows passing multiple sets</span>
+<span class="token comment"># of keyword arguments ("kwargs") to a</span>
+<span class="token comment"># function within a single call, using</span>
+<span class="token comment"># the "" syntax:</span>
+
+<span class="token keyword">def</span> <span class="token function">process_data</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">)</span>
+
+x <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">}</span>
+y <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">}</span>
+
+process_data<span class="token punctuation">(</span><span class="token operator">**</span>x<span class="token punctuation">,</span> <span class="token operator">**</span>y<span class="token punctuation">)</span>
+<span class="token comment"># >>> 1 2 3 4</span>
+
+process_data<span class="token punctuation">(</span><span class="token operator">**</span>x<span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">,</span> d<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+<span class="token comment"># >>> 1 2 23 42</span>
+</code></pre>

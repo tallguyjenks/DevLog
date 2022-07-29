@@ -1,0 +1,21 @@
+<h1 id="begin-transaction"><a aria-hidden="true" class="anchor-heading icon-link" href="#begin-transaction"></a>Begin Transaction</h1>
+<p><strong>Best Practice</strong></p>
+<p><code>BEGIN TRAN</code> marks the beginning of a local transaction and is not recorded until <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">T-SQL Commit (Private)</a>. This allows us to <a href="/DevLog/notes/5xcb7opallqepqj0br1eoca">T-SQL Rollback</a> any unwanted transactions. </p>
+<p>Best practice is to use <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">T-SQL Begin Transaction (Private)</a> to start especially when using the following <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">T-SQL Data Manipulation Language (Private)</a> commands: <code>INSERT</code>, <code>DELETE</code>, &#x26; <code>UPDATE</code></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">BEGIN</span> <span class="token keyword">TRAN</span>
+	<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token keyword">Database</span><span class="token punctuation">.</span><span class="token keyword">Schema</span><span class="token punctuation">.</span><span class="token keyword">Table</span> <span class="token punctuation">(</span><span class="token operator">&#x3C;</span>field<span class="token operator">></span><span class="token punctuation">)</span>
+	<span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'&#x3C;INSERTED VALUE>'</span><span class="token punctuation">)</span>
+	
+	<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+	<span class="token keyword">FROM</span> <span class="token keyword">Database</span><span class="token punctuation">.</span><span class="token keyword">Schema</span><span class="token punctuation">.</span><span class="token keyword">Table</span>
+<span class="token keyword">ROLLBACK</span>
+<span class="token keyword">COMMIT</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/cjp70v56kna46nat8q046qe">Transaction Control Language (DevLog)</a></li>
+<li><a href="/DevLog/notes/b5r287mgun7e7pljwbn2tdn">Update (DevLog)</a></li>
+<li><a href="/DevLog/notes/59j60o486vc59s9efk90rk3">Commit (DevLog)</a></li>
+<li><a href="/DevLog/notes/5xcb7opallqepqj0br1eoca">Rollback (DevLog)</a></li>
+</ul>

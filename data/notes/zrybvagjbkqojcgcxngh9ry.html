@@ -1,0 +1,40 @@
+<h1 id="protocol-classes"><a aria-hidden="true" class="anchor-heading icon-link" href="#protocol-classes"></a>Protocol Classes</h1>
+<h2 id="sample-implementation"><a aria-hidden="true" class="anchor-heading icon-link" href="#sample-implementation"></a>Sample Implementation</h2>
+<blockquote>
+<p>from: <a href="https://stackoverflow.com/a/50255847/12339658">https://stackoverflow.com/a/50255847/12339658</a></p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Protocol
+
+<span class="token keyword">class</span> <span class="token class-name">SupportsClose</span><span class="token punctuation">(</span>Protocol<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">close</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token comment"># ...</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Resource</span><span class="token punctuation">:</span>
+    <span class="token comment"># ...</span>
+    <span class="token keyword">def</span> <span class="token function">close</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span><span class="token builtin">file</span><span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">close_all</span><span class="token punctuation">(</span>things<span class="token punctuation">:</span> Iterable<span class="token punctuation">[</span>SupportsClose<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> thing <span class="token keyword">in</span> things<span class="token punctuation">:</span>
+        thing<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'foo.txt'</span><span class="token punctuation">)</span>
+resource <span class="token operator">=</span> Resource<span class="token punctuation">(</span><span class="token punctuation">)</span>
+close_all<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">file</span><span class="token punctuation">,</span> resource<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># OK!</span>
+close_all<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>     <span class="token comment"># Error: 'int' has no 'close' method</span>
+</code></pre>
+<hr>
+<ul>
+<li>Related:
+<ul>
+<li><a href="/DevLog/notes/mathec967jfiul5dfe2uf6k">Typing</a></li>
+<li><a href="/DevLog/notes/v7i96kp105u0du2q9tz97ta">Abstract Base Classes</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/mathec967jfiul5dfe2uf6k">Typing (DevLog)</a></li>
+</ul>

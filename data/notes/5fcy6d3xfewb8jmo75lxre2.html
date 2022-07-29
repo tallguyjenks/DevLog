@@ -1,0 +1,21 @@
+<h1 id="inner-join"><a aria-hidden="true" class="anchor-heading icon-link" href="#inner-join"></a>Inner Join</h1>
+<p>An inner join is the default join in T-SQL. The <code>INNER</code> is optional but it is a best practice to use it.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token identifier"><span class="token punctuation">`</span><span class="token punctuation">`</span></span><span class="token punctuation">`</span><span class="token keyword">sql</span>
+<span class="token keyword">SELECT</span> M<span class="token punctuation">.</span>Age<span class="token punctuation">,</span> F<span class="token punctuation">.</span>Age <span class="token comment">-- 2 Columns called 'Age' are returned because of the alias prefix</span>
+<span class="token keyword">FROM</span> MENS_AGES <span class="token keyword">AS</span> M
+	<span class="token punctuation">[</span><span class="token keyword">INNER</span><span class="token punctuation">]</span> <span class="token keyword">JOIN</span> WOMENS_AGES <span class="token keyword">AS</span> F
+		<span class="token keyword">ON</span> F<span class="token punctuation">.</span>Marriage_ID <span class="token operator">=</span> M<span class="token punctuation">.</span>Marriage_ID
+<span class="token keyword">WHERE</span> M<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">55</span> <span class="token operator">AND</span> F<span class="token punctuation">.</span>Age <span class="token operator">></span> <span class="token number">55</span>
+</code></pre>
+<p>The <code>INNER JOIN</code> returns records where the criteria being joined upon matches on both tables</p>
+<p>If you have a table with Men
+and a table with Women</p>
+<p>and want to <code>INNER JOIN</code> and return the married couples across both tables</p>
+<p>you'd likely <code>INNER JOIN</code> Men to Women on <code>MARRIAGE_ID</code> and only the pairs with ID's matching each other will be returned. This means that single people in either table will not be returned at all. <em>Sorry!</em></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/vjsd28084b4x7kgpw46crxo">Apply Operator (DevLog)</a></li>
+<li><a href="/DevLog/notes/sj6quy3ratynvgdk5b11ncr">Joins (DevLog)</a></li>
+<li><a href="/DevLog/notes/ahs5n2rskoyw7pwbti5gm3v">Left Join (DevLog)</a></li>
+</ul>

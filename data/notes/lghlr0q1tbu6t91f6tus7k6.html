@@ -1,0 +1,38 @@
+<h1 id="03"><a aria-hidden="true" class="anchor-heading icon-link" href="#03"></a>03</h1>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a>
+<ul>
+<li>the <code>__main__</code> function is used so that when you import the script as a module it will not execute the code within it, rather it will now let you import the code as a module so I can <code>from &#x3C;module> import &#x3C;something></code> The only time the that <code>__name__ == __main__</code> is when we run the file as a script</li>
+</ul>
+</li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://www.youtube.com/watch?v=fMRzuwlqfzs&#x26;ab_channel=JackofSome">5 Things You're Doing Wrong When Programming in Python</a>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://www.youtube.com/watch?v=r7Dtus7N4pI&#x26;ab_channel=Kite">Python Decorators in 15 Minutes</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://www.youtube.com/watch?v=x58W9A2lnQc&#x26;ab_channel=JackofSome">Make Python code 1000x Faster with Numba</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> the <code>_</code> in python can hold the last value in an interactive shell session but can be used like the unnamed register in <a href="/DevLog/notes/ky2wyju62g3gjhhj4fdqnxj">Vim</a> and you can use it to avoid issues when unpacking tuples or just throwing something away:</li>
+</ul>
+</li>
+</ul>
+<pre class="language-python"><code class="language-python">my_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+x<span class="token punctuation">,</span> _<span class="token punctuation">,</span> z <span class="token operator">=</span> my_tuple <span class="token comment"># (1,2,3)</span>
+<span class="token comment">#> x = 1</span>
+<span class="token comment">#> _ = 2</span>
+<span class="token comment">#> z = 3</span>
+</code></pre>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://thomas-cokelaer.info/tutorials/python/index.html">thomas-cokelaer python notes</a>
+<a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://www.programiz.com/python-programming/operator-overloading">Operator Overloading</a>
+b95d08-0498-4303-abb4-02cad357e380
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/2i3ej0j8q5y83mxst9mf3ju">Rich Inspect</a> module and <a href="/DevLog/notes/ejetn4e72mji650hzbi3xah">Xml</a> module <a href="https://youtu.be/j0xr0-IAqyk">Socratica -- XML &#x26; ElementTree || Python Tutorial || Learn Python Programming</a></li>
+</ul>
+</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> xml<span class="token punctuation">.</span>etree<span class="token punctuation">.</span>ElementTree <span class="token keyword">as</span> ET
+<span class="token keyword">from</span> inspect <span class="token keyword">import</span> getmembers<span class="token punctuation">,</span> isclass<span class="token punctuation">,</span> isfunction 
+
+<span class="token comment"># Display classes in ET module</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> member<span class="token punctuation">)</span> <span class="token keyword">in</span> getmembers<span class="token punctuation">(</span>ET<span class="token punctuation">,</span> isclass<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">if</span> <span class="token keyword">not</span> name<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span> name<span class="token punctuation">)</span>
+</code></pre>

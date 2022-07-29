@@ -1,0 +1,23 @@
+<h1 id="stash"><a aria-hidden="true" class="anchor-heading icon-link" href="#stash"></a>Stash</h1>
+<h2 id="git-stash"><a aria-hidden="true" class="anchor-heading icon-link" href="#git-stash"></a>git stash</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> stash push 
+</code></pre>
+<ul>
+<li>like an array method this will create a <em>Box</em> and put all your changes inside of it and shove that <em>box</em> in the corner of the room and give you a clean working tree.</li>
+<li>The <em>box</em> is now portable and you can switch to another branch and open the <em>box</em> there and take out all of the changes.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> stash pop
+</code></pre>
+<ul>
+<li>This opens the <em>box</em> and applies all those stashed changes to the current working tree.</li>
+<li>This is very useful for the situations where maybe you made a bunch of changes and you forgot to make a new branch and you're still on <code>master</code>/<code>main</code> and you want to move all those changes to the actual feature branch.</li>
+</ul>
+<h2 id="saving-and-moving-changes"><a aria-hidden="true" class="anchor-heading icon-link" href="#saving-and-moving-changes"></a>Saving and moving changes</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># say you're on master, and you have changes to docs and you're about to make a commit, but you realize "oh crap, I'm still on master, I needed to put this on a feature branch!" </span>
+<span class="token comment"># you can run </span>
+<span class="token function">git</span> stash push 
+<span class="token comment"># to basically package up all those uncommitted changes into a "box" and shove it into a corner returning to a master branch that is a mirror of remote master (CLEAN!) </span>
+<span class="token comment"># then make your branch, switch to it and run </span>
+<span class="token function">git</span> stash pop 
+<span class="token comment"># to grab your changes and put them onto the current working branch. </span>
+</code></pre>

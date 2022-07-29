@@ -1,0 +1,71 @@
+<h1 id="openpyxl"><a aria-hidden="true" class="anchor-heading icon-link" href="#openpyxl"></a>Openpyxl</h1>
+<ul>
+<li><strong>Resources:</strong>
+<ul>
+<li><a href="https://youtu.be/7YS6YDQKFh0">Automate Excel With Python - Python Excel Tutorial (OpenPyXL)</a></li>
+</ul>
+</li>
+<li><strong>Example:</strong></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> Workbook<span class="token punctuation">,</span> load_workbook
+<span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>utils <span class="token keyword">import</span> get_column_letter
+<span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>styles <span class="token keyword">import</span> Font
+
+data <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token string">"Joe"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+	<span class="token string">"math"</span><span class="token punctuation">:</span> <span class="token number">65</span><span class="token punctuation">,</span>
+	<span class="token string">"science"</span><span class="token punctuation">:</span> <span class="token number">78</span><span class="token punctuation">,</span>
+	<span class="token string">"english"</span><span class="token punctuation">:</span> <span class="token number">98</span><span class="token punctuation">,</span>
+	<span class="token string">"gym"</span><span class="token punctuation">:</span> <span class="token number">89</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"Bill"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+	<span class="token string">"math"</span><span class="token punctuation">:</span> <span class="token number">55</span><span class="token punctuation">,</span>
+	<span class="token string">"science"</span><span class="token punctuation">:</span> <span class="token number">72</span><span class="token punctuation">,</span>
+	<span class="token string">"english"</span><span class="token punctuation">:</span> <span class="token number">87</span><span class="token punctuation">,</span>
+	<span class="token string">"gym"</span><span class="token punctuation">:</span> <span class="token number">95</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"Tim"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+	<span class="token string">"math"</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+	<span class="token string">"science"</span><span class="token punctuation">:</span> <span class="token number">45</span><span class="token punctuation">,</span>
+	<span class="token string">"english"</span><span class="token punctuation">:</span> <span class="token number">75</span><span class="token punctuation">,</span>
+	<span class="token string">"gym"</span><span class="token punctuation">:</span> <span class="token number">92</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"Sally"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+	<span class="token string">"math"</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+	<span class="token string">"science"</span><span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">,</span>
+	<span class="token string">"english"</span><span class="token punctuation">:</span> <span class="token number">45</span><span class="token punctuation">,</span>
+	<span class="token string">"gym"</span><span class="token punctuation">:</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"Jane"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+	<span class="token string">"math"</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+	<span class="token string">"science"</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+	<span class="token string">"english"</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+	<span class="token string">"gym"</span><span class="token punctuation">:</span> <span class="token number">60</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active
+ws<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">"Grades"</span>
+
+headings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Name'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token builtin">list</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'Joe'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ws<span class="token punctuation">.</span>append<span class="token punctuation">(</span>headings<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> person <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+grades <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span>person<span class="token punctuation">]</span><span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ws<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>person<span class="token punctuation">]</span> <span class="token operator">+</span> grades<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> col <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'Joe'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+char <span class="token operator">=</span> get_column_letter<span class="token punctuation">(</span>col<span class="token punctuation">)</span>
+ws<span class="token punctuation">[</span>char <span class="token operator">+</span> <span class="token string">"7"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"=SUM(</span><span class="token interpolation"><span class="token punctuation">{</span>char <span class="token operator">+</span> <span class="token string">'2'</span><span class="token punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token punctuation">{</span>char <span class="token operator">+</span> <span class="token string">'6'</span><span class="token punctuation">}</span></span><span class="token string">)/</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">len</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>
+
+<span class="token keyword">for</span> col <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+ws<span class="token punctuation">[</span>get_column_letter<span class="token punctuation">(</span>col<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'1'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>font <span class="token operator">=</span> Font<span class="token punctuation">(</span>bold<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"0099CCFF"</span><span class="token punctuation">)</span>
+
+wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">"NewGrades.xlsx"</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/c7dmdhkm9og7br61epcfln7">14 (DevLog)</a></li>
+</ul>

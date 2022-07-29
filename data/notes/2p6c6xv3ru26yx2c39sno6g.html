@@ -1,0 +1,20 @@
+<h1 id="vector-copying"><a aria-hidden="true" class="anchor-heading icon-link" href="#vector-copying"></a>Vector Copying</h1>
+<h3 id="vector-copying-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#vector-copying-1"></a>Vector copying</h3>
+<p>In this example <code>salePrices = origPrices;</code></p>
+<pre class="language-cpp"><code class="language-cpp">
+<span class="token keyword">const</span> <span class="token keyword">int</span>   NUM_ELEMENTS <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>         <span class="token comment">// Number of elements</span>
+vector<span class="token operator">&#x3C;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">origPrices</span><span class="token punctuation">(</span>NUM_ELEMENTS<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Original prices</span>
+vector<span class="token operator">&#x3C;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">salePrices</span><span class="token punctuation">(</span>NUM_ELEMENTS<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Sale prices</span>
+<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                            <span class="token comment">// Loop index</span>
+
+<span class="token comment">// Assign original prices</span>
+origPrices<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+origPrices<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+origPrices<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+origPrices<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">40</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Copy original prices to sales prices</span>
+
+salePrices <span class="token operator">=</span> origPrices<span class="token punctuation">;</span>
+</code></pre>
+<p>vector <code>salePrices</code> is empty and of size 0 until it copies every element in <code>origPrices</code>. This is a complete duplication and takes up twice the memory.</p>

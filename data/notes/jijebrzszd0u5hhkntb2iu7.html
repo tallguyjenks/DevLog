@@ -1,0 +1,13 @@
+<h1 id="0"><a aria-hidden="true" class="anchor-heading icon-link" href="#0"></a>0</h1>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://betterprogramming.pub/4-ways-to-level-up-your-python-code-f148a50efeea">python tips</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/fem6mgqqxfy9tafds6urjln">R</a> [The Flawless Pipes of Python/ Pandas][2]</li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> [Global Maintainer Summit 2021: Mariatta Wijaya-The Bots of CPython][3]</li>
+<li><a href="/DevLog/notes/ku0abqmell3qfg5bvcvx7i0">T-SQL</a> to view all kinds of schema information on DBO's in a database use this quick query</li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> FMDShop
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> INFORMATION_SCHEMA<span class="token punctuation">.</span><span class="token keyword">TABLES</span>
+<span class="token keyword">WHERE</span> table_name <span class="token operator">LIKE</span> <span class="token string">'%StartingList%'</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> table_name
+</code></pre>

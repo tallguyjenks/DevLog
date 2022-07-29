@@ -1,0 +1,39 @@
+<h1 id="git-graph"><a aria-hidden="true" class="anchor-heading icon-link" href="#git-graph"></a>Git Graph</h1>
+<h3 id="git-graph-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#git-graph-1"></a>Git Graph</h3>
+<pre><code>```mermaid
+gitGraph:
+options
+{
+    "nodeSpacing": 150,
+    "nodeRadius": 10
+}
+end
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+commit
+merge newbranch
+```
+</code></pre>
+<div class="mermaid">
+  gitGraph:
+options
+{
+    "nodeSpacing": 150,
+    "nodeRadius": 10
+}
+end
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+commit
+merge newbranch
+</div>

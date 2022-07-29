@@ -1,0 +1,24 @@
+<h1 id="multi-line-strings"><a aria-hidden="true" class="anchor-heading icon-link" href="#multi-line-strings"></a>Multi Line Strings</h1>
+<h2 id="multi-line-strings-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#multi-line-strings-1"></a>Multi-line strings</h2>
+<h3 id="literal-block"><a aria-hidden="true" class="anchor-heading icon-link" href="#literal-block"></a>Literal Block</h3>
+<p>This preserves the <code>\n</code> character at the end of each line, such as in a list of executed CLI commands</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">script</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+    echo "hello world" > file.txt
+    cat file.txt
+    sed s/hello/Hello/g file.txt > file2.txt
+    mv file2.txt file.txt</span>
+</code></pre>
+<h3 id="folded-block-approach"><a aria-hidden="true" class="anchor-heading icon-link" href="#folded-block-approach"></a>Folded Block Approach</h3>
+<p>This treats the text as a single run on sentance with no new lines akin to: </p>
+<p><code>script: Hello there This is some text but will be on the same line as the previous text</code></p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">script</span><span class="token punctuation">:</span> <span class="token punctuation">></span><span class="token scalar string">
+    Hello there
+    This is some text
+    but will be on the same line as the previous text</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/x6qarznuyyyjttcfb3k8b7f">2022-02-17 (DevLog)</a></li>
+<li><a href="/DevLog/notes/4acj8vf1ltk01elnn08soku">Cool Yaml Features You Probably Didn’t Know About (DevLog)</a></li>
+</ul>

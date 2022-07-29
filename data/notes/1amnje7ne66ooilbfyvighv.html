@@ -1,0 +1,57 @@
+<h1 id="the-open-closed-principle"><a aria-hidden="true" class="anchor-heading icon-link" href="#the-open-closed-principle"></a>The Open Closed Principle</h1>
+<blockquote>
+<p>“Software entities … should be open for extension but closed for modification”</p>
+</blockquote>
+<p>In other words: You should not need to modify the code you have already written to accommodate new functionality, but simply add what you now need.</p>
+<p>Intention: Add a <code>Median</code> function</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> abc <span class="token keyword">import</span> ABC<span class="token punctuation">,</span> abstractmethod
+
+<span class="token keyword">class</span> <span class="token class-name">Operations</span><span class="token punctuation">(</span>ABC<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''Operations'''</span>
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">operation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Mean</span><span class="token punctuation">(</span>Operations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''Compute Max'''</span>
+    <span class="token keyword">def</span> <span class="token function">operation</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The mean is </span><span class="token interpolation"><span class="token punctuation">{</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> 
+
+<span class="token keyword">class</span> <span class="token class-name">Max</span><span class="token punctuation">(</span>Operations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''Compute Max'''</span>
+    <span class="token keyword">def</span> <span class="token function">operation</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The max is </span><span class="token interpolation"><span class="token punctuation">{</span>np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> 
+
+<span class="token keyword">class</span> <span class="token class-name">Main</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''Main'''</span>
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">get_operations</span><span class="token punctuation">(</span>list_<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># __subclasses__ will found all classes inheriting from Operations</span>
+        <span class="token keyword">for</span> operation <span class="token keyword">in</span> Operations<span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            operation<span class="token punctuation">.</span>operation<span class="token punctuation">(</span>list_<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    Main<span class="token punctuation">.</span>get_operations<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># The mean is 3.0</span>
+<span class="token comment"># The max is 5</span>
+</code></pre>
+<hr>
+<ul>
+<li>Reference:
+<ul>
+<li><a href="/DevLog/notes/9knz69r6nooffoynnm56e9h">SOLID Coding in Python</a></li>
+</ul>
+</li>
+<li>Related:
+<ul>
+<li><a href="/DevLog/notes/v7i96kp105u0du2q9tz97ta">Python Abstract Base Classes</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/9knz69r6nooffoynnm56e9h">Solid Coding in Python (DevLog)</a></li>
+</ul>

@@ -1,0 +1,4 @@
+<h1 id="flac-audio-files-to-mp3"><a aria-hidden="true" class="anchor-heading icon-link" href="#flac-audio-files-to-mp3"></a>Flac Audio Files to Mp3</h1>
+<h2 id="convert-flac-audio-files-to-mp3"><a aria-hidden="true" class="anchor-heading icon-link" href="#convert-flac-audio-files-to-mp3"></a>Convert flac audio files to mp3</h2>
+<pre class="language-shell"><code class="language-shell">ffmpeg -i input.flac -ab 320k -map_metadata <span class="token number">0</span> -id3v2_version <span class="token number">3</span> output.mp3
+</code></pre>

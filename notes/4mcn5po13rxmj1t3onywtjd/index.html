@@ -1,0 +1,298 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><title>Guidelines</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="Personal knowledge space"/><meta property="og:title" content="Guidelines"/><meta property="og:description" content="Personal knowledge space"/><meta property="og:url" content="https://{GITHUB_USERNAME}.github.io/DevLog/notes/4mcn5po13rxmj1t3onywtjd/"/><meta property="og:type" content="article"/><meta property="article:published_time" content="1/2/2022"/><meta property="article:modified_time" content="1/3/2022"/><link rel="canonical" href="https://{GITHUB_USERNAME}.github.io/DevLog/notes/4mcn5po13rxmj1t3onywtjd/"/><meta name="next-head-count" content="14"/><link rel="preload" href="/DevLog/_next/static/css/477fdc912058141b.css" as="style"/><link rel="stylesheet" href="/DevLog/_next/static/css/477fdc912058141b.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/DevLog/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/DevLog/_next/static/chunks/webpack-193abd745db5a977.js" defer=""></script><script src="/DevLog/_next/static/chunks/framework-bb5c596eafb42b22.js" defer=""></script><script src="/DevLog/_next/static/chunks/main-e26c16bc784f9179.js" defer=""></script><script src="/DevLog/_next/static/chunks/pages/_app-fbacaa7678b5d585.js" defer=""></script><script src="/DevLog/_next/static/chunks/78-13ae6acd5ce7ca5b.js" defer=""></script><script src="/DevLog/_next/static/chunks/373-2f3879190a46a3d9.js" defer=""></script><script src="/DevLog/_next/static/chunks/pages/notes/%5Bid%5D-69449972c2a725d8.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_buildManifest.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_ssgManifest.js" defer=""></script><script src="/DevLog/_next/static/1h5ulSjjsPnt_rJPFXOd4/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><section class="ant-layout" style="width:100%;min-height:100%"><header class="ant-layout-header" style="position:fixed;isolation:isolate;z-index:1;width:100%;border-bottom:1px solid #d4dadf;height:64px;padding:0 24px 0 2px"><div class="ant-row ant-row-center" style="max-width:992px;justify-content:space-between;margin:0 auto"><div style="display:flex" class="ant-col ant-col-xs-20 ant-col-sm-4"></div><div class="ant-col gutter-row ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19"><div class="ant-select ant-select-lg ant-select-auto-complete ant-select-single ant-select-allow-clear ant-select-show-search" style="width:100%"><div class="ant-select-selector"><span class="ant-select-selection-search"><input type="search" autoComplete="off" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="undefined_list" aria-autocomplete="list" aria-controls="undefined_list" aria-activedescendant="undefined_list_0" value=""/></span><span class="ant-select-selection-placeholder">For full text search please use the &#x27;?&#x27; prefix. e.g. ? Onboarding</span></div></div></div><div style="display:none;align-items:center;justify-content:center" class="ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0"><span role="img" aria-label="menu" style="font-size:24px" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div></div></header><section class="ant-layout site-layout" style="margin-top:64px"><section class="ant-layout site-layout"><div class="site-layout-sidebar" style="flex:0 0 auto;width:calc(max((100% - 992px) / 2, 0px) + 200px);min-width:200px;padding-left:calc((100% - 992px) / 2)"><aside class="ant-layout-sider ant-layout-sider-dark" style="position:fixed;overflow:auto;height:calc(100vh - 64px);background-color:transparent;flex:0 0 200px;max-width:200px;min-width:200px;width:200px"><div class="ant-layout-sider-children"></div></aside></div><section class="ant-layout side-layout-main" style="max-width:1200px;display:initial"><main class="ant-layout-content main-content" role="main" style="padding:0 24px"><div class="ant-row"><div class="ant-col ant-col-24"><div class="ant-row" style="margin-left:-10px;margin-right:-10px"><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-24 ant-col-md-18"><div><h1 id="guidelines"><a aria-hidden="true" class="anchor-heading icon-link" href="#guidelines"></a>Guidelines</h1>
+<ul>
+<li><strong>The Basics</strong>
+<ul>
+<li><em>Use a command-line argument parsing library where you can.</em>
+<ul>
+<li>Go: Cobra, cli</li>
+<li>Java: picocli</li>
+<li>Node: oclif</li>
+<li>PHP: console</li>
+<li>Python: <a href="/DevLog/notes/75nq1823h8t9wwpvjwnbvzj">click</a>, Typer, <a href="/DevLog/notes/umt86hh0cz8vuht90qd0kxb">argparse</a></li>
+<li>Ruby: TTY</li>
+<li>Rust: clap, structopt</li>
+<li>Swift: swift-argument-parser</li>
+</ul>
+</li>
+<li><em>Return zero exit code on success, non-zero on failure</em></li>
+<li><em>Send output to stdout.</em></li>
+<li><em>Send messaging to stderr.</em></li>
+</ul>
+</li>
+<li><strong>Help</strong>
+<ul>
+<li><em>Display help text when passed no options, the -h flag, or the --help flag.</em></li>
+<li><em>Display a concise help text by default.</em></li>
+<li><em>Show full help when -h and --help is passed.</em></li>
+<li><em>Provide a support path for feedback and issues.</em></li>
+<li><em>In help text, link to the web version of the documentation.</em></li>
+<li><em>Lead with examples.</em></li>
+<li><em>If you’ve got loads of examples, put them somewhere else</em></li>
+<li><em>Display the most common flags and commands at the start of the help text.</em></li>
+<li><em>Use formatting in your help text.</em></li>
+<li><em>If the user did something wrong and you can guess what they meant, suggest it.</em></li>
+<li><em>If your command is expecting to have something piped to it and stdin is an interactive terminal, display help immediately and quit.</em></li>
+</ul>
+</li>
+<li><strong>Documentation</strong>
+<ul>
+<li><em>Provide web-based documentation.</em></li>
+<li><em>Provide terminal-based documentation.</em></li>
+<li><em>Consider providing man pages.</em></li>
+</ul>
+</li>
+<li><strong>Output</strong>
+<ul>
+<li><em>Human-readable output is paramount.</em></li>
+<li><em>Have machine-readable output where it does not impact usability</em></li>
+<li><em>If human-readable output breaks machine-readable output, use --plain to display output in plain, tabular text format for integration with tools like <a href="/DevLog/notes/mmspzrb8xurbr4ooir435bo">grep</a> or <a href="/DevLog/notes/9mz5a655nqwq2vt42ftsllx">awk</a>.</em></li>
+<li><em>Display output as formatted <a href="/DevLog/notes/uxr9x8d0kcers04jvo90vft">JSON</a> if --json is passed.</em></li>
+<li><em>Display output on success, but keep it brief.</em></li>
+<li><em>If you change state, tell the user.</em></li>
+<li><em>Make it easy to see the current state of the system.</em></li>
+<li><em>Suggest commands the user should run.</em></li>
+<li><em>Actions crossing the boundary of the program’s internal world should usually be explicit.</em></li>
+<li><em>Increase information density—with ASCII art!</em></li>
+<li><em>Use color with intention.</em></li>
+<li><em>Disable color if your program is not in a terminal or the user requested it.</em>
+<ul>
+<li><code>stdout</code> or <code>stderr</code> is not an interactive terminal (a TTY). It’s best to individually check—if you’re piping <code>stdout</code> to another program, it’s still useful to get colors on stderr. The <code>NO_COLOR</code> environment variable is set. The <code>TERM</code> environment variable has the value <code>dumb</code>. The user passes the option <code>--no-color</code>. You may also want to add a <code>MYAPP_NO_COLOR</code> environment variable in case users want to disable color specifically for your program.</li>
+</ul>
+</li>
+<li><em>If stdout is not an interactive terminal, don’t display any animations.</em></li>
+<li><em>Use symbols and emoji where it makes things clearer.</em></li>
+<li><em>By default, don’t output information that’s only understandable by the creators of the software.</em></li>
+<li><em>Don’t treat <code>stderr</code> like a log file, at least not by default.</em></li>
+<li><em>Use a pager (e.g. <code>less</code>) if you are outputting a lot of text.</em>
+<ul>
+<li><a href="/DevLog/notes/6oach0hil3rzb16e1k1r0rc">pypager</a> in <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">python (Private)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Errors</strong>
+<ul>
+<li><em>Catch errors and rewrite them for humans.</em></li>
+<li><em>Signal-to-noise ratio is crucial.</em></li>
+<li><em>Consider where the user will look first.</em></li>
+<li><em>If there is an unexpected or inexplicable error, provide debug and traceback information, and instructions on how to submit a bug.</em></li>
+<li><em>Make it effortless to submit bug reports.</em></li>
+</ul>
+</li>
+<li><strong>Arguments and flags</strong>
+<ul>
+<li><em>Prefer flags to args.</em></li>
+<li><em>Have full-length versions of all flags.</em></li>
+<li><em>Only use one-letter flags for commonly used flags</em></li>
+<li><em>Multiple arguments are fine for simple actions against multiple files.</em></li>
+<li><em>If you’ve got two or more arguments for different things, you’re probably doing something wrong.</em></li>
+<li><em>Use standard names for flags, if there is a standard.</em>
+<ul>
+<li><code>-a</code>, <code>--all</code>: All. For example, <code>ps</code>, <code>fetchmail</code>.
+<ul>
+<li><code>-d</code>, <code>--debug</code>: Show debugging output.</li>
+<li><code>-f</code>, <code>--force</code>: Force. For example, <code>rm -f</code> will force the removal of files, even if it thinks it does not have permission to do it. This is also useful for commands which are doing something destructive that usually require user confirmation, but you want to force it to do that destructive action in a script.</li>
+<li><code>--json</code>: Display JSON output. See the output section.</li>
+<li><code>-h</code>, <code>--help</code>: Help. This should only mean help. See the help section.</li>
+<li><code>--no-input</code>: See the interactivity section.</li>
+<li><code>-o</code>, <code>--output</code>: Output file. For example, <code>sort</code>, <code>gcc</code>.</li>
+<li><code>-p</code>, <code>--port</code>: Port. For example, <code>psql</code>, <code>ssh</code>.</li>
+<li><code>-q</code>, <code>--quiet</code>: Quiet. Display less output. This is particularly useful when displaying output for humans that you might want to hide when running in a script.</li>
+<li><code>-u</code>, <code>--user</code>: User. For example, <code>ps</code>, <code>ssh</code>.</li>
+<li><code>--version</code>: Version.</li>
+<li><code>-v</code>: This can often mean either verbose or version. You might want to use -d for verbose and this for version, or for nothing to avoid confusion.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Make the default the right thing for most users.</em></li>
+<li><em>Prompt for user input.</em></li>
+<li><em>Never require a prompt.</em></li>
+<li><em>Confirm before doing anything dangerous.</em></li>
+<li><em>If a flag can accept an optional value, allow a special word like "none."</em></li>
+<li><em>If possible, make arguments, flags and subcommands order-independent.</em></li>
+<li>❗ <em>Do not read secrets directly from flags.</em></li>
+<li><em>If input or output is a file, support <code>-</code> to read from <code>stdin</code> or write to <code>stdout</code>.</em></li>
+</ul>
+</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> https://example.com/something.tar.gz <span class="token operator">|</span> <span class="token function">tar</span> xvf -
+</code></pre>
+<ul>
+<li><strong>Interactivity</strong>
+<ul>
+<li><em>Only use prompts or interactive elements if stdin is an interactive terminal (a TTY).</em></li>
+<li><em>If <code>--no-input</code> is passed, don’t prompt or do anything interactive.</em></li>
+<li><em>If you’re prompting for a password, don’t print it as the user types.</em></li>
+<li><em>Let the user escape.</em></li>
+</ul>
+</li>
+<li><strong>Subcommands</strong>
+<ul>
+<li><em>Be consistent across subcommands.</em></li>
+<li><em>Use consistent names for multiple levels of subcommand.</em></li>
+<li><em>Don’t have ambiguous or similarly-named commands.</em></li>
+</ul>
+</li>
+<li><strong>Robustness</strong>
+<ul>
+<li><em>Validate user input.</em></li>
+<li><em>Responsive is more important than fast.</em></li>
+<li><em>Show progress if something takes a long time.</em></li>
+<li><em>Do stuff in parallel where you can, but be thoughtful about it.</em></li>
+<li><em>Make things time out.</em></li>
+<li><em>Make it idempotent.</em></li>
+<li><em>Make it crash-only.</em></li>
+<li><em>People are going to misuse your program.</em></li>
+</ul>
+</li>
+<li><strong>Future-proofing</strong>
+<ul>
+<li><em>Keep changes additive where you can.</em></li>
+<li><em>Warn before you make a non-additive change.</em></li>
+<li><em>Changing output for humans is usually OK.</em></li>
+<li><em>Don’t have a catch-all subcommand.</em></li>
+<li><em>Don’t allow arbitrary abbreviations of subcommands.</em></li>
+<li><em>Don’t create a "time bomb."</em></li>
+</ul>
+</li>
+<li><strong>Signals and control characters</strong>
+<ul>
+<li><em>If a user hits Ctrl-C (the INT signal), exit as soon as possible.</em></li>
+<li><em>If a user hits Ctrl-C during clean-up operations that might take a long time, skip them.</em></li>
+</ul>
+</li>
+<li><strong>Configuration</strong>
+<ul>
+<li>Command-line tools have lots of different types of configuration, and lots of different ways to supply it (flags, environment variables, project-level config files). The best way to supply each piece of configuration depends on a few factors, chief among them specificity, stability and complexity.
+<ul>
+<li>Configuration generally falls into a few categories:
+<ul>
+<li><strong>Likely to vary from one invocation of the command to the next.</strong>
+<ul>
+<li>Examples:
+<ul>
+<li>Setting the level of debugging output
+Enabling a safe mode or dry run of a program</li>
+<li><code>Recommendation</code>: Use flags. Environment variables may or may not be useful as well.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Generally stable from one invocation to the next, but not always. Might vary between projects. Definitely varies between different users working on the same project.</strong>
+<ul>
+<li>This type of configuration is often specific to an individual computer.</li>
+<li>Examples:
+<ul>
+<li>Providing a non-default path to items needed for a program to start
+Specifying how or whether color should appear in output
+Specifying an HTTP proxy server to route all requests through</li>
+<li><code>Recommendation</code>: Use flags and probably environment variables too. Users may want to set the variables in their shell profile so they apply globally, or in .env for a particular project.</li>
+<li>If this configuration is sufficiently complex, it may warrant a configuration file of its own, but environment variables are usually good enough.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Stable within a project, for all users.</strong>
+<ul>
+<li>This is the type of configuration that belongs in version control. Files like Makefile, package.json and docker-compose.yml are all examples of this.</li>
+<li><code>Recommendation</code>: Use a command-specific, version-controlled file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Follow the XDG-spec.</em></li>
+<li><em>If you automatically modify configuration that is not your program’s, ask the user for consent and tell them exactly what you’re doing.</em></li>
+<li><em>Apply configuration parameters in order of precedence.</em>
+<ul>
+<li>Here is the precedence for config parameters, from highest to lowest:
+<ul>
+<li>Flags
+<ul>
+<li>The running shell’s environment variables</li>
+<li>Project-level configuration (eg. <code>.env</code>)</li>
+<li>User-level configuration</li>
+<li>System wide configuration</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Environment variables</strong>
+<ul>
+<li><em>Environment variables are for behavior that varies with the context in which a command is run.</em></li>
+<li><em>For maximum portability, environment variable names must only contain uppercase letters, numbers, and underscores (and mustn’t start with a number).</em></li>
+<li><em>Aim for single-line environment variable values.</em></li>
+<li><em>Avoid commandeering widely used names.</em>
+<ul>
+<li><a href="https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap08.html">https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap08.html</a></li>
+</ul>
+</li>
+<li><em>Check general-purpose environment variables for configuration values when possible:</em>
+<ul>
+<li><code>NO_COLOR</code>, to disable color (see Output)
+<ul>
+<li><code>DEBUG</code>, to enable more verbose output</li>
+<li><code>EDITOR</code>, if you need to prompt the user to edit a file or input more than a single line</li>
+<li><code>HTTP_PROXY</code>, <code>HTTPS_PROXY</code>, <code>ALL_PROXY</code> and <code>NO_PROXY</code>, if you’re going to perform network operations (The HTTP library you’re using might already check for these.)</li>
+<li><code>SHELL</code>, if you need to open up an interactive session of the user’s preferred shell (If you need to execute a shell script, use a specific interpreter like <code>/bin/sh</code>)</li>
+<li><code>TERM</code>, <code>TERMINFO</code> and <code>TERMCAP</code>, if you’re going to use terminal-specific escape sequences</li>
+<li><code>TMPDIR</code>, if you’re going to create temporary files</li>
+<li><code>HOME</code>, for locating configuration files</li>
+<li><code>PAGER</code>, if you want to automatically page output</li>
+<li><code>LINES</code> and <code>COLUMNS</code>, for output that’s dependent on screen size (e.g. tables)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Read environment variables from .env where appropriate.</em></li>
+<li><em>Don’t use .env as a substitute for a proper configuration file.</em>
+<ul>
+<li>A <code>.env</code> file is not commonly stored in source control</li>
+<li>(Therefore, any configuration stored in it has no history)</li>
+<li>It has only one data type: string</li>
+<li>It lends itself to being poorly organized</li>
+<li>It makes encoding issues easy to introduce</li>
+<li>It often contains sensitive credentials &#x26; key material that would be better stored more securely</li>
+</ul>
+</li>
+<li><em>Do not read secrets from environment variables.</em>
+<ul>
+<li>While environment variables may be convenient for storing secrets, they have proven too prone to leakage:</li>
+<li>Exported environment variables are sent to every process, and from there can easily leak into logs or be exfiltrated
+<ul>
+<li>Shell substitutions like <code>curl -H "Authorization: Bearer $BEARER_TOKEN"</code> will leak into globally-readable process state. (cURL offers the <code>-H @filename</code> alternative for reading sensitive headers from a file.)</li>
+<li><a href="/DevLog/notes/nfd4qf0z5sqvuhzjkp42pfz">Docker</a> container environment variables can be viewed by anyone with Docker daemon access via docker inspect</li>
+<li>Environment variables in <a href="/DevLog/notes/gxvd8urs1e8f7p47nuuf3gu">Systemd</a> units are globally readable via <code>systemctl show</code></li>
+<li>Secrets should only be accepted via credential files, pipes, <code>AF_UNIX</code> sockets, secret management services, or another IPC mechanism.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Naming</strong>
+<ul>
+<li><em>Make it a simple, memorable word.</em></li>
+<li><em>Use only lowercase letters, and dashes if you really need to</em></li>
+<li><em>Keep it short.</em></li>
+<li><em>Make it easy to type.</em></li>
+</ul>
+</li>
+<li><strong>Distribution</strong>
+<ul>
+<li><em>If possible, distribute as a single binary.</em></li>
+<li><em>Make it easy to uninstall.</em></li>
+</ul>
+</li>
+<li><strong>Analytics</strong>
+<ul>
+<li><em>Do not phone home usage or crash data without consent.</em></li>
+</ul>
+</li>
+</ul></div></div><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-0 ant-col-md-6"><div><div class=""><div class="ant-anchor-wrapper dendron-toc" style="max-height:calc(100vh - 64px);z-index:1"><div class="ant-anchor"><div class="ant-anchor-ink"><span class="ant-anchor-ink-ball"></span></div></div></div></div></div></div></div></div></div></main><div class="ant-divider ant-divider-horizontal" role="separator"></div><footer class="ant-layout-footer" style="padding:0 24px 24px"></footer></section></section></section></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"id":"4mcn5po13rxmj1t3onywtjd","title":"Guidelines","desc":"","updated":1641185000976,"created":1641105063846,"stub":false,"isDir":false,"custom":{"stub":false,"isDir":false},"fname":"cli.guidelines","type":"note","vault":{"fsPath":"DevLog"},"contentHash":"f454eb5bc76e3433347f2260daccdfa6","links":[{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"s.l.python.libs.click","alias":"click","position":{"start":{"line":8,"column":15,"offset":175},"end":{"line":8,"column":46,"offset":206},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"s.l.python.libs.click"}},{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"s.l.python.libs.argparse","alias":"argparse","position":{"start":{"line":8,"column":55,"offset":215},"end":{"line":8,"column":92,"offset":252},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"s.l.python.libs.argparse"}},{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"cli.cmd.grep","alias":"grep","position":{"start":{"line":34,"column":155,"offset":1612},"end":{"line":34,"column":176,"offset":1633},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"cli.cmd.grep"}},{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"s.l.awk","alias":"awk","position":{"start":{"line":34,"column":180,"offset":1637},"end":{"line":34,"column":195,"offset":1652},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"s.l.awk"}},{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"s.l.python.libs.json","alias":"JSON","position":{"start":{"line":35,"column":34,"offset":1688},"end":{"line":35,"column":63,"offset":1717},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"s.l.python.libs.json"}},{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"s.l.python.libs.pypager","alias":"pypager","position":{"start":{"line":50,"column":7,"offset":3042},"end":{"line":50,"column":42,"offset":3077},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"s.l.python.libs.pypager"}},{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"software.language.python.","alias":"python","position":{"start":{"line":50,"column":46,"offset":3081},"end":{"line":50,"column":82,"offset":3117},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"software.language.python."}},{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"s.containers.docker","alias":"Docker","position":{"start":{"line":174,"column":9,"offset":11622},"end":{"line":174,"column":39,"offset":11652},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"s.containers.docker"}},{"type":"wiki","from":{"fname":"cli.guidelines","id":"4mcn5po13rxmj1t3onywtjd","vaultName":"DevLog"},"value":"linux.systemd","alias":"linux.systemd","position":{"start":{"line":175,"column":34,"offset":11787},"end":{"line":175,"column":51,"offset":11804},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"linux.systemd"}}],"anchors":{},"children":[],"parent":"6pxwlugphnw6vm4t8kn0j5p","data":{}},"body":"\u003ch1 id=\"guidelines\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#guidelines\"\u003e\u003c/a\u003eGuidelines\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eThe Basics\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eUse a command-line argument parsing library where you can.\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003eGo: Cobra, cli\u003c/li\u003e\n\u003cli\u003eJava: picocli\u003c/li\u003e\n\u003cli\u003eNode: oclif\u003c/li\u003e\n\u003cli\u003ePHP: console\u003c/li\u003e\n\u003cli\u003ePython: \u003ca href=\"/DevLog/notes/75nq1823h8t9wwpvjwnbvzj\"\u003eclick\u003c/a\u003e, Typer, \u003ca href=\"/DevLog/notes/umt86hh0cz8vuht90qd0kxb\"\u003eargparse\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eRuby: TTY\u003c/li\u003e\n\u003cli\u003eRust: clap, structopt\u003c/li\u003e\n\u003cli\u003eSwift: swift-argument-parser\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eReturn zero exit code on success, non-zero on failure\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eSend output to stdout.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eSend messaging to stderr.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eHelp\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eDisplay help text when passed no options, the -h flag, or the --help flag.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDisplay a concise help text by default.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eShow full help when -h and --help is passed.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eProvide a support path for feedback and issues.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIn help text, link to the web version of the documentation.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eLead with examples.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf you’ve got loads of examples, put them somewhere else\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDisplay the most common flags and commands at the start of the help text.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eUse formatting in your help text.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf the user did something wrong and you can guess what they meant, suggest it.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf your command is expecting to have something piped to it and stdin is an interactive terminal, display help immediately and quit.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eDocumentation\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eProvide web-based documentation.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eProvide terminal-based documentation.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eConsider providing man pages.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eOutput\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eHuman-readable output is paramount.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eHave machine-readable output where it does not impact usability\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf human-readable output breaks machine-readable output, use --plain to display output in plain, tabular text format for integration with tools like \u003ca href=\"/DevLog/notes/mmspzrb8xurbr4ooir435bo\"\u003egrep\u003c/a\u003e or \u003ca href=\"/DevLog/notes/9mz5a655nqwq2vt42ftsllx\"\u003eawk\u003c/a\u003e.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDisplay output as formatted \u003ca href=\"/DevLog/notes/uxr9x8d0kcers04jvo90vft\"\u003eJSON\u003c/a\u003e if --json is passed.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDisplay output on success, but keep it brief.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf you change state, tell the user.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMake it easy to see the current state of the system.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eSuggest commands the user should run.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eActions crossing the boundary of the program’s internal world should usually be explicit.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIncrease information density—with ASCII art!\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eUse color with intention.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDisable color if your program is not in a terminal or the user requested it.\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003estdout\u003c/code\u003e or \u003ccode\u003estderr\u003c/code\u003e is not an interactive terminal (a TTY). It’s best to individually check—if you’re piping \u003ccode\u003estdout\u003c/code\u003e to another program, it’s still useful to get colors on stderr. The \u003ccode\u003eNO_COLOR\u003c/code\u003e environment variable is set. The \u003ccode\u003eTERM\u003c/code\u003e environment variable has the value \u003ccode\u003edumb\u003c/code\u003e. The user passes the option \u003ccode\u003e--no-color\u003c/code\u003e. You may also want to add a \u003ccode\u003eMYAPP_NO_COLOR\u003c/code\u003e environment variable in case users want to disable color specifically for your program.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf stdout is not an interactive terminal, don’t display any animations.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eUse symbols and emoji where it makes things clearer.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eBy default, don’t output information that’s only understandable by the creators of the software.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDon’t treat \u003ccode\u003estderr\u003c/code\u003e like a log file, at least not by default.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eUse a pager (e.g. \u003ccode\u003eless\u003c/code\u003e) if you are outputting a lot of text.\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"/DevLog/notes/6oach0hil3rzb16e1k1r0rc\"\u003epypager\u003c/a\u003e in \u003ca title=\"Private\" href=\"https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html\" target=\"_blank\" class=\"private\"\u003epython (Private)\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eErrors\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eCatch errors and rewrite them for humans.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eSignal-to-noise ratio is crucial.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eConsider where the user will look first.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf there is an unexpected or inexplicable error, provide debug and traceback information, and instructions on how to submit a bug.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMake it effortless to submit bug reports.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eArguments and flags\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003ePrefer flags to args.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eHave full-length versions of all flags.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eOnly use one-letter flags for commonly used flags\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMultiple arguments are fine for simple actions against multiple files.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf you’ve got two or more arguments for different things, you’re probably doing something wrong.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eUse standard names for flags, if there is a standard.\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e-a\u003c/code\u003e, \u003ccode\u003e--all\u003c/code\u003e: All. For example, \u003ccode\u003eps\u003c/code\u003e, \u003ccode\u003efetchmail\u003c/code\u003e.\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e-d\u003c/code\u003e, \u003ccode\u003e--debug\u003c/code\u003e: Show debugging output.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-f\u003c/code\u003e, \u003ccode\u003e--force\u003c/code\u003e: Force. For example, \u003ccode\u003erm -f\u003c/code\u003e will force the removal of files, even if it thinks it does not have permission to do it. This is also useful for commands which are doing something destructive that usually require user confirmation, but you want to force it to do that destructive action in a script.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--json\u003c/code\u003e: Display JSON output. See the output section.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-h\u003c/code\u003e, \u003ccode\u003e--help\u003c/code\u003e: Help. This should only mean help. See the help section.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--no-input\u003c/code\u003e: See the interactivity section.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-o\u003c/code\u003e, \u003ccode\u003e--output\u003c/code\u003e: Output file. For example, \u003ccode\u003esort\u003c/code\u003e, \u003ccode\u003egcc\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-p\u003c/code\u003e, \u003ccode\u003e--port\u003c/code\u003e: Port. For example, \u003ccode\u003epsql\u003c/code\u003e, \u003ccode\u003essh\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-q\u003c/code\u003e, \u003ccode\u003e--quiet\u003c/code\u003e: Quiet. Display less output. This is particularly useful when displaying output for humans that you might want to hide when running in a script.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-u\u003c/code\u003e, \u003ccode\u003e--user\u003c/code\u003e: User. For example, \u003ccode\u003eps\u003c/code\u003e, \u003ccode\u003essh\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--version\u003c/code\u003e: Version.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e-v\u003c/code\u003e: This can often mean either verbose or version. You might want to use -d for verbose and this for version, or for nothing to avoid confusion.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMake the default the right thing for most users.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003ePrompt for user input.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eNever require a prompt.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eConfirm before doing anything dangerous.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf a flag can accept an optional value, allow a special word like \"none.\"\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf possible, make arguments, flags and subcommands order-independent.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e❗ \u003cem\u003eDo not read secrets directly from flags.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf input or output is a file, support \u003ccode\u003e-\u003c/code\u003e to read from \u003ccode\u003estdin\u003c/code\u003e or write to \u003ccode\u003estdout\u003c/code\u003e.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre class=\"language-bash\"\u003e\u003ccode class=\"language-bash\"\u003e\u003cspan class=\"token function\"\u003ecurl\u003c/span\u003e https://example.com/something.tar.gz \u003cspan class=\"token operator\"\u003e|\u003c/span\u003e \u003cspan class=\"token function\"\u003etar\u003c/span\u003e xvf -\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eInteractivity\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eOnly use prompts or interactive elements if stdin is an interactive terminal (a TTY).\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf \u003ccode\u003e--no-input\u003c/code\u003e is passed, don’t prompt or do anything interactive.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf you’re prompting for a password, don’t print it as the user types.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eLet the user escape.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eSubcommands\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eBe consistent across subcommands.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eUse consistent names for multiple levels of subcommand.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDon’t have ambiguous or similarly-named commands.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eRobustness\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eValidate user input.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eResponsive is more important than fast.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eShow progress if something takes a long time.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDo stuff in parallel where you can, but be thoughtful about it.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMake things time out.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMake it idempotent.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMake it crash-only.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003ePeople are going to misuse your program.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFuture-proofing\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eKeep changes additive where you can.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eWarn before you make a non-additive change.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eChanging output for humans is usually OK.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDon’t have a catch-all subcommand.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDon’t allow arbitrary abbreviations of subcommands.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDon’t create a \"time bomb.\"\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eSignals and control characters\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eIf a user hits Ctrl-C (the INT signal), exit as soon as possible.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf a user hits Ctrl-C during clean-up operations that might take a long time, skip them.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eConfiguration\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003eCommand-line tools have lots of different types of configuration, and lots of different ways to supply it (flags, environment variables, project-level config files). The best way to supply each piece of configuration depends on a few factors, chief among them specificity, stability and complexity.\n\u003cul\u003e\n\u003cli\u003eConfiguration generally falls into a few categories:\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eLikely to vary from one invocation of the command to the next.\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003eExamples:\n\u003cul\u003e\n\u003cli\u003eSetting the level of debugging output\nEnabling a safe mode or dry run of a program\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eRecommendation\u003c/code\u003e: Use flags. Environment variables may or may not be useful as well.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eGenerally stable from one invocation to the next, but not always. Might vary between projects. Definitely varies between different users working on the same project.\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003eThis type of configuration is often specific to an individual computer.\u003c/li\u003e\n\u003cli\u003eExamples:\n\u003cul\u003e\n\u003cli\u003eProviding a non-default path to items needed for a program to start\nSpecifying how or whether color should appear in output\nSpecifying an HTTP proxy server to route all requests through\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eRecommendation\u003c/code\u003e: Use flags and probably environment variables too. Users may want to set the variables in their shell profile so they apply globally, or in .env for a particular project.\u003c/li\u003e\n\u003cli\u003eIf this configuration is sufficiently complex, it may warrant a configuration file of its own, but environment variables are usually good enough.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eStable within a project, for all users.\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003eThis is the type of configuration that belongs in version control. Files like Makefile, package.json and docker-compose.yml are all examples of this.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eRecommendation\u003c/code\u003e: Use a command-specific, version-controlled file.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eFollow the XDG-spec.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eIf you automatically modify configuration that is not your program’s, ask the user for consent and tell them exactly what you’re doing.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eApply configuration parameters in order of precedence.\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003eHere is the precedence for config parameters, from highest to lowest:\n\u003cul\u003e\n\u003cli\u003eFlags\n\u003cul\u003e\n\u003cli\u003eThe running shell’s environment variables\u003c/li\u003e\n\u003cli\u003eProject-level configuration (eg. \u003ccode\u003e.env\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003eUser-level configuration\u003c/li\u003e\n\u003cli\u003eSystem wide configuration\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eEnvironment variables\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eEnvironment variables are for behavior that varies with the context in which a command is run.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eFor maximum portability, environment variable names must only contain uppercase letters, numbers, and underscores (and mustn’t start with a number).\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eAim for single-line environment variable values.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eAvoid commandeering widely used names.\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap08.html\"\u003ehttps://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap08.html\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eCheck general-purpose environment variables for configuration values when possible:\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eNO_COLOR\u003c/code\u003e, to disable color (see Output)\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eDEBUG\u003c/code\u003e, to enable more verbose output\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eEDITOR\u003c/code\u003e, if you need to prompt the user to edit a file or input more than a single line\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eHTTP_PROXY\u003c/code\u003e, \u003ccode\u003eHTTPS_PROXY\u003c/code\u003e, \u003ccode\u003eALL_PROXY\u003c/code\u003e and \u003ccode\u003eNO_PROXY\u003c/code\u003e, if you’re going to perform network operations (The HTTP library you’re using might already check for these.)\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eSHELL\u003c/code\u003e, if you need to open up an interactive session of the user’s preferred shell (If you need to execute a shell script, use a specific interpreter like \u003ccode\u003e/bin/sh\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eTERM\u003c/code\u003e, \u003ccode\u003eTERMINFO\u003c/code\u003e and \u003ccode\u003eTERMCAP\u003c/code\u003e, if you’re going to use terminal-specific escape sequences\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eTMPDIR\u003c/code\u003e, if you’re going to create temporary files\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eHOME\u003c/code\u003e, for locating configuration files\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003ePAGER\u003c/code\u003e, if you want to automatically page output\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eLINES\u003c/code\u003e and \u003ccode\u003eCOLUMNS\u003c/code\u003e, for output that’s dependent on screen size (e.g. tables)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eRead environment variables from .env where appropriate.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDon’t use .env as a substitute for a proper configuration file.\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003eA \u003ccode\u003e.env\u003c/code\u003e file is not commonly stored in source control\u003c/li\u003e\n\u003cli\u003e(Therefore, any configuration stored in it has no history)\u003c/li\u003e\n\u003cli\u003eIt has only one data type: string\u003c/li\u003e\n\u003cli\u003eIt lends itself to being poorly organized\u003c/li\u003e\n\u003cli\u003eIt makes encoding issues easy to introduce\u003c/li\u003e\n\u003cli\u003eIt often contains sensitive credentials \u0026#x26; key material that would be better stored more securely\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDo not read secrets from environment variables.\u003c/em\u003e\n\u003cul\u003e\n\u003cli\u003eWhile environment variables may be convenient for storing secrets, they have proven too prone to leakage:\u003c/li\u003e\n\u003cli\u003eExported environment variables are sent to every process, and from there can easily leak into logs or be exfiltrated\n\u003cul\u003e\n\u003cli\u003eShell substitutions like \u003ccode\u003ecurl -H \"Authorization: Bearer $BEARER_TOKEN\"\u003c/code\u003e will leak into globally-readable process state. (cURL offers the \u003ccode\u003e-H @filename\u003c/code\u003e alternative for reading sensitive headers from a file.)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"/DevLog/notes/nfd4qf0z5sqvuhzjkp42pfz\"\u003eDocker\u003c/a\u003e container environment variables can be viewed by anyone with Docker daemon access via docker inspect\u003c/li\u003e\n\u003cli\u003eEnvironment variables in \u003ca href=\"/DevLog/notes/gxvd8urs1e8f7p47nuuf3gu\"\u003eSystemd\u003c/a\u003e units are globally readable via \u003ccode\u003esystemctl show\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eSecrets should only be accepted via credential files, pipes, \u003ccode\u003eAF_UNIX\u003c/code\u003e sockets, secret management services, or another IPC mechanism.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eNaming\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eMake it a simple, memorable word.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eUse only lowercase letters, and dashes if you really need to\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eKeep it short.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMake it easy to type.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eDistribution\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eIf possible, distribute as a single binary.\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eMake it easy to uninstall.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eAnalytics\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003eDo not phone home usage or crash data without consent.\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e","noteIndex":{"id":"root","title":"root","desc":"","updated":1641013093667,"created":1595961348801,"stub":false,"custom":{"stub":false,"nav_order":0,"permalink":"/"},"fname":"root","type":"note","vault":{"fsPath":"DevLog"},"contentHash":"b0b26527a2962dbb8bd5fb9a53ad702f","links":[],"anchors":{},"children":["rzqe5mjn3q2zfscw1roxr20","Bl9NeJmftBQJyJA3X4a6u","inm1S24v2GcN3Quf7gzDb","fmx7cfcdzale0ezna61yq5z","q6tr8q7gahfijix2ktlhcu3","yah6spesmpstech2ue2k3lq","6pxwlugphnw6vm4t8kn0j5p","i17wi8y2hgivywe08h6q6it","1st35wikvph2aew8aana21u","mijr0wvj3qz0mt9pv9xo1jv","qaf8v120h0ffvbowysjxw50","sh4851li2rsrhx47wwsirgv","fwqjigvqyfxiyl3pbpjvgdw","pxdvvln974xhe8w0alh0hoy","n6yddb1smrac5ll3l1y6wbd","g5dllyqoqkenoiz3opalzu6","kbwt8ucy0yh6bo8fl0kv9iw","beykavbe22agsufmm03hu0c","2uvuqa3c15o5r4j7sqadqvr","yr6gzhx0bhzyec6f52y66vf","4no90tcdswtuwmjm0bxnetx"],"parent":null,"data":{},"body":"\nThe hyperfixated rabbit hole diving knowledge base that is my brain looking at technology.\n"},"collectionChildren":null,"customHeadContent":null,"config":{"version":5,"dev":{"enablePreviewV2":true},"commands":{"lookup":{"note":{"selectionMode":"extract","confirmVaultOnCreate":true,"leaveTrace":false,"bubbleUpCreateNew":true,"fuzzThreshold":0.2,"vaultSelectionModeOnCreate":"smart"}},"randomNote":{},"insertNote":{"initialValue":"templates"},"insertNoteLink":{"aliasMode":"none","enableMultiSelect":false},"insertNoteIndex":{"enableMarker":false},"copyNoteLink":{},"templateHierarchy":"template"},"workspace":{"vaults":[{"fsPath":"sterkere","visibility":"private"},{"fsPath":"Norsk","visibility":"private"},{"fsPath":"DevLog"}],"journal":{"dailyDomain":"log","name":"daily","dateFormat":"yyyy.MM.dd","addBehavior":"childOfCurrent"},"scratch":{"name":"scratch","dateFormat":"yyyy.MM.dd.HHmmss","addBehavior":"asOwnDomain"},"task":{"todoIntegration":true,"name":"task","dateFormat":"yyyy.MM.dd","addBehavior":"asOwnDomain","statusSymbols":{"":" ","wip":"wip","done":"x","assigned":"a","moved":"m","blocked":"b","delegated":"l","dropped":"d","pending":"y"},"prioritySymbols":{"H":"high","M":"medium","L":"low"},"createTaskSelectionType":"selection2link","taskCompleteStatus":["done","x"]},"graph":{"zoomSpeed":1,"createStub":false},"enableAutoCreateOnDefinition":false,"enableXVaultWikiLink":false,"enableRemoteVaultInit":true,"enableUserTags":true,"enableHashTags":true,"workspaceVaultSyncMode":"noCommit","enableAutoFoldFrontmatter":false,"enableEditorDecorations":true,"maxPreviewsCached":10,"maxNoteLength":204800,"dendronVersion":"0.95.1","enableFullHierarchyNoteTitle":false,"enableHandlebarTemplates":false,"templateHierarchy":"template","enableSmartRefs":false},"preview":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enableMermaid":true,"enablePrettyRefs":true,"enableKatex":true,"automaticallyShowPreview":false,"enableFrontmatterTags":true,"enableHashesForFMTags":false},"publishing":{"theme":"custom","enableFMTitle":true,"enableNoteTitleForLink":true,"enableMermaid":true,"enablePrettyRefs":true,"enableKatex":true,"assetsPrefix":"/DevLog","copyAssets":true,"siteHierarchies":["root"],"enableSiteLastModified":true,"siteRootDir":"docs","siteUrl":"https://{GITHUB_USERNAME}.github.io","enableFrontmatterTags":true,"enableHashesForFMTags":false,"enableRandomlyColoredTags":true,"duplicateNoteBehavior":{"action":"useVault","payload":["DevLog"]},"writeStubs":false,"seo":{"title":"Dendron","description":"Personal knowledge space"},"github":{"enableEditLink":true,"editLinkText":"Edit this page on GitHub","editBranch":"master","editViewMode":"tree"},"enablePrettyLinks":true,"enableTaskNotes":true,"siteFaviconPath":"favicon.ico","siteIndex":"root"}}},"__N_SSG":true},"page":"/notes/[id]","query":{"id":"4mcn5po13rxmj1t3onywtjd"},"buildId":"1h5ulSjjsPnt_rJPFXOd4","assetPrefix":"/DevLog","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

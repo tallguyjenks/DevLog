@@ -1,0 +1,10 @@
+<h1 id="profiling"><a aria-hidden="true" class="anchor-heading icon-link" href="#profiling"></a>Profiling</h1>
+<h2 id="profiling-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#profiling-1"></a>Profiling</h2>
+<hr>
+<pre class="language-python"><code class="language-python">pip install pandas<span class="token operator">-</span>profiling
+<span class="token comment">#  get the analysis of a data frame and save the analysis in web format we can use</span>
+<span class="token keyword">from</span> pandas_profiling <span class="token keyword">import</span> ProfileReport
+report <span class="token operator">=</span> ProfileReport<span class="token punctuation">(</span>dataframe<span class="token punctuation">)</span>
+report<span class="token punctuation">.</span>to_file<span class="token punctuation">(</span>output_file<span class="token operator">=</span>’output<span class="token punctuation">.</span>html’<span class="token punctuation">)</span>
+</code></pre>
+<hr>

@@ -1,0 +1,17 @@
+<h1 id="2022-01-01"><a aria-hidden="true" class="anchor-heading icon-link" href="#2022-01-01"></a>2022-01-01</h1>
+<h2 id="inputs"><a aria-hidden="true" class="anchor-heading icon-link" href="#inputs"></a>Inputs</h2>
+<h2 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h2>
+<p>Today i read from a comment on a youtube video of mine from another user that a modern IT practice these days is to forgo installing a dedicated OS like a linux disto and instead to just put a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hypervisor (Private)</a> like <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">proxmox (Private)</a> on the bare metal and use that to run <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">VM's (Private)</a> and <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">docker (Private)</a> containers.</p>
+<p>So now i'm going to need to look more into how to set up <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">proxmox (Private)</a> and more about <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">docker (Private)</a> containers and <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">VM's (Private)</a></p>
+<p>To help with monthly reviews in dendron i just made a <a href="/DevLog/notes/2v757989h14a59imxjv2gn1">Vscode</a> task to get me the files edited that month from the dendron vault!</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"2.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"label"</span><span class="token operator">:</span> <span class="token string">"Notes Made This Month"</span><span class="token punctuation">,</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"shell"</span><span class="token punctuation">,</span>
+            <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"cd \"${workspaceFolder}\" &#x26;&#x26; lsd -lA *.md | awk '{print $7,$10,$NF}' | grep \"$(date +\"%b %Y\")\" | awk '{print \"[[\"$NF\"]]\"}'"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>

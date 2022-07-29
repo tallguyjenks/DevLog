@@ -1,0 +1,90 @@
+<h1 id="merge"><a aria-hidden="true" class="anchor-heading icon-link" href="#merge"></a>Merge</h1>
+<p>The process of using <code>MERGE</code> works like this.</p>
+<ol>
+<li>Identify the table you will load data into.</li>
+<li>Identify the table that you will use as the source of your data.</li>
+<li>Identify how records in those two tables are connected.</li>
+<li>Give instructions on what to do when records do not match.</li>
+<li>Give instructions on what to do when records do match.</li>
+</ol>
+<h2 id="example"><a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a>Example</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> demo
+
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> Person
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> PersonStageTable
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Person<span class="token punctuation">(</span>
+    PersonID <span class="token keyword">BIGINT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    FirstName NVARCHAR<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    LastName NVARCHAR<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    SourceSystemKey NVARCHAR<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> PersonStageTable<span class="token punctuation">(</span>
+    PersonID <span class="token keyword">BIGINT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    FirstName NVARCHAR<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    LastName NVARCHAR<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    SourceSystemKey NVARCHAR<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> Person<span class="token punctuation">(</span>PersonID<span class="token punctuation">,</span> FirstName<span class="token punctuation">,</span> LastName<span class="token punctuation">,</span> SourceSystemKey<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Wakefield'</span><span class="token punctuation">,</span><span class="token number">1</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> PersonStageTable<span class="token punctuation">(</span>PersonID<span class="token punctuation">,</span> FirstName<span class="token punctuation">,</span> LastName<span class="token punctuation">,</span> SourceSystemKey<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'Bob'</span><span class="token punctuation">,</span><span class="token string">'Johnson'</span><span class="token punctuation">,</span><span class="token number">1</span>
+    <span class="token keyword">UNION</span>
+<span class="token keyword">SELECT</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'Sally'</span><span class="token punctuation">,</span><span class="token string">'Ride'</span><span class="token punctuation">,</span><span class="token number">2</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> Person
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> PersonStageTable
+
+
+<span class="token comment">--*****Merge example beings here.*****</span>
+
+<span class="token keyword">MERGE</span> Person <span class="token keyword">AS</span> target
+<span class="token keyword">USING</span> <span class="token punctuation">(</span>
+    <span class="token keyword">SELECT</span>
+        PersonID<span class="token punctuation">,</span>
+        FirstName<span class="token punctuation">,</span>
+        LastName<span class="token punctuation">,</span>
+        SourceSystemKey
+    <span class="token keyword">FROM</span> PersonStageTable
+<span class="token punctuation">)</span> <span class="token keyword">AS</span> source
+<span class="token keyword">ON</span> <span class="token punctuation">(</span>target<span class="token punctuation">.</span>SourceSystemKey <span class="token operator">=</span> source<span class="token punctuation">.</span>SourceSystemKey<span class="token punctuation">)</span>
+
+<span class="token keyword">WHEN</span> <span class="token operator">NOT</span> <span class="token keyword">MATCHED</span> <span class="token keyword">THEN</span>
+<span class="token keyword">INSERT</span> <span class="token punctuation">(</span>
+    PersonID<span class="token punctuation">,</span>
+    FirstName<span class="token punctuation">,</span>
+    LastName<span class="token punctuation">,</span>
+    SourceSystemKey
+<span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span>
+    PersonID<span class="token punctuation">,</span>
+    FirstName<span class="token punctuation">,</span>
+    LastName<span class="token punctuation">,</span>
+    SourceSystemKey
+<span class="token punctuation">)</span>
+
+<span class="token keyword">WHEN</span> <span class="token keyword">MATCHED</span> <span class="token keyword">THEN</span>
+<span class="token keyword">UPDATE</span>
+<span class="token keyword">SET</span>
+target<span class="token punctuation">.</span>PersonID <span class="token operator">=</span> source<span class="token punctuation">.</span>PersonID<span class="token punctuation">,</span>
+target<span class="token punctuation">.</span>FirstName <span class="token operator">=</span> source<span class="token punctuation">.</span>FirstName<span class="token punctuation">,</span>
+target<span class="token punctuation">.</span>LastName <span class="token operator">=</span> source<span class="token punctuation">.</span>LastName<span class="token punctuation">,</span>
+target<span class="token punctuation">.</span>SourceSystemKey <span class="token operator">=</span> source<span class="token punctuation">.</span>SourceSystemKey
+<span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> Person
+
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> Person
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> PersonStageTable
+</code></pre>
+<p>Another Example of syntax</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">MERGE</span> target <span class="token keyword">AS</span> TARGET
+<span class="token keyword">USING</span> source <span class="token keyword">AS</span> SOURCE
+<span class="token keyword">ON</span> condition
+<span class="token keyword">WHEN</span> <span class="token keyword">MATCHED</span> <span class="token keyword">THEN</span> <span class="token keyword">UPDATE</span>
+<span class="token keyword">WHEN</span> <span class="token operator">NOT</span> <span class="token keyword">MATCHED</span> <span class="token keyword">BY</span> TARGET <span class="token keyword">THEN</span> <span class="token keyword">INSERT</span>
+<span class="token keyword">WHEN</span> <span class="token operator">NOT</span> <span class="token keyword">MATCHED</span> <span class="token keyword">BY</span> SOURCE <span class="token keyword">THEN</span> <span class="token keyword">DELETE</span><span class="token punctuation">;</span>
+</code></pre>

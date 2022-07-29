@@ -1,0 +1,16 @@
+<h1 id="writeable-cte"><a aria-hidden="true" class="anchor-heading icon-link" href="#writeable-cte"></a>Writeable Cte</h1>
+<p><img src="/DevLog/assets/images/2022-01-26-10-39-53.png" alt="writeable CTE"></p>
+<pre class="language-sql"><code class="language-sql"><span class="token comment">-- Delete rows while simultaneously</span>
+<span class="token comment">-- inserting them elsewhere</span>
+<span class="token keyword">WITH</span> moved_rows <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+    <span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> products
+    <span class="token keyword">WHERE</span> <span class="token keyword">date</span> <span class="token operator">>=</span> <span class="token string">'2010-10-01'</span> <span class="token operator">AND</span> <span class="token keyword">date</span> <span class="token operator">&#x3C;</span> <span class="token string">'2010-11-01'</span>
+    <span class="token keyword">RETURNING</span> <span class="token operator">*</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> products_log <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> moved_rows<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/55ardlvgz9rynhcihd1wyqj">Postgres Can Do That (DevLog)</a></li>
+</ul>

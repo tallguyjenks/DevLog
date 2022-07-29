@@ -1,0 +1,28 @@
+<h1 id="__new__"><a aria-hidden="true" class="anchor-heading icon-link" href="#__new__"></a>__new__</h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__new__</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'new'</span><span class="token punctuation">,</span> cls<span class="token punctuation">,</span> args<span class="token punctuation">,</span> kwargs<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'init'</span><span class="token punctuation">,</span> self<span class="token punctuation">,</span> args<span class="token punctuation">,</span> kwargs<span class="token punctuation">)</span>
+
+x <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><code>__new__</code> allows you to modify immutable types before the object instance is created. <code>__new__</code> occurs before <code>__init__</code> so things like this are possible:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Uppercase</span> Tuple<span class="token punctuation">(</span><span class="token builtin">tuple</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__new__</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> iterable<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        upper_iterable <span class="token operator">=</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> s <span class="token keyword">in</span> iterable<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">,</span> upper_iterable<span class="token punctuation">)</span>
+</code></pre>
+<p>Whereas this was not possible because the class object already exists even if the instance doesnt yet exist. the OBJECT is what we're trying to beat to the punch</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Uppercase</span> Tuple<span class="token punctuation">(</span><span class="token builtin">tuple</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> iterable<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'init </span><span class="token interpolation"><span class="token punctuation">{</span>iterable<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i<span class="token punctuation">,</span> arg <span class="token keyword">in</span> <span class="token builtin">enumerate</span> <span class="token punctuation">(</span>iterable<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arg<span class="token punctuation">.</span> upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/rmx5qqv1m2znx5qvkpjqhe1">__new__ Vs __init__ in Python (DevLog)</a></li>
+</ul>

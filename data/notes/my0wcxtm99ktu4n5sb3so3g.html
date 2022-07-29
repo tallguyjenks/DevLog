@@ -1,0 +1,34 @@
+<h1 id="prefixes"><a aria-hidden="true" class="anchor-heading icon-link" href="#prefixes"></a>Prefixes</h1>
+<p>Adding a prefix to the router object makes it so you can keep the endpoint path
+short and sweet.</p>
+<p>passing this:</p>
+<pre class="language-python"><code class="language-python">router <span class="token operator">=</span> APIRouter <span class="token punctuation">(</span>
+    prefix<span class="token operator">=</span><span class="token string">"/posts"</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>makes it so you can take this code:</p>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/posts'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/posts/latest"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_latest_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/posts/{id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+<p>And turn it into this:</p>
+<pre class="language-python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/latest"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_latest_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">"/{id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>

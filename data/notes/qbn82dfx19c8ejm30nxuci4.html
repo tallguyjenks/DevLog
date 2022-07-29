@@ -1,0 +1,37 @@
+<h1 id="modules"><a aria-hidden="true" class="anchor-heading icon-link" href="#modules"></a>Modules</h1>
+<h2 id="modules-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#modules-1"></a>Modules</h2>
+<p>Prior to ES6, there were no native support for modules in JavaScript. Everything inside a JavaScript application, for example variables across different JavaScript files, shared the same scope.</p>
+<p>ES6 introduces file based module, in which each module is represented by a separate <code>.js</code> file. Now, you can use the <code>export</code> or <code>import</code> statement in a module to export or import variables, functions, classes or any other entity to/from other modules or files.</p>
+<p>This works in conjunction with <a href="/DevLog/notes/wyqwf8fnqvhbl500itjyj13">JavaScript Variable Assignment</a> options that came with ES6 to constrain variables to local scopes and not a global scope as well.</p>
+<p>Let's create a module i.e. a JavaScript file "<code>main.js</code>" and place the following code in it:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> greet <span class="token operator">=</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span> 
+<span class="token keyword">const</span> <span class="token constant">PI</span> <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">;</span> 
+<span class="token keyword">function</span> <span class="token function">multiplyNumbers</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> a \<span class="token operator">*</span> b<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token comment">// Exporting variables and functions </span>
+<span class="token keyword module">export</span> <span class="token punctuation">{</span> greet<span class="token punctuation">,</span> <span class="token constant">PI</span><span class="token punctuation">,</span> multiplyNumbers <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Now create another JavaScript file "app.js" with the following code:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token punctuation">{</span> greet<span class="token punctuation">,</span> <span class="token constant">PI</span><span class="token punctuation">,</span> multiplyNumbers <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'./main.js'</span><span class="token punctuation">;</span> 
+<span class="token function">alert</span><span class="token punctuation">(</span>greet<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// Hello World! </span>
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token constant">PI</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// 3.14 </span>
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">multiplyNumbers</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 90</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/DevLog/notes/6ypy2w7b55qk1pcun9wlc62">Changing Names of Default Import</a></li>
+<li><a href="/DevLog/notes/962sa4t6675v2lowjb51fsv">Default Imports</a></li>
+<li><a href="/DevLog/notes/8guqxw2wd7jkml4eu80wq7i">Es2020 Modules</a></li>
+<li><a href="/DevLog/notes/ownd2t65pbr9qb0kcsf91sj">Es6 Modules</a></li>
+<li><a href="/DevLog/notes/yzdbnorg7vao2f40wku3tb9">Import Non Default Things</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/z7ttjzpaawtowwhofdvag95">Ecmascript 2015 (DevLog)</a></li>
+<li><a href="/DevLog/notes/dbxn96n98efk7b2iwyx7q7p">Ecmascript 2020 (DevLog)</a></li>
+</ul>

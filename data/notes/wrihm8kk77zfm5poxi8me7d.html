@@ -1,0 +1,33 @@
+<h1 id="reduce"><a aria-hidden="true" class="anchor-heading icon-link" href="#reduce"></a>Reduce()</h1>
+<center>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/R8rmfD9Y5-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<p>Given data:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Bike'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">100</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'TV'</span><span class="token punctuation">,</span>       <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">200</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Album'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">10</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Book'</span><span class="token punctuation">,</span>     <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">5</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Phone'</span><span class="token punctuation">,</span>    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">500</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Computer'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Keyboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">25</span>   <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="reduce-method"><a aria-hidden="true" class="anchor-heading icon-link" href="#reduce-method"></a>Reduce method</h2>
+<p>This is like wanting to get a sum of all the prices of your items that meet certain conditions.</p>
+<p>Unlike the other methods the <code>reduce</code> method has 2 arguments and the first of which has to be the aggregate value holder</p>
+<hr>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> total <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">currentTotal<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> item<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">+</span> currentTotal
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Result:</strong></p>
+<blockquote>
+<p>1840</p>
+</blockquote>
+<p>we want to get a sum of all prices so we run the array method and  for each item in items we pass the item and a local variable in the arrow function to the function body.</p>
+<p>at then end of the arrow function is a second argument for the <code>reduce</code> method which is where the <code>currentTotal</code> value should start. We probably want a total to start at 0 so that's where it is set to.</p>
+<p>this is like a for loop using <code>item = item + newItem</code> </p>
+<p>so for each item passed to the function body, you also have the current running total passed as well. The items iteratively get returned and added to the <code>currentTotal</code> and then ultimately the <code>currentTotal</code> variable is returned giving you the sum of the array object's prices</p>

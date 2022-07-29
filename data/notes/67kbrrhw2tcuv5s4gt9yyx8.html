@@ -1,0 +1,27 @@
+<h1 id="send-emails"><a aria-hidden="true" class="anchor-heading icon-link" href="#send-emails"></a>Send Emails</h1>
+<h2 id="sending-emails"><a aria-hidden="true" class="anchor-heading icon-link" href="#sending-emails"></a>Sending Emails</h2>
+<ul>
+<li>To send emails, we need to make the credentials accessible to the Prefect agent. You can do that by creating the below file in <code>$HOME/.prefect/config.toml</code>.</li>
+</ul>
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">context.secrets</span><span class="token punctuation">]</span>
+
+<span class="token key property">EMAIL_USERNAME</span> <span class="token punctuation">=</span> <span class="token string">"&#x3C;Your email id>"</span>
+<span class="token key property">EMAIL_PASSWORD</span> <span class="token punctuation">=</span> <span class="token string">"&#x3C;your email password>"</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Import email task</span>
+<span class="token keyword">from</span> prefect<span class="token punctuation">.</span>tasks<span class="token punctuation">.</span>notifications<span class="token punctuation">.</span>email_task <span class="token keyword">import</span> EmailTask
+
+<span class="token comment"># Create an email_task object. Use all static content here.</span>
+email_task <span class="token operator">=</span> EmailTask<span class="token punctuation">(</span>
+  subject<span class="token operator">=</span><span class="token string">"A new windspeed captured"</span><span class="token punctuation">,</span>
+  email_to<span class="token operator">=</span><span class="token string">"receiver_email@gmail.com"</span><span class="token punctuation">,</span>
+  email_from<span class="token operator">=</span><span class="token string">"your_email@gmail.com"</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> Flow<span class="token punctuation">(</span><span class="token string">"Windspeed Tracker"</span><span class="token punctuation">,</span> schedule<span class="token operator">=</span>schedule<span class="token punctuation">)</span> <span class="token keyword">as</span> flow<span class="token punctuation">:</span>
+
+  <span class="token comment"># Call the email task with variable content.</span>
+  email_task<span class="token punctuation">(</span>
+	  msg<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">(</span>windspeed<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+</code></pre>

@@ -1,0 +1,50 @@
+<h1 id="lacp"><a aria-hidden="true" class="anchor-heading icon-link" href="#lacp"></a>LACP</h1>
+<h2 id="resources"><a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a>Resources</h2>
+<ul>
+<li><a href="https://docs.rackspace.com/blog/lacp-bonding-and-linux-configuration/">https://docs.rackspace.com/blog/lacp-bonding-and-linux-configuration/</a></li>
+</ul>
+<p>Link Aggregation Control Protocol (LACP) <a href="/DevLog/notes/051ngzwl2msbgfmws2hj4eq">3ad</a></p>
+<p>Used to detect configuration errors and recover from the failure of one of the physical links.</p>
+<h2 id="modes"><a aria-hidden="true" class="anchor-heading icon-link" href="#modes"></a>Modes</h2>
+<ul>
+<li><code>Mode 0 (balance-rr):</code>
+This mode is also known as round-robin mode.
+Packets are sequentially transmitted and received through each interface one by one.
+This mode provides load balancing functionality.</li>
+<li><code>Mode 1 (active-backup):</code>
+This mode has only one interface set to active, while all other interfaces are in the backup state.
+If the active interface fails, a backup interface replaces it as the only active interface in the bond.
+The media access control (MAC) address of the bond interface in <code>mode 1</code> is visible on only one port (the network adapter), which prevents confusion for the switch.
+<code>Mode 1</code> provides fault tolerance.</li>
+<li><code>Mode 2 (balance-xor):</code>
+The source MAC address uses exclusive or (XOR) logic with the destination MAC address.
+This calculation ensures that the same slave interface is selected for each destination MAC address.
+<code>Mode 2</code> provides fault tolerance and load balancing.</li>
+<li><code>Mode 3 (broadcast):</code>
+All transmissions are sent to all the slaves.
+This mode provides fault tolerance.</li>
+<li><code>Mode 4 (802.3ad):</code>
+This mode creates aggregation groups that share the same speed and duplex settings, and it requires a switch that supports an IEEE <a href="/DevLog/notes/051ngzwl2msbgfmws2hj4eq">802.3ad</a> dynamic link.
+<code>Mode 4</code> uses all interfaces in the active aggregation group.
+For example, you can aggregate three 1 GB per second (GBPS) ports into a 3 GBPS trunk port.
+This is equivalent to having one interface with 3 GBPS speed.
+It provides fault tolerance and load balancing.</li>
+<li><code>Mode 5 (balance-tlb):</code>
+This mode ensures that the outgoing traffic distribution is set according to the load on each interface and that the current interface receives all the incoming traffic.
+If the assigned interface fails to receive traffic, another interface is assigned to the receiving role.
+It provides fault tolerance and load balancing.</li>
+<li><code>Mode 6 (balance-alb):</code>
+This mode is supported only in x86 environments.
+The receiving packets are load balanced through Address Resolution Protocol (ARP) negotiation.
+This mode provides fault tolerance and load balancing.</li>
+</ul>
+<p><img src="/DevLog/assets/images/2022-02-20-11-46-53.png" alt="link aggregation"></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/fwjx7xn19e8qrsl25esxsxl">Link Aggregation (DevLog)</a></li>
+<li><a href="/DevLog/notes/051ngzwl2msbgfmws2hj4eq">3ad (DevLog)</a></li>
+<li><a href="/DevLog/notes/f6wx02gwrpmg9job7qwdbjt">2022-01-10 (DevLog)</a></li>
+<li><a href="/DevLog/notes/ghqfq24dh7bjkpabdqvstm6">Configuration (DevLog)</a></li>
+<li><a href="/DevLog/notes/23xvy5h0503jnwb51mhvvjv">Configuration (DevLog)</a></li>
+</ul>

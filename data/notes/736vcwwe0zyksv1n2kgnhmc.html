@@ -1,0 +1,115 @@
+<h1 id="2020-2"><a aria-hidden="true" class="anchor-heading icon-link" href="#2020-2"></a>2020 2</h1>
+<h2 id="2021-2"><a aria-hidden="true" class="anchor-heading icon-link" href="#2021-2"></a>2021-2</h2>
+<ul>
+<li>Download Arch ISO from <a href="https://archlinux.org/download/">Archlinux.org</a></li>
+<li>On a Windows machine download <a href="https://rufus.ie/en/">Rufus</a>
+<ul>
+<li>Use Rufus to burn the ISO to a USB</li>
+<li>This makes a bootable disk for bootstrapping the system</li>
+<li>Settings as of 2021-10-25
+<ul>
+<li><img src="/DevLog/assets/images/Pasted_image_20211025015639.png" alt="Alt"></li>
+<li><img src="/DevLog/assets/images/Pasted_image_20211025015715.png" alt="Alt"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>insert USB into machine</li>
+<li><a href="https://wiki.archlinux.org/title/Installation_guide">Helpful installation guide</a></li>
+<li>in the computer setup menu change the boot order to boot from the USB as first priority</li>
+<li>Ensure UEFI mode is active and prefered, verify once on the CLI with: <code>ls /sys/firmware/efi/efivars</code></li>
+<li>Connect over wifi using <code>iwctl</code> 
+<ul>
+<li>Interactive Mode (These menus have Tab completion)
+<ul>
+<li>First, if you do not know your wireless device name, list all Wi-Fi devices: <code>[iwd]# device list</code></li>
+<li>Then, to scan for networks: <code>[iwd]# station &#x3C;device> scan</code></li>
+<li>You can then list all available networks: <code>[iwd]# station &#x3C;device> get-networks</code></li>
+<li>Finally, to connect to a network: <code>[iwd]# station &#x3C;device> connect &#x3C;SSID></code></li>
+</ul>
+</li>
+<li>Single Command with passed values: <code>iwctl --passphrase &#x3C;passphrase> station &#x3C;device> connect &#x3C;SSID></code></li>
+</ul>
+</li>
+<li><strong>AT THIS STAGE YOU CAN JUST RUN THE ARCHINSTALL SCRIPT AND CALL IT DONE AFTERWARDS</strong></li>
+<li>check accuracy of system clock: <code>timedatectl set-ntp true</code></li>
+<li>See drives <code>lsblk</code></li>
+<li>Partition drives with <code>cfdisk</code>
+<ul>
+<li><code>[new] -> 600M [enter] -> [type] -> EFI -> [enter]</code></li>
+<li><code>[new] -> 2xRAM in GB [enter] -> [type] -> Linux Swap -> [enter]</code></li>
+<li><code>[new] -> 25G [enter] -> [type] -> Linux File System -> [enter]</code></li>
+<li><code>[new] -> THE REST in GB [enter] -> [type] -> Linux File System -> [enter]</code></li>
+<li><code>[write]</code></li>
+<li><code>yes -> [enter]</code></li>
+<li><code>[quit]</code></li>
+</ul>
+</li>
+<li>Write the EXT4 file system to the partitions and FAT32 for EFI 
+<ul>
+<li><code>mkfs.fat -F32 /dev/sda1</code></li>
+<li><code>mkfs.ext4 /dev/sda3</code></li>
+<li><code>mkfs.ext4 /dev/sda4</code></li>
+</ul>
+</li>
+<li>Activate your swap partition
+<ul>
+<li><code>mkswap /dev/sda2</code></li>
+<li><code>swapon /dev/sda2</code></li>
+</ul>
+</li>
+<li>Mount your partitions to <code>/mnt</code>
+<ul>
+<li><code>mount /dev/sda3 /mnt</code> &#x3C;&#x3C;- mounting the root
+<ul>
+<li><code>mkdir /mnt/home</code>
+<ul>
+<li><code>mount /dev/sda4 /mnt/home</code></li>
+</ul>
+</li>
+<li><code>mkdir /mnt/boot</code>
+<ul>
+<li><code>mount /dev/sda1 /mnt/boot</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bootstrap the system with some initial packages and software
+<ul>
+<li><code>pacstrap /mnt base base-devel vim networkmanager grub linux linux-firmware man-db man-pages texinfo</code></li>
+</ul>
+</li>
+<li>generate an fstab file
+<ul>
+<li><code>genfstab /mnt</code></li>
+<li><code>genfstab -U /mnt >> /mnt/etc/fstab</code></li>
+<li><code>vim /mnt/etc/fstab</code></li>
+</ul>
+</li>
+<li>root access into the new system <code>arch-chroot /mnt</code></li>
+<li>activate network manager <code>systemctl enable NetworkManager</code></li>
+<li>set the timezone <code>In -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime</code></li>
+<li>Run hwclock to generate /etc/adjtime: <code>hwclock --systohc</code></li>
+<li>localization: <code>vim /etc/locale.gen</code> un-comment the <code>en_US</code> items</li>
+<li>run <code>locale-gen</code></li>
+<li><code>vim /etc/locale.conf</code> add: "LANG=en_US.UTF-8"</li>
+<li><code>vim /etc/hostname</code> put name of machine here (i.e. what do you want your computers name to be)</li>
+<li>set password for ROOT account <code>passwd</code></li>
+<li>enable microcode updates?? <code>initrd=\cpu_manufacturer-ucode.img initrd=\initramfs-linux.img</code></li>
+<li>setup boot loader
+<ul>
+<li><code>grub-install --target=i386-pc /dev/sda</code></li>
+<li><code>grub-mkconfig -o /boot/grub/grub.cfg</code></li>
+</ul>
+</li>
+<li>exit the chroot environment <code>exit</code></li>
+<li>unmount all partitions <code>umount -R /mnt</code></li>
+<li>reboot the system <code>reboot</code>
+<ul>
+<li>while reboot is occurring remove the bootable USB</li>
+<li>Login to the system as the root user</li>
+</ul>
+</li>
+</ul>

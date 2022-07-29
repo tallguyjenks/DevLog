@@ -1,0 +1,48 @@
+<h1 id="sample-job-code"><a aria-hidden="true" class="anchor-heading icon-link" href="#sample-job-code"></a>Sample Job Code</h1>
+<h2 id="sample-job-code-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#sample-job-code-1"></a>Sample Job Code</h2>
+<ul>
+<li><a href="https://www.mssqltips.com/sqlservertip/3052/simple-way-to-create-a-sql-server-job-using-tsql/?utm_source=feedburner&#x26;utm_medium=feed&#x26;utm_campaign=Feed%3A+MSSQLTips-LatestSqlServerTips+%28MSSQLTips+-+Latest+SQL+Server+Tips%29">https://www.mssqltips.com/sqlservertip/3052/simple-way-to-create-a-sql-server-job-using-tsql/?utm_source=feedburner&#x26;utm_medium=feed&#x26;utm_campaign=Feed%3A+MSSQLTips-LatestSqlServerTips+%28MSSQLTips+-+Latest+SQL+Server+Tips%29</a></li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">USE</span> msdb
+go
+<span class="token keyword">CREATE</span> <span class="token keyword">procedure</span> <span class="token punctuation">[</span>dbo<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>sp_add_job_quick<span class="token punctuation">]</span> 
+<span class="token variable">@job</span> nvarchar<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token variable">@mycommand</span> nvarchar<span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+<span class="token variable">@servername</span> nvarchar<span class="token punctuation">(</span><span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token variable">@startdate</span> nvarchar<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token variable">@starttime</span> nvarchar<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token keyword">as</span>
+<span class="token comment">--Add a job</span>
+<span class="token keyword">EXEC</span> dbo<span class="token punctuation">.</span>sp_add_job
+    <span class="token variable">@job_name</span> <span class="token operator">=</span> <span class="token variable">@job</span> 
+<span class="token comment">--Add a job step named process step. This step runs the stored procedure</span>
+<span class="token keyword">EXEC</span> sp_add_jobstep
+    <span class="token variable">@job_name</span> <span class="token operator">=</span> <span class="token variable">@job</span><span class="token punctuation">,</span>
+    <span class="token variable">@step_name</span> <span class="token operator">=</span> N<span class="token string">'process step'</span><span class="token punctuation">,</span>
+    <span class="token variable">@subsystem</span> <span class="token operator">=</span> N<span class="token string">'TSQL'</span><span class="token punctuation">,</span>
+    <span class="token variable">@command</span> <span class="token operator">=</span> <span class="token variable">@mycommand</span>
+<span class="token comment">--Schedule the job at a specified date and time</span>
+<span class="token keyword">exec</span> sp_add_jobschedule <span class="token variable">@job_name</span> <span class="token operator">=</span> <span class="token variable">@job</span><span class="token punctuation">,</span>
+<span class="token variable">@name</span> <span class="token operator">=</span> <span class="token string">'MySchedule'</span><span class="token punctuation">,</span>
+<span class="token variable">@freq_type</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token variable">@active_start_date</span> <span class="token operator">=</span> <span class="token variable">@startdate</span><span class="token punctuation">,</span>
+<span class="token variable">@active_start_time</span> <span class="token operator">=</span> <span class="token variable">@starttime</span>
+<span class="token comment">-- Add the job to the SQL Server </span>
+<span class="token keyword">EXEC</span> dbo<span class="token punctuation">.</span>sp_add_jobserver
+    <span class="token variable">@job_name</span> <span class="token operator">=</span>  <span class="token variable">@job</span><span class="token punctuation">,</span>
+    <span class="token variable">@server_name</span> <span class="token operator">=</span> <span class="token variable">@servername</span>
+</code></pre>
+<p>This is a stored procedure named <code>sp_add_job_quick</code> that calls 4 <code>msdb</code> stored procedures:</p>
+<ul>
+<li><code>sp_add_job</code> creates a new job</li>
+<li><code>sp_add_jobstep</code> adds a new step in the job</li>
+<li><code>sp_add_jobschedule</code> schedules a job for a specific date and time</li>
+<li><code>sp_add_jobserver</code> adds the job to a specific server</li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">exec</span> dbo<span class="token punctuation">.</span>sp_add_job_quick 
+<span class="token variable">@job</span> <span class="token operator">=</span> <span class="token string">'myjob'</span><span class="token punctuation">,</span> <span class="token comment">-- The job name</span>
+<span class="token variable">@mycommand</span> <span class="token operator">=</span> <span class="token string">'sp_who'</span><span class="token punctuation">,</span> <span class="token comment">-- The T-SQL command to run in the step</span>
+<span class="token variable">@servername</span> <span class="token operator">=</span> <span class="token string">'serverName'</span><span class="token punctuation">,</span> <span class="token comment">-- SQL Server name. If running locally, you can use @servername=@@Servername</span>
+<span class="token variable">@startdate</span> <span class="token operator">=</span> <span class="token string">'20130829'</span><span class="token punctuation">,</span> <span class="token comment">-- The date August 29th, 2013</span>
+<span class="token variable">@starttime</span> <span class="token operator">=</span> <span class="token string">'160000'</span> <span class="token comment">-- The time, 16:00:00</span>
+</code></pre>

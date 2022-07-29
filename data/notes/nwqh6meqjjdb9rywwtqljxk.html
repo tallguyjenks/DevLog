@@ -1,0 +1,31 @@
+<h1 id="mito"><a aria-hidden="true" class="anchor-heading icon-link" href="#mito"></a>Mito</h1>
+<pre class="language-bash"><code class="language-bash">python -m pip <span class="token function">install</span> mitoinstaller
+python -m mitoinstaller <span class="token function">install</span>
+</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> mitosheet
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">.</span>from_dict<span class="token punctuation">(</span>
+    <span class="token punctuation">{</span>
+        <span class="token string">"col1"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"col2"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+mitosheet<span class="token punctuation">.</span>sheet<span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/DevLog/assets/images/Pasted_image_20211129113658.png" alt="alt"></p>
+<ul>
+<li>Related:
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">pandas (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">polars (Private)</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/2bgrot3r29emxz6jvhfcby9">0 (DevLog)</a></li>
+<li><a href="/DevLog/notes/h00ajgkcru0cv414fl9s5x0">Polars (DevLog)</a></li>
+</ul>

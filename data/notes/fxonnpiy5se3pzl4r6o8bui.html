@@ -1,0 +1,257 @@
+<h1 id="workflow"><a aria-hidden="true" class="anchor-heading icon-link" href="#workflow"></a>Workflow</h1>
+<h2 id="workflow-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#workflow-1"></a>Workflow</h2>
+<ul>
+<li>Make a new Git Repo</li>
+<li>vscode gitignore extension to add Python gitignore</li>
+<li>add gitattributes file</li>
+<li>Add config files for terminal/vscode/Extensions</li>
+<li>Setup Linting CI/CD with the <code>github super linter</code>
+<ul>
+<li>Super linter file</li>
+</ul>
+</li>
+</ul>
+<pre class="language-yaml"><code class="language-yaml"><span class="token comment"># https://aka.ms/yaml</span>
+<span class="token comment"># Initial code src: https://www.meziantou.net/running-github-super-linter-in-azure-pipelines.htm</span>
+<span class="token comment"># referenced docker container script: https://github.com/github/super-linter</span>
+<span class="token comment"># Official MS Documentation: https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops</span>
+<span class="token comment"># YAML Schema Info: https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&#x26;tabs=schema%2Cparameter-schema</span>
+<span class="token comment">#============================================================================================================#</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">'Super Linter -- $(Date:yyyyMMdd)$(Rev:.r)'</span> <span class="token comment">#............................# Name of the Job Instance When Ran</span>
+<span class="token key atrule">trigger</span><span class="token punctuation">:</span> <span class="token comment">#.....................................................................# What triggers the job to run?</span>
+<span class="token punctuation">-</span> <span class="token string">'*'</span> <span class="token comment">#........................................................................# Everything triggers it</span>
+<span class="token key atrule">variables</span><span class="token punctuation">:</span> <span class="token comment">#...................................................................# Variables for any parameter testing or changes</span>
+<span class="token key atrule">default_branch</span><span class="token punctuation">:</span> <span class="token string">'prod'</span> <span class="token comment">#.....................................................# What Branch is the default branch to run the job on</span>
+<span class="token key atrule">log_level</span><span class="token punctuation">:</span> <span class="token string">'WARN'</span> <span class="token comment">#..........................................................# What level and above of notices do you want to receive? WARN &#x26; ERROR</span>
+<span class="token key atrule">excluded_paths</span><span class="token punctuation">:</span> <span class="token string">'.*(\.github|\.vscode).*'</span> <span class="token comment">#..................................# What Locations are ignored by this job?</span>
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span> <span class="token comment">#........................................................................# No stages so top level list of jobs to run</span>
+<span class="token punctuation">-</span> <span class="token key atrule">job</span><span class="token punctuation">:</span> <span class="token string">'super_linter'</span> <span class="token comment">#......................................................# Name of the job</span>
+  <span class="token comment">#pool: 'default' #.........................................................# The Agent Pool if we wanted to use our self hosted option</span>
+  <span class="token key atrule">pool</span><span class="token punctuation">:</span> <span class="token comment">#....................................................................# Which Agent Pool runs the job?</span>
+	<span class="token key atrule">vmImage</span><span class="token punctuation">:</span> <span class="token string">'ubuntu-latest'</span> <span class="token comment">#...............................................# Microsoft Hosted Image to Run Job on</span>
+  <span class="token key atrule">steps</span><span class="token punctuation">:</span> <span class="token comment">#...................................................................# The list of steps that make up the job</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">script</span><span class="token punctuation">:</span> <span class="token string">'docker pull github/super-linter:latest'</span> <span class="token comment">#.......................# Commands to Run in the default shell of the host machine See VmImage</span>
+	<span class="token key atrule">displayName</span><span class="token punctuation">:</span> <span class="token string">'Pull GitHub Super-Linter image'</span> <span class="token comment">#..........................# Display name of this step when it executed in the pipeline</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">script</span><span class="token punctuation">:</span> <span class="token punctuation">></span><span class="token punctuation">-</span>
+	  docker run \
+		<span class="token punctuation">-</span>e IGNORE_GITIGNORED_FILES=true \
+		<span class="token punctuation">-</span>e MARKDOWN_CONFIG_FILE=.markdownlint.jsonc \
+		<span class="token punctuation">-</span>e JAVASCRIPT_ES_CONFIG_FILE=.eslintrc.json \
+		<span class="token punctuation">-</span>e PYTHON_BLACK_CONFIG_FILE=.python<span class="token punctuation">-</span>black \
+		<span class="token punctuation">-</span>e PYTHON_FLAKE8_CONFIG_FILE=.flake8 \
+		<span class="token punctuation">-</span>e PYTHON_ISORT_CONFIG_FILE=.isort.cfg \
+		<span class="token punctuation">-</span>e DEFAULT_BRANCH=$(default_branch) \
+		<span class="token punctuation">-</span>e LOG_LEVEL=$(log_level) \
+		<span class="token punctuation">-</span>e FILTER_REGEX_EXCLUDE='$(excluded_paths)' \
+		<span class="token punctuation">-</span>e RUN_LOCAL=true \
+		<span class="token punctuation">-</span>v $(System.DefaultWorkingDirectory)<span class="token punctuation">:</span>/tmp/lint github/super<span class="token punctuation">-</span>linter
+<span class="token comment"># - script: >- #...............................................................# The Below is the multi-line inline script ran in the default shell formatted for legibility</span>
+<span class="token comment">#     docker run \ #...........................................................# Running the docker image with the following commands `-e` is enviornmental variable `-v` is the volume to attach to (a file path)</span>
+<span class="token comment">#       -e IGNORE_GITIGNORED_FILES=true \ #....................................# BOOL Variable asking if the job should lint .gitignored files</span>
+<span class="token comment">#       -e MARKDOWN_CONFIG_FILE=.markdownlint.jsonc \ #........................# STRING Variable of Markdown config file</span>
+<span class="token comment">#       -e JAVASCRIPT_ES_CONFIG_FILE=.eslintrc.json \ #........................# STRING Variable of JSON config file</span>
+<span class="token comment">#       -e PYTHON_BLACK_CONFIG_FILE=.python-black \ #..........................# STRING Variable of Python Black config file</span>
+<span class="token comment">#       -e PYTHON_FLAKE8_CONFIG_FILE=.flake8 \ #...............................# STRING Variable of Python flake8 config file</span>
+<span class="token comment">#       -e PYTHON_ISORT_CONFIG_FILE=.isort.cfg \ #.............................# STRING Variable of Python isort config file</span>
+<span class="token comment">#       -e DEFAULT_BRANCH=$(default_branch) \ #................................# STRING Variable of default branch to run job on when not targeted manually</span>
+<span class="token comment">#       -e LOG_LEVEL=$(log_level) \ #..........................................# STRING Variable of desired log output level</span>
+<span class="token comment">#       -e FILTER_REGEX_EXCLUDE=$(excluded_paths) \ #..........................# STRING Variable of regex path list to ignore for the job</span>
+<span class="token comment">#       -e RUN_LOCAL=true \ #..................................................# BOOL Variable to Run the container locally (On VmImage)</span>
+<span class="token comment">#       -v $(System.DefaultWorkingDirectory):/tmp/lint github/super-linter #...# Volume to attach to</span>
+	<span class="token key atrule">displayName</span><span class="token punctuation">:</span> <span class="token string">'Run GitHub Super-Linter'</span> <span class="token comment">#.................................# Name of this step in the job</span>
+</code></pre>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">black (Private)</a> with a <code>pyproject.toml</code> addition</li>
+</ul>
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">tool.black</span><span class="token punctuation">]</span>
+<span class="token key property">line-length</span> <span class="token punctuation">=</span> <span class="token number">88</span>
+<span class="token key property">include</span> <span class="token punctuation">=</span> '\<span class="token punctuation">.</span>pyi?
+<span class="token key property">exclude</span> <span class="token punctuation">=</span> <span class="token string">'''
+/(
+\.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| _build
+| buck-out
+| build
+| dist
+| docs
+| notes
+)/
+'''</span>
+</code></pre>
+<ul>
+<li><a href="/DevLog/notes/2mnfz9w7nvn45y8b936d0e0">Flake8</a> with a <code>.flake8</code> file</li>
+</ul>
+<pre><code>[flake8]
+max-line-length = 88
+max-complexity = 18
+exclude =
+.git,
+__pycache__,
+build,
+dist
+select = B,C,E,F,W,T4,B9
+ignore =
+E203, # E203: whitespace before ‘:’
+E266, # E266: too many leading ‘#’ for block comment
+E501, # E501: line too long (82 > 79 characters)
+W503, # W503: line break before binary operator
+F401, # F401: module imported but unused
+F403  # F403: ‘from module import *’ used; unable to detect undefined names
+
+</code></pre>
+<ul>
+<li><a href="/DevLog/notes/fr7mmpniszgquo1o85rrwtr">Isort</a> with a <code>pyproject.toml</code> addition</li>
+</ul>
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">tool.isort</span><span class="token punctuation">]</span>
+<span class="token key property">line_length</span> <span class="token punctuation">=</span> <span class="token number">88</span>
+<span class="token key property">multi_line_output</span> <span class="token punctuation">=</span> <span class="token number">3</span>
+<span class="token key property">include_trailing_comma</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">skip_glob</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token key property">known_third_party</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li><a href="/DevLog/notes/2ryzhou6bz2rxhu4ld73wmd">Vulture</a> with a <code>pyproject.toml</code> addition</li>
+</ul>
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">tool.vulture</span><span class="token punctuation">]</span>
+<span class="token key property">exclude</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token key property">ignore_decorators</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"@app.route"</span><span class="token punctuation">,</span> <span class="token string">"@require_*"</span><span class="token punctuation">]</span>
+<span class="token key property">ignore_names</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token key property">make_whitelist</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">min_confidence</span> <span class="token punctuation">=</span> <span class="token number">80</span>
+<span class="token key property">paths</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"src/"</span><span class="token punctuation">]</span>
+<span class="token key property">sort_by_size</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">verbose</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+</code></pre>
+<ul>
+<li>setup repo branch policies and settings</li>
+<li><a href="/DevLog/notes/yu81h7bllrc9q8q6ts8pu56">Poetry</a> setup
+<ul>
+<li><code>poetry new &#x3C;PROJECT></code> or <code>poetry init</code></li>
+<li>Spin up virtual environment <code>poetry shell</code></li>
+<li><code>poetry add --dev pre-commit pytest pytest-cov</code></li>
+<li>setup pre-commit hooks for formatting</li>
+<li>make <code>.pre-commit-config.yaml</code> file</li>
+<li><code>poetry run pre-commit install</code></li>
+<li><code>poetry run pre-commit autoupdate</code></li>
+<li><code>poetry run pre-commit run</code> (to test that it works)</li>
+</ul>
+</li>
+</ul>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">repos</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/asottile/seed<span class="token punctuation">-</span>isort<span class="token punctuation">-</span>config
+  <span class="token key atrule">rev</span><span class="token punctuation">:</span> v2.2.0
+  <span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> seed<span class="token punctuation">-</span>isort<span class="token punctuation">-</span>config
+<span class="token punctuation">-</span> <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/pre<span class="token punctuation">-</span>commit/mirrors<span class="token punctuation">-</span>isort
+  <span class="token key atrule">rev</span><span class="token punctuation">:</span> v5.8.0
+  <span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> isort
+<span class="token punctuation">-</span> <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/psf/black
+  <span class="token key atrule">rev</span><span class="token punctuation">:</span> 21.6b0
+  <span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> black
+	<span class="token key atrule">language_version</span><span class="token punctuation">:</span> python3
+	<span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"Black: The uncompromising Python code formatter"</span>
+<span class="token punctuation">-</span> <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//gitlab.com/pycqa/flake8
+  <span class="token key atrule">rev</span><span class="token punctuation">:</span> 3.9.2
+  <span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> flake8
+<span class="token punctuation">-</span> <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/jendrikseipp/vulture
+  <span class="token key atrule">rev</span><span class="token punctuation">:</span> <span class="token string">'v2.3'</span>
+  <span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> vulture
+<span class="token punctuation">-</span> <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/pre<span class="token punctuation">-</span>commit/pre<span class="token punctuation">-</span>commit<span class="token punctuation">-</span>hooks
+  <span class="token key atrule">rev</span><span class="token punctuation">:</span> v4.0.1
+  <span class="token key atrule">hooks</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> trailing<span class="token punctuation">-</span>whitespace
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> end<span class="token punctuation">-</span>of<span class="token punctuation">-</span>file<span class="token punctuation">-</span>fixer
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>docstring<span class="token punctuation">-</span>first
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> requirements<span class="token punctuation">-</span>txt<span class="token punctuation">-</span>fixer
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>added<span class="token punctuation">-</span>large<span class="token punctuation">-</span>files
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>json
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+	<span class="token key atrule">exclude</span><span class="token punctuation">:</span> .vscode/settings.json
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>yaml
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>toml
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>xml
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> debug<span class="token punctuation">-</span>statements
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> name<span class="token punctuation">-</span>tests<span class="token punctuation">-</span>test
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>shebang<span class="token punctuation">-</span>scripts<span class="token punctuation">-</span>are<span class="token punctuation">-</span>executable
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>merge<span class="token punctuation">-</span>conflict
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> check<span class="token punctuation">-</span>symlinks
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> destroyed<span class="token punctuation">-</span>symlinks
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> debug<span class="token punctuation">-</span>statements
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> detect<span class="token punctuation">-</span>private<span class="token punctuation">-</span>key
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+  <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> no<span class="token punctuation">-</span>commit<span class="token punctuation">-</span>to<span class="token punctuation">-</span>branch
+	<span class="token key atrule">log_file</span><span class="token punctuation">:</span> src/logs/hooks.log
+	<span class="token key atrule">args</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">-</span><span class="token punctuation">-</span>branch<span class="token punctuation">,</span> prod<span class="token punctuation">]</span>
+
+</code></pre>
+<ul>
+<li>Set up logging and this directory structure to start:</li>
+</ul>
+<pre><code>.
+├───.github
+│   ├───ISSUE_TEMPLATE
+│   ├───linters
+│   └───workflows
+├───doc
+└───src
+  ├───logger
+  │	├───__init__.py
+  │   └───logger.py
+  ├───logs
+  ├───mypackage
+  │ 	├───__init__.py
+  │   └───mypackage.py
+  └───app.py
+</code></pre>
+<ul>
+<li>Set up unit testing framework with <a href="/DevLog/notes/p7o36tilo5ljx9je2jo21hy">Pytest</a>
+<ul>
+<li><code>pytest-cov --cov &#x3C;SRC DIR> --cov-report html</code>
+<ul>
+<li>This tests the coverage of the entire source code directory and writes an intricate <a href="/DevLog/notes/g8jz1e99nnpbzc83mxv264r">HTML</a> report for viewing test results</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set up auto documentation with <a href="/DevLog/notes/kpm3emq4yr8kcgy7tt6naa5">Sphinx</a> &#x26; <a href="/DevLog/notes/4c4t6xvzfxixmtds4r511vv">Restructured Text</a></li>
+<li><strong>More on Packaging</strong>
+<ul>
+<li>build your distribution: <code>poetry build</code></li>
+<li>publish your distribution: <code>poetry publish</code></li>
+</ul>
+</li>
+<li><strong>Opening someone elses poetry project</strong>
+<ul>
+<li>install dependencies <code>poetry install</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/j30x4rtyrur01du27t81k2i">11 (DevLog)</a></li>
+<li><a href="/DevLog/notes/uwqai02bcvtp7tkwbfhjb8z">16 (DevLog)</a></li>
+</ul>

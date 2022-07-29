@@ -1,0 +1,12 @@
+<h1 id="local"><a aria-hidden="true" class="anchor-heading icon-link" href="#local"></a>Local</h1>
+<p>To declare a variable in T-SQL for reuse throughout a query, the syntax is simple:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@VariableName</span> <span class="token keyword">AS</span> datatype
+<span class="token keyword">SET</span> <span class="token variable">@VariableName</span> <span class="token operator">=</span> <span class="token keyword">value</span>
+
+<span class="token comment">-- OR</span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@VariableName</span> <span class="token keyword">AS</span> datatype <span class="token operator">=</span> <span class="token keyword">value</span>
+</code></pre>
+<p>You can also use a single declare to create multiple variable in one go:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@VariableName</span> <span class="token keyword">AS</span> datatype
+		<span class="token punctuation">,</span><span class="token variable">@VariableName2</span> <span class="token keyword">AS</span> datatype
+</code></pre>

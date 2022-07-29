@@ -1,0 +1,41 @@
+<h1 id="wrapper-functions"><a aria-hidden="true" class="anchor-heading icon-link" href="#wrapper-functions"></a>Wrapper Functions</h1>
+<p>related: <a href="/DevLog/notes/pgeqoy6v7zvlhh0mie1fn7i">Decorators</a></p>
+<h2 id="wrapper-function"><a aria-hidden="true" class="anchor-heading icon-link" href="#wrapper-function"></a>Wrapper function</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps 
+
+<span class="token keyword">def</span> <span class="token function">hello_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token triple-quoted-string string">"""Simple decorator function"""</span> 
+	<span class="token decorator annotation punctuation">@wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+	<span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token triple-quoted-string string">"""Simple decorator wrapper function"""</span>
+		result <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+		<span class="token keyword">return</span> result 
+
+	<span class="token keyword">return</span> wrapper
+
+<span class="token decorator annotation punctuation">@hello_decorator</span>
+<span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token triple-quoted-string string">"""Simple function that returns sum of two numbers"""</span>
+	<span class="token keyword">return</span> a <span class="token operator">+</span> b 
+
+<span class="token decorator annotation punctuation">@hello_decorator</span>
+<span class="token keyword">def</span> <span class="token function">multiply</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token triple-quoted-string string">"""Simple function that returns multiplication of two numbers"""</span>
+	<span class="token keyword">return</span> a <span class="token operator">*</span> b 
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span> 
+	<span class="token builtin">help</span><span class="token punctuation">(</span>add<span class="token punctuation">)</span> 
+
+	<span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">.</span>__doc__<span class="token punctuation">)</span> 
+
+	output1 <span class="token operator">=</span> add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Result:: '</span><span class="token punctuation">,</span> output1<span class="token punctuation">)</span> 
+
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"="</span> <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span>
+	<span class="token builtin">help</span><span class="token punctuation">(</span>multiply<span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>multiply<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>multiply<span class="token punctuation">.</span>__doc__<span class="token punctuation">)</span>
+	output2 <span class="token operator">=</span> multiply<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Result:: '</span><span class="token punctuation">,</span> output2<span class="token punctuation">)</span>
+</code></pre>

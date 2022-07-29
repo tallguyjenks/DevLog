@@ -1,0 +1,28 @@
+<h1 id="generators"><a aria-hidden="true" class="anchor-heading icon-link" href="#generators"></a>Generators</h1>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Instead of holding values in memory:</span>
+
+x <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1_000_000</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Use a generator that only spits out values as needed</span>
+
+x <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1_000_000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#  ================================================ #</span>
+
+<span class="token comment"># Using functions as a generator</span>
+
+<span class="token keyword">def</span> <span class="token function">gen</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">yield</span> i
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> gen<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+	
+<span class="token comment"># V.S.</span>
+
+x <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> x<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+		
+</code></pre>

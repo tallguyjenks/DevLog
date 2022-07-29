@@ -1,0 +1,24 @@
+<h1 id="recursive-globbing"><a aria-hidden="true" class="anchor-heading icon-link" href="#recursive-globbing"></a>Recursive Globbing</h1>
+<h2 id="recursive-globbing-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#recursive-globbing-1"></a>Recursive globbing</h2>
+<pre class="language-python"><code class="language-python">
+<span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
+
+<span class="token comment"># A quite large folder indeed!</span>
+path <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">"/Users/ahmed.besbes/anaconda3/"</span><span class="token punctuation">)</span>
+
+python_files <span class="token operator">=</span> path<span class="token punctuation">.</span>rglob<span class="token punctuation">(</span><span class="token string">"**/*.py"</span><span class="token punctuation">)</span>
+
+<span class="token builtin">next</span><span class="token punctuation">(</span>python_files<span class="token punctuation">)</span>
+<span class="token comment"># PosixPath('/Users/ahmed.besbes/anaconda3/bin/rst2xetex.py')</span>
+
+<span class="token builtin">next</span><span class="token punctuation">(</span>python_files<span class="token punctuation">)</span>
+<span class="token comment"># PosixPath('/Users/ahmed.besbes/anaconda3/bin/rst2latex.py')</span>
+
+<span class="token builtin">next</span><span class="token punctuation">(</span>python_files<span class="token punctuation">)</span>
+<span class="token comment"># PosixPath('/Users/ahmed.besbes/anaconda3/bin/rst2odt_prepstyles.py')</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>python_files<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 67481</span>
+</code></pre>

@@ -1,0 +1,16 @@
+<h1 id="strlen"><a aria-hidden="true" class="anchor-heading icon-link" href="#strlen"></a>Strlen</h1>
+<h2 id="strlen-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#strlen-1"></a>strlen()</h2>
+<p><code>int strcmp(str1, str2)</code></p>
+<p>Returns 0 if <code>str1</code> and <code>str2</code> are equal, non-zero if they differ.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Given:</span>
+<span class="token keyword">char</span> orgName<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"United Nations"</span><span class="token punctuation">;</span> 
+<span class="token keyword">char</span> userText<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"UNICEF"</span><span class="token punctuation">;</span> 
+<span class="token keyword">char</span> targetText<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>orgName<span class="token punctuation">,</span> <span class="token string">"United Nations"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment">// Equal, branch taken</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>orgName<span class="token punctuation">,</span> userText<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment">// Not equal, branch not taken</span>
+<span class="token punctuation">}</span>
+</code></pre>

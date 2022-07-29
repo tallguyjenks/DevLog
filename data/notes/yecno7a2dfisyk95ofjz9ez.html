@@ -1,0 +1,10 @@
+<h1 id="vector-equality"><a aria-hidden="true" class="anchor-heading icon-link" href="#vector-equality"></a>Vector Equality</h1>
+<h3 id="vector-equality-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#vector-equality-1"></a>Vector Equality</h3>
+<p>in the above example in <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">import.software.language.cpp.include-vector (Private)</a>, if one were to change the values in some of the elements in <code>salePrices</code> and then perform an equality check <code>==</code> then the vector will compare element to element through the whole vector and return a boolean result.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Update salePrices. Note: does not affect origPrices</span>
+salePrices<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">27</span><span class="token punctuation">;</span>
+salePrices<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">35</span><span class="token punctuation">;</span>
+
+salePrices <span class="token operator">==</span> origPrices<span class="token punctuation">;</span> <span class="token comment">// because of above they are no longer equal</span>
+						  <span class="token comment">// or identical, result is false</span>
+</code></pre>

@@ -1,0 +1,23 @@
+<h1 id="understanding-the-sql-server-nolock-hint"><a aria-hidden="true" class="anchor-heading icon-link" href="#understanding-the-sql-server-nolock-hint"></a>Understanding the Sql Server Nolock Hint</h1>
+<h2 id="link"><a aria-hidden="true" class="anchor-heading icon-link" href="#link"></a>Link</h2>
+<p><a href="https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/">https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/</a></p>
+<h2 id="notes"><a aria-hidden="true" class="anchor-heading icon-link" href="#notes"></a>Notes</h2>
+<blockquote>
+<p>What does the SQL Server <code>NOLOCK</code> hint do?</p>
+</blockquote>
+<ol>
+<li>The <code>NOLOCK</code> hint allows SQL to read data from tables by ignoring any locks and therefore not get blocked by other processes.</li>
+<li>This can improve query performance by removing the blocks, but introduces the possibility of dirty reads.</li>
+<li>Read further to better understand the use of <code>NOLOC</code>K`.</li>
+</ol>
+<h2 id="dirty-reads"><a aria-hidden="true" class="anchor-heading icon-link" href="#dirty-reads"></a>Dirty Reads</h2>
+<p>The <code>NOLOCK</code> hint is the same as the <code>READUNCOMMITED</code> hint and can be used as follows with the same results.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> Person<span class="token punctuation">.</span>Contact <span class="token keyword">WITH</span> <span class="token punctuation">(</span>READUNCOMMITTED<span class="token punctuation">)</span>
+</code></pre>
+<p>This allows the reading of data that hasnt even been comitted to the database yet.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/DevLog/notes/09s1m81lxifmup1so6qi7u6">2022-03-03 (DevLog)</a></li>
+<li><a href="/DevLog/notes/hl8lyqzvwxuwsrlqxlvsnl2">Nolock (DevLog)</a></li>
+</ul>

@@ -1,0 +1,19 @@
+<h1 id="20"><a aria-hidden="true" class="anchor-heading icon-link" href="#20"></a>20</h1>
+<ul>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://medium.com/nerd-for-tech/python-is-a-bad-programming-language-2ab73b0bda5">Python is a Bad Programming Language</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/8yc59ajk05o7h4ewiw83gux">Etl</a> <a href="https://towardsdatascience.com/python-etl-vs-etl-tools-9709171c9e58">Python ETL vs. ETL Tools</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://medium.com/analytics-and-data/pythons-data-classes-a-data-engineer-s-best-friend-173617ee0941">Python’s Data Classes a Data Engineer’s best friend</a></li>
+<li><a href="/DevLog/notes/ygxq3639d4hx58yerem4chm">Rust</a> <a href="https://preettheman.medium.com/why-you-shouldnt-use-rust-e55b6607e711">Why you shouldn’t use Rust</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/kpm3emq4yr8kcgy7tt6naa5">Sphinx</a> <a href="https://betterprogramming.pub/auto-documenting-a-python-project-using-sphinx-8878f9ddc6e9">Auto Documenting a Python Project Using Sphinx</a></li>
+<li><a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="/DevLog/notes/kpm3emq4yr8kcgy7tt6naa5">Sphinx</a> <a href="https://python.plainenglish.io/documentation-with-sphinx-dd86bedb7512">Write Beautiful Python Documentation with Sphinx</a></li>
+<li><a href="/DevLog/notes/7kfp3zptn2a7wkp5zeoa7wu">Devops</a> <a href="/DevLog/notes/vv84phwq7oh5d36rt3nqkw7">Test Plans</a> <a href="https://youtu.be/LF0hmSysWCg">Automated and Manual Testing with Azure Test Plan</a></li>
+<li>Try out <a href="/DevLog/notes/91v5vxrhcwbky7z0rx1dzlb">Python</a> <a href="https://docs.python.org/3/library/profile.html">profiling</a></li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> cProfile
+<span class="token keyword">import</span> pstats
+<span class="token keyword">with</span> cProfile<span class="token punctuation">.</span>Profile<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> pr<span class="token punctuation">:</span>
+    yourfunctionhere<span class="token punctuation">(</span><span class="token punctuation">)</span>
+stats <span class="token operator">=</span> pstats<span class="token punctuation">.</span>Stats<span class="token punctuation">(</span>pr<span class="token punctuation">)</span>
+stats<span class="token punctuation">.</span>sort_stats<span class="token punctuation">(</span>pstats<span class="token punctuation">.</span>SortKey<span class="token punctuation">.</span>TIME<span class="token punctuation">)</span>
+stats<span class="token punctuation">.</span>print_stats<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>

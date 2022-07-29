@@ -1,0 +1,23 @@
+<h1 id="matrix"><a aria-hidden="true" class="anchor-heading icon-link" href="#matrix"></a>Matrix</h1>
+<h2 id="matrix-1"><a aria-hidden="true" class="anchor-heading icon-link" href="#matrix-1"></a>Matrix</h2>
+<pre class="language-r"><code class="language-r"><span class="token comment"># Matrix</span>
+<span class="token comment"># R Objects in which the elements are arranged in a 2 dimensional rectangular layout</span>
+<span class="token comment"># Syntax: matrix(data, nrow, ncol, byrow, dimnames)</span>
+<span class="token comment"># Data: the input vector which becomes the data elements of the matrix</span>
+<span class="token comment"># NRow: number of rows to be created</span>
+<span class="token comment"># NCol: number of columns to be created</span>
+<span class="token comment"># ByRow: a logical clue. If TRUE then the input vector elements are arranged by row</span>
+<span class="token comment"># DimName: The names assigned to the rows and columns</span>
+
+<span class="token comment">#============#</span>
+<span class="token comment">#  EXAMPLES  #</span>
+<span class="token comment">#============#</span>
+
+mtr <span class="token operator">=</span> matrix<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+mtr
+<span class="token comment"># Warning message:</span>
+<span class="token comment"># In matrix(c(5:30), 5, 5) :</span>
+<span class="token comment"># data length [26] is not a sub-multiple or multiple of the number of rows [5]</span>
+<span class="token comment"># If your total number of data points spills out of the matrix, error returns</span>
+
+</code></pre>
