@@ -2,7 +2,7 @@
 id: p4mog8mu5oi3u7tg97iwjb4
 title: Setup
 desc: ''
-updated: 1659123464096
+updated: 1659123606540
 created: 1643183976632
 ---
 
@@ -14,20 +14,19 @@ created: 1643183976632
 2. Use management interface on the server, [[p.doing.homelab.servers.fafnir.hardware.idrac]]
    1. Turn server on
    2. Attach virtual media (the .iso)
-5. Follow the prompts and fill in the information
-   1. **Note:** i did have to configure my disks in some of the boot menus to make a single logical volume RAID 5 configuration
-   2. The in the Proxmox installer i just selected ext4 for the file system
-   3. Will use ZFS on [[p.doing.homelab.servers.fafnir]]
-6. fill in network information
+3. Follow the prompts and fill in the information
+   1. chose [[n.raid#raid-z]]1 for a mirrored boot drive on SSD pair
+      1. if SSD's are not visible on boot, check that the SATA settings in device settings is set to ACHI and auto
+4. fill in network information
    1. Much of it can be gleaned from your router console
    2. `ifconfig get default | grep gateway` for the default gateway
    3. for MacOS to find [[n.protocol.dns]] server just search for `DNS` in *system preferences*
-7. Once proxmox is finished bootstrapping and restarts the server, remove the flash media
-8. if screen loads to a console then you can just transition back to your main machine and use the web interface to finish.
-9. management console is at: `https://#.#.#.#:8006` (replace `#` with valid IPV4 address)
-10. connection will be insecure and that's okay, proceed anyhow
-11. login as `root` with the password you previously set.
-12. Ignore subscription popup, its FOSS unless you want enterprise subscription
+5. Once proxmox is finished bootstrapping and restarts the server, remove the virtual media
+6. if screen loads to a console then you can just transition back to your main machine and use the web interface to finish.
+7. management console is at: `https://#.#.#.#:8006` (replace `#` with valid IPV4 address)
+8. connection will be insecure and that's okay, proceed anyhow
+9. login as `root` with the password you previously set.
+10. Ignore subscription popup, its FOSS unless you want enterprise subscription
 
 ## Post Install Configuration
 
