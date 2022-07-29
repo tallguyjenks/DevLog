@@ -2,7 +2,7 @@
 id: p4mog8mu5oi3u7tg97iwjb4
 title: Setup
 desc: ''
-updated: 1658898174865
+updated: 1659123464096
 created: 1643183976632
 ---
 
@@ -11,13 +11,9 @@ created: 1643183976632
 
 0. [Great installation video](https://youtu.be/azORbxrItOo)
 1. [download iso](https://proxmox.com/en/downloads)
-2. Burn iso to a flashdrive
-   1. linux: `dd` command
-   2. Windows: [rufus](https://rufus.ie/en/)
-   3. MacOS: [Etcher](https://www.balena.io/etcher/)
-3. Put flash drive into target machine
-4. Boot from the flash drive
-   1. or using [[p.doing.homelab.servers.ymir.ilo]]
+2. Use management interface on the server, [[p.doing.homelab.servers.fafnir.hardware.idrac]]
+   1. Turn server on
+   2. Attach virtual media (the .iso)
 5. Follow the prompts and fill in the information
    1. **Note:** i did have to configure my disks in some of the boot menus to make a single logical volume RAID 5 configuration
    2. The in the Proxmox installer i just selected ext4 for the file system
